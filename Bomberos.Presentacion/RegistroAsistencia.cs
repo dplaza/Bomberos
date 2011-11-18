@@ -15,5 +15,20 @@ namespace Bomberos.Presentacion
         {
             InitializeComponent();
         }
+
+        private void RegistroAsistencia_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox2_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Año_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

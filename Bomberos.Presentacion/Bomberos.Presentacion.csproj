@@ -69,6 +69,12 @@
     <Compile Include="Admin\FichaBombero.Designer.cs">
       <DependentUpon>FichaBombero.cs</DependentUpon>
     </Compile>
+    <Compile Include="RegistroAsistencia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RegistroAsistencia.Designer.cs">
+      <DependentUpon>RegistroAsistencia.cs</DependentUpon>
+    </Compile>
     <Compile Include="Usuario\MenuUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -107,6 +113,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="BuscarBombero.resx">
       <DependentUpon>BuscarBombero.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RegistroAsistencia.resx">
+      <DependentUpon>RegistroAsistencia.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Usuario\MenuUsuario.resx">
