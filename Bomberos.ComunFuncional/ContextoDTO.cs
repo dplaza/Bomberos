@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Bombros.Comun;
+using Bomberos.Comun;
 
 namespace Bomberos.ComunFuncional
 {
