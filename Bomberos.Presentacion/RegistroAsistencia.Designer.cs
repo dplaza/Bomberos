@@ -69,7 +69,7 @@
             this.groupBox2.Controls.Add(this.txt_apellidos);
             this.groupBox2.Controls.Add(this.label5);
             this.groupBox2.Controls.Add(this.txt_especialidad);
-            this.groupBox2.Location = new System.Drawing.Point(12, 30);
+            this.groupBox2.Location = new System.Drawing.Point(8, 30);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(675, 108);
             this.groupBox2.TabIndex = 15;
@@ -155,7 +155,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(321, 14);
+            this.label3.Location = new System.Drawing.Point(299, 14);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(92, 13);
             this.label3.TabIndex = 16;
