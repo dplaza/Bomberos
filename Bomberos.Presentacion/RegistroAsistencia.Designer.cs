@@ -200,6 +200,7 @@
             // Nombres
             // 
             this.Nombres.DataPropertyName = "Nombres";
+            this.Nombres.DividerWidth = 1;
             this.Nombres.HeaderText = "Mes";
             this.Nombres.Name = "Nombres";
             this.Nombres.ReadOnly = true;
@@ -208,6 +209,7 @@
             // Apellidos
             // 
             this.Apellidos.DataPropertyName = "Apellidos";
+            this.Apellidos.DividerWidth = 1;
             this.Apellidos.HeaderText = "Total Llamadas";
             this.Apellidos.Name = "Apellidos";
             this.Apellidos.ReadOnly = true;
@@ -217,6 +219,7 @@
             // 
             this.Rut.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.Rut.DataPropertyName = "Rut";
+            this.Rut.DividerWidth = 1;
             this.Rut.HeaderText = "Faltas";
             this.Rut.Name = "Rut";
             this.Rut.ReadOnly = true;
@@ -225,6 +228,7 @@
             // TIB
             // 
             this.TIB.DataPropertyName = "TIB";
+            this.TIB.DividerWidth = 1;
             this.TIB.HeaderText = "Suspensiones";
             this.TIB.Name = "TIB";
             this.TIB.ReadOnly = true;
@@ -233,6 +237,7 @@
             // Compania
             // 
             this.Compania.DataPropertyName = "Compañia";
+            this.Compania.DividerWidth = 1;
             this.Compania.HeaderText = "Licensias";
             this.Compania.Name = "Compania";
             this.Compania.ReadOnly = true;
@@ -241,6 +246,7 @@
             // Especialidad
             // 
             this.Especialidad.DataPropertyName = "Especialidad";
+            this.Especialidad.DividerWidth = 1;
             this.Especialidad.HeaderText = "Asistencia";
             this.Especialidad.Name = "Especialidad";
             this.Especialidad.ReadOnly = true;
@@ -249,6 +255,7 @@
             // isAdmin
             // 
             this.isAdmin.DataPropertyName = "isAdmin";
+            this.isAdmin.DividerWidth = 1;
             this.isAdmin.HeaderText = "Llamadas Comandancia";
             this.isAdmin.Name = "isAdmin";
             this.isAdmin.ReadOnly = true;
@@ -257,6 +264,7 @@
             // Profesion
             // 
             this.Profesion.DataPropertyName = "Profesion";
+            this.Profesion.DividerWidth = 1;
             this.Profesion.HeaderText = "Guardias Nocturnas";
             this.Profesion.Name = "Profesion";
             this.Profesion.ReadOnly = true;
@@ -265,6 +273,7 @@
             // EstadoCivil
             // 
             this.EstadoCivil.DataPropertyName = "EstadoCivil";
+            this.EstadoCivil.DividerWidth = 1;
             this.EstadoCivil.HeaderText = "Compañias Canje";
             this.EstadoCivil.Name = "EstadoCivil";
             this.EstadoCivil.ReadOnly = true;
@@ -273,6 +282,7 @@
             // Email
             // 
             this.Email.DataPropertyName = "Email";
+            this.Email.DividerWidth = 1;
             this.Email.HeaderText = "Otras Compañias";
             this.Email.Name = "Email";
             this.Email.ReadOnly = true;
@@ -281,6 +291,7 @@
             // Celular
             // 
             this.Celular.DataPropertyName = "Celular";
+            this.Celular.DividerWidth = 1;
             this.Celular.HeaderText = "Otros Cuerpos";
             this.Celular.Name = "Celular";
             this.Celular.ReadOnly = true;
@@ -289,7 +300,7 @@
             // TelefonoLaboral
             // 
             this.TelefonoLaboral.DataPropertyName = "TelefonoLaboral";
-            this.TelefonoLaboral.FillWeight = 150F;
+            this.TelefonoLaboral.DividerWidth = 1;
             this.TelefonoLaboral.HeaderText = "Total";
             this.TelefonoLaboral.Name = "TelefonoLaboral";
             this.TelefonoLaboral.ReadOnly = true;

@@ -45,25 +45,25 @@
             this.btn_buscar = new System.Windows.Forms.Button();
             this.btn_perfil = new System.Windows.Forms.Button();
             this.btn_cancelar = new System.Windows.Forms.Button();
-            this.Nombres = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Apellidos = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Rut = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TIB = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Compania = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Especialidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.isAdmin = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Profesion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.EstadoCivil = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Celular = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TelefonoLaboral = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TelefonoParticular = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DireccionLaboral = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DireccionParticular = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.GrupoSanguineo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FechaNacimiento = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FechaInscripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Password = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FechaInscripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FechaNacimiento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GrupoSanguineo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DireccionParticular = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DireccionLaboral = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TelefonoParticular = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TelefonoLaboral = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Celular = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EstadoCivil = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Profesion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.isAdmin = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Especialidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Compania = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TIB = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Rut = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Apellidos = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nombres = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridResult)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -246,6 +246,7 @@
             // 
             // btn_cancelar
             // 
+            this.btn_cancelar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btn_cancelar.Location = new System.Drawing.Point(608, 426);
             this.btn_cancelar.Name = "btn_cancelar";
             this.btn_cancelar.Size = new System.Drawing.Size(75, 23);
@@ -254,135 +255,13 @@
             this.btn_cancelar.UseVisualStyleBackColor = true;
             this.btn_cancelar.Click += new System.EventHandler(this.btn_cancelar_Click);
             // 
-            // Nombres
+            // Password
             // 
-            this.Nombres.DataPropertyName = "Nombres";
-            this.Nombres.HeaderText = "Nombres";
-            this.Nombres.Name = "Nombres";
-            this.Nombres.ReadOnly = true;
-            // 
-            // Apellidos
-            // 
-            this.Apellidos.DataPropertyName = "Apellidos";
-            this.Apellidos.HeaderText = "Apellidos";
-            this.Apellidos.Name = "Apellidos";
-            this.Apellidos.ReadOnly = true;
-            // 
-            // Rut
-            // 
-            this.Rut.DataPropertyName = "Rut";
-            this.Rut.HeaderText = "Rut";
-            this.Rut.Name = "Rut";
-            this.Rut.ReadOnly = true;
-            // 
-            // TIB
-            // 
-            this.TIB.DataPropertyName = "TIB";
-            this.TIB.HeaderText = "TIB";
-            this.TIB.Name = "TIB";
-            this.TIB.ReadOnly = true;
-            // 
-            // Compania
-            // 
-            this.Compania.DataPropertyName = "Compañia";
-            this.Compania.HeaderText = "Compañia";
-            this.Compania.Name = "Compania";
-            this.Compania.ReadOnly = true;
-            // 
-            // Especialidad
-            // 
-            this.Especialidad.DataPropertyName = "Especialidad";
-            this.Especialidad.HeaderText = "Especialidad";
-            this.Especialidad.Name = "Especialidad";
-            this.Especialidad.ReadOnly = true;
-            // 
-            // isAdmin
-            // 
-            this.isAdmin.DataPropertyName = "isAdmin";
-            this.isAdmin.HeaderText = "isAdmin";
-            this.isAdmin.Name = "isAdmin";
-            this.isAdmin.ReadOnly = true;
-            this.isAdmin.Visible = false;
-            // 
-            // Profesion
-            // 
-            this.Profesion.DataPropertyName = "Profesion";
-            this.Profesion.HeaderText = "Profesion";
-            this.Profesion.Name = "Profesion";
-            this.Profesion.ReadOnly = true;
-            this.Profesion.Visible = false;
-            // 
-            // EstadoCivil
-            // 
-            this.EstadoCivil.DataPropertyName = "EstadoCivil";
-            this.EstadoCivil.HeaderText = "EstadoCivil";
-            this.EstadoCivil.Name = "EstadoCivil";
-            this.EstadoCivil.ReadOnly = true;
-            this.EstadoCivil.Visible = false;
-            // 
-            // Email
-            // 
-            this.Email.DataPropertyName = "Email";
-            this.Email.HeaderText = "Email";
-            this.Email.Name = "Email";
-            this.Email.ReadOnly = true;
-            this.Email.Visible = false;
-            // 
-            // Celular
-            // 
-            this.Celular.DataPropertyName = "Celular";
-            this.Celular.HeaderText = "Celular";
-            this.Celular.Name = "Celular";
-            this.Celular.ReadOnly = true;
-            this.Celular.Visible = false;
-            // 
-            // TelefonoLaboral
-            // 
-            this.TelefonoLaboral.DataPropertyName = "TelefonoLaboral";
-            this.TelefonoLaboral.HeaderText = "TelefonoLaboral";
-            this.TelefonoLaboral.Name = "TelefonoLaboral";
-            this.TelefonoLaboral.ReadOnly = true;
-            this.TelefonoLaboral.Visible = false;
-            // 
-            // TelefonoParticular
-            // 
-            this.TelefonoParticular.DataPropertyName = "TelefonoParticular";
-            this.TelefonoParticular.HeaderText = "TelefonoParticular";
-            this.TelefonoParticular.Name = "TelefonoParticular";
-            this.TelefonoParticular.ReadOnly = true;
-            this.TelefonoParticular.Visible = false;
-            // 
-            // DireccionLaboral
-            // 
-            this.DireccionLaboral.DataPropertyName = "DireccionLaboral";
-            this.DireccionLaboral.HeaderText = "DireccionLaboral";
-            this.DireccionLaboral.Name = "DireccionLaboral";
-            this.DireccionLaboral.ReadOnly = true;
-            this.DireccionLaboral.Visible = false;
-            // 
-            // DireccionParticular
-            // 
-            this.DireccionParticular.DataPropertyName = "DireccionParticular";
-            this.DireccionParticular.HeaderText = "DireccionParticular";
-            this.DireccionParticular.Name = "DireccionParticular";
-            this.DireccionParticular.ReadOnly = true;
-            this.DireccionParticular.Visible = false;
-            // 
-            // GrupoSanguineo
-            // 
-            this.GrupoSanguineo.DataPropertyName = "GrupoSanguineo";
-            this.GrupoSanguineo.HeaderText = "GrupoSanguineo";
-            this.GrupoSanguineo.Name = "GrupoSanguineo";
-            this.GrupoSanguineo.ReadOnly = true;
-            this.GrupoSanguineo.Visible = false;
-            // 
-            // FechaNacimiento
-            // 
-            this.FechaNacimiento.DataPropertyName = "FechaNacimiento";
-            this.FechaNacimiento.HeaderText = "FechaNacimiento";
-            this.FechaNacimiento.Name = "FechaNacimiento";
-            this.FechaNacimiento.ReadOnly = true;
-            this.FechaNacimiento.Visible = false;
+            this.Password.DataPropertyName = "Password";
+            this.Password.HeaderText = "Password";
+            this.Password.Name = "Password";
+            this.Password.ReadOnly = true;
+            this.Password.Visible = false;
             // 
             // FechaInscripcion
             // 
@@ -392,13 +271,135 @@
             this.FechaInscripcion.ReadOnly = true;
             this.FechaInscripcion.Visible = false;
             // 
-            // Password
+            // FechaNacimiento
             // 
-            this.Password.DataPropertyName = "Password";
-            this.Password.HeaderText = "Password";
-            this.Password.Name = "Password";
-            this.Password.ReadOnly = true;
-            this.Password.Visible = false;
+            this.FechaNacimiento.DataPropertyName = "FechaNacimiento";
+            this.FechaNacimiento.HeaderText = "FechaNacimiento";
+            this.FechaNacimiento.Name = "FechaNacimiento";
+            this.FechaNacimiento.ReadOnly = true;
+            this.FechaNacimiento.Visible = false;
+            // 
+            // GrupoSanguineo
+            // 
+            this.GrupoSanguineo.DataPropertyName = "GrupoSanguineo";
+            this.GrupoSanguineo.HeaderText = "GrupoSanguineo";
+            this.GrupoSanguineo.Name = "GrupoSanguineo";
+            this.GrupoSanguineo.ReadOnly = true;
+            this.GrupoSanguineo.Visible = false;
+            // 
+            // DireccionParticular
+            // 
+            this.DireccionParticular.DataPropertyName = "DireccionParticular";
+            this.DireccionParticular.HeaderText = "DireccionParticular";
+            this.DireccionParticular.Name = "DireccionParticular";
+            this.DireccionParticular.ReadOnly = true;
+            this.DireccionParticular.Visible = false;
+            // 
+            // DireccionLaboral
+            // 
+            this.DireccionLaboral.DataPropertyName = "DireccionLaboral";
+            this.DireccionLaboral.HeaderText = "DireccionLaboral";
+            this.DireccionLaboral.Name = "DireccionLaboral";
+            this.DireccionLaboral.ReadOnly = true;
+            this.DireccionLaboral.Visible = false;
+            // 
+            // TelefonoParticular
+            // 
+            this.TelefonoParticular.DataPropertyName = "TelefonoParticular";
+            this.TelefonoParticular.HeaderText = "TelefonoParticular";
+            this.TelefonoParticular.Name = "TelefonoParticular";
+            this.TelefonoParticular.ReadOnly = true;
+            this.TelefonoParticular.Visible = false;
+            // 
+            // TelefonoLaboral
+            // 
+            this.TelefonoLaboral.DataPropertyName = "TelefonoLaboral";
+            this.TelefonoLaboral.HeaderText = "TelefonoLaboral";
+            this.TelefonoLaboral.Name = "TelefonoLaboral";
+            this.TelefonoLaboral.ReadOnly = true;
+            this.TelefonoLaboral.Visible = false;
+            // 
+            // Celular
+            // 
+            this.Celular.DataPropertyName = "Celular";
+            this.Celular.HeaderText = "Celular";
+            this.Celular.Name = "Celular";
+            this.Celular.ReadOnly = true;
+            this.Celular.Visible = false;
+            // 
+            // Email
+            // 
+            this.Email.DataPropertyName = "Email";
+            this.Email.HeaderText = "Email";
+            this.Email.Name = "Email";
+            this.Email.ReadOnly = true;
+            this.Email.Visible = false;
+            // 
+            // EstadoCivil
+            // 
+            this.EstadoCivil.DataPropertyName = "EstadoCivil";
+            this.EstadoCivil.HeaderText = "EstadoCivil";
+            this.EstadoCivil.Name = "EstadoCivil";
+            this.EstadoCivil.ReadOnly = true;
+            this.EstadoCivil.Visible = false;
+            // 
+            // Profesion
+            // 
+            this.Profesion.DataPropertyName = "Profesion";
+            this.Profesion.HeaderText = "Profesion";
+            this.Profesion.Name = "Profesion";
+            this.Profesion.ReadOnly = true;
+            this.Profesion.Visible = false;
+            // 
+            // isAdmin
+            // 
+            this.isAdmin.DataPropertyName = "isAdmin";
+            this.isAdmin.HeaderText = "isAdmin";
+            this.isAdmin.Name = "isAdmin";
+            this.isAdmin.ReadOnly = true;
+            this.isAdmin.Visible = false;
+            // 
+            // Especialidad
+            // 
+            this.Especialidad.DataPropertyName = "Especialidad";
+            this.Especialidad.HeaderText = "Especialidad";
+            this.Especialidad.Name = "Especialidad";
+            this.Especialidad.ReadOnly = true;
+            // 
+            // Compania
+            // 
+            this.Compania.DataPropertyName = "Compañia";
+            this.Compania.HeaderText = "Compañia";
+            this.Compania.Name = "Compania";
+            this.Compania.ReadOnly = true;
+            // 
+            // TIB
+            // 
+            this.TIB.DataPropertyName = "TIB";
+            this.TIB.HeaderText = "TIB";
+            this.TIB.Name = "TIB";
+            this.TIB.ReadOnly = true;
+            // 
+            // Rut
+            // 
+            this.Rut.DataPropertyName = "Rut";
+            this.Rut.HeaderText = "Rut";
+            this.Rut.Name = "Rut";
+            this.Rut.ReadOnly = true;
+            // 
+            // Apellidos
+            // 
+            this.Apellidos.DataPropertyName = "Apellidos";
+            this.Apellidos.HeaderText = "Apellidos";
+            this.Apellidos.Name = "Apellidos";
+            this.Apellidos.ReadOnly = true;
+            // 
+            // Nombres
+            // 
+            this.Nombres.DataPropertyName = "Nombres";
+            this.Nombres.HeaderText = "Nombres";
+            this.Nombres.Name = "Nombres";
+            this.Nombres.ReadOnly = true;
             // 
             // BuscarBombero
             // 
@@ -418,6 +419,7 @@
             this.Name = "BuscarBombero";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Búsqueda de Bombero";
+            this.Load += new System.EventHandler(this.BuscarBombero_Load);
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridResult)).EndInit();
             this.groupBox2.ResumeLayout(false);

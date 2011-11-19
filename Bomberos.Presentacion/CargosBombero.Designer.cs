@@ -159,6 +159,7 @@
             // Nombres
             // 
             this.Nombres.DataPropertyName = "Nombres";
+            this.Nombres.DividerWidth = 1;
             this.Nombres.HeaderText = "Cargo";
             this.Nombres.Name = "Nombres";
             this.Nombres.ReadOnly = true;
@@ -167,6 +168,7 @@
             // Apellidos
             // 
             this.Apellidos.DataPropertyName = "Apellidos";
+            this.Apellidos.DividerWidth = 1;
             this.Apellidos.HeaderText = "FechaDesde";
             this.Apellidos.Name = "Apellidos";
             this.Apellidos.ReadOnly = true;
@@ -191,6 +193,7 @@
             this.Controls.Add(this.groupBox2);
             this.Name = "CargosBombero";
             this.Text = "CargosBombero";
+            this.Load += new System.EventHandler(this.CargosBombero_Load);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox1.ResumeLayout(false);

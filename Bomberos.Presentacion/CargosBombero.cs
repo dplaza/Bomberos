@@ -15,5 +15,10 @@ namespace Bomberos.Presentacion
         {
             InitializeComponent();
         }
+
+        private void CargosBombero_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
