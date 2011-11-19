@@ -10,6 +10,7 @@ using Bomberos.Negocio.Mgr;
 using Bomberos.Comun;
 using Bomberos.ComunFuncional;
 using Bomberos.Presentacion.Admin;
+using Bomberos.Presentacion.Usuario;
 
 namespace Bomberos.Presentacion
 {
@@ -73,7 +74,7 @@ namespace Bomberos.Presentacion
                 }
                 else
                 {
-                    var form = new FichaBombero();
+                    var form = new VerFichaBombero();
                     form.MdiParent = this.MdiParent;
                     form.Show();
                 }
