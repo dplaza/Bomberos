@@ -229,6 +229,8 @@ namespace Bomberos.Datos
                     Bombero.Password = msqlReader["password"].ToString();
                     Bombero.Rut = msqlReader["rut"].ToString();
                     Bombero.isAdmin = bool.Parse(msqlReader["is_admin"].ToString());
+                    Bombero.Cargo = msqlReader["cargo"].ToString();
+                    Bombero.Estado = msqlReader["estado"].ToString();
 
                     ListaBomberos.Add(Bombero);
                 }

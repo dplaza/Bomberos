@@ -115,7 +115,6 @@ namespace Bomberos.Presentacion.Admin
 
             if (_Bombero.EditarBombero(Bombero))
             {
-                ContextoDTO.Instancia().BomberoActual = Bombero;
                 MessageBox.Show("Bombero actualizado");
                 this.Close();
             }

@@ -67,16 +67,16 @@
             this.txt_apellidos = new System.Windows.Forms.TextBox();
             this.txt_rut = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label21 = new System.Windows.Forms.Label();
+            this.select_estado = new System.Windows.Forms.ComboBox();
+            this.label20 = new System.Windows.Forms.Label();
+            this.select_cargo = new System.Windows.Forms.ComboBox();
             this.box_picture = new System.Windows.Forms.PictureBox();
             this.labelnombre = new System.Windows.Forms.Label();
             this.labelRut = new System.Windows.Forms.Label();
             this.labelTIB = new System.Windows.Forms.Label();
             this.labelCargo = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
-            this.select_cargo = new System.Windows.Forms.ComboBox();
-            this.select_estado = new System.Windows.Forms.ComboBox();
-            this.label21 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.box_picture)).BeginInit();
@@ -95,7 +95,6 @@
             // 
             // select_compania
             // 
-            this.select_compania.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.select_compania.Enabled = false;
             this.select_compania.FormattingEnabled = true;
             this.select_compania.Items.AddRange(new object[] {
@@ -108,7 +107,6 @@
             // 
             // select_tipocuenta
             // 
-            this.select_tipocuenta.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.select_tipocuenta.Enabled = false;
             this.select_tipocuenta.FormattingEnabled = true;
             this.select_tipocuenta.Items.AddRange(new object[] {
@@ -173,7 +171,7 @@
             this.txt_dir_lab.Enabled = false;
             this.txt_dir_lab.Location = new System.Drawing.Point(152, 324);
             this.txt_dir_lab.Name = "txt_dir_lab";
-            this.txt_dir_lab.Size = new System.Drawing.Size(178, 20);
+            this.txt_dir_lab.Size = new System.Drawing.Size(246, 20);
             this.txt_dir_lab.TabIndex = 142;
             // 
             // txt_dir_part
@@ -181,12 +179,11 @@
             this.txt_dir_part.Enabled = false;
             this.txt_dir_part.Location = new System.Drawing.Point(152, 298);
             this.txt_dir_part.Name = "txt_dir_part";
-            this.txt_dir_part.Size = new System.Drawing.Size(178, 20);
+            this.txt_dir_part.Size = new System.Drawing.Size(246, 20);
             this.txt_dir_part.TabIndex = 141;
             // 
             // select_estadocivil
             // 
-            this.select_estadocivil.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.select_estadocivil.Enabled = false;
             this.select_estadocivil.FormattingEnabled = true;
             this.select_estadocivil.Items.AddRange(new object[] {
@@ -213,7 +210,7 @@
             this.txt_profesion.Enabled = false;
             this.txt_profesion.Location = new System.Drawing.Point(152, 218);
             this.txt_profesion.Name = "txt_profesion";
-            this.txt_profesion.Size = new System.Drawing.Size(139, 20);
+            this.txt_profesion.Size = new System.Drawing.Size(246, 20);
             this.txt_profesion.TabIndex = 138;
             // 
             // txt_gruposang
@@ -448,6 +445,74 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Datos Bombero";
             // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(26, 104);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(35, 13);
+            this.label21.TabIndex = 162;
+            this.label21.Text = "Cargo";
+            // 
+            // select_estado
+            // 
+            this.select_estado.Enabled = false;
+            this.select_estado.FormattingEnabled = true;
+            this.select_estado.Items.AddRange(new object[] {
+            "Activo",
+            "Renunciado",
+            "Separado",
+            "Fallecido"});
+            this.select_estado.Location = new System.Drawing.Point(140, 129);
+            this.select_estado.Name = "select_estado";
+            this.select_estado.Size = new System.Drawing.Size(121, 21);
+            this.select_estado.TabIndex = 161;
+            this.select_estado.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(26, 134);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(40, 13);
+            this.label20.TabIndex = 160;
+            this.label20.Text = "Estado";
+            // 
+            // select_cargo
+            // 
+            this.select_cargo.Enabled = false;
+            this.select_cargo.FormattingEnabled = true;
+            this.select_cargo.Items.AddRange(new object[] {
+            "Superintendente",
+            "Vicesuperintendente",
+            "Tesorero General",
+            "Secretario General",
+            "Director Honorario",
+            "Comandante",
+            "2° Comandante",
+            "Inspector Salud",
+            "Inspector Capacitación",
+            "Inspector Investigación Incendio",
+            "Inspector Material Mayor",
+            "Ayudantes de comandancia",
+            "Director",
+            "Secretario",
+            "Tesorero",
+            "Capitán",
+            "Teniente1°",
+            "Teniente2°",
+            "Teniente3°",
+            "Ayudante",
+            "Maquinista 1°",
+            "Maquinistas",
+            "Paramédicos",
+            "Bombero",
+            "Aspirante"});
+            this.select_cargo.Location = new System.Drawing.Point(140, 101);
+            this.select_cargo.Name = "select_cargo";
+            this.select_cargo.Size = new System.Drawing.Size(160, 21);
+            this.select_cargo.TabIndex = 0;
+            // 
             // box_picture
             // 
             this.box_picture.Location = new System.Drawing.Point(453, 69);
@@ -502,76 +567,6 @@
             this.label1.TabIndex = 159;
             this.label1.Text = "FICHA PERSONAL";
             // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(26, 134);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(40, 13);
-            this.label20.TabIndex = 160;
-            this.label20.Text = "Estado";
-            // 
-            // select_cargo
-            // 
-            this.select_cargo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.select_cargo.Enabled = false;
-            this.select_cargo.FormattingEnabled = true;
-            this.select_cargo.Items.AddRange(new object[] {
-            "Superintendente",
-            "Vicesuperintendente",
-            "Tesorero General",
-            "Secretario General",
-            "Director Honorario",
-            "Comandante",
-            "2° Comandante",
-            "Inspector Salud",
-            "Inspector Capacitación",
-            "Inspector Investigación Incendio",
-            "Inspector Material Mayor",
-            "Ayudantes de comandancia",
-            "Director",
-            "Secretario",
-            "Tesorero",
-            "Capitán",
-            "Teniente1°",
-            "Teniente2°",
-            "Teniente3°",
-            "Ayudante",
-            "Maquinista 1°",
-            "Maquinistas",
-            "Paramédicos",
-            "Bombero",
-            "Aspirante"});
-            this.select_cargo.Location = new System.Drawing.Point(140, 101);
-            this.select_cargo.Name = "select_cargo";
-            this.select_cargo.Size = new System.Drawing.Size(160, 21);
-            this.select_cargo.TabIndex = 0;
-            // 
-            // select_estado
-            // 
-            this.select_estado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.select_estado.Enabled = false;
-            this.select_estado.FormattingEnabled = true;
-            this.select_estado.Items.AddRange(new object[] {
-            "Activo",
-            "Renunciado",
-            "Separado",
-            "Fallecido"});
-            this.select_estado.Location = new System.Drawing.Point(140, 129);
-            this.select_estado.Name = "select_estado";
-            this.select_estado.Size = new System.Drawing.Size(121, 21);
-            this.select_estado.TabIndex = 161;
-            this.select_estado.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
-            // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(26, 104);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(35, 13);
-            this.label21.TabIndex = 162;
-            this.label21.Text = "Cargo";
-            // 
             // VerFichaBombero
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -616,6 +611,8 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox2);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
             this.Name = "VerFichaBombero";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.VerFichaBombero_Load);

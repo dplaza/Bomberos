@@ -44,7 +44,7 @@ namespace Bomberos.Presentacion
         private void btn_buscar_Click(object sender, EventArgs e)
         {
             IBomberoMgr _Bombero = new BomberoMgr();
-            dataGridResult.DataSource = _Bombero.ListarBomberos().FindAll(p => p.Nombres.Contains(txt_nombres.Text) && p.Apellidos.Contains(txt_apellidos.Text) && p.Rut.Contains(txt_rut.Text) && p.TIB.Contains(txt_tib.Text));
+            dataGridResult.DataSource = _Bombero.ListarBomberos().FindAll(p => p.Nombres.Contains(txt_nombres.Text) && p.Apellidos.Contains(txt_apellidos.Text) && p.Rut.Contains(txt_rut.Text) && p.Cargo.Contains(select_cargo.Text) && p.TIB.Contains(txt_tib.Text));
             dataGridResult.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridResult.MultiSelect = false;
             

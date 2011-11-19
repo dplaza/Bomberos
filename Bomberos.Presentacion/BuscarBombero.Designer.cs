@@ -34,7 +34,6 @@
             this.txt_rut = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.txt_especialidad = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.txt_apellidos = new System.Windows.Forms.TextBox();
             this.txt_tib = new System.Windows.Forms.TextBox();
@@ -45,25 +44,27 @@
             this.btn_buscar = new System.Windows.Forms.Button();
             this.btn_perfil = new System.Windows.Forms.Button();
             this.btn_cancelar = new System.Windows.Forms.Button();
-            this.Password = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FechaInscripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FechaNacimiento = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.GrupoSanguineo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DireccionParticular = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DireccionLaboral = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TelefonoParticular = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TelefonoLaboral = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Celular = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.EstadoCivil = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Profesion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.isAdmin = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Especialidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Compania = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TIB = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Rut = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Apellidos = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.select_cargo = new System.Windows.Forms.ComboBox();
             this.Nombres = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Apellidos = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Rut = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TIB = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Compania = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cargo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.isAdmin = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Profesion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EstadoCivil = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Celular = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TelefonoLaboral = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TelefonoParticular = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DireccionLaboral = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DireccionParticular = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GrupoSanguineo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FechaNacimiento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FechaInscripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Password = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridResult)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -92,14 +93,14 @@
             // 
             this.txt_nombres.Location = new System.Drawing.Point(81, 19);
             this.txt_nombres.Name = "txt_nombres";
-            this.txt_nombres.Size = new System.Drawing.Size(152, 20);
+            this.txt_nombres.Size = new System.Drawing.Size(160, 20);
             this.txt_nombres.TabIndex = 2;
             // 
             // txt_rut
             // 
             this.txt_rut.Location = new System.Drawing.Point(81, 71);
             this.txt_rut.Name = "txt_rut";
-            this.txt_rut.Size = new System.Drawing.Size(152, 20);
+            this.txt_rut.Size = new System.Drawing.Size(160, 20);
             this.txt_rut.TabIndex = 3;
             this.txt_rut.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
@@ -118,21 +119,14 @@
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(8, 48);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(67, 13);
+            this.label4.Size = new System.Drawing.Size(35, 13);
             this.label4.TabIndex = 5;
-            this.label4.Text = "Especialidad";
-            // 
-            // txt_especialidad
-            // 
-            this.txt_especialidad.Location = new System.Drawing.Point(81, 45);
-            this.txt_especialidad.Name = "txt_especialidad";
-            this.txt_especialidad.Size = new System.Drawing.Size(152, 20);
-            this.txt_especialidad.TabIndex = 6;
+            this.label4.Text = "Cargo";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(248, 22);
+            this.label5.Location = new System.Drawing.Point(275, 22);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(49, 13);
             this.label5.TabIndex = 7;
@@ -140,14 +134,14 @@
             // 
             // txt_apellidos
             // 
-            this.txt_apellidos.Location = new System.Drawing.Point(335, 18);
+            this.txt_apellidos.Location = new System.Drawing.Point(362, 18);
             this.txt_apellidos.Name = "txt_apellidos";
             this.txt_apellidos.Size = new System.Drawing.Size(138, 20);
             this.txt_apellidos.TabIndex = 8;
             // 
             // txt_tib
             // 
-            this.txt_tib.Location = new System.Drawing.Point(335, 49);
+            this.txt_tib.Location = new System.Drawing.Point(362, 49);
             this.txt_tib.Name = "txt_tib";
             this.txt_tib.Size = new System.Drawing.Size(138, 20);
             this.txt_tib.TabIndex = 10;
@@ -155,7 +149,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(248, 52);
+            this.label7.Location = new System.Drawing.Point(275, 52);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(24, 13);
             this.label7.TabIndex = 11;
@@ -182,7 +176,8 @@
             this.Rut,
             this.TIB,
             this.Compania,
-            this.Especialidad,
+            this.Cargo,
+            this.Estado,
             this.isAdmin,
             this.Profesion,
             this.EstadoCivil,
@@ -206,6 +201,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.select_cargo);
             this.groupBox2.Controls.Add(this.btn_buscar);
             this.groupBox2.Controls.Add(this.txt_nombres);
             this.groupBox2.Controls.Add(this.label7);
@@ -216,7 +212,6 @@
             this.groupBox2.Controls.Add(this.txt_apellidos);
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Controls.Add(this.label5);
-            this.groupBox2.Controls.Add(this.txt_especialidad);
             this.groupBox2.Location = new System.Drawing.Point(13, 33);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(675, 108);
@@ -255,101 +250,90 @@
             this.btn_cancelar.UseVisualStyleBackColor = true;
             this.btn_cancelar.Click += new System.EventHandler(this.btn_cancelar_Click);
             // 
-            // Password
+            // select_cargo
             // 
-            this.Password.DataPropertyName = "Password";
-            this.Password.HeaderText = "Password";
-            this.Password.Name = "Password";
-            this.Password.ReadOnly = true;
-            this.Password.Visible = false;
+            this.select_cargo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.select_cargo.FormattingEnabled = true;
+            this.select_cargo.Items.AddRange(new object[] {
+            "Superintendente",
+            "Vicesuperintendente",
+            "Tesorero General",
+            "Secretario General",
+            "Director Honorario",
+            "Comandante",
+            "2° Comandante",
+            "Inspector Salud",
+            "Inspector Capacitación",
+            "Inspector Investigación Incendio",
+            "Inspector Material Mayor",
+            "Ayudantes de comandancia",
+            "Director",
+            "Secretario",
+            "Tesorero",
+            "Capitán",
+            "Teniente1°",
+            "Teniente2°",
+            "Teniente3°",
+            "Ayudante",
+            "Maquinista 1°",
+            "Maquinistas",
+            "Paramédicos",
+            "Bombero",
+            "Aspirante"});
+            this.select_cargo.Location = new System.Drawing.Point(81, 45);
+            this.select_cargo.Name = "select_cargo";
+            this.select_cargo.Size = new System.Drawing.Size(160, 21);
+            this.select_cargo.TabIndex = 12;
             // 
-            // FechaInscripcion
+            // Nombres
             // 
-            this.FechaInscripcion.DataPropertyName = "FechaInscripcion";
-            this.FechaInscripcion.HeaderText = "FechaInscripcion";
-            this.FechaInscripcion.Name = "FechaInscripcion";
-            this.FechaInscripcion.ReadOnly = true;
-            this.FechaInscripcion.Visible = false;
+            this.Nombres.DataPropertyName = "Nombres";
+            this.Nombres.HeaderText = "Nombres";
+            this.Nombres.Name = "Nombres";
+            this.Nombres.ReadOnly = true;
             // 
-            // FechaNacimiento
+            // Apellidos
             // 
-            this.FechaNacimiento.DataPropertyName = "FechaNacimiento";
-            this.FechaNacimiento.HeaderText = "FechaNacimiento";
-            this.FechaNacimiento.Name = "FechaNacimiento";
-            this.FechaNacimiento.ReadOnly = true;
-            this.FechaNacimiento.Visible = false;
+            this.Apellidos.DataPropertyName = "Apellidos";
+            this.Apellidos.HeaderText = "Apellidos";
+            this.Apellidos.Name = "Apellidos";
+            this.Apellidos.ReadOnly = true;
             // 
-            // GrupoSanguineo
+            // Rut
             // 
-            this.GrupoSanguineo.DataPropertyName = "GrupoSanguineo";
-            this.GrupoSanguineo.HeaderText = "GrupoSanguineo";
-            this.GrupoSanguineo.Name = "GrupoSanguineo";
-            this.GrupoSanguineo.ReadOnly = true;
-            this.GrupoSanguineo.Visible = false;
+            this.Rut.DataPropertyName = "Rut";
+            this.Rut.HeaderText = "Rut";
+            this.Rut.Name = "Rut";
+            this.Rut.ReadOnly = true;
             // 
-            // DireccionParticular
+            // TIB
             // 
-            this.DireccionParticular.DataPropertyName = "DireccionParticular";
-            this.DireccionParticular.HeaderText = "DireccionParticular";
-            this.DireccionParticular.Name = "DireccionParticular";
-            this.DireccionParticular.ReadOnly = true;
-            this.DireccionParticular.Visible = false;
+            this.TIB.DataPropertyName = "TIB";
+            this.TIB.HeaderText = "TIB";
+            this.TIB.Name = "TIB";
+            this.TIB.ReadOnly = true;
             // 
-            // DireccionLaboral
+            // Compania
             // 
-            this.DireccionLaboral.DataPropertyName = "DireccionLaboral";
-            this.DireccionLaboral.HeaderText = "DireccionLaboral";
-            this.DireccionLaboral.Name = "DireccionLaboral";
-            this.DireccionLaboral.ReadOnly = true;
-            this.DireccionLaboral.Visible = false;
+            this.Compania.DataPropertyName = "Compañia";
+            this.Compania.HeaderText = "Compañia";
+            this.Compania.Name = "Compania";
+            this.Compania.ReadOnly = true;
             // 
-            // TelefonoParticular
+            // Cargo
             // 
-            this.TelefonoParticular.DataPropertyName = "TelefonoParticular";
-            this.TelefonoParticular.HeaderText = "TelefonoParticular";
-            this.TelefonoParticular.Name = "TelefonoParticular";
-            this.TelefonoParticular.ReadOnly = true;
-            this.TelefonoParticular.Visible = false;
+            this.Cargo.DataPropertyName = "Cargo";
+            this.Cargo.HeaderText = "Cargo";
+            this.Cargo.Name = "Cargo";
+            this.Cargo.ReadOnly = true;
             // 
-            // TelefonoLaboral
+            // Estado
             // 
-            this.TelefonoLaboral.DataPropertyName = "TelefonoLaboral";
-            this.TelefonoLaboral.HeaderText = "TelefonoLaboral";
-            this.TelefonoLaboral.Name = "TelefonoLaboral";
-            this.TelefonoLaboral.ReadOnly = true;
-            this.TelefonoLaboral.Visible = false;
-            // 
-            // Celular
-            // 
-            this.Celular.DataPropertyName = "Celular";
-            this.Celular.HeaderText = "Celular";
-            this.Celular.Name = "Celular";
-            this.Celular.ReadOnly = true;
-            this.Celular.Visible = false;
-            // 
-            // Email
-            // 
-            this.Email.DataPropertyName = "Email";
-            this.Email.HeaderText = "Email";
-            this.Email.Name = "Email";
-            this.Email.ReadOnly = true;
-            this.Email.Visible = false;
-            // 
-            // EstadoCivil
-            // 
-            this.EstadoCivil.DataPropertyName = "EstadoCivil";
-            this.EstadoCivil.HeaderText = "EstadoCivil";
-            this.EstadoCivil.Name = "EstadoCivil";
-            this.EstadoCivil.ReadOnly = true;
-            this.EstadoCivil.Visible = false;
-            // 
-            // Profesion
-            // 
-            this.Profesion.DataPropertyName = "Profesion";
-            this.Profesion.HeaderText = "Profesion";
-            this.Profesion.Name = "Profesion";
-            this.Profesion.ReadOnly = true;
-            this.Profesion.Visible = false;
+            this.Estado.DataPropertyName = "Estado";
+            this.Estado.HeaderText = "Estado";
+            this.Estado.Name = "Estado";
+            this.Estado.ReadOnly = true;
+            this.Estado.Visible = false;
             // 
             // isAdmin
             // 
@@ -359,47 +343,101 @@
             this.isAdmin.ReadOnly = true;
             this.isAdmin.Visible = false;
             // 
-            // Especialidad
+            // Profesion
             // 
-            this.Especialidad.DataPropertyName = "Especialidad";
-            this.Especialidad.HeaderText = "Especialidad";
-            this.Especialidad.Name = "Especialidad";
-            this.Especialidad.ReadOnly = true;
+            this.Profesion.DataPropertyName = "Profesion";
+            this.Profesion.HeaderText = "Profesion";
+            this.Profesion.Name = "Profesion";
+            this.Profesion.ReadOnly = true;
+            this.Profesion.Visible = false;
             // 
-            // Compania
+            // EstadoCivil
             // 
-            this.Compania.DataPropertyName = "Compañia";
-            this.Compania.HeaderText = "Compañia";
-            this.Compania.Name = "Compania";
-            this.Compania.ReadOnly = true;
+            this.EstadoCivil.DataPropertyName = "EstadoCivil";
+            this.EstadoCivil.HeaderText = "EstadoCivil";
+            this.EstadoCivil.Name = "EstadoCivil";
+            this.EstadoCivil.ReadOnly = true;
+            this.EstadoCivil.Visible = false;
             // 
-            // TIB
+            // Email
             // 
-            this.TIB.DataPropertyName = "TIB";
-            this.TIB.HeaderText = "TIB";
-            this.TIB.Name = "TIB";
-            this.TIB.ReadOnly = true;
+            this.Email.DataPropertyName = "Email";
+            this.Email.HeaderText = "Email";
+            this.Email.Name = "Email";
+            this.Email.ReadOnly = true;
+            this.Email.Visible = false;
             // 
-            // Rut
+            // Celular
             // 
-            this.Rut.DataPropertyName = "Rut";
-            this.Rut.HeaderText = "Rut";
-            this.Rut.Name = "Rut";
-            this.Rut.ReadOnly = true;
+            this.Celular.DataPropertyName = "Celular";
+            this.Celular.HeaderText = "Celular";
+            this.Celular.Name = "Celular";
+            this.Celular.ReadOnly = true;
+            this.Celular.Visible = false;
             // 
-            // Apellidos
+            // TelefonoLaboral
             // 
-            this.Apellidos.DataPropertyName = "Apellidos";
-            this.Apellidos.HeaderText = "Apellidos";
-            this.Apellidos.Name = "Apellidos";
-            this.Apellidos.ReadOnly = true;
+            this.TelefonoLaboral.DataPropertyName = "TelefonoLaboral";
+            this.TelefonoLaboral.HeaderText = "TelefonoLaboral";
+            this.TelefonoLaboral.Name = "TelefonoLaboral";
+            this.TelefonoLaboral.ReadOnly = true;
+            this.TelefonoLaboral.Visible = false;
             // 
-            // Nombres
+            // TelefonoParticular
             // 
-            this.Nombres.DataPropertyName = "Nombres";
-            this.Nombres.HeaderText = "Nombres";
-            this.Nombres.Name = "Nombres";
-            this.Nombres.ReadOnly = true;
+            this.TelefonoParticular.DataPropertyName = "TelefonoParticular";
+            this.TelefonoParticular.HeaderText = "TelefonoParticular";
+            this.TelefonoParticular.Name = "TelefonoParticular";
+            this.TelefonoParticular.ReadOnly = true;
+            this.TelefonoParticular.Visible = false;
+            // 
+            // DireccionLaboral
+            // 
+            this.DireccionLaboral.DataPropertyName = "DireccionLaboral";
+            this.DireccionLaboral.HeaderText = "DireccionLaboral";
+            this.DireccionLaboral.Name = "DireccionLaboral";
+            this.DireccionLaboral.ReadOnly = true;
+            this.DireccionLaboral.Visible = false;
+            // 
+            // DireccionParticular
+            // 
+            this.DireccionParticular.DataPropertyName = "DireccionParticular";
+            this.DireccionParticular.HeaderText = "DireccionParticular";
+            this.DireccionParticular.Name = "DireccionParticular";
+            this.DireccionParticular.ReadOnly = true;
+            this.DireccionParticular.Visible = false;
+            // 
+            // GrupoSanguineo
+            // 
+            this.GrupoSanguineo.DataPropertyName = "GrupoSanguineo";
+            this.GrupoSanguineo.HeaderText = "GrupoSanguineo";
+            this.GrupoSanguineo.Name = "GrupoSanguineo";
+            this.GrupoSanguineo.ReadOnly = true;
+            this.GrupoSanguineo.Visible = false;
+            // 
+            // FechaNacimiento
+            // 
+            this.FechaNacimiento.DataPropertyName = "FechaNacimiento";
+            this.FechaNacimiento.HeaderText = "FechaNacimiento";
+            this.FechaNacimiento.Name = "FechaNacimiento";
+            this.FechaNacimiento.ReadOnly = true;
+            this.FechaNacimiento.Visible = false;
+            // 
+            // FechaInscripcion
+            // 
+            this.FechaInscripcion.DataPropertyName = "FechaInscripcion";
+            this.FechaInscripcion.HeaderText = "FechaInscripcion";
+            this.FechaInscripcion.Name = "FechaInscripcion";
+            this.FechaInscripcion.ReadOnly = true;
+            this.FechaInscripcion.Visible = false;
+            // 
+            // Password
+            // 
+            this.Password.DataPropertyName = "Password";
+            this.Password.HeaderText = "Password";
+            this.Password.Name = "Password";
+            this.Password.ReadOnly = true;
+            this.Password.Visible = false;
             // 
             // BuscarBombero
             // 
@@ -437,7 +475,6 @@
         private System.Windows.Forms.TextBox txt_rut;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txt_especialidad;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txt_apellidos;
         private System.Windows.Forms.TextBox txt_tib;
@@ -448,12 +485,14 @@
         private System.Windows.Forms.DataGridView dataGridResult;
         private System.Windows.Forms.Button btn_perfil;
         private System.Windows.Forms.Button btn_cancelar;
+        private System.Windows.Forms.ComboBox select_cargo;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nombres;
         private System.Windows.Forms.DataGridViewTextBoxColumn Apellidos;
         private System.Windows.Forms.DataGridViewTextBoxColumn Rut;
         private System.Windows.Forms.DataGridViewTextBoxColumn TIB;
         private System.Windows.Forms.DataGridViewTextBoxColumn Compania;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Especialidad;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Cargo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Estado;
         private System.Windows.Forms.DataGridViewTextBoxColumn isAdmin;
         private System.Windows.Forms.DataGridViewTextBoxColumn Profesion;
         private System.Windows.Forms.DataGridViewTextBoxColumn EstadoCivil;

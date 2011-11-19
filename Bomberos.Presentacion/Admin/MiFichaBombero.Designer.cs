@@ -114,7 +114,7 @@
             this.txt_dir_lab.Enabled = false;
             this.txt_dir_lab.Location = new System.Drawing.Point(154, 306);
             this.txt_dir_lab.Name = "txt_dir_lab";
-            this.txt_dir_lab.Size = new System.Drawing.Size(178, 20);
+            this.txt_dir_lab.Size = new System.Drawing.Size(246, 20);
             this.txt_dir_lab.TabIndex = 65;
             // 
             // txt_dir_part
@@ -122,12 +122,11 @@
             this.txt_dir_part.Enabled = false;
             this.txt_dir_part.Location = new System.Drawing.Point(154, 280);
             this.txt_dir_part.Name = "txt_dir_part";
-            this.txt_dir_part.Size = new System.Drawing.Size(178, 20);
+            this.txt_dir_part.Size = new System.Drawing.Size(246, 20);
             this.txt_dir_part.TabIndex = 64;
             // 
             // select_estadocivil
             // 
-            this.select_estadocivil.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.select_estadocivil.Enabled = false;
             this.select_estadocivil.FormattingEnabled = true;
             this.select_estadocivil.Items.AddRange(new object[] {
@@ -154,7 +153,7 @@
             this.txt_profesion.Enabled = false;
             this.txt_profesion.Location = new System.Drawing.Point(154, 200);
             this.txt_profesion.Name = "txt_profesion";
-            this.txt_profesion.Size = new System.Drawing.Size(139, 20);
+            this.txt_profesion.Size = new System.Drawing.Size(246, 20);
             this.txt_profesion.TabIndex = 61;
             // 
             // txt_gruposang
@@ -424,7 +423,6 @@
             // 
             // select_tipocuenta
             // 
-            this.select_tipocuenta.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.select_tipocuenta.Enabled = false;
             this.select_tipocuenta.FormattingEnabled = true;
             this.select_tipocuenta.Items.AddRange(new object[] {
@@ -506,7 +504,6 @@
             // 
             // select_estado
             // 
-            this.select_estado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.select_estado.Enabled = false;
             this.select_estado.FormattingEnabled = true;
             this.select_estado.Items.AddRange(new object[] {
@@ -530,7 +527,6 @@
             // 
             // select_cargo
             // 
-            this.select_cargo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.select_cargo.Enabled = false;
             this.select_cargo.FormattingEnabled = true;
             this.select_cargo.Items.AddRange(new object[] {
@@ -593,7 +589,6 @@
             // 
             // select_compania
             // 
-            this.select_compania.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.select_compania.Enabled = false;
             this.select_compania.FormattingEnabled = true;
             this.select_compania.Items.AddRange(new object[] {

@@ -247,7 +247,7 @@
             // 
             this.txt_profesion.Location = new System.Drawing.Point(152, 210);
             this.txt_profesion.Name = "txt_profesion";
-            this.txt_profesion.Size = new System.Drawing.Size(139, 20);
+            this.txt_profesion.Size = new System.Drawing.Size(246, 20);
             this.txt_profesion.TabIndex = 25;
             // 
             // txt_email
@@ -278,14 +278,14 @@
             // 
             this.txt_dir_part.Location = new System.Drawing.Point(152, 290);
             this.txt_dir_part.Name = "txt_dir_part";
-            this.txt_dir_part.Size = new System.Drawing.Size(178, 20);
+            this.txt_dir_part.Size = new System.Drawing.Size(246, 20);
             this.txt_dir_part.TabIndex = 28;
             // 
             // txt_dir_lab
             // 
             this.txt_dir_lab.Location = new System.Drawing.Point(152, 316);
             this.txt_dir_lab.Name = "txt_dir_lab";
-            this.txt_dir_lab.Size = new System.Drawing.Size(178, 20);
+            this.txt_dir_lab.Size = new System.Drawing.Size(246, 20);
             this.txt_dir_lab.TabIndex = 29;
             // 
             // txt_tel_part
