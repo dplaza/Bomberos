@@ -75,6 +75,7 @@
             this.label26 = new System.Windows.Forms.Label();
             this.txt_pass = new System.Windows.Forms.TextBox();
             this.select_compania = new System.Windows.Forms.ComboBox();
+            this.txt_dv = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.box_picture)).BeginInit();
             this.groupBox3.SuspendLayout();
@@ -311,6 +312,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.txt_dv);
             this.groupBox1.Controls.Add(this.txt_nombres);
             this.groupBox1.Controls.Add(this.txt_apellidos);
             this.groupBox1.Controls.Add(this.txt_rut);
@@ -537,6 +539,13 @@
             this.select_compania.Size = new System.Drawing.Size(121, 21);
             this.select_compania.TabIndex = 151;
             // 
+            // txt_dv
+            // 
+            this.txt_dv.Location = new System.Drawing.Point(266, 78);
+            this.txt_dv.Name = "txt_dv";
+            this.txt_dv.Size = new System.Drawing.Size(30, 20);
+            this.txt_dv.TabIndex = 22;
+            // 
             // RegistroBombero
             // 
             this.AcceptButton = this.btn_registrar;
@@ -646,5 +655,6 @@
         private System.Windows.Forms.Label label26;
         private System.Windows.Forms.TextBox txt_pass;
         private System.Windows.Forms.ComboBox select_compania;
+        private System.Windows.Forms.TextBox txt_dv;
     }
 }

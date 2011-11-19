@@ -12,5 +12,6 @@ namespace Bomberos.Negocio.Mgr
         bool EditarBombero(BomberoDTO p_Bombero);
         BomberoDTO CargarBombero(BomberoDTO p_Bombero);
         List<BomberoDTO> ListarBomberos();
+        string digitoVerificador(int rut);
     }
 }
