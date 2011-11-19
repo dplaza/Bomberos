@@ -25,5 +25,7 @@ namespace Bomberos.Comun
         public string EstadoCivil { get; set; }
         public bool isAdmin { get; set; }
         public string Password { get; set; }
+        public string Estado { get; set; }
+        public string Cargo { get; set; }
     }
 }

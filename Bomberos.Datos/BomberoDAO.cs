@@ -23,9 +23,9 @@ namespace Bomberos.Datos
             MySql.Data.MySqlClient.MySqlConnection conexionBD = ConnectBD();
             string query = "INSERT INTO bomberos (nombres, apellidos, rut, tib, fecha_inscripcion, fecha_nacimiento, grupo_sanguineo, ";
             query = string.Concat(query, "dir_particular, dir_laboral, tel_particular, tel_laboral, celular, email, profesion, compania, ");
-            query = string.Concat(query, "est_civil, is_admin, password) VALUES (?p_nombres, ?p_apellidos, ?p_rut, ?p_tib, ?p_fechainsc, ");
+            query = string.Concat(query, "est_civil, is_admin, password, estado, cargo) VALUES (?p_nombres, ?p_apellidos, ?p_rut, ?p_tib, ?p_fechainsc, ");
             query = string.Concat(query, "?p_fechanac, ?p_gruposang, ?p_dirpart, ?p_dirlab, ?p_telpart, ?p_tellab, ?p_celular, ?p_email, ");
-            query = string.Concat(query, "?p_profesion, ?p_compania, ?p_estcivil, ?p_isadmin, ?p_password) ");         
+            query = string.Concat(query, "?p_profesion, ?p_compania, ?p_estcivil, ?p_isadmin, ?p_password, ?p_estado, ?p_cargo) ");         
             MySql.Data.MySqlClient.MySqlCommand msqlCommand = new MySql.Data.MySqlClient.MySqlCommand(query, conexionBD);
             msqlCommand.Parameters.AddWithValue("?p_nombres", p_Bombero.Nombres);
             msqlCommand.Parameters.AddWithValue("?p_apellidos", p_Bombero.Apellidos);
@@ -45,6 +45,8 @@ namespace Bomberos.Datos
             msqlCommand.Parameters.AddWithValue("?p_estcivil", p_Bombero.EstadoCivil);
             msqlCommand.Parameters.AddWithValue("?p_isadmin", p_Bombero.isAdmin);
             msqlCommand.Parameters.AddWithValue("?p_password", p_Bombero.Password);
+            msqlCommand.Parameters.AddWithValue("?p_estado", p_Bombero.Estado);
+            msqlCommand.Parameters.AddWithValue("?p_cargo", p_Bombero.Cargo);
 
             try
             {
@@ -99,6 +101,8 @@ namespace Bomberos.Datos
                     retorno.Password = msqlReader["password"].ToString();
                     retorno.Rut = msqlReader["rut"].ToString();
                     retorno.isAdmin = bool.Parse(msqlReader["is_admin"].ToString());
+                    retorno.Cargo = msqlReader["cargo"].ToString();
+                    retorno.Estado = msqlReader["estado"].ToString();
                 }
             }
             catch (Exception er)
@@ -148,7 +152,7 @@ namespace Bomberos.Datos
             query = string.Concat(query, "fecha_inscripcion = ?p_fechainsc, fecha_nacimiento = ?p_fechanac, grupo_sanguineo = ?p_gruposang, ");
             query = string.Concat(query, "dir_particular = ?p_dirpart, dir_laboral = ?p_dirlab, tel_particular = ?p_telpart, tel_laboral = ?p_tellab, ");
             query = string.Concat(query, "celular = ?p_celular, email = ?p_email, profesion = ?p_profesion, compania = ?p_compania, ");
-            query = string.Concat(query, "est_civil = ?p_estcivil, is_admin = ?p_isadmin, password = ?p_password ");
+            query = string.Concat(query, "est_civil = ?p_estcivil, is_admin = ?p_isadmin, password = ?p_password, cargo = ?p_cargo, estado = ?p_estado ");
             query = string.Concat(query, "WHERE rut = ?p_rut");
             MySql.Data.MySqlClient.MySqlCommand msqlCommand = new MySql.Data.MySqlClient.MySqlCommand(query, conexionBD);
             msqlCommand.Parameters.AddWithValue("?p_rut", p_Bombero.Rut);
@@ -169,6 +173,8 @@ namespace Bomberos.Datos
             msqlCommand.Parameters.AddWithValue("?p_estcivil", p_Bombero.EstadoCivil);
             msqlCommand.Parameters.AddWithValue("?p_isadmin", p_Bombero.isAdmin);
             msqlCommand.Parameters.AddWithValue("?p_password", p_Bombero.Password);
+            msqlCommand.Parameters.AddWithValue("?p_estado", p_Bombero.Estado);
+            msqlCommand.Parameters.AddWithValue("?p_cargo", p_Bombero.Cargo);
 
             try
             {

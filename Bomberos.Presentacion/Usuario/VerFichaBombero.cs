@@ -24,6 +24,10 @@ namespace Bomberos.Presentacion.Usuario
             ContextoDTO.Instancia().BomberoSelected = _Bombero.CargarBombero(ContextoDTO.Instancia().BomberoSelected);
 
             txt_nombres.Text = ContextoDTO.Instancia().BomberoSelected.Nombres;
+            labelnombre.Text = ContextoDTO.Instancia().BomberoSelected.Nombres + " " + ContextoDTO.Instancia().BomberoSelected.Apellidos;
+            labelRut.Text = ContextoDTO.Instancia().BomberoSelected.Rut;
+            labelTIB.Text = ContextoDTO.Instancia().BomberoSelected.TIB;
+            labelCargo.Text = ContextoDTO.Instancia().BomberoSelected.Cargo;
             txt_apellidos.Text = ContextoDTO.Instancia().BomberoSelected.Apellidos;
             txt_celular.Text = ContextoDTO.Instancia().BomberoSelected.Celular;
             txt_dir_lab.Text = ContextoDTO.Instancia().BomberoSelected.DireccionLaboral;
@@ -37,6 +41,8 @@ namespace Bomberos.Presentacion.Usuario
             date_fecha_inscrip.Text = ContextoDTO.Instancia().BomberoSelected.FechaInscripcion.ToString();
             select_estadocivil.SelectedText = ContextoDTO.Instancia().BomberoSelected.EstadoCivil;
             select_compania.SelectedText = ContextoDTO.Instancia().BomberoSelected.Compañia;
+            select_cargo.SelectedText = ContextoDTO.Instancia().BomberoSelected.Cargo;
+            select_estado.SelectedText = ContextoDTO.Instancia().BomberoSelected.Estado;
             txt_tel_lab.Text = ContextoDTO.Instancia().BomberoSelected.TelefonoLaboral;
             txt_tel_part.Text = ContextoDTO.Instancia().BomberoSelected.TelefonoParticular;
             txt_tib.Text = ContextoDTO.Instancia().BomberoSelected.TIB;
@@ -52,6 +58,21 @@ namespace Bomberos.Presentacion.Usuario
         private void btn_cancelar_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void label20_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

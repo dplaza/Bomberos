@@ -80,6 +80,8 @@ namespace Bomberos.Presentacion
             Bombero.TelefonoParticular = txt_tel_part.Text;
             Bombero.TIB = txt_tib.Text;
             Bombero.Password = txt_pass.Text;
+            Bombero.Cargo = select_cargo.Text;
+            Bombero.Estado = select_estado.Text;
 
             if (select_tipocuenta.Text.Equals("Administrador"))
                 Bombero.isAdmin = true;
@@ -97,6 +99,21 @@ namespace Bomberos.Presentacion
             }
 
            
+        }
+
+        private void btn_imagen_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog file = new OpenFileDialog();
+            file.Title = "Seleccione imagen";
+            if (file.ShowDialog() == DialogResult.OK)
+            {
+                box_picture.Image = new Bitmap(file.OpenFile());
+            }
+        }
+
+        private void select_cargo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

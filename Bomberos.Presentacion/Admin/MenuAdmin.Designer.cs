@@ -83,21 +83,21 @@
             // editarPerfilToolStripMenuItem
             // 
             this.editarPerfilToolStripMenuItem.Name = "editarPerfilToolStripMenuItem";
-            this.editarPerfilToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.editarPerfilToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
             this.editarPerfilToolStripMenuItem.Text = "Editar mi perfil";
             this.editarPerfilToolStripMenuItem.Click += new System.EventHandler(this.editarPerfilToolStripMenuItem_Click);
             // 
             // cerrarSesiónToolStripMenuItem
             // 
             this.cerrarSesiónToolStripMenuItem.Name = "cerrarSesiónToolStripMenuItem";
-            this.cerrarSesiónToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.cerrarSesiónToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
             this.cerrarSesiónToolStripMenuItem.Text = "Cerrar sesión";
             this.cerrarSesiónToolStripMenuItem.Click += new System.EventHandler(this.cerrarSesiónToolStripMenuItem_Click);
             // 
             // salirToolStripMenuItem
             // 
             this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-            this.salirToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.salirToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
             this.salirToolStripMenuItem.Text = "Salir";
             this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
             // 
@@ -113,14 +113,14 @@
             // registrarBomberoToolStripMenuItem
             // 
             this.registrarBomberoToolStripMenuItem.Name = "registrarBomberoToolStripMenuItem";
-            this.registrarBomberoToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.registrarBomberoToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
             this.registrarBomberoToolStripMenuItem.Text = "Registrar";
             this.registrarBomberoToolStripMenuItem.Click += new System.EventHandler(this.registrarBomberoToolStripMenuItem_Click);
             // 
             // buscarBomberoToolStripMenuItem
             // 
             this.buscarBomberoToolStripMenuItem.Name = "buscarBomberoToolStripMenuItem";
-            this.buscarBomberoToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.buscarBomberoToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
             this.buscarBomberoToolStripMenuItem.Text = "Buscar";
             this.buscarBomberoToolStripMenuItem.Click += new System.EventHandler(this.buscarBomberoToolStripMenuItem_Click);
             // 
@@ -131,6 +131,7 @@
             this.ClientSize = new System.Drawing.Size(1008, 730);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.menuStrip1);
+            this.DoubleBuffered = true;
             this.IsMdiContainer = true;
             this.Name = "MenuAdmin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

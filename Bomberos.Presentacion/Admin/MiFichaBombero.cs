@@ -21,6 +21,10 @@ namespace Bomberos.Presentacion
 
         private void FichaBombero_Load(object sender, EventArgs e)
         {
+            labelnombre.Text = ContextoDTO.Instancia().BomberoActual.Nombres + " " + ContextoDTO.Instancia().BomberoSelected.Apellidos;
+            labelRut.Text = ContextoDTO.Instancia().BomberoActual.Rut;
+            labelTIB.Text = ContextoDTO.Instancia().BomberoActual.TIB;
+            labelCargo.Text = ContextoDTO.Instancia().BomberoActual.Cargo;
             txt_nombres.Text = ContextoDTO.Instancia().BomberoActual.Nombres;
             txt_apellidos.Text = ContextoDTO.Instancia().BomberoActual.Apellidos;
             txt_celular.Text = ContextoDTO.Instancia().BomberoActual.Celular;
@@ -35,9 +39,12 @@ namespace Bomberos.Presentacion
             date_fecha_inscrip.Text = ContextoDTO.Instancia().BomberoActual.FechaInscripcion.ToString();
             select_estadocivil.SelectedText = ContextoDTO.Instancia().BomberoActual.EstadoCivil;
             select_compania.SelectedText = ContextoDTO.Instancia().BomberoActual.Compañia;
+            select_cargo.SelectedText = ContextoDTO.Instancia().BomberoActual.Cargo;
+            select_estado.SelectedText = ContextoDTO.Instancia().BomberoActual.Estado;
             txt_tel_lab.Text = ContextoDTO.Instancia().BomberoActual.TelefonoLaboral;
             txt_tel_part.Text = ContextoDTO.Instancia().BomberoActual.TelefonoParticular;
             txt_tib.Text = ContextoDTO.Instancia().BomberoActual.TIB;
+
 
             if (ContextoDTO.Instancia().BomberoActual.isAdmin)
                 select_tipocuenta.SelectedText = "Administrador";
@@ -66,6 +73,9 @@ namespace Bomberos.Presentacion
             txt_tel_lab.Enabled = true;
             txt_tel_part.Enabled = true;
             select_estadocivil.Enabled = true;
+            btn_imagen.Enabled = true;
+            select_cargo.Enabled = true;
+            select_estado.Enabled = true;
         }
 
         private void btn_aceptar_Click(object sender, EventArgs e)
@@ -89,6 +99,8 @@ namespace Bomberos.Presentacion
             Bombero.TelefonoParticular = txt_tel_part.Text;
             Bombero.TIB = txt_tib.Text;
             Bombero.Password = txt_pass.Text;
+            Bombero.Cargo = select_cargo.Text;
+            Bombero.Estado = select_estado.Text;
 
             if (select_tipocuenta.Text.Equals("Administrador"))
                 Bombero.isAdmin = true;
@@ -104,6 +116,16 @@ namespace Bomberos.Presentacion
             else
             {
                 MessageBox.Show("Error al actualizar bombero");
+            }
+        }
+
+        private void btn_imagen_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog file = new OpenFileDialog();
+            file.Title = "Seleccione imagen";
+            if (file.ShowDialog() == DialogResult.OK)
+            {
+                box_picture.Image = new Bitmap(file.OpenFile());
             }
         }
     }
