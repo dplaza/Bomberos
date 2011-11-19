@@ -79,5 +79,10 @@ namespace Bomberos.Presentacion
                 }
             }
         }
+
+        private void BuscarBombero_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

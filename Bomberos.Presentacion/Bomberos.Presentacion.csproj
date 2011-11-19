@@ -75,6 +75,24 @@
     <Compile Include="CargosBombero.Designer.cs">
       <DependentUpon>CargosBombero.cs</DependentUpon>
     </Compile>
+    <Compile Include="CursosBombero.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CursosBombero.Designer.cs">
+      <DependentUpon>CursosBombero.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ObservacionesBombero.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ObservacionesBombero.Designer.cs">
+      <DependentUpon>ObservacionesBombero.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PremiosBombero.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PremiosBombero.Designer.cs">
+      <DependentUpon>PremiosBombero.cs</DependentUpon>
+    </Compile>
     <Compile Include="RegistroAsistencia.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -123,6 +141,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CargosBombero.resx">
       <DependentUpon>CargosBombero.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CursosBombero.resx">
+      <DependentUpon>CursosBombero.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ObservacionesBombero.resx">
+      <DependentUpon>ObservacionesBombero.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PremiosBombero.resx">
+      <DependentUpon>PremiosBombero.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="RegistroAsistencia.resx">
