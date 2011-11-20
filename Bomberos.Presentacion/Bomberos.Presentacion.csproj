@@ -69,11 +69,29 @@
     <Compile Include="Admin\FichaBombero.Designer.cs">
       <DependentUpon>FichaBombero.cs</DependentUpon>
     </Compile>
+    <Compile Include="Cargos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cargos.Designer.cs">
+      <DependentUpon>Cargos.cs</DependentUpon>
+    </Compile>
     <Compile Include="CargosBombero.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="CargosBombero.Designer.cs">
       <DependentUpon>CargosBombero.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Compañia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Compañia.Designer.cs">
+      <DependentUpon>Compañia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cursos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cursos.Designer.cs">
+      <DependentUpon>Cursos.cs</DependentUpon>
     </Compile>
     <Compile Include="CursosBombero.cs">
       <SubType>Form</SubType>
@@ -86,6 +104,12 @@
     </Compile>
     <Compile Include="ObservacionesBombero.Designer.cs">
       <DependentUpon>ObservacionesBombero.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Premios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Premios.Designer.cs">
+      <DependentUpon>Premios.cs</DependentUpon>
     </Compile>
     <Compile Include="PremiosBombero.cs">
       <SubType>Form</SubType>
@@ -139,8 +163,20 @@
       <DependentUpon>BuscarBombero.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="Cargos.resx">
+      <DependentUpon>Cargos.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="CargosBombero.resx">
       <DependentUpon>CargosBombero.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Compañia.resx">
+      <DependentUpon>Compañia.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cursos.resx">
+      <DependentUpon>Cursos.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="CursosBombero.resx">
@@ -149,6 +185,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ObservacionesBombero.resx">
       <DependentUpon>ObservacionesBombero.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Premios.resx">
+      <DependentUpon>Premios.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="PremiosBombero.resx">

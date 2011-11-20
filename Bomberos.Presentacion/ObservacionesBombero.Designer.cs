@@ -127,7 +127,7 @@
             this.groupBox1.Size = new System.Drawing.Size(678, 273);
             this.groupBox1.TabIndex = 20;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Premios";
+            this.groupBox1.Text = "Observaciones";
             // 
             // dataGridResult
             // 

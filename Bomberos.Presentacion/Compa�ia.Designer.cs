@@ -39,6 +39,7 @@
             this.btn_borrar = new System.Windows.Forms.Button();
             this.btn_cancelar = new System.Windows.Forms.Button();
             this.btn_editar = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridResult)).BeginInit();
@@ -132,7 +133,7 @@
             this.btn_borrar.Name = "btn_borrar";
             this.btn_borrar.Size = new System.Drawing.Size(75, 23);
             this.btn_borrar.TabIndex = 22;
-            this.btn_borrar.Text = "Editar";
+            this.btn_borrar.Text = "Borrar";
             this.btn_borrar.UseVisualStyleBackColor = true;
             // 
             // btn_cancelar
@@ -151,14 +152,24 @@
             this.btn_editar.Name = "btn_editar";
             this.btn_editar.Size = new System.Drawing.Size(75, 23);
             this.btn_editar.TabIndex = 24;
-            this.btn_editar.Text = "button1";
+            this.btn_editar.Text = "Editar";
             this.btn_editar.UseVisualStyleBackColor = true;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(310, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(70, 13);
+            this.label1.TabIndex = 25;
+            this.label1.Text = "COMPAÑIAS";
             // 
             // Compañia
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(691, 448);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.btn_editar);
             this.Controls.Add(this.btn_cancelar);
             this.Controls.Add(this.btn_borrar);
@@ -171,6 +182,7 @@
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridResult)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -187,5 +199,6 @@
         private System.Windows.Forms.Button btn_borrar;
         private System.Windows.Forms.Button btn_cancelar;
         private System.Windows.Forms.Button btn_editar;
+        private System.Windows.Forms.Label label1;
     }
 }

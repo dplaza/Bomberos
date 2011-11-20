@@ -38,11 +38,11 @@
             this.txt_especialidad = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dataGridResult = new System.Windows.Forms.DataGridView();
-            this.label1 = new System.Windows.Forms.Label();
             this.Fechaini = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Apellidos = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nombres = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Rut = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label1 = new System.Windows.Forms.Label();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridResult)).BeginInit();
@@ -63,6 +63,7 @@
             this.groupBox2.TabIndex = 18;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Bombero";
+            this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
             // 
             // button1
             // 
@@ -148,16 +149,6 @@
             this.dataGridResult.Size = new System.Drawing.Size(672, 254);
             this.dataGridResult.TabIndex = 0;
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(259, 14);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(203, 13);
-            this.label1.TabIndex = 21;
-            this.label1.Text = "CURSOS REALIZADOS Y APROBADOS";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
             // Fechaini
             // 
             this.Fechaini.DividerWidth = 1;
@@ -192,6 +183,16 @@
             this.Rut.Name = "Rut";
             this.Rut.ReadOnly = true;
             this.Rut.Width = 90;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(259, 14);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(203, 13);
+            this.label1.TabIndex = 21;
+            this.label1.Text = "CURSOS REALIZADOS Y APROBADOS";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // CursosBombero
             // 
