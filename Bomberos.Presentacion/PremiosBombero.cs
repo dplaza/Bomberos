@@ -15,5 +15,20 @@ namespace Bomberos.Presentacion
         {
             InitializeComponent();
         }
+
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox2_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridResult_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

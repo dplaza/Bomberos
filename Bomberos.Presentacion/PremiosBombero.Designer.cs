@@ -29,19 +29,21 @@
         private void InitializeComponent()
         {
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.txt_nombres = new System.Windows.Forms.TextBox();
+            this.btn_agregar = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.txt_apellidos = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.txt_especialidad = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dataGridResult = new System.Windows.Forms.DataGridView();
-            this.Apellidos = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nombres = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Rut = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.btn_borrar = new System.Windows.Forms.Button();
+            this.btn_cancelar = new System.Windows.Forms.Button();
+            this.FechaCalifica = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Premios = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FechaEntregaPremio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridResult)).BeginInit();
@@ -49,76 +51,56 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.button1);
-            this.groupBox2.Controls.Add(this.txt_nombres);
+            this.groupBox2.Controls.Add(this.comboBox2);
+            this.groupBox2.Controls.Add(this.dateTimePicker2);
+            this.groupBox2.Controls.Add(this.dateTimePicker1);
+            this.groupBox2.Controls.Add(this.btn_agregar);
             this.groupBox2.Controls.Add(this.label7);
             this.groupBox2.Controls.Add(this.label2);
-            this.groupBox2.Controls.Add(this.txt_apellidos);
             this.groupBox2.Controls.Add(this.label5);
-            this.groupBox2.Controls.Add(this.txt_especialidad);
             this.groupBox2.Location = new System.Drawing.Point(12, 30);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(675, 108);
             this.groupBox2.TabIndex = 17;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Bombero";
+            this.groupBox2.Text = "Agregar Premio";
+            this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
             // 
-            // button1
+            // btn_agregar
             // 
-            this.button1.Location = new System.Drawing.Point(536, 36);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 14;
-            this.button1.Text = "Seleccionar";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // txt_nombres
-            // 
-            this.txt_nombres.Location = new System.Drawing.Point(74, 19);
-            this.txt_nombres.Name = "txt_nombres";
-            this.txt_nombres.Size = new System.Drawing.Size(152, 20);
-            this.txt_nombres.TabIndex = 2;
+            this.btn_agregar.Location = new System.Drawing.Point(492, 68);
+            this.btn_agregar.Name = "btn_agregar";
+            this.btn_agregar.Size = new System.Drawing.Size(75, 23);
+            this.btn_agregar.TabIndex = 14;
+            this.btn_agregar.Text = "Agregar";
+            this.btn_agregar.UseVisualStyleBackColor = true;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(8, 60);
+            this.label7.Location = new System.Drawing.Point(8, 73);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(24, 13);
+            this.label7.Size = new System.Drawing.Size(89, 13);
             this.label7.TabIndex = 11;
-            this.label7.Text = "TIB";
+            this.label7.Text = "Por Concepto De";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(8, 22);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(49, 13);
+            this.label2.Size = new System.Drawing.Size(110, 13);
             this.label2.TabIndex = 1;
-            this.label2.Text = "Nombres";
-            // 
-            // txt_apellidos
-            // 
-            this.txt_apellidos.Location = new System.Drawing.Point(312, 19);
-            this.txt_apellidos.Name = "txt_apellidos";
-            this.txt_apellidos.Size = new System.Drawing.Size(138, 20);
-            this.txt_apellidos.TabIndex = 8;
+            this.label2.Text = "Fecha en que Califica";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(248, 22);
+            this.label5.Location = new System.Drawing.Point(355, 22);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(49, 13);
+            this.label5.Size = new System.Drawing.Size(94, 13);
             this.label5.TabIndex = 7;
-            this.label5.Text = "Apellidos";
-            // 
-            // txt_especialidad
-            // 
-            this.txt_especialidad.Location = new System.Drawing.Point(74, 57);
-            this.txt_especialidad.Name = "txt_especialidad";
-            this.txt_especialidad.Size = new System.Drawing.Size(152, 20);
-            this.txt_especialidad.TabIndex = 6;
+            this.label5.Text = "Fecha De Entrega";
             // 
             // groupBox1
             // 
@@ -128,7 +110,7 @@
             this.groupBox1.Size = new System.Drawing.Size(678, 273);
             this.groupBox1.TabIndex = 19;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Premios";
+            this.groupBox1.Text = "Premios De Bombero";
             // 
             // dataGridResult
             // 
@@ -136,42 +118,16 @@
             this.dataGridResult.AllowUserToDeleteRows = false;
             this.dataGridResult.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridResult.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Apellidos,
-            this.Nombres,
-            this.Rut});
+            this.FechaCalifica,
+            this.Premios,
+            this.FechaEntregaPremio});
             this.dataGridResult.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridResult.Location = new System.Drawing.Point(3, 16);
             this.dataGridResult.Name = "dataGridResult";
             this.dataGridResult.ReadOnly = true;
             this.dataGridResult.Size = new System.Drawing.Size(672, 254);
             this.dataGridResult.TabIndex = 0;
-            // 
-            // Apellidos
-            // 
-            this.Apellidos.DataPropertyName = "Apellidos";
-            this.Apellidos.DividerWidth = 1;
-            this.Apellidos.HeaderText = "FechaCalifica";
-            this.Apellidos.Name = "Apellidos";
-            this.Apellidos.ReadOnly = true;
-            this.Apellidos.Width = 110;
-            // 
-            // Nombres
-            // 
-            this.Nombres.DataPropertyName = "Nombres";
-            this.Nombres.DividerWidth = 1;
-            this.Nombres.HeaderText = "                                          PorConceptoDe";
-            this.Nombres.Name = "Nombres";
-            this.Nombres.ReadOnly = true;
-            this.Nombres.Width = 410;
-            // 
-            // Rut
-            // 
-            this.Rut.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.Rut.DataPropertyName = "Rut";
-            this.Rut.HeaderText = "FechaEntrega";
-            this.Rut.Name = "Rut";
-            this.Rut.ReadOnly = true;
-            this.Rut.Width = 110;
+            this.dataGridResult.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridResult_CellContentClick);
             // 
             // label1
             // 
@@ -183,11 +139,81 @@
             this.label1.Text = "PREMIOS";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Location = new System.Drawing.Point(124, 16);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
+            this.dateTimePicker1.TabIndex = 15;
+            this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
+            // 
+            // dateTimePicker2
+            // 
+            this.dateTimePicker2.Location = new System.Drawing.Point(467, 16);
+            this.dateTimePicker2.Name = "dateTimePicker2";
+            this.dateTimePicker2.Size = new System.Drawing.Size(200, 20);
+            this.dateTimePicker2.TabIndex = 16;
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Location = new System.Drawing.Point(124, 70);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(200, 21);
+            this.comboBox2.TabIndex = 18;
+            // 
+            // btn_borrar
+            // 
+            this.btn_borrar.Location = new System.Drawing.Point(527, 426);
+            this.btn_borrar.Name = "btn_borrar";
+            this.btn_borrar.Size = new System.Drawing.Size(75, 23);
+            this.btn_borrar.TabIndex = 21;
+            this.btn_borrar.Text = "Borrar";
+            this.btn_borrar.UseVisualStyleBackColor = true;
+            // 
+            // btn_cancelar
+            // 
+            this.btn_cancelar.Location = new System.Drawing.Point(608, 426);
+            this.btn_cancelar.Name = "btn_cancelar";
+            this.btn_cancelar.Size = new System.Drawing.Size(75, 23);
+            this.btn_cancelar.TabIndex = 22;
+            this.btn_cancelar.Text = "Cancelar";
+            this.btn_cancelar.UseVisualStyleBackColor = true;
+            // 
+            // FechaCalifica
+            // 
+            this.FechaCalifica.DataPropertyName = "FechaCalifica";
+            this.FechaCalifica.DividerWidth = 1;
+            this.FechaCalifica.HeaderText = "Fecha Califica";
+            this.FechaCalifica.Name = "FechaCalifica";
+            this.FechaCalifica.ReadOnly = true;
+            this.FechaCalifica.Width = 110;
+            // 
+            // Premios
+            // 
+            this.Premios.DataPropertyName = "Premios";
+            this.Premios.DividerWidth = 1;
+            this.Premios.HeaderText = "                                          Por Concepto De";
+            this.Premios.Name = "Premios";
+            this.Premios.ReadOnly = true;
+            this.Premios.Width = 410;
+            // 
+            // FechaEntregaPremio
+            // 
+            this.FechaEntregaPremio.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.FechaEntregaPremio.DataPropertyName = "FechaEntregaPremio";
+            this.FechaEntregaPremio.HeaderText = "Fecha Entrega";
+            this.FechaEntregaPremio.Name = "FechaEntregaPremio";
+            this.FechaEntregaPremio.ReadOnly = true;
+            this.FechaEntregaPremio.Width = 110;
+            // 
             // PremiosBombero
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(691, 448);
+            this.Controls.Add(this.btn_cancelar);
+            this.Controls.Add(this.btn_borrar);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox2);
@@ -205,18 +231,20 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox txt_nombres;
+        private System.Windows.Forms.Button btn_agregar;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txt_apellidos;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox txt_especialidad;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.DataGridView dataGridResult;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Apellidos;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Nombres;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Rut;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dateTimePicker2;
+        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.Button btn_borrar;
+        private System.Windows.Forms.Button btn_cancelar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn FechaCalifica;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Premios;
+        private System.Windows.Forms.DataGridViewTextBoxColumn FechaEntregaPremio;
     }
 }
