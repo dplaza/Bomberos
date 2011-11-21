@@ -92,7 +92,7 @@ namespace Bomberos.Datos
                     CargoDTO cargo_elem = new CargoDTO();
 
                     cargo_elem.Id = int.Parse(msqlReader["cargo"].ToString());
-                    cargo_elem = _Cargo.Load(compañia_elem);
+                    cargo_elem = _Cargo.Load(cargo_elem);
 
                     retorno.Nombres = msqlReader["nombres"].ToString();
                     retorno.Apellidos = msqlReader["apellidos"].ToString();
@@ -232,7 +232,7 @@ namespace Bomberos.Datos
                     CargoDTO cargo_elem = new CargoDTO();
 
                     cargo_elem.Id = int.Parse(msqlReader["cargo"].ToString());
-                    cargo_elem = _Cargo.Load(compañia_elem);
+                    cargo_elem = _Cargo.Load(cargo_elem);
 
                     Bombero.Nombres = msqlReader["nombres"].ToString();
                     Bombero.Apellidos = msqlReader["apellidos"].ToString();

@@ -35,7 +35,7 @@ namespace Bomberos.Presentacion
             labelnombre.Text = ContextoDTO.Instancia().BomberoActual.Nombres + " " + ContextoDTO.Instancia().BomberoSelected.Apellidos;
             labelRut.Text = ContextoDTO.Instancia().BomberoActual.Rut;
             labelTIB.Text = ContextoDTO.Instancia().BomberoActual.TIB;
-            labelCargo.Text = ContextoDTO.Instancia().BomberoActual.Cargo;
+            labelCargo.Text = ContextoDTO.Instancia().BomberoActual.Cargo.Nombre;
             txt_nombres.Text = ContextoDTO.Instancia().BomberoActual.Nombres;
             txt_apellidos.Text = ContextoDTO.Instancia().BomberoActual.Apellidos;
             txt_celular.Text = ContextoDTO.Instancia().BomberoActual.Celular;
@@ -49,8 +49,8 @@ namespace Bomberos.Presentacion
             date_fecha_nac.Text = ContextoDTO.Instancia().BomberoActual.FechaNacimiento.ToString();
             date_fecha_inscrip.Text = ContextoDTO.Instancia().BomberoActual.FechaInscripcion.ToString();
             select_estadocivil.SelectedText = ContextoDTO.Instancia().BomberoActual.EstadoCivil;
-            select_compania.SelectedText = ContextoDTO.Instancia().BomberoActual.Compañia;
-            select_cargo.SelectedText = ContextoDTO.Instancia().BomberoActual.Cargo;
+            select_compania.SelectedValue = ContextoDTO.Instancia().BomberoActual.Compañia.Id;
+            select_cargo.SelectedValue = ContextoDTO.Instancia().BomberoActual.Cargo.Id;
             select_estado.SelectedText = ContextoDTO.Instancia().BomberoActual.Estado;
             txt_tel_lab.Text = ContextoDTO.Instancia().BomberoActual.TelefonoLaboral;
             txt_tel_part.Text = ContextoDTO.Instancia().BomberoActual.TelefonoParticular;
@@ -113,12 +113,12 @@ namespace Bomberos.Presentacion
             Bombero.GrupoSanguineo = txt_gruposang.Text;
             Bombero.Profesion = txt_profesion.Text;
             Bombero.Rut = txt_rut.Text;
-            Bombero.Compañia = select_compania.Text;
+            Bombero.Compañia = (CompañiaDTO)select_compania.SelectedItem;
             Bombero.TelefonoLaboral = txt_tel_lab.Text;
             Bombero.TelefonoParticular = txt_tel_part.Text;
             Bombero.TIB = txt_tib.Text;
             Bombero.Password = txt_pass.Text;
-            Bombero.Cargo = select_cargo.Text;
+            Bombero.Cargo = (CargoDTO)select_cargo.SelectedItem;
             Bombero.Estado = select_estado.Text;
 
             if (select_tipocuenta.Text.Equals("Administrador"))

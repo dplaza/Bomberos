@@ -27,7 +27,7 @@ namespace Bomberos.Presentacion.Usuario
             labelnombre.Text = ContextoDTO.Instancia().BomberoSelected.Nombres + " " + ContextoDTO.Instancia().BomberoSelected.Apellidos;
             labelRut.Text = ContextoDTO.Instancia().BomberoSelected.Rut;
             labelTIB.Text = ContextoDTO.Instancia().BomberoSelected.TIB;
-            labelCargo.Text = ContextoDTO.Instancia().BomberoSelected.Cargo;
+            labelCargo.Text = ContextoDTO.Instancia().BomberoSelected.Cargo.Nombre;
             txt_apellidos.Text = ContextoDTO.Instancia().BomberoSelected.Apellidos;
             txt_celular.Text = ContextoDTO.Instancia().BomberoSelected.Celular;
             txt_dir_lab.Text = ContextoDTO.Instancia().BomberoSelected.DireccionLaboral;
@@ -40,8 +40,8 @@ namespace Bomberos.Presentacion.Usuario
             date_fecha_nac.Text = ContextoDTO.Instancia().BomberoSelected.FechaNacimiento.ToString();
             date_fecha_inscrip.Text = ContextoDTO.Instancia().BomberoSelected.FechaInscripcion.ToString();
             select_estadocivil.SelectedText = ContextoDTO.Instancia().BomberoSelected.EstadoCivil;
-            select_compania.SelectedText = ContextoDTO.Instancia().BomberoSelected.Compañia;
-            select_cargo.SelectedText = ContextoDTO.Instancia().BomberoSelected.Cargo;
+            select_compania.SelectedValue = ContextoDTO.Instancia().BomberoSelected.Compañia.Id;
+            select_cargo.SelectedValue = ContextoDTO.Instancia().BomberoSelected.Cargo.Id;
             select_estado.SelectedText = ContextoDTO.Instancia().BomberoSelected.Estado;
             txt_tel_lab.Text = ContextoDTO.Instancia().BomberoSelected.TelefonoLaboral;
             txt_tel_part.Text = ContextoDTO.Instancia().BomberoSelected.TelefonoParticular;
