@@ -29,14 +29,21 @@ namespace Bomberos.Presentacion
 
         private void btn_agregar_Click(object sender, EventArgs e)
         {
-            ICargoMgr _Cargo = new CargoMgr();
-            CargoDTO Cargo = new CargoDTO();
-
-            Cargo.Nombre = txt_nombre.Text;
-            if (_Cargo.RegistroCargo(Cargo))
+            if (txt_nombre.Text != "")
             {
-                dataGridResult.DataSource = _Cargo.ListarCargos().OrderBy(p => p.Nombre).ToList();
-                txt_nombre.Clear();
+                ICargoMgr _Cargo = new CargoMgr();
+                CargoDTO Cargo = new CargoDTO();
+
+                Cargo.Nombre = txt_nombre.Text;
+                if (_Cargo.RegistroCargo(Cargo))
+                {
+                    dataGridResult.DataSource = _Cargo.ListarCargos().OrderBy(p => p.Nombre).ToList();
+                    txt_nombre.Clear();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Falta rellenar datos");
             }
         }
 
