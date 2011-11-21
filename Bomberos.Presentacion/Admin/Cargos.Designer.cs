@@ -40,6 +40,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.idCargo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NombreCargo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Editar = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.Guardar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridResult)).BeginInit();
@@ -100,12 +102,15 @@
             this.dataGridResult.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridResult.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idCargo,
-            this.NombreCargo});
+            this.NombreCargo,
+            this.Editar,
+            this.Guardar});
             this.dataGridResult.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridResult.Location = new System.Drawing.Point(3, 16);
             this.dataGridResult.Name = "dataGridResult";
             this.dataGridResult.Size = new System.Drawing.Size(672, 268);
             this.dataGridResult.TabIndex = 0;
+            this.dataGridResult.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridResult_CellContentClick);
             // 
             // btn_editar
             // 
@@ -164,6 +169,18 @@
             this.NombreCargo.Name = "NombreCargo";
             this.NombreCargo.Width = 300;
             // 
+            // Editar
+            // 
+            this.Editar.HeaderText = "Editar";
+            this.Editar.Name = "Editar";
+            this.Editar.Text = "Editar";
+            // 
+            // Guardar
+            // 
+            this.Guardar.HeaderText = "Guardar";
+            this.Guardar.Name = "Guardar";
+            this.Guardar.Text = "Guardar";
+            // 
             // Cargos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -204,5 +221,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridViewTextBoxColumn idCargo;
         private System.Windows.Forms.DataGridViewTextBoxColumn NombreCargo;
+        private System.Windows.Forms.DataGridViewButtonColumn Editar;
+        private System.Windows.Forms.DataGridViewButtonColumn Guardar;
     }
 }

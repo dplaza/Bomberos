@@ -127,6 +127,7 @@
             // 
             // select_estadocivil
             // 
+            this.select_estadocivil.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.select_estadocivil.Enabled = false;
             this.select_estadocivil.FormattingEnabled = true;
             this.select_estadocivil.Items.AddRange(new object[] {
@@ -424,6 +425,7 @@
             // 
             // select_tipocuenta
             // 
+            this.select_tipocuenta.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.select_tipocuenta.Enabled = false;
             this.select_tipocuenta.FormattingEnabled = true;
             this.select_tipocuenta.Items.AddRange(new object[] {
@@ -505,6 +507,7 @@
             // 
             // select_estado
             // 
+            this.select_estado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.select_estado.Enabled = false;
             this.select_estado.FormattingEnabled = true;
             this.select_estado.Items.AddRange(new object[] {
@@ -528,6 +531,7 @@
             // 
             // select_cargo
             // 
+            this.select_cargo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.select_cargo.Enabled = false;
             this.select_cargo.FormattingEnabled = true;
             this.select_cargo.Items.AddRange(new object[] {
@@ -590,6 +594,7 @@
             // 
             // select_compania
             // 
+            this.select_compania.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.select_compania.Enabled = false;
             this.select_compania.FormattingEnabled = true;
             this.select_compania.Items.AddRange(new object[] {

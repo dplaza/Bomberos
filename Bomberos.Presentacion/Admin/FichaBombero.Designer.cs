@@ -158,6 +158,7 @@
             // 
             // select_estadocivil
             // 
+            this.select_estadocivil.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.select_estadocivil.Enabled = false;
             this.select_estadocivil.FormattingEnabled = true;
             this.select_estadocivil.Items.AddRange(new object[] {
@@ -424,6 +425,7 @@
             // 
             // select_tipocuenta
             // 
+            this.select_tipocuenta.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.select_tipocuenta.Enabled = false;
             this.select_tipocuenta.FormattingEnabled = true;
             this.select_tipocuenta.Items.AddRange(new object[] {
@@ -505,6 +507,7 @@
             // 
             // select_estado
             // 
+            this.select_estado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.select_estado.Enabled = false;
             this.select_estado.FormattingEnabled = true;
             this.select_estado.Items.AddRange(new object[] {
@@ -528,34 +531,9 @@
             // 
             // select_cargo
             // 
+            this.select_cargo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.select_cargo.Enabled = false;
             this.select_cargo.FormattingEnabled = true;
-            this.select_cargo.Items.AddRange(new object[] {
-            "Superintendente",
-            "Vicesuperintendente",
-            "Tesorero General",
-            "Secretario General",
-            "Director Honorario",
-            "Comandante",
-            "2° Comandante",
-            "Inspector Salud",
-            "Inspector Capacitación",
-            "Inspector Investigación Incendio",
-            "Inspector Material Mayor",
-            "Ayudantes de comandancia",
-            "Director",
-            "Secretario",
-            "Tesorero",
-            "Capitán",
-            "Teniente1°",
-            "Teniente2°",
-            "Teniente3°",
-            "Ayudante",
-            "Maquinista 1°",
-            "Maquinistas",
-            "Paramédicos",
-            "Bombero",
-            "Aspirante"});
             this.select_cargo.Location = new System.Drawing.Point(140, 101);
             this.select_cargo.Name = "select_cargo";
             this.select_cargo.Size = new System.Drawing.Size(160, 21);
@@ -590,11 +568,9 @@
             // 
             // select_compania
             // 
+            this.select_compania.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.select_compania.Enabled = false;
             this.select_compania.FormattingEnabled = true;
-            this.select_compania.Items.AddRange(new object[] {
-            "Primera",
-            "Segunda"});
             this.select_compania.Location = new System.Drawing.Point(140, 156);
             this.select_compania.Name = "select_compania";
             this.select_compania.Size = new System.Drawing.Size(121, 21);

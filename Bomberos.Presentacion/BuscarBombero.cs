@@ -83,7 +83,10 @@ namespace Bomberos.Presentacion
 
         private void BuscarBombero_Load(object sender, EventArgs e)
         {
-
+            ICargoMgr _Cargo = new CargoMgr();
+            select_cargo.DataSource = _Cargo.ListarCargos().OrderBy(p => p.Nombre).ToList();
+            select_cargo.DisplayMember = "Nombre";
+            select_cargo.ValueMember = "Id";
         }
     }
 }

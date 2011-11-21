@@ -21,6 +21,17 @@ namespace Bomberos.Presentacion
 
         private void FichaBombero_Load(object sender, EventArgs e)
         {
+            ICargoMgr _Cargo = new CargoMgr();
+            ICompañiaMgr _Compañia = new CompañiaMgr();
+
+            select_cargo.DataSource = _Cargo.ListarCargos().OrderBy(p => p.Nombre).ToList();
+            select_cargo.DisplayMember = "Nombre";
+            select_cargo.ValueMember = "Id";
+
+            select_compania.DataSource = _Compañia.ListarCompañias().OrderBy(p => p.Nombre).ToList();
+            select_compania.DisplayMember = "Nombre";
+            select_compania.ValueMember = "Id";
+
             labelnombre.Text = ContextoDTO.Instancia().BomberoActual.Nombres + " " + ContextoDTO.Instancia().BomberoSelected.Apellidos;
             labelRut.Text = ContextoDTO.Instancia().BomberoActual.Rut;
             labelTIB.Text = ContextoDTO.Instancia().BomberoActual.TIB;
