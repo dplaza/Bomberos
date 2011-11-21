@@ -49,9 +49,13 @@
     <Compile Include="BomberoDAO.cs" />
     <Compile Include="CargoDAO.cs" />
     <Compile Include="CompañiaDAO.cs" />
+    <Compile Include="CursoDAO.cs" />
     <Compile Include="IBomberoDAO.cs" />
     <Compile Include="ICargoDAO.cs" />
     <Compile Include="ICompañiaDAO.cs" />
+    <Compile Include="ICursoDAO.cs" />
+    <Compile Include="IPremioDAO.cs" />
+    <Compile Include="PremioDAO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

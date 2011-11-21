@@ -6,7 +6,7 @@ using Bomberos.Comun;
 
 namespace Bomberos.Datos
 {
-    public class CompañiaDAO : ICompañiaDAO
+    public class CursoDAO : ICursoDAO
     {
         MySql.Data.MySqlClient.MySqlConnection ConnectBD()
         {
@@ -16,16 +16,16 @@ namespace Bomberos.Datos
             return msqlConnection;
         }
 
-        public bool Insert(CompañiaDTO p_Compañia)
+        public bool Insert(CursoDTO p_Curso)
         {
             //MySQL
             MySql.Data.MySqlClient.MySqlConnection conexionBD = ConnectBD();
-            string query = "INSERT INTO companias (nombre) Values (?p_nombre) ";
+            string query = "INSERT INTO cursos (nombre) Values (?p_nombre) ";
             MySql.Data.MySqlClient.MySqlCommand msqlCommand = new MySql.Data.MySqlClient.MySqlCommand(query, conexionBD);
-            msqlCommand.Parameters.AddWithValue("?p_nombre", p_Compañia.Nombre);
+            msqlCommand.Parameters.AddWithValue("?p_nombre", p_Curso.Nombre);
 
-           
-            
+
+
             try
             {
                 conexionBD.Open();
@@ -44,14 +44,14 @@ namespace Bomberos.Datos
             }
         }
 
-        public CompañiaDTO Load(CompañiaDTO p_Compañia)
+        public CursoDTO Load(CursoDTO p_Curso)
         {
-            CompañiaDTO retorno = null;
+            CursoDTO retorno = null;
             //MySQL
             MySql.Data.MySqlClient.MySqlConnection conexionBD = ConnectBD();
-            string query = "SELECT * FROM companias WHERE nombre = ?p_nombre";
+            string query = "SELECT * FROM cursos WHERE id_curso = ?p_id_curso";
             MySql.Data.MySqlClient.MySqlCommand msqlCommand = new MySql.Data.MySqlClient.MySqlCommand(query, conexionBD);
-            msqlCommand.Parameters.AddWithValue("?p_nombre", p_Compañia.Nombre);
+            msqlCommand.Parameters.AddWithValue("?p_id_curso", p_Curso.Id);
 
             try
             {
@@ -59,9 +59,9 @@ namespace Bomberos.Datos
                 MySql.Data.MySqlClient.MySqlDataReader msqlReader = msqlCommand.ExecuteReader();
                 while (msqlReader.Read())
                 {
-                    retorno = new CompañiaDTO();
+                    retorno = new CursoDTO();
 
-                    retorno.Id = int.Parse(msqlReader["id_compania"].ToString());
+                    retorno.Id = int.Parse(msqlReader["id_curso"].ToString());
                     retorno.Nombre = msqlReader["nombre"].ToString();
                 }
             }
@@ -78,13 +78,13 @@ namespace Bomberos.Datos
             return retorno;
         }
 
-        public bool Delete(CompañiaDTO p_Compañia)
+        public bool Delete(CursoDTO p_Curso)
         {
             //MySQL
             MySql.Data.MySqlClient.MySqlConnection conexionBD = ConnectBD();
-            string query = "DELETE FROM companias WHERE id_compania = ?p_id_compania";
+            string query = "DELETE FROM cursos WHERE id_curso = ?p_id_curso";
             MySql.Data.MySqlClient.MySqlCommand msqlCommand = new MySql.Data.MySqlClient.MySqlCommand(query, conexionBD);
-            msqlCommand.Parameters.AddWithValue("?p_id_compania", p_Compañia.Id);
+            msqlCommand.Parameters.AddWithValue("?p_id_curso", p_Curso.Id);
 
             try
             {
@@ -104,14 +104,14 @@ namespace Bomberos.Datos
             }
         }
 
-        public bool Update(CompañiaDTO p_Compañia)
+        public bool Update(CursoDTO p_Curso)
         {
              //MySQL
             MySql.Data.MySqlClient.MySqlConnection conexionBD = ConnectBD();
-            string query = "UPDATE compania SET id_compania = ?p_id_compania, nombre = ?p_nombre";
+            string query = "UPDATE cursos SET id_curso = ?p_id_curso, nombre = ?p_nombre";
             MySql.Data.MySqlClient.MySqlCommand msqlCommand = new MySql.Data.MySqlClient.MySqlCommand(query, conexionBD);
-            msqlCommand.Parameters.AddWithValue("?p_id_compania", p_Compañia.Id);
-            msqlCommand.Parameters.AddWithValue("?p_nombre", p_Compañia.Nombre);
+            msqlCommand.Parameters.AddWithValue("?p_id_curso", p_Curso.Id);
+            msqlCommand.Parameters.AddWithValue("?p_nombre", p_Curso.Nombre);
             
             try
             {
@@ -131,14 +131,15 @@ namespace Bomberos.Datos
             }
         }
         
+        
 
-        public List<CompañiaDTO> LoadAll()
+        public List<CursoDTO> LoadAll()
         {
-            List<CompañiaDTO> ListaCompañia = new List<CompañiaDTO>();
+            List<CursoDTO> ListaCurso = new List<CursoDTO>();
 
             //MySQL
             MySql.Data.MySqlClient.MySqlConnection conexionBD = ConnectBD();
-            string query = "SELECT * FROM companias";
+            string query = "SELECT * FROM cursos";
             MySql.Data.MySqlClient.MySqlCommand msqlCommand = new MySql.Data.MySqlClient.MySqlCommand(query, conexionBD);
 
             try
@@ -147,12 +148,12 @@ namespace Bomberos.Datos
                 MySql.Data.MySqlClient.MySqlDataReader msqlReader = msqlCommand.ExecuteReader();
                 while (msqlReader.Read())
                 {
-                    CompañiaDTO Compañia = new CompañiaDTO();
+                    CursoDTO Curso = new CursoDTO();
 
-                    Compañia.Id = int.Parse(msqlReader["id_compania"].ToString());
-                    Compañia.Nombre= msqlReader["nombre"].ToString();
+                    Curso.Id = int.Parse(msqlReader["id_curso"].ToString());
+                    Curso.Nombre = msqlReader["nombre"].ToString();
 
-                    ListaCompañia.Add(Compañia);
+                    ListaCurso.Add(Curso);
                 }
             }
             catch (Exception er)
@@ -164,8 +165,7 @@ namespace Bomberos.Datos
             {
                 conexionBD.Close();
             }
-            return ListaCompañia;
-
+            return ListaCurso;
         }
     }
 }

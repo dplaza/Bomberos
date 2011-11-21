@@ -6,9 +6,9 @@ using Bomberos.Comun;
 
 namespace Bomberos.Datos
 {
-    public class CompañiaDAO : ICompañiaDAO
+    public class PremioDAO : IPremioDAO
     {
-        MySql.Data.MySqlClient.MySqlConnection ConnectBD()
+         MySql.Data.MySqlClient.MySqlConnection ConnectBD()
         {
             string parameters = "server=localhost; user id=root; Password=nomeweis; database=bomberos; persist security info=False";
             MySql.Data.MySqlClient.MySqlConnection msqlConnection = new MySql.Data.MySqlClient.MySqlConnection(parameters);
@@ -16,16 +16,16 @@ namespace Bomberos.Datos
             return msqlConnection;
         }
 
-        public bool Insert(CompañiaDTO p_Compañia)
+        public bool Insert(PremioDTO p_Premio)
         {
             //MySQL
             MySql.Data.MySqlClient.MySqlConnection conexionBD = ConnectBD();
-            string query = "INSERT INTO companias (nombre) Values (?p_nombre) ";
+            string query = "INSERT INTO premios (nombre) Values (?p_nombre) ";
             MySql.Data.MySqlClient.MySqlCommand msqlCommand = new MySql.Data.MySqlClient.MySqlCommand(query, conexionBD);
-            msqlCommand.Parameters.AddWithValue("?p_nombre", p_Compañia.Nombre);
+            msqlCommand.Parameters.AddWithValue("?p_nombre", p_Premio.Nombre);
 
-           
-            
+
+
             try
             {
                 conexionBD.Open();
@@ -44,14 +44,14 @@ namespace Bomberos.Datos
             }
         }
 
-        public CompañiaDTO Load(CompañiaDTO p_Compañia)
+        public PremioDTO Load(PremioDTO p_Premio)
         {
-            CompañiaDTO retorno = null;
+            PremioDTO retorno = null;
             //MySQL
             MySql.Data.MySqlClient.MySqlConnection conexionBD = ConnectBD();
-            string query = "SELECT * FROM companias WHERE nombre = ?p_nombre";
+            string query = "SELECT * FROM premios WHERE id_premio = ?p_id_premio";
             MySql.Data.MySqlClient.MySqlCommand msqlCommand = new MySql.Data.MySqlClient.MySqlCommand(query, conexionBD);
-            msqlCommand.Parameters.AddWithValue("?p_nombre", p_Compañia.Nombre);
+            msqlCommand.Parameters.AddWithValue("?p_id_premio", p_Premio.Id);
 
             try
             {
@@ -59,9 +59,9 @@ namespace Bomberos.Datos
                 MySql.Data.MySqlClient.MySqlDataReader msqlReader = msqlCommand.ExecuteReader();
                 while (msqlReader.Read())
                 {
-                    retorno = new CompañiaDTO();
+                    retorno = new PremioDTO();
 
-                    retorno.Id = int.Parse(msqlReader["id_compania"].ToString());
+                    retorno.Id = int.Parse(msqlReader["id_premio"].ToString());
                     retorno.Nombre = msqlReader["nombre"].ToString();
                 }
             }
@@ -78,13 +78,13 @@ namespace Bomberos.Datos
             return retorno;
         }
 
-        public bool Delete(CompañiaDTO p_Compañia)
+        public bool Delete(PremioDTO p_Premio)
         {
             //MySQL
             MySql.Data.MySqlClient.MySqlConnection conexionBD = ConnectBD();
-            string query = "DELETE FROM companias WHERE id_compania = ?p_id_compania";
+            string query = "DELETE FROM premios WHERE id_premio = ?p_id_premio";
             MySql.Data.MySqlClient.MySqlCommand msqlCommand = new MySql.Data.MySqlClient.MySqlCommand(query, conexionBD);
-            msqlCommand.Parameters.AddWithValue("?p_id_compania", p_Compañia.Id);
+            msqlCommand.Parameters.AddWithValue("?p_id_premio", p_Premio.Id);
 
             try
             {
@@ -104,14 +104,14 @@ namespace Bomberos.Datos
             }
         }
 
-        public bool Update(CompañiaDTO p_Compañia)
+        public bool Update(PremioDTO p_Premio)
         {
-             //MySQL
+            //MySQL
             MySql.Data.MySqlClient.MySqlConnection conexionBD = ConnectBD();
-            string query = "UPDATE compania SET id_compania = ?p_id_compania, nombre = ?p_nombre";
+            string query = "UPDATE premios SET id_premio = ?p_id_premio, nombre = ?p_nombre";
             MySql.Data.MySqlClient.MySqlCommand msqlCommand = new MySql.Data.MySqlClient.MySqlCommand(query, conexionBD);
-            msqlCommand.Parameters.AddWithValue("?p_id_compania", p_Compañia.Id);
-            msqlCommand.Parameters.AddWithValue("?p_nombre", p_Compañia.Nombre);
+            msqlCommand.Parameters.AddWithValue("?p_id_premio", p_Premio.Id);
+            msqlCommand.Parameters.AddWithValue("?p_nombre", p_Premio.Nombre);
             
             try
             {
@@ -130,15 +130,14 @@ namespace Bomberos.Datos
                 conexionBD.Close();
             }
         }
-        
 
-        public List<CompañiaDTO> LoadAll()
+        public List<PremioDTO> LoadAll()
         {
-            List<CompañiaDTO> ListaCompañia = new List<CompañiaDTO>();
+            List<PremioDTO> ListaPremio = new List<PremioDTO>();
 
             //MySQL
             MySql.Data.MySqlClient.MySqlConnection conexionBD = ConnectBD();
-            string query = "SELECT * FROM companias";
+            string query = "SELECT * FROM premios";
             MySql.Data.MySqlClient.MySqlCommand msqlCommand = new MySql.Data.MySqlClient.MySqlCommand(query, conexionBD);
 
             try
@@ -147,12 +146,12 @@ namespace Bomberos.Datos
                 MySql.Data.MySqlClient.MySqlDataReader msqlReader = msqlCommand.ExecuteReader();
                 while (msqlReader.Read())
                 {
-                    CompañiaDTO Compañia = new CompañiaDTO();
+                    PremioDTO Premio = new PremioDTO();
 
-                    Compañia.Id = int.Parse(msqlReader["id_compania"].ToString());
-                    Compañia.Nombre= msqlReader["nombre"].ToString();
+                    Premio.Id = int.Parse(msqlReader["id_premio"].ToString());
+                    Premio.Nombre = msqlReader["nombre"].ToString();
 
-                    ListaCompañia.Add(Compañia);
+                    ListaPremio.Add(Premio);
                 }
             }
             catch (Exception er)
@@ -164,8 +163,7 @@ namespace Bomberos.Datos
             {
                 conexionBD.Close();
             }
-            return ListaCompañia;
-
+            return ListaPremio;
         }
     }
 }

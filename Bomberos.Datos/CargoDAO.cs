@@ -80,13 +80,57 @@ namespace Bomberos.Datos
 
         public bool Delete(CargoDTO p_Cargo)
         {
-            return false;
+            //MySQL
+            MySql.Data.MySqlClient.MySqlConnection conexionBD = ConnectBD();
+            string query = "DELETE FROM cargos WHERE id_cargo = ?p_id_cargo";
+            MySql.Data.MySqlClient.MySqlCommand msqlCommand = new MySql.Data.MySqlClient.MySqlCommand(query, conexionBD);
+            msqlCommand.Parameters.AddWithValue("?p_id_cargo", p_Cargo.Id);
+
+            try
+            {
+                conexionBD.Open();
+                msqlCommand.ExecuteNonQuery();
+                return true;
+            }
+            catch (Exception er)
+            {
+                throw er;
+                //return false;
+                //throw new Exception("Problema con base de datos MySQL. Por favor, revise.");
+            }
+            finally
+            {
+                conexionBD.Close();
+            }
         }
 
         public bool Update(CargoDTO p_Cargo)
         {
-            return false;
+             //MySQL
+            MySql.Data.MySqlClient.MySqlConnection conexionBD = ConnectBD();
+            string query = "UPDATE cargos SET id_cargo = ?p_id_cargo, nombre = ?p_nombre";
+            MySql.Data.MySqlClient.MySqlCommand msqlCommand = new MySql.Data.MySqlClient.MySqlCommand(query, conexionBD);
+            msqlCommand.Parameters.AddWithValue("?p_id_cargo", p_Cargo.Id);
+            msqlCommand.Parameters.AddWithValue("?p_nombre", p_Cargo.Nombre);
+            
+            try
+            {
+                conexionBD.Open();
+                msqlCommand.ExecuteNonQuery();
+                return true;
+            }
+            catch (Exception er)
+            {
+                throw er;
+                //return false;
+                //throw new Exception("Problema con base de datos MySQL. Por favor, revise.");
+            }
+            finally
+            {
+                conexionBD.Close();
+            }
         }
+        
 
         public List<CargoDTO> LoadAll()
         {
