@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BomberoDAO.cs" />
+    <Compile Include="CompañiaDAO.cs" />
     <Compile Include="IBomberoDAO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
