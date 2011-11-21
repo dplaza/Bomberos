@@ -31,17 +31,23 @@ namespace Bomberos.Presentacion
 
         private void btn_agregar_Click(object sender, EventArgs e)
         {
-            IPremioMgr _Premio = new PremioMgr();
-            PremioDTO Premio = new PremioDTO();
-
-            Premio.Nombre = txt_nombres.Text;
-            if (_Premio.RegistroPremio(Premio))
+            if (txt_nombre.Text != "")
             {
-                txt_nombres.Clear();
-                dataGridResult.DataSource = _Premio.ListarPremios().OrderBy(p => p.Nombre).ToList();
+                IPremioMgr _Premio = new PremioMgr();
+                PremioDTO Premio = new PremioDTO();
+
+                Premio.Nombre = txt_nombres.Text;
+                if (_Premio.RegistroPremio(Premio))
+                {
+                    txt_nombres.Clear();
+                    dataGridResult.DataSource = _Premio.ListarPremios().OrderBy(p => p.Nombre).ToList();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Falta rellenar datos");
             }
         }
-
         private void btn_borrar_Click(object sender, EventArgs e)
         {
 

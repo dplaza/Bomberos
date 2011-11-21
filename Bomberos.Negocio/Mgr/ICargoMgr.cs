@@ -9,6 +9,7 @@ namespace Bomberos.Negocio.Mgr
     public interface ICargoMgr
     {
         bool RegistroCargo(CargoDTO p_Cargo);
+        bool EditarCargo(CargoDTO p_Cargo);
         CargoDTO CargarCargo(CargoDTO p_Cargo);
         List<CargoDTO> ListarCargos();
     }
