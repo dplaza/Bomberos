@@ -19,6 +19,7 @@ namespace Bomberos.Datos
 
         public bool Insert(BomberoDTO p_Bombero)
         {
+            
             //MySQL
             MySql.Data.MySqlClient.MySqlConnection conexionBD = ConnectBD();
             string query = "INSERT INTO bomberos (nombres, apellidos, rut, tib, fecha_inscripcion, fecha_nacimiento, grupo_sanguineo, ";
@@ -41,12 +42,12 @@ namespace Bomberos.Datos
             msqlCommand.Parameters.AddWithValue("?p_celular", p_Bombero.Celular);
             msqlCommand.Parameters.AddWithValue("?p_email", p_Bombero.Email);
             msqlCommand.Parameters.AddWithValue("?p_profesion", p_Bombero.Profesion);
-            msqlCommand.Parameters.AddWithValue("?p_compania", p_Bombero.Compañia);
+            msqlCommand.Parameters.AddWithValue("?p_compania", p_Bombero.Compañia.Id);
             msqlCommand.Parameters.AddWithValue("?p_estcivil", p_Bombero.EstadoCivil);
             msqlCommand.Parameters.AddWithValue("?p_isadmin", p_Bombero.isAdmin);
             msqlCommand.Parameters.AddWithValue("?p_password", p_Bombero.Password);
             msqlCommand.Parameters.AddWithValue("?p_estado", p_Bombero.Estado);
-            msqlCommand.Parameters.AddWithValue("?p_cargo", p_Bombero.Cargo);
+            msqlCommand.Parameters.AddWithValue("?p_cargo", p_Bombero.Cargo.Id);
 
             try
             {
@@ -92,7 +93,7 @@ namespace Bomberos.Datos
                     CargoDTO cargo_elem = new CargoDTO();
 
                     cargo_elem.Id = int.Parse(msqlReader["cargo"].ToString());
-                    cargo_elem = _Cargo.Load(compañia_elem);
+                    cargo_elem = _Cargo.Load(cargo_elem);
 
                     retorno.Nombres = msqlReader["nombres"].ToString();
                     retorno.Apellidos = msqlReader["apellidos"].ToString();
@@ -128,6 +129,8 @@ namespace Bomberos.Datos
 
             return retorno;
         }
+
+
 
         public bool Delete(BomberoDTO p_Bombero)
         {
