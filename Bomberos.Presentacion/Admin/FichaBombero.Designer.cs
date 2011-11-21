@@ -414,6 +414,7 @@
             // 
             // box_picture
             // 
+            this.box_picture.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.box_picture.Location = new System.Drawing.Point(474, 60);
             this.box_picture.Name = "box_picture";
             this.box_picture.Size = new System.Drawing.Size(150, 180);

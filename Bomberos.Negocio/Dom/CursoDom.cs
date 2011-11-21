@@ -15,6 +15,9 @@ namespace Bomberos.Negocio.Dom
 
         public List<CursoDTO> LoadAll()
         {
+            List<CursoDTO> retorno = new List<CursoDTO>();
+
+            return retorno;
         }
     }
 }

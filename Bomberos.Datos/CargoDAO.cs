@@ -20,9 +20,8 @@ namespace Bomberos.Datos
         {
             //MySQL
             MySql.Data.MySqlClient.MySqlConnection conexionBD = ConnectBD();
-            string query = "INSERT INTO cargos (id_cargo, nombre) Values (?p_id_cargo,?p_nombre) ";
+            string query = "INSERT INTO cargos (nombre) Values (?p_nombre) ";
             MySql.Data.MySqlClient.MySqlCommand msqlCommand = new MySql.Data.MySqlClient.MySqlCommand(query, conexionBD);
-            msqlCommand.Parameters.AddWithValue("?p_id_cargo", p_Cargo.Id);
             msqlCommand.Parameters.AddWithValue("?p_nombre", p_Cargo.Nombre);
 
            
@@ -50,9 +49,9 @@ namespace Bomberos.Datos
             CargoDTO retorno = null;
             //MySQL
             MySql.Data.MySqlClient.MySqlConnection conexionBD = ConnectBD();
-            string query = "SELECT * FROM cargos WHERE id_cargo = ?p_id_cargo";
+            string query = "SELECT * FROM cargos WHERE nombre = ?p_nombre";
             MySql.Data.MySqlClient.MySqlCommand msqlCommand = new MySql.Data.MySqlClient.MySqlCommand(query, conexionBD);
-            msqlCommand.Parameters.AddWithValue("?p_id_cargo", p_Cargo.Id);
+            msqlCommand.Parameters.AddWithValue("?p_nombre", p_Cargo.Nombre);
 
             try
             {

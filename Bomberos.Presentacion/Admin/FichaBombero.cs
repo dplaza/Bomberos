@@ -9,6 +9,7 @@ using System.Windows.Forms;
 using Bomberos.ComunFuncional;
 using Bomberos.Negocio.Mgr;
 using Bomberos.Comun;
+using System.IO;
 
 namespace Bomberos.Presentacion.Admin
 {
@@ -54,6 +55,13 @@ namespace Bomberos.Presentacion.Admin
             else
                 select_tipocuenta.SelectedText = "Usuario";
 
+            try
+            {
+                box_picture.Image = new Bitmap("C:\\Bomberos\\" + ContextoDTO.Instancia().BomberoSelected.Rut + ".jpg");
+            }
+            catch (Exception er)
+            {
+            }
             this.Text = "Perfil de " + ContextoDTO.Instancia().BomberoSelected.Nombres + " " + ContextoDTO.Instancia().BomberoSelected.Apellidos;
         }
 
@@ -112,6 +120,23 @@ namespace Bomberos.Presentacion.Admin
                 Bombero.isAdmin = true;
             else
                 Bombero.isAdmin = false;
+
+            //Salvar imagen al disco
+            if (box_picture.Image != null)
+            {
+                try
+                {
+                    if (!System.IO.Directory.Exists(@"C:\Bomberos\"))
+                        System.IO.Directory.CreateDirectory(@"C:\Bomberos\");
+
+                    System.IO.File.Delete("C:\\Bomberos\\" + Bombero.Rut + ".jpg");
+                    box_picture.Image.Save("C:\\Bomberos\\" + Bombero.Rut + ".jpg");
+                }
+                finally
+                {
+                    box_picture.Dispose();
+                }
+            }
 
             if (_Bombero.EditarBombero(Bombero))
             {

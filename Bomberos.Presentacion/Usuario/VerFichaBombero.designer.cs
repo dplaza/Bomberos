@@ -515,9 +515,11 @@
             // 
             // box_picture
             // 
+            this.box_picture.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.box_picture.Location = new System.Drawing.Point(453, 69);
             this.box_picture.Name = "box_picture";
             this.box_picture.Size = new System.Drawing.Size(150, 180);
+            this.box_picture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.box_picture.TabIndex = 154;
             this.box_picture.TabStop = false;
             // 

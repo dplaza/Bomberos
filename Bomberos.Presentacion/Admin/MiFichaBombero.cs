@@ -50,6 +50,14 @@ namespace Bomberos.Presentacion
                 select_tipocuenta.SelectedText = "Administrador";
             else
                 select_tipocuenta.SelectedText = "Usuario";
+
+            try
+            {
+                box_picture.Image = new Bitmap("C:\\Bomberos\\" + ContextoDTO.Instancia().BomberoActual.Rut + ".jpg");
+            }
+            catch (Exception er)
+            {
+            }
         }
 
         private void btn_cancelar_Click(object sender, EventArgs e)
@@ -106,6 +114,23 @@ namespace Bomberos.Presentacion
                 Bombero.isAdmin = true;
             else
                 Bombero.isAdmin = false;
+
+            if (box_picture.Image != null)
+            {
+                try
+                {
+                    if (!System.IO.Directory.Exists(@"C:\Bomberos\"))
+                        System.IO.Directory.CreateDirectory(@"C:\Bomberos\");
+
+                    System.IO.File.Delete("C:\\Bomberos\\" + Bombero.Rut + ".jpg");
+                    box_picture.Image.Save("C:\\Bomberos\\" + Bombero.Rut + ".jpg");
+                }
+                finally
+                {
+                    box_picture.Dispose();
+                }
+            }
+
 
             if (_Bombero.EditarBombero(Bombero))
             {

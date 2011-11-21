@@ -34,12 +34,12 @@
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dataGridResult = new System.Windows.Forms.DataGridView();
+            this.idPremios = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NombrePremios = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btn_editar = new System.Windows.Forms.Button();
             this.btn_cancelar = new System.Windows.Forms.Button();
             this.btn_borrar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.idPremios = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NombrePremios = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridResult)).BeginInit();
@@ -65,6 +65,7 @@
             this.btn_agregar.TabIndex = 14;
             this.btn_agregar.Text = "Agregar";
             this.btn_agregar.UseVisualStyleBackColor = true;
+            this.btn_agregar.Click += new System.EventHandler(this.btn_agregar_Click);
             // 
             // txt_nombres
             // 
@@ -107,43 +108,6 @@
             this.dataGridResult.Size = new System.Drawing.Size(672, 268);
             this.dataGridResult.TabIndex = 0;
             // 
-            // btn_editar
-            // 
-            this.btn_editar.Location = new System.Drawing.Point(446, 426);
-            this.btn_editar.Name = "btn_editar";
-            this.btn_editar.Size = new System.Drawing.Size(75, 23);
-            this.btn_editar.TabIndex = 30;
-            this.btn_editar.Text = "Editar";
-            this.btn_editar.UseVisualStyleBackColor = true;
-            // 
-            // btn_cancelar
-            // 
-            this.btn_cancelar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btn_cancelar.Location = new System.Drawing.Point(608, 426);
-            this.btn_cancelar.Name = "btn_cancelar";
-            this.btn_cancelar.Size = new System.Drawing.Size(75, 23);
-            this.btn_cancelar.TabIndex = 29;
-            this.btn_cancelar.Text = "Cancelar";
-            this.btn_cancelar.UseVisualStyleBackColor = true;
-            // 
-            // btn_borrar
-            // 
-            this.btn_borrar.Location = new System.Drawing.Point(527, 426);
-            this.btn_borrar.Name = "btn_borrar";
-            this.btn_borrar.Size = new System.Drawing.Size(75, 23);
-            this.btn_borrar.TabIndex = 28;
-            this.btn_borrar.Text = "Borrar";
-            this.btn_borrar.UseVisualStyleBackColor = true;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(317, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(56, 13);
-            this.label1.TabIndex = 31;
-            this.label1.Text = "PREMIOS";
-            // 
             // idPremios
             // 
             this.idPremios.DataPropertyName = "Id";
@@ -163,6 +127,45 @@
             this.NombrePremios.ReadOnly = true;
             this.NombrePremios.Width = 550;
             // 
+            // btn_editar
+            // 
+            this.btn_editar.Location = new System.Drawing.Point(446, 426);
+            this.btn_editar.Name = "btn_editar";
+            this.btn_editar.Size = new System.Drawing.Size(75, 23);
+            this.btn_editar.TabIndex = 30;
+            this.btn_editar.Text = "Editar";
+            this.btn_editar.UseVisualStyleBackColor = true;
+            // 
+            // btn_cancelar
+            // 
+            this.btn_cancelar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btn_cancelar.Location = new System.Drawing.Point(608, 426);
+            this.btn_cancelar.Name = "btn_cancelar";
+            this.btn_cancelar.Size = new System.Drawing.Size(75, 23);
+            this.btn_cancelar.TabIndex = 29;
+            this.btn_cancelar.Text = "Cancelar";
+            this.btn_cancelar.UseVisualStyleBackColor = true;
+            this.btn_cancelar.Click += new System.EventHandler(this.btn_cancelar_Click);
+            // 
+            // btn_borrar
+            // 
+            this.btn_borrar.Location = new System.Drawing.Point(527, 426);
+            this.btn_borrar.Name = "btn_borrar";
+            this.btn_borrar.Size = new System.Drawing.Size(75, 23);
+            this.btn_borrar.TabIndex = 28;
+            this.btn_borrar.Text = "Borrar";
+            this.btn_borrar.UseVisualStyleBackColor = true;
+            this.btn_borrar.Click += new System.EventHandler(this.btn_borrar_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(317, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(56, 13);
+            this.label1.TabIndex = 31;
+            this.label1.Text = "PREMIOS";
+            // 
             // Premios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -178,6 +181,7 @@
             this.MaximizeBox = false;
             this.Name = "Premios";
             this.Text = "Premios";
+            this.Load += new System.EventHandler(this.Premios_Load);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox1.ResumeLayout(false);

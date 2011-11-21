@@ -20,9 +20,8 @@ namespace Bomberos.Datos
         {
             //MySQL
             MySql.Data.MySqlClient.MySqlConnection conexionBD = ConnectBD();
-            string query = "INSERT INTO companias (id_compania, nombre) Values (?p_id_compania,?p_nombre) ";
+            string query = "INSERT INTO companias (nombre) Values (?p_nombre) ";
             MySql.Data.MySqlClient.MySqlCommand msqlCommand = new MySql.Data.MySqlClient.MySqlCommand(query, conexionBD);
-            msqlCommand.Parameters.AddWithValue("?p_id_compania", p_Compañia.Id);
             msqlCommand.Parameters.AddWithValue("?p_nombre", p_Compañia.Nombre);
 
            
@@ -50,9 +49,9 @@ namespace Bomberos.Datos
             CompañiaDTO retorno = null;
             //MySQL
             MySql.Data.MySqlClient.MySqlConnection conexionBD = ConnectBD();
-            string query = "SELECT * FROM companias WHERE id_compania = ?p_id_compania";
+            string query = "SELECT * FROM companias WHERE nombre = ?p_nombre";
             MySql.Data.MySqlClient.MySqlCommand msqlCommand = new MySql.Data.MySqlClient.MySqlCommand(query, conexionBD);
-            msqlCommand.Parameters.AddWithValue("?p_id_compania", p_Compañia.Id);
+            msqlCommand.Parameters.AddWithValue("?p_nombre", p_Compañia.Nombre);
 
             try
             {

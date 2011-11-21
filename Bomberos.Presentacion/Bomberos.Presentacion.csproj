@@ -63,6 +63,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Admin\EditarInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\EditarInfo.Designer.cs">
+      <DependentUpon>EditarInfo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Admin\FichaBombero.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -155,6 +161,10 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Admin\EditarInfo.resx">
+      <DependentUpon>EditarInfo.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="Admin\FichaBombero.resx">
       <DependentUpon>FichaBombero.cs</DependentUpon>
       <SubType>Designer</SubType>

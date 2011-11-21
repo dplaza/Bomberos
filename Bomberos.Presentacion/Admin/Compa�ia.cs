@@ -6,6 +6,8 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using Bomberos.Negocio.Mgr;
+using Bomberos.Comun;
 
 namespace Bomberos.Presentacion
 {
@@ -24,6 +26,30 @@ namespace Bomberos.Presentacion
         private void dataGridResult_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void Compañia_Load(object sender, EventArgs e)
+        {
+            ICompañiaMgr _Compañia = new CompañiaMgr();
+            dataGridResult.DataSource = _Compañia.ListarCompañias().OrderBy(p => p.Nombre).ToList();
+        }
+
+        private void btn_cancelar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btn_agregar_Click(object sender, EventArgs e)
+        {
+            ICompañiaMgr _Compañia = new CompañiaMgr();
+            CompañiaDTO Compañia = new CompañiaDTO();
+
+            Compañia.Nombre = txt_nombres.Text;
+            if (_Compañia.RegistroCompañia(Compañia))
+            {
+                txt_nombres.Clear();
+                dataGridResult.DataSource = _Compañia.ListarCompañias().OrderBy(p => p.Nombre).ToList();
+            }
         }
     }
 }

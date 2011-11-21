@@ -52,6 +52,14 @@ namespace Bomberos.Presentacion.Usuario
             else
                 select_tipocuenta.SelectedText = "Usuario";
 
+
+            try
+            {
+                box_picture.Image = new Bitmap("C:\\Bomberos\\" + ContextoDTO.Instancia().BomberoSelected.Rut + ".jpg");
+            }
+            catch (Exception er)
+            {
+            }
             this.Text = "Perfil de " + ContextoDTO.Instancia().BomberoSelected.Nombres + " " + ContextoDTO.Instancia().BomberoSelected.Apellidos;
         }
 

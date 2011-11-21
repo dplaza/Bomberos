@@ -30,16 +30,16 @@
         {
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btn_agregar = new System.Windows.Forms.Button();
-            this.txt_nombres = new System.Windows.Forms.TextBox();
+            this.txt_nombre = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dataGridResult = new System.Windows.Forms.DataGridView();
-            this.idCargo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NombreCargo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btn_editar = new System.Windows.Forms.Button();
             this.btn_cancelar = new System.Windows.Forms.Button();
             this.btn_borrar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.idCargo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NombreCargo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridResult)).BeginInit();
@@ -48,7 +48,7 @@
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.btn_agregar);
-            this.groupBox2.Controls.Add(this.txt_nombres);
+            this.groupBox2.Controls.Add(this.txt_nombre);
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Location = new System.Drawing.Point(17, 30);
             this.groupBox2.Name = "groupBox2";
@@ -65,13 +65,14 @@
             this.btn_agregar.TabIndex = 14;
             this.btn_agregar.Text = "Agregar";
             this.btn_agregar.UseVisualStyleBackColor = true;
+            this.btn_agregar.Click += new System.EventHandler(this.btn_agregar_Click);
             // 
-            // txt_nombres
+            // txt_nombre
             // 
-            this.txt_nombres.Location = new System.Drawing.Point(123, 38);
-            this.txt_nombres.Name = "txt_nombres";
-            this.txt_nombres.Size = new System.Drawing.Size(272, 20);
-            this.txt_nombres.TabIndex = 2;
+            this.txt_nombre.Location = new System.Drawing.Point(123, 38);
+            this.txt_nombre.Name = "txt_nombre";
+            this.txt_nombre.Size = new System.Drawing.Size(272, 20);
+            this.txt_nombre.TabIndex = 2;
             // 
             // label2
             // 
@@ -96,7 +97,6 @@
             // 
             this.dataGridResult.AllowUserToAddRows = false;
             this.dataGridResult.AllowUserToDeleteRows = false;
-            this.dataGridResult.AllowUserToOrderColumns = true;
             this.dataGridResult.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridResult.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idCargo,
@@ -104,28 +104,8 @@
             this.dataGridResult.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridResult.Location = new System.Drawing.Point(3, 16);
             this.dataGridResult.Name = "dataGridResult";
-            this.dataGridResult.ReadOnly = true;
             this.dataGridResult.Size = new System.Drawing.Size(672, 268);
             this.dataGridResult.TabIndex = 0;
-            // 
-            // idCargo
-            // 
-            this.idCargo.DataPropertyName = "Id";
-            this.idCargo.DividerWidth = 1;
-            this.idCargo.HeaderText = "ID Cargo";
-            this.idCargo.Name = "idCargo";
-            this.idCargo.ReadOnly = true;
-            this.idCargo.Visible = false;
-            this.idCargo.Width = 70;
-            // 
-            // NombreCargo
-            // 
-            this.NombreCargo.DataPropertyName = "Nombre";
-            this.NombreCargo.DividerWidth = 1;
-            this.NombreCargo.HeaderText = "Nombre";
-            this.NombreCargo.Name = "NombreCargo";
-            this.NombreCargo.ReadOnly = true;
-            this.NombreCargo.Width = 560;
             // 
             // btn_editar
             // 
@@ -135,6 +115,7 @@
             this.btn_editar.TabIndex = 27;
             this.btn_editar.Text = "Editar";
             this.btn_editar.UseVisualStyleBackColor = true;
+            this.btn_editar.Click += new System.EventHandler(this.btn_editar_Click);
             // 
             // btn_cancelar
             // 
@@ -145,6 +126,7 @@
             this.btn_cancelar.TabIndex = 26;
             this.btn_cancelar.Text = "Cancelar";
             this.btn_cancelar.UseVisualStyleBackColor = true;
+            this.btn_cancelar.Click += new System.EventHandler(this.btn_cancelar_Click);
             // 
             // btn_borrar
             // 
@@ -154,6 +136,7 @@
             this.btn_borrar.TabIndex = 25;
             this.btn_borrar.Text = "Borrar";
             this.btn_borrar.UseVisualStyleBackColor = true;
+            this.btn_borrar.Click += new System.EventHandler(this.btn_borrar_Click);
             // 
             // label1
             // 
@@ -164,10 +147,28 @@
             this.label1.TabIndex = 28;
             this.label1.Text = "CARGOS";
             // 
+            // idCargo
+            // 
+            this.idCargo.DataPropertyName = "Id";
+            this.idCargo.DividerWidth = 1;
+            this.idCargo.HeaderText = "ID Cargo";
+            this.idCargo.Name = "idCargo";
+            this.idCargo.Visible = false;
+            this.idCargo.Width = 200;
+            // 
+            // NombreCargo
+            // 
+            this.NombreCargo.DataPropertyName = "Nombre";
+            this.NombreCargo.DividerWidth = 1;
+            this.NombreCargo.HeaderText = "Nombre";
+            this.NombreCargo.Name = "NombreCargo";
+            this.NombreCargo.Width = 300;
+            // 
             // Cargos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.btn_cancelar;
             this.ClientSize = new System.Drawing.Size(708, 465);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btn_editar);
@@ -176,6 +177,7 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
             this.Name = "Cargos";
             this.Text = "Cargos";
             this.Load += new System.EventHandler(this.Cargos_Load);
@@ -192,7 +194,7 @@
 
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button btn_agregar;
-        private System.Windows.Forms.TextBox txt_nombres;
+        private System.Windows.Forms.TextBox txt_nombre;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.DataGridView dataGridResult;
