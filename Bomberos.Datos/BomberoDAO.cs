@@ -82,6 +82,17 @@ namespace Bomberos.Datos
                 while (msqlReader.Read())
                 {
                     retorno = new BomberoDTO();
+                    ICompañiaDAO _Compañia = new CompañiaDAO();
+                    CompañiaDTO compañia_elem = new CompañiaDTO();
+
+                    compañia_elem.Id = int.Parse(msqlReader["compania"].ToString());
+                    compañia_elem = _Compañia.Load(compañia_elem);
+
+                    ICargoDAO _Cargo = new CargoDAO();
+                    CargoDTO cargo_elem = new CargoDTO();
+
+                    cargo_elem.Id = int.Parse(msqlReader["cargo"].ToString());
+                    cargo_elem = _Cargo.Load(compañia_elem);
 
                     retorno.Nombres = msqlReader["nombres"].ToString();
                     retorno.Apellidos = msqlReader["apellidos"].ToString();
@@ -95,13 +106,13 @@ namespace Bomberos.Datos
                     retorno.Celular = msqlReader["celular"].ToString();
                     retorno.Email = msqlReader["email"].ToString();
                     retorno.Profesion = msqlReader["profesion"].ToString();
-                    retorno.Compañia = msqlReader["compania"].ToString();
+                    retorno.Compañia = compañia_elem;
                     retorno.EstadoCivil = msqlReader["est_civil"].ToString();
                     retorno.GrupoSanguineo = msqlReader["grupo_sanguineo"].ToString();
                     retorno.Password = msqlReader["password"].ToString();
                     retorno.Rut = msqlReader["rut"].ToString();
                     retorno.isAdmin = bool.Parse(msqlReader["is_admin"].ToString());
-                    retorno.Cargo = msqlReader["cargo"].ToString();
+                    retorno.Cargo = cargo_elem;
                     retorno.Estado = msqlReader["estado"].ToString();
                 }
             }
@@ -211,6 +222,18 @@ namespace Bomberos.Datos
                 {
                     BomberoDTO Bombero = new BomberoDTO();
 
+                    ICompañiaDAO _Compañia = new CompañiaDAO();
+                    CompañiaDTO compañia_elem = new CompañiaDTO();
+
+                    compañia_elem.Id = int.Parse(msqlReader["compania"].ToString());
+                    compañia_elem = _Compañia.Load(compañia_elem);
+
+                    ICargoDAO _Cargo = new CargoDAO();
+                    CargoDTO cargo_elem = new CargoDTO();
+
+                    cargo_elem.Id = int.Parse(msqlReader["cargo"].ToString());
+                    cargo_elem = _Cargo.Load(compañia_elem);
+
                     Bombero.Nombres = msqlReader["nombres"].ToString();
                     Bombero.Apellidos = msqlReader["apellidos"].ToString();
                     Bombero.TIB = msqlReader["tib"].ToString();
@@ -223,13 +246,13 @@ namespace Bomberos.Datos
                     Bombero.Celular = msqlReader["celular"].ToString();
                     Bombero.Email = msqlReader["email"].ToString();
                     Bombero.Profesion = msqlReader["profesion"].ToString();
-                    Bombero.Compañia = msqlReader["compania"].ToString();
+                    Bombero.Compañia = compañia_elem;
                     Bombero.EstadoCivil = msqlReader["est_civil"].ToString();
                     Bombero.GrupoSanguineo = msqlReader["grupo_sanguineo"].ToString();
                     Bombero.Password = msqlReader["password"].ToString();
                     Bombero.Rut = msqlReader["rut"].ToString();
                     Bombero.isAdmin = bool.Parse(msqlReader["is_admin"].ToString());
-                    Bombero.Cargo = msqlReader["cargo"].ToString();
+                    Bombero.Cargo = cargo_elem;
                     Bombero.Estado = msqlReader["estado"].ToString();
 
                     ListaBomberos.Add(Bombero);

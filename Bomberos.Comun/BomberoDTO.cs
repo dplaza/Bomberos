@@ -21,11 +21,11 @@ namespace Bomberos.Comun
         public string Celular { get; set; }
         public string Email { get; set; }
         public string Profesion { get; set; }
-        public string Compañia { get; set; }
+        public CompañiaDTO Compañia { get; set; }
         public string EstadoCivil { get; set; }
         public bool isAdmin { get; set; }
         public string Password { get; set; }
         public string Estado { get; set; }
-        public string Cargo { get; set; }
+        public CargoDTO Cargo { get; set; }
     }
 }
