@@ -40,6 +40,11 @@
             this.label7 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dataGridResult = new System.Windows.Forms.DataGridView();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.select_cargo = new System.Windows.Forms.ComboBox();
+            this.btn_buscar = new System.Windows.Forms.Button();
+            this.btn_perfil = new System.Windows.Forms.Button();
+            this.btn_cancelar = new System.Windows.Forms.Button();
             this.Nombres = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Apellidos = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Rut = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -60,11 +65,6 @@
             this.FechaNacimiento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.FechaInscripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Password = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.select_cargo = new System.Windows.Forms.ComboBox();
-            this.btn_buscar = new System.Windows.Forms.Button();
-            this.btn_perfil = new System.Windows.Forms.Button();
-            this.btn_cancelar = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridResult)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -199,6 +199,66 @@
             this.dataGridResult.TabIndex = 0;
             this.dataGridResult.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridResult_CellContentClick);
             // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.select_cargo);
+            this.groupBox2.Controls.Add(this.btn_buscar);
+            this.groupBox2.Controls.Add(this.txt_nombres);
+            this.groupBox2.Controls.Add(this.label7);
+            this.groupBox2.Controls.Add(this.label2);
+            this.groupBox2.Controls.Add(this.txt_tib);
+            this.groupBox2.Controls.Add(this.txt_rut);
+            this.groupBox2.Controls.Add(this.label3);
+            this.groupBox2.Controls.Add(this.txt_apellidos);
+            this.groupBox2.Controls.Add(this.label4);
+            this.groupBox2.Controls.Add(this.label5);
+            this.groupBox2.Location = new System.Drawing.Point(13, 33);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(675, 108);
+            this.groupBox2.TabIndex = 14;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Filtros de búsqueda";
+            // 
+            // select_cargo
+            // 
+            this.select_cargo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.select_cargo.FormattingEnabled = true;
+            this.select_cargo.Location = new System.Drawing.Point(81, 45);
+            this.select_cargo.Name = "select_cargo";
+            this.select_cargo.Size = new System.Drawing.Size(160, 21);
+            this.select_cargo.TabIndex = 12;
+            // 
+            // btn_buscar
+            // 
+            this.btn_buscar.Location = new System.Drawing.Point(533, 47);
+            this.btn_buscar.Name = "btn_buscar";
+            this.btn_buscar.Size = new System.Drawing.Size(101, 23);
+            this.btn_buscar.TabIndex = 0;
+            this.btn_buscar.Text = "Buscar";
+            this.btn_buscar.UseVisualStyleBackColor = true;
+            this.btn_buscar.Click += new System.EventHandler(this.btn_buscar_Click);
+            // 
+            // btn_perfil
+            // 
+            this.btn_perfil.Location = new System.Drawing.Point(527, 426);
+            this.btn_perfil.Name = "btn_perfil";
+            this.btn_perfil.Size = new System.Drawing.Size(75, 23);
+            this.btn_perfil.TabIndex = 15;
+            this.btn_perfil.Text = "Ver Perfil";
+            this.btn_perfil.UseVisualStyleBackColor = true;
+            this.btn_perfil.Click += new System.EventHandler(this.btn_perfil_Click);
+            // 
+            // btn_cancelar
+            // 
+            this.btn_cancelar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btn_cancelar.Location = new System.Drawing.Point(608, 426);
+            this.btn_cancelar.Name = "btn_cancelar";
+            this.btn_cancelar.Size = new System.Drawing.Size(75, 23);
+            this.btn_cancelar.TabIndex = 16;
+            this.btn_cancelar.Text = "Cancelar";
+            this.btn_cancelar.UseVisualStyleBackColor = true;
+            this.btn_cancelar.Click += new System.EventHandler(this.btn_cancelar_Click);
+            // 
             // Nombres
             // 
             this.Nombres.DataPropertyName = "Nombres";
@@ -233,6 +293,7 @@
             this.Compania.HeaderText = "Compañia";
             this.Compania.Name = "Compania";
             this.Compania.ReadOnly = true;
+            this.Compania.Visible = false;
             // 
             // Cargo
             // 
@@ -240,6 +301,7 @@
             this.Cargo.HeaderText = "Cargo";
             this.Cargo.Name = "Cargo";
             this.Cargo.ReadOnly = true;
+            this.Cargo.Visible = false;
             // 
             // Estado
             // 
@@ -352,66 +414,6 @@
             this.Password.Name = "Password";
             this.Password.ReadOnly = true;
             this.Password.Visible = false;
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.select_cargo);
-            this.groupBox2.Controls.Add(this.btn_buscar);
-            this.groupBox2.Controls.Add(this.txt_nombres);
-            this.groupBox2.Controls.Add(this.label7);
-            this.groupBox2.Controls.Add(this.label2);
-            this.groupBox2.Controls.Add(this.txt_tib);
-            this.groupBox2.Controls.Add(this.txt_rut);
-            this.groupBox2.Controls.Add(this.label3);
-            this.groupBox2.Controls.Add(this.txt_apellidos);
-            this.groupBox2.Controls.Add(this.label4);
-            this.groupBox2.Controls.Add(this.label5);
-            this.groupBox2.Location = new System.Drawing.Point(13, 33);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(675, 108);
-            this.groupBox2.TabIndex = 14;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Filtros de búsqueda";
-            // 
-            // select_cargo
-            // 
-            this.select_cargo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.select_cargo.FormattingEnabled = true;
-            this.select_cargo.Location = new System.Drawing.Point(81, 45);
-            this.select_cargo.Name = "select_cargo";
-            this.select_cargo.Size = new System.Drawing.Size(160, 21);
-            this.select_cargo.TabIndex = 12;
-            // 
-            // btn_buscar
-            // 
-            this.btn_buscar.Location = new System.Drawing.Point(533, 47);
-            this.btn_buscar.Name = "btn_buscar";
-            this.btn_buscar.Size = new System.Drawing.Size(101, 23);
-            this.btn_buscar.TabIndex = 0;
-            this.btn_buscar.Text = "Buscar";
-            this.btn_buscar.UseVisualStyleBackColor = true;
-            this.btn_buscar.Click += new System.EventHandler(this.btn_buscar_Click);
-            // 
-            // btn_perfil
-            // 
-            this.btn_perfil.Location = new System.Drawing.Point(527, 426);
-            this.btn_perfil.Name = "btn_perfil";
-            this.btn_perfil.Size = new System.Drawing.Size(75, 23);
-            this.btn_perfil.TabIndex = 15;
-            this.btn_perfil.Text = "Ver Perfil";
-            this.btn_perfil.UseVisualStyleBackColor = true;
-            this.btn_perfil.Click += new System.EventHandler(this.btn_perfil_Click);
-            // 
-            // btn_cancelar
-            // 
-            this.btn_cancelar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btn_cancelar.Location = new System.Drawing.Point(608, 426);
-            this.btn_cancelar.Name = "btn_cancelar";
-            this.btn_cancelar.Size = new System.Drawing.Size(75, 23);
-            this.btn_cancelar.TabIndex = 16;
-            this.btn_cancelar.Text = "Cancelar";
-            this.btn_cancelar.UseVisualStyleBackColor = true;
-            this.btn_cancelar.Click += new System.EventHandler(this.btn_cancelar_Click);
             // 
             // BuscarBombero
             // 

@@ -36,7 +36,17 @@ namespace Bomberos.Presentacion
 
         private void RegistroBombero_Load(object sender, EventArgs e)
         {
-       
+            ICargoMgr _Cargo = new CargoMgr();
+            ICompañiaMgr _Compañia = new CompañiaMgr();
+
+            select_cargo.DataSource = _Cargo.ListarCargos().OrderBy(p => p.Nombre).ToList();
+            select_cargo.DisplayMember = "Nombre";
+            select_cargo.ValueMember = "Id";
+
+            select_compania.DataSource = _Compañia.ListarCompañias().OrderBy(p => p.Nombre).ToList();
+            select_compania.DisplayMember = "Nombre";
+            select_compania.ValueMember = "Id";
+
         }
 
         private void textBox2_TextChanged(object sender, EventArgs e)
@@ -75,18 +85,35 @@ namespace Bomberos.Presentacion
             Bombero.GrupoSanguineo = txt_gruposang.Text;
             Bombero.Profesion = txt_profesion.Text;
             Bombero.Rut = txt_rut.Text;
-            Bombero.Compañia = select_compania.Text;
+            Bombero.Compañia = (CompañiaDTO)select_compania.SelectedItem;
             Bombero.TelefonoLaboral = txt_tel_lab.Text;
             Bombero.TelefonoParticular = txt_tel_part.Text;
             Bombero.TIB = txt_tib.Text;
             Bombero.Password = txt_pass.Text;
-            Bombero.Cargo = select_cargo.Text;
+            Bombero.Cargo = (CargoDTO)select_cargo.SelectedItem;
             Bombero.Estado = select_estado.Text;
 
             if (select_tipocuenta.Text.Equals("Administrador"))
                 Bombero.isAdmin = true;
             else
                 Bombero.isAdmin = false;
+
+
+            if (box_picture.Image != null)
+            {
+                try
+                {
+                    if (!System.IO.Directory.Exists(@"C:\Bomberos\"))
+                        System.IO.Directory.CreateDirectory(@"C:\Bomberos\");
+
+                    box_picture.Image.Save("C:\\Bomberos\\" + Bombero.Rut + ".jpg");
+                }
+                finally
+                {
+                    box_picture.Dispose();
+                }
+            }
+
 
             if (_Bombero.RegistroBombero(Bombero))
             {
