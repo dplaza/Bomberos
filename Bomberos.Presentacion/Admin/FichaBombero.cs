@@ -23,7 +23,18 @@ namespace Bomberos.Presentacion.Admin
         private void FichaBombero_Load(object sender, EventArgs e)
         {
             IBomberoMgr _Bombero = new BomberoMgr();
+            ICargoMgr _Cargo = new CargoMgr();
+            ICompañiaMgr _Compañia = new CompañiaMgr();
+
             ContextoDTO.Instancia().BomberoSelected = _Bombero.CargarBombero(ContextoDTO.Instancia().BomberoSelected);
+
+            select_cargo.DataSource = _Cargo.ListarCargos().OrderBy(p => p.Nombre).ToList();
+            select_cargo.DisplayMember = "Nombre";
+            select_cargo.ValueMember = "Id";
+
+            select_compania.DataSource = _Compañia.ListarCompañias().OrderBy(p => p.Nombre).ToList();
+            select_compania.DisplayMember = "Nombre";
+            select_compania.ValueMember = "Id";
 
             labelnombre.Text = ContextoDTO.Instancia().BomberoSelected.Nombres + " " + ContextoDTO.Instancia().BomberoSelected.Apellidos;
             labelRut.Text = ContextoDTO.Instancia().BomberoSelected.Rut;
@@ -126,11 +137,11 @@ namespace Bomberos.Presentacion.Admin
             {
                 try
                 {
-                    if (!System.IO.Directory.Exists(@"C:\Bomberos\"))
+                   /* if (!System.IO.Directory.Exists(@"C:\Bomberos\"))
                         System.IO.Directory.CreateDirectory(@"C:\Bomberos\");
 
                     System.IO.File.Delete("C:\\Bomberos\\" + Bombero.Rut + ".jpg");
-                    box_picture.Image.Save("C:\\Bomberos\\" + Bombero.Rut + ".jpg");
+                   */ box_picture.Image.Save("C:\\Bomberos\\" + Bombero.Rut + ".jpg");
                 }
                 finally
                 {

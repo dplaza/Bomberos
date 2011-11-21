@@ -58,5 +58,10 @@ namespace Bomberos.Presentacion
         {
 
         }
+
+        private void dataGridResult_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            
+        }
     }
 }
