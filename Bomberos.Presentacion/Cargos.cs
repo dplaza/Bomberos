@@ -15,5 +15,10 @@ namespace Bomberos.Presentacion
         {
             InitializeComponent();
         }
+
+        private void Cargos_Load(object sender, EventArgs e)
+        {
+           // dataGridResult.DataSource = 
+        }
     }
 }

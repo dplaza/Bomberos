@@ -50,7 +50,7 @@
             this.groupBox2.Controls.Add(this.btn_agregar);
             this.groupBox2.Controls.Add(this.txt_nombres);
             this.groupBox2.Controls.Add(this.label2);
-            this.groupBox2.Location = new System.Drawing.Point(12, 30);
+            this.groupBox2.Location = new System.Drawing.Point(17, 30);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(675, 81);
             this.groupBox2.TabIndex = 20;
@@ -85,7 +85,7 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.dataGridResult);
-            this.groupBox1.Location = new System.Drawing.Point(11, 133);
+            this.groupBox1.Location = new System.Drawing.Point(15, 133);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(678, 287);
             this.groupBox1.TabIndex = 22;
@@ -109,18 +109,19 @@
             // 
             // idCargo
             // 
-            this.idCargo.DataPropertyName = "idCargo";
+            this.idCargo.DataPropertyName = "Id";
             this.idCargo.DividerWidth = 1;
-            this.idCargo.HeaderText = "id Cargo";
+            this.idCargo.HeaderText = "ID Cargo";
             this.idCargo.Name = "idCargo";
             this.idCargo.ReadOnly = true;
+            this.idCargo.Visible = false;
             this.idCargo.Width = 70;
             // 
             // NombreCargo
             // 
-            this.NombreCargo.DataPropertyName = "NombreCargo";
+            this.NombreCargo.DataPropertyName = "Nombre";
             this.NombreCargo.DividerWidth = 1;
-            this.NombreCargo.HeaderText = "                                                                 Nombre Cargos";
+            this.NombreCargo.HeaderText = "Nombre";
             this.NombreCargo.Name = "NombreCargo";
             this.NombreCargo.ReadOnly = true;
             this.NombreCargo.Width = 560;
@@ -166,15 +167,17 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(691, 448);
+            this.ClientSize = new System.Drawing.Size(708, 465);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btn_editar);
             this.Controls.Add(this.btn_cancelar);
             this.Controls.Add(this.btn_borrar);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox2);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "Cargos";
             this.Text = "Cargos";
+            this.Load += new System.EventHandler(this.Cargos_Load);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
@@ -192,11 +195,11 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.DataGridView dataGridResult;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idCargo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NombreCargo;
         private System.Windows.Forms.Button btn_editar;
         private System.Windows.Forms.Button btn_cancelar;
         private System.Windows.Forms.Button btn_borrar;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idCargo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NombreCargo;
     }
 }
