@@ -34,12 +34,12 @@
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dataGridResult = new System.Windows.Forms.DataGridView();
-            this.idPremios = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NombrePremios = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btn_editar = new System.Windows.Forms.Button();
             this.btn_cancelar = new System.Windows.Forms.Button();
             this.btn_borrar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.idPremios = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NombrePremios = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridResult)).BeginInit();
@@ -50,7 +50,7 @@
             this.groupBox2.Controls.Add(this.btn_agregar);
             this.groupBox2.Controls.Add(this.txt_nombres);
             this.groupBox2.Controls.Add(this.label2);
-            this.groupBox2.Location = new System.Drawing.Point(12, 30);
+            this.groupBox2.Location = new System.Drawing.Point(13, 30);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(675, 81);
             this.groupBox2.TabIndex = 21;
@@ -107,24 +107,6 @@
             this.dataGridResult.Size = new System.Drawing.Size(672, 268);
             this.dataGridResult.TabIndex = 0;
             // 
-            // idPremios
-            // 
-            this.idPremios.DataPropertyName = "idPremios";
-            this.idPremios.DividerWidth = 1;
-            this.idPremios.HeaderText = "id Premio";
-            this.idPremios.Name = "idPremios";
-            this.idPremios.ReadOnly = true;
-            this.idPremios.Width = 80;
-            // 
-            // NombrePremios
-            // 
-            this.NombrePremios.DataPropertyName = "NombrePremios";
-            this.NombrePremios.DividerWidth = 1;
-            this.NombrePremios.HeaderText = "                                                                 Nombre  Premios";
-            this.NombrePremios.Name = "NombrePremios";
-            this.NombrePremios.ReadOnly = true;
-            this.NombrePremios.Width = 550;
-            // 
             // btn_editar
             // 
             this.btn_editar.Location = new System.Drawing.Point(446, 426);
@@ -162,17 +144,38 @@
             this.label1.TabIndex = 31;
             this.label1.Text = "PREMIOS";
             // 
+            // idPremios
+            // 
+            this.idPremios.DataPropertyName = "Id";
+            this.idPremios.DividerWidth = 1;
+            this.idPremios.HeaderText = "ID Premio";
+            this.idPremios.Name = "idPremios";
+            this.idPremios.ReadOnly = true;
+            this.idPremios.Visible = false;
+            this.idPremios.Width = 80;
+            // 
+            // NombrePremios
+            // 
+            this.NombrePremios.DataPropertyName = "Nombre";
+            this.NombrePremios.DividerWidth = 1;
+            this.NombrePremios.HeaderText = "Nombre";
+            this.NombrePremios.Name = "NombrePremios";
+            this.NombrePremios.ReadOnly = true;
+            this.NombrePremios.Width = 550;
+            // 
             // Premios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(691, 448);
+            this.ClientSize = new System.Drawing.Size(701, 463);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btn_editar);
             this.Controls.Add(this.btn_cancelar);
             this.Controls.Add(this.btn_borrar);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox2);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
             this.Name = "Premios";
             this.Text = "Premios";
             this.groupBox2.ResumeLayout(false);
@@ -192,11 +195,11 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.DataGridView dataGridResult;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idPremios;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NombrePremios;
         private System.Windows.Forms.Button btn_editar;
         private System.Windows.Forms.Button btn_cancelar;
         private System.Windows.Forms.Button btn_borrar;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idPremios;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NombrePremios;
     }
 }

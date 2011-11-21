@@ -61,6 +61,34 @@ namespace Bomberos.Presentacion
             form.Show();
         }
 
+        private void cargoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var form = new Cargos();
+            form.MdiParent = this;
+            form.Show();
+        }
+
+        private void compañiaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var form = new Compañia();
+            form.MdiParent = this;
+            form.Show();
+        }
+
+        private void premioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var form = new Premios();
+            form.MdiParent = this;
+            form.Show();
+        }
+
+        private void cursoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var form = new Cursos();
+            form.MdiParent = this;
+            form.Show();
+        }
+
 
     }
 }

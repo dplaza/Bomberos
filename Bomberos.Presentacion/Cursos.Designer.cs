@@ -34,12 +34,12 @@
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dataGridResult = new System.Windows.Forms.DataGridView();
-            this.idCursos = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NombreCursos = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btn_editar = new System.Windows.Forms.Button();
             this.btn_cancelar = new System.Windows.Forms.Button();
             this.btn_borrar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.idCursos = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NombreCursos = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridResult)).BeginInit();
@@ -50,7 +50,7 @@
             this.groupBox2.Controls.Add(this.btn_agregar);
             this.groupBox2.Controls.Add(this.txt_nombres);
             this.groupBox2.Controls.Add(this.label2);
-            this.groupBox2.Location = new System.Drawing.Point(12, 30);
+            this.groupBox2.Location = new System.Drawing.Point(15, 30);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(675, 81);
             this.groupBox2.TabIndex = 21;
@@ -85,7 +85,7 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.dataGridResult);
-            this.groupBox1.Location = new System.Drawing.Point(11, 133);
+            this.groupBox1.Location = new System.Drawing.Point(13, 133);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(678, 287);
             this.groupBox1.TabIndex = 23;
@@ -106,24 +106,6 @@
             this.dataGridResult.ReadOnly = true;
             this.dataGridResult.Size = new System.Drawing.Size(672, 268);
             this.dataGridResult.TabIndex = 0;
-            // 
-            // idCursos
-            // 
-            this.idCursos.DataPropertyName = "idCursos";
-            this.idCursos.DividerWidth = 1;
-            this.idCursos.HeaderText = "id Curso";
-            this.idCursos.Name = "idCursos";
-            this.idCursos.ReadOnly = true;
-            this.idCursos.Width = 70;
-            // 
-            // NombreCursos
-            // 
-            this.NombreCursos.DataPropertyName = "Cursos";
-            this.NombreCursos.DividerWidth = 1;
-            this.NombreCursos.HeaderText = "                                                                 Nombre Cursos";
-            this.NombreCursos.Name = "NombreCursos";
-            this.NombreCursos.ReadOnly = true;
-            this.NombreCursos.Width = 560;
             // 
             // btn_editar
             // 
@@ -162,17 +144,38 @@
             this.label1.TabIndex = 31;
             this.label1.Text = "CURSOS";
             // 
+            // idCursos
+            // 
+            this.idCursos.DataPropertyName = "Id";
+            this.idCursos.DividerWidth = 1;
+            this.idCursos.HeaderText = "ID Curso";
+            this.idCursos.Name = "idCursos";
+            this.idCursos.ReadOnly = true;
+            this.idCursos.Visible = false;
+            this.idCursos.Width = 70;
+            // 
+            // NombreCursos
+            // 
+            this.NombreCursos.DataPropertyName = "Nombre";
+            this.NombreCursos.DividerWidth = 1;
+            this.NombreCursos.HeaderText = "Nombre";
+            this.NombreCursos.Name = "NombreCursos";
+            this.NombreCursos.ReadOnly = true;
+            this.NombreCursos.Width = 560;
+            // 
             // Cursos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(691, 448);
+            this.ClientSize = new System.Drawing.Size(704, 466);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btn_editar);
             this.Controls.Add(this.btn_cancelar);
             this.Controls.Add(this.btn_borrar);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox2);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
             this.Name = "Cursos";
             this.Text = "Cursos";
             this.Load += new System.EventHandler(this.Cursos_Load);
@@ -193,11 +196,11 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.DataGridView dataGridResult;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idCursos;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NombreCursos;
         private System.Windows.Forms.Button btn_editar;
         private System.Windows.Forms.Button btn_cancelar;
         private System.Windows.Forms.Button btn_borrar;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idCursos;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NombreCursos;
     }
 }
