@@ -15,6 +15,12 @@ namespace Bomberos.Negocio.Mgr
             return _Cargo.Insert(p_Cargo);
         }
 
+        public bool EditarCargo(CargoDTO p_Cargo)
+        {
+            ICargoDom _Cargo = new CargoDom();
+            return _Cargo.Update(p_Cargo);
+        }
+
         public CargoDTO CargarCargo(CargoDTO p_Cargo)
         {
             ICargoDom _Cargo = new CargoDom();

@@ -15,6 +15,18 @@ namespace Bomberos.Negocio.Mgr
             return _Curso.Insert(p_Curso);
         }
 
+        public bool EditarCurso(CursoDTO p_Curso)
+        {
+            ICursoDom _Curso = new CursoDom();
+            return _Curso.Update(p_Curso);
+        }
+
+        public CursoDTO CargarCurso(CursoDTO p_Curso)
+        {
+            ICursoDom _Curso = new CursoDom();
+            return _Curso.Load(p_Curso);
+        }
+
         public List<CursoDTO> ListarCursos()
         {
             ICursoDom _Curso = new CursoDom();

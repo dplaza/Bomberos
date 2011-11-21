@@ -41,14 +41,22 @@ namespace Bomberos.Presentacion
 
         private void btn_agregar_Click(object sender, EventArgs e)
         {
-            ICompañiaMgr _Compañia = new CompañiaMgr();
-            CompañiaDTO Compañia = new CompañiaDTO();
-
-            Compañia.Nombre = txt_nombres.Text;
-            if (_Compañia.RegistroCompañia(Compañia))
+            if (txt_nombre.Text != "")
             {
-                txt_nombres.Clear();
-                dataGridResult.DataSource = _Compañia.ListarCompañias().OrderBy(p => p.Nombre).ToList();
+
+                ICompañiaMgr _Compañia = new CompañiaMgr();
+                CompañiaDTO Compañia = new CompañiaDTO();
+
+                Compañia.Nombre = txt_nombres.Text;
+                if (_Compañia.RegistroCompañia(Compañia))
+                {
+                    dataGridResult.DataSource = _Compañia.ListarCompañias().OrderBy(p => p.Nombre).ToList();
+                    txt_nombres.Clear();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Falta rellenar datos");
             }
         }
     }

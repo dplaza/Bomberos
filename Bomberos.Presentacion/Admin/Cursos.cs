@@ -31,14 +31,21 @@ namespace Bomberos.Presentacion
 
         private void btn_agregar_Click(object sender, EventArgs e)
         {
-            ICursoMgr _Curso = new CursoMgr();
-            CursoDTO Curso = new CursoDTO();
-
-            Curso.Nombre = txt_nombres.Text;
-            if (_Curso.RegistroCurso(Curso))
+            if (txt_nombre.Text != "")
             {
-                txt_nombres.Clear();
-                dataGridResult.DataSource = _Curso.ListarCursos().OrderBy(p => p.Nombre).ToList();
+                ICursoMgr _Curso = new CursoMgr();
+                CursoDTO Curso = new CursoDTO();
+
+                Curso.Nombre = txt_nombres.Text;
+                if (_Curso.RegistroCurso(Curso))
+                {
+                    txt_nombres.Clear();
+                    dataGridResult.DataSource = _Curso.ListarCursos().OrderBy(p => p.Nombre).ToList();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Falta rellenar datos");
             }
         }
     }

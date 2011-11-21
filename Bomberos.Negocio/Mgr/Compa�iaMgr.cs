@@ -15,6 +15,12 @@ namespace Bomberos.Negocio.Mgr
             return _Compañia.Insert(p_Compañia);
         }
 
+        public bool EditarCompañia(CompañiaDTO p_Compañia)
+        {
+            ICompañiaDom _Compañia = new CompañiaDom();
+            return _Compañia.Update(p_Compañia);
+        }
+
         public CompañiaDTO CargarCompañia(CompañiaDTO p_Compañia)
         {
             ICompañiaDom _Compañia = new CompañiaDom();
