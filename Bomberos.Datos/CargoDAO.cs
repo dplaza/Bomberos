@@ -81,10 +81,12 @@ namespace Bomberos.Datos
 
         public bool Delete(CargoDTO p_Cargo)
         {
+            return false;
         }
 
         public bool Update(CargoDTO p_Cargo)
         {
+            return false;
         }
 
         public List<CargoDTO> LoadAll()
@@ -122,7 +124,5 @@ namespace Bomberos.Datos
             return ListaCargo;
 
         }
-    }
-}
     }
 }

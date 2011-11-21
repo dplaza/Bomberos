@@ -96,6 +96,7 @@
             // 
             this.dataGridResult.AllowUserToAddRows = false;
             this.dataGridResult.AllowUserToDeleteRows = false;
+            this.dataGridResult.AllowUserToOrderColumns = true;
             this.dataGridResult.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridResult.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idCargo,

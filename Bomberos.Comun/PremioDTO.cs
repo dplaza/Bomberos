@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Bomberos.Comun
 {
-    public class Premio
+    public class PremioDTO
     {
         public int Id { get; set; }
         public string Nombre { get; set; }

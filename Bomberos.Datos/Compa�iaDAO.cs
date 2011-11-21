@@ -107,6 +107,7 @@ namespace Bomberos.Datos
 
         public bool Update(BomberoDTO p_Bombero)
         {
+            return false;
         }
 
         public List<CompañiaDTO> LoadAll()

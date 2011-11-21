@@ -50,7 +50,7 @@
     <Compile Include="CargoDAO.cs" />
     <Compile Include="CompañiaDAO.cs" />
     <Compile Include="IBomberoDAO.cs" />
-    <Compile Include="ICargo.cs" />
+    <Compile Include="ICargoDAO.cs" />
     <Compile Include="ICompañiaDAO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

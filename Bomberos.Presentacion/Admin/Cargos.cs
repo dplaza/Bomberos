@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using Bomberos.Negocio.Mgr;
 
 namespace Bomberos.Presentacion
 {
@@ -18,7 +19,8 @@ namespace Bomberos.Presentacion
 
         private void Cargos_Load(object sender, EventArgs e)
         {
-           // dataGridResult.DataSource = 
+            CargoMgr _Cargo = new CargoMgr();
+            dataGridResult.DataSource = _Cargo.ListarCargos();
         }
     }
 }
