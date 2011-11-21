@@ -34,12 +34,12 @@
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dataGridResult = new System.Windows.Forms.DataGridView();
+            this.idCargo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NombreCargo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btn_editar = new System.Windows.Forms.Button();
             this.btn_cancelar = new System.Windows.Forms.Button();
             this.btn_borrar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.idCargo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NombreCargo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridResult)).BeginInit();
@@ -107,6 +107,25 @@
             this.dataGridResult.Size = new System.Drawing.Size(672, 268);
             this.dataGridResult.TabIndex = 0;
             // 
+            // idCargo
+            // 
+            this.idCargo.DataPropertyName = "Id";
+            this.idCargo.DividerWidth = 1;
+            this.idCargo.HeaderText = "ID Cargo";
+            this.idCargo.Name = "idCargo";
+            this.idCargo.ReadOnly = true;
+            this.idCargo.Visible = false;
+            this.idCargo.Width = 70;
+            // 
+            // NombreCargo
+            // 
+            this.NombreCargo.DataPropertyName = "Nombre";
+            this.NombreCargo.DividerWidth = 1;
+            this.NombreCargo.HeaderText = "Nombre";
+            this.NombreCargo.Name = "NombreCargo";
+            this.NombreCargo.ReadOnly = true;
+            this.NombreCargo.Width = 560;
+            // 
             // btn_editar
             // 
             this.btn_editar.Location = new System.Drawing.Point(446, 426);
@@ -144,25 +163,6 @@
             this.label1.TabIndex = 28;
             this.label1.Text = "CARGOS";
             // 
-            // idCargo
-            // 
-            this.idCargo.DataPropertyName = "Id";
-            this.idCargo.DividerWidth = 1;
-            this.idCargo.HeaderText = "ID Cargo";
-            this.idCargo.Name = "idCargo";
-            this.idCargo.ReadOnly = true;
-            this.idCargo.Visible = false;
-            this.idCargo.Width = 70;
-            // 
-            // NombreCargo
-            // 
-            this.NombreCargo.DataPropertyName = "Nombre";
-            this.NombreCargo.DividerWidth = 1;
-            this.NombreCargo.HeaderText = "Nombre";
-            this.NombreCargo.Name = "NombreCargo";
-            this.NombreCargo.ReadOnly = true;
-            this.NombreCargo.Width = 560;
-            // 
             // Cargos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -177,6 +177,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "Cargos";
             this.Text = "Cargos";
+            this.Load += new System.EventHandler(this.Cargos_Load);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox1.ResumeLayout(false);

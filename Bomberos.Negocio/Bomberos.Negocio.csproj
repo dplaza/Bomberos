@@ -48,6 +48,8 @@
     <Compile Include="Dom\BomberoDom.cs" />
     <Compile Include="Dom\IBomberoDom.cs" />
     <Compile Include="Mgr\BomberoMgr.cs" />
+    <Compile Include="Mgr\CargoMgr.cs" />
+    <Compile Include="Mgr\ICargoMgr.cs" />
     <Compile Include="Mgr\ILoginMgr.cs" />
     <Compile Include="Mgr\IBomberoMgr.cs" />
     <Compile Include="Mgr\LoginMgr.cs" />
