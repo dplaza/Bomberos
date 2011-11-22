@@ -52,10 +52,10 @@ namespace Bomberos.Presentacion.Admin
             txt_rut.Text = ContextoDTO.Instancia().BomberoSelected.Rut;
             date_fecha_nac.Text = ContextoDTO.Instancia().BomberoSelected.FechaNacimiento.ToString();
             date_fecha_inscrip.Text = ContextoDTO.Instancia().BomberoSelected.FechaInscripcion.ToString();
-            select_estadocivil.SelectedText = ContextoDTO.Instancia().BomberoSelected.EstadoCivil;
+            select_estadocivil.SelectedValue = ContextoDTO.Instancia().BomberoSelected.EstadoCivil;
             select_compania.SelectedValue = ContextoDTO.Instancia().BomberoSelected.Compañia.Id;
             select_cargo.SelectedValue = ContextoDTO.Instancia().BomberoSelected.Cargo.Id;
-            select_estado.SelectedText = ContextoDTO.Instancia().BomberoSelected.Estado;
+            select_estado.SelectedValue = ContextoDTO.Instancia().BomberoSelected.Estado;
             txt_tel_lab.Text = ContextoDTO.Instancia().BomberoSelected.TelefonoLaboral;
             txt_tel_part.Text = ContextoDTO.Instancia().BomberoSelected.TelefonoParticular;
             txt_tib.Text = ContextoDTO.Instancia().BomberoSelected.TIB;
@@ -141,7 +141,7 @@ namespace Bomberos.Presentacion.Admin
                         System.IO.Directory.CreateDirectory(@"C:\Bomberos\");
 
                     System.IO.File.Delete("C:\\Bomberos\\" + Bombero.Rut + ".jpg");
-                   */ box_picture.Image.Save("C:\\Bomberos\\" + Bombero.Rut + ".jpg");
+                   box_picture.Image.Save("C:\\Bomberos\\" + Bombero.Rut + ".jpg");*/
                 }
                 finally
                 {

@@ -183,12 +183,12 @@ namespace Bomberos.Datos
             msqlCommand.Parameters.AddWithValue("?p_celular", p_Bombero.Celular);
             msqlCommand.Parameters.AddWithValue("?p_email", p_Bombero.Email);
             msqlCommand.Parameters.AddWithValue("?p_profesion", p_Bombero.Profesion);
-            msqlCommand.Parameters.AddWithValue("?p_compania", p_Bombero.Compañia);
+            msqlCommand.Parameters.AddWithValue("?p_compania", p_Bombero.Compañia.Id);
             msqlCommand.Parameters.AddWithValue("?p_estcivil", p_Bombero.EstadoCivil);
             msqlCommand.Parameters.AddWithValue("?p_isadmin", p_Bombero.isAdmin);
             msqlCommand.Parameters.AddWithValue("?p_password", p_Bombero.Password);
             msqlCommand.Parameters.AddWithValue("?p_estado", p_Bombero.Estado);
-            msqlCommand.Parameters.AddWithValue("?p_cargo", p_Bombero.Cargo);
+            msqlCommand.Parameters.AddWithValue("?p_cargo", p_Bombero.Cargo.Id);
 
             try
             {

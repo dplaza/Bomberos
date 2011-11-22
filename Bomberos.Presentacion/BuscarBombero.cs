@@ -48,8 +48,15 @@ namespace Bomberos.Presentacion
             CargoDTO cargo = new CargoDTO();
             cargo = (CargoDTO) select_cargo.SelectedItem;
 
-            dataGridResult.DataSource = _Bombero.ListarBomberos().FindAll(p => p.Cargo.Id.Equals(cargo.Id) && p.Nombres.Contains(txt_nombres.Text) && p.Apellidos.Contains(txt_apellidos.Text) && p.Rut.Contains(txt_rut.Text) && p.TIB.Contains(txt_tib.Text));
-            dataGridResult.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            if (cargo.Id != 0)
+            {
+                dataGridResult.DataSource = _Bombero.ListarBomberos().FindAll(p => p.Cargo.Id.Equals(cargo.Id) && p.Nombres.Contains(txt_nombres.Text) && p.Apellidos.Contains(txt_apellidos.Text) && p.Rut.Contains(txt_rut.Text) && p.TIB.Contains(txt_tib.Text));
+            }
+            else
+            {
+                dataGridResult.DataSource = _Bombero.ListarBomberos().FindAll(p => p.Nombres.Contains(txt_nombres.Text) && p.Apellidos.Contains(txt_apellidos.Text) && p.Rut.Contains(txt_rut.Text) && p.TIB.Contains(txt_tib.Text));
+            }
+                dataGridResult.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridResult.MultiSelect = false;
             
         }
@@ -88,7 +95,13 @@ namespace Bomberos.Presentacion
         private void BuscarBombero_Load(object sender, EventArgs e)
         {
             ICargoMgr _Cargo = new CargoMgr();
-            select_cargo.DataSource = _Cargo.ListarCargos().OrderBy(p => p.Nombre).ToList();
+            CargoDTO cargo_null = new CargoDTO();
+            cargo_null.Id = 0;
+            cargo_null.Nombre = "-----";
+            List<CargoDTO> lista = new List<CargoDTO>();
+            lista = _Cargo.ListarCargos();
+            lista.Add(cargo_null);
+            select_cargo.DataSource = lista.OrderBy(p => p.Nombre).ToList();
             select_cargo.DisplayMember = "Nombre";
             select_cargo.ValueMember = "Id";
         }

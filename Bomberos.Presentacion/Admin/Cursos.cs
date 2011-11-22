@@ -31,7 +31,7 @@ namespace Bomberos.Presentacion
 
         private void btn_agregar_Click(object sender, EventArgs e)
         {
-            if (txt_nombre.Text != "")
+            if (txt_nombres.Text != "")
             {
                 ICursoMgr _Curso = new CursoMgr();
                 CursoDTO Curso = new CursoDTO();
