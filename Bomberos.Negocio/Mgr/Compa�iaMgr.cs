@@ -27,6 +27,12 @@ namespace Bomberos.Negocio.Mgr
             return _Compañia.Load(p_Compañia);
         }
 
+        public bool BorrarCompañia(CompañiaDTO p_Compañia)
+        {
+            ICompañiaDom _Compañia = new CompañiaDom();
+            return _Compañia.Delete(p_Compañia);
+        }
+
         public List<CompañiaDTO> ListarCompañias()
         {
             ICompañiaDom _Compañia = new CompañiaDom();

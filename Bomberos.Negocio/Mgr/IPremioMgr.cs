@@ -12,5 +12,6 @@ namespace Bomberos.Negocio.Mgr
         bool EditarPremio(PremioDTO p_Premio);
         PremioDTO CargarPremio(PremioDTO p_Premio);
         List<PremioDTO> ListarPremios();
+        bool BorrarPremio(PremioDTO p_Premio);
     }
 }

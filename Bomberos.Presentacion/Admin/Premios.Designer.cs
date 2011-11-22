@@ -34,12 +34,12 @@
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dataGridResult = new System.Windows.Forms.DataGridView();
-            this.idPremios = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NombrePremios = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btn_editar = new System.Windows.Forms.Button();
             this.btn_cancelar = new System.Windows.Forms.Button();
             this.btn_borrar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.IDPremio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NombrePremio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridResult)).BeginInit();
@@ -99,33 +99,14 @@
             this.dataGridResult.AllowUserToDeleteRows = false;
             this.dataGridResult.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridResult.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idPremios,
-            this.NombrePremios});
+            this.IDPremio,
+            this.NombrePremio});
             this.dataGridResult.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridResult.Location = new System.Drawing.Point(3, 16);
             this.dataGridResult.Name = "dataGridResult";
             this.dataGridResult.ReadOnly = true;
             this.dataGridResult.Size = new System.Drawing.Size(672, 268);
             this.dataGridResult.TabIndex = 0;
-            // 
-            // idPremios
-            // 
-            this.idPremios.DataPropertyName = "Id";
-            this.idPremios.DividerWidth = 1;
-            this.idPremios.HeaderText = "ID Premio";
-            this.idPremios.Name = "idPremios";
-            this.idPremios.ReadOnly = true;
-            this.idPremios.Visible = false;
-            this.idPremios.Width = 80;
-            // 
-            // NombrePremios
-            // 
-            this.NombrePremios.DataPropertyName = "Nombre";
-            this.NombrePremios.DividerWidth = 1;
-            this.NombrePremios.HeaderText = "Nombre";
-            this.NombrePremios.Name = "NombrePremios";
-            this.NombrePremios.ReadOnly = true;
-            this.NombrePremios.Width = 550;
             // 
             // btn_editar
             // 
@@ -166,6 +147,25 @@
             this.label1.TabIndex = 31;
             this.label1.Text = "PREMIOS";
             // 
+            // IDPremio
+            // 
+            this.IDPremio.DataPropertyName = "Id";
+            this.IDPremio.DividerWidth = 1;
+            this.IDPremio.HeaderText = "ID Premio";
+            this.IDPremio.Name = "IDPremio";
+            this.IDPremio.ReadOnly = true;
+            this.IDPremio.Visible = false;
+            this.IDPremio.Width = 80;
+            // 
+            // NombrePremio
+            // 
+            this.NombrePremio.DataPropertyName = "Nombre";
+            this.NombrePremio.DividerWidth = 1;
+            this.NombrePremio.HeaderText = "Nombre";
+            this.NombrePremio.Name = "NombrePremio";
+            this.NombrePremio.ReadOnly = true;
+            this.NombrePremio.Width = 550;
+            // 
             // Premios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -203,7 +203,7 @@
         private System.Windows.Forms.Button btn_cancelar;
         private System.Windows.Forms.Button btn_borrar;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idPremios;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NombrePremios;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IDPremio;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NombrePremio;
     }
 }

@@ -31,7 +31,7 @@ namespace Bomberos.Presentacion
 
         private void btn_agregar_Click(object sender, EventArgs e)
         {
-            if (txt_nombre.Text != "")
+            if (txt_nombres.Text != "")
             {
                 ICursoMgr _Curso = new CursoMgr();
                 CursoDTO Curso = new CursoDTO();
@@ -46,6 +46,24 @@ namespace Bomberos.Presentacion
             else
             {
                 MessageBox.Show("Falta rellenar datos");
+            }
+        }
+
+        private void btn_borrar_Click(object sender, EventArgs e)
+        {
+            ICursoMgr _Curso = new CursoMgr();
+            CursoDTO Curso = new CursoDTO();
+
+            Curso.Nombre = dataGridResult.SelectedRows[0].Cells["NombreCurso"].Value.ToString();
+            Curso.Id = int.Parse(dataGridResult.SelectedRows[0].Cells["idCurso"].Value.ToString());
+
+            if (!_Curso.BorrarCurso(Curso))
+            {
+                MessageBox.Show("Falla al borrar curso");
+            }
+            else
+            {
+                dataGridResult.DataSource = _Curso.ListarCursos().OrderBy(p => p.Nombre).ToList();
             }
         }
     }

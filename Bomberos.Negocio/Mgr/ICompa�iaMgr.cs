@@ -12,5 +12,6 @@ namespace Bomberos.Negocio.Mgr
         bool EditarCompañia(CompañiaDTO p_Compañia);
         CompañiaDTO CargarCompañia(CompañiaDTO p_Compañia);
         List<CompañiaDTO> ListarCompañias();
+        bool BorrarCompañia(CompañiaDTO p_Compañia);
     }
 }

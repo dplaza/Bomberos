@@ -27,5 +27,7 @@ namespace Bomberos.Comun
         public string Password { get; set; }
         public string Estado { get; set; }
         public CargoDTO Cargo { get; set; }
+        public int NumeroRegistro { get; set; }
+
     }
 }

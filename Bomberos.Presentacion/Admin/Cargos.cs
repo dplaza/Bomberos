@@ -63,12 +63,25 @@ namespace Bomberos.Presentacion
 
         private void btn_borrar_Click(object sender, EventArgs e)
         {
+            ICargoMgr _Cargo = new CargoMgr();
+            CargoDTO Cargo = new CargoDTO();
 
+            Cargo.Nombre = dataGridResult.SelectedRows[0].Cells["NombreCargo"].Value.ToString();
+            Cargo.Id = int.Parse(dataGridResult.SelectedRows[0].Cells["IdCargo"].Value.ToString());
+
+            if (!_Cargo.BorrarCargo(Cargo))
+            {
+                MessageBox.Show("Falla al borrar cargo");
+            }
+            else
+            {
+                dataGridResult.DataSource = _Cargo.ListarCargos().OrderBy(p => p.Nombre).ToList();
+            }
         }
 
         private void dataGridResult_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            
+
         }
     }
 }
