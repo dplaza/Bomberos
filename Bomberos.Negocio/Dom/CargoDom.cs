@@ -15,6 +15,18 @@ namespace Bomberos.Negocio.Dom
             return _Cargo.Insert(p_Cargo);
         }
 
+        public bool Delete(CargoDTO p_Cargo)
+        {
+            ICargoDAO _Cargo = new CargoDAO();
+            return _Cargo.Delete(p_Cargo);
+        }
+
+        public bool Update(CargoDTO p_Cargo)
+        {
+            ICargoDAO _Cargo = new CargoDAO();
+            return _Cargo.Update(p_Cargo);
+        }
+
         public CargoDTO Load(CargoDTO p_Cargo)
         {
             ICargoDAO _Cargo = new CargoDAO();

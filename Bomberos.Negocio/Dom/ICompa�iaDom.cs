@@ -10,6 +10,8 @@ namespace Bomberos.Negocio.Dom
     {
         bool Insert(CompañiaDTO p_Compañia);
         CompañiaDTO Load(CompañiaDTO p_Compañia);
+        bool Delete(CompañiaDTO p_Compañia);
+        bool Update(CompañiaDTO p_Compañia);
         List<CompañiaDTO> LoadAll();
     }
 }
