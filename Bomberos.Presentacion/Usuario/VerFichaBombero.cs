@@ -46,6 +46,7 @@ namespace Bomberos.Presentacion.Usuario
             txt_tel_lab.Text = ContextoDTO.Instancia().BomberoSelected.TelefonoLaboral;
             txt_tel_part.Text = ContextoDTO.Instancia().BomberoSelected.TelefonoParticular;
             txt_tib.Text = ContextoDTO.Instancia().BomberoSelected.TIB;
+            txt_socio.Text = ContextoDTO.Instancia().BomberoSelected.NumeroRegistro.ToString();
 
             if (ContextoDTO.Instancia().BomberoSelected.isAdmin)
                 select_tipocuenta.SelectedText = "Administrador";

@@ -43,7 +43,6 @@ namespace Bomberos.Presentacion
         {
             if (txt_nombres.Text != "")
             {
-
                 ICompañiaMgr _Compañia = new CompañiaMgr();
                 CompañiaDTO Compañia = new CompañiaDTO();
 
@@ -57,6 +56,24 @@ namespace Bomberos.Presentacion
             else
             {
                 MessageBox.Show("Falta rellenar datos");
+            }
+        }
+
+        private void btn_borrar_Click(object sender, EventArgs e)
+        {
+            ICompañiaMgr _Compañia = new CompañiaMgr();
+            CompañiaDTO Compañia = new CompañiaDTO();
+
+            Compañia.Nombre = dataGridResult.SelectedRows[0].Cells["NombreCompañia"].Value.ToString();
+            Compañia.Id = int.Parse(dataGridResult.SelectedRows[0].Cells["idCompañia"].Value.ToString());
+
+            if (!_Compañia.BorrarCompañia(Compañia))
+            {
+                MessageBox.Show("Falla al borrar compañia");
+            }
+            else
+            {
+                dataGridResult.DataSource = _Compañia.ListarCompañias().OrderBy(p => p.Nombre).ToList();
             }
         }
     }

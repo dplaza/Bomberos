@@ -34,12 +34,12 @@
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dataGridResult = new System.Windows.Forms.DataGridView();
-            this.idCursos = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NombreCursos = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btn_editar = new System.Windows.Forms.Button();
             this.btn_cancelar = new System.Windows.Forms.Button();
             this.btn_borrar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.idCurso = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NombreCurso = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridResult)).BeginInit();
@@ -99,33 +99,14 @@
             this.dataGridResult.AllowUserToDeleteRows = false;
             this.dataGridResult.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridResult.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idCursos,
-            this.NombreCursos});
+            this.idCurso,
+            this.NombreCurso});
             this.dataGridResult.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridResult.Location = new System.Drawing.Point(3, 16);
             this.dataGridResult.Name = "dataGridResult";
             this.dataGridResult.ReadOnly = true;
             this.dataGridResult.Size = new System.Drawing.Size(672, 268);
             this.dataGridResult.TabIndex = 0;
-            // 
-            // idCursos
-            // 
-            this.idCursos.DataPropertyName = "Id";
-            this.idCursos.DividerWidth = 1;
-            this.idCursos.HeaderText = "ID Curso";
-            this.idCursos.Name = "idCursos";
-            this.idCursos.ReadOnly = true;
-            this.idCursos.Visible = false;
-            this.idCursos.Width = 70;
-            // 
-            // NombreCursos
-            // 
-            this.NombreCursos.DataPropertyName = "Nombre";
-            this.NombreCursos.DividerWidth = 1;
-            this.NombreCursos.HeaderText = "Nombre";
-            this.NombreCursos.Name = "NombreCursos";
-            this.NombreCursos.ReadOnly = true;
-            this.NombreCursos.Width = 560;
             // 
             // btn_editar
             // 
@@ -155,6 +136,7 @@
             this.btn_borrar.TabIndex = 28;
             this.btn_borrar.Text = "Borrar";
             this.btn_borrar.UseVisualStyleBackColor = true;
+            this.btn_borrar.Click += new System.EventHandler(this.btn_borrar_Click);
             // 
             // label1
             // 
@@ -164,6 +146,25 @@
             this.label1.Size = new System.Drawing.Size(52, 13);
             this.label1.TabIndex = 31;
             this.label1.Text = "CURSOS";
+            // 
+            // idCurso
+            // 
+            this.idCurso.DataPropertyName = "Id";
+            this.idCurso.DividerWidth = 1;
+            this.idCurso.HeaderText = "ID Curso";
+            this.idCurso.Name = "idCurso";
+            this.idCurso.ReadOnly = true;
+            this.idCurso.Visible = false;
+            this.idCurso.Width = 70;
+            // 
+            // NombreCurso
+            // 
+            this.NombreCurso.DataPropertyName = "Nombre";
+            this.NombreCurso.DividerWidth = 1;
+            this.NombreCurso.HeaderText = "Nombre";
+            this.NombreCurso.Name = "NombreCurso";
+            this.NombreCurso.ReadOnly = true;
+            this.NombreCurso.Width = 560;
             // 
             // Cursos
             // 
@@ -202,7 +203,7 @@
         private System.Windows.Forms.Button btn_cancelar;
         private System.Windows.Forms.Button btn_borrar;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idCursos;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NombreCursos;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idCurso;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NombreCurso;
     }
 }

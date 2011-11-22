@@ -12,5 +12,6 @@ namespace Bomberos.Negocio.Mgr
         bool EditarCurso(CursoDTO p_Curso);
         CursoDTO CargarCurso(CursoDTO p_Curso);
         List<CursoDTO> ListarCursos();
+        bool BorrarCurso(CursoDTO p_Curso);
     }
 }

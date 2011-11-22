@@ -27,6 +27,12 @@ namespace Bomberos.Negocio.Mgr
             return _Cargo.Load(p_Cargo);
         }
 
+        public bool BorrarCargo(CargoDTO p_Cargo)
+        {
+            ICargoDom _Cargo = new CargoDom();
+            return _Cargo.Delete(p_Cargo);
+        }
+
         public List<CargoDTO> ListarCargos()
         {
             ICargoDom _Cargo = new CargoDom();

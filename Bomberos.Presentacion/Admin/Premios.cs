@@ -27,6 +27,8 @@ namespace Bomberos.Presentacion
         {
             IPremioMgr _Premio = new PremioMgr();
             dataGridResult.DataSource = _Premio.ListarPremios().OrderBy(p => p.Nombre).ToList();
+            dataGridResult.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dataGridResult.MultiSelect = false;
         }
 
         private void btn_agregar_Click(object sender, EventArgs e)
@@ -50,7 +52,20 @@ namespace Bomberos.Presentacion
         }
         private void btn_borrar_Click(object sender, EventArgs e)
         {
+            IPremioMgr _Premio = new PremioMgr();
+            PremioDTO Premio = new PremioDTO();
 
+            Premio.Nombre = dataGridResult.SelectedRows[0].Cells["NombrePremio"].Value.ToString();
+            Premio.Id = int.Parse(dataGridResult.SelectedRows[0].Cells["IDPremio"].Value.ToString());
+
+            if (!_Premio.BorrarPremio(Premio))
+            {
+                MessageBox.Show("Falla al borrar premio");
+            }
+            else
+            {
+                dataGridResult.DataSource = _Premio.ListarPremios().OrderBy(p => p.Nombre).ToList();
+            }
         }
     }
 }

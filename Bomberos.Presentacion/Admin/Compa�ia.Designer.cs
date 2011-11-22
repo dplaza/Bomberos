@@ -34,12 +34,12 @@
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dataGridResult = new System.Windows.Forms.DataGridView();
-            this.idCompañia = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NombreCompañia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btn_borrar = new System.Windows.Forms.Button();
             this.btn_cancelar = new System.Windows.Forms.Button();
             this.btn_editar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.idCompañia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NombreCompañia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridResult)).BeginInit();
@@ -110,25 +110,6 @@
             this.dataGridResult.TabIndex = 0;
             this.dataGridResult.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridResult_CellContentClick);
             // 
-            // idCompañia
-            // 
-            this.idCompañia.DataPropertyName = "Id";
-            this.idCompañia.DividerWidth = 1;
-            this.idCompañia.HeaderText = "ID Compañia";
-            this.idCompañia.Name = "idCompañia";
-            this.idCompañia.ReadOnly = true;
-            this.idCompañia.Visible = false;
-            this.idCompañia.Width = 70;
-            // 
-            // NombreCompañia
-            // 
-            this.NombreCompañia.DataPropertyName = "Nombre";
-            this.NombreCompañia.DividerWidth = 1;
-            this.NombreCompañia.HeaderText = "Nombre";
-            this.NombreCompañia.Name = "NombreCompañia";
-            this.NombreCompañia.ReadOnly = true;
-            this.NombreCompañia.Width = 560;
-            // 
             // btn_borrar
             // 
             this.btn_borrar.Location = new System.Drawing.Point(527, 426);
@@ -137,6 +118,7 @@
             this.btn_borrar.TabIndex = 22;
             this.btn_borrar.Text = "Borrar";
             this.btn_borrar.UseVisualStyleBackColor = true;
+            this.btn_borrar.Click += new System.EventHandler(this.btn_borrar_Click);
             // 
             // btn_cancelar
             // 
@@ -166,6 +148,25 @@
             this.label1.Size = new System.Drawing.Size(70, 13);
             this.label1.TabIndex = 25;
             this.label1.Text = "COMPAÑIAS";
+            // 
+            // idCompañia
+            // 
+            this.idCompañia.DataPropertyName = "Id";
+            this.idCompañia.DividerWidth = 1;
+            this.idCompañia.HeaderText = "ID Compañia";
+            this.idCompañia.Name = "idCompañia";
+            this.idCompañia.ReadOnly = true;
+            this.idCompañia.Visible = false;
+            this.idCompañia.Width = 70;
+            // 
+            // NombreCompañia
+            // 
+            this.NombreCompañia.DataPropertyName = "Nombre";
+            this.NombreCompañia.DividerWidth = 1;
+            this.NombreCompañia.HeaderText = "Nombre";
+            this.NombreCompañia.Name = "NombreCompañia";
+            this.NombreCompañia.ReadOnly = true;
+            this.NombreCompañia.Width = 560;
             // 
             // Compañia
             // 

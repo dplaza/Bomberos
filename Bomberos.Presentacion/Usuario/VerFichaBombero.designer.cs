@@ -77,6 +77,8 @@
             this.labelTIB = new System.Windows.Forms.Label();
             this.labelCargo = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
+            this.txt_socio = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.box_picture)).BeginInit();
@@ -100,7 +102,7 @@
             this.select_compania.Items.AddRange(new object[] {
             "Primera",
             "Segunda"});
-            this.select_compania.Location = new System.Drawing.Point(140, 156);
+            this.select_compania.Location = new System.Drawing.Point(140, 180);
             this.select_compania.Name = "select_compania";
             this.select_compania.Size = new System.Drawing.Size(121, 21);
             this.select_compania.TabIndex = 151;
@@ -112,7 +114,7 @@
             this.select_tipocuenta.Items.AddRange(new object[] {
             "Usuario",
             "Administrador"});
-            this.select_tipocuenta.Location = new System.Drawing.Point(152, 501);
+            this.select_tipocuenta.Location = new System.Drawing.Point(140, 73);
             this.select_tipocuenta.Name = "select_tipocuenta";
             this.select_tipocuenta.Size = new System.Drawing.Size(121, 21);
             this.select_tipocuenta.TabIndex = 150;
@@ -120,7 +122,7 @@
             // date_fecha_inscrip
             // 
             this.date_fecha_inscrip.Enabled = false;
-            this.date_fecha_inscrip.Location = new System.Drawing.Point(152, 528);
+            this.date_fecha_inscrip.Location = new System.Drawing.Point(140, 100);
             this.date_fecha_inscrip.Name = "date_fecha_inscrip";
             this.date_fecha_inscrip.Size = new System.Drawing.Size(200, 20);
             this.date_fecha_inscrip.TabIndex = 149;
@@ -128,7 +130,7 @@
             // txt_pass
             // 
             this.txt_pass.Enabled = false;
-            this.txt_pass.Location = new System.Drawing.Point(140, 182);
+            this.txt_pass.Location = new System.Drawing.Point(140, 206);
             this.txt_pass.Name = "txt_pass";
             this.txt_pass.PasswordChar = '*';
             this.txt_pass.Size = new System.Drawing.Size(139, 20);
@@ -137,7 +139,7 @@
             // txt_tib
             // 
             this.txt_tib.Enabled = false;
-            this.txt_tib.Location = new System.Drawing.Point(152, 475);
+            this.txt_tib.Location = new System.Drawing.Point(140, 47);
             this.txt_tib.Name = "txt_tib";
             this.txt_tib.Size = new System.Drawing.Size(100, 20);
             this.txt_tib.TabIndex = 147;
@@ -268,7 +270,7 @@
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(26, 185);
+            this.label15.Location = new System.Drawing.Point(26, 207);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(53, 13);
             this.label15.TabIndex = 131;
@@ -277,7 +279,7 @@
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(38, 504);
+            this.label14.Location = new System.Drawing.Point(26, 76);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(79, 13);
             this.label14.TabIndex = 130;
@@ -295,7 +297,7 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(26, 159);
+            this.label12.Location = new System.Drawing.Point(26, 181);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(54, 13);
             this.label12.TabIndex = 128;
@@ -340,7 +342,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(38, 531);
+            this.label7.Location = new System.Drawing.Point(26, 103);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(91, 13);
             this.label7.TabIndex = 123;
@@ -358,7 +360,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(38, 478);
+            this.label5.Location = new System.Drawing.Point(26, 50);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(24, 13);
             this.label5.TabIndex = 121;
@@ -430,17 +432,25 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.txt_socio);
+            this.groupBox2.Controls.Add(this.label22);
+            this.groupBox2.Controls.Add(this.select_tipocuenta);
+            this.groupBox2.Controls.Add(this.date_fecha_inscrip);
             this.groupBox2.Controls.Add(this.label21);
+            this.groupBox2.Controls.Add(this.txt_tib);
             this.groupBox2.Controls.Add(this.select_estado);
+            this.groupBox2.Controls.Add(this.label14);
             this.groupBox2.Controls.Add(this.label20);
+            this.groupBox2.Controls.Add(this.label7);
             this.groupBox2.Controls.Add(this.select_cargo);
+            this.groupBox2.Controls.Add(this.label5);
             this.groupBox2.Controls.Add(this.label12);
             this.groupBox2.Controls.Add(this.label15);
             this.groupBox2.Controls.Add(this.txt_pass);
             this.groupBox2.Controls.Add(this.select_compania);
             this.groupBox2.Location = new System.Drawing.Point(12, 454);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(402, 217);
+            this.groupBox2.Size = new System.Drawing.Size(402, 241);
             this.groupBox2.TabIndex = 152;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Datos Bombero";
@@ -448,7 +458,7 @@
             // label21
             // 
             this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(26, 104);
+            this.label21.Location = new System.Drawing.Point(26, 132);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(35, 13);
             this.label21.TabIndex = 162;
@@ -463,7 +473,7 @@
             "Renunciado",
             "Separado",
             "Fallecido"});
-            this.select_estado.Location = new System.Drawing.Point(140, 129);
+            this.select_estado.Location = new System.Drawing.Point(140, 153);
             this.select_estado.Name = "select_estado";
             this.select_estado.Size = new System.Drawing.Size(121, 21);
             this.select_estado.TabIndex = 161;
@@ -472,7 +482,7 @@
             // label20
             // 
             this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(26, 134);
+            this.label20.Location = new System.Drawing.Point(26, 156);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(40, 13);
             this.label20.TabIndex = 160;
@@ -508,7 +518,7 @@
             "Paramédicos",
             "Bombero",
             "Aspirante"});
-            this.select_cargo.Location = new System.Drawing.Point(140, 101);
+            this.select_cargo.Location = new System.Drawing.Point(140, 126);
             this.select_cargo.Name = "select_cargo";
             this.select_cargo.Size = new System.Drawing.Size(160, 21);
             this.select_cargo.TabIndex = 0;
@@ -569,12 +579,28 @@
             this.label1.TabIndex = 159;
             this.label1.Text = "FICHA PERSONAL";
             // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Location = new System.Drawing.Point(28, 24);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(49, 13);
+            this.label22.TabIndex = 163;
+            this.label22.Text = "Socio N°";
+            // 
+            // txt_socio
+            // 
+            this.txt_socio.Location = new System.Drawing.Point(140, 21);
+            this.txt_socio.Name = "txt_socio";
+            this.txt_socio.Size = new System.Drawing.Size(139, 20);
+            this.txt_socio.TabIndex = 164;
+            // 
             // VerFichaBombero
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btn_cerrar;
-            this.ClientSize = new System.Drawing.Size(634, 684);
+            this.ClientSize = new System.Drawing.Size(634, 707);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.labelCargo);
             this.Controls.Add(this.labelTIB);
@@ -582,9 +608,6 @@
             this.Controls.Add(this.labelnombre);
             this.Controls.Add(this.box_picture);
             this.Controls.Add(this.btn_cerrar);
-            this.Controls.Add(this.select_tipocuenta);
-            this.Controls.Add(this.date_fecha_inscrip);
-            this.Controls.Add(this.txt_tib);
             this.Controls.Add(this.txt_celular);
             this.Controls.Add(this.txt_tel_lab);
             this.Controls.Add(this.txt_tel_part);
@@ -599,20 +622,17 @@
             this.Controls.Add(this.label18);
             this.Controls.Add(this.label17);
             this.Controls.Add(this.label16);
-            this.Controls.Add(this.label14);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
             this.Name = "VerFichaBombero";
@@ -679,5 +699,7 @@
         private System.Windows.Forms.ComboBox select_cargo;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.ComboBox select_estado;
+        private System.Windows.Forms.TextBox txt_socio;
+        private System.Windows.Forms.Label label22;
     }
 }
