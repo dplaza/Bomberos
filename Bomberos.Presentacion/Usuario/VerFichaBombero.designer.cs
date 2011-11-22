@@ -568,6 +568,7 @@
             this.label1.Size = new System.Drawing.Size(99, 13);
             this.label1.TabIndex = 159;
             this.label1.Text = "FICHA PERSONAL";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // VerFichaBombero
             // 
