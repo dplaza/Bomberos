@@ -88,5 +88,10 @@ namespace Bomberos.Presentacion.Usuario
         {
 
         }
+
+        private void txt_socio_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -67,6 +67,8 @@
             this.txt_apellidos = new System.Windows.Forms.TextBox();
             this.txt_rut = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.txt_socio = new System.Windows.Forms.TextBox();
+            this.label22 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
             this.select_estado = new System.Windows.Forms.ComboBox();
             this.label20 = new System.Windows.Forms.Label();
@@ -77,8 +79,6 @@
             this.labelTIB = new System.Windows.Forms.Label();
             this.labelCargo = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.label22 = new System.Windows.Forms.Label();
-            this.txt_socio = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.box_picture)).BeginInit();
@@ -455,6 +455,23 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Datos Bombero";
             // 
+            // txt_socio
+            // 
+            this.txt_socio.Location = new System.Drawing.Point(140, 21);
+            this.txt_socio.Name = "txt_socio";
+            this.txt_socio.Size = new System.Drawing.Size(139, 20);
+            this.txt_socio.TabIndex = 164;
+            this.txt_socio.TextChanged += new System.EventHandler(this.txt_socio_TextChanged);
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Location = new System.Drawing.Point(28, 24);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(49, 13);
+            this.label22.TabIndex = 163;
+            this.label22.Text = "Socio N°";
+            // 
             // label21
             // 
             this.label21.AutoSize = true;
@@ -579,22 +596,6 @@
             this.label1.TabIndex = 159;
             this.label1.Text = "FICHA PERSONAL";
             this.label1.Click += new System.EventHandler(this.label1_Click);
-            // 
-            // label22
-            // 
-            this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(28, 24);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(49, 13);
-            this.label22.TabIndex = 163;
-            this.label22.Text = "Socio N°";
-            // 
-            // txt_socio
-            // 
-            this.txt_socio.Location = new System.Drawing.Point(140, 21);
-            this.txt_socio.Name = "txt_socio";
-            this.txt_socio.Size = new System.Drawing.Size(139, 20);
-            this.txt_socio.TabIndex = 164;
             // 
             // VerFichaBombero
             // 

@@ -56,6 +56,7 @@
             this.txt_tel_lab = new System.Windows.Forms.TextBox();
             this.txt_celular = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txt_dv = new System.Windows.Forms.TextBox();
             this.btn_registrar = new System.Windows.Forms.Button();
             this.btn_cancelar = new System.Windows.Forms.Button();
             this.box_picture = new System.Windows.Forms.PictureBox();
@@ -75,7 +76,8 @@
             this.label26 = new System.Windows.Forms.Label();
             this.txt_pass = new System.Windows.Forms.TextBox();
             this.select_compania = new System.Windows.Forms.ComboBox();
-            this.txt_dv = new System.Windows.Forms.TextBox();
+            this.txt_socio = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.box_picture)).BeginInit();
             this.groupBox3.SuspendLayout();
@@ -318,10 +320,17 @@
             this.groupBox1.Controls.Add(this.txt_rut);
             this.groupBox1.Location = new System.Drawing.Point(12, 53);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(403, 386);
+            this.groupBox1.Size = new System.Drawing.Size(403, 378);
             this.groupBox1.TabIndex = 33;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos Personales";
+            // 
+            // txt_dv
+            // 
+            this.txt_dv.Location = new System.Drawing.Point(266, 78);
+            this.txt_dv.Name = "txt_dv";
+            this.txt_dv.Size = new System.Drawing.Size(30, 20);
+            this.txt_dv.TabIndex = 22;
             // 
             // btn_registrar
             // 
@@ -370,7 +379,7 @@
             this.select_tipocuenta.Items.AddRange(new object[] {
             "Usuario",
             "Administrador"});
-            this.select_tipocuenta.Location = new System.Drawing.Point(153, 492);
+            this.select_tipocuenta.Location = new System.Drawing.Point(140, 68);
             this.select_tipocuenta.Name = "select_tipocuenta";
             this.select_tipocuenta.Size = new System.Drawing.Size(121, 21);
             this.select_tipocuenta.TabIndex = 158;
@@ -378,7 +387,7 @@
             // label20
             // 
             this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(39, 469);
+            this.label20.Location = new System.Drawing.Point(25, 45);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(24, 13);
             this.label20.TabIndex = 153;
@@ -387,7 +396,7 @@
             // label21
             // 
             this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(39, 522);
+            this.label21.Location = new System.Drawing.Point(25, 101);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(91, 13);
             this.label21.TabIndex = 154;
@@ -396,7 +405,7 @@
             // label22
             // 
             this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(26, 104);
+            this.label22.Location = new System.Drawing.Point(25, 124);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(35, 13);
             this.label22.TabIndex = 162;
@@ -405,7 +414,7 @@
             // label23
             // 
             this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(39, 495);
+            this.label23.Location = new System.Drawing.Point(25, 71);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(79, 13);
             this.label23.TabIndex = 155;
@@ -420,14 +429,14 @@
             "Renunciado",
             "Separado",
             "Fallecido"});
-            this.select_estado.Location = new System.Drawing.Point(140, 129);
+            this.select_estado.Location = new System.Drawing.Point(140, 148);
             this.select_estado.Name = "select_estado";
             this.select_estado.Size = new System.Drawing.Size(121, 21);
             this.select_estado.TabIndex = 161;
             // 
             // date_fecha_inscrip
             // 
-            this.date_fecha_inscrip.Location = new System.Drawing.Point(153, 519);
+            this.date_fecha_inscrip.Location = new System.Drawing.Point(140, 95);
             this.date_fecha_inscrip.Name = "date_fecha_inscrip";
             this.date_fecha_inscrip.Size = new System.Drawing.Size(200, 20);
             this.date_fecha_inscrip.TabIndex = 157;
@@ -435,7 +444,7 @@
             // label24
             // 
             this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(26, 134);
+            this.label24.Location = new System.Drawing.Point(25, 151);
             this.label24.Name = "label24";
             this.label24.Size = new System.Drawing.Size(40, 13);
             this.label24.TabIndex = 160;
@@ -471,7 +480,7 @@
             "Paramédicos",
             "Bombero",
             "Aspirante"});
-            this.select_cargo.Location = new System.Drawing.Point(140, 101);
+            this.select_cargo.Location = new System.Drawing.Point(140, 121);
             this.select_cargo.Name = "select_cargo";
             this.select_cargo.Size = new System.Drawing.Size(160, 21);
             this.select_cargo.TabIndex = 0;
@@ -479,24 +488,32 @@
             // 
             // txt_tib
             // 
-            this.txt_tib.Location = new System.Drawing.Point(153, 466);
+            this.txt_tib.Location = new System.Drawing.Point(140, 42);
             this.txt_tib.Name = "txt_tib";
             this.txt_tib.Size = new System.Drawing.Size(100, 20);
             this.txt_tib.TabIndex = 156;
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.txt_socio);
+            this.groupBox3.Controls.Add(this.label5);
+            this.groupBox3.Controls.Add(this.label20);
+            this.groupBox3.Controls.Add(this.select_tipocuenta);
+            this.groupBox3.Controls.Add(this.txt_tib);
+            this.groupBox3.Controls.Add(this.label23);
             this.groupBox3.Controls.Add(this.label22);
             this.groupBox3.Controls.Add(this.select_estado);
+            this.groupBox3.Controls.Add(this.label21);
             this.groupBox3.Controls.Add(this.label24);
             this.groupBox3.Controls.Add(this.select_cargo);
+            this.groupBox3.Controls.Add(this.date_fecha_inscrip);
             this.groupBox3.Controls.Add(this.label25);
             this.groupBox3.Controls.Add(this.label26);
             this.groupBox3.Controls.Add(this.txt_pass);
             this.groupBox3.Controls.Add(this.select_compania);
-            this.groupBox3.Location = new System.Drawing.Point(13, 445);
+            this.groupBox3.Location = new System.Drawing.Point(13, 437);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(402, 217);
+            this.groupBox3.Size = new System.Drawing.Size(402, 240);
             this.groupBox3.TabIndex = 159;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Datos Bombero";
@@ -504,7 +521,7 @@
             // label25
             // 
             this.label25.AutoSize = true;
-            this.label25.Location = new System.Drawing.Point(26, 159);
+            this.label25.Location = new System.Drawing.Point(25, 178);
             this.label25.Name = "label25";
             this.label25.Size = new System.Drawing.Size(54, 13);
             this.label25.TabIndex = 128;
@@ -513,7 +530,7 @@
             // label26
             // 
             this.label26.AutoSize = true;
-            this.label26.Location = new System.Drawing.Point(26, 185);
+            this.label26.Location = new System.Drawing.Point(25, 208);
             this.label26.Name = "label26";
             this.label26.Size = new System.Drawing.Size(53, 13);
             this.label26.TabIndex = 131;
@@ -521,7 +538,7 @@
             // 
             // txt_pass
             // 
-            this.txt_pass.Location = new System.Drawing.Point(140, 182);
+            this.txt_pass.Location = new System.Drawing.Point(139, 205);
             this.txt_pass.Name = "txt_pass";
             this.txt_pass.PasswordChar = '*';
             this.txt_pass.Size = new System.Drawing.Size(139, 20);
@@ -534,17 +551,26 @@
             this.select_compania.Items.AddRange(new object[] {
             "Primera",
             "Segunda"});
-            this.select_compania.Location = new System.Drawing.Point(140, 156);
+            this.select_compania.Location = new System.Drawing.Point(140, 175);
             this.select_compania.Name = "select_compania";
             this.select_compania.Size = new System.Drawing.Size(121, 21);
             this.select_compania.TabIndex = 151;
             // 
-            // txt_dv
+            // txt_socio
             // 
-            this.txt_dv.Location = new System.Drawing.Point(266, 78);
-            this.txt_dv.Name = "txt_dv";
-            this.txt_dv.Size = new System.Drawing.Size(30, 20);
-            this.txt_dv.TabIndex = 22;
+            this.txt_socio.Location = new System.Drawing.Point(139, 19);
+            this.txt_socio.Name = "txt_socio";
+            this.txt_socio.Size = new System.Drawing.Size(139, 20);
+            this.txt_socio.TabIndex = 166;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(25, 22);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(49, 13);
+            this.label5.TabIndex = 165;
+            this.label5.Text = "Socio N°";
             // 
             // RegistroBombero
             // 
@@ -552,13 +578,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btn_cancelar;
-            this.ClientSize = new System.Drawing.Size(644, 676);
-            this.Controls.Add(this.select_tipocuenta);
-            this.Controls.Add(this.label20);
-            this.Controls.Add(this.label21);
-            this.Controls.Add(this.label23);
-            this.Controls.Add(this.date_fecha_inscrip);
-            this.Controls.Add(this.txt_tib);
+            this.ClientSize = new System.Drawing.Size(644, 689);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.btn_imagen);
             this.Controls.Add(this.box_picture);
@@ -656,5 +676,7 @@
         private System.Windows.Forms.TextBox txt_pass;
         private System.Windows.Forms.ComboBox select_compania;
         private System.Windows.Forms.TextBox txt_dv;
+        private System.Windows.Forms.TextBox txt_socio;
+        private System.Windows.Forms.Label label5;
     }
 }
