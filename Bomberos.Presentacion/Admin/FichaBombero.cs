@@ -169,5 +169,12 @@ namespace Bomberos.Presentacion.Admin
                 box_picture.Image = new Bitmap(file.OpenFile());
             }
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            var form = new MasInfoBombero();
+            form.MdiParent = this.MdiParent;
+            form.Show();
+        }
     }
 }

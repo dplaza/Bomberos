@@ -50,11 +50,11 @@ namespace Bomberos.Presentacion
 
             if (cargo.Id != 0)
             {
-                dataGridResult.DataSource = _Bombero.ListarBomberos().FindAll(p => p.Cargo.Id.Equals(cargo.Id) && p.Nombres.Contains(txt_nombres.Text) && p.Apellidos.Contains(txt_apellidos.Text) && p.Rut.Contains(txt_rut.Text) && p.TIB.Contains(txt_tib.Text));
+                dataGridResult.DataSource = _Bombero.ListarBomberos().FindAll(p => p.Cargo.Id.Equals(cargo.Id) && p.Nombres.Contains(txt_nombres.Text) && p.Apellidos.Contains(txt_apellidos.Text) && p.Rut.Contains(txt_rut.Text) && p.TIB.Contains(txt_tib.Text)).OrderBy(p => p.Nombres).ToList();
             }
             else
             {
-                dataGridResult.DataSource = _Bombero.ListarBomberos().FindAll(p => p.Nombres.Contains(txt_nombres.Text) && p.Apellidos.Contains(txt_apellidos.Text) && p.Rut.Contains(txt_rut.Text) && p.TIB.Contains(txt_tib.Text));
+                dataGridResult.DataSource = _Bombero.ListarBomberos().FindAll(p => p.Nombres.Contains(txt_nombres.Text) && p.Apellidos.Contains(txt_apellidos.Text) && p.Rut.Contains(txt_rut.Text) && p.TIB.Contains(txt_tib.Text)).OrderBy(p => p.Nombres).ToList();
             }
                 dataGridResult.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridResult.MultiSelect = false;

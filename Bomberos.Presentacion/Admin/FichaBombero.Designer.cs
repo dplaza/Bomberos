@@ -80,6 +80,7 @@
             this.label26 = new System.Windows.Forms.Label();
             this.txt_pass = new System.Windows.Forms.TextBox();
             this.select_compania = new System.Windows.Forms.ComboBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.box_picture)).BeginInit();
             this.groupBox3.SuspendLayout();
@@ -87,7 +88,7 @@
             // 
             // btn_aceptar
             // 
-            this.btn_aceptar.Location = new System.Drawing.Point(511, 550);
+            this.btn_aceptar.Location = new System.Drawing.Point(510, 550);
             this.btn_aceptar.Name = "btn_aceptar";
             this.btn_aceptar.Size = new System.Drawing.Size(75, 23);
             this.btn_aceptar.TabIndex = 117;
@@ -97,9 +98,9 @@
             // 
             // btn_editar
             // 
-            this.btn_editar.Location = new System.Drawing.Point(511, 492);
+            this.btn_editar.Location = new System.Drawing.Point(503, 494);
             this.btn_editar.Name = "btn_editar";
-            this.btn_editar.Size = new System.Drawing.Size(75, 23);
+            this.btn_editar.Size = new System.Drawing.Size(88, 23);
             this.btn_editar.TabIndex = 116;
             this.btn_editar.Text = "Modificar";
             this.btn_editar.UseVisualStyleBackColor = true;
@@ -108,7 +109,7 @@
             // btn_cancelar
             // 
             this.btn_cancelar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btn_cancelar.Location = new System.Drawing.Point(511, 579);
+            this.btn_cancelar.Location = new System.Drawing.Point(510, 579);
             this.btn_cancelar.Name = "btn_cancelar";
             this.btn_cancelar.Size = new System.Drawing.Size(75, 23);
             this.btn_cancelar.TabIndex = 115;
@@ -405,7 +406,7 @@
             // btn_imagen
             // 
             this.btn_imagen.Enabled = false;
-            this.btn_imagen.Location = new System.Drawing.Point(495, 250);
+            this.btn_imagen.Location = new System.Drawing.Point(490, 250);
             this.btn_imagen.Name = "btn_imagen";
             this.btn_imagen.Size = new System.Drawing.Size(114, 23);
             this.btn_imagen.TabIndex = 167;
@@ -576,12 +577,23 @@
             this.select_compania.Size = new System.Drawing.Size(121, 21);
             this.select_compania.TabIndex = 151;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(485, 465);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(124, 23);
+            this.button1.TabIndex = 179;
+            this.button1.Text = "Más Información";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // FichaBombero
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btn_cancelar;
             this.ClientSize = new System.Drawing.Size(668, 669);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.select_tipocuenta);
             this.Controls.Add(this.label20);
             this.Controls.Add(this.label21);
@@ -693,5 +705,6 @@
         private System.Windows.Forms.Label label26;
         private System.Windows.Forms.TextBox txt_pass;
         private System.Windows.Forms.ComboBox select_compania;
+        private System.Windows.Forms.Button button1;
     }
 }
