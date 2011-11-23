@@ -176,5 +176,10 @@ namespace Bomberos.Presentacion.Admin
             form.MdiParent = this.MdiParent;
             form.Show();
         }
+
+        private void groupBox3_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }
