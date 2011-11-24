@@ -31,6 +31,7 @@
             this.tabBox = new System.Windows.Forms.TabControl();
             this.FichaMedica = new System.Windows.Forms.TabPage();
             this.HistorialCargos = new System.Windows.Forms.TabPage();
+            this.btn_actual = new System.Windows.Forms.Button();
             this.btn_agregar = new System.Windows.Forms.Button();
             this.select_cargo = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -40,50 +41,94 @@
             this.dateTimeDesde = new System.Windows.Forms.DateTimePicker();
             this.dataGridResult = new System.Windows.Forms.DataGridView();
             this.HistorialPremios = new System.Windows.Forms.TabPage();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.btn_premio = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.HistorialCursos = new System.Windows.Forms.TabPage();
+            this.dataGridView3 = new System.Windows.Forms.DataGridView();
+            this.btn_curso = new System.Windows.Forms.Button();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.dateTimeEntrega = new System.Windows.Forms.DateTimePicker();
+            this.dateTimeTermino = new System.Windows.Forms.DateTimePicker();
+            this.dateTimeInicio = new System.Windows.Forms.DateTimePicker();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
             this.ResumenListas = new System.Windows.Forms.TabPage();
             this.Servicio = new System.Windows.Forms.TabPage();
             this.Observaciones = new System.Windows.Forms.TabPage();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.txt_observacion = new System.Windows.Forms.Label();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.dateTimeFecha = new System.Windows.Forms.DateTimePicker();
             this.btnCerrar = new System.Windows.Forms.Button();
             this.box_picture = new System.Windows.Forms.PictureBox();
             this.labelCargo = new System.Windows.Forms.Label();
             this.labelTIB = new System.Windows.Forms.Label();
             this.labelRut = new System.Windows.Forms.Label();
             this.labelnombre = new System.Windows.Forms.Label();
-            this.btn_actual = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.label6 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.btn_premio = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.dateTimeFecha = new System.Windows.Forms.DateTimePicker();
-            this.label7 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.txt_observacion = new System.Windows.Forms.Label();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.dateTimeInicio = new System.Windows.Forms.DateTimePicker();
-            this.dateTimeTermino = new System.Windows.Forms.DateTimePicker();
-            this.dateTimeEntrega = new System.Windows.Forms.DateTimePicker();
-            this.label11 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.btn_curso = new System.Windows.Forms.Button();
-            this.dataGridView3 = new System.Windows.Forms.DataGridView();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.checkBox2 = new System.Windows.Forms.CheckBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.checkBox3 = new System.Windows.Forms.CheckBox();
+            this.checkBox4 = new System.Windows.Forms.CheckBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.checkBox5 = new System.Windows.Forms.CheckBox();
+            this.checkBox6 = new System.Windows.Forms.CheckBox();
+            this.checkBox7 = new System.Windows.Forms.CheckBox();
+            this.checkBox8 = new System.Windows.Forms.CheckBox();
+            this.checkBox9 = new System.Windows.Forms.CheckBox();
+            this.checkBox10 = new System.Windows.Forms.CheckBox();
+            this.checkBox11 = new System.Windows.Forms.CheckBox();
+            this.checkBox12 = new System.Windows.Forms.CheckBox();
+            this.label19 = new System.Windows.Forms.Label();
+            this.richTextBox2 = new System.Windows.Forms.RichTextBox();
+            this.label20 = new System.Windows.Forms.Label();
+            this.richTextBox3 = new System.Windows.Forms.RichTextBox();
+            this.label21 = new System.Windows.Forms.Label();
+            this.richTextBox4 = new System.Windows.Forms.RichTextBox();
+            this.label22 = new System.Windows.Forms.Label();
+            this.richTextBox5 = new System.Windows.Forms.RichTextBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.fecha_califica = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.por_concepto_de = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fecha_entrega = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.id_cargos = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fecha_desde = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fecha_hasta = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fecha_inicio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fecha_termino = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.id_curso = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fecha_entrega_curso = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabBox.SuspendLayout();
+            this.FichaMedica.SuspendLayout();
             this.HistorialCargos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridResult)).BeginInit();
             this.HistorialPremios.SuspendLayout();
-            this.HistorialCursos.SuspendLayout();
-            this.Observaciones.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.box_picture)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            this.HistorialCursos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
+            this.Observaciones.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.box_picture)).BeginInit();
+            this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabBox
@@ -103,6 +148,18 @@
             // 
             // FichaMedica
             // 
+            this.FichaMedica.Controls.Add(this.button2);
+            this.FichaMedica.Controls.Add(this.button1);
+            this.FichaMedica.Controls.Add(this.richTextBox5);
+            this.FichaMedica.Controls.Add(this.label22);
+            this.FichaMedica.Controls.Add(this.richTextBox4);
+            this.FichaMedica.Controls.Add(this.label21);
+            this.FichaMedica.Controls.Add(this.richTextBox3);
+            this.FichaMedica.Controls.Add(this.label20);
+            this.FichaMedica.Controls.Add(this.richTextBox2);
+            this.FichaMedica.Controls.Add(this.label19);
+            this.FichaMedica.Controls.Add(this.groupBox2);
+            this.FichaMedica.Controls.Add(this.groupBox1);
             this.FichaMedica.Location = new System.Drawing.Point(4, 22);
             this.FichaMedica.Name = "FichaMedica";
             this.FichaMedica.Size = new System.Drawing.Size(602, 413);
@@ -128,6 +185,15 @@
             this.HistorialCargos.Text = "Historial Cargos";
             this.HistorialCargos.UseVisualStyleBackColor = true;
             this.HistorialCargos.Click += new System.EventHandler(this.HistorialCargos_Click);
+            // 
+            // btn_actual
+            // 
+            this.btn_actual.Location = new System.Drawing.Point(319, 75);
+            this.btn_actual.Name = "btn_actual";
+            this.btn_actual.Size = new System.Drawing.Size(75, 23);
+            this.btn_actual.TabIndex = 8;
+            this.btn_actual.Text = "Actual";
+            this.btn_actual.UseVisualStyleBackColor = true;
             // 
             // btn_agregar
             // 
@@ -192,6 +258,10 @@
             // dataGridResult
             // 
             this.dataGridResult.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridResult.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.id_cargos,
+            this.fecha_desde,
+            this.fecha_hasta});
             this.dataGridResult.Location = new System.Drawing.Point(23, 120);
             this.dataGridResult.Name = "dataGridResult";
             this.dataGridResult.Size = new System.Drawing.Size(557, 272);
@@ -215,6 +285,76 @@
             this.HistorialPremios.Text = "Historial Premios";
             this.HistorialPremios.UseVisualStyleBackColor = true;
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.fecha_califica,
+            this.por_concepto_de,
+            this.fecha_entrega});
+            this.dataGridView1.Location = new System.Drawing.Point(22, 167);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(559, 225);
+            this.dataGridView1.TabIndex = 7;
+            // 
+            // btn_premio
+            // 
+            this.btn_premio.Location = new System.Drawing.Point(410, 26);
+            this.btn_premio.Name = "btn_premio";
+            this.btn_premio.Size = new System.Drawing.Size(101, 23);
+            this.btn_premio.TabIndex = 6;
+            this.btn_premio.Text = "Agregar Premio";
+            this.btn_premio.UseVisualStyleBackColor = true;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(133, 73);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(200, 76);
+            this.textBox1.TabIndex = 5;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(41, 76);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(86, 13);
+            this.label6.TabIndex = 4;
+            this.label6.Text = "Por concepto de";
+            // 
+            // dateTimePicker2
+            // 
+            this.dateTimePicker2.Location = new System.Drawing.Point(133, 47);
+            this.dateTimePicker2.Name = "dateTimePicker2";
+            this.dateTimePicker2.Size = new System.Drawing.Size(200, 20);
+            this.dateTimePicker2.TabIndex = 3;
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Location = new System.Drawing.Point(133, 20);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
+            this.dateTimePicker1.TabIndex = 2;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(41, 53);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(77, 13);
+            this.label5.TabIndex = 1;
+            this.label5.Text = "Fecha Entrega";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(41, 26);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(74, 13);
+            this.label4.TabIndex = 0;
+            this.label4.Text = "Fecha Califica";
+            // 
             // HistorialCursos
             // 
             this.HistorialCursos.Controls.Add(this.dataGridView3);
@@ -234,6 +374,94 @@
             this.HistorialCursos.TabIndex = 2;
             this.HistorialCursos.Text = "Historial Cursos";
             this.HistorialCursos.UseVisualStyleBackColor = true;
+            // 
+            // dataGridView3
+            // 
+            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView3.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.fecha_inicio,
+            this.fecha_termino,
+            this.id_curso,
+            this.fecha_entrega_curso});
+            this.dataGridView3.Location = new System.Drawing.Point(21, 130);
+            this.dataGridView3.Name = "dataGridView3";
+            this.dataGridView3.Size = new System.Drawing.Size(560, 260);
+            this.dataGridView3.TabIndex = 9;
+            // 
+            // btn_curso
+            // 
+            this.btn_curso.Location = new System.Drawing.Point(401, 43);
+            this.btn_curso.Name = "btn_curso";
+            this.btn_curso.Size = new System.Drawing.Size(98, 23);
+            this.btn_curso.TabIndex = 8;
+            this.btn_curso.Text = "Agregar Curso";
+            this.btn_curso.UseVisualStyleBackColor = true;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(96, 94);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(200, 21);
+            this.comboBox1.TabIndex = 7;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(45, 97);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(34, 13);
+            this.label11.TabIndex = 6;
+            this.label11.Text = "Curso";
+            // 
+            // dateTimeEntrega
+            // 
+            this.dateTimeEntrega.Location = new System.Drawing.Point(96, 68);
+            this.dateTimeEntrega.Name = "dateTimeEntrega";
+            this.dateTimeEntrega.Size = new System.Drawing.Size(200, 20);
+            this.dateTimeEntrega.TabIndex = 5;
+            // 
+            // dateTimeTermino
+            // 
+            this.dateTimeTermino.Location = new System.Drawing.Point(96, 42);
+            this.dateTimeTermino.Name = "dateTimeTermino";
+            this.dateTimeTermino.Size = new System.Drawing.Size(200, 20);
+            this.dateTimeTermino.TabIndex = 4;
+            // 
+            // dateTimeInicio
+            // 
+            this.dateTimeInicio.Location = new System.Drawing.Point(96, 16);
+            this.dateTimeInicio.Name = "dateTimeInicio";
+            this.dateTimeInicio.Size = new System.Drawing.Size(200, 20);
+            this.dateTimeInicio.TabIndex = 3;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(45, 74);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(44, 13);
+            this.label10.TabIndex = 2;
+            this.label10.Text = "Entrega";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(45, 48);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(45, 13);
+            this.label9.TabIndex = 1;
+            this.label9.Text = "Termino";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(45, 22);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(32, 13);
+            this.label8.TabIndex = 0;
+            this.label8.Text = "Inicio";
             // 
             // ResumenListas
             // 
@@ -269,6 +497,47 @@
             this.Observaciones.TabIndex = 5;
             this.Observaciones.Text = "Observaciones";
             this.Observaciones.UseVisualStyleBackColor = true;
+            // 
+            // dataGridView2
+            // 
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Location = new System.Drawing.Point(21, 139);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.Size = new System.Drawing.Size(561, 256);
+            this.dataGridView2.TabIndex = 4;
+            // 
+            // txt_observacion
+            // 
+            this.txt_observacion.AutoSize = true;
+            this.txt_observacion.Location = new System.Drawing.Point(39, 43);
+            this.txt_observacion.Name = "txt_observacion";
+            this.txt_observacion.Size = new System.Drawing.Size(78, 13);
+            this.txt_observacion.TabIndex = 3;
+            this.txt_observacion.Text = "Observaciones";
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(123, 40);
+            this.textBox2.Multiline = true;
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(200, 83);
+            this.textBox2.TabIndex = 2;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(39, 20);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(37, 13);
+            this.label7.TabIndex = 1;
+            this.label7.Text = "Fecha";
+            // 
+            // dateTimeFecha
+            // 
+            this.dateTimeFecha.Location = new System.Drawing.Point(123, 14);
+            this.dateTimeFecha.Name = "dateTimeFecha";
+            this.dateTimeFecha.Size = new System.Drawing.Size(200, 20);
+            this.dateTimeFecha.TabIndex = 0;
             // 
             // btnCerrar
             // 
@@ -324,210 +593,388 @@
             this.labelnombre.TabIndex = 172;
             this.labelnombre.Text = "Nombre completo";
             // 
-            // btn_actual
+            // groupBox1
             // 
-            this.btn_actual.Location = new System.Drawing.Point(319, 75);
-            this.btn_actual.Name = "btn_actual";
-            this.btn_actual.Size = new System.Drawing.Size(75, 23);
-            this.btn_actual.TabIndex = 8;
-            this.btn_actual.Text = "Actual";
-            this.btn_actual.UseVisualStyleBackColor = true;
+            this.groupBox1.Controls.Add(this.richTextBox1);
+            this.groupBox1.Controls.Add(this.label14);
+            this.groupBox1.Controls.Add(this.label13);
+            this.groupBox1.Controls.Add(this.checkBox3);
+            this.groupBox1.Controls.Add(this.checkBox4);
+            this.groupBox1.Controls.Add(this.label12);
+            this.groupBox1.Controls.Add(this.checkBox2);
+            this.groupBox1.Controls.Add(this.checkBox1);
+            this.groupBox1.Location = new System.Drawing.Point(14, 24);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(200, 171);
+            this.groupBox1.TabIndex = 0;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Enfermedades";
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
-            // label4
+            // checkBox1
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(41, 26);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(74, 13);
-            this.label4.TabIndex = 0;
-            this.label4.Text = "Fecha Califica";
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(76, 30);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(35, 17);
+            this.checkBox1.TabIndex = 0;
+            this.checkBox1.Text = "Si";
+            this.checkBox1.UseVisualStyleBackColor = true;
             // 
-            // label5
+            // checkBox2
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(41, 53);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(77, 13);
-            this.label5.TabIndex = 1;
-            this.label5.Text = "Fecha Entrega";
+            this.checkBox2.AutoSize = true;
+            this.checkBox2.Location = new System.Drawing.Point(129, 30);
+            this.checkBox2.Name = "checkBox2";
+            this.checkBox2.Size = new System.Drawing.Size(40, 17);
+            this.checkBox2.TabIndex = 1;
+            this.checkBox2.Text = "No";
+            this.checkBox2.UseVisualStyleBackColor = true;
             // 
-            // dateTimePicker1
+            // label12
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(133, 20);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker1.TabIndex = 2;
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(6, 31);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(48, 13);
+            this.label12.TabIndex = 2;
+            this.label12.Text = "Hepatitis";
             // 
-            // dateTimePicker2
+            // label13
             // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(133, 47);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker2.TabIndex = 3;
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(6, 62);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(30, 13);
+            this.label13.TabIndex = 5;
+            this.label13.Text = "Tifus";
             // 
-            // label6
+            // checkBox3
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(41, 76);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(86, 13);
-            this.label6.TabIndex = 4;
-            this.label6.Text = "Por concepto de";
+            this.checkBox3.AutoSize = true;
+            this.checkBox3.Location = new System.Drawing.Point(129, 61);
+            this.checkBox3.Name = "checkBox3";
+            this.checkBox3.Size = new System.Drawing.Size(40, 17);
+            this.checkBox3.TabIndex = 4;
+            this.checkBox3.Text = "No";
+            this.checkBox3.UseVisualStyleBackColor = true;
             // 
-            // textBox1
+            // checkBox4
             // 
-            this.textBox1.Location = new System.Drawing.Point(133, 73);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(200, 76);
-            this.textBox1.TabIndex = 5;
+            this.checkBox4.AutoSize = true;
+            this.checkBox4.Location = new System.Drawing.Point(76, 61);
+            this.checkBox4.Name = "checkBox4";
+            this.checkBox4.Size = new System.Drawing.Size(35, 17);
+            this.checkBox4.TabIndex = 3;
+            this.checkBox4.Text = "Si";
+            this.checkBox4.UseVisualStyleBackColor = true;
             // 
-            // btn_premio
+            // label14
             // 
-            this.btn_premio.Location = new System.Drawing.Point(410, 26);
-            this.btn_premio.Name = "btn_premio";
-            this.btn_premio.Size = new System.Drawing.Size(101, 23);
-            this.btn_premio.TabIndex = 6;
-            this.btn_premio.Text = "Agregar Premio";
-            this.btn_premio.UseVisualStyleBackColor = true;
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(6, 97);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(32, 13);
+            this.label14.TabIndex = 6;
+            this.label14.Text = "Otras";
             // 
-            // dataGridView1
+            // richTextBox1
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(22, 167);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(559, 225);
-            this.dataGridView1.TabIndex = 7;
+            this.richTextBox1.Location = new System.Drawing.Point(76, 94);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.Size = new System.Drawing.Size(112, 65);
+            this.richTextBox1.TabIndex = 7;
+            this.richTextBox1.Text = "";
             // 
-            // dateTimeFecha
+            // groupBox2
             // 
-            this.dateTimeFecha.Location = new System.Drawing.Point(123, 14);
-            this.dateTimeFecha.Name = "dateTimeFecha";
-            this.dateTimeFecha.Size = new System.Drawing.Size(200, 20);
-            this.dateTimeFecha.TabIndex = 0;
+            this.groupBox2.Controls.Add(this.checkBox9);
+            this.groupBox2.Controls.Add(this.checkBox10);
+            this.groupBox2.Controls.Add(this.checkBox11);
+            this.groupBox2.Controls.Add(this.checkBox12);
+            this.groupBox2.Controls.Add(this.checkBox5);
+            this.groupBox2.Controls.Add(this.checkBox6);
+            this.groupBox2.Controls.Add(this.checkBox7);
+            this.groupBox2.Controls.Add(this.checkBox8);
+            this.groupBox2.Controls.Add(this.label18);
+            this.groupBox2.Controls.Add(this.label17);
+            this.groupBox2.Controls.Add(this.label16);
+            this.groupBox2.Controls.Add(this.label15);
+            this.groupBox2.Location = new System.Drawing.Point(252, 24);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(231, 171);
+            this.groupBox2.TabIndex = 1;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Enfermedades Crónicas";
             // 
-            // label7
+            // label15
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(39, 20);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(37, 13);
-            this.label7.TabIndex = 1;
-            this.label7.Text = "Fecha";
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(6, 31);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(101, 13);
+            this.label15.TabIndex = 0;
+            this.label15.Text = "Hipertensión Arterial";
             // 
-            // textBox2
+            // label16
             // 
-            this.textBox2.Location = new System.Drawing.Point(123, 40);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(200, 83);
-            this.textBox2.TabIndex = 2;
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(6, 62);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(49, 13);
+            this.label16.TabIndex = 1;
+            this.label16.Text = "Diabetes";
             // 
-            // txt_observacion
+            // label17
             // 
-            this.txt_observacion.AutoSize = true;
-            this.txt_observacion.Location = new System.Drawing.Point(39, 43);
-            this.txt_observacion.Name = "txt_observacion";
-            this.txt_observacion.Size = new System.Drawing.Size(78, 13);
-            this.txt_observacion.TabIndex = 3;
-            this.txt_observacion.Text = "Observaciones";
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(6, 97);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(49, 13);
+            this.label17.TabIndex = 2;
+            this.label17.Text = "Epilepsia";
             // 
-            // dataGridView2
+            // label18
             // 
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(21, 139);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(561, 256);
-            this.dataGridView2.TabIndex = 4;
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(6, 133);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(33, 13);
+            this.label18.TabIndex = 3;
+            this.label18.Text = "Asma";
             // 
-            // label8
+            // checkBox5
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(45, 22);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(32, 13);
-            this.label8.TabIndex = 0;
-            this.label8.Text = "Inicio";
+            this.checkBox5.AutoSize = true;
+            this.checkBox5.Location = new System.Drawing.Point(175, 61);
+            this.checkBox5.Name = "checkBox5";
+            this.checkBox5.Size = new System.Drawing.Size(40, 17);
+            this.checkBox5.TabIndex = 8;
+            this.checkBox5.Text = "No";
+            this.checkBox5.UseVisualStyleBackColor = true;
             // 
-            // label9
+            // checkBox6
             // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(45, 48);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(45, 13);
-            this.label9.TabIndex = 1;
-            this.label9.Text = "Termino";
+            this.checkBox6.AutoSize = true;
+            this.checkBox6.Location = new System.Drawing.Point(122, 61);
+            this.checkBox6.Name = "checkBox6";
+            this.checkBox6.Size = new System.Drawing.Size(35, 17);
+            this.checkBox6.TabIndex = 7;
+            this.checkBox6.Text = "Si";
+            this.checkBox6.UseVisualStyleBackColor = true;
             // 
-            // label10
+            // checkBox7
             // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(45, 74);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(44, 13);
-            this.label10.TabIndex = 2;
-            this.label10.Text = "Entrega";
+            this.checkBox7.AutoSize = true;
+            this.checkBox7.Location = new System.Drawing.Point(175, 30);
+            this.checkBox7.Name = "checkBox7";
+            this.checkBox7.Size = new System.Drawing.Size(40, 17);
+            this.checkBox7.TabIndex = 6;
+            this.checkBox7.Text = "No";
+            this.checkBox7.UseVisualStyleBackColor = true;
             // 
-            // dateTimeInicio
+            // checkBox8
             // 
-            this.dateTimeInicio.Location = new System.Drawing.Point(96, 16);
-            this.dateTimeInicio.Name = "dateTimeInicio";
-            this.dateTimeInicio.Size = new System.Drawing.Size(200, 20);
-            this.dateTimeInicio.TabIndex = 3;
+            this.checkBox8.AutoSize = true;
+            this.checkBox8.Location = new System.Drawing.Point(122, 30);
+            this.checkBox8.Name = "checkBox8";
+            this.checkBox8.Size = new System.Drawing.Size(35, 17);
+            this.checkBox8.TabIndex = 5;
+            this.checkBox8.Text = "Si";
+            this.checkBox8.UseVisualStyleBackColor = true;
             // 
-            // dateTimeTermino
+            // checkBox9
             // 
-            this.dateTimeTermino.Location = new System.Drawing.Point(96, 42);
-            this.dateTimeTermino.Name = "dateTimeTermino";
-            this.dateTimeTermino.Size = new System.Drawing.Size(200, 20);
-            this.dateTimeTermino.TabIndex = 4;
+            this.checkBox9.AutoSize = true;
+            this.checkBox9.Location = new System.Drawing.Point(175, 132);
+            this.checkBox9.Name = "checkBox9";
+            this.checkBox9.Size = new System.Drawing.Size(40, 17);
+            this.checkBox9.TabIndex = 12;
+            this.checkBox9.Text = "No";
+            this.checkBox9.UseVisualStyleBackColor = true;
             // 
-            // dateTimeEntrega
+            // checkBox10
             // 
-            this.dateTimeEntrega.Location = new System.Drawing.Point(96, 68);
-            this.dateTimeEntrega.Name = "dateTimeEntrega";
-            this.dateTimeEntrega.Size = new System.Drawing.Size(200, 20);
-            this.dateTimeEntrega.TabIndex = 5;
+            this.checkBox10.AutoSize = true;
+            this.checkBox10.Location = new System.Drawing.Point(122, 132);
+            this.checkBox10.Name = "checkBox10";
+            this.checkBox10.Size = new System.Drawing.Size(35, 17);
+            this.checkBox10.TabIndex = 11;
+            this.checkBox10.Text = "Si";
+            this.checkBox10.UseVisualStyleBackColor = true;
             // 
-            // label11
+            // checkBox11
             // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(45, 97);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(34, 13);
-            this.label11.TabIndex = 6;
-            this.label11.Text = "Curso";
+            this.checkBox11.AutoSize = true;
+            this.checkBox11.Location = new System.Drawing.Point(175, 99);
+            this.checkBox11.Name = "checkBox11";
+            this.checkBox11.Size = new System.Drawing.Size(40, 17);
+            this.checkBox11.TabIndex = 10;
+            this.checkBox11.Text = "No";
+            this.checkBox11.UseVisualStyleBackColor = true;
             // 
-            // comboBox1
+            // checkBox12
             // 
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(96, 94);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(200, 21);
-            this.comboBox1.TabIndex = 7;
+            this.checkBox12.AutoSize = true;
+            this.checkBox12.Location = new System.Drawing.Point(122, 99);
+            this.checkBox12.Name = "checkBox12";
+            this.checkBox12.Size = new System.Drawing.Size(35, 17);
+            this.checkBox12.TabIndex = 9;
+            this.checkBox12.Text = "Si";
+            this.checkBox12.UseVisualStyleBackColor = true;
             // 
-            // btn_curso
+            // label19
             // 
-            this.btn_curso.Location = new System.Drawing.Point(401, 43);
-            this.btn_curso.Name = "btn_curso";
-            this.btn_curso.Size = new System.Drawing.Size(98, 23);
-            this.btn_curso.TabIndex = 8;
-            this.btn_curso.Text = "Agregar Curso";
-            this.btn_curso.UseVisualStyleBackColor = true;
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(11, 213);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(146, 13);
+            this.label19.TabIndex = 2;
+            this.label19.Text = "Operaciones (Indique Cuales)";
             // 
-            // dataGridView3
+            // richTextBox2
             // 
-            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView3.Location = new System.Drawing.Point(21, 130);
-            this.dataGridView3.Name = "dataGridView3";
-            this.dataGridView3.Size = new System.Drawing.Size(560, 260);
-            this.dataGridView3.TabIndex = 9;
+            this.richTextBox2.Location = new System.Drawing.Point(14, 238);
+            this.richTextBox2.Name = "richTextBox2";
+            this.richTextBox2.Size = new System.Drawing.Size(169, 57);
+            this.richTextBox2.TabIndex = 3;
+            this.richTextBox2.Text = "";
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(249, 213);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(117, 13);
+            this.label20.TabIndex = 4;
+            this.label20.Text = "Antecedentes Cronicos";
+            // 
+            // richTextBox3
+            // 
+            this.richTextBox3.Location = new System.Drawing.Point(252, 238);
+            this.richTextBox3.Name = "richTextBox3";
+            this.richTextBox3.Size = new System.Drawing.Size(169, 57);
+            this.richTextBox3.TabIndex = 5;
+            this.richTextBox3.Text = "";
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(11, 310);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(207, 13);
+            this.label21.TabIndex = 6;
+            this.label21.Text = "Medicamentos que Toma Frecuentemente";
+            // 
+            // richTextBox4
+            // 
+            this.richTextBox4.Location = new System.Drawing.Point(14, 326);
+            this.richTextBox4.Name = "richTextBox4";
+            this.richTextBox4.Size = new System.Drawing.Size(407, 21);
+            this.richTextBox4.TabIndex = 7;
+            this.richTextBox4.Text = "";
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Location = new System.Drawing.Point(11, 359);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(155, 13);
+            this.label22.TabIndex = 8;
+            this.label22.Text = "Medicamentos Contraindicados";
+            // 
+            // richTextBox5
+            // 
+            this.richTextBox5.Location = new System.Drawing.Point(14, 375);
+            this.richTextBox5.Name = "richTextBox5";
+            this.richTextBox5.Size = new System.Drawing.Size(407, 21);
+            this.richTextBox5.TabIndex = 9;
+            this.richTextBox5.Text = "";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(494, 238);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 10;
+            this.button1.Text = "Modificar";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(494, 286);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 11;
+            this.button2.Text = "Parientes";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // fecha_califica
+            // 
+            this.fecha_califica.DataPropertyName = "fecha_califica";
+            this.fecha_califica.HeaderText = "Fecha Califica";
+            this.fecha_califica.Name = "fecha_califica";
+            this.fecha_califica.Width = 150;
+            // 
+            // por_concepto_de
+            // 
+            this.por_concepto_de.HeaderText = "Por Concepto De";
+            this.por_concepto_de.Name = "por_concepto_de";
+            this.por_concepto_de.Width = 240;
+            // 
+            // fecha_entrega
+            // 
+            this.fecha_entrega.HeaderText = "Fecha Entrega";
+            this.fecha_entrega.Name = "fecha_entrega";
+            this.fecha_entrega.Width = 150;
+            // 
+            // id_cargos
+            // 
+            this.id_cargos.HeaderText = "Cargo";
+            this.id_cargos.Name = "id_cargos";
+            this.id_cargos.Width = 240;
+            // 
+            // fecha_desde
+            // 
+            this.fecha_desde.HeaderText = "Fecha Desde";
+            this.fecha_desde.Name = "fecha_desde";
+            this.fecha_desde.Width = 150;
+            // 
+            // fecha_hasta
+            // 
+            this.fecha_hasta.HeaderText = "Fecha Hasta";
+            this.fecha_hasta.Name = "fecha_hasta";
+            this.fecha_hasta.Width = 150;
+            // 
+            // fecha_inicio
+            // 
+            this.fecha_inicio.HeaderText = "Fecha Inicio";
+            this.fecha_inicio.Name = "fecha_inicio";
+            this.fecha_inicio.Width = 120;
+            // 
+            // fecha_termino
+            // 
+            this.fecha_termino.HeaderText = "Fecha Término";
+            this.fecha_termino.Name = "fecha_termino";
+            this.fecha_termino.Width = 120;
+            // 
+            // id_curso
+            // 
+            this.id_curso.HeaderText = "Denominacion Curso";
+            this.id_curso.Name = "id_curso";
+            this.id_curso.Width = 180;
+            // 
+            // fecha_entrega_curso
+            // 
+            this.fecha_entrega_curso.HeaderText = "Fecha Entrega";
+            this.fecha_entrega_curso.Name = "fecha_entrega_curso";
+            this.fecha_entrega_curso.Width = 120;
             // 
             // MasInfoBombero
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(674, 620);
+            this.ClientSize = new System.Drawing.Size(674, 635);
             this.Controls.Add(this.labelCargo);
             this.Controls.Add(this.labelTIB);
             this.Controls.Add(this.labelRut);
@@ -541,19 +988,25 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.MasInfoBombero_Load);
             this.tabBox.ResumeLayout(false);
+            this.FichaMedica.ResumeLayout(false);
+            this.FichaMedica.PerformLayout();
             this.HistorialCargos.ResumeLayout(false);
             this.HistorialCargos.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridResult)).EndInit();
             this.HistorialPremios.ResumeLayout(false);
             this.HistorialPremios.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.HistorialCursos.ResumeLayout(false);
             this.HistorialCursos.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
             this.Observaciones.ResumeLayout(false);
             this.Observaciones.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.box_picture)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.box_picture)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -607,6 +1060,48 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.CheckBox checkBox2;
+        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.CheckBox checkBox3;
+        private System.Windows.Forms.CheckBox checkBox4;
+        private System.Windows.Forms.RichTextBox richTextBox2;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.CheckBox checkBox9;
+        private System.Windows.Forms.CheckBox checkBox10;
+        private System.Windows.Forms.CheckBox checkBox11;
+        private System.Windows.Forms.CheckBox checkBox12;
+        private System.Windows.Forms.CheckBox checkBox5;
+        private System.Windows.Forms.CheckBox checkBox6;
+        private System.Windows.Forms.CheckBox checkBox7;
+        private System.Windows.Forms.CheckBox checkBox8;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.RichTextBox richTextBox3;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.RichTextBox richTextBox5;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.RichTextBox richTextBox4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id_cargos;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fecha_desde;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fecha_hasta;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fecha_califica;
+        private System.Windows.Forms.DataGridViewTextBoxColumn por_concepto_de;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fecha_entrega;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fecha_inicio;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fecha_termino;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id_curso;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fecha_entrega_curso;
 
     }
 }
