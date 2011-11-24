@@ -34,12 +34,11 @@
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dataGridResult = new System.Windows.Forms.DataGridView();
-            this.btn_editar = new System.Windows.Forms.Button();
+            this.idCargo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NombreCargo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btn_cancelar = new System.Windows.Forms.Button();
             this.btn_borrar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.idCargo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NombreCargo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridResult)).BeginInit();
@@ -108,15 +107,22 @@
             this.dataGridResult.TabIndex = 0;
             this.dataGridResult.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridResult_CellContentClick);
             // 
-            // btn_editar
+            // idCargo
             // 
-            this.btn_editar.Location = new System.Drawing.Point(446, 426);
-            this.btn_editar.Name = "btn_editar";
-            this.btn_editar.Size = new System.Drawing.Size(75, 23);
-            this.btn_editar.TabIndex = 27;
-            this.btn_editar.Text = "Editar";
-            this.btn_editar.UseVisualStyleBackColor = true;
-            this.btn_editar.Click += new System.EventHandler(this.btn_editar_Click);
+            this.idCargo.DataPropertyName = "Id";
+            this.idCargo.DividerWidth = 1;
+            this.idCargo.HeaderText = "ID Cargo";
+            this.idCargo.Name = "idCargo";
+            this.idCargo.Visible = false;
+            this.idCargo.Width = 200;
+            // 
+            // NombreCargo
+            // 
+            this.NombreCargo.DataPropertyName = "Nombre";
+            this.NombreCargo.DividerWidth = 1;
+            this.NombreCargo.HeaderText = "Nombre";
+            this.NombreCargo.Name = "NombreCargo";
+            this.NombreCargo.Width = 560;
             // 
             // btn_cancelar
             // 
@@ -148,23 +154,6 @@
             this.label1.TabIndex = 28;
             this.label1.Text = "CARGOS";
             // 
-            // idCargo
-            // 
-            this.idCargo.DataPropertyName = "Id";
-            this.idCargo.DividerWidth = 1;
-            this.idCargo.HeaderText = "ID Cargo";
-            this.idCargo.Name = "idCargo";
-            this.idCargo.Visible = false;
-            this.idCargo.Width = 200;
-            // 
-            // NombreCargo
-            // 
-            this.NombreCargo.DataPropertyName = "Nombre";
-            this.NombreCargo.DividerWidth = 1;
-            this.NombreCargo.HeaderText = "Nombre";
-            this.NombreCargo.Name = "NombreCargo";
-            this.NombreCargo.Width = 560;
-            // 
             // Cargos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -172,7 +161,6 @@
             this.CancelButton = this.btn_cancelar;
             this.ClientSize = new System.Drawing.Size(708, 465);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.btn_editar);
             this.Controls.Add(this.btn_cancelar);
             this.Controls.Add(this.btn_borrar);
             this.Controls.Add(this.groupBox1);
@@ -199,7 +187,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.DataGridView dataGridResult;
-        private System.Windows.Forms.Button btn_editar;
         private System.Windows.Forms.Button btn_cancelar;
         private System.Windows.Forms.Button btn_borrar;
         private System.Windows.Forms.Label label1;

@@ -34,12 +34,11 @@
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dataGridResult = new System.Windows.Forms.DataGridView();
-            this.btn_editar = new System.Windows.Forms.Button();
+            this.IDPremio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NombrePremio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btn_cancelar = new System.Windows.Forms.Button();
             this.btn_borrar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.IDPremio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NombrePremio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridResult)).BeginInit();
@@ -108,14 +107,24 @@
             this.dataGridResult.Size = new System.Drawing.Size(672, 268);
             this.dataGridResult.TabIndex = 0;
             // 
-            // btn_editar
+            // IDPremio
             // 
-            this.btn_editar.Location = new System.Drawing.Point(446, 426);
-            this.btn_editar.Name = "btn_editar";
-            this.btn_editar.Size = new System.Drawing.Size(75, 23);
-            this.btn_editar.TabIndex = 30;
-            this.btn_editar.Text = "Editar";
-            this.btn_editar.UseVisualStyleBackColor = true;
+            this.IDPremio.DataPropertyName = "Id";
+            this.IDPremio.DividerWidth = 1;
+            this.IDPremio.HeaderText = "ID Premio";
+            this.IDPremio.Name = "IDPremio";
+            this.IDPremio.ReadOnly = true;
+            this.IDPremio.Visible = false;
+            this.IDPremio.Width = 80;
+            // 
+            // NombrePremio
+            // 
+            this.NombrePremio.DataPropertyName = "Nombre";
+            this.NombrePremio.DividerWidth = 1;
+            this.NombrePremio.HeaderText = "Nombre";
+            this.NombrePremio.Name = "NombrePremio";
+            this.NombrePremio.ReadOnly = true;
+            this.NombrePremio.Width = 550;
             // 
             // btn_cancelar
             // 
@@ -147,32 +156,12 @@
             this.label1.TabIndex = 31;
             this.label1.Text = "PREMIOS";
             // 
-            // IDPremio
-            // 
-            this.IDPremio.DataPropertyName = "Id";
-            this.IDPremio.DividerWidth = 1;
-            this.IDPremio.HeaderText = "ID Premio";
-            this.IDPremio.Name = "IDPremio";
-            this.IDPremio.ReadOnly = true;
-            this.IDPremio.Visible = false;
-            this.IDPremio.Width = 80;
-            // 
-            // NombrePremio
-            // 
-            this.NombrePremio.DataPropertyName = "Nombre";
-            this.NombrePremio.DividerWidth = 1;
-            this.NombrePremio.HeaderText = "Nombre";
-            this.NombrePremio.Name = "NombrePremio";
-            this.NombrePremio.ReadOnly = true;
-            this.NombrePremio.Width = 550;
-            // 
             // Premios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(701, 463);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.btn_editar);
             this.Controls.Add(this.btn_cancelar);
             this.Controls.Add(this.btn_borrar);
             this.Controls.Add(this.groupBox1);
@@ -199,7 +188,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.DataGridView dataGridResult;
-        private System.Windows.Forms.Button btn_editar;
         private System.Windows.Forms.Button btn_cancelar;
         private System.Windows.Forms.Button btn_borrar;
         private System.Windows.Forms.Label label1;
