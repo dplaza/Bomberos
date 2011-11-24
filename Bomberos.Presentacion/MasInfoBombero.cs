@@ -32,6 +32,16 @@ namespace Bomberos.Presentacion
         {
             this.Text = "Perfil de " + ContextoDTO.Instancia().BomberoSelected.Nombres + " " + ContextoDTO.Instancia().BomberoSelected.Apellidos;
 
+            ICursoMgr _Curso = new CursoMgr();
+            select_cursos.DataSource = _Curso.ListarCursos().OrderBy(p => p.Nombre).ToList();
+            select_cursos.DisplayMember = "Nombre";
+            select_cursos.ValueMember = "Id";
+
+            IPremioMgr _Premio = new PremioMgr();
+            select_premios.DataSource = _Premio.ListarPremios().OrderBy(p => p.Nombre).ToList();
+            select_premios.DisplayMember = "Nombre";
+            select_premios.ValueMember = "Id";
+
             ICargoMgr _Cargo = new CargoMgr();
             select_cargo.DataSource = _Cargo.ListarCargos().OrderBy(p => p.Nombre).ToList();
             select_cargo.DisplayMember = "Nombre";
