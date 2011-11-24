@@ -81,6 +81,8 @@
             this.txt_pass = new System.Windows.Forms.TextBox();
             this.select_compania = new System.Windows.Forms.ComboBox();
             this.button1 = new System.Windows.Forms.Button();
+            this.txt_socio = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.box_picture)).BeginInit();
             this.groupBox3.SuspendLayout();
@@ -329,7 +331,7 @@
             this.groupBox1.Controls.Add(this.txt_rut);
             this.groupBox1.Location = new System.Drawing.Point(21, 49);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(403, 386);
+            this.groupBox1.Size = new System.Drawing.Size(403, 375);
             this.groupBox1.TabIndex = 108;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos Personales";
@@ -432,7 +434,7 @@
             this.select_tipocuenta.Items.AddRange(new object[] {
             "Usuario",
             "Administrador"});
-            this.select_tipocuenta.Location = new System.Drawing.Point(161, 488);
+            this.select_tipocuenta.Location = new System.Drawing.Point(140, 77);
             this.select_tipocuenta.Name = "select_tipocuenta";
             this.select_tipocuenta.Size = new System.Drawing.Size(121, 21);
             this.select_tipocuenta.TabIndex = 177;
@@ -440,7 +442,7 @@
             // label20
             // 
             this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(47, 465);
+            this.label20.Location = new System.Drawing.Point(26, 54);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(24, 13);
             this.label20.TabIndex = 172;
@@ -449,7 +451,7 @@
             // label21
             // 
             this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(47, 518);
+            this.label21.Location = new System.Drawing.Point(26, 114);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(91, 13);
             this.label21.TabIndex = 173;
@@ -458,7 +460,7 @@
             // label23
             // 
             this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(47, 491);
+            this.label23.Location = new System.Drawing.Point(26, 80);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(79, 13);
             this.label23.TabIndex = 174;
@@ -467,7 +469,7 @@
             // date_fecha_inscrip
             // 
             this.date_fecha_inscrip.Enabled = false;
-            this.date_fecha_inscrip.Location = new System.Drawing.Point(161, 515);
+            this.date_fecha_inscrip.Location = new System.Drawing.Point(140, 112);
             this.date_fecha_inscrip.Name = "date_fecha_inscrip";
             this.date_fecha_inscrip.Size = new System.Drawing.Size(200, 20);
             this.date_fecha_inscrip.TabIndex = 176;
@@ -475,32 +477,41 @@
             // txt_tib
             // 
             this.txt_tib.Enabled = false;
-            this.txt_tib.Location = new System.Drawing.Point(161, 462);
+            this.txt_tib.Location = new System.Drawing.Point(140, 51);
             this.txt_tib.Name = "txt_tib";
             this.txt_tib.Size = new System.Drawing.Size(100, 20);
             this.txt_tib.TabIndex = 175;
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.txt_socio);
+            this.groupBox3.Controls.Add(this.label5);
             this.groupBox3.Controls.Add(this.label22);
+            this.groupBox3.Controls.Add(this.label20);
+            this.groupBox3.Controls.Add(this.select_tipocuenta);
+            this.groupBox3.Controls.Add(this.label23);
+            this.groupBox3.Controls.Add(this.label21);
             this.groupBox3.Controls.Add(this.select_estado);
             this.groupBox3.Controls.Add(this.label24);
+            this.groupBox3.Controls.Add(this.txt_tib);
             this.groupBox3.Controls.Add(this.select_cargo);
             this.groupBox3.Controls.Add(this.label25);
+            this.groupBox3.Controls.Add(this.date_fecha_inscrip);
             this.groupBox3.Controls.Add(this.label26);
             this.groupBox3.Controls.Add(this.txt_pass);
             this.groupBox3.Controls.Add(this.select_compania);
-            this.groupBox3.Location = new System.Drawing.Point(21, 441);
+            this.groupBox3.Location = new System.Drawing.Point(21, 430);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(402, 217);
+            this.groupBox3.Size = new System.Drawing.Size(402, 265);
             this.groupBox3.TabIndex = 178;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Datos Bombero";
+            this.groupBox3.Enter += new System.EventHandler(this.groupBox3_Enter);
             // 
             // label22
             // 
             this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(26, 104);
+            this.label22.Location = new System.Drawing.Point(26, 143);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(35, 13);
             this.label22.TabIndex = 162;
@@ -516,7 +527,7 @@
             "Renunciado",
             "Separado",
             "Fallecido"});
-            this.select_estado.Location = new System.Drawing.Point(140, 129);
+            this.select_estado.Location = new System.Drawing.Point(140, 174);
             this.select_estado.Name = "select_estado";
             this.select_estado.Size = new System.Drawing.Size(121, 21);
             this.select_estado.TabIndex = 161;
@@ -524,7 +535,7 @@
             // label24
             // 
             this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(26, 134);
+            this.label24.Location = new System.Drawing.Point(26, 177);
             this.label24.Name = "label24";
             this.label24.Size = new System.Drawing.Size(40, 13);
             this.label24.TabIndex = 160;
@@ -535,7 +546,7 @@
             this.select_cargo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.select_cargo.Enabled = false;
             this.select_cargo.FormattingEnabled = true;
-            this.select_cargo.Location = new System.Drawing.Point(140, 101);
+            this.select_cargo.Location = new System.Drawing.Point(140, 140);
             this.select_cargo.Name = "select_cargo";
             this.select_cargo.Size = new System.Drawing.Size(160, 21);
             this.select_cargo.TabIndex = 0;
@@ -543,7 +554,7 @@
             // label25
             // 
             this.label25.AutoSize = true;
-            this.label25.Location = new System.Drawing.Point(26, 159);
+            this.label25.Location = new System.Drawing.Point(26, 204);
             this.label25.Name = "label25";
             this.label25.Size = new System.Drawing.Size(54, 13);
             this.label25.TabIndex = 128;
@@ -552,7 +563,7 @@
             // label26
             // 
             this.label26.AutoSize = true;
-            this.label26.Location = new System.Drawing.Point(26, 185);
+            this.label26.Location = new System.Drawing.Point(26, 231);
             this.label26.Name = "label26";
             this.label26.Size = new System.Drawing.Size(53, 13);
             this.label26.TabIndex = 131;
@@ -561,7 +572,7 @@
             // txt_pass
             // 
             this.txt_pass.Enabled = false;
-            this.txt_pass.Location = new System.Drawing.Point(140, 182);
+            this.txt_pass.Location = new System.Drawing.Point(140, 228);
             this.txt_pass.Name = "txt_pass";
             this.txt_pass.PasswordChar = '*';
             this.txt_pass.Size = new System.Drawing.Size(139, 20);
@@ -572,7 +583,7 @@
             this.select_compania.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.select_compania.Enabled = false;
             this.select_compania.FormattingEnabled = true;
-            this.select_compania.Location = new System.Drawing.Point(140, 156);
+            this.select_compania.Location = new System.Drawing.Point(140, 201);
             this.select_compania.Name = "select_compania";
             this.select_compania.Size = new System.Drawing.Size(121, 21);
             this.select_compania.TabIndex = 151;
@@ -587,19 +598,29 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // txt_socio
+            // 
+            this.txt_socio.Location = new System.Drawing.Point(140, 20);
+            this.txt_socio.Name = "txt_socio";
+            this.txt_socio.Size = new System.Drawing.Size(139, 20);
+            this.txt_socio.TabIndex = 179;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(26, 23);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(49, 13);
+            this.label5.TabIndex = 178;
+            this.label5.Text = "Socio N°";
+            // 
             // FichaBombero
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btn_cancelar;
-            this.ClientSize = new System.Drawing.Size(668, 669);
+            this.ClientSize = new System.Drawing.Size(668, 707);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.select_tipocuenta);
-            this.Controls.Add(this.label20);
-            this.Controls.Add(this.label21);
-            this.Controls.Add(this.label23);
-            this.Controls.Add(this.date_fecha_inscrip);
-            this.Controls.Add(this.txt_tib);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.labelCargo);
             this.Controls.Add(this.labelTIB);
@@ -706,5 +727,7 @@
         private System.Windows.Forms.TextBox txt_pass;
         private System.Windows.Forms.ComboBox select_compania;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox txt_socio;
+        private System.Windows.Forms.Label label5;
     }
 }

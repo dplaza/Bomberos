@@ -31,6 +31,9 @@
             this.label3 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dataGridResult = new System.Windows.Forms.DataGridView();
+            this.NombreCargo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FechaDesde = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FechaHasta = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
@@ -39,9 +42,6 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.NombreCargo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FechaDesde = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FechaHasta = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btn_cancelar = new System.Windows.Forms.Button();
             this.btn_borrar = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
@@ -85,6 +85,33 @@
             this.dataGridResult.Size = new System.Drawing.Size(672, 254);
             this.dataGridResult.TabIndex = 0;
             // 
+            // NombreCargo
+            // 
+            this.NombreCargo.DataPropertyName = "NombreCargo";
+            this.NombreCargo.DividerWidth = 1;
+            this.NombreCargo.HeaderText = "Cargo";
+            this.NombreCargo.Name = "NombreCargo";
+            this.NombreCargo.ReadOnly = true;
+            this.NombreCargo.Width = 410;
+            // 
+            // FechaDesde
+            // 
+            this.FechaDesde.DataPropertyName = "FechaDesde";
+            this.FechaDesde.DividerWidth = 1;
+            this.FechaDesde.HeaderText = "FechaDesde";
+            this.FechaDesde.Name = "FechaDesde";
+            this.FechaDesde.ReadOnly = true;
+            this.FechaDesde.Width = 110;
+            // 
+            // FechaHasta
+            // 
+            this.FechaHasta.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.FechaHasta.DataPropertyName = "FechaHasta";
+            this.FechaHasta.HeaderText = "FechaHasta";
+            this.FechaHasta.Name = "FechaHasta";
+            this.FechaHasta.ReadOnly = true;
+            this.FechaHasta.Width = 110;
+            // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.comboBox2);
@@ -99,7 +126,7 @@
             this.groupBox2.Size = new System.Drawing.Size(675, 108);
             this.groupBox2.TabIndex = 19;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Agregar Premio";
+            this.groupBox2.Text = "Agregar Cargo";
             // 
             // comboBox2
             // 
@@ -159,33 +186,6 @@
             this.label5.Size = new System.Drawing.Size(68, 13);
             this.label5.TabIndex = 7;
             this.label5.Text = "Fecha Hasta";
-            // 
-            // NombreCargo
-            // 
-            this.NombreCargo.DataPropertyName = "NombreCargo";
-            this.NombreCargo.DividerWidth = 1;
-            this.NombreCargo.HeaderText = "Cargo";
-            this.NombreCargo.Name = "NombreCargo";
-            this.NombreCargo.ReadOnly = true;
-            this.NombreCargo.Width = 410;
-            // 
-            // FechaDesde
-            // 
-            this.FechaDesde.DataPropertyName = "FechaDesde";
-            this.FechaDesde.DividerWidth = 1;
-            this.FechaDesde.HeaderText = "FechaDesde";
-            this.FechaDesde.Name = "FechaDesde";
-            this.FechaDesde.ReadOnly = true;
-            this.FechaDesde.Width = 110;
-            // 
-            // FechaHasta
-            // 
-            this.FechaHasta.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.FechaHasta.DataPropertyName = "FechaHasta";
-            this.FechaHasta.HeaderText = "FechaHasta";
-            this.FechaHasta.Name = "FechaHasta";
-            this.FechaHasta.ReadOnly = true;
-            this.FechaHasta.Width = 110;
             // 
             // btn_cancelar
             // 

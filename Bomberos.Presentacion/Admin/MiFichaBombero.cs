@@ -164,5 +164,15 @@ namespace Bomberos.Presentacion
                 box_picture.Image = new Bitmap(file.OpenFile());
             }
         }
+
+        private void select_tipocuenta_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txt_socio_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
