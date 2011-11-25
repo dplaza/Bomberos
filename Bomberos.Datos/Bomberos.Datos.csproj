@@ -47,13 +47,16 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BomberoDAO.cs" />
+    <Compile Include="CargoBomberoDAO.cs" />
     <Compile Include="CargoDAO.cs" />
     <Compile Include="CompañiaDAO.cs" />
     <Compile Include="CursoDAO.cs" />
     <Compile Include="IBomberoDAO.cs" />
+    <Compile Include="ICargoBomberoDAO.cs" />
     <Compile Include="ICargoDAO.cs" />
     <Compile Include="ICompañiaDAO.cs" />
     <Compile Include="ICursoDAO.cs" />
+    <Compile Include="IPremioBomberoDAO.cs" />
     <Compile Include="IPremioDAO.cs" />
     <Compile Include="PremioBomberoDAO.cs" />
     <Compile Include="PremioDAO.cs" />

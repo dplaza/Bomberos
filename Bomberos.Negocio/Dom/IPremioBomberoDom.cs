@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using Bomberos.Comun;
 
-namespace Bomberos.Datos
+namespace Bomberos.Negocio.Dom
 {
-    public interface IPremioBomberoDAO
+    public interface IPremioBomberoDom
     {
         bool Insert(PremioBomberoDTO p_PremioBombero);
         PremioBomberoDTO Load(PremioBomberoDTO p_PremioBombero);
