@@ -7,6 +7,7 @@ namespace Bomberos.Comun
 {
     public class CursoBomberoDTO
     {
+        public int IdCursoBombero { get; set; }
         public DateTime FechaInicio { get; set; }
         public BomberoDTO Bombero { get; set; }
         public CursoDTO Curso { get; set; }
