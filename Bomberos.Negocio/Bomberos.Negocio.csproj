@@ -49,11 +49,13 @@
     <Compile Include="Dom\CargoBomberoDom.cs" />
     <Compile Include="Dom\CargoDom.cs" />
     <Compile Include="Dom\CompañiaDom.cs" />
+    <Compile Include="Dom\CursoBomberoDom.cs" />
     <Compile Include="Dom\CursoDom.cs" />
     <Compile Include="Dom\IBomberoDom.cs" />
     <Compile Include="Dom\ICargoBomberoDom.cs" />
     <Compile Include="Dom\ICargoDom.cs" />
     <Compile Include="Dom\ICompañiaDom.cs" />
+    <Compile Include="Dom\ICursoBomberoDom.cs" />
     <Compile Include="Dom\ICursoDom.cs" />
     <Compile Include="Dom\IPremioBomberoDom.cs" />
     <Compile Include="Dom\IPremioDom.cs" />
@@ -63,10 +65,12 @@
     <Compile Include="Mgr\CargoBomberoMgr.cs" />
     <Compile Include="Mgr\CargoMgr.cs" />
     <Compile Include="Mgr\CompañiaMgr.cs" />
+    <Compile Include="Mgr\CursoBomberoMgr.cs" />
     <Compile Include="Mgr\CursoMgr.cs" />
     <Compile Include="Mgr\ICargoBomberoMgr.cs" />
     <Compile Include="Mgr\ICargoMgr.cs" />
     <Compile Include="Mgr\ICompañiaMgr.cs" />
+    <Compile Include="Mgr\ICursoBomberoMgr.cs" />
     <Compile Include="Mgr\ICursoMgr.cs" />
     <Compile Include="Mgr\ILoginMgr.cs" />
     <Compile Include="Mgr\IBomberoMgr.cs" />

@@ -23,8 +23,8 @@ namespace Bomberos.Negocio.Dom
 
         public bool Update(CargoBomberoDTO p_CargoBombero)
         {
-            ICargoBomberoDAO _CargpBombero = new CargoBomberoDAO();
-            return _CargpBombero.Update(p_CargoBombero);
+            ICargoBomberoDAO _CargoBombero = new CargoBomberoDAO();
+            return _CargoBombero.Update(p_CargoBombero);
         }
 
         public CargoBomberoDTO Load(CargoBomberoDTO p_CargoBombero)
