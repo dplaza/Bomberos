@@ -9,7 +9,7 @@ namespace Bomberos.Negocio.Mgr
 {
     public class PremioBomberoMgr : IPremioBomberoMgr
     {
-        public bool RegistrarPremioBombero(PremioBomberoDTO p_CargoBombero)
+        public bool RegistroPremioBombero(PremioBomberoDTO p_CargoBombero)
         {
             IPremioBomberoDom _PremioBombero = new PremioBomberoDom();
             return _PremioBombero.Insert(p_CargoBombero);
@@ -21,7 +21,7 @@ namespace Bomberos.Negocio.Mgr
             return _PremioBombero.Update(p_PremioBombero);
         }
 
-        public PremioBomberoDTO CargarPremioBombero(PremioBomberoDTO p_PremioBombero)
+        public List<PremioBomberoDTO> CargarPremioBombero(PremioBomberoDTO p_PremioBombero)
         {
             IPremioBomberoDom _PremioBombero = new PremioBomberoDom();
             return _PremioBombero.Load(p_PremioBombero);
@@ -30,7 +30,7 @@ namespace Bomberos.Negocio.Mgr
         public List<PremioBomberoDTO> ListarPremioBomberos()
         {
             IPremioBomberoDom _PremioBombero = new PremioBomberoDom();
-            return _PremioBombero.ListAll();
+            return _PremioBombero.LoadAll();
         }
     }
 }

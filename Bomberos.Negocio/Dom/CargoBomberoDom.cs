@@ -27,7 +27,7 @@ namespace Bomberos.Negocio.Dom
             return _CargoBombero.Update(p_CargoBombero);
         }
 
-        public CargoBomberoDTO Load(CargoBomberoDTO p_CargoBombero)
+        public List<CargoBomberoDTO> Load(CargoBomberoDTO p_CargoBombero)
         {
             ICargoBomberoDAO _CargoBombero = new CargoBomberoDAO();
             return _CargoBombero.Load(p_CargoBombero);

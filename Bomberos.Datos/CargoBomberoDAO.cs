@@ -48,9 +48,10 @@ namespace Bomberos.Datos
             }
         }
 
-        public CargoBomberoDTO Load(CargoBomberoDTO p_CargoBombero)
+        public List<CargoBomberoDTO> Load(CargoBomberoDTO p_CargoBombero)
         {
-            CargoBomberoDTO retorno = null;
+            List<CargoBomberoDTO> ListaCargoBombero = new List<CargoBomberoDTO>();
+
             //MySQL
             MySql.Data.MySqlClient.MySqlConnection conexionBD = ConnectBD();
             string query = "SELECT * FROM cargos_bomberos WHERE rut = ?p_rut";
@@ -63,11 +64,12 @@ namespace Bomberos.Datos
                 MySql.Data.MySqlClient.MySqlDataReader msqlReader = msqlCommand.ExecuteReader();
                 while (msqlReader.Read())
                 {
-                    retorno = new CargoBomberoDTO();
+                    CargoBomberoDTO CargoBombero = new CargoBomberoDTO();
+
                     IBomberoDAO _Bombero = new BomberoDAO();
                     BomberoDTO bombero_rut = new BomberoDTO();
 
-                    bombero_rut.Rut = int.Parse(msqlReader["rut"].ToString());
+                    bombero_rut.Rut = msqlReader["rut"].ToString();
                     bombero_rut = _Bombero.Load(bombero_rut);
 
                     ICargoDAO _Cargo = new CargoDAO();
@@ -76,10 +78,13 @@ namespace Bomberos.Datos
                     cargo_elem.Id = int.Parse(msqlReader["id_cargo"].ToString());
                     cargo_elem = _Cargo.Load(cargo_elem);
 
-                    retorno.FechaDesde = DateTime.ParseExact(msqlReader["fecha_desde"].ToString(), "dd-MM-yyyy h:mm:ss", null);
-                    retorno.FechaHasta = DateTime.ParseExact(msqlReader["fecha_hasta"].ToString(), "dd-MM-yyyy h:mm:ss", null);
-                    retorno.Bombero = bombero_rut;
-                    retorno.Cargo = cargo_elem;
+                    CargoBombero.FechaDesde = DateTime.ParseExact(msqlReader["fecha_desde"].ToString(), "dd-MM-yyyy h:mm:ss", null);
+                    CargoBombero.FechaHasta = DateTime.ParseExact(msqlReader["fecha_hasta"].ToString(), "dd-MM-yyyy h:mm:ss", null);
+                    CargoBombero.Bombero = bombero_rut;
+                    CargoBombero.Cargo = cargo_elem;
+                    CargoBombero.NombreCargo = cargo_elem.Nombre;
+
+                    ListaCargoBombero.Add(CargoBombero);
                 }
             }
             catch (Exception er)
@@ -91,8 +96,7 @@ namespace Bomberos.Datos
             {
                 conexionBD.Close();
             }
-
-            return retorno;
+            return ListaCargoBombero;
         }
 
         public bool Delete(CargoBomberoDTO p_CargoBombero)
@@ -101,7 +105,7 @@ namespace Bomberos.Datos
             MySql.Data.MySqlClient.MySqlConnection conexionBD = ConnectBD();
             string query = "DELETE FROM cargos_bomberos WHERE rut = ?p_rut";
             MySql.Data.MySqlClient.MySqlCommand msqlCommand = new MySql.Data.MySqlClient.MySqlCommand(query, conexionBD);
-            msqlCommand.Parameters.AddWithValue("?p_rut", p_CargoBombero.Rut);
+            msqlCommand.Parameters.AddWithValue("?p_rut", p_CargoBombero.Bombero.Rut);
 
             try
             {
@@ -171,7 +175,7 @@ namespace Bomberos.Datos
                     IBomberoDAO _Bombero = new BomberoDAO();
                     BomberoDTO bombero_rut = new BomberoDTO();
 
-                    bombero_rut.Rut = int.Parse(msqlReader["rut"].ToString());
+                    bombero_rut.Rut = msqlReader["rut"].ToString();
                     bombero_rut = _Bombero.Load(bombero_rut);
 
                     ICargoDAO _Cargo = new CargoDAO();

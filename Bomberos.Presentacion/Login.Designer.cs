@@ -93,6 +93,7 @@
             // 
             // combobox_tipo_login
             // 
+            this.combobox_tipo_login.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.combobox_tipo_login.FormattingEnabled = true;
             this.combobox_tipo_login.Items.AddRange(new object[] {
             "Usuario",

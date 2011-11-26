@@ -10,8 +10,8 @@ namespace Bomberos.Negocio.Mgr
     {
         bool RegistroPremioBombero(PremioBomberoDTO p_PremioBombero);
         bool EditarPremioBombero(PremioBomberoDTO p_PremioBombero);
-        bool BorrarPremioBombero(PremioBomberoDTO p_PremioBombero);
-        PremioBomberoDTO CargarPremioBombero(PremioBomberoDTO p_PremioBombero);
+        //bool BorrarPremioBombero(PremioBomberoDTO p_PremioBombero);
+        List<PremioBomberoDTO> CargarPremioBombero(PremioBomberoDTO p_PremioBombero);
         List<PremioBomberoDTO> ListarPremioBomberos();
     }
 }

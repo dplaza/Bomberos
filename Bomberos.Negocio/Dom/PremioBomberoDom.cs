@@ -27,7 +27,7 @@ namespace Bomberos.Negocio.Dom
             return _PremioBombero.Update(p_PremioBombero);
         }
 
-        public PremioBomberoDTO Load(PremioBomberoDTO p_PremioBombero)
+        public List<PremioBomberoDTO> Load(PremioBomberoDTO p_PremioBombero)
         {
             IPremioBomberoDAO _PremioBombero = new PremioBomberoDAO();
             return _PremioBombero.Load(p_PremioBombero);

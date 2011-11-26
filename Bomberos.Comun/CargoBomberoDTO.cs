@@ -10,6 +10,7 @@ namespace Bomberos.Comun
         public DateTime FechaDesde { get; set; }
         public BomberoDTO Bombero { get; set; }
         public CargoDTO Cargo { get; set; }
+        public string NombreCargo { get; set; }
         public DateTime FechaHasta { get; set; }
     }
 }

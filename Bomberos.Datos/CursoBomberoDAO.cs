@@ -20,8 +20,8 @@ namespace Bomberos.Datos
         {
             //MySQL
             MySql.Data.MySqlClient.MySqlConnection conexionBD = ConnectBD();
-            string query = "INSERT INTO cursos_bomberos (fecha_inicio, rut, id_curso, fecha_fin, fecha_entrega) Values (?p_fecha_inicio, ";
-            query = string.Concat(query, "?p_rut, ?p_id_curso, ?p_fecha_fin, ?p_fecha_entrega ");
+            string query = "INSERT INTO cursos_bomberos (fecha_inicio, rut, id_curso, fecha_fin, fecha_entrega) values (?p_fecha_inicio, ";
+            query = string.Concat(query, "?p_rut, ?p_id_curso, ?p_fecha_fin, ?p_fecha_entrega) ");
             MySql.Data.MySqlClient.MySqlCommand msqlCommand = new MySql.Data.MySqlClient.MySqlCommand(query, conexionBD);
             msqlCommand.Parameters.AddWithValue("?p_fecha_inicio", p_CursoBombero.FechaInicio);
             msqlCommand.Parameters.AddWithValue("?p_rut", p_CursoBombero.Bombero.Rut);
@@ -48,9 +48,10 @@ namespace Bomberos.Datos
             }
         }
 
-        public CursoBomberoDTO Load(CursoBomberoDTO p_CursoBombero)
+        public List<CursoBomberoDTO> Load(CursoBomberoDTO p_CursoBombero)
         {
-            CursoBomberoDTO retorno = null;
+            List<CursoBomberoDTO> ListaCursoBombero = new List<CursoBomberoDTO>();
+
             //MySQL
             MySql.Data.MySqlClient.MySqlConnection conexionBD = ConnectBD();
             string query = "SELECT * FROM cursos_bomberos WHERE rut = ?p_rut";
@@ -63,24 +64,28 @@ namespace Bomberos.Datos
                 MySql.Data.MySqlClient.MySqlDataReader msqlReader = msqlCommand.ExecuteReader();
                 while (msqlReader.Read())
                 {
-                    retorno = new CursoBomberoDTO();
+                    CursoBomberoDTO CursoBombero = new CursoBomberoDTO();
+
                     IBomberoDAO _Bombero = new BomberoDAO();
                     BomberoDTO bombero_rut = new BomberoDTO();
 
-                    bombero_rut.Rut = int.Parse(msqlReader["rut"].ToString());
+                    bombero_rut.Rut = msqlReader["rut"].ToString();
                     bombero_rut = _Bombero.Load(bombero_rut);
 
                     ICursoDAO _Curso = new CursoDAO();
                     CursoDTO curso_elem = new CursoDTO();
 
-                    curso_elem.Id = int.Parse(msqlReader["id_cargo"].ToString());
+                    curso_elem.Id = int.Parse(msqlReader["id_curso"].ToString());
                     curso_elem = _Curso.Load(curso_elem);
 
-                    retorno.FechaDesde = DateTime.ParseExact(msqlReader["fecha_inicio"].ToString(), "dd-MM-yyyy h:mm:ss", null);
-                    retorno.FechaHasta = DateTime.ParseExact(msqlReader["fecha_fin"].ToString(), "dd-MM-yyyy h:mm:ss", null);
-                    retorno.FechaEntrega = DateTime.ParseExact(msqlReader["fecha_entrega"].ToString(), "dd-MM-yyyy h:mm:ss", null);
-                    retorno.Bombero = bombero_rut;
-                    retorno.Curso = curso_elem;
+                    CursoBombero.FechaInicio = DateTime.ParseExact(msqlReader["fecha_inicio"].ToString(), "dd-MM-yyyy h:mm:ss", null);
+                    CursoBombero.FechaFin = DateTime.ParseExact(msqlReader["fecha_fin"].ToString(), "dd-MM-yyyy h:mm:ss", null);
+                    CursoBombero.FechaEntrega = DateTime.ParseExact(msqlReader["fecha_entrega"].ToString(), "dd-MM-yyyy h:mm:ss", null);
+                    CursoBombero.Bombero = bombero_rut;
+                    CursoBombero.Curso = curso_elem;
+                    CursoBombero.NombreCurso = curso_elem.Nombre;
+
+                    ListaCursoBombero.Add(CursoBombero);
                 }
             }
             catch (Exception er)
@@ -92,8 +97,7 @@ namespace Bomberos.Datos
             {
                 conexionBD.Close();
             }
-
-            return retorno;
+            return ListaCursoBombero;
         }
 
         public bool Delete(CursoBomberoDTO p_CursoBombero)
@@ -102,7 +106,7 @@ namespace Bomberos.Datos
             MySql.Data.MySqlClient.MySqlConnection conexionBD = ConnectBD();
             string query = "DELETE FROM cursos_bomberos WHERE rut = ?p_rut";
             MySql.Data.MySqlClient.MySqlCommand msqlCommand = new MySql.Data.MySqlClient.MySqlCommand(query, conexionBD);
-            msqlCommand.Parameters.AddWithValue("?p_rut", p_CursoBombero.Rut);
+            msqlCommand.Parameters.AddWithValue("?p_rut", p_CursoBombero.Bombero.Rut);
 
             try
             {
@@ -173,7 +177,7 @@ namespace Bomberos.Datos
                     IBomberoDAO _Bombero = new BomberoDAO();
                     BomberoDTO bombero_rut = new BomberoDTO();
 
-                    bombero_rut.Rut = int.Parse(msqlReader["rut"].ToString());
+                    bombero_rut.Rut = msqlReader["rut"].ToString();
                     bombero_rut = _Bombero.Load(bombero_rut);
 
                     ICursoDAO _Curso = new CursoDAO();

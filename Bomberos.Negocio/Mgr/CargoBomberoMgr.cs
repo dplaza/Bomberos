@@ -9,7 +9,7 @@ namespace Bomberos.Negocio.Mgr
 {
     public class CargoBomberoMgr : ICargoBomberoMgr
     {
-        public bool RegistrarCargoBombero(CargoBomberoDTO p_CargoBombero)
+        public bool RegistroCargoBombero(CargoBomberoDTO p_CargoBombero)
         {
             ICargoBomberoDom _CargoBombero = new CargoBomberoDom();
             return _CargoBombero.Insert(p_CargoBombero);
@@ -21,7 +21,7 @@ namespace Bomberos.Negocio.Mgr
             return _CargoBombero.Update(p_CargoBombero);
         }
 
-        public CargoBomberoDTO CargarCargoBombero(CargoBomberoDTO p_CargoBombero)
+        public List<CargoBomberoDTO> CargarCargoBombero(CargoBomberoDTO p_CargoBombero)
         {
             ICargoBomberoDom _CargoBombero = new CargoBomberoDom();
             return _CargoBombero.Load(p_CargoBombero);
@@ -30,7 +30,7 @@ namespace Bomberos.Negocio.Mgr
         public List<CargoBomberoDTO> ListarCargoBomberos()
         {
             ICargoBomberoDom _CargoBombero = new CargoBomberoDom();
-            return _CargoBombero.ListAll();
+            return _CargoBombero.LoadAll();
         }
 
     }

@@ -9,7 +9,7 @@ namespace Bomberos.Negocio.Dom
     public interface ICursoBomberoDom
     {
         bool Insert(CursoBomberoDTO p_CursoBombero);
-        CursoBomberoDTO Load(CursoBomberoDTO p_CursoBombero);
+        List<CursoBomberoDTO> Load(CursoBomberoDTO p_CursoBombero);
         bool Delete(CursoBomberoDTO p_CursoBombero);
         bool Update(CursoBomberoDTO p_CursoBombero);
         List<CursoBomberoDTO> LoadAll();

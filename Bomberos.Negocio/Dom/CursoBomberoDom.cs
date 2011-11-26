@@ -27,7 +27,7 @@ namespace Bomberos.Negocio.Dom
             return _CursoBombero.Update(p_CursoBombero);
         }
 
-        public CursoBomberoDTO Load(CursoBomberoDTO p_CursoBombero)
+        public List<CursoBomberoDTO> Load(CursoBomberoDTO p_CursoBombero)
         {
             ICursoBomberoDAO _CursoBombero = new CursoBomberoDAO();
             return _CursoBombero.Load(p_CursoBombero);

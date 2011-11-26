@@ -71,35 +71,39 @@
             this.label1 = new System.Windows.Forms.Label();
             this.dateTimeHasta = new System.Windows.Forms.DateTimePicker();
             this.dateTimeDesde = new System.Windows.Forms.DateTimePicker();
-            this.dataGridResult = new System.Windows.Forms.DataGridView();
+            this.dataGridCargos = new System.Windows.Forms.DataGridView();
             this.id_cargos = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fecha_desde = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fecha_hasta = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.HistorialPremios = new System.Windows.Forms.TabPage();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.select_premios = new System.Windows.Forms.ComboBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.dataGridPremios = new System.Windows.Forms.DataGridView();
+            this.NombrePremio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fecha_califica = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fecha_entrega = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Premio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Bombero = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btn_premio = new System.Windows.Forms.Button();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePremioEntrega = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePremioCalifica = new System.Windows.Forms.DateTimePicker();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.HistorialCursos = new System.Windows.Forms.TabPage();
-            this.dataGridView3 = new System.Windows.Forms.DataGridView();
-            this.fecha_inicio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fecha_termino = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.id_curso = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fecha_entrega_curso = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridCursos = new System.Windows.Forms.DataGridView();
             this.btn_curso = new System.Windows.Forms.Button();
             this.select_cursos = new System.Windows.Forms.ComboBox();
             this.label11 = new System.Windows.Forms.Label();
-            this.dateTimeEntrega = new System.Windows.Forms.DateTimePicker();
-            this.dateTimeTermino = new System.Windows.Forms.DateTimePicker();
-            this.dateTimeInicio = new System.Windows.Forms.DateTimePicker();
+            this.dateTimeCursoEntrega = new System.Windows.Forms.DateTimePicker();
+            this.dateTimeCursoTermino = new System.Windows.Forms.DateTimePicker();
+            this.dateTimeCursoInicio = new System.Windows.Forms.DateTimePicker();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.ResumenListas = new System.Windows.Forms.TabPage();
             this.Servicio = new System.Windows.Forms.TabPage();
             this.Observaciones = new System.Windows.Forms.TabPage();
+            this.btn_observacion = new System.Windows.Forms.Button();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.txt_observacion = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
@@ -111,22 +115,21 @@
             this.labelTIB = new System.Windows.Forms.Label();
             this.labelRut = new System.Windows.Forms.Label();
             this.labelnombre = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.select_premios = new System.Windows.Forms.ComboBox();
-            this.btn_observacion = new System.Windows.Forms.Button();
-            this.fecha_califica = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.curso = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fecha_entrega = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NombreCurso = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fecha_inicio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fecha_termino = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fecha_entrega_curso = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.id_curso = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabBox.SuspendLayout();
             this.FichaMedica.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.HistorialCargos.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridResult)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridCargos)).BeginInit();
             this.HistorialPremios.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridPremios)).BeginInit();
             this.HistorialCursos.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridCursos)).BeginInit();
             this.Observaciones.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.box_picture)).BeginInit();
@@ -494,7 +497,7 @@
             this.HistorialCargos.Controls.Add(this.label1);
             this.HistorialCargos.Controls.Add(this.dateTimeHasta);
             this.HistorialCargos.Controls.Add(this.dateTimeDesde);
-            this.HistorialCargos.Controls.Add(this.dataGridResult);
+            this.HistorialCargos.Controls.Add(this.dataGridCargos);
             this.HistorialCargos.Location = new System.Drawing.Point(4, 22);
             this.HistorialCargos.Name = "HistorialCargos";
             this.HistorialCargos.Size = new System.Drawing.Size(602, 413);
@@ -572,17 +575,17 @@
             this.dateTimeDesde.Size = new System.Drawing.Size(200, 20);
             this.dateTimeDesde.TabIndex = 1;
             // 
-            // dataGridResult
+            // dataGridCargos
             // 
-            this.dataGridResult.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridResult.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridCargos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridCargos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.id_cargos,
             this.fecha_desde,
             this.fecha_hasta});
-            this.dataGridResult.Location = new System.Drawing.Point(23, 120);
-            this.dataGridResult.Name = "dataGridResult";
-            this.dataGridResult.Size = new System.Drawing.Size(557, 272);
-            this.dataGridResult.TabIndex = 0;
+            this.dataGridCargos.Location = new System.Drawing.Point(23, 120);
+            this.dataGridCargos.Name = "dataGridCargos";
+            this.dataGridCargos.Size = new System.Drawing.Size(557, 272);
+            this.dataGridCargos.TabIndex = 0;
             // 
             // id_cargos
             // 
@@ -606,10 +609,10 @@
             // 
             this.HistorialPremios.Controls.Add(this.select_premios);
             this.HistorialPremios.Controls.Add(this.label6);
-            this.HistorialPremios.Controls.Add(this.dataGridView1);
+            this.HistorialPremios.Controls.Add(this.dataGridPremios);
             this.HistorialPremios.Controls.Add(this.btn_premio);
-            this.HistorialPremios.Controls.Add(this.dateTimePicker2);
-            this.HistorialPremios.Controls.Add(this.dateTimePicker1);
+            this.HistorialPremios.Controls.Add(this.dateTimePremioEntrega);
+            this.HistorialPremios.Controls.Add(this.dateTimePremioCalifica);
             this.HistorialPremios.Controls.Add(this.label5);
             this.HistorialPremios.Controls.Add(this.label4);
             this.HistorialPremios.Location = new System.Drawing.Point(4, 22);
@@ -620,17 +623,79 @@
             this.HistorialPremios.Text = "Historial Premios";
             this.HistorialPremios.UseVisualStyleBackColor = true;
             // 
-            // dataGridView1
+            // select_premios
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.select_premios.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.select_premios.FormattingEnabled = true;
+            this.select_premios.Location = new System.Drawing.Point(133, 74);
+            this.select_premios.Name = "select_premios";
+            this.select_premios.Size = new System.Drawing.Size(200, 21);
+            this.select_premios.TabIndex = 9;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(44, 77);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(39, 13);
+            this.label6.TabIndex = 8;
+            this.label6.Text = "Premio";
+            // 
+            // dataGridPremios
+            // 
+            this.dataGridPremios.AllowUserToAddRows = false;
+            this.dataGridPremios.AllowUserToDeleteRows = false;
+            this.dataGridPremios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridPremios.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.NombrePremio,
             this.fecha_califica,
-            this.curso,
-            this.fecha_entrega});
-            this.dataGridView1.Location = new System.Drawing.Point(22, 116);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(559, 276);
-            this.dataGridView1.TabIndex = 7;
+            this.fecha_entrega,
+            this.Premio,
+            this.Bombero});
+            this.dataGridPremios.Location = new System.Drawing.Point(22, 116);
+            this.dataGridPremios.Name = "dataGridPremios";
+            this.dataGridPremios.ReadOnly = true;
+            this.dataGridPremios.Size = new System.Drawing.Size(559, 276);
+            this.dataGridPremios.TabIndex = 7;
+            // 
+            // NombrePremio
+            // 
+            this.NombrePremio.DataPropertyName = "NombrePremio";
+            this.NombrePremio.HeaderText = "Premio";
+            this.NombrePremio.Name = "NombrePremio";
+            this.NombrePremio.ReadOnly = true;
+            // 
+            // fecha_califica
+            // 
+            this.fecha_califica.DataPropertyName = "FechaCalifica";
+            this.fecha_califica.HeaderText = "Fecha Califica";
+            this.fecha_califica.Name = "fecha_califica";
+            this.fecha_califica.ReadOnly = true;
+            this.fecha_califica.Width = 150;
+            // 
+            // fecha_entrega
+            // 
+            this.fecha_entrega.DataPropertyName = "FechaEntrega";
+            this.fecha_entrega.HeaderText = "Fecha Entrega";
+            this.fecha_entrega.Name = "fecha_entrega";
+            this.fecha_entrega.ReadOnly = true;
+            this.fecha_entrega.Width = 150;
+            // 
+            // Premio
+            // 
+            this.Premio.DataPropertyName = "Premio";
+            this.Premio.HeaderText = "Premio";
+            this.Premio.Name = "Premio";
+            this.Premio.ReadOnly = true;
+            this.Premio.Visible = false;
+            // 
+            // Bombero
+            // 
+            this.Bombero.DataPropertyName = "Bombero";
+            this.Bombero.HeaderText = "Bombero";
+            this.Bombero.Name = "Bombero";
+            this.Bombero.ReadOnly = true;
+            this.Bombero.Visible = false;
             // 
             // btn_premio
             // 
@@ -640,20 +705,22 @@
             this.btn_premio.TabIndex = 6;
             this.btn_premio.Text = "Agregar Premio";
             this.btn_premio.UseVisualStyleBackColor = true;
+            this.btn_premio.Click += new System.EventHandler(this.btn_premio_Click);
             // 
-            // dateTimePicker2
+            // dateTimePremioEntrega
             // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(133, 47);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker2.TabIndex = 3;
+            this.dateTimePremioEntrega.Location = new System.Drawing.Point(133, 47);
+            this.dateTimePremioEntrega.Name = "dateTimePremioEntrega";
+            this.dateTimePremioEntrega.Size = new System.Drawing.Size(200, 20);
+            this.dateTimePremioEntrega.TabIndex = 3;
             // 
-            // dateTimePicker1
+            // dateTimePremioCalifica
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(133, 20);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker1.TabIndex = 2;
+            this.dateTimePremioCalifica.Location = new System.Drawing.Point(133, 20);
+            this.dateTimePremioCalifica.Name = "dateTimePremioCalifica";
+            this.dateTimePremioCalifica.Size = new System.Drawing.Size(200, 20);
+            this.dateTimePremioCalifica.TabIndex = 2;
+            this.dateTimePremioCalifica.ValueChanged += new System.EventHandler(this.dateTimeCalifica_ValueChanged);
             // 
             // label5
             // 
@@ -675,13 +742,13 @@
             // 
             // HistorialCursos
             // 
-            this.HistorialCursos.Controls.Add(this.dataGridView3);
+            this.HistorialCursos.Controls.Add(this.dataGridCursos);
             this.HistorialCursos.Controls.Add(this.btn_curso);
             this.HistorialCursos.Controls.Add(this.select_cursos);
             this.HistorialCursos.Controls.Add(this.label11);
-            this.HistorialCursos.Controls.Add(this.dateTimeEntrega);
-            this.HistorialCursos.Controls.Add(this.dateTimeTermino);
-            this.HistorialCursos.Controls.Add(this.dateTimeInicio);
+            this.HistorialCursos.Controls.Add(this.dateTimeCursoEntrega);
+            this.HistorialCursos.Controls.Add(this.dateTimeCursoTermino);
+            this.HistorialCursos.Controls.Add(this.dateTimeCursoInicio);
             this.HistorialCursos.Controls.Add(this.label10);
             this.HistorialCursos.Controls.Add(this.label9);
             this.HistorialCursos.Controls.Add(this.label8);
@@ -693,42 +760,22 @@
             this.HistorialCursos.Text = "Historial Cursos";
             this.HistorialCursos.UseVisualStyleBackColor = true;
             // 
-            // dataGridView3
+            // dataGridCursos
             // 
-            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView3.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridCursos.AllowUserToAddRows = false;
+            this.dataGridCursos.AllowUserToDeleteRows = false;
+            this.dataGridCursos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridCursos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.NombreCurso,
             this.fecha_inicio,
             this.fecha_termino,
-            this.id_curso,
-            this.fecha_entrega_curso});
-            this.dataGridView3.Location = new System.Drawing.Point(21, 130);
-            this.dataGridView3.Name = "dataGridView3";
-            this.dataGridView3.Size = new System.Drawing.Size(560, 260);
-            this.dataGridView3.TabIndex = 9;
-            // 
-            // fecha_inicio
-            // 
-            this.fecha_inicio.HeaderText = "Fecha Inicio";
-            this.fecha_inicio.Name = "fecha_inicio";
-            this.fecha_inicio.Width = 120;
-            // 
-            // fecha_termino
-            // 
-            this.fecha_termino.HeaderText = "Fecha Término";
-            this.fecha_termino.Name = "fecha_termino";
-            this.fecha_termino.Width = 120;
-            // 
-            // id_curso
-            // 
-            this.id_curso.HeaderText = "Denominacion Curso";
-            this.id_curso.Name = "id_curso";
-            this.id_curso.Width = 180;
-            // 
-            // fecha_entrega_curso
-            // 
-            this.fecha_entrega_curso.HeaderText = "Fecha Entrega";
-            this.fecha_entrega_curso.Name = "fecha_entrega_curso";
-            this.fecha_entrega_curso.Width = 120;
+            this.fecha_entrega_curso,
+            this.id_curso});
+            this.dataGridCursos.Location = new System.Drawing.Point(21, 130);
+            this.dataGridCursos.Name = "dataGridCursos";
+            this.dataGridCursos.ReadOnly = true;
+            this.dataGridCursos.Size = new System.Drawing.Size(560, 260);
+            this.dataGridCursos.TabIndex = 9;
             // 
             // btn_curso
             // 
@@ -738,6 +785,7 @@
             this.btn_curso.TabIndex = 8;
             this.btn_curso.Text = "Agregar Curso";
             this.btn_curso.UseVisualStyleBackColor = true;
+            this.btn_curso.Click += new System.EventHandler(this.btn_curso_Click);
             // 
             // select_cursos
             // 
@@ -757,26 +805,27 @@
             this.label11.TabIndex = 6;
             this.label11.Text = "Curso";
             // 
-            // dateTimeEntrega
+            // dateTimeCursoEntrega
             // 
-            this.dateTimeEntrega.Location = new System.Drawing.Point(96, 68);
-            this.dateTimeEntrega.Name = "dateTimeEntrega";
-            this.dateTimeEntrega.Size = new System.Drawing.Size(200, 20);
-            this.dateTimeEntrega.TabIndex = 5;
+            this.dateTimeCursoEntrega.Location = new System.Drawing.Point(96, 68);
+            this.dateTimeCursoEntrega.Name = "dateTimeCursoEntrega";
+            this.dateTimeCursoEntrega.Size = new System.Drawing.Size(200, 20);
+            this.dateTimeCursoEntrega.TabIndex = 5;
             // 
-            // dateTimeTermino
+            // dateTimeCursoTermino
             // 
-            this.dateTimeTermino.Location = new System.Drawing.Point(96, 42);
-            this.dateTimeTermino.Name = "dateTimeTermino";
-            this.dateTimeTermino.Size = new System.Drawing.Size(200, 20);
-            this.dateTimeTermino.TabIndex = 4;
+            this.dateTimeCursoTermino.Location = new System.Drawing.Point(96, 42);
+            this.dateTimeCursoTermino.Name = "dateTimeCursoTermino";
+            this.dateTimeCursoTermino.Size = new System.Drawing.Size(200, 20);
+            this.dateTimeCursoTermino.TabIndex = 4;
+            this.dateTimeCursoTermino.ValueChanged += new System.EventHandler(this.dateTimeTermino_ValueChanged);
             // 
-            // dateTimeInicio
+            // dateTimeCursoInicio
             // 
-            this.dateTimeInicio.Location = new System.Drawing.Point(96, 16);
-            this.dateTimeInicio.Name = "dateTimeInicio";
-            this.dateTimeInicio.Size = new System.Drawing.Size(200, 20);
-            this.dateTimeInicio.TabIndex = 3;
+            this.dateTimeCursoInicio.Location = new System.Drawing.Point(96, 16);
+            this.dateTimeCursoInicio.Name = "dateTimeCursoInicio";
+            this.dateTimeCursoInicio.Size = new System.Drawing.Size(200, 20);
+            this.dateTimeCursoInicio.TabIndex = 3;
             // 
             // label10
             // 
@@ -840,6 +889,15 @@
             this.Observaciones.TabIndex = 5;
             this.Observaciones.Text = "Observaciones";
             this.Observaciones.UseVisualStyleBackColor = true;
+            // 
+            // btn_observacion
+            // 
+            this.btn_observacion.Location = new System.Drawing.Point(400, 53);
+            this.btn_observacion.Name = "btn_observacion";
+            this.btn_observacion.Size = new System.Drawing.Size(128, 23);
+            this.btn_observacion.TabIndex = 5;
+            this.btn_observacion.Text = "Agregar Observación";
+            this.btn_observacion.UseVisualStyleBackColor = true;
             // 
             // dataGridView2
             // 
@@ -936,52 +994,45 @@
             this.labelnombre.TabIndex = 172;
             this.labelnombre.Text = "Nombre completo";
             // 
-            // label6
+            // NombreCurso
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(44, 77);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(39, 13);
-            this.label6.TabIndex = 8;
-            this.label6.Text = "Premio";
+            this.NombreCurso.DataPropertyName = "NombreCurso";
+            this.NombreCurso.HeaderText = "Curso";
+            this.NombreCurso.Name = "NombreCurso";
+            this.NombreCurso.ReadOnly = true;
             // 
-            // select_premios
+            // fecha_inicio
             // 
-            this.select_premios.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.select_premios.FormattingEnabled = true;
-            this.select_premios.Location = new System.Drawing.Point(133, 74);
-            this.select_premios.Name = "select_premios";
-            this.select_premios.Size = new System.Drawing.Size(200, 21);
-            this.select_premios.TabIndex = 9;
+            this.fecha_inicio.DataPropertyName = "FechaInicio";
+            this.fecha_inicio.HeaderText = "Fecha Inicio";
+            this.fecha_inicio.Name = "fecha_inicio";
+            this.fecha_inicio.ReadOnly = true;
+            this.fecha_inicio.Width = 120;
             // 
-            // btn_observacion
+            // fecha_termino
             // 
-            this.btn_observacion.Location = new System.Drawing.Point(400, 53);
-            this.btn_observacion.Name = "btn_observacion";
-            this.btn_observacion.Size = new System.Drawing.Size(128, 23);
-            this.btn_observacion.TabIndex = 5;
-            this.btn_observacion.Text = "Agregar Observación";
-            this.btn_observacion.UseVisualStyleBackColor = true;
+            this.fecha_termino.DataPropertyName = "FechaFin";
+            this.fecha_termino.HeaderText = "Fecha Termino";
+            this.fecha_termino.Name = "fecha_termino";
+            this.fecha_termino.ReadOnly = true;
+            this.fecha_termino.Width = 120;
             // 
-            // fecha_califica
+            // fecha_entrega_curso
             // 
-            this.fecha_califica.DataPropertyName = "fecha_califica";
-            this.fecha_califica.HeaderText = "Fecha Califica";
-            this.fecha_califica.Name = "fecha_califica";
-            this.fecha_califica.Width = 150;
+            this.fecha_entrega_curso.DataPropertyName = "FechaEntrega";
+            this.fecha_entrega_curso.HeaderText = "Fecha Entrega";
+            this.fecha_entrega_curso.Name = "fecha_entrega_curso";
+            this.fecha_entrega_curso.ReadOnly = true;
+            this.fecha_entrega_curso.Width = 120;
             // 
-            // curso
+            // id_curso
             // 
-            this.curso.DataPropertyName = "Curso";
-            this.curso.HeaderText = "Curso";
-            this.curso.Name = "curso";
-            this.curso.Width = 240;
-            // 
-            // fecha_entrega
-            // 
-            this.fecha_entrega.HeaderText = "Fecha Entrega";
-            this.fecha_entrega.Name = "fecha_entrega";
-            this.fecha_entrega.Width = 150;
+            this.id_curso.DataPropertyName = "Curso";
+            this.id_curso.HeaderText = "Curso";
+            this.id_curso.Name = "id_curso";
+            this.id_curso.ReadOnly = true;
+            this.id_curso.Visible = false;
+            this.id_curso.Width = 180;
             // 
             // MasInfoBombero
             // 
@@ -1009,13 +1060,13 @@
             this.groupBox1.PerformLayout();
             this.HistorialCargos.ResumeLayout(false);
             this.HistorialCargos.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridResult)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridCargos)).EndInit();
             this.HistorialPremios.ResumeLayout(false);
             this.HistorialPremios.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridPremios)).EndInit();
             this.HistorialCursos.ResumeLayout(false);
             this.HistorialCursos.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridCursos)).EndInit();
             this.Observaciones.ResumeLayout(false);
             this.Observaciones.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
@@ -1033,7 +1084,7 @@
         private System.Windows.Forms.TabPage HistorialPremios;
         private System.Windows.Forms.TabPage HistorialCursos;
         private System.Windows.Forms.Button btnCerrar;
-        private System.Windows.Forms.DataGridView dataGridResult;
+        private System.Windows.Forms.DataGridView dataGridCargos;
         private System.Windows.Forms.ComboBox select_cargo;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
@@ -1052,22 +1103,22 @@
         private System.Windows.Forms.Button btn_actual;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DateTimePicker dateTimePremioEntrega;
+        private System.Windows.Forms.DateTimePicker dateTimePremioCalifica;
+        private System.Windows.Forms.DataGridView dataGridPremios;
         private System.Windows.Forms.Button btn_premio;
         private System.Windows.Forms.Label txt_observacion;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.DateTimePicker dateTimeFecha;
         private System.Windows.Forms.DataGridView dataGridView2;
-        private System.Windows.Forms.DataGridView dataGridView3;
+        private System.Windows.Forms.DataGridView dataGridCursos;
         private System.Windows.Forms.Button btn_curso;
         private System.Windows.Forms.ComboBox select_cursos;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.DateTimePicker dateTimeEntrega;
-        private System.Windows.Forms.DateTimePicker dateTimeTermino;
-        private System.Windows.Forms.DateTimePicker dateTimeInicio;
+        private System.Windows.Forms.DateTimePicker dateTimeCursoEntrega;
+        private System.Windows.Forms.DateTimePicker dateTimeCursoTermino;
+        private System.Windows.Forms.DateTimePicker dateTimeCursoInicio;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
@@ -1106,16 +1157,19 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn id_cargos;
         private System.Windows.Forms.DataGridViewTextBoxColumn fecha_desde;
         private System.Windows.Forms.DataGridViewTextBoxColumn fecha_hasta;
-        private System.Windows.Forms.DataGridViewTextBoxColumn fecha_inicio;
-        private System.Windows.Forms.DataGridViewTextBoxColumn fecha_termino;
-        private System.Windows.Forms.DataGridViewTextBoxColumn id_curso;
-        private System.Windows.Forms.DataGridViewTextBoxColumn fecha_entrega_curso;
         private System.Windows.Forms.ComboBox select_premios;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button btn_observacion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NombrePremio;
         private System.Windows.Forms.DataGridViewTextBoxColumn fecha_califica;
-        private System.Windows.Forms.DataGridViewTextBoxColumn curso;
         private System.Windows.Forms.DataGridViewTextBoxColumn fecha_entrega;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Premio;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Bombero;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NombreCurso;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fecha_inicio;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fecha_termino;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fecha_entrega_curso;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id_curso;
 
     }
 }
