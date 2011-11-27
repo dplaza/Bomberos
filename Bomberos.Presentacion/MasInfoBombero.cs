@@ -140,5 +140,36 @@ namespace Bomberos.Presentacion
         {
 
         }
+
+        private void dataGridCargos_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void dataGridPremios_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void btn_cargo_Click(object sender, EventArgs e)
+        {
+            ICargoBomberoMgr _CargoBombero = new CargoBomberoMgr();
+            CargoBomberoDTO CargoBombero = new CargoBomberoDTO();
+
+            CargoBombero.FechaDesde = dateTimeCargoDesde.Value;
+            CargoBombero.FechaHasta = dateTimeCargoHasta.Value;
+            CargoBombero.Cargo = (CargoDTO)select_cargos.SelectedItem;
+            CargoBombero.Bombero = ContextoDTO.Instancia().BomberoSelected;
+
+            if (_CargoBombero.RegistroCargoBombero(CargoBombero))
+            {
+                MessageBox.Show("Bombero actualizado");
+                dataGridCursos.DataSource = _CargoBombero.CargarCargoBombero(CargoBombero).OrderBy(p => p.Cargo.Nombre).ToList();
+            }
+            else
+            {
+                MessageBox.Show("Error al actualizar bombero");
+            }
+        }
     }
 }
