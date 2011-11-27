@@ -19,7 +19,6 @@ namespace Bomberos.Datos
 
         public bool Insert(BomberoDTO p_Bombero)
         {
-            
             //MySQL
             MySql.Data.MySqlClient.MySqlConnection conexionBD = ConnectBD();
             string query = "INSERT INTO bomberos (nombres, apellidos, rut, tib, fecha_inscripcion, fecha_nacimiento, grupo_sanguineo, ";

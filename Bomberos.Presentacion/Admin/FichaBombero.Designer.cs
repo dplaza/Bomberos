@@ -72,6 +72,8 @@
             this.date_fecha_inscrip = new System.Windows.Forms.DateTimePicker();
             this.txt_tib = new System.Windows.Forms.TextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.txt_socio = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
             this.select_estado = new System.Windows.Forms.ComboBox();
             this.label24 = new System.Windows.Forms.Label();
@@ -81,8 +83,6 @@
             this.txt_pass = new System.Windows.Forms.TextBox();
             this.select_compania = new System.Windows.Forms.ComboBox();
             this.button1 = new System.Windows.Forms.Button();
-            this.txt_socio = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.box_picture)).BeginInit();
             this.groupBox3.SuspendLayout();
@@ -508,6 +508,23 @@
             this.groupBox3.Text = "Datos Bombero";
             this.groupBox3.Enter += new System.EventHandler(this.groupBox3_Enter);
             // 
+            // txt_socio
+            // 
+            this.txt_socio.Enabled = false;
+            this.txt_socio.Location = new System.Drawing.Point(140, 20);
+            this.txt_socio.Name = "txt_socio";
+            this.txt_socio.Size = new System.Drawing.Size(139, 20);
+            this.txt_socio.TabIndex = 179;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(26, 23);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(49, 13);
+            this.label5.TabIndex = 178;
+            this.label5.Text = "Socio N°";
+            // 
             // label22
             // 
             this.label22.AutoSize = true;
@@ -597,22 +614,6 @@
             this.button1.Text = "Más Información";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // txt_socio
-            // 
-            this.txt_socio.Location = new System.Drawing.Point(140, 20);
-            this.txt_socio.Name = "txt_socio";
-            this.txt_socio.Size = new System.Drawing.Size(139, 20);
-            this.txt_socio.TabIndex = 179;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(26, 23);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(49, 13);
-            this.label5.TabIndex = 178;
-            this.label5.Text = "Socio N°";
             // 
             // FichaBombero
             // 

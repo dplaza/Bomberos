@@ -56,7 +56,6 @@
             this.txt_tel_lab = new System.Windows.Forms.TextBox();
             this.txt_celular = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.txt_dv = new System.Windows.Forms.TextBox();
             this.btn_registrar = new System.Windows.Forms.Button();
             this.btn_cancelar = new System.Windows.Forms.Button();
             this.box_picture = new System.Windows.Forms.PictureBox();
@@ -72,12 +71,12 @@
             this.select_cargo = new System.Windows.Forms.ComboBox();
             this.txt_tib = new System.Windows.Forms.TextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.txt_socio = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.label25 = new System.Windows.Forms.Label();
             this.label26 = new System.Windows.Forms.Label();
             this.txt_pass = new System.Windows.Forms.TextBox();
             this.select_compania = new System.Windows.Forms.ComboBox();
-            this.txt_socio = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.box_picture)).BeginInit();
             this.groupBox3.SuspendLayout();
@@ -314,7 +313,6 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.txt_dv);
             this.groupBox1.Controls.Add(this.txt_nombres);
             this.groupBox1.Controls.Add(this.txt_apellidos);
             this.groupBox1.Controls.Add(this.txt_rut);
@@ -324,13 +322,6 @@
             this.groupBox1.TabIndex = 33;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos Personales";
-            // 
-            // txt_dv
-            // 
-            this.txt_dv.Location = new System.Drawing.Point(266, 78);
-            this.txt_dv.Name = "txt_dv";
-            this.txt_dv.Size = new System.Drawing.Size(30, 20);
-            this.txt_dv.TabIndex = 22;
             // 
             // btn_registrar
             // 
@@ -518,6 +509,22 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Datos Bombero";
             // 
+            // txt_socio
+            // 
+            this.txt_socio.Location = new System.Drawing.Point(139, 19);
+            this.txt_socio.Name = "txt_socio";
+            this.txt_socio.Size = new System.Drawing.Size(139, 20);
+            this.txt_socio.TabIndex = 166;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(25, 22);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(49, 13);
+            this.label5.TabIndex = 165;
+            this.label5.Text = "Socio N°";
+            // 
             // label25
             // 
             this.label25.AutoSize = true;
@@ -555,22 +562,6 @@
             this.select_compania.Name = "select_compania";
             this.select_compania.Size = new System.Drawing.Size(121, 21);
             this.select_compania.TabIndex = 151;
-            // 
-            // txt_socio
-            // 
-            this.txt_socio.Location = new System.Drawing.Point(139, 19);
-            this.txt_socio.Name = "txt_socio";
-            this.txt_socio.Size = new System.Drawing.Size(139, 20);
-            this.txt_socio.TabIndex = 166;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(25, 22);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(49, 13);
-            this.label5.TabIndex = 165;
-            this.label5.Text = "Socio N°";
             // 
             // RegistroBombero
             // 
@@ -675,7 +666,6 @@
         private System.Windows.Forms.Label label26;
         private System.Windows.Forms.TextBox txt_pass;
         private System.Windows.Forms.ComboBox select_compania;
-        private System.Windows.Forms.TextBox txt_dv;
         private System.Windows.Forms.TextBox txt_socio;
         private System.Windows.Forms.Label label5;
     }

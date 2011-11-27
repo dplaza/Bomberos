@@ -48,19 +48,20 @@ namespace Bomberos.Presentacion
             txt_rut.Text = ContextoDTO.Instancia().BomberoActual.Rut;
             date_fecha_nac.Text = ContextoDTO.Instancia().BomberoActual.FechaNacimiento.ToString();
             date_fecha_inscrip.Text = ContextoDTO.Instancia().BomberoActual.FechaInscripcion.ToString();
-            select_estadocivil.SelectedText = ContextoDTO.Instancia().BomberoActual.EstadoCivil;
+            select_estadocivil.SelectedItem = ContextoDTO.Instancia().BomberoActual.EstadoCivil;
             select_compania.SelectedValue = ContextoDTO.Instancia().BomberoActual.Compañia.Id;
             select_cargo.SelectedValue = ContextoDTO.Instancia().BomberoActual.Cargo.Id;
-            select_estado.SelectedText = ContextoDTO.Instancia().BomberoActual.Estado;
+            select_estado.SelectedItem = ContextoDTO.Instancia().BomberoActual.Estado;
             txt_tel_lab.Text = ContextoDTO.Instancia().BomberoActual.TelefonoLaboral;
             txt_tel_part.Text = ContextoDTO.Instancia().BomberoActual.TelefonoParticular;
             txt_tib.Text = ContextoDTO.Instancia().BomberoActual.TIB;
+            txt_socio.Text = ContextoDTO.Instancia().BomberoActual.NumeroRegistro.ToString();
 
 
             if (ContextoDTO.Instancia().BomberoActual.isAdmin)
-                select_tipocuenta.SelectedText = "Administrador";
+                select_tipocuenta.SelectedItem = "Administrador";
             else
-                select_tipocuenta.SelectedText = "Usuario";
+                select_tipocuenta.SelectedItem = "Usuario";
 
             try
             {
@@ -95,6 +96,7 @@ namespace Bomberos.Presentacion
             btn_imagen.Enabled = true;
             select_cargo.Enabled = true;
             select_estado.Enabled = true;
+            txt_socio.Enabled = true;
         }
 
         private void btn_aceptar_Click(object sender, EventArgs e)
@@ -120,6 +122,7 @@ namespace Bomberos.Presentacion
             Bombero.Password = txt_pass.Text;
             Bombero.Cargo = (CargoDTO)select_cargo.SelectedItem;
             Bombero.Estado = select_estado.Text;
+            Bombero.NumeroRegistro = int.Parse(txt_socio.Text);
 
             if (select_tipocuenta.Text.Equals("Administrador"))
                 Bombero.isAdmin = true;
@@ -133,8 +136,8 @@ namespace Bomberos.Presentacion
                     if (!System.IO.Directory.Exists(@"C:\Bomberos\"))
                         System.IO.Directory.CreateDirectory(@"C:\Bomberos\");
 
-                    System.IO.File.Delete("C:\\Bomberos\\" + Bombero.Rut + ".jpg");
-                    box_picture.Image.Save("C:\\Bomberos\\" + Bombero.Rut + ".jpg");
+                    //System.IO.File.Delete("C:\\Bomberos\\" + Bombero.Rut + ".jpg");
+                    //box_picture.Image.Save("C:\\Bomberos\\" + Bombero.Rut + ".jpg");
                 }
                 finally
                 {

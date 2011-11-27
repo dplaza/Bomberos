@@ -80,6 +80,11 @@
             this.select_premios = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.dataGridPremios = new System.Windows.Forms.DataGridView();
+            this.NombrePremio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fecha_califica = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fecha_entrega = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Premio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Bombero = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btn_premio = new System.Windows.Forms.Button();
             this.dateTimePremioEntrega = new System.Windows.Forms.DateTimePicker();
             this.dateTimePremioCalifica = new System.Windows.Forms.DateTimePicker();
@@ -87,6 +92,12 @@
             this.label4 = new System.Windows.Forms.Label();
             this.HistorialCursos = new System.Windows.Forms.TabPage();
             this.dataGridCursos = new System.Windows.Forms.DataGridView();
+            this.NombreCurso = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fecha_inicio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fecha_termino = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fecha_entrega_curso = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.id_curso = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.BomberoCurso = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btn_curso = new System.Windows.Forms.Button();
             this.select_cursos = new System.Windows.Forms.ComboBox();
             this.label11 = new System.Windows.Forms.Label();
@@ -101,6 +112,9 @@
             this.Observaciones = new System.Windows.Forms.TabPage();
             this.btn_observacion = new System.Windows.Forms.Button();
             this.dataGridObservacion = new System.Windows.Forms.DataGridView();
+            this.FechaObservacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Observacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.BomberoObservacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txt_observacion = new System.Windows.Forms.Label();
             this.txtobservacion = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
@@ -111,20 +125,6 @@
             this.labelTIB = new System.Windows.Forms.Label();
             this.labelRut = new System.Windows.Forms.Label();
             this.labelnombre = new System.Windows.Forms.Label();
-            this.NombreCurso = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fecha_inicio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fecha_termino = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fecha_entrega_curso = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.id_curso = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.BomberoCurso = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NombrePremio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fecha_califica = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fecha_entrega = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Premio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Bombero = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FechaObservacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Observacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.BomberoObservacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabBox.SuspendLayout();
             this.FichaMedica.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -524,7 +524,7 @@
             // 
             this.select_cargo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.select_cargo.FormattingEnabled = true;
-            this.select_cargo.Location = new System.Drawing.Point(113, 23);
+            this.select_cargo.Location = new System.Drawing.Point(113, 76);
             this.select_cargo.Name = "select_cargo";
             this.select_cargo.Size = new System.Drawing.Size(200, 21);
             this.select_cargo.TabIndex = 6;
@@ -533,7 +533,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(69, 26);
+            this.label3.Location = new System.Drawing.Point(69, 79);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(35, 13);
             this.label3.TabIndex = 5;
@@ -542,7 +542,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(69, 82);
+            this.label2.Location = new System.Drawing.Point(69, 30);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(35, 13);
             this.label2.TabIndex = 4;
@@ -559,7 +559,7 @@
             // 
             // dateTimeCargoHasta
             // 
-            this.dateTimeCargoHasta.Location = new System.Drawing.Point(113, 76);
+            this.dateTimeCargoHasta.Location = new System.Drawing.Point(113, 24);
             this.dateTimeCargoHasta.Name = "dateTimeCargoHasta";
             this.dateTimeCargoHasta.Size = new System.Drawing.Size(200, 20);
             this.dateTimeCargoHasta.TabIndex = 2;
@@ -682,6 +682,45 @@
             this.dataGridPremios.Size = new System.Drawing.Size(559, 276);
             this.dataGridPremios.TabIndex = 7;
             // 
+            // NombrePremio
+            // 
+            this.NombrePremio.DataPropertyName = "NombrePremio";
+            this.NombrePremio.HeaderText = "Premio";
+            this.NombrePremio.Name = "NombrePremio";
+            this.NombrePremio.ReadOnly = true;
+            // 
+            // fecha_califica
+            // 
+            this.fecha_califica.DataPropertyName = "FechaCalifica";
+            this.fecha_califica.HeaderText = "Califica";
+            this.fecha_califica.Name = "fecha_califica";
+            this.fecha_califica.ReadOnly = true;
+            this.fecha_califica.Width = 150;
+            // 
+            // fecha_entrega
+            // 
+            this.fecha_entrega.DataPropertyName = "FechaEntrega";
+            this.fecha_entrega.HeaderText = "Entrega";
+            this.fecha_entrega.Name = "fecha_entrega";
+            this.fecha_entrega.ReadOnly = true;
+            this.fecha_entrega.Width = 150;
+            // 
+            // Premio
+            // 
+            this.Premio.DataPropertyName = "Premio";
+            this.Premio.HeaderText = "Premio";
+            this.Premio.Name = "Premio";
+            this.Premio.ReadOnly = true;
+            this.Premio.Visible = false;
+            // 
+            // Bombero
+            // 
+            this.Bombero.DataPropertyName = "Bombero";
+            this.Bombero.HeaderText = "Bombero";
+            this.Bombero.Name = "Bombero";
+            this.Bombero.ReadOnly = true;
+            this.Bombero.Visible = false;
+            // 
             // btn_premio
             // 
             this.btn_premio.Location = new System.Drawing.Point(410, 26);
@@ -762,6 +801,54 @@
             this.dataGridCursos.ReadOnly = true;
             this.dataGridCursos.Size = new System.Drawing.Size(560, 260);
             this.dataGridCursos.TabIndex = 9;
+            // 
+            // NombreCurso
+            // 
+            this.NombreCurso.DataPropertyName = "NombreCurso";
+            this.NombreCurso.HeaderText = "Curso";
+            this.NombreCurso.Name = "NombreCurso";
+            this.NombreCurso.ReadOnly = true;
+            // 
+            // fecha_inicio
+            // 
+            this.fecha_inicio.DataPropertyName = "FechaInicio";
+            this.fecha_inicio.HeaderText = "Inicio";
+            this.fecha_inicio.Name = "fecha_inicio";
+            this.fecha_inicio.ReadOnly = true;
+            this.fecha_inicio.Width = 120;
+            // 
+            // fecha_termino
+            // 
+            this.fecha_termino.DataPropertyName = "FechaFin";
+            this.fecha_termino.HeaderText = "Termino";
+            this.fecha_termino.Name = "fecha_termino";
+            this.fecha_termino.ReadOnly = true;
+            this.fecha_termino.Width = 120;
+            // 
+            // fecha_entrega_curso
+            // 
+            this.fecha_entrega_curso.DataPropertyName = "FechaEntrega";
+            this.fecha_entrega_curso.HeaderText = "Entrega";
+            this.fecha_entrega_curso.Name = "fecha_entrega_curso";
+            this.fecha_entrega_curso.ReadOnly = true;
+            this.fecha_entrega_curso.Width = 120;
+            // 
+            // id_curso
+            // 
+            this.id_curso.DataPropertyName = "Curso";
+            this.id_curso.HeaderText = "Curso";
+            this.id_curso.Name = "id_curso";
+            this.id_curso.ReadOnly = true;
+            this.id_curso.Visible = false;
+            this.id_curso.Width = 180;
+            // 
+            // BomberoCurso
+            // 
+            this.BomberoCurso.DataPropertyName = "Bombero";
+            this.BomberoCurso.HeaderText = "Bombero";
+            this.BomberoCurso.Name = "BomberoCurso";
+            this.BomberoCurso.ReadOnly = true;
+            this.BomberoCurso.Visible = false;
             // 
             // btn_curso
             // 
@@ -902,6 +989,29 @@
             this.dataGridObservacion.TabIndex = 4;
             this.dataGridObservacion.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick);
             // 
+            // FechaObservacion
+            // 
+            this.FechaObservacion.DataPropertyName = "Fecha";
+            this.FechaObservacion.HeaderText = "Fecha";
+            this.FechaObservacion.Name = "FechaObservacion";
+            this.FechaObservacion.ReadOnly = true;
+            // 
+            // Observacion
+            // 
+            this.Observacion.DataPropertyName = "Observacion";
+            this.Observacion.HeaderText = "Observación";
+            this.Observacion.Name = "Observacion";
+            this.Observacion.ReadOnly = true;
+            this.Observacion.Width = 400;
+            // 
+            // BomberoObservacion
+            // 
+            this.BomberoObservacion.DataPropertyName = "Bombero";
+            this.BomberoObservacion.HeaderText = "Bombero";
+            this.BomberoObservacion.Name = "BomberoObservacion";
+            this.BomberoObservacion.ReadOnly = true;
+            this.BomberoObservacion.Visible = false;
+            // 
             // txt_observacion
             // 
             this.txt_observacion.AutoSize = true;
@@ -990,116 +1100,6 @@
             this.labelnombre.Size = new System.Drawing.Size(90, 13);
             this.labelnombre.TabIndex = 172;
             this.labelnombre.Text = "Nombre completo";
-            // 
-            // NombreCurso
-            // 
-            this.NombreCurso.DataPropertyName = "NombreCurso";
-            this.NombreCurso.HeaderText = "Curso";
-            this.NombreCurso.Name = "NombreCurso";
-            this.NombreCurso.ReadOnly = true;
-            // 
-            // fecha_inicio
-            // 
-            this.fecha_inicio.DataPropertyName = "FechaInicio";
-            this.fecha_inicio.HeaderText = "Inicio";
-            this.fecha_inicio.Name = "fecha_inicio";
-            this.fecha_inicio.ReadOnly = true;
-            this.fecha_inicio.Width = 120;
-            // 
-            // fecha_termino
-            // 
-            this.fecha_termino.DataPropertyName = "FechaFin";
-            this.fecha_termino.HeaderText = "Termino";
-            this.fecha_termino.Name = "fecha_termino";
-            this.fecha_termino.ReadOnly = true;
-            this.fecha_termino.Width = 120;
-            // 
-            // fecha_entrega_curso
-            // 
-            this.fecha_entrega_curso.DataPropertyName = "FechaEntrega";
-            this.fecha_entrega_curso.HeaderText = "Entrega";
-            this.fecha_entrega_curso.Name = "fecha_entrega_curso";
-            this.fecha_entrega_curso.ReadOnly = true;
-            this.fecha_entrega_curso.Width = 120;
-            // 
-            // id_curso
-            // 
-            this.id_curso.DataPropertyName = "Curso";
-            this.id_curso.HeaderText = "Curso";
-            this.id_curso.Name = "id_curso";
-            this.id_curso.ReadOnly = true;
-            this.id_curso.Visible = false;
-            this.id_curso.Width = 180;
-            // 
-            // BomberoCurso
-            // 
-            this.BomberoCurso.DataPropertyName = "Bombero";
-            this.BomberoCurso.HeaderText = "Bombero";
-            this.BomberoCurso.Name = "BomberoCurso";
-            this.BomberoCurso.ReadOnly = true;
-            this.BomberoCurso.Visible = false;
-            // 
-            // NombrePremio
-            // 
-            this.NombrePremio.DataPropertyName = "NombrePremio";
-            this.NombrePremio.HeaderText = "Premio";
-            this.NombrePremio.Name = "NombrePremio";
-            this.NombrePremio.ReadOnly = true;
-            // 
-            // fecha_califica
-            // 
-            this.fecha_califica.DataPropertyName = "FechaCalifica";
-            this.fecha_califica.HeaderText = "Califica";
-            this.fecha_califica.Name = "fecha_califica";
-            this.fecha_califica.ReadOnly = true;
-            this.fecha_califica.Width = 150;
-            // 
-            // fecha_entrega
-            // 
-            this.fecha_entrega.DataPropertyName = "FechaEntrega";
-            this.fecha_entrega.HeaderText = "Entrega";
-            this.fecha_entrega.Name = "fecha_entrega";
-            this.fecha_entrega.ReadOnly = true;
-            this.fecha_entrega.Width = 150;
-            // 
-            // Premio
-            // 
-            this.Premio.DataPropertyName = "Premio";
-            this.Premio.HeaderText = "Premio";
-            this.Premio.Name = "Premio";
-            this.Premio.ReadOnly = true;
-            this.Premio.Visible = false;
-            // 
-            // Bombero
-            // 
-            this.Bombero.DataPropertyName = "Bombero";
-            this.Bombero.HeaderText = "Bombero";
-            this.Bombero.Name = "Bombero";
-            this.Bombero.ReadOnly = true;
-            this.Bombero.Visible = false;
-            // 
-            // FechaObservacion
-            // 
-            this.FechaObservacion.DataPropertyName = "Fecha";
-            this.FechaObservacion.HeaderText = "Fecha";
-            this.FechaObservacion.Name = "FechaObservacion";
-            this.FechaObservacion.ReadOnly = true;
-            // 
-            // Observacion
-            // 
-            this.Observacion.DataPropertyName = "Observacion";
-            this.Observacion.HeaderText = "Observación";
-            this.Observacion.Name = "Observacion";
-            this.Observacion.ReadOnly = true;
-            this.Observacion.Width = 400;
-            // 
-            // BomberoObservacion
-            // 
-            this.BomberoObservacion.DataPropertyName = "Bombero";
-            this.BomberoObservacion.HeaderText = "Bombero";
-            this.BomberoObservacion.Name = "BomberoObservacion";
-            this.BomberoObservacion.ReadOnly = true;
-            this.BomberoObservacion.Visible = false;
             // 
             // MasInfoBombero
             // 

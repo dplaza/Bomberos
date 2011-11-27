@@ -177,6 +177,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MasInfoBombero.resx">
       <DependentUpon>MasInfoBombero.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Usuario\MenuUsuario.resx">
       <DependentUpon>MenuUsuario.cs</DependentUpon>

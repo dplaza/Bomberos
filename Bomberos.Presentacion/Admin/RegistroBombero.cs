@@ -92,6 +92,7 @@ namespace Bomberos.Presentacion
             Bombero.Password = txt_pass.Text;
             Bombero.Cargo = (CargoDTO)select_cargo.SelectedItem;
             Bombero.Estado = select_estado.Text;
+            Bombero.NumeroRegistro = int.Parse(txt_socio.Text);
 
             if (select_tipocuenta.Text.Equals("Administrador"))
                 Bombero.isAdmin = true;
