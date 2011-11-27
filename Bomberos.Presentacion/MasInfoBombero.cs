@@ -53,16 +53,26 @@ namespace Bomberos.Presentacion
             ICargoBomberoMgr _CargoBombero = new CargoBomberoMgr();
             ICursoBomberoMgr _CursoBombero = new CursoBomberoMgr();
             IPremioBomberoMgr _PremioBombero = new PremioBomberoMgr();
+            IObservacionBomberoMgr _ObservacionBombero = new ObservacionBomberoMgr();
             CargoBomberoDTO CargoBombero = new CargoBomberoDTO();
             CursoBomberoDTO CursoBombero = new CursoBomberoDTO();
             PremioBomberoDTO PremioBombero = new PremioBomberoDTO();
+            ObservacionBomberoDTO ObservacionBombero = new ObservacionBomberoDTO();
             PremioBombero.Bombero = ContextoDTO.Instancia().BomberoSelected;
             CargoBombero.Bombero = ContextoDTO.Instancia().BomberoSelected;
             CursoBombero.Bombero = ContextoDTO.Instancia().BomberoSelected;
+            ObservacionBombero.Bombero = ContextoDTO.Instancia().BomberoSelected;
 
-            dataGridPremios.DataSource = _PremioBombero.CargarPremioBombero(PremioBombero).OrderBy(p => p.Premio.Nombre).ToList();
-            dataGridCursos.DataSource = _CursoBombero.CargarCursoBombero(CursoBombero).OrderBy(p => p.Curso.Nombre).ToList();
-            dataGridCargos.DataSource = _CargoBombero.CargarCargoBombero(CargoBombero).OrderBy(p => p.Cargo.Nombre).ToList();
+            dataGridPremios.DataSource = _PremioBombero.CargarPremioBombero(PremioBombero).OrderBy(p => p.FechaCalifica).ToList();
+            dataGridCursos.DataSource = _CursoBombero.CargarCursoBombero(CursoBombero).OrderBy(p => p.FechaInicio).ToList();
+            dataGridCargos.DataSource = _CargoBombero.CargarCargoBombero(CargoBombero).OrderBy(p => p.FechaDesde).ToList();
+            dataGridObservacion.DataSource = _ObservacionBombero.CargarObservacionesBombero(ObservacionBombero).OrderBy(p => p.Fecha).ToList();
+
+            dataGridCargos.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dataGridCursos.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dataGridPremios.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dataGridObservacion.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+
 
             labelnombre.Text = ContextoDTO.Instancia().BomberoSelected.Nombres + " " + ContextoDTO.Instancia().BomberoSelected.Apellidos;
             labelRut.Text = ContextoDTO.Instancia().BomberoSelected.Rut;
@@ -101,7 +111,7 @@ namespace Bomberos.Presentacion
             if (_PremioBombero.RegistroPremioBombero(PremioBombero))
             {
                 MessageBox.Show("Bombero actualizado");
-                dataGridPremios.DataSource = _PremioBombero.CargarPremioBombero(PremioBombero).OrderBy(p => p.Premio.Nombre).ToList();
+                dataGridPremios.DataSource = _PremioBombero.CargarPremioBombero(PremioBombero).OrderBy(p => p.FechaCalifica).ToList();
             }
             else
             {
@@ -128,7 +138,7 @@ namespace Bomberos.Presentacion
             if (_CursoBombero.RegistroCursoBombero(CursoBombero))
             {
                 MessageBox.Show("Bombero actualizado");
-                dataGridCursos.DataSource = _CursoBombero.CargarCursoBombero(CursoBombero).OrderBy(p => p.Curso.Nombre).ToList();
+                dataGridCursos.DataSource = _CursoBombero.CargarCursoBombero(CursoBombero).OrderBy(p => p.FechaInicio).ToList();
             }
             else
             {
@@ -139,6 +149,61 @@ namespace Bomberos.Presentacion
         private void dateTimeTermino_ValueChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void btn_actual_Click(object sender, EventArgs e)
+        {
+            dateTimeCargoHasta.Enabled = false;
+        }
+
+        private void dateTimeDesde_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_cargo_Click(object sender, EventArgs e)
+        {
+            ICargoBomberoMgr _CargoBombero = new CargoBomberoMgr();
+            CargoBomberoDTO CargoBombero = new CargoBomberoDTO();
+
+            CargoBombero.FechaDesde = dateTimeCargoDesde.Value;
+            CargoBombero.Bombero = ContextoDTO.Instancia().BomberoSelected;
+            CargoBombero.Cargo = (CargoDTO)select_cargo.SelectedItem;
+
+            if (_CargoBombero.RegistroCargoBombero(CargoBombero))
+            {
+                MessageBox.Show("Bombero actualizado");
+                dataGridCargos.DataSource = _CargoBombero.CargarCargoBombero(CargoBombero).OrderBy(p => p.FechaDesde).ToList();
+            }
+            else
+            {
+                MessageBox.Show("Error al actualizar bombero");
+            }
+        }
+
+        private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void btn_observacion_Click(object sender, EventArgs e)
+        {
+            IObservacionBomberoMgr _ObservacionBombero = new ObservacionBomberoMgr();
+            ObservacionBomberoDTO ObservacionBombero = new ObservacionBomberoDTO();
+
+            ObservacionBombero.Bombero = ContextoDTO.Instancia().BomberoSelected;
+            ObservacionBombero.Fecha = dateTimeObservacionFecha.Value;
+            ObservacionBombero.Observacion = txtobservacion.Text;
+
+            if (_ObservacionBombero.RegistroObservacionBombero(ObservacionBombero))
+            {
+                MessageBox.Show("Bombero actualizado");
+                dataGridObservacion.DataSource = _ObservacionBombero.CargarObservacionesBombero(ObservacionBombero).OrderBy(p => p.Fecha).ToList();
+            }
+            else
+            {
+                MessageBox.Show("Error al actualizar bombero");
+            }
         }
     }
 }

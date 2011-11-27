@@ -51,6 +51,7 @@
     <Compile Include="CompañiaDTO.cs" />
     <Compile Include="CursoBomberoDTO.cs" />
     <Compile Include="CursoDTO.cs" />
+    <Compile Include="ObservacionBomberoDTO.cs" />
     <Compile Include="PremioBomberoDTO.cs" />
     <Compile Include="PremioDTO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

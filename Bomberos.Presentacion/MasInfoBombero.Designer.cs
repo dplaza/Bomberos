@@ -63,27 +63,23 @@
             this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.HistorialCargos = new System.Windows.Forms.TabPage();
-            this.btn_actual = new System.Windows.Forms.Button();
             this.btn_cargo = new System.Windows.Forms.Button();
             this.select_cargo = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.dateTimeHasta = new System.Windows.Forms.DateTimePicker();
-            this.dateTimeDesde = new System.Windows.Forms.DateTimePicker();
+            this.dateTimeCargoHasta = new System.Windows.Forms.DateTimePicker();
+            this.dateTimeCargoDesde = new System.Windows.Forms.DateTimePicker();
             this.dataGridCargos = new System.Windows.Forms.DataGridView();
-            this.id_cargos = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cargo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fecha_desde = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fecha_hasta = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.id_cargos = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.BomberoCargo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.HistorialPremios = new System.Windows.Forms.TabPage();
             this.select_premios = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.dataGridPremios = new System.Windows.Forms.DataGridView();
-            this.NombrePremio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fecha_califica = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fecha_entrega = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Premio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Bombero = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btn_premio = new System.Windows.Forms.Button();
             this.dateTimePremioEntrega = new System.Windows.Forms.DateTimePicker();
             this.dateTimePremioCalifica = new System.Windows.Forms.DateTimePicker();
@@ -104,11 +100,11 @@
             this.Servicio = new System.Windows.Forms.TabPage();
             this.Observaciones = new System.Windows.Forms.TabPage();
             this.btn_observacion = new System.Windows.Forms.Button();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.dataGridObservacion = new System.Windows.Forms.DataGridView();
             this.txt_observacion = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtobservacion = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.dateTimeFecha = new System.Windows.Forms.DateTimePicker();
+            this.dateTimeObservacionFecha = new System.Windows.Forms.DateTimePicker();
             this.btnCerrar = new System.Windows.Forms.Button();
             this.box_picture = new System.Windows.Forms.PictureBox();
             this.labelCargo = new System.Windows.Forms.Label();
@@ -120,6 +116,15 @@
             this.fecha_termino = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fecha_entrega_curso = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.id_curso = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.BomberoCurso = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NombrePremio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fecha_califica = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fecha_entrega = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Premio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Bombero = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FechaObservacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Observacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.BomberoObservacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabBox.SuspendLayout();
             this.FichaMedica.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -131,7 +136,7 @@
             this.HistorialCursos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridCursos)).BeginInit();
             this.Observaciones.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridObservacion)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.box_picture)).BeginInit();
             this.SuspendLayout();
             // 
@@ -489,14 +494,13 @@
             // 
             // HistorialCargos
             // 
-            this.HistorialCargos.Controls.Add(this.btn_actual);
             this.HistorialCargos.Controls.Add(this.btn_cargo);
             this.HistorialCargos.Controls.Add(this.select_cargo);
             this.HistorialCargos.Controls.Add(this.label3);
             this.HistorialCargos.Controls.Add(this.label2);
             this.HistorialCargos.Controls.Add(this.label1);
-            this.HistorialCargos.Controls.Add(this.dateTimeHasta);
-            this.HistorialCargos.Controls.Add(this.dateTimeDesde);
+            this.HistorialCargos.Controls.Add(this.dateTimeCargoHasta);
+            this.HistorialCargos.Controls.Add(this.dateTimeCargoDesde);
             this.HistorialCargos.Controls.Add(this.dataGridCargos);
             this.HistorialCargos.Location = new System.Drawing.Point(4, 22);
             this.HistorialCargos.Name = "HistorialCargos";
@@ -506,23 +510,15 @@
             this.HistorialCargos.UseVisualStyleBackColor = true;
             this.HistorialCargos.Click += new System.EventHandler(this.HistorialCargos_Click);
             // 
-            // btn_actual
-            // 
-            this.btn_actual.Location = new System.Drawing.Point(319, 75);
-            this.btn_actual.Name = "btn_actual";
-            this.btn_actual.Size = new System.Drawing.Size(75, 23);
-            this.btn_actual.TabIndex = 8;
-            this.btn_actual.Text = "Actual";
-            this.btn_actual.UseVisualStyleBackColor = true;
-            // 
             // btn_cargo
             // 
-            this.btn_cargo.Location = new System.Drawing.Point(421, 26);
+            this.btn_cargo.Location = new System.Drawing.Point(405, 37);
             this.btn_cargo.Name = "btn_cargo";
             this.btn_cargo.Size = new System.Drawing.Size(106, 23);
             this.btn_cargo.TabIndex = 7;
             this.btn_cargo.Text = "Agregar Cargo";
             this.btn_cargo.UseVisualStyleBackColor = true;
+            this.btn_cargo.Click += new System.EventHandler(this.btn_cargo_Click);
             // 
             // select_cargo
             // 
@@ -561,49 +557,77 @@
             this.label1.TabIndex = 3;
             this.label1.Text = "Desde";
             // 
-            // dateTimeHasta
+            // dateTimeCargoHasta
             // 
-            this.dateTimeHasta.Location = new System.Drawing.Point(113, 76);
-            this.dateTimeHasta.Name = "dateTimeHasta";
-            this.dateTimeHasta.Size = new System.Drawing.Size(200, 20);
-            this.dateTimeHasta.TabIndex = 2;
+            this.dateTimeCargoHasta.Location = new System.Drawing.Point(113, 76);
+            this.dateTimeCargoHasta.Name = "dateTimeCargoHasta";
+            this.dateTimeCargoHasta.Size = new System.Drawing.Size(200, 20);
+            this.dateTimeCargoHasta.TabIndex = 2;
             // 
-            // dateTimeDesde
+            // dateTimeCargoDesde
             // 
-            this.dateTimeDesde.Location = new System.Drawing.Point(113, 50);
-            this.dateTimeDesde.Name = "dateTimeDesde";
-            this.dateTimeDesde.Size = new System.Drawing.Size(200, 20);
-            this.dateTimeDesde.TabIndex = 1;
+            this.dateTimeCargoDesde.Location = new System.Drawing.Point(113, 50);
+            this.dateTimeCargoDesde.Name = "dateTimeCargoDesde";
+            this.dateTimeCargoDesde.Size = new System.Drawing.Size(200, 20);
+            this.dateTimeCargoDesde.TabIndex = 1;
+            this.dateTimeCargoDesde.ValueChanged += new System.EventHandler(this.dateTimeDesde_ValueChanged);
             // 
             // dataGridCargos
             // 
+            this.dataGridCargos.AllowUserToAddRows = false;
+            this.dataGridCargos.AllowUserToDeleteRows = false;
             this.dataGridCargos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridCargos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.id_cargos,
+            this.Cargo,
             this.fecha_desde,
-            this.fecha_hasta});
+            this.fecha_hasta,
+            this.id_cargos,
+            this.BomberoCargo});
             this.dataGridCargos.Location = new System.Drawing.Point(23, 120);
             this.dataGridCargos.Name = "dataGridCargos";
+            this.dataGridCargos.ReadOnly = true;
             this.dataGridCargos.Size = new System.Drawing.Size(557, 272);
             this.dataGridCargos.TabIndex = 0;
             // 
-            // id_cargos
+            // Cargo
             // 
-            this.id_cargos.HeaderText = "Cargo";
-            this.id_cargos.Name = "id_cargos";
-            this.id_cargos.Width = 240;
+            this.Cargo.DataPropertyName = "NombreCargo";
+            this.Cargo.HeaderText = "Cargo";
+            this.Cargo.Name = "Cargo";
+            this.Cargo.ReadOnly = true;
             // 
             // fecha_desde
             // 
-            this.fecha_desde.HeaderText = "Fecha Desde";
+            this.fecha_desde.DataPropertyName = "FechaDesde";
+            this.fecha_desde.HeaderText = "Desde";
             this.fecha_desde.Name = "fecha_desde";
+            this.fecha_desde.ReadOnly = true;
             this.fecha_desde.Width = 150;
             // 
             // fecha_hasta
             // 
-            this.fecha_hasta.HeaderText = "Fecha Hasta";
+            this.fecha_hasta.DataPropertyName = "FechaHasta";
+            this.fecha_hasta.HeaderText = "Hasta";
             this.fecha_hasta.Name = "fecha_hasta";
+            this.fecha_hasta.ReadOnly = true;
             this.fecha_hasta.Width = 150;
+            // 
+            // id_cargos
+            // 
+            this.id_cargos.DataPropertyName = "Cargo";
+            this.id_cargos.HeaderText = "Cargo";
+            this.id_cargos.Name = "id_cargos";
+            this.id_cargos.ReadOnly = true;
+            this.id_cargos.Visible = false;
+            this.id_cargos.Width = 240;
+            // 
+            // BomberoCargo
+            // 
+            this.BomberoCargo.DataPropertyName = "Bombero";
+            this.BomberoCargo.HeaderText = "Bombero";
+            this.BomberoCargo.Name = "BomberoCargo";
+            this.BomberoCargo.ReadOnly = true;
+            this.BomberoCargo.Visible = false;
             // 
             // HistorialPremios
             // 
@@ -657,45 +681,6 @@
             this.dataGridPremios.ReadOnly = true;
             this.dataGridPremios.Size = new System.Drawing.Size(559, 276);
             this.dataGridPremios.TabIndex = 7;
-            // 
-            // NombrePremio
-            // 
-            this.NombrePremio.DataPropertyName = "NombrePremio";
-            this.NombrePremio.HeaderText = "Premio";
-            this.NombrePremio.Name = "NombrePremio";
-            this.NombrePremio.ReadOnly = true;
-            // 
-            // fecha_califica
-            // 
-            this.fecha_califica.DataPropertyName = "FechaCalifica";
-            this.fecha_califica.HeaderText = "Fecha Califica";
-            this.fecha_califica.Name = "fecha_califica";
-            this.fecha_califica.ReadOnly = true;
-            this.fecha_califica.Width = 150;
-            // 
-            // fecha_entrega
-            // 
-            this.fecha_entrega.DataPropertyName = "FechaEntrega";
-            this.fecha_entrega.HeaderText = "Fecha Entrega";
-            this.fecha_entrega.Name = "fecha_entrega";
-            this.fecha_entrega.ReadOnly = true;
-            this.fecha_entrega.Width = 150;
-            // 
-            // Premio
-            // 
-            this.Premio.DataPropertyName = "Premio";
-            this.Premio.HeaderText = "Premio";
-            this.Premio.Name = "Premio";
-            this.Premio.ReadOnly = true;
-            this.Premio.Visible = false;
-            // 
-            // Bombero
-            // 
-            this.Bombero.DataPropertyName = "Bombero";
-            this.Bombero.HeaderText = "Bombero";
-            this.Bombero.Name = "Bombero";
-            this.Bombero.ReadOnly = true;
-            this.Bombero.Visible = false;
             // 
             // btn_premio
             // 
@@ -770,7 +755,8 @@
             this.fecha_inicio,
             this.fecha_termino,
             this.fecha_entrega_curso,
-            this.id_curso});
+            this.id_curso,
+            this.BomberoCurso});
             this.dataGridCursos.Location = new System.Drawing.Point(21, 130);
             this.dataGridCursos.Name = "dataGridCursos";
             this.dataGridCursos.ReadOnly = true;
@@ -877,11 +863,11 @@
             // Observaciones
             // 
             this.Observaciones.Controls.Add(this.btn_observacion);
-            this.Observaciones.Controls.Add(this.dataGridView2);
+            this.Observaciones.Controls.Add(this.dataGridObservacion);
             this.Observaciones.Controls.Add(this.txt_observacion);
-            this.Observaciones.Controls.Add(this.textBox2);
+            this.Observaciones.Controls.Add(this.txtobservacion);
             this.Observaciones.Controls.Add(this.label7);
-            this.Observaciones.Controls.Add(this.dateTimeFecha);
+            this.Observaciones.Controls.Add(this.dateTimeObservacionFecha);
             this.Observaciones.Location = new System.Drawing.Point(4, 22);
             this.Observaciones.Name = "Observaciones";
             this.Observaciones.Padding = new System.Windows.Forms.Padding(3);
@@ -898,14 +884,23 @@
             this.btn_observacion.TabIndex = 5;
             this.btn_observacion.Text = "Agregar Observación";
             this.btn_observacion.UseVisualStyleBackColor = true;
+            this.btn_observacion.Click += new System.EventHandler(this.btn_observacion_Click);
             // 
-            // dataGridView2
+            // dataGridObservacion
             // 
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(21, 139);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(561, 256);
-            this.dataGridView2.TabIndex = 4;
+            this.dataGridObservacion.AllowUserToAddRows = false;
+            this.dataGridObservacion.AllowUserToDeleteRows = false;
+            this.dataGridObservacion.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridObservacion.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.FechaObservacion,
+            this.Observacion,
+            this.BomberoObservacion});
+            this.dataGridObservacion.Location = new System.Drawing.Point(21, 139);
+            this.dataGridObservacion.Name = "dataGridObservacion";
+            this.dataGridObservacion.ReadOnly = true;
+            this.dataGridObservacion.Size = new System.Drawing.Size(561, 256);
+            this.dataGridObservacion.TabIndex = 4;
+            this.dataGridObservacion.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick);
             // 
             // txt_observacion
             // 
@@ -916,13 +911,13 @@
             this.txt_observacion.TabIndex = 3;
             this.txt_observacion.Text = "Observaciones";
             // 
-            // textBox2
+            // txtobservacion
             // 
-            this.textBox2.Location = new System.Drawing.Point(123, 40);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(200, 83);
-            this.textBox2.TabIndex = 2;
+            this.txtobservacion.Location = new System.Drawing.Point(123, 40);
+            this.txtobservacion.Multiline = true;
+            this.txtobservacion.Name = "txtobservacion";
+            this.txtobservacion.Size = new System.Drawing.Size(200, 83);
+            this.txtobservacion.TabIndex = 2;
             // 
             // label7
             // 
@@ -933,12 +928,12 @@
             this.label7.TabIndex = 1;
             this.label7.Text = "Fecha";
             // 
-            // dateTimeFecha
+            // dateTimeObservacionFecha
             // 
-            this.dateTimeFecha.Location = new System.Drawing.Point(123, 14);
-            this.dateTimeFecha.Name = "dateTimeFecha";
-            this.dateTimeFecha.Size = new System.Drawing.Size(200, 20);
-            this.dateTimeFecha.TabIndex = 0;
+            this.dateTimeObservacionFecha.Location = new System.Drawing.Point(123, 14);
+            this.dateTimeObservacionFecha.Name = "dateTimeObservacionFecha";
+            this.dateTimeObservacionFecha.Size = new System.Drawing.Size(200, 20);
+            this.dateTimeObservacionFecha.TabIndex = 0;
             // 
             // btnCerrar
             // 
@@ -952,9 +947,11 @@
             // 
             // box_picture
             // 
+            this.box_picture.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.box_picture.Location = new System.Drawing.Point(83, 14);
             this.box_picture.Name = "box_picture";
             this.box_picture.Size = new System.Drawing.Size(78, 88);
+            this.box_picture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.box_picture.TabIndex = 2;
             this.box_picture.TabStop = false;
             // 
@@ -1004,7 +1001,7 @@
             // fecha_inicio
             // 
             this.fecha_inicio.DataPropertyName = "FechaInicio";
-            this.fecha_inicio.HeaderText = "Fecha Inicio";
+            this.fecha_inicio.HeaderText = "Inicio";
             this.fecha_inicio.Name = "fecha_inicio";
             this.fecha_inicio.ReadOnly = true;
             this.fecha_inicio.Width = 120;
@@ -1012,7 +1009,7 @@
             // fecha_termino
             // 
             this.fecha_termino.DataPropertyName = "FechaFin";
-            this.fecha_termino.HeaderText = "Fecha Termino";
+            this.fecha_termino.HeaderText = "Termino";
             this.fecha_termino.Name = "fecha_termino";
             this.fecha_termino.ReadOnly = true;
             this.fecha_termino.Width = 120;
@@ -1020,7 +1017,7 @@
             // fecha_entrega_curso
             // 
             this.fecha_entrega_curso.DataPropertyName = "FechaEntrega";
-            this.fecha_entrega_curso.HeaderText = "Fecha Entrega";
+            this.fecha_entrega_curso.HeaderText = "Entrega";
             this.fecha_entrega_curso.Name = "fecha_entrega_curso";
             this.fecha_entrega_curso.ReadOnly = true;
             this.fecha_entrega_curso.Width = 120;
@@ -1034,6 +1031,76 @@
             this.id_curso.Visible = false;
             this.id_curso.Width = 180;
             // 
+            // BomberoCurso
+            // 
+            this.BomberoCurso.DataPropertyName = "Bombero";
+            this.BomberoCurso.HeaderText = "Bombero";
+            this.BomberoCurso.Name = "BomberoCurso";
+            this.BomberoCurso.ReadOnly = true;
+            this.BomberoCurso.Visible = false;
+            // 
+            // NombrePremio
+            // 
+            this.NombrePremio.DataPropertyName = "NombrePremio";
+            this.NombrePremio.HeaderText = "Premio";
+            this.NombrePremio.Name = "NombrePremio";
+            this.NombrePremio.ReadOnly = true;
+            // 
+            // fecha_califica
+            // 
+            this.fecha_califica.DataPropertyName = "FechaCalifica";
+            this.fecha_califica.HeaderText = "Califica";
+            this.fecha_califica.Name = "fecha_califica";
+            this.fecha_califica.ReadOnly = true;
+            this.fecha_califica.Width = 150;
+            // 
+            // fecha_entrega
+            // 
+            this.fecha_entrega.DataPropertyName = "FechaEntrega";
+            this.fecha_entrega.HeaderText = "Entrega";
+            this.fecha_entrega.Name = "fecha_entrega";
+            this.fecha_entrega.ReadOnly = true;
+            this.fecha_entrega.Width = 150;
+            // 
+            // Premio
+            // 
+            this.Premio.DataPropertyName = "Premio";
+            this.Premio.HeaderText = "Premio";
+            this.Premio.Name = "Premio";
+            this.Premio.ReadOnly = true;
+            this.Premio.Visible = false;
+            // 
+            // Bombero
+            // 
+            this.Bombero.DataPropertyName = "Bombero";
+            this.Bombero.HeaderText = "Bombero";
+            this.Bombero.Name = "Bombero";
+            this.Bombero.ReadOnly = true;
+            this.Bombero.Visible = false;
+            // 
+            // FechaObservacion
+            // 
+            this.FechaObservacion.DataPropertyName = "Fecha";
+            this.FechaObservacion.HeaderText = "Fecha";
+            this.FechaObservacion.Name = "FechaObservacion";
+            this.FechaObservacion.ReadOnly = true;
+            // 
+            // Observacion
+            // 
+            this.Observacion.DataPropertyName = "Observacion";
+            this.Observacion.HeaderText = "Observación";
+            this.Observacion.Name = "Observacion";
+            this.Observacion.ReadOnly = true;
+            this.Observacion.Width = 400;
+            // 
+            // BomberoObservacion
+            // 
+            this.BomberoObservacion.DataPropertyName = "Bombero";
+            this.BomberoObservacion.HeaderText = "Bombero";
+            this.BomberoObservacion.Name = "BomberoObservacion";
+            this.BomberoObservacion.ReadOnly = true;
+            this.BomberoObservacion.Visible = false;
+            // 
             // MasInfoBombero
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1046,6 +1113,7 @@
             this.Controls.Add(this.box_picture);
             this.Controls.Add(this.btnCerrar);
             this.Controls.Add(this.tabBox);
+            this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
             this.Name = "MasInfoBombero";
@@ -1069,7 +1137,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridCursos)).EndInit();
             this.Observaciones.ResumeLayout(false);
             this.Observaciones.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridObservacion)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.box_picture)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -1089,8 +1157,8 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DateTimePicker dateTimeHasta;
-        private System.Windows.Forms.DateTimePicker dateTimeDesde;
+        private System.Windows.Forms.DateTimePicker dateTimeCargoHasta;
+        private System.Windows.Forms.DateTimePicker dateTimeCargoDesde;
         private System.Windows.Forms.Button btn_cargo;
         private System.Windows.Forms.TabPage ResumenListas;
         private System.Windows.Forms.TabPage Servicio;
@@ -1100,7 +1168,6 @@
         private System.Windows.Forms.Label labelTIB;
         private System.Windows.Forms.Label labelRut;
         private System.Windows.Forms.Label labelnombre;
-        private System.Windows.Forms.Button btn_actual;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.DateTimePicker dateTimePremioEntrega;
@@ -1108,10 +1175,10 @@
         private System.Windows.Forms.DataGridView dataGridPremios;
         private System.Windows.Forms.Button btn_premio;
         private System.Windows.Forms.Label txt_observacion;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtobservacion;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.DateTimePicker dateTimeFecha;
-        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.DateTimePicker dateTimeObservacionFecha;
+        private System.Windows.Forms.DataGridView dataGridObservacion;
         private System.Windows.Forms.DataGridView dataGridCursos;
         private System.Windows.Forms.Button btn_curso;
         private System.Windows.Forms.ComboBox select_cursos;
@@ -1154,12 +1221,14 @@
         private System.Windows.Forms.RichTextBox richTextBox5;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.RichTextBox richTextBox4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn id_cargos;
-        private System.Windows.Forms.DataGridViewTextBoxColumn fecha_desde;
-        private System.Windows.Forms.DataGridViewTextBoxColumn fecha_hasta;
         private System.Windows.Forms.ComboBox select_premios;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button btn_observacion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Cargo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fecha_desde;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fecha_hasta;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id_cargos;
+        private System.Windows.Forms.DataGridViewTextBoxColumn BomberoCargo;
         private System.Windows.Forms.DataGridViewTextBoxColumn NombrePremio;
         private System.Windows.Forms.DataGridViewTextBoxColumn fecha_califica;
         private System.Windows.Forms.DataGridViewTextBoxColumn fecha_entrega;
@@ -1170,6 +1239,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn fecha_termino;
         private System.Windows.Forms.DataGridViewTextBoxColumn fecha_entrega_curso;
         private System.Windows.Forms.DataGridViewTextBoxColumn id_curso;
+        private System.Windows.Forms.DataGridViewTextBoxColumn BomberoCurso;
+        private System.Windows.Forms.DataGridViewTextBoxColumn FechaObservacion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Observacion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn BomberoObservacion;
 
     }
 }

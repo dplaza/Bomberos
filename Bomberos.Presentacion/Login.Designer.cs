@@ -44,7 +44,7 @@
             this.btn_ingresar_login.Location = new System.Drawing.Point(141, 167);
             this.btn_ingresar_login.Name = "btn_ingresar_login";
             this.btn_ingresar_login.Size = new System.Drawing.Size(75, 23);
-            this.btn_ingresar_login.TabIndex = 0;
+            this.btn_ingresar_login.TabIndex = 4;
             this.btn_ingresar_login.Text = "Ingresar";
             this.btn_ingresar_login.UseVisualStyleBackColor = true;
             this.btn_ingresar_login.Click += new System.EventHandler(this.btn_ingresar_login_Click);
@@ -72,7 +72,7 @@
             this.txt_user_login.Location = new System.Drawing.Point(128, 88);
             this.txt_user_login.Name = "txt_user_login";
             this.txt_user_login.Size = new System.Drawing.Size(141, 20);
-            this.txt_user_login.TabIndex = 3;
+            this.txt_user_login.TabIndex = 2;
             // 
             // txt_pass_login
             // 
@@ -80,7 +80,7 @@
             this.txt_pass_login.Name = "txt_pass_login";
             this.txt_pass_login.PasswordChar = '*';
             this.txt_pass_login.Size = new System.Drawing.Size(141, 20);
-            this.txt_pass_login.TabIndex = 4;
+            this.txt_pass_login.TabIndex = 3;
             // 
             // label3
             // 
@@ -101,7 +101,7 @@
             this.combobox_tipo_login.Location = new System.Drawing.Point(128, 52);
             this.combobox_tipo_login.Name = "combobox_tipo_login";
             this.combobox_tipo_login.Size = new System.Drawing.Size(141, 21);
-            this.combobox_tipo_login.TabIndex = 6;
+            this.combobox_tipo_login.TabIndex = 1;
             // 
             // btn_salir_login
             // 
@@ -109,7 +109,7 @@
             this.btn_salir_login.Location = new System.Drawing.Point(222, 167);
             this.btn_salir_login.Name = "btn_salir_login";
             this.btn_salir_login.Size = new System.Drawing.Size(75, 23);
-            this.btn_salir_login.TabIndex = 7;
+            this.btn_salir_login.TabIndex = 5;
             this.btn_salir_login.Text = "Salir";
             this.btn_salir_login.UseVisualStyleBackColor = true;
             this.btn_salir_login.Click += new System.EventHandler(this.button2_Click);

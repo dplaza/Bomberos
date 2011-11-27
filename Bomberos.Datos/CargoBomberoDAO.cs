@@ -20,8 +20,8 @@ namespace Bomberos.Datos
         {
             //MySQL
             MySql.Data.MySqlClient.MySqlConnection conexionBD = ConnectBD();
-            string query = "INSERT INTO cargos_bomberos (fecha_desde, rut, id_cargo, fecha_hasta) Values (?p_fecha_desde, ";
-            query = string.Concat(query, "?p_rut, ?p_id_cargo, ?p_fecha_hasta ");
+            string query = "INSERT INTO cargos_bomberos (fecha_desde, rut, id_cargo, fecha_hasta) values (?p_fecha_desde, ";
+            query = string.Concat(query, "?p_rut, ?p_id_cargo, ?p_fecha_hasta) ");
             MySql.Data.MySqlClient.MySqlCommand msqlCommand = new MySql.Data.MySqlClient.MySqlCommand(query, conexionBD);
             msqlCommand.Parameters.AddWithValue("?p_fecha_desde", p_CargoBombero.FechaDesde);
             msqlCommand.Parameters.AddWithValue("?p_rut", p_CargoBombero.Bombero.Rut);
