@@ -52,12 +52,14 @@
     <Compile Include="CompañiaDAO.cs" />
     <Compile Include="CursoBomberoDAO.cs" />
     <Compile Include="CursoDAO.cs" />
+    <Compile Include="FichaMedicaDAO.cs" />
     <Compile Include="IBomberoDAO.cs" />
     <Compile Include="ICargoBomberoDAO.cs" />
     <Compile Include="ICargoDAO.cs" />
     <Compile Include="ICompañiaDAO.cs" />
     <Compile Include="ICursoBomberoDAO.cs" />
     <Compile Include="ICursoDAO.cs" />
+    <Compile Include="IFichaMedicaDAO.cs" />
     <Compile Include="IObservacionBomberoDAO.cs" />
     <Compile Include="IPremioBomberoDAO.cs" />
     <Compile Include="IPremioDAO.cs" />
