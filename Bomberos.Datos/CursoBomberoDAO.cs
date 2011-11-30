@@ -104,10 +104,11 @@ namespace Bomberos.Datos
         {
             //MySQL
             MySql.Data.MySqlClient.MySqlConnection conexionBD = ConnectBD();
-            string query = "DELETE FROM cursos_bomberos WHERE rut = ?p_rut AND id_curso = ?p_curso";
+            string query = "DELETE FROM cursos_bomberos WHERE rut = ?p_rut AND id_curso = ?p_curso AND fecha_inicio = ?p_fecha_inicio";
             MySql.Data.MySqlClient.MySqlCommand msqlCommand = new MySql.Data.MySqlClient.MySqlCommand(query, conexionBD);
             msqlCommand.Parameters.AddWithValue("?p_rut", p_CursoBombero.Bombero.Rut);
             msqlCommand.Parameters.AddWithValue("?p_curso", p_CursoBombero.Curso.Id);
+            msqlCommand.Parameters.AddWithValue("?p_fecha_inicio", p_CursoBombero.FechaInicio);
 
             try
             {
