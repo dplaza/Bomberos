@@ -10,6 +10,6 @@ namespace Bomberos.Negocio.Mgr
     {
         bool RegistroServicioBombero(ServicioBomberoDTO p_ServicioBombero);
         bool EditarServicioBombero(ServicioBomberoDTO p_ServicioBombero);
-        List<ServicioBomberoDTO> ServicioCursoBombero(ServicioBomberoDTO p_ServicioBombero);
+        List<ServicioBomberoDTO> CargarServicioBombero(ServicioBomberoDTO p_ServicioBombero);
     }
 }

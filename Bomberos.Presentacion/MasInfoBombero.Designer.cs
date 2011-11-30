@@ -122,6 +122,10 @@
             this.labelTIB = new System.Windows.Forms.Label();
             this.labelRut = new System.Windows.Forms.Label();
             this.labelnombre = new System.Windows.Forms.Label();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.label23 = new System.Windows.Forms.Label();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.button1 = new System.Windows.Forms.Button();
             this.tabBox.SuspendLayout();
             this.FichaMedica.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -132,9 +136,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridPremios)).BeginInit();
             this.HistorialCursos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridCursos)).BeginInit();
+            this.ResumenListas.SuspendLayout();
             this.Observaciones.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridObservacion)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.box_picture)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // tabBox
@@ -910,6 +916,10 @@
             // 
             // ResumenListas
             // 
+            this.ResumenListas.Controls.Add(this.button1);
+            this.ResumenListas.Controls.Add(this.dateTimePicker1);
+            this.ResumenListas.Controls.Add(this.label23);
+            this.ResumenListas.Controls.Add(this.dataGridView1);
             this.ResumenListas.Location = new System.Drawing.Point(4, 22);
             this.ResumenListas.Name = "ResumenListas";
             this.ResumenListas.Padding = new System.Windows.Forms.Padding(3);
@@ -1082,6 +1092,42 @@
             this.labelnombre.TabIndex = 172;
             this.labelnombre.Text = "Nombre completo";
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(20, 55);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(563, 337);
+            this.dataGridView1.TabIndex = 0;
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Location = new System.Drawing.Point(31, 21);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(81, 13);
+            this.label23.TabIndex = 1;
+            this.label23.Text = "Seleccione año";
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.CustomFormat = "yyyy";
+            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateTimePicker1.Location = new System.Drawing.Point(131, 15);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(69, 20);
+            this.dateTimePicker1.TabIndex = 2;
+            this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(379, 15);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(102, 23);
+            this.button1.TabIndex = 3;
+            this.button1.Text = "Enviar cambios";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
             // MasInfoBombero
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1116,10 +1162,13 @@
             this.HistorialCursos.ResumeLayout(false);
             this.HistorialCursos.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridCursos)).EndInit();
+            this.ResumenListas.ResumeLayout(false);
+            this.ResumenListas.PerformLayout();
             this.Observaciones.ResumeLayout(false);
             this.Observaciones.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridObservacion)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.box_picture)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1221,6 +1270,10 @@
         private System.Windows.Forms.ComboBox select_epilep;
         private System.Windows.Forms.ComboBox select_diab;
         private System.Windows.Forms.ComboBox select_hipert;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.Button button1;
 
     }
 }
