@@ -59,10 +59,12 @@
     <Compile Include="Dom\ICursoBomberoDom.cs" />
     <Compile Include="Dom\ICursoDom.cs" />
     <Compile Include="Dom\IFichaMedicaDom.cs" />
+    <Compile Include="Dom\IListaDom.cs" />
     <Compile Include="Dom\IObservacionBomberoDom.cs" />
     <Compile Include="Dom\IPremioBomberoDom.cs" />
     <Compile Include="Dom\IPremioDom.cs" />
     <Compile Include="Dom\IServicioBomberoDom.cs" />
+    <Compile Include="Dom\ListaDom.cs" />
     <Compile Include="Dom\ObservacionBomberoDom.cs" />
     <Compile Include="Dom\PremioBomberoDom.cs" />
     <Compile Include="Dom\PremioDom.cs" />
@@ -80,12 +82,14 @@
     <Compile Include="Mgr\ICursoBomberoMgr.cs" />
     <Compile Include="Mgr\ICursoMgr.cs" />
     <Compile Include="Mgr\IFichaMedicaMgr.cs" />
+    <Compile Include="Mgr\IListaMgr.cs" />
     <Compile Include="Mgr\ILoginMgr.cs" />
     <Compile Include="Mgr\IBomberoMgr.cs" />
     <Compile Include="Mgr\IObservacionBomberoMgr.cs" />
     <Compile Include="Mgr\IPremioBomberoMgr.cs" />
     <Compile Include="Mgr\IPremioMgr.cs" />
     <Compile Include="Mgr\IServicioBomberoMgr.cs" />
+    <Compile Include="Mgr\ListaMgr.cs" />
     <Compile Include="Mgr\LoginMgr.cs" />
     <Compile Include="Mgr\ObservacionBomberoMgr.cs" />
     <Compile Include="Mgr\PremioBomberoMgr.cs" />

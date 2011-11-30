@@ -60,10 +60,12 @@
     <Compile Include="ICursoBomberoDAO.cs" />
     <Compile Include="ICursoDAO.cs" />
     <Compile Include="IFichaMedicaDAO.cs" />
+    <Compile Include="IListaDAO.cs" />
     <Compile Include="IObservacionBomberoDAO.cs" />
     <Compile Include="IPremioBomberoDAO.cs" />
     <Compile Include="IPremioDAO.cs" />
     <Compile Include="IServicioBomberoDAO.cs" />
+    <Compile Include="ListaDAO.cs" />
     <Compile Include="ObservacionBomberoDAO.cs" />
     <Compile Include="PremioBomberoDAO.cs" />
     <Compile Include="PremioDAO.cs" />
