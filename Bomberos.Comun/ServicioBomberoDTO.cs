@@ -14,7 +14,7 @@ namespace Bomberos.Comun
         public BomberoDTO Bombero { get; set; }
         public int Llamadas { get; set; }
         public int Faltas { get; set; }
-        public int Suspenciones { get; set; }
+        public int Suspensiones { get; set; }
         public int Licencias { get; set; }
         public int Asistencia { get; set; }
         public int Abonos { get; set; }

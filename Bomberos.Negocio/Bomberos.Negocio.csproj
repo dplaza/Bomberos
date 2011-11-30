@@ -62,9 +62,11 @@
     <Compile Include="Dom\IObservacionBomberoDom.cs" />
     <Compile Include="Dom\IPremioBomberoDom.cs" />
     <Compile Include="Dom\IPremioDom.cs" />
+    <Compile Include="Dom\IServicioBomberoDom.cs" />
     <Compile Include="Dom\ObservacionBomberoDom.cs" />
     <Compile Include="Dom\PremioBomberoDom.cs" />
     <Compile Include="Dom\PremioDom.cs" />
+    <Compile Include="Dom\ServicioBomberoDom.cs" />
     <Compile Include="Mgr\BomberoMgr.cs" />
     <Compile Include="Mgr\CargoBomberoMgr.cs" />
     <Compile Include="Mgr\CargoMgr.cs" />
@@ -83,10 +85,12 @@
     <Compile Include="Mgr\IObservacionBomberoMgr.cs" />
     <Compile Include="Mgr\IPremioBomberoMgr.cs" />
     <Compile Include="Mgr\IPremioMgr.cs" />
+    <Compile Include="Mgr\IServicioBomberoMgr.cs" />
     <Compile Include="Mgr\LoginMgr.cs" />
     <Compile Include="Mgr\ObservacionBomberoMgr.cs" />
     <Compile Include="Mgr\PremioBomberoMgr.cs" />
     <Compile Include="Mgr\PremioMgr.cs" />
+    <Compile Include="Mgr\ServicioBomberoMgr.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

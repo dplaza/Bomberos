@@ -63,6 +63,7 @@
     <Compile Include="IObservacionBomberoDAO.cs" />
     <Compile Include="IPremioBomberoDAO.cs" />
     <Compile Include="IPremioDAO.cs" />
+    <Compile Include="IServicioBomberoDAO.cs" />
     <Compile Include="ObservacionBomberoDAO.cs" />
     <Compile Include="PremioBomberoDAO.cs" />
     <Compile Include="PremioDAO.cs" />
