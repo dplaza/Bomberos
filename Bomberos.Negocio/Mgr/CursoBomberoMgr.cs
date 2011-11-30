@@ -21,6 +21,12 @@ namespace Bomberos.Negocio.Mgr
             return _CursoBombero.Update(p_CursoBombero);
         }
 
+        public bool BorrarCursoBombero(CursoBomberoDTO p_CursoBombero)
+        {
+            ICursoBomberoDom _CursoBombero = new CursoBomberoDom();
+            return _CursoBombero.Delete(p_CursoBombero);
+        }
+
         public List<CursoBomberoDTO> CargarCursoBombero(CursoBomberoDTO p_CursoBombero)
         {
             ICursoBomberoDom _CursoBombero = new CursoBomberoDom();

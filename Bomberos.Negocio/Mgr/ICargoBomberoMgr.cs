@@ -10,7 +10,7 @@ namespace Bomberos.Negocio.Mgr
     {
         bool RegistroCargoBombero(CargoBomberoDTO p_CargoBombero);
         bool EditarCargoBombero(CargoBomberoDTO p_CargoBombero);
-        //bool BorrarCargoBombero(CargoBomberoDTO p_CargoBombero);
+        bool BorrarCargoBombero(CargoBomberoDTO p_CargoBombero);
         List<CargoBomberoDTO> CargarCargoBombero(CargoBomberoDTO p_CargoBombero);
         List<CargoBomberoDTO> ListarCargoBomberos();
     }

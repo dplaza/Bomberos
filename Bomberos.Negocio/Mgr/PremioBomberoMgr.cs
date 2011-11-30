@@ -21,6 +21,12 @@ namespace Bomberos.Negocio.Mgr
             return _PremioBombero.Update(p_PremioBombero);
         }
 
+        public bool BorrarPremioBombero(PremioBomberoDTO p_PremioBombero)
+        {
+            IPremioBomberoDom _PremioBombero = new PremioBomberoDom();
+            return _PremioBombero.Delete(p_PremioBombero);
+        }
+
         public List<PremioBomberoDTO> CargarPremioBombero(PremioBomberoDTO p_PremioBombero)
         {
             IPremioBomberoDom _PremioBombero = new PremioBomberoDom();
