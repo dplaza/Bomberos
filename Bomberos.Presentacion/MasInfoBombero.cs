@@ -388,5 +388,15 @@ namespace Bomberos.Presentacion
                 MessageBox.Show("Error al actualizar ficha medica");
             }
         }
+
+        private void textBox3_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox5_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
