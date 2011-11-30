@@ -389,12 +389,7 @@ namespace Bomberos.Presentacion
             }
         }
 
-        private void textBox3_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox5_TextChanged(object sender, EventArgs e)
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
         {
 
         }

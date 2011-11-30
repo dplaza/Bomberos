@@ -52,6 +52,7 @@
     <Compile Include="CursoBomberoDTO.cs" />
     <Compile Include="CursoDTO.cs" />
     <Compile Include="FichaMedicaDTO.cs" />
+    <Compile Include="ListaDTO.cs" />
     <Compile Include="ObservacionBomberoDTO.cs" />
     <Compile Include="PremioBomberoDTO.cs" />
     <Compile Include="PremioDTO.cs" />
