@@ -30,39 +30,34 @@
         {
             this.tabBox = new System.Windows.Forms.TabControl();
             this.FichaMedica = new System.Windows.Forms.TabPage();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.richTextBox5 = new System.Windows.Forms.RichTextBox();
+            this.btn_parientes = new System.Windows.Forms.Button();
+            this.btn_enviar_cambios = new System.Windows.Forms.Button();
+            this.txt_med_medContra = new System.Windows.Forms.RichTextBox();
             this.label22 = new System.Windows.Forms.Label();
-            this.richTextBox4 = new System.Windows.Forms.RichTextBox();
+            this.txt_med_medToma = new System.Windows.Forms.RichTextBox();
             this.label21 = new System.Windows.Forms.Label();
-            this.richTextBox3 = new System.Windows.Forms.RichTextBox();
+            this.txt_med_antec = new System.Windows.Forms.RichTextBox();
             this.label20 = new System.Windows.Forms.Label();
-            this.richTextBox2 = new System.Windows.Forms.RichTextBox();
+            this.txt_med_operac = new System.Windows.Forms.RichTextBox();
             this.label19 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.checkBox9 = new System.Windows.Forms.CheckBox();
-            this.checkBox10 = new System.Windows.Forms.CheckBox();
-            this.checkBox11 = new System.Windows.Forms.CheckBox();
-            this.checkBox12 = new System.Windows.Forms.CheckBox();
-            this.checkBox5 = new System.Windows.Forms.CheckBox();
-            this.checkBox6 = new System.Windows.Forms.CheckBox();
-            this.checkBox7 = new System.Windows.Forms.CheckBox();
-            this.checkBox8 = new System.Windows.Forms.CheckBox();
+            this.select_asma = new System.Windows.Forms.ComboBox();
+            this.select_epilep = new System.Windows.Forms.ComboBox();
+            this.select_diab = new System.Windows.Forms.ComboBox();
+            this.select_hipert = new System.Windows.Forms.ComboBox();
             this.label18 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.select_tifus = new System.Windows.Forms.ComboBox();
+            this.select_hepat = new System.Windows.Forms.ComboBox();
+            this.txt_med_otras = new System.Windows.Forms.RichTextBox();
             this.label14 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
-            this.checkBox3 = new System.Windows.Forms.CheckBox();
-            this.checkBox4 = new System.Windows.Forms.CheckBox();
             this.label12 = new System.Windows.Forms.Label();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.HistorialCargos = new System.Windows.Forms.TabPage();
+            this.btn_borrar_cargo = new System.Windows.Forms.Button();
             this.btn_cargo = new System.Windows.Forms.Button();
             this.select_cargo = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -77,6 +72,7 @@
             this.id_cargos = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.BomberoCargo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.HistorialPremios = new System.Windows.Forms.TabPage();
+            this.btn_borrar_premio = new System.Windows.Forms.Button();
             this.select_premios = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.dataGridPremios = new System.Windows.Forms.DataGridView();
@@ -91,6 +87,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.HistorialCursos = new System.Windows.Forms.TabPage();
+            this.btn_borrar_curso = new System.Windows.Forms.Button();
             this.dataGridCursos = new System.Windows.Forms.DataGridView();
             this.NombreCurso = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fecha_inicio = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -157,15 +154,15 @@
             // 
             // FichaMedica
             // 
-            this.FichaMedica.Controls.Add(this.button2);
-            this.FichaMedica.Controls.Add(this.button1);
-            this.FichaMedica.Controls.Add(this.richTextBox5);
+            this.FichaMedica.Controls.Add(this.btn_parientes);
+            this.FichaMedica.Controls.Add(this.btn_enviar_cambios);
+            this.FichaMedica.Controls.Add(this.txt_med_medContra);
             this.FichaMedica.Controls.Add(this.label22);
-            this.FichaMedica.Controls.Add(this.richTextBox4);
+            this.FichaMedica.Controls.Add(this.txt_med_medToma);
             this.FichaMedica.Controls.Add(this.label21);
-            this.FichaMedica.Controls.Add(this.richTextBox3);
+            this.FichaMedica.Controls.Add(this.txt_med_antec);
             this.FichaMedica.Controls.Add(this.label20);
-            this.FichaMedica.Controls.Add(this.richTextBox2);
+            this.FichaMedica.Controls.Add(this.txt_med_operac);
             this.FichaMedica.Controls.Add(this.label19);
             this.FichaMedica.Controls.Add(this.groupBox2);
             this.FichaMedica.Controls.Add(this.groupBox1);
@@ -176,31 +173,34 @@
             this.FichaMedica.Text = "Ficha Médica";
             this.FichaMedica.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // btn_parientes
             // 
-            this.button2.Location = new System.Drawing.Point(494, 286);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 11;
-            this.button2.Text = "Parientes";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btn_parientes.Location = new System.Drawing.Point(488, 344);
+            this.btn_parientes.Name = "btn_parientes";
+            this.btn_parientes.Size = new System.Drawing.Size(75, 23);
+            this.btn_parientes.TabIndex = 11;
+            this.btn_parientes.Text = "Parientes";
+            this.btn_parientes.UseVisualStyleBackColor = true;
+            this.btn_parientes.Click += new System.EventHandler(this.button2_Click);
             // 
-            // button1
+            // btn_enviar_cambios
             // 
-            this.button1.Location = new System.Drawing.Point(494, 238);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 10;
-            this.button1.Text = "Modificar";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btn_enviar_cambios.Location = new System.Drawing.Point(469, 310);
+            this.btn_enviar_cambios.Name = "btn_enviar_cambios";
+            this.btn_enviar_cambios.Size = new System.Drawing.Size(113, 23);
+            this.btn_enviar_cambios.TabIndex = 10;
+            this.btn_enviar_cambios.Text = "Enviar Cambios";
+            this.btn_enviar_cambios.UseVisualStyleBackColor = true;
+            this.btn_enviar_cambios.Click += new System.EventHandler(this.btn_enviar_cambios_Click);
             // 
-            // richTextBox5
+            // txt_med_medContra
             // 
-            this.richTextBox5.Location = new System.Drawing.Point(14, 375);
-            this.richTextBox5.Name = "richTextBox5";
-            this.richTextBox5.Size = new System.Drawing.Size(407, 21);
-            this.richTextBox5.TabIndex = 9;
-            this.richTextBox5.Text = "";
+            this.txt_med_medContra.Location = new System.Drawing.Point(14, 375);
+            this.txt_med_medContra.Name = "txt_med_medContra";
+            this.txt_med_medContra.Size = new System.Drawing.Size(407, 21);
+            this.txt_med_medContra.TabIndex = 9;
+            this.txt_med_medContra.Text = "";
+            this.txt_med_medContra.TextChanged += new System.EventHandler(this.richTextBox5_TextChanged);
             // 
             // label22
             // 
@@ -211,13 +211,13 @@
             this.label22.TabIndex = 8;
             this.label22.Text = "Medicamentos Contraindicados";
             // 
-            // richTextBox4
+            // txt_med_medToma
             // 
-            this.richTextBox4.Location = new System.Drawing.Point(14, 326);
-            this.richTextBox4.Name = "richTextBox4";
-            this.richTextBox4.Size = new System.Drawing.Size(407, 21);
-            this.richTextBox4.TabIndex = 7;
-            this.richTextBox4.Text = "";
+            this.txt_med_medToma.Location = new System.Drawing.Point(14, 326);
+            this.txt_med_medToma.Name = "txt_med_medToma";
+            this.txt_med_medToma.Size = new System.Drawing.Size(407, 21);
+            this.txt_med_medToma.TabIndex = 7;
+            this.txt_med_medToma.Text = "";
             // 
             // label21
             // 
@@ -228,13 +228,13 @@
             this.label21.TabIndex = 6;
             this.label21.Text = "Medicamentos que Toma Frecuentemente";
             // 
-            // richTextBox3
+            // txt_med_antec
             // 
-            this.richTextBox3.Location = new System.Drawing.Point(252, 238);
-            this.richTextBox3.Name = "richTextBox3";
-            this.richTextBox3.Size = new System.Drawing.Size(169, 57);
-            this.richTextBox3.TabIndex = 5;
-            this.richTextBox3.Text = "";
+            this.txt_med_antec.Location = new System.Drawing.Point(252, 238);
+            this.txt_med_antec.Name = "txt_med_antec";
+            this.txt_med_antec.Size = new System.Drawing.Size(169, 57);
+            this.txt_med_antec.TabIndex = 5;
+            this.txt_med_antec.Text = "";
             // 
             // label20
             // 
@@ -245,13 +245,13 @@
             this.label20.TabIndex = 4;
             this.label20.Text = "Antecedentes Cronicos";
             // 
-            // richTextBox2
+            // txt_med_operac
             // 
-            this.richTextBox2.Location = new System.Drawing.Point(14, 238);
-            this.richTextBox2.Name = "richTextBox2";
-            this.richTextBox2.Size = new System.Drawing.Size(169, 57);
-            this.richTextBox2.TabIndex = 3;
-            this.richTextBox2.Text = "";
+            this.txt_med_operac.Location = new System.Drawing.Point(14, 238);
+            this.txt_med_operac.Name = "txt_med_operac";
+            this.txt_med_operac.Size = new System.Drawing.Size(169, 57);
+            this.txt_med_operac.TabIndex = 3;
+            this.txt_med_operac.Text = "";
             // 
             // label19
             // 
@@ -264,14 +264,10 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.checkBox9);
-            this.groupBox2.Controls.Add(this.checkBox10);
-            this.groupBox2.Controls.Add(this.checkBox11);
-            this.groupBox2.Controls.Add(this.checkBox12);
-            this.groupBox2.Controls.Add(this.checkBox5);
-            this.groupBox2.Controls.Add(this.checkBox6);
-            this.groupBox2.Controls.Add(this.checkBox7);
-            this.groupBox2.Controls.Add(this.checkBox8);
+            this.groupBox2.Controls.Add(this.select_asma);
+            this.groupBox2.Controls.Add(this.select_epilep);
+            this.groupBox2.Controls.Add(this.select_diab);
+            this.groupBox2.Controls.Add(this.select_hipert);
             this.groupBox2.Controls.Add(this.label18);
             this.groupBox2.Controls.Add(this.label17);
             this.groupBox2.Controls.Add(this.label16);
@@ -282,86 +278,56 @@
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Enfermedades Crónicas";
+            this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
             // 
-            // checkBox9
+            // select_asma
             // 
-            this.checkBox9.AutoSize = true;
-            this.checkBox9.Location = new System.Drawing.Point(175, 132);
-            this.checkBox9.Name = "checkBox9";
-            this.checkBox9.Size = new System.Drawing.Size(40, 17);
-            this.checkBox9.TabIndex = 12;
-            this.checkBox9.Text = "No";
-            this.checkBox9.UseVisualStyleBackColor = true;
+            this.select_asma.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.select_asma.FormattingEnabled = true;
+            this.select_asma.Items.AddRange(new object[] {
+            "No",
+            "Sí"});
+            this.select_asma.Location = new System.Drawing.Point(124, 130);
+            this.select_asma.Name = "select_asma";
+            this.select_asma.Size = new System.Drawing.Size(72, 21);
+            this.select_asma.TabIndex = 7;
+            this.select_asma.SelectedIndexChanged += new System.EventHandler(this.comboBox4_SelectedIndexChanged);
             // 
-            // checkBox10
+            // select_epilep
             // 
-            this.checkBox10.AutoSize = true;
-            this.checkBox10.Location = new System.Drawing.Point(122, 132);
-            this.checkBox10.Name = "checkBox10";
-            this.checkBox10.Size = new System.Drawing.Size(35, 17);
-            this.checkBox10.TabIndex = 11;
-            this.checkBox10.Text = "Si";
-            this.checkBox10.UseVisualStyleBackColor = true;
+            this.select_epilep.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.select_epilep.FormattingEnabled = true;
+            this.select_epilep.Items.AddRange(new object[] {
+            "No",
+            "Sí"});
+            this.select_epilep.Location = new System.Drawing.Point(124, 96);
+            this.select_epilep.Name = "select_epilep";
+            this.select_epilep.Size = new System.Drawing.Size(72, 21);
+            this.select_epilep.TabIndex = 6;
             // 
-            // checkBox11
+            // select_diab
             // 
-            this.checkBox11.AutoSize = true;
-            this.checkBox11.Location = new System.Drawing.Point(175, 99);
-            this.checkBox11.Name = "checkBox11";
-            this.checkBox11.Size = new System.Drawing.Size(40, 17);
-            this.checkBox11.TabIndex = 10;
-            this.checkBox11.Text = "No";
-            this.checkBox11.UseVisualStyleBackColor = true;
+            this.select_diab.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.select_diab.FormattingEnabled = true;
+            this.select_diab.Items.AddRange(new object[] {
+            "No",
+            "Sí"});
+            this.select_diab.Location = new System.Drawing.Point(124, 62);
+            this.select_diab.Name = "select_diab";
+            this.select_diab.Size = new System.Drawing.Size(72, 21);
+            this.select_diab.TabIndex = 5;
             // 
-            // checkBox12
+            // select_hipert
             // 
-            this.checkBox12.AutoSize = true;
-            this.checkBox12.Location = new System.Drawing.Point(122, 99);
-            this.checkBox12.Name = "checkBox12";
-            this.checkBox12.Size = new System.Drawing.Size(35, 17);
-            this.checkBox12.TabIndex = 9;
-            this.checkBox12.Text = "Si";
-            this.checkBox12.UseVisualStyleBackColor = true;
-            // 
-            // checkBox5
-            // 
-            this.checkBox5.AutoSize = true;
-            this.checkBox5.Location = new System.Drawing.Point(175, 61);
-            this.checkBox5.Name = "checkBox5";
-            this.checkBox5.Size = new System.Drawing.Size(40, 17);
-            this.checkBox5.TabIndex = 8;
-            this.checkBox5.Text = "No";
-            this.checkBox5.UseVisualStyleBackColor = true;
-            // 
-            // checkBox6
-            // 
-            this.checkBox6.AutoSize = true;
-            this.checkBox6.Location = new System.Drawing.Point(122, 61);
-            this.checkBox6.Name = "checkBox6";
-            this.checkBox6.Size = new System.Drawing.Size(35, 17);
-            this.checkBox6.TabIndex = 7;
-            this.checkBox6.Text = "Si";
-            this.checkBox6.UseVisualStyleBackColor = true;
-            // 
-            // checkBox7
-            // 
-            this.checkBox7.AutoSize = true;
-            this.checkBox7.Location = new System.Drawing.Point(175, 30);
-            this.checkBox7.Name = "checkBox7";
-            this.checkBox7.Size = new System.Drawing.Size(40, 17);
-            this.checkBox7.TabIndex = 6;
-            this.checkBox7.Text = "No";
-            this.checkBox7.UseVisualStyleBackColor = true;
-            // 
-            // checkBox8
-            // 
-            this.checkBox8.AutoSize = true;
-            this.checkBox8.Location = new System.Drawing.Point(122, 30);
-            this.checkBox8.Name = "checkBox8";
-            this.checkBox8.Size = new System.Drawing.Size(35, 17);
-            this.checkBox8.TabIndex = 5;
-            this.checkBox8.Text = "Si";
-            this.checkBox8.UseVisualStyleBackColor = true;
+            this.select_hipert.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.select_hipert.FormattingEnabled = true;
+            this.select_hipert.Items.AddRange(new object[] {
+            "No",
+            "Sí"});
+            this.select_hipert.Location = new System.Drawing.Point(124, 28);
+            this.select_hipert.Name = "select_hipert";
+            this.select_hipert.Size = new System.Drawing.Size(72, 21);
+            this.select_hipert.TabIndex = 4;
             // 
             // label18
             // 
@@ -375,7 +341,7 @@
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(6, 97);
+            this.label17.Location = new System.Drawing.Point(6, 99);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(49, 13);
             this.label17.TabIndex = 2;
@@ -384,7 +350,7 @@
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(6, 62);
+            this.label16.Location = new System.Drawing.Point(6, 65);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(49, 13);
             this.label16.TabIndex = 1;
@@ -401,14 +367,12 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.richTextBox1);
+            this.groupBox1.Controls.Add(this.select_tifus);
+            this.groupBox1.Controls.Add(this.select_hepat);
+            this.groupBox1.Controls.Add(this.txt_med_otras);
             this.groupBox1.Controls.Add(this.label14);
             this.groupBox1.Controls.Add(this.label13);
-            this.groupBox1.Controls.Add(this.checkBox3);
-            this.groupBox1.Controls.Add(this.checkBox4);
             this.groupBox1.Controls.Add(this.label12);
-            this.groupBox1.Controls.Add(this.checkBox2);
-            this.groupBox1.Controls.Add(this.checkBox1);
             this.groupBox1.Location = new System.Drawing.Point(14, 24);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(200, 171);
@@ -417,13 +381,37 @@
             this.groupBox1.Text = "Enfermedades";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
-            // richTextBox1
+            // select_tifus
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(76, 94);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(112, 65);
-            this.richTextBox1.TabIndex = 7;
-            this.richTextBox1.Text = "";
+            this.select_tifus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.select_tifus.FormattingEnabled = true;
+            this.select_tifus.Items.AddRange(new object[] {
+            "No",
+            "Sí"});
+            this.select_tifus.Location = new System.Drawing.Point(85, 61);
+            this.select_tifus.Name = "select_tifus";
+            this.select_tifus.Size = new System.Drawing.Size(79, 21);
+            this.select_tifus.TabIndex = 9;
+            // 
+            // select_hepat
+            // 
+            this.select_hepat.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.select_hepat.FormattingEnabled = true;
+            this.select_hepat.Items.AddRange(new object[] {
+            "No",
+            "Sí"});
+            this.select_hepat.Location = new System.Drawing.Point(85, 28);
+            this.select_hepat.Name = "select_hepat";
+            this.select_hepat.Size = new System.Drawing.Size(79, 21);
+            this.select_hepat.TabIndex = 8;
+            // 
+            // txt_med_otras
+            // 
+            this.txt_med_otras.Location = new System.Drawing.Point(76, 94);
+            this.txt_med_otras.Name = "txt_med_otras";
+            this.txt_med_otras.Size = new System.Drawing.Size(112, 65);
+            this.txt_med_otras.TabIndex = 7;
+            this.txt_med_otras.Text = "";
             // 
             // label14
             // 
@@ -437,31 +425,11 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(6, 62);
+            this.label13.Location = new System.Drawing.Point(6, 64);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(30, 13);
             this.label13.TabIndex = 5;
             this.label13.Text = "Tifus";
-            // 
-            // checkBox3
-            // 
-            this.checkBox3.AutoSize = true;
-            this.checkBox3.Location = new System.Drawing.Point(129, 61);
-            this.checkBox3.Name = "checkBox3";
-            this.checkBox3.Size = new System.Drawing.Size(40, 17);
-            this.checkBox3.TabIndex = 4;
-            this.checkBox3.Text = "No";
-            this.checkBox3.UseVisualStyleBackColor = true;
-            // 
-            // checkBox4
-            // 
-            this.checkBox4.AutoSize = true;
-            this.checkBox4.Location = new System.Drawing.Point(76, 61);
-            this.checkBox4.Name = "checkBox4";
-            this.checkBox4.Size = new System.Drawing.Size(35, 17);
-            this.checkBox4.TabIndex = 3;
-            this.checkBox4.Text = "Si";
-            this.checkBox4.UseVisualStyleBackColor = true;
             // 
             // label12
             // 
@@ -472,28 +440,9 @@
             this.label12.TabIndex = 2;
             this.label12.Text = "Hepatitis";
             // 
-            // checkBox2
-            // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(129, 30);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(40, 17);
-            this.checkBox2.TabIndex = 1;
-            this.checkBox2.Text = "No";
-            this.checkBox2.UseVisualStyleBackColor = true;
-            // 
-            // checkBox1
-            // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(76, 30);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(35, 17);
-            this.checkBox1.TabIndex = 0;
-            this.checkBox1.Text = "Si";
-            this.checkBox1.UseVisualStyleBackColor = true;
-            // 
             // HistorialCargos
             // 
+            this.HistorialCargos.Controls.Add(this.btn_borrar_cargo);
             this.HistorialCargos.Controls.Add(this.btn_cargo);
             this.HistorialCargos.Controls.Add(this.select_cargo);
             this.HistorialCargos.Controls.Add(this.label3);
@@ -509,6 +458,16 @@
             this.HistorialCargos.Text = "Historial Cargos";
             this.HistorialCargos.UseVisualStyleBackColor = true;
             this.HistorialCargos.Click += new System.EventHandler(this.HistorialCargos_Click);
+            // 
+            // btn_borrar_cargo
+            // 
+            this.btn_borrar_cargo.Location = new System.Drawing.Point(405, 69);
+            this.btn_borrar_cargo.Name = "btn_borrar_cargo";
+            this.btn_borrar_cargo.Size = new System.Drawing.Size(106, 23);
+            this.btn_borrar_cargo.TabIndex = 176;
+            this.btn_borrar_cargo.Text = "Borrar Cargo";
+            this.btn_borrar_cargo.UseVisualStyleBackColor = true;
+            this.btn_borrar_cargo.Click += new System.EventHandler(this.btn_borrar_cargo_Click);
             // 
             // btn_cargo
             // 
@@ -542,7 +501,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(69, 30);
+            this.label2.Location = new System.Drawing.Point(69, 56);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(35, 13);
             this.label2.TabIndex = 4;
@@ -551,7 +510,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(69, 56);
+            this.label1.Location = new System.Drawing.Point(69, 30);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(38, 13);
             this.label1.TabIndex = 3;
@@ -559,14 +518,14 @@
             // 
             // dateTimeCargoHasta
             // 
-            this.dateTimeCargoHasta.Location = new System.Drawing.Point(113, 24);
+            this.dateTimeCargoHasta.Location = new System.Drawing.Point(113, 50);
             this.dateTimeCargoHasta.Name = "dateTimeCargoHasta";
             this.dateTimeCargoHasta.Size = new System.Drawing.Size(200, 20);
             this.dateTimeCargoHasta.TabIndex = 2;
             // 
             // dateTimeCargoDesde
             // 
-            this.dateTimeCargoDesde.Location = new System.Drawing.Point(113, 50);
+            this.dateTimeCargoDesde.Location = new System.Drawing.Point(113, 24);
             this.dateTimeCargoDesde.Name = "dateTimeCargoDesde";
             this.dateTimeCargoDesde.Size = new System.Drawing.Size(200, 20);
             this.dateTimeCargoDesde.TabIndex = 1;
@@ -631,6 +590,7 @@
             // 
             // HistorialPremios
             // 
+            this.HistorialPremios.Controls.Add(this.btn_borrar_premio);
             this.HistorialPremios.Controls.Add(this.select_premios);
             this.HistorialPremios.Controls.Add(this.label6);
             this.HistorialPremios.Controls.Add(this.dataGridPremios);
@@ -646,6 +606,16 @@
             this.HistorialPremios.TabIndex = 1;
             this.HistorialPremios.Text = "Historial Premios";
             this.HistorialPremios.UseVisualStyleBackColor = true;
+            // 
+            // btn_borrar_premio
+            // 
+            this.btn_borrar_premio.Location = new System.Drawing.Point(410, 56);
+            this.btn_borrar_premio.Name = "btn_borrar_premio";
+            this.btn_borrar_premio.Size = new System.Drawing.Size(101, 23);
+            this.btn_borrar_premio.TabIndex = 10;
+            this.btn_borrar_premio.Text = "Borrar Premio";
+            this.btn_borrar_premio.UseVisualStyleBackColor = true;
+            this.btn_borrar_premio.Click += new System.EventHandler(this.btn_borrar_premio_Click);
             // 
             // select_premios
             // 
@@ -766,6 +736,7 @@
             // 
             // HistorialCursos
             // 
+            this.HistorialCursos.Controls.Add(this.btn_borrar_curso);
             this.HistorialCursos.Controls.Add(this.dataGridCursos);
             this.HistorialCursos.Controls.Add(this.btn_curso);
             this.HistorialCursos.Controls.Add(this.select_cursos);
@@ -783,6 +754,16 @@
             this.HistorialCursos.TabIndex = 2;
             this.HistorialCursos.Text = "Historial Cursos";
             this.HistorialCursos.UseVisualStyleBackColor = true;
+            // 
+            // btn_borrar_curso
+            // 
+            this.btn_borrar_curso.Location = new System.Drawing.Point(401, 72);
+            this.btn_borrar_curso.Name = "btn_borrar_curso";
+            this.btn_borrar_curso.Size = new System.Drawing.Size(98, 23);
+            this.btn_borrar_curso.TabIndex = 10;
+            this.btn_borrar_curso.Text = "Borrar Curso";
+            this.btn_borrar_curso.UseVisualStyleBackColor = true;
+            this.btn_borrar_curso.Click += new System.EventHandler(this.btn_borrar_curso_Click);
             // 
             // dataGridCursos
             // 
@@ -1191,36 +1172,24 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.CheckBox checkBox2;
-        private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.RichTextBox txt_med_otras;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.CheckBox checkBox3;
-        private System.Windows.Forms.CheckBox checkBox4;
-        private System.Windows.Forms.RichTextBox richTextBox2;
+        private System.Windows.Forms.RichTextBox txt_med_operac;
         private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.CheckBox checkBox9;
-        private System.Windows.Forms.CheckBox checkBox10;
-        private System.Windows.Forms.CheckBox checkBox11;
-        private System.Windows.Forms.CheckBox checkBox12;
-        private System.Windows.Forms.CheckBox checkBox5;
-        private System.Windows.Forms.CheckBox checkBox6;
-        private System.Windows.Forms.CheckBox checkBox7;
-        private System.Windows.Forms.CheckBox checkBox8;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.RichTextBox richTextBox3;
+        private System.Windows.Forms.RichTextBox txt_med_antec;
         private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.RichTextBox richTextBox5;
+        private System.Windows.Forms.Button btn_parientes;
+        private System.Windows.Forms.Button btn_enviar_cambios;
+        private System.Windows.Forms.RichTextBox txt_med_medContra;
         private System.Windows.Forms.Label label22;
-        private System.Windows.Forms.RichTextBox richTextBox4;
+        private System.Windows.Forms.RichTextBox txt_med_medToma;
         private System.Windows.Forms.ComboBox select_premios;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button btn_observacion;
@@ -1243,6 +1212,15 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn FechaObservacion;
         private System.Windows.Forms.DataGridViewTextBoxColumn Observacion;
         private System.Windows.Forms.DataGridViewTextBoxColumn BomberoObservacion;
+        private System.Windows.Forms.Button btn_borrar_cargo;
+        private System.Windows.Forms.Button btn_borrar_premio;
+        private System.Windows.Forms.Button btn_borrar_curso;
+        private System.Windows.Forms.ComboBox select_tifus;
+        private System.Windows.Forms.ComboBox select_hepat;
+        private System.Windows.Forms.ComboBox select_asma;
+        private System.Windows.Forms.ComboBox select_epilep;
+        private System.Windows.Forms.ComboBox select_diab;
+        private System.Windows.Forms.ComboBox select_hipert;
 
     }
 }

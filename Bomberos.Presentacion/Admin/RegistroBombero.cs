@@ -92,7 +92,8 @@ namespace Bomberos.Presentacion
             Bombero.Password = txt_pass.Text;
             Bombero.Cargo = (CargoDTO)select_cargo.SelectedItem;
             Bombero.Estado = select_estado.Text;
-            Bombero.NumeroRegistro = int.Parse(txt_socio.Text);
+            if (txt_socio.Text != "")
+                Bombero.NumeroRegistro = int.Parse(txt_socio.Text);
 
             if (select_tipocuenta.Text.Equals("Administrador"))
                 Bombero.isAdmin = true;
@@ -115,10 +116,18 @@ namespace Bomberos.Presentacion
                 }
             }
 
+           
+
 
             if (_Bombero.RegistroBombero(Bombero))
             {
                 MessageBox.Show("Registro exitoso");
+
+                IFichaMedicaMgr _FichaMedica = new FichaMedicaMgr();
+                FichaMedicaDTO FichaMedica = new FichaMedicaDTO();
+                FichaMedica.Bombero = Bombero;
+                _FichaMedica.RegistroFichaMedica(FichaMedica);
+
                 this.Close();
             }
             else

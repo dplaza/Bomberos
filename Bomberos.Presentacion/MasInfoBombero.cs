@@ -54,14 +54,17 @@ namespace Bomberos.Presentacion
             ICursoBomberoMgr _CursoBombero = new CursoBomberoMgr();
             IPremioBomberoMgr _PremioBombero = new PremioBomberoMgr();
             IObservacionBomberoMgr _ObservacionBombero = new ObservacionBomberoMgr();
+            IFichaMedicaMgr _FichaMedica = new FichaMedicaMgr();
             CargoBomberoDTO CargoBombero = new CargoBomberoDTO();
             CursoBomberoDTO CursoBombero = new CursoBomberoDTO();
             PremioBomberoDTO PremioBombero = new PremioBomberoDTO();
             ObservacionBomberoDTO ObservacionBombero = new ObservacionBomberoDTO();
+            FichaMedicaDTO FichaMedica = new FichaMedicaDTO();
             PremioBombero.Bombero = ContextoDTO.Instancia().BomberoSelected;
             CargoBombero.Bombero = ContextoDTO.Instancia().BomberoSelected;
             CursoBombero.Bombero = ContextoDTO.Instancia().BomberoSelected;
             ObservacionBombero.Bombero = ContextoDTO.Instancia().BomberoSelected;
+            FichaMedica.Bombero = ContextoDTO.Instancia().BomberoSelected;
 
             dataGridPremios.DataSource = _PremioBombero.CargarPremioBombero(PremioBombero).OrderBy(p => p.FechaCalifica).ToList();
             dataGridCursos.DataSource = _CursoBombero.CargarCursoBombero(CursoBombero).OrderBy(p => p.FechaInicio).ToList();
@@ -73,6 +76,32 @@ namespace Bomberos.Presentacion
             dataGridPremios.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridObservacion.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
 
+            FichaMedica = _FichaMedica.CargarFichaMedica(FichaMedica);
+
+            txt_med_antec.Text = FichaMedica.AntecedentesCronicos;
+            txt_med_medContra.Text = FichaMedica.MedicamentosNoToma;
+            txt_med_medToma.Text = FichaMedica.MedicamentosToma;
+            txt_med_operac.Text = FichaMedica.Operaciones;
+            txt_med_otras.Text = FichaMedica.OtrasEnfermedades;
+            select_asma.SelectedItem = "No";
+            select_diab.SelectedItem = "No";
+            select_epilep.SelectedItem = "No";
+            select_hipert.SelectedItem = "No";
+            select_tifus.SelectedItem = "No";
+            select_hepat.SelectedItem = "No";
+
+            if (FichaMedica.Asma)
+                select_asma.SelectedItem = "Sí";
+            if (FichaMedica.Diabetes)
+                select_diab.SelectedItem = "Sí";
+            if (FichaMedica.Epilepsia)
+                select_epilep.SelectedItem = "Sí";
+            if (FichaMedica.Hepatitis)
+                select_hepat.SelectedItem = "Sí";
+            if (FichaMedica.HipertensionArterial)
+                select_hipert.SelectedItem = "Sí";
+            if (FichaMedica.Tifus)
+                select_tifus.SelectedItem = "Sí";
 
             labelnombre.Text = ContextoDTO.Instancia().BomberoSelected.Nombres + " " + ContextoDTO.Instancia().BomberoSelected.Apellidos;
             labelRut.Text = ContextoDTO.Instancia().BomberoSelected.Rut;
@@ -167,6 +196,7 @@ namespace Bomberos.Presentacion
             CargoBomberoDTO CargoBombero = new CargoBomberoDTO();
 
             CargoBombero.FechaDesde = dateTimeCargoDesde.Value;
+            CargoBombero.FechaHasta = dateTimeCargoHasta.Value;
             CargoBombero.Bombero = ContextoDTO.Instancia().BomberoSelected;
             CargoBombero.Cargo = (CargoDTO)select_cargo.SelectedItem;
 
@@ -203,6 +233,159 @@ namespace Bomberos.Presentacion
             else
             {
                 MessageBox.Show("Error al actualizar bombero");
+            }
+        }
+
+        private void checkBox2_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_borrar_cargo_Click(object sender, EventArgs e)
+        {
+            ICargoBomberoMgr _CargoBombero = new CargoBomberoMgr();
+            CargoBomberoDTO CargoBombero = new CargoBomberoDTO();
+
+            if (dataGridCargos.SelectedRows.Count > 0)
+            {
+                CargoBombero = (CargoBomberoDTO)dataGridCargos.SelectedRows[0].DataBoundItem;
+
+                if (!_CargoBombero.BorrarCargoBombero(CargoBombero))
+                {
+                    MessageBox.Show("Falla al borrar cargo");
+                }
+                else
+                {
+                    dataGridCargos.DataSource = _CargoBombero.CargarCargoBombero(CargoBombero).OrderBy(p => p.FechaDesde).ToList();
+                }
+            }
+        }
+
+        private void btn_borrar_premio_Click(object sender, EventArgs e)
+        {
+            IPremioBomberoMgr _PremioBombero = new PremioBomberoMgr();
+            PremioBomberoDTO PremioBombero = new PremioBomberoDTO();
+
+            if (dataGridPremios.SelectedRows.Count > 0)
+            {
+                PremioBombero = (PremioBomberoDTO)dataGridPremios.SelectedRows[0].DataBoundItem;
+
+                if (!_PremioBombero.BorrarPremioBombero(PremioBombero))
+                {
+                    MessageBox.Show("Falla al borrar premio");
+                }
+                else
+                {
+                    dataGridPremios.DataSource = _PremioBombero.CargarPremioBombero(PremioBombero).OrderBy(p => p.FechaCalifica).ToList();
+                }
+            }
+        }
+
+        private void btn_borrar_curso_Click(object sender, EventArgs e)
+        {
+            ICursoBomberoMgr _CursoBombero = new CursoBomberoMgr();
+            CursoBomberoDTO CursoBombero = new CursoBomberoDTO();
+
+            if (dataGridCursos.SelectedRows.Count > 0)
+            {
+                CursoBombero = (CursoBomberoDTO)dataGridCursos.SelectedRows[0].DataBoundItem;
+
+                if (!_CursoBombero.BorrarCursoBombero(CursoBombero))
+                {
+                    MessageBox.Show("Falla al borrar curso");
+                }
+                else
+                {
+                    dataGridCursos.DataSource = _CursoBombero.CargarCursoBombero(CursoBombero).OrderBy(p => p.FechaInicio).ToList();
+                }
+            }
+        }
+
+        private void groupBox2_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox4_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            var form = new Parientes();
+            //form.Parent = this.Parent.Parent.Parent;
+            form.Show();
+        }
+
+        private void richTextBox5_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_enviar_cambios_Click(object sender, EventArgs e)
+        {
+            IFichaMedicaMgr _FichaMedica = new FichaMedicaMgr();
+            FichaMedicaDTO FichaMedica = new FichaMedicaDTO();
+
+            FichaMedica.Bombero = ContextoDTO.Instancia().BomberoSelected;
+            FichaMedica.AntecedentesCronicos = txt_med_antec.Text;
+            FichaMedica.MedicamentosNoToma = txt_med_medContra.Text;
+            FichaMedica.MedicamentosToma = txt_med_medToma.Text;
+            FichaMedica.Operaciones = txt_med_operac.Text;
+            FichaMedica.OtrasEnfermedades = txt_med_otras.Text;
+            FichaMedica.Asma = false;
+            FichaMedica.Diabetes = false;
+            FichaMedica.Epilepsia = false;
+            FichaMedica.Hepatitis = false;
+            FichaMedica.HipertensionArterial = false;
+            FichaMedica.Tifus = false;
+
+            if (select_asma.Text.Equals("Sí"))
+                FichaMedica.Asma = true;
+            if (select_diab.Text.Equals("Sí"))
+                FichaMedica.Diabetes = true;
+            if (select_epilep.Text.Equals("Sí"))
+                FichaMedica.Epilepsia = true;
+            if (select_hepat.Text.Equals("Sí"))
+                FichaMedica.Hepatitis = true;
+            if (select_hipert.Text.Equals("Sí"))
+                FichaMedica.HipertensionArterial = true;
+            if (select_tifus.Text.Equals("Sí"))
+                FichaMedica.Tifus = true;
+
+            if (_FichaMedica.EditarFichaMedica(FichaMedica))
+            {
+                MessageBox.Show("Ficha medica actualizada exitosamente");
+
+                txt_med_antec.Text = FichaMedica.AntecedentesCronicos;
+                txt_med_medContra.Text = FichaMedica.MedicamentosNoToma;
+                txt_med_medToma.Text = FichaMedica.MedicamentosToma;
+                txt_med_operac.Text = FichaMedica.Operaciones;
+                txt_med_otras.Text = FichaMedica.OtrasEnfermedades;
+                select_asma.SelectedItem = "No";
+                select_diab.SelectedItem = "No";
+                select_epilep.SelectedItem = "No";
+                select_hipert.SelectedItem = "No";
+                select_tifus.SelectedItem = "No";
+                select_hepat.SelectedItem = "No";
+
+                if (FichaMedica.Asma)
+                    select_asma.SelectedItem = "Sí";
+                if (FichaMedica.Diabetes)
+                    select_diab.SelectedItem = "Sí";
+                if (FichaMedica.Epilepsia)
+                    select_epilep.SelectedItem = "Sí";
+                if (FichaMedica.Hepatitis)
+                    select_hepat.SelectedItem = "Sí";
+                if (FichaMedica.HipertensionArterial)
+                    select_hipert.SelectedItem = "Sí";
+                if (FichaMedica.Tifus)
+                    select_tifus.SelectedItem = "Sí";
+            }
+            else
+            {
+                MessageBox.Show("Error al actualizar ficha medica");
             }
         }
     }

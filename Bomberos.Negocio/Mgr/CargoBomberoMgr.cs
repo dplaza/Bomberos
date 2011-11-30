@@ -21,6 +21,12 @@ namespace Bomberos.Negocio.Mgr
             return _CargoBombero.Update(p_CargoBombero);
         }
 
+        public bool BorrarCargoBombero(CargoBomberoDTO p_CargoBombero)
+        {
+            ICargoBomberoDom _CargoBombero = new CargoBomberoDom();
+            return _CargoBombero.Delete(p_CargoBombero);
+        }
+
         public List<CargoBomberoDTO> CargarCargoBombero(CargoBomberoDTO p_CargoBombero)
         {
             ICargoBomberoDom _CargoBombero = new CargoBomberoDom();

@@ -22,9 +22,9 @@ namespace Bomberos.Datos
             MySql.Data.MySqlClient.MySqlConnection conexionBD = ConnectBD();
             string query = "INSERT INTO fichas_medicas (rut, hepatitis, tifus, otras_enfermedades, operaciones, ";
             query = string.Concat(query, "hipertension_arterial, diabetes, epilepsia, asma, antecedentes_cronicos, ");
-            query = string.Concat(query, "medicamentos_toma, medicamentos_no_toma) VALUES (p_rut, p_hepatitis, p_tifus, ");
-            query = string.Concat(query, "p_otras_enfermedades, p_operaciones, p_hipertension_arterial, p_diabetes, ");
-            query = string.Concat(query, "p_epilepsia, p_asma, p_antecedentes_cronicos, p_medicamentos_toma, p_medicamentos_no_toma");
+            query = string.Concat(query, "medicamentos_toma, medicamentos_no_toma) VALUES (?p_rut,?p_hepatitis,?p_tifus, ");
+            query = string.Concat(query, "?p_otras_enfermedades,?p_operaciones,?p_hipertension_arterial,?p_diabetes, ");
+            query = string.Concat(query, "?p_epilepsia,?p_asma,?p_antecedentes_cronicos,?p_medicamentos_toma, ?p_medicamentos_no_toma)");
             MySql.Data.MySqlClient.MySqlCommand msqlCommand = new MySql.Data.MySqlClient.MySqlCommand(query, conexionBD);
             msqlCommand.Parameters.AddWithValue("?p_rut", p_FichaMedica.Bombero.Rut);
             msqlCommand.Parameters.AddWithValue("?p_hepatitis", p_FichaMedica.Hepatitis);
@@ -79,8 +79,8 @@ namespace Bomberos.Datos
 
                     bombero_rut.Rut = msqlReader["rut"].ToString();
                     bombero_rut = _Bombero.Load(bombero_rut);
-  
-                    retorno.Bombero.Rut = msqlReader["rut"].ToString();
+
+                    retorno.Bombero = bombero_rut;
                     retorno.Hepatitis = bool.Parse(msqlReader["hepatitis"].ToString());
                     retorno.Tifus = bool.Parse(msqlReader["tifus"].ToString());
                     retorno.OtrasEnfermedades = msqlReader["otras_enfermedades"].ToString();

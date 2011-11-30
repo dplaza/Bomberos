@@ -102,6 +102,7 @@ namespace Bomberos.Presentacion.Admin
             select_cargo.Enabled = true;
             select_estado.Enabled = true;
             txt_socio.Enabled = true;
+            txt_tib.Enabled = true;
 
         }
 
@@ -182,6 +183,14 @@ namespace Bomberos.Presentacion.Admin
 
         private void groupBox3_Enter(object sender, EventArgs e)
         {
+
+        }
+
+        private void btn_imprimir_Click(object sender, EventArgs e)
+        {
+            printForm1.Form = this;
+            printForm1.DocumentName = "Ficha Bombero";
+            printForm1.PrintAction = System.Drawing.Printing.PrintAction.PrintToPreview;
 
         }
     }
