@@ -64,12 +64,14 @@
     <Compile Include="IObservacionBomberoDAO.cs" />
     <Compile Include="IPremioBomberoDAO.cs" />
     <Compile Include="IPremioDAO.cs" />
+    <Compile Include="IReincorporacionBomberoDAO.cs" />
     <Compile Include="IServicioBomberoDAO.cs" />
     <Compile Include="ListaDAO.cs" />
     <Compile Include="ObservacionBomberoDAO.cs" />
     <Compile Include="PremioBomberoDAO.cs" />
     <Compile Include="PremioDAO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReincorporacionBomberoDAO.cs" />
     <Compile Include="ServicioBomberoDAO.cs" />
   </ItemGroup>
   <ItemGroup>

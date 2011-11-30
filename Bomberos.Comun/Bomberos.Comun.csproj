@@ -57,6 +57,7 @@
     <Compile Include="PremioBomberoDTO.cs" />
     <Compile Include="PremioDTO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReincorporacionBomberoDTO.cs" />
     <Compile Include="ServicioBomberoDTO.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
