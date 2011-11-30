@@ -133,7 +133,7 @@ namespace Bomberos.Datos
             //MySQL
             MySql.Data.MySqlClient.MySqlConnection conexionBD = ConnectBD();
             string query = "UPDATE cargos_bomberos SET fecha_desde = ?p_fecha_desde, rut = ?p_rut, ";
-            query = string.Concat(query, " id_cargo = ?p_id_cargo, fecha_hasta = ?p_id_fecha_hasta");
+            query = string.Concat(query, " id_cargo = ?p_id_cargo, fecha_hasta = ?p_fecha_hasta");
             MySql.Data.MySqlClient.MySqlCommand msqlCommand = new MySql.Data.MySqlClient.MySqlCommand(query, conexionBD);
             msqlCommand.Parameters.AddWithValue("?p_fecha_desde", p_CargoBombero.FechaDesde);
             msqlCommand.Parameters.AddWithValue("?p_rut", p_CargoBombero.Bombero.Rut);
