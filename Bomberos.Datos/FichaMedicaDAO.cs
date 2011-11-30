@@ -22,9 +22,13 @@ namespace Bomberos.Datos
             MySql.Data.MySqlClient.MySqlConnection conexionBD = ConnectBD();
             string query = "INSERT INTO fichas_medicas (rut, hepatitis, tifus, otras_enfermedades, operaciones, ";
             query = string.Concat(query, "hipertension_arterial, diabetes, epilepsia, asma, antecedentes_cronicos, ");
-            query = string.Concat(query, "medicamentos_toma, medicamentos_no_toma) VALUES (?p_rut,?p_hepatitis,?p_tifus, ");
+            query = string.Concat(query, "medicamentos_toma, medicamentos_no_toma, nombre_pariente_1, parentesco_pariente_1,");
+            query = string.Concat(query, "telefono_pariente_1, celular_pariente_1, nombre_pariente_2, parentesco_pariente_2,"); 
+            query = string.Concat(query, "telefono_pariente_2, celular_pariente_2) VALUES (?p_rut,?p_hepatitis,?p_tifus, ");
             query = string.Concat(query, "?p_otras_enfermedades,?p_operaciones,?p_hipertension_arterial,?p_diabetes, ");
-            query = string.Concat(query, "?p_epilepsia,?p_asma,?p_antecedentes_cronicos,?p_medicamentos_toma, ?p_medicamentos_no_toma)");
+            query = string.Concat(query, "?p_epilepsia,?p_asma,?p_antecedentes_cronicos,?p_medicamentos_toma, ?p_medicamentos_no_toma,");
+            query = string.Concat(query, "?p_nombre_pariente_1, ?p_parentesco_pariente_1, ?p_telefono_pariente_1, ?p_celular_pariente_1,");
+            query = string.Concat(query, "?p_nombre_pariente_2, ?p_parentesco_pariente_2, ?p_telefono_pariente_2, ?p_celular_pariente_2)");
             MySql.Data.MySqlClient.MySqlCommand msqlCommand = new MySql.Data.MySqlClient.MySqlCommand(query, conexionBD);
             msqlCommand.Parameters.AddWithValue("?p_rut", p_FichaMedica.Bombero.Rut);
             msqlCommand.Parameters.AddWithValue("?p_hepatitis", p_FichaMedica.Hepatitis);
@@ -38,6 +42,14 @@ namespace Bomberos.Datos
             msqlCommand.Parameters.AddWithValue("?p_antecedentes_cronicos", p_FichaMedica.AntecedentesCronicos);
             msqlCommand.Parameters.AddWithValue("?p_medicamentos_toma", p_FichaMedica.MedicamentosToma);
             msqlCommand.Parameters.AddWithValue("?p_medicamentos_no_toma", p_FichaMedica.MedicamentosNoToma);
+            msqlCommand.Parameters.AddWithValue("?p_nombre_pariente_1", p_FichaMedica.NombrePariente1);
+            msqlCommand.Parameters.AddWithValue("?p_parentesco_pariente_1", p_FichaMedica.ParentescoPariente1);
+            msqlCommand.Parameters.AddWithValue("?p_telefono_pariente_1", p_FichaMedica.TelefonoPariente1);
+            msqlCommand.Parameters.AddWithValue("?p_celular_pariente_1", p_FichaMedica.CelularPariente1);
+            msqlCommand.Parameters.AddWithValue("?p_nombre_pariente_2", p_FichaMedica.NombrePariente2);
+            msqlCommand.Parameters.AddWithValue("?p_parentesco_pariente_2", p_FichaMedica.ParentescoPariente2);
+            msqlCommand.Parameters.AddWithValue("?p_telefono_pariente_2", p_FichaMedica.TelefonoPariente2);
+            msqlCommand.Parameters.AddWithValue("?p_celular_pariente_2", p_FichaMedica.CelularPariente2);
 
             try
             {
@@ -92,6 +104,14 @@ namespace Bomberos.Datos
                     retorno.AntecedentesCronicos = msqlReader["antecedentes_cronicos"].ToString();
                     retorno.MedicamentosToma = msqlReader["medicamentos_toma"].ToString();
                     retorno.MedicamentosNoToma = msqlReader["medicamentos_no_toma"].ToString();
+                    retorno.NombrePariente1 = msqlReader["nombre_pariente_1"].ToString();
+                    retorno.ParentescoPariente1 = msqlReader["parentesco_pariente_1"].ToString();
+                    retorno.TelefonoPariente1 = msqlReader["telefono_pariente_1"].ToString();
+                    retorno.CelularPariente1 = msqlReader["celular_pariente_1"].ToString();
+                    retorno.NombrePariente2 = msqlReader["nombre_pariente_2"].ToString();
+                    retorno.ParentescoPariente2 = msqlReader["parentesco_pariente_2"].ToString();
+                    retorno.TelefonoPariente2 = msqlReader["telefono_pariente_2"].ToString();
+                    retorno.CelularPariente2 = msqlReader["celular_pariente_2"].ToString();
                 }
             }
 
@@ -116,7 +136,11 @@ namespace Bomberos.Datos
             query = string.Concat(query, "otras_enfermedades = ?p_otras_enfermedades, operaciones = ?p_operaciones,  ");
             query = string.Concat(query, "hipertension_arterial = ?p_hipertension_arterial, diabetes = ?p_diabetes, epilepsia = ?p_epilepsia, ");
             query = string.Concat(query, "asma = ?p_asma, antecedentes_cronicos = ?p_antecedentes_cronicos, ");
-            query = string.Concat(query, "medicamentos_toma = ?p_medicamentos_toma, medicamentos_no_toma = ?p_medicamentos_no_toma ");
+            query = string.Concat(query, "medicamentos_toma = ?p_medicamentos_toma, medicamentos_no_toma = ?p_medicamentos_no_toma, ");
+            query = string.Concat(query, "nombre_pariente_1 = ?p_nombre_pariente_1, parentesco_pariente_1 = ?p_parentesco_pariente_1,");
+            query = string.Concat(query, "telefono_pariente_1 = ?p_telefono_pariente_1, celular_pariente_1 = ?p_celular_pariente_1,");
+            query = string.Concat(query, "nombre_pariente_2 = ?p_nombre_pariente_2, parentesco_pariente_2 = ?p_parentesco_pariente_2,");
+            query = string.Concat(query, "telefono_pariente_2 = ?p_telefono_pariente_2, celular_pariente_2 = ?p_celular_pariente_2");
             query = string.Concat(query, "WHERE rut = ?p_rut");
             MySql.Data.MySqlClient.MySqlCommand msqlCommand = new MySql.Data.MySqlClient.MySqlCommand(query, conexionBD);
             msqlCommand.Parameters.AddWithValue("?p_rut", p_FichaMedica.Bombero.Rut);
@@ -131,6 +155,14 @@ namespace Bomberos.Datos
             msqlCommand.Parameters.AddWithValue("?p_antecedentes_cronicos", p_FichaMedica.AntecedentesCronicos);
             msqlCommand.Parameters.AddWithValue("?p_medicamentos_toma", p_FichaMedica.MedicamentosToma);
             msqlCommand.Parameters.AddWithValue("?p_medicamentos_no_toma", p_FichaMedica.MedicamentosNoToma);
+            msqlCommand.Parameters.AddWithValue("?p_nombre_pariente_1", p_FichaMedica.NombrePariente1);
+            msqlCommand.Parameters.AddWithValue("?p_parentesco_pariente_1", p_FichaMedica.ParentescoPariente1);
+            msqlCommand.Parameters.AddWithValue("?p_telefono_pariente_1", p_FichaMedica.TelefonoPariente1);
+            msqlCommand.Parameters.AddWithValue("?p_celular_pariente_1", p_FichaMedica.CelularPariente1);
+            msqlCommand.Parameters.AddWithValue("?p_nombre_pariente_2", p_FichaMedica.NombrePariente2);
+            msqlCommand.Parameters.AddWithValue("?p_parentesco_pariente_2", p_FichaMedica.ParentescoPariente2);
+            msqlCommand.Parameters.AddWithValue("?p_telefono_pariente_2", p_FichaMedica.TelefonoPariente2);
+            msqlCommand.Parameters.AddWithValue("?p_celular_pariente_2", p_FichaMedica.CelularPariente2);
 
 
             try

@@ -19,5 +19,13 @@ namespace Bomberos.Comun
         public string AntecedentesCronicos { get; set; }
         public string MedicamentosToma { get; set; }
         public string MedicamentosNoToma { get; set; }
+        public string NombrePariente1 { get; set; }
+        public string NombrePariente2 { get; set; }
+        public string ParentescoPariente1 { get; set; }
+        public string ParentescoPariente2 { get; set; }
+        public string TelefonoPariente1 { get; set; }
+        public string TelefonoPariente2 { get; set; }
+        public string CelularPariente1 { get; set; }
+        public string CelularPariente2 { get; set; }
     }
 }
