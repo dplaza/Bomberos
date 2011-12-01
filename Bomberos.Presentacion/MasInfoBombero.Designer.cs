@@ -126,6 +126,19 @@
             this.labelTIB = new System.Windows.Forms.Label();
             this.labelRut = new System.Windows.Forms.Label();
             this.labelnombre = new System.Windows.Forms.Label();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.label24 = new System.Windows.Forms.Label();
+            this.label25 = new System.Windows.Forms.Label();
+            this.label26 = new System.Windows.Forms.Label();
+            this.label27 = new System.Windows.Forms.Label();
+            this.txt_nombre_pariente_1 = new System.Windows.Forms.TextBox();
+            this.txt_parentesco_pariente_1 = new System.Windows.Forms.TextBox();
+            this.txt_telefono_pariente_1 = new System.Windows.Forms.TextBox();
+            this.txt_celular_pariente_1 = new System.Windows.Forms.TextBox();
+            this.txt_celular_pariente_2 = new System.Windows.Forms.TextBox();
+            this.txt_telefono_pariente_2 = new System.Windows.Forms.TextBox();
+            this.txt_parentesco_pariente_2 = new System.Windows.Forms.TextBox();
+            this.txt_nomnbre_pariente_2 = new System.Windows.Forms.TextBox();
             this.tabBox.SuspendLayout();
             this.FichaMedica.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -141,6 +154,7 @@
             this.Observaciones.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridObservacion)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.box_picture)).BeginInit();
+            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabBox
@@ -155,11 +169,12 @@
             this.tabBox.Location = new System.Drawing.Point(32, 122);
             this.tabBox.Name = "tabBox";
             this.tabBox.SelectedIndex = 0;
-            this.tabBox.Size = new System.Drawing.Size(610, 439);
+            this.tabBox.Size = new System.Drawing.Size(610, 593);
             this.tabBox.TabIndex = 0;
             // 
             // FichaMedica
             // 
+            this.FichaMedica.Controls.Add(this.groupBox3);
             this.FichaMedica.Controls.Add(this.btn_parientes);
             this.FichaMedica.Controls.Add(this.btn_enviar_cambios);
             this.FichaMedica.Controls.Add(this.txt_med_medContra);
@@ -174,7 +189,7 @@
             this.FichaMedica.Controls.Add(this.groupBox1);
             this.FichaMedica.Location = new System.Drawing.Point(4, 22);
             this.FichaMedica.Name = "FichaMedica";
-            this.FichaMedica.Size = new System.Drawing.Size(602, 413);
+            this.FichaMedica.Size = new System.Drawing.Size(602, 567);
             this.FichaMedica.TabIndex = 0;
             this.FichaMedica.Text = "Ficha Médica";
             this.FichaMedica.UseVisualStyleBackColor = true;
@@ -1074,7 +1089,7 @@
             // 
             // btnCerrar
             // 
-            this.btnCerrar.Location = new System.Drawing.Point(587, 585);
+            this.btnCerrar.Location = new System.Drawing.Point(587, 721);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(75, 23);
             this.btnCerrar.TabIndex = 1;
@@ -1128,11 +1143,124 @@
             this.labelnombre.TabIndex = 172;
             this.labelnombre.Text = "Nombre completo";
             // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.txt_celular_pariente_2);
+            this.groupBox3.Controls.Add(this.txt_telefono_pariente_2);
+            this.groupBox3.Controls.Add(this.txt_parentesco_pariente_2);
+            this.groupBox3.Controls.Add(this.txt_nomnbre_pariente_2);
+            this.groupBox3.Controls.Add(this.txt_celular_pariente_1);
+            this.groupBox3.Controls.Add(this.txt_telefono_pariente_1);
+            this.groupBox3.Controls.Add(this.txt_parentesco_pariente_1);
+            this.groupBox3.Controls.Add(this.txt_nombre_pariente_1);
+            this.groupBox3.Controls.Add(this.label27);
+            this.groupBox3.Controls.Add(this.label26);
+            this.groupBox3.Controls.Add(this.label25);
+            this.groupBox3.Controls.Add(this.label24);
+            this.groupBox3.Location = new System.Drawing.Point(14, 413);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(568, 141);
+            this.groupBox3.TabIndex = 12;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Parientes";
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Location = new System.Drawing.Point(6, 28);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(49, 13);
+            this.label24.TabIndex = 0;
+            this.label24.Text = "Nombres";
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Location = new System.Drawing.Point(188, 28);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(61, 13);
+            this.label25.TabIndex = 1;
+            this.label25.Text = "Parentesco";
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Location = new System.Drawing.Point(342, 28);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(49, 13);
+            this.label26.TabIndex = 2;
+            this.label26.Text = "Telefono";
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Location = new System.Drawing.Point(459, 28);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(39, 13);
+            this.label27.TabIndex = 3;
+            this.label27.Text = "Celular";
+            // 
+            // txt_nombre_pariente_1
+            // 
+            this.txt_nombre_pariente_1.Location = new System.Drawing.Point(6, 56);
+            this.txt_nombre_pariente_1.Name = "txt_nombre_pariente_1";
+            this.txt_nombre_pariente_1.Size = new System.Drawing.Size(152, 20);
+            this.txt_nombre_pariente_1.TabIndex = 4;
+            // 
+            // txt_parentesco_pariente_1
+            // 
+            this.txt_parentesco_pariente_1.Location = new System.Drawing.Point(191, 56);
+            this.txt_parentesco_pariente_1.Name = "txt_parentesco_pariente_1";
+            this.txt_parentesco_pariente_1.Size = new System.Drawing.Size(133, 20);
+            this.txt_parentesco_pariente_1.TabIndex = 5;
+            // 
+            // txt_telefono_pariente_1
+            // 
+            this.txt_telefono_pariente_1.Location = new System.Drawing.Point(345, 56);
+            this.txt_telefono_pariente_1.Name = "txt_telefono_pariente_1";
+            this.txt_telefono_pariente_1.Size = new System.Drawing.Size(89, 20);
+            this.txt_telefono_pariente_1.TabIndex = 6;
+            // 
+            // txt_celular_pariente_1
+            // 
+            this.txt_celular_pariente_1.Location = new System.Drawing.Point(462, 56);
+            this.txt_celular_pariente_1.Name = "txt_celular_pariente_1";
+            this.txt_celular_pariente_1.Size = new System.Drawing.Size(100, 20);
+            this.txt_celular_pariente_1.TabIndex = 7;
+            // 
+            // txt_celular_pariente_2
+            // 
+            this.txt_celular_pariente_2.Location = new System.Drawing.Point(462, 99);
+            this.txt_celular_pariente_2.Name = "txt_celular_pariente_2";
+            this.txt_celular_pariente_2.Size = new System.Drawing.Size(100, 20);
+            this.txt_celular_pariente_2.TabIndex = 11;
+            // 
+            // txt_telefono_pariente_2
+            // 
+            this.txt_telefono_pariente_2.Location = new System.Drawing.Point(345, 99);
+            this.txt_telefono_pariente_2.Name = "txt_telefono_pariente_2";
+            this.txt_telefono_pariente_2.Size = new System.Drawing.Size(89, 20);
+            this.txt_telefono_pariente_2.TabIndex = 10;
+            // 
+            // txt_parentesco_pariente_2
+            // 
+            this.txt_parentesco_pariente_2.Location = new System.Drawing.Point(191, 99);
+            this.txt_parentesco_pariente_2.Name = "txt_parentesco_pariente_2";
+            this.txt_parentesco_pariente_2.Size = new System.Drawing.Size(133, 20);
+            this.txt_parentesco_pariente_2.TabIndex = 9;
+            // 
+            // txt_nomnbre_pariente_2
+            // 
+            this.txt_nomnbre_pariente_2.Location = new System.Drawing.Point(6, 99);
+            this.txt_nomnbre_pariente_2.Name = "txt_nomnbre_pariente_2";
+            this.txt_nomnbre_pariente_2.Size = new System.Drawing.Size(152, 20);
+            this.txt_nomnbre_pariente_2.TabIndex = 8;
+            // 
             // MasInfoBombero
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(674, 635);
+            this.ClientSize = new System.Drawing.Size(674, 756);
             this.Controls.Add(this.labelCargo);
             this.Controls.Add(this.labelTIB);
             this.Controls.Add(this.labelRut);
@@ -1169,6 +1297,8 @@
             this.Observaciones.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridObservacion)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.box_picture)).EndInit();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1274,6 +1404,19 @@
         private System.Windows.Forms.DateTimePicker dateTimeListas;
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.TextBox txt_celular_pariente_2;
+        private System.Windows.Forms.TextBox txt_telefono_pariente_2;
+        private System.Windows.Forms.TextBox txt_parentesco_pariente_2;
+        private System.Windows.Forms.TextBox txt_nomnbre_pariente_2;
+        private System.Windows.Forms.TextBox txt_celular_pariente_1;
+        private System.Windows.Forms.TextBox txt_telefono_pariente_1;
+        private System.Windows.Forms.TextBox txt_parentesco_pariente_1;
+        private System.Windows.Forms.TextBox txt_nombre_pariente_1;
+        private System.Windows.Forms.Label label27;
+        private System.Windows.Forms.Label label26;
 
     }
 }
