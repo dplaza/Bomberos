@@ -30,6 +30,19 @@
         {
             this.tabBox = new System.Windows.Forms.TabControl();
             this.FichaMedica = new System.Windows.Forms.TabPage();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.txt_celular_pariente_2 = new System.Windows.Forms.TextBox();
+            this.txt_telefono_pariente_2 = new System.Windows.Forms.TextBox();
+            this.txt_parentesco_pariente_2 = new System.Windows.Forms.TextBox();
+            this.txt_nomnbre_pariente_2 = new System.Windows.Forms.TextBox();
+            this.txt_celular_pariente_1 = new System.Windows.Forms.TextBox();
+            this.txt_telefono_pariente_1 = new System.Windows.Forms.TextBox();
+            this.txt_parentesco_pariente_1 = new System.Windows.Forms.TextBox();
+            this.txt_nombre_pariente_1 = new System.Windows.Forms.TextBox();
+            this.label27 = new System.Windows.Forms.Label();
+            this.label26 = new System.Windows.Forms.Label();
+            this.label25 = new System.Windows.Forms.Label();
+            this.label24 = new System.Windows.Forms.Label();
             this.btn_parientes = new System.Windows.Forms.Button();
             this.btn_enviar_cambios = new System.Windows.Forms.Button();
             this.txt_med_medContra = new System.Windows.Forms.RichTextBox();
@@ -126,21 +139,34 @@
             this.labelTIB = new System.Windows.Forms.Label();
             this.labelRut = new System.Windows.Forms.Label();
             this.labelnombre = new System.Windows.Forms.Label();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.label24 = new System.Windows.Forms.Label();
-            this.label25 = new System.Windows.Forms.Label();
-            this.label26 = new System.Windows.Forms.Label();
-            this.label27 = new System.Windows.Forms.Label();
-            this.txt_nombre_pariente_1 = new System.Windows.Forms.TextBox();
-            this.txt_parentesco_pariente_1 = new System.Windows.Forms.TextBox();
-            this.txt_telefono_pariente_1 = new System.Windows.Forms.TextBox();
-            this.txt_celular_pariente_1 = new System.Windows.Forms.TextBox();
-            this.txt_celular_pariente_2 = new System.Windows.Forms.TextBox();
-            this.txt_telefono_pariente_2 = new System.Windows.Forms.TextBox();
-            this.txt_parentesco_pariente_2 = new System.Windows.Forms.TextBox();
-            this.txt_nomnbre_pariente_2 = new System.Windows.Forms.TextBox();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.label28 = new System.Windows.Forms.Label();
+            this.label29 = new System.Windows.Forms.Label();
+            this.label30 = new System.Windows.Forms.Label();
+            this.label31 = new System.Windows.Forms.Label();
+            this.label32 = new System.Windows.Forms.Label();
+            this.label33 = new System.Windows.Forms.Label();
+            this.label34 = new System.Windows.Forms.Label();
+            this.label35 = new System.Windows.Forms.Label();
+            this.label36 = new System.Windows.Forms.Label();
+            this.label37 = new System.Windows.Forms.Label();
+            this.label38 = new System.Windows.Forms.Label();
+            this.label39 = new System.Windows.Forms.Label();
+            this.ListaAño = new System.Windows.Forms.DateTimePicker();
+            this.ListaMes = new System.Windows.Forms.DateTimePicker();
+            this.txt_faltas = new System.Windows.Forms.TextBox();
+            this.txt_suspens = new System.Windows.Forms.TextBox();
+            this.txt_licencias = new System.Windows.Forms.TextBox();
+            this.txt_asistencias = new System.Windows.Forms.TextBox();
+            this.txt_llamadas = new System.Windows.Forms.TextBox();
+            this.txt_guardias = new System.Windows.Forms.TextBox();
+            this.txt_canje = new System.Windows.Forms.TextBox();
+            this.txt_otras_comp = new System.Windows.Forms.TextBox();
+            this.txt_otros_cuerp = new System.Windows.Forms.TextBox();
+            this.btn_agregar = new System.Windows.Forms.Button();
             this.tabBox.SuspendLayout();
             this.FichaMedica.SuspendLayout();
+            this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.HistorialCargos.SuspendLayout();
@@ -154,7 +180,7 @@
             this.Observaciones.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridObservacion)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.box_picture)).BeginInit();
-            this.groupBox3.SuspendLayout();
+            this.groupBox4.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabBox
@@ -166,7 +192,7 @@
             this.tabBox.Controls.Add(this.ResumenListas);
             this.tabBox.Controls.Add(this.Servicio);
             this.tabBox.Controls.Add(this.Observaciones);
-            this.tabBox.Location = new System.Drawing.Point(32, 122);
+            this.tabBox.Location = new System.Drawing.Point(33, 122);
             this.tabBox.Name = "tabBox";
             this.tabBox.SelectedIndex = 0;
             this.tabBox.Size = new System.Drawing.Size(610, 593);
@@ -193,6 +219,119 @@
             this.FichaMedica.TabIndex = 0;
             this.FichaMedica.Text = "Ficha Médica";
             this.FichaMedica.UseVisualStyleBackColor = true;
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.txt_celular_pariente_2);
+            this.groupBox3.Controls.Add(this.txt_telefono_pariente_2);
+            this.groupBox3.Controls.Add(this.txt_parentesco_pariente_2);
+            this.groupBox3.Controls.Add(this.txt_nomnbre_pariente_2);
+            this.groupBox3.Controls.Add(this.txt_celular_pariente_1);
+            this.groupBox3.Controls.Add(this.txt_telefono_pariente_1);
+            this.groupBox3.Controls.Add(this.txt_parentesco_pariente_1);
+            this.groupBox3.Controls.Add(this.txt_nombre_pariente_1);
+            this.groupBox3.Controls.Add(this.label27);
+            this.groupBox3.Controls.Add(this.label26);
+            this.groupBox3.Controls.Add(this.label25);
+            this.groupBox3.Controls.Add(this.label24);
+            this.groupBox3.Location = new System.Drawing.Point(14, 413);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(568, 141);
+            this.groupBox3.TabIndex = 12;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Parientes";
+            // 
+            // txt_celular_pariente_2
+            // 
+            this.txt_celular_pariente_2.Location = new System.Drawing.Point(462, 99);
+            this.txt_celular_pariente_2.Name = "txt_celular_pariente_2";
+            this.txt_celular_pariente_2.Size = new System.Drawing.Size(100, 20);
+            this.txt_celular_pariente_2.TabIndex = 11;
+            // 
+            // txt_telefono_pariente_2
+            // 
+            this.txt_telefono_pariente_2.Location = new System.Drawing.Point(345, 99);
+            this.txt_telefono_pariente_2.Name = "txt_telefono_pariente_2";
+            this.txt_telefono_pariente_2.Size = new System.Drawing.Size(89, 20);
+            this.txt_telefono_pariente_2.TabIndex = 10;
+            // 
+            // txt_parentesco_pariente_2
+            // 
+            this.txt_parentesco_pariente_2.Location = new System.Drawing.Point(191, 99);
+            this.txt_parentesco_pariente_2.Name = "txt_parentesco_pariente_2";
+            this.txt_parentesco_pariente_2.Size = new System.Drawing.Size(133, 20);
+            this.txt_parentesco_pariente_2.TabIndex = 9;
+            // 
+            // txt_nomnbre_pariente_2
+            // 
+            this.txt_nomnbre_pariente_2.Location = new System.Drawing.Point(6, 99);
+            this.txt_nomnbre_pariente_2.Name = "txt_nomnbre_pariente_2";
+            this.txt_nomnbre_pariente_2.Size = new System.Drawing.Size(152, 20);
+            this.txt_nomnbre_pariente_2.TabIndex = 8;
+            // 
+            // txt_celular_pariente_1
+            // 
+            this.txt_celular_pariente_1.Location = new System.Drawing.Point(462, 56);
+            this.txt_celular_pariente_1.Name = "txt_celular_pariente_1";
+            this.txt_celular_pariente_1.Size = new System.Drawing.Size(100, 20);
+            this.txt_celular_pariente_1.TabIndex = 7;
+            // 
+            // txt_telefono_pariente_1
+            // 
+            this.txt_telefono_pariente_1.Location = new System.Drawing.Point(345, 56);
+            this.txt_telefono_pariente_1.Name = "txt_telefono_pariente_1";
+            this.txt_telefono_pariente_1.Size = new System.Drawing.Size(89, 20);
+            this.txt_telefono_pariente_1.TabIndex = 6;
+            // 
+            // txt_parentesco_pariente_1
+            // 
+            this.txt_parentesco_pariente_1.Location = new System.Drawing.Point(191, 56);
+            this.txt_parentesco_pariente_1.Name = "txt_parentesco_pariente_1";
+            this.txt_parentesco_pariente_1.Size = new System.Drawing.Size(133, 20);
+            this.txt_parentesco_pariente_1.TabIndex = 5;
+            // 
+            // txt_nombre_pariente_1
+            // 
+            this.txt_nombre_pariente_1.Location = new System.Drawing.Point(6, 56);
+            this.txt_nombre_pariente_1.Name = "txt_nombre_pariente_1";
+            this.txt_nombre_pariente_1.Size = new System.Drawing.Size(152, 20);
+            this.txt_nombre_pariente_1.TabIndex = 4;
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Location = new System.Drawing.Point(459, 28);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(39, 13);
+            this.label27.TabIndex = 3;
+            this.label27.Text = "Celular";
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Location = new System.Drawing.Point(342, 28);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(49, 13);
+            this.label26.TabIndex = 2;
+            this.label26.Text = "Telefono";
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Location = new System.Drawing.Point(188, 28);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(61, 13);
+            this.label25.TabIndex = 1;
+            this.label25.Text = "Parentesco";
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Location = new System.Drawing.Point(6, 28);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(49, 13);
+            this.label24.TabIndex = 0;
+            this.label24.Text = "Nombres";
             // 
             // btn_parientes
             // 
@@ -474,7 +613,7 @@
             this.HistorialCargos.Controls.Add(this.dataGridCargos);
             this.HistorialCargos.Location = new System.Drawing.Point(4, 22);
             this.HistorialCargos.Name = "HistorialCargos";
-            this.HistorialCargos.Size = new System.Drawing.Size(602, 413);
+            this.HistorialCargos.Size = new System.Drawing.Size(602, 567);
             this.HistorialCargos.TabIndex = 0;
             this.HistorialCargos.Text = "Historial Cargos";
             this.HistorialCargos.UseVisualStyleBackColor = true;
@@ -566,7 +705,7 @@
             this.dataGridCargos.Location = new System.Drawing.Point(23, 120);
             this.dataGridCargos.Name = "dataGridCargos";
             this.dataGridCargos.ReadOnly = true;
-            this.dataGridCargos.Size = new System.Drawing.Size(557, 272);
+            this.dataGridCargos.Size = new System.Drawing.Size(557, 425);
             this.dataGridCargos.TabIndex = 0;
             // 
             // Cargo
@@ -623,7 +762,7 @@
             this.HistorialPremios.Location = new System.Drawing.Point(4, 22);
             this.HistorialPremios.Name = "HistorialPremios";
             this.HistorialPremios.Padding = new System.Windows.Forms.Padding(3);
-            this.HistorialPremios.Size = new System.Drawing.Size(602, 413);
+            this.HistorialPremios.Size = new System.Drawing.Size(602, 567);
             this.HistorialPremios.TabIndex = 1;
             this.HistorialPremios.Text = "Historial Premios";
             this.HistorialPremios.UseVisualStyleBackColor = true;
@@ -670,7 +809,7 @@
             this.dataGridPremios.Location = new System.Drawing.Point(22, 116);
             this.dataGridPremios.Name = "dataGridPremios";
             this.dataGridPremios.ReadOnly = true;
-            this.dataGridPremios.Size = new System.Drawing.Size(559, 276);
+            this.dataGridPremios.Size = new System.Drawing.Size(559, 427);
             this.dataGridPremios.TabIndex = 7;
             // 
             // NombrePremio
@@ -771,7 +910,7 @@
             this.HistorialCursos.Location = new System.Drawing.Point(4, 22);
             this.HistorialCursos.Name = "HistorialCursos";
             this.HistorialCursos.Padding = new System.Windows.Forms.Padding(3);
-            this.HistorialCursos.Size = new System.Drawing.Size(602, 413);
+            this.HistorialCursos.Size = new System.Drawing.Size(602, 567);
             this.HistorialCursos.TabIndex = 2;
             this.HistorialCursos.Text = "Historial Cursos";
             this.HistorialCursos.UseVisualStyleBackColor = true;
@@ -801,7 +940,7 @@
             this.dataGridCursos.Location = new System.Drawing.Point(21, 130);
             this.dataGridCursos.Name = "dataGridCursos";
             this.dataGridCursos.ReadOnly = true;
-            this.dataGridCursos.Size = new System.Drawing.Size(560, 260);
+            this.dataGridCursos.Size = new System.Drawing.Size(560, 417);
             this.dataGridCursos.TabIndex = 9;
             // 
             // NombreCurso
@@ -931,6 +1070,8 @@
             // 
             // ResumenListas
             // 
+            this.ResumenListas.Controls.Add(this.label39);
+            this.ResumenListas.Controls.Add(this.groupBox4);
             this.ResumenListas.Controls.Add(this.button1);
             this.ResumenListas.Controls.Add(this.dateTimeListas);
             this.ResumenListas.Controls.Add(this.label23);
@@ -938,14 +1079,15 @@
             this.ResumenListas.Location = new System.Drawing.Point(4, 22);
             this.ResumenListas.Name = "ResumenListas";
             this.ResumenListas.Padding = new System.Windows.Forms.Padding(3);
-            this.ResumenListas.Size = new System.Drawing.Size(602, 413);
+            this.ResumenListas.Size = new System.Drawing.Size(602, 567);
             this.ResumenListas.TabIndex = 3;
             this.ResumenListas.Text = "Resumen Listas";
             this.ResumenListas.UseVisualStyleBackColor = true;
+            this.ResumenListas.Click += new System.EventHandler(this.ResumenListas_Click);
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(379, 15);
+            this.button1.Location = new System.Drawing.Point(467, 532);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(102, 23);
             this.button1.TabIndex = 3;
@@ -956,16 +1098,16 @@
             // 
             this.dateTimeListas.CustomFormat = "yyyy";
             this.dateTimeListas.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimeListas.Location = new System.Drawing.Point(131, 15);
+            this.dateTimeListas.Location = new System.Drawing.Point(122, 171);
             this.dateTimeListas.Name = "dateTimeListas";
-            this.dateTimeListas.Size = new System.Drawing.Size(69, 20);
+            this.dateTimeListas.Size = new System.Drawing.Size(55, 20);
             this.dateTimeListas.TabIndex = 2;
             this.dateTimeListas.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             // 
             // label23
             // 
             this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(31, 21);
+            this.label23.Location = new System.Drawing.Point(23, 177);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(81, 13);
             this.label23.TabIndex = 1;
@@ -974,9 +1116,9 @@
             // dataGridListas
             // 
             this.dataGridListas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridListas.Location = new System.Drawing.Point(20, 55);
+            this.dataGridListas.Location = new System.Drawing.Point(23, 209);
             this.dataGridListas.Name = "dataGridListas";
-            this.dataGridListas.Size = new System.Drawing.Size(563, 337);
+            this.dataGridListas.Size = new System.Drawing.Size(563, 241);
             this.dataGridListas.TabIndex = 0;
             // 
             // Servicio
@@ -984,7 +1126,7 @@
             this.Servicio.Location = new System.Drawing.Point(4, 22);
             this.Servicio.Name = "Servicio";
             this.Servicio.Padding = new System.Windows.Forms.Padding(3);
-            this.Servicio.Size = new System.Drawing.Size(602, 413);
+            this.Servicio.Size = new System.Drawing.Size(602, 567);
             this.Servicio.TabIndex = 4;
             this.Servicio.Text = "Servicio";
             this.Servicio.UseVisualStyleBackColor = true;
@@ -1000,7 +1142,7 @@
             this.Observaciones.Location = new System.Drawing.Point(4, 22);
             this.Observaciones.Name = "Observaciones";
             this.Observaciones.Padding = new System.Windows.Forms.Padding(3);
-            this.Observaciones.Size = new System.Drawing.Size(602, 413);
+            this.Observaciones.Size = new System.Drawing.Size(602, 567);
             this.Observaciones.TabIndex = 5;
             this.Observaciones.Text = "Observaciones";
             this.Observaciones.UseVisualStyleBackColor = true;
@@ -1143,118 +1285,241 @@
             this.labelnombre.TabIndex = 172;
             this.labelnombre.Text = "Nombre completo";
             // 
-            // groupBox3
+            // groupBox4
             // 
-            this.groupBox3.Controls.Add(this.txt_celular_pariente_2);
-            this.groupBox3.Controls.Add(this.txt_telefono_pariente_2);
-            this.groupBox3.Controls.Add(this.txt_parentesco_pariente_2);
-            this.groupBox3.Controls.Add(this.txt_nomnbre_pariente_2);
-            this.groupBox3.Controls.Add(this.txt_celular_pariente_1);
-            this.groupBox3.Controls.Add(this.txt_telefono_pariente_1);
-            this.groupBox3.Controls.Add(this.txt_parentesco_pariente_1);
-            this.groupBox3.Controls.Add(this.txt_nombre_pariente_1);
-            this.groupBox3.Controls.Add(this.label27);
-            this.groupBox3.Controls.Add(this.label26);
-            this.groupBox3.Controls.Add(this.label25);
-            this.groupBox3.Controls.Add(this.label24);
-            this.groupBox3.Location = new System.Drawing.Point(14, 413);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(568, 141);
-            this.groupBox3.TabIndex = 12;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Parientes";
+            this.groupBox4.Controls.Add(this.btn_agregar);
+            this.groupBox4.Controls.Add(this.txt_otros_cuerp);
+            this.groupBox4.Controls.Add(this.txt_otras_comp);
+            this.groupBox4.Controls.Add(this.txt_canje);
+            this.groupBox4.Controls.Add(this.txt_guardias);
+            this.groupBox4.Controls.Add(this.txt_llamadas);
+            this.groupBox4.Controls.Add(this.txt_asistencias);
+            this.groupBox4.Controls.Add(this.label38);
+            this.groupBox4.Controls.Add(this.txt_licencias);
+            this.groupBox4.Controls.Add(this.txt_suspens);
+            this.groupBox4.Controls.Add(this.label37);
+            this.groupBox4.Controls.Add(this.txt_faltas);
+            this.groupBox4.Controls.Add(this.ListaMes);
+            this.groupBox4.Controls.Add(this.ListaAño);
+            this.groupBox4.Controls.Add(this.label36);
+            this.groupBox4.Controls.Add(this.label35);
+            this.groupBox4.Controls.Add(this.label34);
+            this.groupBox4.Controls.Add(this.label33);
+            this.groupBox4.Controls.Add(this.label32);
+            this.groupBox4.Controls.Add(this.label31);
+            this.groupBox4.Controls.Add(this.label30);
+            this.groupBox4.Controls.Add(this.label29);
+            this.groupBox4.Controls.Add(this.label28);
+            this.groupBox4.Location = new System.Drawing.Point(6, 6);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(590, 159);
+            this.groupBox4.TabIndex = 4;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Agregar Asistencia";
             // 
-            // label24
+            // label28
             // 
-            this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(6, 28);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(49, 13);
-            this.label24.TabIndex = 0;
-            this.label24.Text = "Nombres";
+            this.label28.AutoSize = true;
+            this.label28.Location = new System.Drawing.Point(14, 24);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(26, 13);
+            this.label28.TabIndex = 0;
+            this.label28.Text = "Año";
             // 
-            // label25
+            // label29
             // 
-            this.label25.AutoSize = true;
-            this.label25.Location = new System.Drawing.Point(188, 28);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(61, 13);
-            this.label25.TabIndex = 1;
-            this.label25.Text = "Parentesco";
+            this.label29.AutoSize = true;
+            this.label29.Location = new System.Drawing.Point(14, 50);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(27, 13);
+            this.label29.TabIndex = 1;
+            this.label29.Text = "Mes";
+            this.label29.Click += new System.EventHandler(this.label29_Click);
             // 
-            // label26
+            // label30
             // 
-            this.label26.AutoSize = true;
-            this.label26.Location = new System.Drawing.Point(342, 28);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(49, 13);
-            this.label26.TabIndex = 2;
-            this.label26.Text = "Telefono";
+            this.label30.AutoSize = true;
+            this.label30.Location = new System.Drawing.Point(14, 76);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(35, 13);
+            this.label30.TabIndex = 2;
+            this.label30.Text = "Faltas";
             // 
-            // label27
+            // label31
             // 
-            this.label27.AutoSize = true;
-            this.label27.Location = new System.Drawing.Point(459, 28);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(39, 13);
-            this.label27.TabIndex = 3;
-            this.label27.Text = "Celular";
+            this.label31.AutoSize = true;
+            this.label31.Location = new System.Drawing.Point(174, 24);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(73, 13);
+            this.label31.TabIndex = 3;
+            this.label31.Text = "Suspensiones";
             // 
-            // txt_nombre_pariente_1
+            // label32
             // 
-            this.txt_nombre_pariente_1.Location = new System.Drawing.Point(6, 56);
-            this.txt_nombre_pariente_1.Name = "txt_nombre_pariente_1";
-            this.txt_nombre_pariente_1.Size = new System.Drawing.Size(152, 20);
-            this.txt_nombre_pariente_1.TabIndex = 4;
+            this.label32.AutoSize = true;
+            this.label32.Location = new System.Drawing.Point(174, 50);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(52, 13);
+            this.label32.TabIndex = 4;
+            this.label32.Text = "Licencias";
             // 
-            // txt_parentesco_pariente_1
+            // label33
             // 
-            this.txt_parentesco_pariente_1.Location = new System.Drawing.Point(191, 56);
-            this.txt_parentesco_pariente_1.Name = "txt_parentesco_pariente_1";
-            this.txt_parentesco_pariente_1.Size = new System.Drawing.Size(133, 20);
-            this.txt_parentesco_pariente_1.TabIndex = 5;
+            this.label33.AutoSize = true;
+            this.label33.Location = new System.Drawing.Point(174, 76);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(60, 13);
+            this.label33.TabIndex = 5;
+            this.label33.Text = "Asistencias";
             // 
-            // txt_telefono_pariente_1
+            // label34
             // 
-            this.txt_telefono_pariente_1.Location = new System.Drawing.Point(345, 56);
-            this.txt_telefono_pariente_1.Name = "txt_telefono_pariente_1";
-            this.txt_telefono_pariente_1.Size = new System.Drawing.Size(89, 20);
-            this.txt_telefono_pariente_1.TabIndex = 6;
+            this.label34.AutoSize = true;
+            this.label34.Location = new System.Drawing.Point(332, 24);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(130, 13);
+            this.label34.TabIndex = 6;
+            this.label34.Text = "Llamada de Comandancia";
             // 
-            // txt_celular_pariente_1
+            // label35
             // 
-            this.txt_celular_pariente_1.Location = new System.Drawing.Point(462, 56);
-            this.txt_celular_pariente_1.Name = "txt_celular_pariente_1";
-            this.txt_celular_pariente_1.Size = new System.Drawing.Size(100, 20);
-            this.txt_celular_pariente_1.TabIndex = 7;
+            this.label35.AutoSize = true;
+            this.label35.Location = new System.Drawing.Point(332, 52);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(101, 13);
+            this.label35.TabIndex = 7;
+            this.label35.Text = "Guardias Nocturnas";
             // 
-            // txt_celular_pariente_2
+            // label36
             // 
-            this.txt_celular_pariente_2.Location = new System.Drawing.Point(462, 99);
-            this.txt_celular_pariente_2.Name = "txt_celular_pariente_2";
-            this.txt_celular_pariente_2.Size = new System.Drawing.Size(100, 20);
-            this.txt_celular_pariente_2.TabIndex = 11;
+            this.label36.AutoSize = true;
+            this.label36.Location = new System.Drawing.Point(332, 80);
+            this.label36.Name = "label36";
+            this.label36.Size = new System.Drawing.Size(104, 13);
+            this.label36.TabIndex = 8;
+            this.label36.Text = "Compañias de Canje";
             // 
-            // txt_telefono_pariente_2
+            // label37
             // 
-            this.txt_telefono_pariente_2.Location = new System.Drawing.Point(345, 99);
-            this.txt_telefono_pariente_2.Name = "txt_telefono_pariente_2";
-            this.txt_telefono_pariente_2.Size = new System.Drawing.Size(89, 20);
-            this.txt_telefono_pariente_2.TabIndex = 10;
+            this.label37.AutoSize = true;
+            this.label37.Location = new System.Drawing.Point(14, 104);
+            this.label37.Name = "label37";
+            this.label37.Size = new System.Drawing.Size(87, 13);
+            this.label37.TabIndex = 9;
+            this.label37.Text = "Otras Compañias";
             // 
-            // txt_parentesco_pariente_2
+            // label38
             // 
-            this.txt_parentesco_pariente_2.Location = new System.Drawing.Point(191, 99);
-            this.txt_parentesco_pariente_2.Name = "txt_parentesco_pariente_2";
-            this.txt_parentesco_pariente_2.Size = new System.Drawing.Size(133, 20);
-            this.txt_parentesco_pariente_2.TabIndex = 9;
+            this.label38.AutoSize = true;
+            this.label38.Location = new System.Drawing.Point(14, 130);
+            this.label38.Name = "label38";
+            this.label38.Size = new System.Drawing.Size(74, 13);
+            this.label38.TabIndex = 10;
+            this.label38.Text = "Otros Cuerpos";
             // 
-            // txt_nomnbre_pariente_2
+            // label39
             // 
-            this.txt_nomnbre_pariente_2.Location = new System.Drawing.Point(6, 99);
-            this.txt_nomnbre_pariente_2.Name = "txt_nomnbre_pariente_2";
-            this.txt_nomnbre_pariente_2.Size = new System.Drawing.Size(152, 20);
-            this.txt_nomnbre_pariente_2.TabIndex = 8;
+            this.label39.AutoSize = true;
+            this.label39.Location = new System.Drawing.Point(23, 469);
+            this.label39.Name = "label39";
+            this.label39.Size = new System.Drawing.Size(31, 13);
+            this.label39.TabIndex = 5;
+            this.label39.Text = "Total";
+            // 
+            // ListaAño
+            // 
+            this.ListaAño.CustomFormat = "yyyy";
+            this.ListaAño.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.ListaAño.Location = new System.Drawing.Point(55, 21);
+            this.ListaAño.Name = "ListaAño";
+            this.ListaAño.Size = new System.Drawing.Size(65, 20);
+            this.ListaAño.TabIndex = 11;
+            this.ListaAño.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged_1);
+            // 
+            // ListaMes
+            // 
+            this.ListaMes.CustomFormat = "MMMM";
+            this.ListaMes.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.ListaMes.Location = new System.Drawing.Point(55, 47);
+            this.ListaMes.Name = "ListaMes";
+            this.ListaMes.Size = new System.Drawing.Size(92, 20);
+            this.ListaMes.TabIndex = 12;
+            // 
+            // txt_faltas
+            // 
+            this.txt_faltas.Location = new System.Drawing.Point(55, 73);
+            this.txt_faltas.Name = "txt_faltas";
+            this.txt_faltas.Size = new System.Drawing.Size(53, 20);
+            this.txt_faltas.TabIndex = 13;
+            this.txt_faltas.TextChanged += new System.EventHandler(this.txt_faltas_TextChanged);
+            // 
+            // txt_suspens
+            // 
+            this.txt_suspens.Location = new System.Drawing.Point(253, 21);
+            this.txt_suspens.Name = "txt_suspens";
+            this.txt_suspens.Size = new System.Drawing.Size(55, 20);
+            this.txt_suspens.TabIndex = 14;
+            this.txt_suspens.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+            // 
+            // txt_licencias
+            // 
+            this.txt_licencias.Location = new System.Drawing.Point(253, 48);
+            this.txt_licencias.Name = "txt_licencias";
+            this.txt_licencias.Size = new System.Drawing.Size(55, 20);
+            this.txt_licencias.TabIndex = 15;
+            this.txt_licencias.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
+            // 
+            // txt_asistencias
+            // 
+            this.txt_asistencias.Location = new System.Drawing.Point(253, 75);
+            this.txt_asistencias.Name = "txt_asistencias";
+            this.txt_asistencias.Size = new System.Drawing.Size(55, 20);
+            this.txt_asistencias.TabIndex = 16;
+            // 
+            // txt_llamadas
+            // 
+            this.txt_llamadas.Location = new System.Drawing.Point(468, 21);
+            this.txt_llamadas.Name = "txt_llamadas";
+            this.txt_llamadas.Size = new System.Drawing.Size(58, 20);
+            this.txt_llamadas.TabIndex = 17;
+            // 
+            // txt_guardias
+            // 
+            this.txt_guardias.Location = new System.Drawing.Point(468, 48);
+            this.txt_guardias.Name = "txt_guardias";
+            this.txt_guardias.Size = new System.Drawing.Size(58, 20);
+            this.txt_guardias.TabIndex = 18;
+            this.txt_guardias.TextChanged += new System.EventHandler(this.textBox6_TextChanged);
+            // 
+            // txt_canje
+            // 
+            this.txt_canje.Location = new System.Drawing.Point(468, 75);
+            this.txt_canje.Name = "txt_canje";
+            this.txt_canje.Size = new System.Drawing.Size(58, 20);
+            this.txt_canje.TabIndex = 19;
+            // 
+            // txt_otras_comp
+            // 
+            this.txt_otras_comp.Location = new System.Drawing.Point(107, 101);
+            this.txt_otras_comp.Name = "txt_otras_comp";
+            this.txt_otras_comp.Size = new System.Drawing.Size(64, 20);
+            this.txt_otras_comp.TabIndex = 20;
+            // 
+            // txt_otros_cuerp
+            // 
+            this.txt_otros_cuerp.Location = new System.Drawing.Point(108, 127);
+            this.txt_otros_cuerp.Name = "txt_otros_cuerp";
+            this.txt_otros_cuerp.Size = new System.Drawing.Size(63, 20);
+            this.txt_otros_cuerp.TabIndex = 21;
+            // 
+            // btn_agregar
+            // 
+            this.btn_agregar.Location = new System.Drawing.Point(324, 113);
+            this.btn_agregar.Name = "btn_agregar";
+            this.btn_agregar.Size = new System.Drawing.Size(121, 23);
+            this.btn_agregar.TabIndex = 22;
+            this.btn_agregar.Text = "Agregar ";
+            this.btn_agregar.UseVisualStyleBackColor = true;
             // 
             // MasInfoBombero
             // 
@@ -1277,6 +1542,8 @@
             this.tabBox.ResumeLayout(false);
             this.FichaMedica.ResumeLayout(false);
             this.FichaMedica.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
@@ -1297,8 +1564,8 @@
             this.Observaciones.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridObservacion)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.box_picture)).EndInit();
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox4.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1417,6 +1684,31 @@
         private System.Windows.Forms.TextBox txt_nombre_pariente_1;
         private System.Windows.Forms.Label label27;
         private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.Label label34;
+        private System.Windows.Forms.Label label33;
+        private System.Windows.Forms.Label label32;
+        private System.Windows.Forms.Label label31;
+        private System.Windows.Forms.Label label30;
+        private System.Windows.Forms.Label label29;
+        private System.Windows.Forms.Label label28;
+        private System.Windows.Forms.Label label38;
+        private System.Windows.Forms.Label label37;
+        private System.Windows.Forms.Label label36;
+        private System.Windows.Forms.Label label35;
+        private System.Windows.Forms.Label label39;
+        private System.Windows.Forms.TextBox txt_faltas;
+        private System.Windows.Forms.DateTimePicker ListaMes;
+        private System.Windows.Forms.DateTimePicker ListaAño;
+        private System.Windows.Forms.TextBox txt_canje;
+        private System.Windows.Forms.TextBox txt_guardias;
+        private System.Windows.Forms.TextBox txt_llamadas;
+        private System.Windows.Forms.TextBox txt_asistencias;
+        private System.Windows.Forms.TextBox txt_licencias;
+        private System.Windows.Forms.TextBox txt_suspens;
+        private System.Windows.Forms.Button btn_agregar;
+        private System.Windows.Forms.TextBox txt_otros_cuerp;
+        private System.Windows.Forms.TextBox txt_otras_comp;
 
     }
 }

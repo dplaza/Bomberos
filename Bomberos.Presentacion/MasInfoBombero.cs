@@ -397,5 +397,40 @@ namespace Bomberos.Presentacion
             Lista.Bombero = ContextoDTO.Instancia().BomberoSelected;
             dataGridListas.DataSource = _Lista.CargarLista(Lista).FindAll(p => p.Año.Equals(dateTimeListas.Value.ToString()));
         }
+
+        private void label29_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ResumenListas_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dateTimePicker1_ValueChanged_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox3_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox6_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txt_faltas_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
