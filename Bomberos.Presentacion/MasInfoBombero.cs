@@ -432,5 +432,30 @@ namespace Bomberos.Presentacion
         {
 
         }
+
+        private void groupBox5_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Servicio_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox8_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void DiaTpoServ_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void AbonosServ_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
