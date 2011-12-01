@@ -11,19 +11,19 @@ namespace Bomberos.Negocio.Dom
     {
         public bool Insert(ListaDTO p_Lista)
         {
-            IListaDAO _Lista = ListaDAO();
+            IListaDAO _Lista = new ListaDAO();
             return _Lista.Insert(p_Lista);
         }
 
         public List<ListaDTO> Load(ListaDTO p_Lista)
         {
-            IListaDAO _Lista = ListaDAO();
+            IListaDAO _Lista = new ListaDAO();
             return _Lista.Load(p_Lista);
         }
 
         public bool Update(ListaDTO p_Lista)
         {
-            IListaDAO _Lista = ListaDAO();
+            IListaDAO _Lista = new ListaDAO();
             return _Lista.Update(p_Lista);
         }
     }

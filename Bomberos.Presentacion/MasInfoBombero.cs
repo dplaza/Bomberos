@@ -391,7 +391,11 @@ namespace Bomberos.Presentacion
 
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
         {
+            IListaMgr _Lista = new ListaMgr();
+            ListaDTO Lista = new ListaDTO();
 
+            Lista.Bombero = ContextoDTO.Instancia().BomberoSelected;
+            dataGridListas.DataSource = _Lista.CargarLista(Lista).FindAll(p => p.Año.Equals(dateTimeListas.Value.ToString()));
         }
     }
 }
