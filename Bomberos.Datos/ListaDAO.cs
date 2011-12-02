@@ -20,7 +20,7 @@ namespace Bomberos.Datos
             //MySQL
             MySql.Data.MySqlClient.MySqlConnection conexionBD = ConnectBD();
             string query = "INSERT INTO listas_bomberos (asistencia, rut, canje, faltas, guardias, licencias, llamadas, otras_comp, otros_cuerp, suspensiones, anio, mes) ";
-            query = string.Concat("VALUES (?p_asistencia, ?p_rut, ?p_canje, ?p_faltas, ?p_guardias, ?p_licencias, ?p_llamadas, ?p_otrascomp, ?p_otroscuerp, ?p_suspensiones, ?p_anio, ?p_mes)");
+            query = string.Concat(query, "VALUES (?p_asistencia, ?p_rut, ?p_canje, ?p_faltas, ?p_guardias, ?p_licencias, ?p_llamadas, ?p_otrascomp, ?p_otroscuerp, ?p_suspensiones, ?p_anio, ?p_mes)");
             MySql.Data.MySqlClient.MySqlCommand msqlCommand = new MySql.Data.MySqlClient.MySqlCommand(query, conexionBD);
             msqlCommand.Parameters.AddWithValue("?p_asistencia", p_Lista.Asistencia);
             msqlCommand.Parameters.AddWithValue("?p_rut", p_Lista.Bombero.Rut);
@@ -43,6 +43,7 @@ namespace Bomberos.Datos
             }
             catch (Exception er)
             {
+                throw er;
                 return false;
             }
             finally
@@ -56,9 +57,10 @@ namespace Bomberos.Datos
             List<ListaDTO> ListaListaBombero = new List<ListaDTO>();
             //MySQL
             MySql.Data.MySqlClient.MySqlConnection conexionBD = ConnectBD();
-            string query = "SELECT * FROM listas_bomberos WHERE rut = ?p_rut";
+            string query = "SELECT * FROM listas_bomberos WHERE rut = ?p_rut AND anio = ?p_anio";
             MySql.Data.MySqlClient.MySqlCommand msqlCommand = new MySql.Data.MySqlClient.MySqlCommand(query, conexionBD);
             msqlCommand.Parameters.AddWithValue("?p_rut", p_Lista.Bombero.Rut);
+            msqlCommand.Parameters.AddWithValue("?p_anio", p_Lista.Año);
 
             try
             {
@@ -68,10 +70,12 @@ namespace Bomberos.Datos
                 {
                     IBomberoDAO _Bombero = new BomberoDAO();
                     ListaDTO retorno = new ListaDTO();
+                    BomberoDTO bombero_rut = new BomberoDTO();
 
-                    retorno.Bombero.Rut = msqlReader["rut"].ToString();
-                    retorno.Bombero = _Bombero.Load(retorno.Bombero);
+                    bombero_rut.Rut = msqlReader["rut"].ToString();
+                    bombero_rut = _Bombero.Load(bombero_rut);
 
+                    retorno.Bombero = bombero_rut;
                     retorno.Asistencia = int.Parse(msqlReader["asistencia"].ToString());
                     retorno.CompañiasCanje = int.Parse(msqlReader["canje"].ToString());
                     retorno.Faltas = int.Parse(msqlReader["faltas"].ToString());
@@ -83,12 +87,15 @@ namespace Bomberos.Datos
                     retorno.Suspensiones = int.Parse(msqlReader["suspensiones"].ToString());
                     retorno.Mes = int.Parse(msqlReader["mes"].ToString());
                     retorno.Año = int.Parse(msqlReader["anio"].ToString());
+                    retorno.TotalAbonos = retorno.LlamadasComandancia + retorno.GuardiasNocturnas + retorno.OtrasCompañias + retorno.OtrosCuerpos + retorno.CompañiasCanje;
+                    retorno.TotalLlamadas = retorno.Asistencia + retorno.TotalAbonos;
 
                     ListaListaBombero.Add(retorno);
                 }
             }
             catch (Exception er)
             {
+                throw er;
                 return ListaListaBombero;
             }
             finally
@@ -103,7 +110,7 @@ namespace Bomberos.Datos
             //MySQL
             MySql.Data.MySqlClient.MySqlConnection conexionBD = ConnectBD();
             string query = "UPDATE listas_bomberos SET asistencia = ?p_asistencia, rut = ?p_rut, canje = ?p_canje, faltas = ?p_faltas, guardias = ?p_guardias, licencias = ?p_licencias, llamadas = ?p_llamadas, otras_comp = ?p_otrascomp, otros_cuerp = ?p_otroscuerp, suspensiones = ?p_suspensiones ";
-            query = string.Concat("WHERE rut = ?p_rut AND anio = ?p_anio AND mes = ?p_mes");
+            query = string.Concat(query, "WHERE rut = ?p_rut AND anio = ?p_anio AND mes = ?p_mes");
             MySql.Data.MySqlClient.MySqlCommand msqlCommand = new MySql.Data.MySqlClient.MySqlCommand(query, conexionBD);
             msqlCommand.Parameters.AddWithValue("?p_asistencia", p_Lista.Asistencia);
             msqlCommand.Parameters.AddWithValue("?p_rut", p_Lista.Bombero.Rut);

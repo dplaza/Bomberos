@@ -19,5 +19,7 @@ namespace Bomberos.Comun
         public int OtrosCuerpos { get; set; }
         public int Año { get; set; }
         public int Mes { get; set; }
+        public int TotalLlamadas { get; set; }
+        public int TotalAbonos { get; set; }
     }
 }

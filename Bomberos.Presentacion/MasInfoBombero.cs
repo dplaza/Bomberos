@@ -391,11 +391,7 @@ namespace Bomberos.Presentacion
 
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
         {
-            IListaMgr _Lista = new ListaMgr();
-            ListaDTO Lista = new ListaDTO();
-
-            Lista.Bombero = ContextoDTO.Instancia().BomberoSelected;
-            dataGridListas.DataSource = _Lista.CargarLista(Lista).FindAll(p => p.Año.Equals(dateTimeListas.Value.ToString()));
+            
         }
 
         private void label29_Click(object sender, EventArgs e)
@@ -454,6 +450,55 @@ namespace Bomberos.Presentacion
         }
 
         private void AbonosServ_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_agregar_Click(object sender, EventArgs e)
+        {
+            IListaMgr _Lista = new ListaMgr();
+            ListaDTO Lista = new ListaDTO();
+
+            Lista.Año = ListaAño.Value.Year;
+            Lista.Mes = ListaMes.Value.Month;
+            Lista.Asistencia = int.Parse(txt_asistencias.Text);
+            Lista.Bombero = ContextoDTO.Instancia().BomberoSelected;
+            Lista.CompañiasCanje = int.Parse(txt_canje.Text);
+            Lista.Faltas = int.Parse(txt_faltas.Text);
+            Lista.GuardiasNocturnas = int.Parse(txt_guardias.Text);
+            Lista.Licencias = int.Parse(txt_licencias.Text);
+            Lista.LlamadasComandancia = int.Parse(txt_llamadas.Text);
+            Lista.OtrasCompañias = int.Parse(txt_otras_comp.Text);
+            Lista.OtrosCuerpos = int.Parse(txt_otros_cuerp.Text);
+            Lista.Suspensiones = int.Parse(txt_suspens.Text);
+
+            if (_Lista.RegistroLista(Lista))
+            {
+                MessageBox.Show("Asistencia agregada con exito");
+                //dataGridListas.DataSource = _Lista.CargarLista(Lista).OrderBy(p => p.Mes);
+            }
+            else
+            {
+                MessageBox.Show("Error al guardar asistencia");
+            }
+        }
+
+        private void btn_buscar_Click(object sender, EventArgs e)
+        {
+            IListaMgr _Lista = new ListaMgr();
+            ListaDTO Lista = new ListaDTO();
+
+            Lista.Bombero = ContextoDTO.Instancia().BomberoSelected;
+            Lista.Año = dateTimeListas.Value.Year;
+            dataGridListas.DataSource = _Lista.CargarLista(Lista);
+        }
+
+        private void label51_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label52_Click(object sender, EventArgs e)
         {
 
         }
