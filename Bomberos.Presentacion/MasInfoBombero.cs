@@ -391,7 +391,7 @@ namespace Bomberos.Presentacion
 
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
         {
-            
+
         }
 
         private void label29_Click(object sender, EventArgs e)
@@ -491,6 +491,45 @@ namespace Bomberos.Presentacion
             Lista.Bombero = ContextoDTO.Instancia().BomberoSelected;
             Lista.Año = dateTimeListas.Value.Year;
             dataGridListas.DataSource = _Lista.CargarLista(Lista);
+
+            int sumatotalLlam = 0;
+            int sumatotalAbonos = 0;
+            int sumaAsistencias = 0;
+            int sumaFaltas = 0;
+            int sumaLlamadas = 0;
+            int sumaGuardiasNoct = 0;
+            int sumaOtrosCuerp = 0;
+            int sumaOtrasComp = 0;
+            int sumaSuspensiones = 0;
+            int sumaLicencias = 0;
+            int sumaCompCanje = 0;
+            foreach (DataGridViewRow row in dataGridListas.Rows)
+            {
+                sumatotalLlam += (int)row.Cells["TotalLlamadasLista"].Value;
+                sumatotalAbonos += (int)row.Cells["TotalAbonosLista"].Value;
+                sumaSuspensiones += (int)row.Cells["SuspensionesLista"].Value;
+                sumaOtrosCuerp += (int)row.Cells["OtrosCuerpLista"].Value;
+                sumaOtrasComp += (int)row.Cells["OtrasCompLista"].Value;
+                sumaLlamadas += (int)row.Cells["LlamadasComandanciaLista"].Value;
+                sumaLicencias += (int)row.Cells["LicenciasLista"].Value;
+                sumaGuardiasNoct += (int)row.Cells["GuardiasNocturnasLista"].Value;
+                sumaFaltas += (int)row.Cells["FaltasLista"].Value;
+                sumaCompCanje += (int)row.Cells["CanjeLista"].Value;
+                sumaAsistencias += (int)row.Cells["AsistenciasLista"].Value;
+            }
+            lbl_totalLlam.Text = "Total Llamadas " + sumatotalLlam.ToString();
+            lbl_asistencias.Text = "Asistencias " + sumaAsistencias.ToString();
+            lbl_canje.Text = "Compañias de Canje " + sumaCompCanje.ToString();
+            lbl_faltas.Text = "Faltas " + sumaFaltas.ToString();
+            lbl_guardias.Text = "Guardias Nocturnas " + sumaGuardiasNoct.ToString();
+            lbl_licencias.Text = "Licencias " + sumaLicencias.ToString();
+            lbl_llamadas.Text = "Llamadas de Comandancia " + sumaLlamadas.ToString();
+            lbl_otrasComp.Text = "Otras Compañias " + sumaOtrasComp.ToString();
+            lbl_otrosCuerp.Text = "Otros Cuerpos " + sumaOtrosCuerp.ToString();
+            lbl_suspens.Text = "Suspensiones " + sumaSuspensiones.ToString();
+            lbl_totalAbonos.Text = "Total Abonos " + sumatotalAbonos.ToString();
+
+
         }
 
         private void label51_Click(object sender, EventArgs e)
@@ -501,6 +540,35 @@ namespace Bomberos.Presentacion
         private void label52_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void label53_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label59_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (dataGridListas.Rows.Count > 0)
+            {
+                foreach (DataGridViewRow row in dataGridListas.Rows)
+                {
+                    IListaMgr _Lista = new ListaMgr();
+                    ListaDTO ListaTemp = new ListaDTO();
+                    ListaTemp = (ListaDTO)row.DataBoundItem;
+
+                    try
+                    {
+                        _Lista.EditarLista(ListaTemp);
+                    }
+                    catch (Exception er) { }
+                }
+            }
         }
     }
 }

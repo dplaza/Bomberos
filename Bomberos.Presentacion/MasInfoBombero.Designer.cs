@@ -118,6 +118,17 @@
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.ResumenListas = new System.Windows.Forms.TabPage();
+            this.lbl_totalAbonos = new System.Windows.Forms.Label();
+            this.lbl_totalLlam = new System.Windows.Forms.Label();
+            this.lbl_otrosCuerp = new System.Windows.Forms.Label();
+            this.lbl_otrasComp = new System.Windows.Forms.Label();
+            this.lbl_canje = new System.Windows.Forms.Label();
+            this.lbl_guardias = new System.Windows.Forms.Label();
+            this.lbl_llamadas = new System.Windows.Forms.Label();
+            this.lbl_asistencias = new System.Windows.Forms.Label();
+            this.lbl_licencias = new System.Windows.Forms.Label();
+            this.lbl_suspens = new System.Windows.Forms.Label();
+            this.lbl_faltas = new System.Windows.Forms.Label();
             this.btn_buscar = new System.Windows.Forms.Button();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.btn_agregar = new System.Windows.Forms.Button();
@@ -191,31 +202,20 @@
             this.labelTIB = new System.Windows.Forms.Label();
             this.labelRut = new System.Windows.Forms.Label();
             this.labelnombre = new System.Windows.Forms.Label();
-            this.BomberoLista = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TotalLlamadasLista = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.AñoLista = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MesLista = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TotalLlamadasLista = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.FaltasLista = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SuspensionesListas = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.LicenciasListas = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SuspensionesLista = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.LicenciasLista = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.AsistenciasLista = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TotalAbonosLista = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.LlamadaComandanciaListas = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.LlamadasComandanciaLista = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.GuardiasNocturnasLista = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CanjeListas = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.OtrasComListas = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.OtrosCuerpListas = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lbl_faltas = new System.Windows.Forms.Label();
-            this.lbl_suspens = new System.Windows.Forms.Label();
-            this.label52 = new System.Windows.Forms.Label();
-            this.label53 = new System.Windows.Forms.Label();
-            this.label54 = new System.Windows.Forms.Label();
-            this.label55 = new System.Windows.Forms.Label();
-            this.label56 = new System.Windows.Forms.Label();
-            this.label57 = new System.Windows.Forms.Label();
-            this.label58 = new System.Windows.Forms.Label();
-            this.label59 = new System.Windows.Forms.Label();
-            this.label60 = new System.Windows.Forms.Label();
+            this.CanjeLista = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.OtrasCompLista = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.OtrosCuerpLista = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TotalAbonosLista = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.AñoLista = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.BomberoLista = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabBox.SuspendLayout();
             this.FichaMedica.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -1129,15 +1129,15 @@
             // 
             // ResumenListas
             // 
-            this.ResumenListas.Controls.Add(this.label60);
-            this.ResumenListas.Controls.Add(this.label59);
-            this.ResumenListas.Controls.Add(this.label58);
-            this.ResumenListas.Controls.Add(this.label57);
-            this.ResumenListas.Controls.Add(this.label56);
-            this.ResumenListas.Controls.Add(this.label55);
-            this.ResumenListas.Controls.Add(this.label54);
-            this.ResumenListas.Controls.Add(this.label53);
-            this.ResumenListas.Controls.Add(this.label52);
+            this.ResumenListas.Controls.Add(this.lbl_totalAbonos);
+            this.ResumenListas.Controls.Add(this.lbl_totalLlam);
+            this.ResumenListas.Controls.Add(this.lbl_otrosCuerp);
+            this.ResumenListas.Controls.Add(this.lbl_otrasComp);
+            this.ResumenListas.Controls.Add(this.lbl_canje);
+            this.ResumenListas.Controls.Add(this.lbl_guardias);
+            this.ResumenListas.Controls.Add(this.lbl_llamadas);
+            this.ResumenListas.Controls.Add(this.lbl_asistencias);
+            this.ResumenListas.Controls.Add(this.lbl_licencias);
             this.ResumenListas.Controls.Add(this.lbl_suspens);
             this.ResumenListas.Controls.Add(this.lbl_faltas);
             this.ResumenListas.Controls.Add(this.btn_buscar);
@@ -1154,6 +1154,109 @@
             this.ResumenListas.Text = "Resumen Listas";
             this.ResumenListas.UseVisualStyleBackColor = true;
             this.ResumenListas.Click += new System.EventHandler(this.ResumenListas_Click);
+            // 
+            // lbl_totalAbonos
+            // 
+            this.lbl_totalAbonos.AutoSize = true;
+            this.lbl_totalAbonos.Location = new System.Drawing.Point(469, 483);
+            this.lbl_totalAbonos.Name = "lbl_totalAbonos";
+            this.lbl_totalAbonos.Size = new System.Drawing.Size(70, 13);
+            this.lbl_totalAbonos.TabIndex = 17;
+            this.lbl_totalAbonos.Text = "Total Abonos";
+            // 
+            // lbl_totalLlam
+            // 
+            this.lbl_totalLlam.AutoSize = true;
+            this.lbl_totalLlam.Location = new System.Drawing.Point(469, 462);
+            this.lbl_totalLlam.Name = "lbl_totalLlam";
+            this.lbl_totalLlam.Size = new System.Drawing.Size(79, 13);
+            this.lbl_totalLlam.TabIndex = 16;
+            this.lbl_totalLlam.Text = "Total Llamadas";
+            this.lbl_totalLlam.Click += new System.EventHandler(this.label59_Click);
+            // 
+            // lbl_otrosCuerp
+            // 
+            this.lbl_otrosCuerp.AutoSize = true;
+            this.lbl_otrosCuerp.Location = new System.Drawing.Point(316, 504);
+            this.lbl_otrosCuerp.Name = "lbl_otrosCuerp";
+            this.lbl_otrosCuerp.Size = new System.Drawing.Size(74, 13);
+            this.lbl_otrosCuerp.TabIndex = 15;
+            this.lbl_otrosCuerp.Text = "Otros Cuerpos";
+            // 
+            // lbl_otrasComp
+            // 
+            this.lbl_otrasComp.AutoSize = true;
+            this.lbl_otrasComp.Location = new System.Drawing.Point(316, 483);
+            this.lbl_otrasComp.Name = "lbl_otrasComp";
+            this.lbl_otrasComp.Size = new System.Drawing.Size(87, 13);
+            this.lbl_otrasComp.TabIndex = 14;
+            this.lbl_otrasComp.Text = "Otras Compañias";
+            // 
+            // lbl_canje
+            // 
+            this.lbl_canje.AutoSize = true;
+            this.lbl_canje.Location = new System.Drawing.Point(316, 462);
+            this.lbl_canje.Name = "lbl_canje";
+            this.lbl_canje.Size = new System.Drawing.Size(104, 13);
+            this.lbl_canje.TabIndex = 13;
+            this.lbl_canje.Text = "Compañias de Canje";
+            // 
+            // lbl_guardias
+            // 
+            this.lbl_guardias.AutoSize = true;
+            this.lbl_guardias.Location = new System.Drawing.Point(140, 504);
+            this.lbl_guardias.Name = "lbl_guardias";
+            this.lbl_guardias.Size = new System.Drawing.Size(101, 13);
+            this.lbl_guardias.TabIndex = 12;
+            this.lbl_guardias.Text = "Guardias Nocturnas";
+            // 
+            // lbl_llamadas
+            // 
+            this.lbl_llamadas.AutoSize = true;
+            this.lbl_llamadas.Location = new System.Drawing.Point(140, 483);
+            this.lbl_llamadas.Name = "lbl_llamadas";
+            this.lbl_llamadas.Size = new System.Drawing.Size(135, 13);
+            this.lbl_llamadas.TabIndex = 11;
+            this.lbl_llamadas.Text = "Llamadas de Comandancia";
+            // 
+            // lbl_asistencias
+            // 
+            this.lbl_asistencias.AutoSize = true;
+            this.lbl_asistencias.Location = new System.Drawing.Point(140, 462);
+            this.lbl_asistencias.Name = "lbl_asistencias";
+            this.lbl_asistencias.Size = new System.Drawing.Size(60, 13);
+            this.lbl_asistencias.TabIndex = 10;
+            this.lbl_asistencias.Text = "Asistencias";
+            this.lbl_asistencias.Click += new System.EventHandler(this.label53_Click);
+            // 
+            // lbl_licencias
+            // 
+            this.lbl_licencias.AutoSize = true;
+            this.lbl_licencias.Location = new System.Drawing.Point(23, 504);
+            this.lbl_licencias.Name = "lbl_licencias";
+            this.lbl_licencias.Size = new System.Drawing.Size(52, 13);
+            this.lbl_licencias.TabIndex = 9;
+            this.lbl_licencias.Text = "Licencias";
+            this.lbl_licencias.Click += new System.EventHandler(this.label52_Click);
+            // 
+            // lbl_suspens
+            // 
+            this.lbl_suspens.AutoSize = true;
+            this.lbl_suspens.Location = new System.Drawing.Point(23, 483);
+            this.lbl_suspens.Name = "lbl_suspens";
+            this.lbl_suspens.Size = new System.Drawing.Size(73, 13);
+            this.lbl_suspens.TabIndex = 8;
+            this.lbl_suspens.Text = "Suspensiones";
+            this.lbl_suspens.Click += new System.EventHandler(this.label51_Click);
+            // 
+            // lbl_faltas
+            // 
+            this.lbl_faltas.AutoSize = true;
+            this.lbl_faltas.Location = new System.Drawing.Point(23, 462);
+            this.lbl_faltas.Name = "lbl_faltas";
+            this.lbl_faltas.Size = new System.Drawing.Size(35, 13);
+            this.lbl_faltas.TabIndex = 7;
+            this.lbl_faltas.Text = "Faltas";
             // 
             // btn_buscar
             // 
@@ -1401,6 +1504,7 @@
             this.button1.TabIndex = 3;
             this.button1.Text = "Enviar cambios";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // dateTimeListas
             // 
@@ -1427,24 +1531,25 @@
             this.dataGridListas.AllowUserToDeleteRows = false;
             this.dataGridListas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridListas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.BomberoLista,
-            this.TotalLlamadasLista,
-            this.AñoLista,
             this.MesLista,
+            this.TotalLlamadasLista,
             this.FaltasLista,
-            this.SuspensionesListas,
-            this.LicenciasListas,
+            this.SuspensionesLista,
+            this.LicenciasLista,
             this.AsistenciasLista,
-            this.TotalAbonosLista,
-            this.LlamadaComandanciaListas,
+            this.LlamadasComandanciaLista,
             this.GuardiasNocturnasLista,
-            this.CanjeListas,
-            this.OtrasComListas,
-            this.OtrosCuerpListas});
+            this.CanjeLista,
+            this.OtrasCompLista,
+            this.OtrosCuerpLista,
+            this.TotalAbonosLista,
+            this.AñoLista,
+            this.BomberoLista});
             this.dataGridListas.Location = new System.Drawing.Point(23, 209);
             this.dataGridListas.Name = "dataGridListas";
             this.dataGridListas.Size = new System.Drawing.Size(563, 241);
             this.dataGridListas.TabIndex = 0;
+            this.dataGridListas.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick);
             // 
             // Servicio
             // 
@@ -1865,18 +1970,78 @@
             this.labelnombre.TabIndex = 172;
             this.labelnombre.Text = "Nombre completo";
             // 
-            // BomberoLista
+            // MesLista
             // 
-            this.BomberoLista.DataPropertyName = "Bombero";
-            this.BomberoLista.HeaderText = "Bombero";
-            this.BomberoLista.Name = "BomberoLista";
-            this.BomberoLista.Visible = false;
+            this.MesLista.DataPropertyName = "Mes";
+            this.MesLista.HeaderText = "Mes";
+            this.MesLista.Name = "MesLista";
+            this.MesLista.Width = 50;
             // 
             // TotalLlamadasLista
             // 
             this.TotalLlamadasLista.DataPropertyName = "TotalLlamadas";
             this.TotalLlamadasLista.HeaderText = "Total Llamadas";
             this.TotalLlamadasLista.Name = "TotalLlamadasLista";
+            // 
+            // FaltasLista
+            // 
+            this.FaltasLista.DataPropertyName = "Faltas";
+            this.FaltasLista.HeaderText = "Faltas";
+            this.FaltasLista.Name = "FaltasLista";
+            // 
+            // SuspensionesLista
+            // 
+            this.SuspensionesLista.DataPropertyName = "Suspensiones";
+            this.SuspensionesLista.HeaderText = "Suspensiones";
+            this.SuspensionesLista.Name = "SuspensionesLista";
+            // 
+            // LicenciasLista
+            // 
+            this.LicenciasLista.DataPropertyName = "Licencias";
+            this.LicenciasLista.HeaderText = "Licencias";
+            this.LicenciasLista.Name = "LicenciasLista";
+            // 
+            // AsistenciasLista
+            // 
+            this.AsistenciasLista.DataPropertyName = "Asistencia";
+            this.AsistenciasLista.HeaderText = "Asistencia";
+            this.AsistenciasLista.Name = "AsistenciasLista";
+            // 
+            // LlamadasComandanciaLista
+            // 
+            this.LlamadasComandanciaLista.DataPropertyName = "LlamadasComandancia";
+            this.LlamadasComandanciaLista.HeaderText = "Llamadas de Comandancia";
+            this.LlamadasComandanciaLista.Name = "LlamadasComandanciaLista";
+            // 
+            // GuardiasNocturnasLista
+            // 
+            this.GuardiasNocturnasLista.DataPropertyName = "GuardiasNocturnas";
+            this.GuardiasNocturnasLista.HeaderText = "Guardias Nocturnas";
+            this.GuardiasNocturnasLista.Name = "GuardiasNocturnasLista";
+            // 
+            // CanjeLista
+            // 
+            this.CanjeLista.DataPropertyName = "CompañiasCanje";
+            this.CanjeLista.HeaderText = "Compañias de Canje";
+            this.CanjeLista.Name = "CanjeLista";
+            // 
+            // OtrasCompLista
+            // 
+            this.OtrasCompLista.DataPropertyName = "OtrasCompañias";
+            this.OtrasCompLista.HeaderText = "Otras Compañias";
+            this.OtrasCompLista.Name = "OtrasCompLista";
+            // 
+            // OtrosCuerpLista
+            // 
+            this.OtrosCuerpLista.DataPropertyName = "OtrosCuerpos";
+            this.OtrosCuerpLista.HeaderText = "Otros Cuerpos";
+            this.OtrosCuerpLista.Name = "OtrosCuerpLista";
+            // 
+            // TotalAbonosLista
+            // 
+            this.TotalAbonosLista.DataPropertyName = "TotalAbonos";
+            this.TotalAbonosLista.HeaderText = "Total Abonos";
+            this.TotalAbonosLista.Name = "TotalAbonosLista";
             // 
             // AñoLista
             // 
@@ -1885,172 +2050,12 @@
             this.AñoLista.Name = "AñoLista";
             this.AñoLista.Visible = false;
             // 
-            // MesLista
+            // BomberoLista
             // 
-            this.MesLista.DataPropertyName = "Mes";
-            this.MesLista.HeaderText = "Mes";
-            this.MesLista.Name = "MesLista";
-            // 
-            // FaltasLista
-            // 
-            this.FaltasLista.DataPropertyName = "Faltas";
-            this.FaltasLista.HeaderText = "Faltas";
-            this.FaltasLista.Name = "FaltasLista";
-            // 
-            // SuspensionesListas
-            // 
-            this.SuspensionesListas.DataPropertyName = "Suspensiones";
-            this.SuspensionesListas.HeaderText = "Suspensiones";
-            this.SuspensionesListas.Name = "SuspensionesListas";
-            // 
-            // LicenciasListas
-            // 
-            this.LicenciasListas.DataPropertyName = "Licencias";
-            this.LicenciasListas.HeaderText = "Licencias";
-            this.LicenciasListas.Name = "LicenciasListas";
-            // 
-            // AsistenciasLista
-            // 
-            this.AsistenciasLista.DataPropertyName = "Asistencia";
-            this.AsistenciasLista.HeaderText = "Asistencia";
-            this.AsistenciasLista.Name = "AsistenciasLista";
-            // 
-            // TotalAbonosLista
-            // 
-            this.TotalAbonosLista.DataPropertyName = "TotalAbonos";
-            this.TotalAbonosLista.HeaderText = "Total Abonos";
-            this.TotalAbonosLista.Name = "TotalAbonosLista";
-            // 
-            // LlamadaComandanciaListas
-            // 
-            this.LlamadaComandanciaListas.DataPropertyName = "LlamadasComandancia";
-            this.LlamadaComandanciaListas.HeaderText = "Llamadas de Comandancia";
-            this.LlamadaComandanciaListas.Name = "LlamadaComandanciaListas";
-            // 
-            // GuardiasNocturnasLista
-            // 
-            this.GuardiasNocturnasLista.DataPropertyName = "GuardiasNocturnas";
-            this.GuardiasNocturnasLista.HeaderText = "Guardias Nocturnas";
-            this.GuardiasNocturnasLista.Name = "GuardiasNocturnasLista";
-            // 
-            // CanjeListas
-            // 
-            this.CanjeListas.DataPropertyName = "CompañiasCanje";
-            this.CanjeListas.HeaderText = "Compañias de Canje";
-            this.CanjeListas.Name = "CanjeListas";
-            // 
-            // OtrasComListas
-            // 
-            this.OtrasComListas.DataPropertyName = "OtrasCompañias";
-            this.OtrasComListas.HeaderText = "Otras Compañias";
-            this.OtrasComListas.Name = "OtrasComListas";
-            // 
-            // OtrosCuerpListas
-            // 
-            this.OtrosCuerpListas.DataPropertyName = "OtrosCuerpos";
-            this.OtrosCuerpListas.HeaderText = "Otros Cuerpos";
-            this.OtrosCuerpListas.Name = "OtrosCuerpListas";
-            // 
-            // lbl_faltas
-            // 
-            this.lbl_faltas.AutoSize = true;
-            this.lbl_faltas.Location = new System.Drawing.Point(23, 462);
-            this.lbl_faltas.Name = "lbl_faltas";
-            this.lbl_faltas.Size = new System.Drawing.Size(35, 13);
-            this.lbl_faltas.TabIndex = 7;
-            this.lbl_faltas.Text = "Faltas";
-            // 
-            // lbl_suspens
-            // 
-            this.lbl_suspens.AutoSize = true;
-            this.lbl_suspens.Location = new System.Drawing.Point(23, 483);
-            this.lbl_suspens.Name = "lbl_suspens";
-            this.lbl_suspens.Size = new System.Drawing.Size(73, 13);
-            this.lbl_suspens.TabIndex = 8;
-            this.lbl_suspens.Text = "Suspensiones";
-            this.lbl_suspens.Click += new System.EventHandler(this.label51_Click);
-            // 
-            // label52
-            // 
-            this.label52.AutoSize = true;
-            this.label52.Location = new System.Drawing.Point(23, 504);
-            this.label52.Name = "label52";
-            this.label52.Size = new System.Drawing.Size(52, 13);
-            this.label52.TabIndex = 9;
-            this.label52.Text = "Licencias";
-            this.label52.Click += new System.EventHandler(this.label52_Click);
-            // 
-            // label53
-            // 
-            this.label53.AutoSize = true;
-            this.label53.Location = new System.Drawing.Point(140, 462);
-            this.label53.Name = "label53";
-            this.label53.Size = new System.Drawing.Size(60, 13);
-            this.label53.TabIndex = 10;
-            this.label53.Text = "Asistencias";
-            // 
-            // label54
-            // 
-            this.label54.AutoSize = true;
-            this.label54.Location = new System.Drawing.Point(140, 483);
-            this.label54.Name = "label54";
-            this.label54.Size = new System.Drawing.Size(135, 13);
-            this.label54.TabIndex = 11;
-            this.label54.Text = "Llamadas de Comandancia";
-            // 
-            // label55
-            // 
-            this.label55.AutoSize = true;
-            this.label55.Location = new System.Drawing.Point(140, 504);
-            this.label55.Name = "label55";
-            this.label55.Size = new System.Drawing.Size(101, 13);
-            this.label55.TabIndex = 12;
-            this.label55.Text = "Guardias Nocturnas";
-            // 
-            // label56
-            // 
-            this.label56.AutoSize = true;
-            this.label56.Location = new System.Drawing.Point(316, 462);
-            this.label56.Name = "label56";
-            this.label56.Size = new System.Drawing.Size(104, 13);
-            this.label56.TabIndex = 13;
-            this.label56.Text = "Compañias de Canje";
-            // 
-            // label57
-            // 
-            this.label57.AutoSize = true;
-            this.label57.Location = new System.Drawing.Point(316, 483);
-            this.label57.Name = "label57";
-            this.label57.Size = new System.Drawing.Size(87, 13);
-            this.label57.TabIndex = 14;
-            this.label57.Text = "Otras Compañias";
-            // 
-            // label58
-            // 
-            this.label58.AutoSize = true;
-            this.label58.Location = new System.Drawing.Point(316, 504);
-            this.label58.Name = "label58";
-            this.label58.Size = new System.Drawing.Size(74, 13);
-            this.label58.TabIndex = 15;
-            this.label58.Text = "Otros Cuerpos";
-            // 
-            // label59
-            // 
-            this.label59.AutoSize = true;
-            this.label59.Location = new System.Drawing.Point(469, 462);
-            this.label59.Name = "label59";
-            this.label59.Size = new System.Drawing.Size(79, 13);
-            this.label59.TabIndex = 16;
-            this.label59.Text = "Total Llamadas";
-            // 
-            // label60
-            // 
-            this.label60.AutoSize = true;
-            this.label60.Location = new System.Drawing.Point(469, 483);
-            this.label60.Name = "label60";
-            this.label60.Size = new System.Drawing.Size(70, 13);
-            this.label60.TabIndex = 17;
-            this.label60.Text = "Total Abonos";
+            this.BomberoLista.DataPropertyName = "Bombero";
+            this.BomberoLista.HeaderText = "Bombero";
+            this.BomberoLista.Name = "BomberoLista";
+            this.BomberoLista.Visible = false;
             // 
             // MasInfoBombero
             // 
@@ -2276,31 +2281,31 @@
         private System.Windows.Forms.Button btn_agregar_serv;
         private System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.Button btn_buscar;
-        private System.Windows.Forms.DataGridViewTextBoxColumn BomberoLista;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TotalLlamadasLista;
-        private System.Windows.Forms.DataGridViewTextBoxColumn AñoLista;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MesLista;
-        private System.Windows.Forms.DataGridViewTextBoxColumn FaltasLista;
-        private System.Windows.Forms.DataGridViewTextBoxColumn SuspensionesListas;
-        private System.Windows.Forms.DataGridViewTextBoxColumn LicenciasListas;
-        private System.Windows.Forms.DataGridViewTextBoxColumn AsistenciasLista;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TotalAbonosLista;
-        private System.Windows.Forms.DataGridViewTextBoxColumn LlamadaComandanciaListas;
-        private System.Windows.Forms.DataGridViewTextBoxColumn GuardiasNocturnasLista;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CanjeListas;
-        private System.Windows.Forms.DataGridViewTextBoxColumn OtrasComListas;
-        private System.Windows.Forms.DataGridViewTextBoxColumn OtrosCuerpListas;
         private System.Windows.Forms.Label lbl_faltas;
-        private System.Windows.Forms.Label label60;
-        private System.Windows.Forms.Label label59;
-        private System.Windows.Forms.Label label58;
-        private System.Windows.Forms.Label label57;
-        private System.Windows.Forms.Label label56;
-        private System.Windows.Forms.Label label55;
-        private System.Windows.Forms.Label label54;
-        private System.Windows.Forms.Label label53;
-        private System.Windows.Forms.Label label52;
+        private System.Windows.Forms.Label lbl_totalAbonos;
+        private System.Windows.Forms.Label lbl_totalLlam;
+        private System.Windows.Forms.Label lbl_otrosCuerp;
+        private System.Windows.Forms.Label lbl_otrasComp;
+        private System.Windows.Forms.Label lbl_canje;
+        private System.Windows.Forms.Label lbl_guardias;
+        private System.Windows.Forms.Label lbl_llamadas;
+        private System.Windows.Forms.Label lbl_asistencias;
+        private System.Windows.Forms.Label lbl_licencias;
         private System.Windows.Forms.Label lbl_suspens;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MesLista;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TotalLlamadasLista;
+        private System.Windows.Forms.DataGridViewTextBoxColumn FaltasLista;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SuspensionesLista;
+        private System.Windows.Forms.DataGridViewTextBoxColumn LicenciasLista;
+        private System.Windows.Forms.DataGridViewTextBoxColumn AsistenciasLista;
+        private System.Windows.Forms.DataGridViewTextBoxColumn LlamadasComandanciaLista;
+        private System.Windows.Forms.DataGridViewTextBoxColumn GuardiasNocturnasLista;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CanjeLista;
+        private System.Windows.Forms.DataGridViewTextBoxColumn OtrasCompLista;
+        private System.Windows.Forms.DataGridViewTextBoxColumn OtrosCuerpLista;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TotalAbonosLista;
+        private System.Windows.Forms.DataGridViewTextBoxColumn AñoLista;
+        private System.Windows.Forms.DataGridViewTextBoxColumn BomberoLista;
 
     }
 }
