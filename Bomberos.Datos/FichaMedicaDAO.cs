@@ -137,10 +137,10 @@ namespace Bomberos.Datos
             query = string.Concat(query, "hipertension_arterial = ?p_hipertension_arterial, diabetes = ?p_diabetes, epilepsia = ?p_epilepsia, ");
             query = string.Concat(query, "asma = ?p_asma, antecedentes_cronicos = ?p_antecedentes_cronicos, ");
             query = string.Concat(query, "medicamentos_toma = ?p_medicamentos_toma, medicamentos_no_toma = ?p_medicamentos_no_toma, ");
-            query = string.Concat(query, "nombre_pariente_1 = ?p_nombre_pariente_1, parentesco_pariente_1 = ?p_parentesco_pariente_1,");
-            query = string.Concat(query, "telefono_pariente_1 = ?p_telefono_pariente_1, celular_pariente_1 = ?p_celular_pariente_1,");
-            query = string.Concat(query, "nombre_pariente_2 = ?p_nombre_pariente_2, parentesco_pariente_2 = ?p_parentesco_pariente_2,");
-            query = string.Concat(query, "telefono_pariente_2 = ?p_telefono_pariente_2, celular_pariente_2 = ?p_celular_pariente_2");
+            query = string.Concat(query, "nombre_pariente_1 = ?p_nombre_pariente_1, parentesco_pariente_1 = ?p_parentesco_pariente_1, ");
+            query = string.Concat(query, "telefono_pariente_1 = ?p_telefono_pariente_1, celular_pariente_1 = ?p_celular_pariente_1, ");
+            query = string.Concat(query, "nombre_pariente_2 = ?p_nombre_pariente_2, parentesco_pariente_2 = ?p_parentesco_pariente_2, ");
+            query = string.Concat(query, "telefono_pariente_2 = ?p_telefono_pariente_2, celular_pariente_2 = ?p_celular_pariente_2 ");
             query = string.Concat(query, "WHERE rut = ?p_rut");
             MySql.Data.MySqlClient.MySqlCommand msqlCommand = new MySql.Data.MySqlClient.MySqlCommand(query, conexionBD);
             msqlCommand.Parameters.AddWithValue("?p_rut", p_FichaMedica.Bombero.Rut);

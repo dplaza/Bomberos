@@ -48,33 +48,41 @@ namespace Bomberos.Presentacion
             select_cargo.DisplayMember = "Nombre";
             select_cargo.ValueMember = "Id";
 
-
             //Carga de los distinto DataGrid existentes en la ventana.
             ICargoBomberoMgr _CargoBombero = new CargoBomberoMgr();
             ICursoBomberoMgr _CursoBombero = new CursoBomberoMgr();
             IPremioBomberoMgr _PremioBombero = new PremioBomberoMgr();
             IObservacionBomberoMgr _ObservacionBombero = new ObservacionBomberoMgr();
+            IServicioBomberoMgr _Servicio = new ServicioBomberoMgr();
             IFichaMedicaMgr _FichaMedica = new FichaMedicaMgr();
+            IReincorporacionBomberoMgr _Reincorporacion = new ReincorporacionBomberoMgr();
             CargoBomberoDTO CargoBombero = new CargoBomberoDTO();
             CursoBomberoDTO CursoBombero = new CursoBomberoDTO();
             PremioBomberoDTO PremioBombero = new PremioBomberoDTO();
             ObservacionBomberoDTO ObservacionBombero = new ObservacionBomberoDTO();
             FichaMedicaDTO FichaMedica = new FichaMedicaDTO();
+            ServicioBomberoDTO ServicioBombero = new ServicioBomberoDTO();
+            ReincorporacionBomberoDTO ReincorporacionBombero = new ReincorporacionBomberoDTO();
+            ReincorporacionBombero.Bombero = ContextoDTO.Instancia().BomberoSelected;
             PremioBombero.Bombero = ContextoDTO.Instancia().BomberoSelected;
             CargoBombero.Bombero = ContextoDTO.Instancia().BomberoSelected;
             CursoBombero.Bombero = ContextoDTO.Instancia().BomberoSelected;
             ObservacionBombero.Bombero = ContextoDTO.Instancia().BomberoSelected;
             FichaMedica.Bombero = ContextoDTO.Instancia().BomberoSelected;
+            ServicioBombero.Bombero = ContextoDTO.Instancia().BomberoSelected;
 
             dataGridPremios.DataSource = _PremioBombero.CargarPremioBombero(PremioBombero).OrderBy(p => p.FechaCalifica).ToList();
             dataGridCursos.DataSource = _CursoBombero.CargarCursoBombero(CursoBombero).OrderBy(p => p.FechaInicio).ToList();
             dataGridCargos.DataSource = _CargoBombero.CargarCargoBombero(CargoBombero).OrderBy(p => p.FechaDesde).ToList();
             dataGridObservacion.DataSource = _ObservacionBombero.CargarObservacionesBombero(ObservacionBombero).OrderBy(p => p.Fecha).ToList();
+            dataGridServicio.DataSource = _Servicio.CargarServicioBombero(ServicioBombero).OrderBy(p => p.Año).ToList();
+            dataGridReincorporacion.DataSource = _Reincorporacion.CargarReincorporacionBombero(ReincorporacionBombero).OrderBy(p => p.FechaReincorporacion).ToList();
 
             dataGridCargos.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridCursos.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridPremios.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridObservacion.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dataGridReincorporacion.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
 
             FichaMedica = _FichaMedica.CargarFichaMedica(FichaMedica);
 
@@ -83,6 +91,14 @@ namespace Bomberos.Presentacion
             txt_med_medToma.Text = FichaMedica.MedicamentosToma;
             txt_med_operac.Text = FichaMedica.Operaciones;
             txt_med_otras.Text = FichaMedica.OtrasEnfermedades;
+            txt_nombre_pariente_1.Text = FichaMedica.NombrePariente1;
+            txt_nomnbre_pariente_2.Text = FichaMedica.NombrePariente2;
+            txt_parentesco_pariente_1.Text = FichaMedica.ParentescoPariente1;
+            txt_parentesco_pariente_2.Text = FichaMedica.ParentescoPariente2;
+            txt_telefono_pariente_1.Text = FichaMedica.TelefonoPariente1;
+            txt_telefono_pariente_2.Text = FichaMedica.TelefonoPariente2;
+            txt_celular_pariente_1.Text = FichaMedica.CelularPariente1;
+            txt_celular_pariente_2.Text = FichaMedica.CelularPariente2;
             select_asma.SelectedItem = "No";
             select_diab.SelectedItem = "No";
             select_epilep.SelectedItem = "No";
@@ -227,12 +243,12 @@ namespace Bomberos.Presentacion
 
             if (_ObservacionBombero.RegistroObservacionBombero(ObservacionBombero))
             {
-                MessageBox.Show("Bombero actualizado");
+                MessageBox.Show("Observacion agregada");
                 dataGridObservacion.DataSource = _ObservacionBombero.CargarObservacionesBombero(ObservacionBombero).OrderBy(p => p.Fecha).ToList();
             }
             else
             {
-                MessageBox.Show("Error al actualizar bombero");
+                MessageBox.Show("Error al agregar observacion de bombero");
             }
         }
 
@@ -340,6 +356,14 @@ namespace Bomberos.Presentacion
             FichaMedica.Hepatitis = false;
             FichaMedica.HipertensionArterial = false;
             FichaMedica.Tifus = false;
+            FichaMedica.CelularPariente1 = txt_celular_pariente_1.Text;
+            FichaMedica.CelularPariente2 = txt_celular_pariente_2.Text;
+            FichaMedica.NombrePariente1 = txt_nombre_pariente_1.Text;
+            FichaMedica.NombrePariente2 = txt_nomnbre_pariente_2.Text;
+            FichaMedica.ParentescoPariente1 = txt_parentesco_pariente_1.Text;
+            FichaMedica.ParentescoPariente2 = txt_parentesco_pariente_2.Text;
+            FichaMedica.TelefonoPariente1 = txt_telefono_pariente_1.Text;
+            FichaMedica.TelefonoPariente2 = txt_telefono_pariente_2.Text;
 
             if (select_asma.Text.Equals("Sí"))
                 FichaMedica.Asma = true;
@@ -568,6 +592,78 @@ namespace Bomberos.Presentacion
                     }
                     catch (Exception er) { }
                 }
+            }
+        }
+
+        private void btn_agregar_serv_Click(object sender, EventArgs e)
+        {
+            IServicioBomberoMgr _Servicio = new ServicioBomberoMgr();
+            ServicioBomberoDTO Servicio = new ServicioBomberoDTO();
+
+            Servicio.Abonos = int.Parse(txt_abonos_serv.Text);
+            Servicio.Año = ServicioAño.Value.Year;
+            Servicio.AñoServicio = int.Parse(txt_año_serv.Text);
+            Servicio.Bombero = ContextoDTO.Instancia().BomberoSelected;
+            Servicio.DiaServicio = int.Parse(txt_dia_serv.Text);
+            Servicio.Faltas = int.Parse(txt_faltas_serv.Text);
+            Servicio.Licencias = int.Parse(txt_licencias_serv.Text);
+            Servicio.Llamadas = int.Parse(txt_llamadas_serv.Text);
+            Servicio.MesServicio = int.Parse(txt_mes_serv.Text);
+            Servicio.Suspensiones = int.Parse(txt_suspensiones_serv.Text);
+            Servicio.Asistencia = int.Parse(txt_asistencias_serv.Text);
+
+            if (_Servicio.RegistroServicioBombero(Servicio))
+            {
+                MessageBox.Show("Servicio agregado con exito");
+                dataGridServicio.DataSource = _Servicio.CargarServicioBombero(Servicio);
+            }
+            else
+            {
+                MessageBox.Show("Error al guardar exito");
+            }
+
+        }
+
+        private void dataGridView2_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            if (dataGridServicio.Rows.Count > 0)
+            {
+                foreach (DataGridViewRow row in dataGridServicio.Rows)
+                {
+                    IServicioBomberoMgr _Servicio = new ServicioBomberoMgr();
+                    ServicioBomberoDTO ServicioTemp = new ServicioBomberoDTO();
+                    ServicioTemp = (ServicioBomberoDTO)row.DataBoundItem;
+
+                    try
+                    {
+                        _Servicio.EditarServicioBombero(ServicioTemp);
+                    }
+                    catch (Exception er) { }
+                }
+            }
+        }
+
+        private void btn_agregar_reincorporacion_Click(object sender, EventArgs e)
+        {
+            IReincorporacionBomberoMgr _Reincorporacion = new ReincorporacionBomberoMgr();
+            ReincorporacionBomberoDTO Reincorporacion = new ReincorporacionBomberoDTO();
+
+            Reincorporacion.Bombero = ContextoDTO.Instancia().BomberoSelected;
+            Reincorporacion.FechaReincorporacion = dateTimeReincorporacion.Value;
+
+            if (_Reincorporacion.RegistroReincorporacionBombero(Reincorporacion))
+            {
+                MessageBox.Show("Reincorporacion de Bombero agregada");
+                dataGridReincorporacion.DataSource = _Reincorporacion.CargarReincorporacionBombero(Reincorporacion).OrderBy(p => p.FechaReincorporacion).ToList();
+            }
+            else
+            {
+                MessageBox.Show("Error al agregar reincorporacion de bombero");
             }
         }
     }
