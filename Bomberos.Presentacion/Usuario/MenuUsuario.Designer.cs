@@ -36,6 +36,7 @@
             this.buscarBomberoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.ventanasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -44,8 +45,10 @@
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.sesiónToolStripMenuItem,
-            this.bomberoToolStripMenuItem});
+            this.bomberoToolStripMenuItem,
+            this.ventanasToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.MdiWindowListItem = this.ventanasToolStripMenuItem;
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1008, 24);
             this.menuStrip1.TabIndex = 0;
@@ -105,6 +108,12 @@
             this.toolStripStatusLabel1.Size = new System.Drawing.Size(118, 17);
             this.toolStripStatusLabel1.Text = "toolStripStatusLabel1";
             // 
+            // ventanasToolStripMenuItem
+            // 
+            this.ventanasToolStripMenuItem.Name = "ventanasToolStripMenuItem";
+            this.ventanasToolStripMenuItem.Size = new System.Drawing.Size(67, 20);
+            this.ventanasToolStripMenuItem.Text = "Ventanas";
+            // 
             // MenuUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -138,5 +147,6 @@
         private System.Windows.Forms.ToolStripMenuItem salirToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem bomberoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem buscarBomberoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ventanasToolStripMenuItem;
     }
 }

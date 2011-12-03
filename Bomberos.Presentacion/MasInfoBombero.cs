@@ -327,13 +327,6 @@ namespace Bomberos.Presentacion
 
         }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-            var form = new Parientes();
-            //form.Parent = this.Parent.Parent.Parent;
-            form.Show();
-        }
-
         private void richTextBox5_TextChanged(object sender, EventArgs e)
         {
 

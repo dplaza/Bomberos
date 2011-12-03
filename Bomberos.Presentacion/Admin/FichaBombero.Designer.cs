@@ -684,7 +684,6 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
             this.Name = "FichaBombero";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.FichaBombero_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

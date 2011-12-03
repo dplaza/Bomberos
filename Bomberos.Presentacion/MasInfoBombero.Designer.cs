@@ -131,28 +131,29 @@
             this.btn_buscar = new System.Windows.Forms.Button();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.btn_agregar = new System.Windows.Forms.Button();
-            this.txt_otros_cuerp = new System.Windows.Forms.TextBox();
-            this.txt_otras_comp = new System.Windows.Forms.TextBox();
-            this.txt_canje = new System.Windows.Forms.TextBox();
-            this.txt_guardias = new System.Windows.Forms.TextBox();
-            this.txt_llamadas = new System.Windows.Forms.TextBox();
             this.txt_asistencias = new System.Windows.Forms.TextBox();
-            this.label38 = new System.Windows.Forms.Label();
             this.txt_licencias = new System.Windows.Forms.TextBox();
             this.txt_suspens = new System.Windows.Forms.TextBox();
-            this.label37 = new System.Windows.Forms.Label();
             this.txt_faltas = new System.Windows.Forms.TextBox();
             this.ListaMes = new System.Windows.Forms.DateTimePicker();
             this.ListaAño = new System.Windows.Forms.DateTimePicker();
-            this.label36 = new System.Windows.Forms.Label();
-            this.label35 = new System.Windows.Forms.Label();
-            this.label34 = new System.Windows.Forms.Label();
             this.label33 = new System.Windows.Forms.Label();
             this.label32 = new System.Windows.Forms.Label();
             this.label31 = new System.Windows.Forms.Label();
             this.label30 = new System.Windows.Forms.Label();
             this.label29 = new System.Windows.Forms.Label();
             this.label28 = new System.Windows.Forms.Label();
+            this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.label34 = new System.Windows.Forms.Label();
+            this.txt_otros_cuerp = new System.Windows.Forms.TextBox();
+            this.label35 = new System.Windows.Forms.Label();
+            this.txt_otras_comp = new System.Windows.Forms.TextBox();
+            this.label36 = new System.Windows.Forms.Label();
+            this.txt_canje = new System.Windows.Forms.TextBox();
+            this.label37 = new System.Windows.Forms.Label();
+            this.txt_guardias = new System.Windows.Forms.TextBox();
+            this.label38 = new System.Windows.Forms.Label();
+            this.txt_llamadas = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.dateTimeListas = new System.Windows.Forms.DateTimePicker();
             this.label23 = new System.Windows.Forms.Label();
@@ -232,7 +233,6 @@
             this.labelTIB = new System.Windows.Forms.Label();
             this.labelRut = new System.Windows.Forms.Label();
             this.labelnombre = new System.Windows.Forms.Label();
-            this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.tabBox.SuspendLayout();
             this.FichaMedica.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -246,6 +246,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridCursos)).BeginInit();
             this.ResumenListas.SuspendLayout();
             this.groupBox4.SuspendLayout();
+            this.groupBox7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridListas)).BeginInit();
             this.Servicio.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridServicio)).BeginInit();
@@ -256,7 +257,6 @@
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridReincorporacion)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.box_picture)).BeginInit();
-            this.groupBox7.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabBox
@@ -1308,57 +1308,12 @@
             this.btn_agregar.UseVisualStyleBackColor = true;
             this.btn_agregar.Click += new System.EventHandler(this.btn_agregar_Click);
             // 
-            // txt_otros_cuerp
-            // 
-            this.txt_otros_cuerp.Location = new System.Drawing.Point(310, 51);
-            this.txt_otros_cuerp.Name = "txt_otros_cuerp";
-            this.txt_otros_cuerp.Size = new System.Drawing.Size(63, 20);
-            this.txt_otros_cuerp.TabIndex = 21;
-            // 
-            // txt_otras_comp
-            // 
-            this.txt_otras_comp.Location = new System.Drawing.Point(309, 25);
-            this.txt_otras_comp.Name = "txt_otras_comp";
-            this.txt_otras_comp.Size = new System.Drawing.Size(64, 20);
-            this.txt_otras_comp.TabIndex = 20;
-            // 
-            // txt_canje
-            // 
-            this.txt_canje.Location = new System.Drawing.Point(142, 79);
-            this.txt_canje.Name = "txt_canje";
-            this.txt_canje.Size = new System.Drawing.Size(58, 20);
-            this.txt_canje.TabIndex = 19;
-            // 
-            // txt_guardias
-            // 
-            this.txt_guardias.Location = new System.Drawing.Point(142, 52);
-            this.txt_guardias.Name = "txt_guardias";
-            this.txt_guardias.Size = new System.Drawing.Size(58, 20);
-            this.txt_guardias.TabIndex = 18;
-            this.txt_guardias.TextChanged += new System.EventHandler(this.textBox6_TextChanged);
-            // 
-            // txt_llamadas
-            // 
-            this.txt_llamadas.Location = new System.Drawing.Point(142, 25);
-            this.txt_llamadas.Name = "txt_llamadas";
-            this.txt_llamadas.Size = new System.Drawing.Size(58, 20);
-            this.txt_llamadas.TabIndex = 17;
-            // 
             // txt_asistencias
             // 
             this.txt_asistencias.Location = new System.Drawing.Point(253, 80);
             this.txt_asistencias.Name = "txt_asistencias";
             this.txt_asistencias.Size = new System.Drawing.Size(55, 20);
             this.txt_asistencias.TabIndex = 16;
-            // 
-            // label38
-            // 
-            this.label38.AutoSize = true;
-            this.label38.Location = new System.Drawing.Point(216, 54);
-            this.label38.Name = "label38";
-            this.label38.Size = new System.Drawing.Size(74, 13);
-            this.label38.TabIndex = 10;
-            this.label38.Text = "Otros Cuerpos";
             // 
             // txt_licencias
             // 
@@ -1375,15 +1330,6 @@
             this.txt_suspens.Size = new System.Drawing.Size(55, 20);
             this.txt_suspens.TabIndex = 14;
             this.txt_suspens.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
-            // 
-            // label37
-            // 
-            this.label37.AutoSize = true;
-            this.label37.Location = new System.Drawing.Point(216, 28);
-            this.label37.Name = "label37";
-            this.label37.Size = new System.Drawing.Size(87, 13);
-            this.label37.TabIndex = 9;
-            this.label37.Text = "Otras Compañias";
             // 
             // txt_faltas
             // 
@@ -1411,33 +1357,6 @@
             this.ListaAño.Size = new System.Drawing.Size(65, 20);
             this.ListaAño.TabIndex = 11;
             this.ListaAño.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged_1);
-            // 
-            // label36
-            // 
-            this.label36.AutoSize = true;
-            this.label36.Location = new System.Drawing.Point(6, 84);
-            this.label36.Name = "label36";
-            this.label36.Size = new System.Drawing.Size(104, 13);
-            this.label36.TabIndex = 8;
-            this.label36.Text = "Compañias de Canje";
-            // 
-            // label35
-            // 
-            this.label35.AutoSize = true;
-            this.label35.Location = new System.Drawing.Point(6, 56);
-            this.label35.Name = "label35";
-            this.label35.Size = new System.Drawing.Size(101, 13);
-            this.label35.TabIndex = 7;
-            this.label35.Text = "Guardias Nocturnas";
-            // 
-            // label34
-            // 
-            this.label34.AutoSize = true;
-            this.label34.Location = new System.Drawing.Point(6, 28);
-            this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(130, 13);
-            this.label34.TabIndex = 6;
-            this.label34.Text = "Llamada de Comandancia";
             // 
             // label33
             // 
@@ -1493,6 +1412,106 @@
             this.label28.Size = new System.Drawing.Size(26, 13);
             this.label28.TabIndex = 0;
             this.label28.Text = "Año";
+            // 
+            // groupBox7
+            // 
+            this.groupBox7.Controls.Add(this.label34);
+            this.groupBox7.Controls.Add(this.txt_otros_cuerp);
+            this.groupBox7.Controls.Add(this.label35);
+            this.groupBox7.Controls.Add(this.txt_otras_comp);
+            this.groupBox7.Controls.Add(this.label36);
+            this.groupBox7.Controls.Add(this.txt_canje);
+            this.groupBox7.Controls.Add(this.label37);
+            this.groupBox7.Controls.Add(this.txt_guardias);
+            this.groupBox7.Controls.Add(this.label38);
+            this.groupBox7.Controls.Add(this.txt_llamadas);
+            this.groupBox7.Location = new System.Drawing.Point(326, 17);
+            this.groupBox7.Name = "groupBox7";
+            this.groupBox7.Size = new System.Drawing.Size(381, 128);
+            this.groupBox7.TabIndex = 23;
+            this.groupBox7.TabStop = false;
+            this.groupBox7.Text = "Abonos";
+            // 
+            // label34
+            // 
+            this.label34.AutoSize = true;
+            this.label34.Location = new System.Drawing.Point(6, 28);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(130, 13);
+            this.label34.TabIndex = 6;
+            this.label34.Text = "Llamada de Comandancia";
+            // 
+            // txt_otros_cuerp
+            // 
+            this.txt_otros_cuerp.Location = new System.Drawing.Point(310, 51);
+            this.txt_otros_cuerp.Name = "txt_otros_cuerp";
+            this.txt_otros_cuerp.Size = new System.Drawing.Size(63, 20);
+            this.txt_otros_cuerp.TabIndex = 21;
+            // 
+            // label35
+            // 
+            this.label35.AutoSize = true;
+            this.label35.Location = new System.Drawing.Point(6, 56);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(101, 13);
+            this.label35.TabIndex = 7;
+            this.label35.Text = "Guardias Nocturnas";
+            // 
+            // txt_otras_comp
+            // 
+            this.txt_otras_comp.Location = new System.Drawing.Point(309, 25);
+            this.txt_otras_comp.Name = "txt_otras_comp";
+            this.txt_otras_comp.Size = new System.Drawing.Size(64, 20);
+            this.txt_otras_comp.TabIndex = 20;
+            // 
+            // label36
+            // 
+            this.label36.AutoSize = true;
+            this.label36.Location = new System.Drawing.Point(6, 84);
+            this.label36.Name = "label36";
+            this.label36.Size = new System.Drawing.Size(104, 13);
+            this.label36.TabIndex = 8;
+            this.label36.Text = "Compañias de Canje";
+            // 
+            // txt_canje
+            // 
+            this.txt_canje.Location = new System.Drawing.Point(142, 79);
+            this.txt_canje.Name = "txt_canje";
+            this.txt_canje.Size = new System.Drawing.Size(58, 20);
+            this.txt_canje.TabIndex = 19;
+            // 
+            // label37
+            // 
+            this.label37.AutoSize = true;
+            this.label37.Location = new System.Drawing.Point(216, 28);
+            this.label37.Name = "label37";
+            this.label37.Size = new System.Drawing.Size(87, 13);
+            this.label37.TabIndex = 9;
+            this.label37.Text = "Otras Compañias";
+            // 
+            // txt_guardias
+            // 
+            this.txt_guardias.Location = new System.Drawing.Point(142, 52);
+            this.txt_guardias.Name = "txt_guardias";
+            this.txt_guardias.Size = new System.Drawing.Size(58, 20);
+            this.txt_guardias.TabIndex = 18;
+            this.txt_guardias.TextChanged += new System.EventHandler(this.textBox6_TextChanged);
+            // 
+            // label38
+            // 
+            this.label38.AutoSize = true;
+            this.label38.Location = new System.Drawing.Point(216, 54);
+            this.label38.Name = "label38";
+            this.label38.Size = new System.Drawing.Size(74, 13);
+            this.label38.TabIndex = 10;
+            this.label38.Text = "Otros Cuerpos";
+            // 
+            // txt_llamadas
+            // 
+            this.txt_llamadas.Location = new System.Drawing.Point(142, 25);
+            this.txt_llamadas.Name = "txt_llamadas";
+            this.txt_llamadas.Size = new System.Drawing.Size(58, 20);
+            this.txt_llamadas.TabIndex = 17;
             // 
             // button1
             // 
@@ -2200,25 +2219,6 @@
             this.labelnombre.TabIndex = 172;
             this.labelnombre.Text = "Nombre completo";
             // 
-            // groupBox7
-            // 
-            this.groupBox7.Controls.Add(this.label34);
-            this.groupBox7.Controls.Add(this.txt_otros_cuerp);
-            this.groupBox7.Controls.Add(this.label35);
-            this.groupBox7.Controls.Add(this.txt_otras_comp);
-            this.groupBox7.Controls.Add(this.label36);
-            this.groupBox7.Controls.Add(this.txt_canje);
-            this.groupBox7.Controls.Add(this.label37);
-            this.groupBox7.Controls.Add(this.txt_guardias);
-            this.groupBox7.Controls.Add(this.label38);
-            this.groupBox7.Controls.Add(this.txt_llamadas);
-            this.groupBox7.Location = new System.Drawing.Point(326, 17);
-            this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Size = new System.Drawing.Size(381, 128);
-            this.groupBox7.TabIndex = 23;
-            this.groupBox7.TabStop = false;
-            this.groupBox7.Text = "Abonos";
-            // 
             // MasInfoBombero
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2232,10 +2232,9 @@
             this.Controls.Add(this.btnCerrar);
             this.Controls.Add(this.tabBox);
             this.DoubleBuffered = true;
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
             this.Name = "MasInfoBombero";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.MasInfoBombero_Load);
             this.tabBox.ResumeLayout(false);
             this.FichaMedica.ResumeLayout(false);
@@ -2259,6 +2258,8 @@
             this.ResumenListas.PerformLayout();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
+            this.groupBox7.ResumeLayout(false);
+            this.groupBox7.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridListas)).EndInit();
             this.Servicio.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridServicio)).EndInit();
@@ -2273,8 +2274,6 @@
             this.tabPage1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridReincorporacion)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.box_picture)).EndInit();
-            this.groupBox7.ResumeLayout(false);
-            this.groupBox7.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
