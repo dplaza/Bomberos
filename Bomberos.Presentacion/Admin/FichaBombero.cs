@@ -22,6 +22,13 @@ namespace Bomberos.Presentacion.Admin
 
         private void FichaBombero_Load(object sender, EventArgs e)
         {
+            if (!ContextoDTO.Instancia().BomberoActual.isAdmin)
+            {
+                btn_imagen.Visible = false;
+                btn_editar.Visible = false;
+                btn_aceptar.Visible = false;
+            }
+
             IBomberoMgr _Bombero = new BomberoMgr();
             ICargoMgr _Cargo = new CargoMgr();
             ICompañiaMgr _Compañia = new CompañiaMgr();
@@ -176,9 +183,18 @@ namespace Bomberos.Presentacion.Admin
 
         private void button1_Click(object sender, EventArgs e)
         {
-            var form = new MasInfoBombero();
-            form.MdiParent = this.MdiParent;
-            form.Show();
+            if (ContextoDTO.Instancia().BomberoActual.isAdmin)
+            {
+                var form = new MasInfoBombero();
+                form.MdiParent = this.MdiParent;
+                form.Show();
+            }
+            else
+            {
+                var form = new MasInfoBomberoUsuario();
+                form.MdiParent = this.MdiParent;
+                form.Show();
+            }
         }
 
         private void groupBox3_Enter(object sender, EventArgs e)
@@ -188,9 +204,9 @@ namespace Bomberos.Presentacion.Admin
 
         private void btn_imprimir_Click(object sender, EventArgs e)
         {
-            printForm1.Form = this;
+            /*printForm1.Form = this;
             printForm1.DocumentName = "Ficha Bombero";
-            printForm1.PrintAction = System.Drawing.Printing.PrintAction.PrintToPreview;
+            printForm1.PrintAction = System.Drawing.Printing.PrintAction.PrintToPreview;*/
 
         }
     }

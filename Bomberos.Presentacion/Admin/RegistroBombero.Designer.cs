@@ -604,6 +604,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
             this.Name = "RegistroBombero";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Registro Bombero";
             this.Load += new System.EventHandler(this.RegistroBombero_Load);
             this.groupBox1.ResumeLayout(false);

@@ -49,6 +49,7 @@
             this.Apellidos = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Rut = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TIB = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NumeroRegistro = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Compania = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Cargo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -175,6 +176,7 @@
             this.Apellidos,
             this.Rut,
             this.TIB,
+            this.NumeroRegistro,
             this.Compania,
             this.Cargo,
             this.Estado,
@@ -286,6 +288,13 @@
             this.TIB.HeaderText = "TIB";
             this.TIB.Name = "TIB";
             this.TIB.ReadOnly = true;
+            // 
+            // NumeroRegistro
+            // 
+            this.NumeroRegistro.DataPropertyName = "NumeroRegistro";
+            this.NumeroRegistro.HeaderText = "N° Registro";
+            this.NumeroRegistro.Name = "NumeroRegistro";
+            this.NumeroRegistro.ReadOnly = true;
             // 
             // Compania
             // 
@@ -466,6 +475,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Apellidos;
         private System.Windows.Forms.DataGridViewTextBoxColumn Rut;
         private System.Windows.Forms.DataGridViewTextBoxColumn TIB;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NumeroRegistro;
         private System.Windows.Forms.DataGridViewTextBoxColumn Compania;
         private System.Windows.Forms.DataGridViewTextBoxColumn Cargo;
         private System.Windows.Forms.DataGridViewTextBoxColumn Estado;

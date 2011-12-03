@@ -43,7 +43,6 @@ namespace Bomberos.Datos
             }
             catch (Exception er)
             {
-                throw er;
                 return false;
             }
             finally
@@ -95,7 +94,6 @@ namespace Bomberos.Datos
             }
             catch (Exception er)
             {
-                throw er;
                 return ListaListaBombero;
             }
             finally

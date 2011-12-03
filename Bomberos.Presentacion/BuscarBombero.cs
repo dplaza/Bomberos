@@ -10,7 +10,6 @@ using Bomberos.Negocio.Mgr;
 using Bomberos.Comun;
 using Bomberos.ComunFuncional;
 using Bomberos.Presentacion.Admin;
-using Bomberos.Presentacion.Usuario;
 
 namespace Bomberos.Presentacion
 {
@@ -46,7 +45,7 @@ namespace Bomberos.Presentacion
             IBomberoMgr _Bombero = new BomberoMgr();
 
             CargoDTO cargo = new CargoDTO();
-            cargo = (CargoDTO) select_cargo.SelectedItem;
+            cargo = (CargoDTO)select_cargo.SelectedItem;
 
             if (cargo.Id != 0)
             {
@@ -56,9 +55,9 @@ namespace Bomberos.Presentacion
             {
                 dataGridResult.DataSource = _Bombero.ListarBomberos().FindAll(p => p.Nombres.Contains(txt_nombres.Text) && p.Apellidos.Contains(txt_apellidos.Text) && p.Rut.Contains(txt_rut.Text) && p.TIB.Contains(txt_tib.Text)).OrderBy(p => p.Nombres).ToList();
             }
-                dataGridResult.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dataGridResult.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridResult.MultiSelect = false;
-            
+
         }
 
         private void dataGridResult_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -77,18 +76,10 @@ namespace Bomberos.Presentacion
             {
                 ContextoDTO.Instancia().BomberoSelected.Rut = dataGridResult.SelectedRows[0].Cells["Rut"].Value.ToString();
 
-                if (ContextoDTO.Instancia().BomberoActual.isAdmin)
-                {
-                    var form = new FichaBombero();
-                    form.MdiParent = this.MdiParent;
-                    form.Show();
-                }
-                else
-                {
-                    var form = new VerFichaBombero();
-                    form.MdiParent = this.MdiParent;
-                    form.Show();
-                }
+                var form = new FichaBombero();
+                form.MdiParent = this.MdiParent;
+                form.Show();
+
             }
         }
 

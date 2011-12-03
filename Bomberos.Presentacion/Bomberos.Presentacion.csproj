@@ -95,11 +95,17 @@
     <Compile Include="Admin\Premios.Designer.cs">
       <DependentUpon>Premios.cs</DependentUpon>
     </Compile>
-    <Compile Include="MasInfoBombero.cs">
+    <Compile Include="Admin\MasInfoBombero.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MasInfoBombero.Designer.cs">
+    <Compile Include="Admin\MasInfoBombero.Designer.cs">
       <DependentUpon>MasInfoBombero.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Usuario\MasInfoBomberoUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Usuario\MasInfoBomberoUsuario.Designer.cs">
+      <DependentUpon>MasInfoBomberoUsuario.cs</DependentUpon>
     </Compile>
     <Compile Include="Usuario\MenuUsuario.cs">
       <SubType>Form</SubType>
@@ -157,8 +163,12 @@
       <DependentUpon>Premios.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="MasInfoBombero.resx">
+    <EmbeddedResource Include="Admin\MasInfoBombero.resx">
       <DependentUpon>MasInfoBombero.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Usuario\MasInfoBomberoUsuario.resx">
+      <DependentUpon>MasInfoBomberoUsuario.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Usuario\MenuUsuario.resx">
@@ -186,10 +196,6 @@
       <DependentUpon>RegistroBombero.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Usuario\VerFichaBombero.resx">
-      <DependentUpon>VerFichaBombero.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
@@ -209,12 +215,6 @@
     </Compile>
     <Compile Include="Admin\RegistroBombero.Designer.cs">
       <DependentUpon>RegistroBombero.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Usuario\VerFichaBombero.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Usuario\VerFichaBombero.designer.cs">
-      <DependentUpon>VerFichaBombero.cs</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

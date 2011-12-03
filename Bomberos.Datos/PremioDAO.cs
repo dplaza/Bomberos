@@ -34,9 +34,7 @@ namespace Bomberos.Datos
             }
             catch (Exception er)
             {
-                throw er;
-                //return false;
-                //throw new Exception("Problema con base de datos MySQL. Por favor, revise.");
+                return false;
             }
             finally
             {
@@ -67,8 +65,7 @@ namespace Bomberos.Datos
             }
             catch (Exception er)
             {
-                throw er;
-                //throw new Exception("Problema con base de datos MySQL. Por favor, revise.");
+                return retorno;
             }
             finally
             {
@@ -94,9 +91,7 @@ namespace Bomberos.Datos
             }
             catch (Exception er)
             {
-                throw er;
-                //return false;
-                //throw new Exception("Problema con base de datos MySQL. Por favor, revise.");
+                return false;
             }
             finally
             {
@@ -121,9 +116,7 @@ namespace Bomberos.Datos
             }
             catch (Exception er)
             {
-                throw er;
-                //return false;
-                //throw new Exception("Problema con base de datos MySQL. Por favor, revise.");
+                return false;
             }
             finally
             {
@@ -156,8 +149,7 @@ namespace Bomberos.Datos
             }
             catch (Exception er)
             {
-                throw er;
-                //throw new Exception("Problema con base de datos MySQL. Por favor, revise.");
+                return ListaPremio;
             }
             finally
             {

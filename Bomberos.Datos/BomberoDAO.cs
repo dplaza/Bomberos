@@ -14,7 +14,7 @@ namespace Bomberos.Datos
             string parameters = "server=localhost; user id=root; Password=nomeweis; database=bomberos; persist security info=False";
             MySql.Data.MySqlClient.MySqlConnection msqlConnection = new MySql.Data.MySqlClient.MySqlConnection(parameters);
 
-            return msqlConnection;   
+            return msqlConnection;
         }
 
         public bool Insert(BomberoDTO p_Bombero)
@@ -25,7 +25,7 @@ namespace Bomberos.Datos
             query = string.Concat(query, "dir_particular, dir_laboral, tel_particular, tel_laboral, celular, email, profesion, compania, ");
             query = string.Concat(query, "est_civil, is_admin, password, estado, cargo, id_socio) VALUES (?p_nombres, ?p_apellidos, ?p_rut, ?p_tib, ?p_fechainsc, ");
             query = string.Concat(query, "?p_fechanac, ?p_gruposang, ?p_dirpart, ?p_dirlab, ?p_telpart, ?p_tellab, ?p_celular, ?p_email, ");
-            query = string.Concat(query, "?p_profesion, ?p_compania, ?p_estcivil, ?p_isadmin, ?p_password, ?p_estado, ?p_cargo, ?p_socio) ");         
+            query = string.Concat(query, "?p_profesion, ?p_compania, ?p_estcivil, ?p_isadmin, ?p_password, ?p_estado, ?p_cargo, ?p_socio) ");
             MySql.Data.MySqlClient.MySqlCommand msqlCommand = new MySql.Data.MySqlClient.MySqlCommand(query, conexionBD);
             msqlCommand.Parameters.AddWithValue("?p_nombres", p_Bombero.Nombres);
             msqlCommand.Parameters.AddWithValue("?p_apellidos", p_Bombero.Apellidos);
@@ -57,9 +57,7 @@ namespace Bomberos.Datos
             }
             catch (Exception er)
             {
-                throw er;
-                //return false;
-                //throw new Exception("Problema con base de datos MySQL. Por favor, revise.");
+                return false;
             }
             finally
             {
@@ -120,8 +118,7 @@ namespace Bomberos.Datos
             }
             catch (Exception er)
             {
-                throw er;
-                //throw new Exception("Problema con base de datos MySQL. Por favor, revise.");
+                return retorno;
             }
             finally
             {
@@ -149,9 +146,7 @@ namespace Bomberos.Datos
             }
             catch (Exception er)
             {
-                throw er;
-                //return false;
-                //throw new Exception("Problema con base de datos MySQL. Por favor, revise.");
+                return false;
             }
             finally
             {
@@ -179,7 +174,7 @@ namespace Bomberos.Datos
             msqlCommand.Parameters.AddWithValue("?p_gruposang", p_Bombero.GrupoSanguineo);
             msqlCommand.Parameters.AddWithValue("?p_dirpart", p_Bombero.DireccionParticular);
             msqlCommand.Parameters.AddWithValue("?p_dirlab", p_Bombero.DireccionLaboral);
-            msqlCommand.Parameters.AddWithValue("?p_telpart", p_Bombero.TelefonoParticular);            
+            msqlCommand.Parameters.AddWithValue("?p_telpart", p_Bombero.TelefonoParticular);
             msqlCommand.Parameters.AddWithValue("?p_tellab", p_Bombero.TelefonoLaboral);
             msqlCommand.Parameters.AddWithValue("?p_celular", p_Bombero.Celular);
             msqlCommand.Parameters.AddWithValue("?p_email", p_Bombero.Email);
@@ -201,9 +196,7 @@ namespace Bomberos.Datos
             }
             catch (Exception er)
             {
-                throw er;
-                //return false;
-                //throw new Exception("Problema con base de datos MySQL. Por favor, revise.");
+                return false;
             }
             finally
             {
@@ -267,8 +260,7 @@ namespace Bomberos.Datos
             }
             catch (Exception er)
             {
-                throw er;
-                //throw new Exception("Problema con base de datos MySQL. Por favor, revise.");
+                return ListaBomberos;
             }
             finally
             {
