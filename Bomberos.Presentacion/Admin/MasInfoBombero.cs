@@ -9,13 +9,18 @@ using System.Windows.Forms;
 using Bomberos.Negocio.Mgr;
 using Bomberos.ComunFuncional;
 using Bomberos.Comun;
+using Bomberos.ComunFuncional.Enumeraciones;
+using Bomberos.ComunFuncional.Util;
 
 namespace Bomberos.Presentacion
 {
     public partial class MasInfoBombero : Form
     {
+        public FichaMedicaDTO FichaMedicaBomberoActual { get; set; }
+
         public MasInfoBombero()
         {
+            FichaMedicaBomberoActual = new FichaMedicaDTO();
             InitializeComponent();
         }
 
@@ -85,6 +90,7 @@ namespace Bomberos.Presentacion
             dataGridReincorporacion.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
 
             FichaMedica = _FichaMedica.CargarFichaMedica(FichaMedica);
+            FichaMedicaBomberoActual = FichaMedica;
 
             txt_med_antec.Text = FichaMedica.AntecedentesCronicos;
             txt_med_medContra.Text = FichaMedica.MedicamentosNoToma;
@@ -658,6 +664,22 @@ namespace Bomberos.Presentacion
             {
                 MessageBox.Show("Error al agregar reincorporacion de bombero");
             }
+        }
+
+        private void btn_imprimir_ficha_medica_Click(object sender, EventArgs e)
+        {
+            FichaMedicaReportDTO oParametro = new FichaMedicaReportDTO();
+            oParametro.p_Bombero = new BomberoReportDTO();
+            Utilidades.ReflectarPropiedadesSimilares(FichaMedicaBomberoActual, oParametro);
+            Utilidades.ReflectarPropiedadesSimilares(ContextoDTO.Instancia().BomberoSelected, oParametro.p_Bombero);
+            oParametro.p_Bombero.p_Compañia = ContextoDTO.Instancia().BomberoSelected.Compañia.Nombre;
+
+            var form = new VisorReportes();
+
+            form.MostrarReporte(
+                EnumReportes.FichaMedica,
+                oParametro
+            );
         }
     }
 }

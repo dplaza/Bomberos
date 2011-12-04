@@ -21,6 +21,14 @@ namespace Bomberos.Datos
         {
             //MySQL
             MySql.Data.MySqlClient.MySqlConnection conexionBD = ConnectBD();
+
+            StringBuilder strBuilder = new StringBuilder();
+            
+            strBuilder.Append("INSERT INTO ");
+            strBuilder.Append(" bomberos (nombres, apellidos, rut, tib, fecha_inscripcion, fecha_nacimiento, grupo_sanguineo,");
+            strBuilder.Append("dir_particular, dir_laboral, tel_particular, tel_laboral, celular, email, profesion, compania,");
+
+
             string query = "INSERT INTO bomberos (nombres, apellidos, rut, tib, fecha_inscripcion, fecha_nacimiento, grupo_sanguineo, ";
             query = string.Concat(query, "dir_particular, dir_laboral, tel_particular, tel_laboral, celular, email, profesion, compania, ");
             query = string.Concat(query, "est_civil, is_admin, password, estado, cargo, id_socio) VALUES (?p_nombres, ?p_apellidos, ?p_rut, ?p_tib, ?p_fechainsc, ");

@@ -45,8 +45,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BomberoReportDTO.cs" />
     <Compile Include="ContextoDTO.cs" />
+    <Compile Include="Enumeraciones\EnumReportes.cs" />
+    <Compile Include="FichaMedicaReportDTO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Util\Utilidades.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Bomberos.Comun\Bomberos.Comun.csproj">

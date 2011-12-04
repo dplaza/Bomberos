@@ -233,6 +233,7 @@
             this.labelTIB = new System.Windows.Forms.Label();
             this.labelRut = new System.Windows.Forms.Label();
             this.labelnombre = new System.Windows.Forms.Label();
+            this.btn_imprimir_ficha_medica = new System.Windows.Forms.Button();
             this.tabBox.SuspendLayout();
             this.FichaMedica.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -277,6 +278,7 @@
             // 
             // FichaMedica
             // 
+            this.FichaMedica.Controls.Add(this.btn_imprimir_ficha_medica);
             this.FichaMedica.Controls.Add(this.groupBox3);
             this.FichaMedica.Controls.Add(this.btn_enviar_cambios);
             this.FichaMedica.Controls.Add(this.txt_med_medContra);
@@ -411,7 +413,7 @@
             // 
             // btn_enviar_cambios
             // 
-            this.btn_enviar_cambios.Location = new System.Drawing.Point(533, 286);
+            this.btn_enviar_cambios.Location = new System.Drawing.Point(521, 293);
             this.btn_enviar_cambios.Name = "btn_enviar_cambios";
             this.btn_enviar_cambios.Size = new System.Drawing.Size(113, 23);
             this.btn_enviar_cambios.TabIndex = 10;
@@ -2219,6 +2221,16 @@
             this.labelnombre.TabIndex = 172;
             this.labelnombre.Text = "Nombre completo";
             // 
+            // btn_imprimir_ficha_medica
+            // 
+            this.btn_imprimir_ficha_medica.Location = new System.Drawing.Point(521, 252);
+            this.btn_imprimir_ficha_medica.Name = "btn_imprimir_ficha_medica";
+            this.btn_imprimir_ficha_medica.Size = new System.Drawing.Size(113, 23);
+            this.btn_imprimir_ficha_medica.TabIndex = 13;
+            this.btn_imprimir_ficha_medica.Text = "Imprimir";
+            this.btn_imprimir_ficha_medica.UseVisualStyleBackColor = true;
+            this.btn_imprimir_ficha_medica.Click += new System.EventHandler(this.btn_imprimir_ficha_medica_Click);
+            // 
             // MasInfoBombero
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2487,6 +2499,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn BomberoReincorporacion;
         private System.Windows.Forms.DataGridViewTextBoxColumn FechaReincorporacion;
         private System.Windows.Forms.GroupBox groupBox7;
+        private System.Windows.Forms.Button btn_imprimir_ficha_medica;
 
     }
 }

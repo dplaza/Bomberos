@@ -232,7 +232,7 @@
             // 
             // btn_buscar
             // 
-            this.btn_buscar.Location = new System.Drawing.Point(533, 47);
+            this.btn_buscar.Location = new System.Drawing.Point(544, 46);
             this.btn_buscar.Name = "btn_buscar";
             this.btn_buscar.Size = new System.Drawing.Size(101, 23);
             this.btn_buscar.TabIndex = 0;
@@ -267,6 +267,7 @@
             this.Nombres.HeaderText = "Nombres";
             this.Nombres.Name = "Nombres";
             this.Nombres.ReadOnly = true;
+            this.Nombres.Width = 150;
             // 
             // Apellidos
             // 
@@ -274,11 +275,12 @@
             this.Apellidos.HeaderText = "Apellidos";
             this.Apellidos.Name = "Apellidos";
             this.Apellidos.ReadOnly = true;
+            this.Apellidos.Width = 150;
             // 
             // Rut
             // 
             this.Rut.DataPropertyName = "Rut";
-            this.Rut.HeaderText = "Rut";
+            this.Rut.HeaderText = "RUT";
             this.Rut.Name = "Rut";
             this.Rut.ReadOnly = true;
             // 
@@ -430,7 +432,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btn_cancelar;
-            this.ClientSize = new System.Drawing.Size(701, 458);
+            this.ClientSize = new System.Drawing.Size(701, 469);
             this.Controls.Add(this.btn_cancelar);
             this.Controls.Add(this.btn_perfil);
             this.Controls.Add(this.groupBox1);

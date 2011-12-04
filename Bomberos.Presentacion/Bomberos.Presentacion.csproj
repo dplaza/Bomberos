@@ -46,12 +46,16 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
     <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="Microsoft.VisualBasic.PowerPacks.Vs, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
     <Reference Include="System" />
     <Reference Include="System.Core">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml.Linq">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
@@ -167,6 +171,12 @@
       <DependentUpon>MasInfoBombero.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <Content Include="Reportes\ReporteFichaMedica.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Reportes\ReporteFichaPersonal.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <EmbeddedResource Include="Usuario\MasInfoBomberoUsuario.resx">
       <DependentUpon>MasInfoBomberoUsuario.cs</DependentUpon>
       <SubType>Designer</SubType>
@@ -196,6 +206,10 @@
       <DependentUpon>RegistroBombero.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="VisorReportes.resx">
+      <DependentUpon>VisorReportes.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
@@ -215,6 +229,12 @@
     </Compile>
     <Compile Include="Admin\RegistroBombero.Designer.cs">
       <DependentUpon>RegistroBombero.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VisorReportes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VisorReportes.Designer.cs">
+      <DependentUpon>VisorReportes.cs</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

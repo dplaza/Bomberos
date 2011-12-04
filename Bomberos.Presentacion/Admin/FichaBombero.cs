@@ -10,6 +10,8 @@ using Bomberos.ComunFuncional;
 using Bomberos.Negocio.Mgr;
 using Bomberos.Comun;
 using System.IO;
+using Bomberos.ComunFuncional.Enumeraciones;
+using Bomberos.ComunFuncional.Util;
 
 namespace Bomberos.Presentacion.Admin
 {
@@ -204,9 +206,20 @@ namespace Bomberos.Presentacion.Admin
 
         private void btn_imprimir_Click(object sender, EventArgs e)
         {
-            /*printForm1.Form = this;
-            printForm1.DocumentName = "Ficha Bombero";
-            printForm1.PrintAction = System.Drawing.Printing.PrintAction.PrintToPreview;*/
+            BomberoReportDTO oParametro = new BomberoReportDTO();
+
+            Utilidades.ReflectarPropiedadesSimilares(ContextoDTO.Instancia().BomberoSelected, oParametro);
+            oParametro.p_Compañia = ContextoDTO.Instancia().BomberoSelected.Compañia.Nombre;
+            oParametro.p_Cargo = ContextoDTO.Instancia().BomberoSelected.Cargo.Nombre;
+            oParametro.p_Estado = ContextoDTO.Instancia().BomberoSelected.Estado;
+            oParametro.p_EstadoCivil = ContextoDTO.Instancia().BomberoSelected.EstadoCivil;
+
+            var form = new VisorReportes();
+
+            form.MostrarReporte(
+                EnumReportes.FichaPersonal,
+                oParametro
+                );
 
         }
     }
