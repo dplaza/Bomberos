@@ -219,9 +219,7 @@ namespace Bomberos.Presentacion.Admin
             oParametro.p_Estado = ContextoDTO.Instancia().BomberoSelected.Estado;
             oParametro.p_EstadoCivil = ContextoDTO.Instancia().BomberoSelected.EstadoCivil;
 
-            ListaR = _Reincorporacion.CargarReincorporacionBombero(ReincorporacionBombero);
-
-            foreach (var elem in ListaR)
+            foreach (var elem in _Reincorporacion.CargarReincorporacionBombero(ReincorporacionBombero))
             {
                 oParametro.p_Reincorporaciones.Add(elem.FechaReincorporacion.ToString());
             }

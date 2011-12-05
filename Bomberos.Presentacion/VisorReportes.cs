@@ -101,6 +101,22 @@ namespace Bomberos.Presentacion
             if (p_TipoReporte == EnumReportes.Asistencia)
             {
                 rptViewer.LocalReport.ReportPath = Application.StartupPath + @"\Reportes\ReporteAsistencia.rdlc";
+
+                ListaReportDTO lista = (ListaReportDTO)p_ListaParametros;
+
+                foreach (var pi in lista.GetType().GetProperties())
+                {
+                    var valor = pi.GetValue(lista, null) == null ? "" : pi.GetValue(lista, null).ToString();
+                    ReportParameter rp = new ReportParameter(pi.Name, valor);
+                    ListaParametrosReporte.Add(rp);
+                }
+
+                ReportDataSource ds = new ReportDataSource();
+                ds.Name = "ListaAsistencia";
+                ds.Value = Utilidades.ConvertirListADataTable(lista.ListaAsistencias);
+
+                rptViewer.LocalReport.DataSources.Add(ds);
+
             }
 
             if (p_TipoReporte == EnumReportes.Servicio)

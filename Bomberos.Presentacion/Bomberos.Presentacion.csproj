@@ -108,6 +108,10 @@
     <Compile Include="Admin\MasInfoBombero.Designer.cs">
       <DependentUpon>MasInfoBombero.cs</DependentUpon>
     </Compile>
+    <Compile Include="dsReportes.cs">
+      <DependentUpon>dsReportes.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="dsReportes.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

@@ -1220,6 +1220,7 @@
             this.btn_imprimir_asistencia.TabIndex = 18;
             this.btn_imprimir_asistencia.Text = "Imprimir";
             this.btn_imprimir_asistencia.UseVisualStyleBackColor = true;
+            this.btn_imprimir_asistencia.Click += new System.EventHandler(this.btn_imprimir_asistencia_Click);
             // 
             // lbl_totalAbonos
             // 

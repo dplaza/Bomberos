@@ -49,6 +49,7 @@
     <Compile Include="ContextoDTO.cs" />
     <Compile Include="Enumeraciones\EnumReportes.cs" />
     <Compile Include="FichaMedicaReportDTO.cs" />
+    <Compile Include="ListaReportDTO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="CargoReportDTO.cs" />
     <Compile Include="Util\Utilidades.cs" />

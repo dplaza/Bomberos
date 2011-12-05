@@ -696,8 +696,8 @@ namespace Bomberos.Presentacion
             {
                 Bomberos.ComunFuncional.CargoReportDTO.CargosReport CargoElem = new CargoReportDTO.CargosReport();
                 CargoElem.p_Nombre = elem.NombreCargo;
-                CargoElem.p_FechaDesde = elem.FechaDesde.ToString();
-                CargoElem.p_FechaHasta = elem.FechaHasta.ToString();
+                CargoElem.p_FechaDesde = elem.FechaDesde.Date.ToString();
+                CargoElem.p_FechaHasta = elem.FechaHasta.Date.ToString();
                 oParametro.ListaCargos.Add(CargoElem);
             }
 
@@ -705,6 +705,69 @@ namespace Bomberos.Presentacion
 
             form.MostrarReporte(
                 EnumReportes.HistorialCargos,
+                oParametro
+                );
+        }
+
+        private void btn_imprimir_asistencia_Click(object sender, EventArgs e)
+        {
+            ListaReportDTO oParametro = new ListaReportDTO();
+            oParametro.p_Nombres = ContextoDTO.Instancia().BomberoSelected.Nombres;
+            oParametro.p_Apellidos = ContextoDTO.Instancia().BomberoSelected.Apellidos;
+
+            IListaMgr _Lista = new ListaMgr();
+            ListaDTO Lista = new ListaDTO();
+            Lista.Bombero = ContextoDTO.Instancia().BomberoSelected;
+            Lista.Año = dateTimeListas.Value.Year;
+
+            int sumatotalLlam = 0;
+            int sumatotalAbonos = 0;
+            int sumaAsistencias = 0;
+            int sumaFaltas = 0;
+            int sumaLlamadas = 0;
+            int sumaGuardiasNoct = 0;
+            int sumaOtrosCuerp = 0;
+            int sumaOtrasComp = 0;
+            int sumaSuspensiones = 0;
+            int sumaLicencias = 0;
+            int sumaCompCanje = 0;
+
+            foreach (var elem in _Lista.CargarLista(Lista))
+            {
+                Bomberos.ComunFuncional.ListaReportDTO.ListaReport ListaElem = new ListaReportDTO.ListaReport();
+                Utilidades.ReflectarPropiedadesSimilares(elem,ListaElem);
+                oParametro.ListaAsistencias.Add(ListaElem);
+
+                sumatotalLlam += elem.TotalLlamadas;
+                sumatotalAbonos += elem.TotalAbonos;
+                sumaSuspensiones += elem.Suspensiones;
+                sumaOtrosCuerp += elem.OtrosCuerpos;
+                sumaOtrasComp += elem.OtrasCompañias;
+                sumaLlamadas += elem.LlamadasComandancia;
+                sumaLicencias += elem.Licencias;
+                sumaGuardiasNoct += elem.GuardiasNocturnas;
+                sumaFaltas += elem.Faltas;
+                sumaCompCanje += elem.CompañiasCanje;
+                sumaAsistencias += elem.Asistencia;
+            }
+
+            oParametro.p_TotalAsistencia = sumaAsistencias.ToString();
+            oParametro.p_TotalCompañiasCanje = sumaCompCanje.ToString();
+            oParametro.p_TotalFaltas = sumaFaltas.ToString();
+            oParametro.p_TotalGuardiasNocturnas = sumaGuardiasNoct.ToString();
+            oParametro.p_TotalLicencias = sumaLicencias.ToString();
+            oParametro.p_TotalLlamadasComandancia = sumaLlamadas.ToString();
+            oParametro.p_TotalOtrasCompañias = sumaOtrasComp.ToString();
+            oParametro.p_TotalOtrosCuerpos = sumaOtrosCuerp.ToString();
+            oParametro.p_TotalSuspensiones = sumaSuspensiones.ToString();
+            oParametro.p_TotalTotalAbonos = sumatotalAbonos.ToString();
+            oParametro.p_TotalTotalLlamadas = sumatotalLlam.ToString();
+
+
+            var form = new VisorReportes();
+
+            form.MostrarReporte(
+                EnumReportes.Asistencia,
                 oParametro
                 );
         }
