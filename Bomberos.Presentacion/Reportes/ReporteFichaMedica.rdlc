@@ -197,6 +197,11 @@
       <AllowBlank>true</AllowBlank>
       <Prompt>Report_Parameter_38</Prompt>
     </ReportParameter>
+    <ReportParameter Name="ListaReincorporaciones">
+      <DataType>String</DataType>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>Report_Parameter_39</Prompt>
+    </ReportParameter>
   </ReportParameters>
   <rd:DrawGrid>true</rd:DrawGrid>
   <InteractiveWidth>21cm</InteractiveWidth>

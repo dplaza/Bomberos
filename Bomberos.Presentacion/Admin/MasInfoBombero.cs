@@ -735,7 +735,7 @@ namespace Bomberos.Presentacion
             foreach (var elem in _Lista.CargarLista(Lista))
             {
                 Bomberos.ComunFuncional.ListaReportDTO.ListaReport ListaElem = new ListaReportDTO.ListaReport();
-                Utilidades.ReflectarPropiedadesSimilares(elem,ListaElem);
+                Utilidades.ReflectarPropiedadesSimilares(elem, ListaElem);
                 oParametro.ListaAsistencias.Add(ListaElem);
 
                 sumatotalLlam += elem.TotalLlamadas;
@@ -768,6 +768,84 @@ namespace Bomberos.Presentacion
 
             form.MostrarReporte(
                 EnumReportes.Asistencia,
+                oParametro
+                );
+        }
+
+        private void btn_imprimir_cursos_Click(object sender, EventArgs e)
+        {
+            CursoReportDTO oParametro = new CursoReportDTO();
+            oParametro.p_Nombres = ContextoDTO.Instancia().BomberoSelected.Nombres;
+            oParametro.p_Apellidos = ContextoDTO.Instancia().BomberoSelected.Apellidos;
+
+            ICursoBomberoMgr _Curso = new CursoBomberoMgr();
+            CursoBomberoDTO Curso = new CursoBomberoDTO();
+            Curso.Bombero = ContextoDTO.Instancia().BomberoSelected;
+
+            foreach (var elem in _Curso.CargarCursoBombero(Curso))
+            {
+                Bomberos.ComunFuncional.CursoReportDTO.CursosReport CursoElem = new CursoReportDTO.CursosReport();
+                Utilidades.ReflectarPropiedadesSimilares(elem, CursoElem);
+                CursoElem.p_Nombre = elem.NombreCurso;
+                CursoElem.p_FechaTermino = elem.FechaFin.ToString();
+                oParametro.ListaCursos.Add(CursoElem);
+            }
+
+            var form = new VisorReportes();
+
+            form.MostrarReporte(
+                EnumReportes.HistorialCursos,
+                oParametro
+                );
+        }
+
+        private void btn_imprimir_premios_Click(object sender, EventArgs e)
+        {
+            PremioReportDTO oParametro = new PremioReportDTO();
+            oParametro.p_Nombres = ContextoDTO.Instancia().BomberoSelected.Nombres;
+            oParametro.p_Apellidos = ContextoDTO.Instancia().BomberoSelected.Apellidos;
+
+            IPremioBomberoMgr _Premio = new PremioBomberoMgr();
+            PremioBomberoDTO Premio = new PremioBomberoDTO();
+            Premio.Bombero = ContextoDTO.Instancia().BomberoSelected;
+
+            foreach (var elem in _Premio.CargarPremioBombero(Premio))
+            {
+                Bomberos.ComunFuncional.PremioReportDTO.PremiosReport PremioElem = new PremioReportDTO.PremiosReport();
+                Utilidades.ReflectarPropiedadesSimilares(elem, PremioElem);
+                PremioElem.p_Nombre = elem.NombrePremio;
+                oParametro.ListaPremios.Add(PremioElem);
+            }
+
+            var form = new VisorReportes();
+
+            form.MostrarReporte(
+                EnumReportes.HistorialPremios,
+                oParametro
+                );
+        }
+
+        private void btn_imprimir_observaciones_Click(object sender, EventArgs e)
+        {
+            ObservacionReportDTO oParametro = new ObservacionReportDTO();
+            oParametro.p_Nombres = ContextoDTO.Instancia().BomberoSelected.Nombres;
+            oParametro.p_Apellidos = ContextoDTO.Instancia().BomberoSelected.Apellidos;
+
+            IObservacionBomberoMgr _Obs = new ObservacionBomberoMgr();
+            ObservacionBomberoDTO Obs = new ObservacionBomberoDTO();
+            Obs.Bombero = ContextoDTO.Instancia().BomberoSelected;
+
+            foreach (var elem in _Obs.CargarObservacionesBombero(Obs))
+            {
+                Bomberos.ComunFuncional.ObservacionReportDTO.ObservacionesReport ObsElem = new ObservacionReportDTO.ObservacionesReport();
+                Utilidades.ReflectarPropiedadesSimilares(elem, ObsElem);
+                oParametro.ListaObservaciones.Add(ObsElem);
+            }
+
+            var form = new VisorReportes();
+
+            form.MostrarReporte(
+                EnumReportes.Observaciones,
                 oParametro
                 );
         }

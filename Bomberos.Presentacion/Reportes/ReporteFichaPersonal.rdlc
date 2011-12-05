@@ -2,7 +2,7 @@
 <Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2005/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
   <DataSources>
     <DataSource Name="DummyDataSource">
-      <rd:DataSourceID>8633f307-1954-4574-af20-feb7402604c9</rd:DataSourceID>
+      <rd:DataSourceID>6432bb1f-45b5-4a36-a0c5-b52f03344cba</rd:DataSourceID>
       <ConnectionProperties>
         <DataProvider>SQL</DataProvider>
         <ConnectString />
@@ -106,7 +106,7 @@
       <AllowBlank>true</AllowBlank>
       <Prompt>Report_Parameter_18</Prompt>
     </ReportParameter>
-    <ReportParameter Name="p_Reincorporaciones">
+    <ReportParameter Name="ListaReincorporaciones">
       <DataType>String</DataType>
       <AllowBlank>true</AllowBlank>
       <Prompt>Report_Parameter_19</Prompt>
@@ -122,14 +122,10 @@
   <rd:ReportID>70b197a4-0b42-46ff-aed7-0ced789edbe7</rd:ReportID>
   <PageWidth>21cm</PageWidth>
   <DataSets>
-    <DataSet Name="dsReincorporaciones_ListaReincorporaciones">
+    <DataSet Name="ListaReincorporaciones">
       <Fields>
         <Field Name="p_Fecha">
           <DataField>p_Fecha</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="p_Rut">
-          <DataField>p_Rut</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
       </Fields>
@@ -139,18 +135,18 @@
         <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
       </Query>
       <rd:DataSetInfo>
-        <rd:DataSetName>dsReincorporaciones</rd:DataSetName>
+        <rd:DataSetName>dsReportes</rd:DataSetName>
         <rd:TableName>ListaReincorporaciones</rd:TableName>
       </rd:DataSetInfo>
     </DataSet>
   </DataSets>
-  <Width>15.5cm</Width>
+  <Width>16cm</Width>
   <Body>
     <ColumnSpacing>1cm</ColumnSpacing>
     <ReportItems>
       <Table Name="TablaReincorporaciones">
         <ZIndex>32</ZIndex>
-        <DataSetName>dsReincorporaciones_ListaReincorporaciones</DataSetName>
+        <DataSetName>ListaReincorporaciones</DataSetName>
         <Top>18cm</Top>
         <Width>5.16667cm</Width>
         <Details>
@@ -209,7 +205,7 @@
           </TableColumn>
         </TableColumns>
         <Height>1.26984cm</Height>
-        <Left>0.75cm</Left>
+        <Left>1.25cm</Left>
       </Table>
       <Textbox Name="textbox42">
         <rd:DefaultName>textbox42</rd:DefaultName>
@@ -224,7 +220,7 @@
         </Style>
         <ZIndex>31</ZIndex>
         <CanGrow>true</CanGrow>
-        <Left>0.5cm</Left>
+        <Left>1cm</Left>
         <Height>0.63492cm</Height>
         <Value>5.- REINCORPORACIONES</Value>
       </Textbox>
@@ -241,7 +237,7 @@
         </Style>
         <ZIndex>30</ZIndex>
         <CanGrow>true</CanGrow>
-        <Left>0.5cm</Left>
+        <Left>1cm</Left>
         <Height>0.63492cm</Height>
         <Value>4.- FECHA INGRESO A LA INSTITUCIÓN</Value>
       </Textbox>
@@ -258,7 +254,7 @@
         </Style>
         <ZIndex>29</ZIndex>
         <CanGrow>true</CanGrow>
-        <Left>0.5cm</Left>
+        <Left>1cm</Left>
         <Height>0.63492cm</Height>
         <Value>3.- OTROS DATOS</Value>
       </Textbox>
@@ -275,7 +271,7 @@
         </Style>
         <ZIndex>28</ZIndex>
         <CanGrow>true</CanGrow>
-        <Left>0.5cm</Left>
+        <Left>1cm</Left>
         <Height>0.63492cm</Height>
         <Value>2.- TARJETA IDENTIFICACION</Value>
       </Textbox>
@@ -292,7 +288,7 @@
         </Style>
         <ZIndex>27</ZIndex>
         <CanGrow>true</CanGrow>
-        <Left>0.5cm</Left>
+        <Left>1cm</Left>
         <Height>0.63492cm</Height>
         <Value>1.- DATOS PERSONALES</Value>
       </Textbox>
@@ -309,7 +305,7 @@
         </Style>
         <ZIndex>26</ZIndex>
         <CanGrow>true</CanGrow>
-        <Left>6cm</Left>
+        <Left>6.5cm</Left>
         <Height>0.63492cm</Height>
         <Value>=Parameters!p_TelefonoLaboral.Value</Value>
       </Textbox>
@@ -326,7 +322,7 @@
         </Style>
         <ZIndex>25</ZIndex>
         <CanGrow>true</CanGrow>
-        <Left>6cm</Left>
+        <Left>6.5cm</Left>
         <Height>0.63492cm</Height>
         <Value>=Parameters!p_TelefonoParticular.Value</Value>
       </Textbox>
@@ -343,7 +339,7 @@
         </Style>
         <ZIndex>24</ZIndex>
         <CanGrow>true</CanGrow>
-        <Left>6cm</Left>
+        <Left>6.5cm</Left>
         <Height>0.63492cm</Height>
         <Value>=Parameters!p_DireccionLaboral.Value</Value>
       </Textbox>
@@ -360,7 +356,7 @@
         </Style>
         <ZIndex>23</ZIndex>
         <CanGrow>true</CanGrow>
-        <Left>6cm</Left>
+        <Left>6.5cm</Left>
         <Height>0.63492cm</Height>
         <Value>=Parameters!p_DireccionParticular.Value</Value>
       </Textbox>
@@ -377,7 +373,7 @@
         </Style>
         <ZIndex>22</ZIndex>
         <CanGrow>true</CanGrow>
-        <Left>6cm</Left>
+        <Left>6.5cm</Left>
         <Height>0.63492cm</Height>
         <Value>=Parameters!p_Profesion.Value</Value>
       </Textbox>
@@ -394,7 +390,7 @@
         </Style>
         <ZIndex>21</ZIndex>
         <CanGrow>true</CanGrow>
-        <Left>6cm</Left>
+        <Left>6.5cm</Left>
         <Height>0.63492cm</Height>
         <Value>=Parameters!p_GrupoSanguineo.Value</Value>
       </Textbox>
@@ -411,7 +407,7 @@
         </Style>
         <ZIndex>20</ZIndex>
         <CanGrow>true</CanGrow>
-        <Left>6cm</Left>
+        <Left>6.5cm</Left>
         <Height>0.63492cm</Height>
         <Value>=Parameters!p_FechaNacimiento.Value</Value>
       </Textbox>
@@ -428,7 +424,7 @@
         </Style>
         <ZIndex>19</ZIndex>
         <CanGrow>true</CanGrow>
-        <Left>6cm</Left>
+        <Left>6.5cm</Left>
         <Height>0.63492cm</Height>
         <Value>=Parameters!p_Rut.Value</Value>
       </Textbox>
@@ -445,7 +441,7 @@
         </Style>
         <ZIndex>18</ZIndex>
         <CanGrow>true</CanGrow>
-        <Left>6cm</Left>
+        <Left>6.5cm</Left>
         <Height>0.63492cm</Height>
         <Value>=Parameters!p_Nombres.Value</Value>
       </Textbox>
@@ -462,7 +458,7 @@
         </Style>
         <ZIndex>17</ZIndex>
         <CanGrow>true</CanGrow>
-        <Left>6cm</Left>
+        <Left>6.5cm</Left>
         <Height>0.63492cm</Height>
         <Value>=Parameters!p_Apellidos.Value</Value>
       </Textbox>
@@ -478,7 +474,7 @@
         </Style>
         <ZIndex>16</ZIndex>
         <CanGrow>true</CanGrow>
-        <Left>0.75cm</Left>
+        <Left>1.25cm</Left>
         <Height>0.63492cm</Height>
         <Value>Teléfono Laboral</Value>
       </Textbox>
@@ -494,7 +490,7 @@
         </Style>
         <ZIndex>15</ZIndex>
         <CanGrow>true</CanGrow>
-        <Left>0.75cm</Left>
+        <Left>1.25cm</Left>
         <Height>0.63492cm</Height>
         <Value>Teléfono Particular</Value>
       </Textbox>
@@ -510,7 +506,7 @@
         </Style>
         <ZIndex>14</ZIndex>
         <CanGrow>true</CanGrow>
-        <Left>0.75cm</Left>
+        <Left>1.25cm</Left>
         <Height>0.63492cm</Height>
         <Value>Dirección Particular</Value>
       </Textbox>
@@ -526,7 +522,7 @@
         </Style>
         <ZIndex>13</ZIndex>
         <CanGrow>true</CanGrow>
-        <Left>0.75cm</Left>
+        <Left>1.25cm</Left>
         <Height>0.63492cm</Height>
         <Value>Dirección Laboral</Value>
       </Textbox>
@@ -542,7 +538,7 @@
         </Style>
         <ZIndex>12</ZIndex>
         <CanGrow>true</CanGrow>
-        <Left>0.75cm</Left>
+        <Left>1.25cm</Left>
         <Height>0.63492cm</Height>
         <Value>Profesión, Actividad u Oficio</Value>
       </Textbox>
@@ -558,7 +554,7 @@
         </Style>
         <ZIndex>11</ZIndex>
         <CanGrow>true</CanGrow>
-        <Left>0.75cm</Left>
+        <Left>1.25cm</Left>
         <Height>0.63492cm</Height>
         <Value>Grupo Sanguíneo</Value>
       </Textbox>
@@ -574,7 +570,7 @@
         </Style>
         <ZIndex>10</ZIndex>
         <CanGrow>true</CanGrow>
-        <Left>0.75cm</Left>
+        <Left>1.25cm</Left>
         <Height>0.63492cm</Height>
         <Value>Fecha Nacimiento</Value>
       </Textbox>
@@ -590,7 +586,7 @@
         </Style>
         <ZIndex>9</ZIndex>
         <CanGrow>true</CanGrow>
-        <Left>0.75cm</Left>
+        <Left>1.25cm</Left>
         <Height>0.63492cm</Height>
         <Value>RUT</Value>
       </Textbox>
@@ -606,7 +602,7 @@
         </Style>
         <ZIndex>8</ZIndex>
         <CanGrow>true</CanGrow>
-        <Left>0.75cm</Left>
+        <Left>1.25cm</Left>
         <Height>0.63492cm</Height>
         <Value>Apellidos</Value>
       </Textbox>
@@ -622,7 +618,7 @@
         </Style>
         <ZIndex>7</ZIndex>
         <CanGrow>true</CanGrow>
-        <Left>0.75cm</Left>
+        <Left>1.25cm</Left>
         <Height>0.63492cm</Height>
         <Value>Nombres</Value>
       </Textbox>
@@ -641,7 +637,7 @@
         </Style>
         <ZIndex>6</ZIndex>
         <CanGrow>true</CanGrow>
-        <Left>2.5625cm</Left>
+        <Left>2.8125cm</Left>
         <Height>0.63492cm</Height>
         <Value>HOJA IDENTIFICACIÓN DEL BOMBERO</Value>
       </Textbox>
@@ -658,7 +654,7 @@
         </Style>
         <ZIndex>5</ZIndex>
         <CanGrow>true</CanGrow>
-        <Left>4.625cm</Left>
+        <Left>4.875cm</Left>
         <Height>0.63492cm</Height>
         <Value>Compañia</Value>
       </Textbox>
@@ -677,7 +673,7 @@
         </Style>
         <ZIndex>4</ZIndex>
         <CanGrow>true</CanGrow>
-        <Left>7.41468cm</Left>
+        <Left>7.66468cm</Left>
         <Height>0.63492cm</Height>
         <Value>=Parameters!p_Compañia.Value</Value>
       </Textbox>
@@ -693,7 +689,7 @@
         </Style>
         <ZIndex>3</ZIndex>
         <CanGrow>true</CanGrow>
-        <Left>0.75cm</Left>
+        <Left>1.25cm</Left>
         <Height>0.63492cm</Height>
         <Value>TIB N°</Value>
       </Textbox>
@@ -710,7 +706,7 @@
         </Style>
         <ZIndex>2</ZIndex>
         <CanGrow>true</CanGrow>
-        <Left>6cm</Left>
+        <Left>6.5cm</Left>
         <Height>0.63492cm</Height>
         <Value>=Parameters!p_TIB.Value</Value>
       </Textbox>
@@ -726,7 +722,7 @@
         </Style>
         <ZIndex>1</ZIndex>
         <CanGrow>true</CanGrow>
-        <Left>0.75cm</Left>
+        <Left>1.25cm</Left>
         <Height>0.63492cm</Height>
         <Value>Fecha Inscripción</Value>
       </Textbox>
@@ -742,7 +738,7 @@
           <PaddingBottom>2pt</PaddingBottom>
         </Style>
         <CanGrow>true</CanGrow>
-        <Left>6cm</Left>
+        <Left>6.5cm</Left>
         <Height>0.63492cm</Height>
         <Value>=Parameters!p_FechaInscripcion.Value</Value>
       </Textbox>

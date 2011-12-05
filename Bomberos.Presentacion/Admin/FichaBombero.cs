@@ -221,7 +221,9 @@ namespace Bomberos.Presentacion.Admin
 
             foreach (var elem in _Reincorporacion.CargarReincorporacionBombero(ReincorporacionBombero))
             {
-                oParametro.p_Reincorporaciones.Add(elem.FechaReincorporacion.ToString());
+                Bomberos.Comun.BomberoReportDTO.ReincorporacionReport ReinElem = new BomberoReportDTO.ReincorporacionReport();
+                ReinElem.p_Fecha = elem.FechaReincorporacion.Date.ToString();
+                oParametro.ListaReincorporaciones.Add(ReinElem);
             }
 
             var form = new VisorReportes();

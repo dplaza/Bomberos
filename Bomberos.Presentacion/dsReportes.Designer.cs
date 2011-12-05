@@ -29,6 +29,14 @@ namespace Bomberos.Presentacion {
         
         private ListaAsistenciaDataTable tableListaAsistencia;
         
+        private ListaPremiosDataTable tableListaPremios;
+        
+        private ListaCursosDataTable tableListaCursos;
+        
+        private ListaObservacionesDataTable tableListaObservaciones;
+        
+        private ListaReincorporacionesDataTable tableListaReincorporaciones;
+        
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -60,6 +68,18 @@ namespace Bomberos.Presentacion {
                 }
                 if ((ds.Tables["ListaAsistencia"] != null)) {
                     base.Tables.Add(new ListaAsistenciaDataTable(ds.Tables["ListaAsistencia"]));
+                }
+                if ((ds.Tables["ListaPremios"] != null)) {
+                    base.Tables.Add(new ListaPremiosDataTable(ds.Tables["ListaPremios"]));
+                }
+                if ((ds.Tables["ListaCursos"] != null)) {
+                    base.Tables.Add(new ListaCursosDataTable(ds.Tables["ListaCursos"]));
+                }
+                if ((ds.Tables["ListaObservaciones"] != null)) {
+                    base.Tables.Add(new ListaObservacionesDataTable(ds.Tables["ListaObservaciones"]));
+                }
+                if ((ds.Tables["ListaReincorporaciones"] != null)) {
+                    base.Tables.Add(new ListaReincorporacionesDataTable(ds.Tables["ListaReincorporaciones"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -94,6 +114,42 @@ namespace Bomberos.Presentacion {
         public ListaAsistenciaDataTable ListaAsistencia {
             get {
                 return this.tableListaAsistencia;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public ListaPremiosDataTable ListaPremios {
+            get {
+                return this.tableListaPremios;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public ListaCursosDataTable ListaCursos {
+            get {
+                return this.tableListaCursos;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public ListaObservacionesDataTable ListaObservaciones {
+            get {
+                return this.tableListaObservaciones;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public ListaReincorporacionesDataTable ListaReincorporaciones {
+            get {
+                return this.tableListaReincorporaciones;
             }
         }
         
@@ -162,6 +218,18 @@ namespace Bomberos.Presentacion {
                 if ((ds.Tables["ListaAsistencia"] != null)) {
                     base.Tables.Add(new ListaAsistenciaDataTable(ds.Tables["ListaAsistencia"]));
                 }
+                if ((ds.Tables["ListaPremios"] != null)) {
+                    base.Tables.Add(new ListaPremiosDataTable(ds.Tables["ListaPremios"]));
+                }
+                if ((ds.Tables["ListaCursos"] != null)) {
+                    base.Tables.Add(new ListaCursosDataTable(ds.Tables["ListaCursos"]));
+                }
+                if ((ds.Tables["ListaObservaciones"] != null)) {
+                    base.Tables.Add(new ListaObservacionesDataTable(ds.Tables["ListaObservaciones"]));
+                }
+                if ((ds.Tables["ListaReincorporaciones"] != null)) {
+                    base.Tables.Add(new ListaReincorporacionesDataTable(ds.Tables["ListaReincorporaciones"]));
+                }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
                 this.Namespace = ds.Namespace;
@@ -204,6 +272,30 @@ namespace Bomberos.Presentacion {
                     this.tableListaAsistencia.InitVars();
                 }
             }
+            this.tableListaPremios = ((ListaPremiosDataTable)(base.Tables["ListaPremios"]));
+            if ((initTable == true)) {
+                if ((this.tableListaPremios != null)) {
+                    this.tableListaPremios.InitVars();
+                }
+            }
+            this.tableListaCursos = ((ListaCursosDataTable)(base.Tables["ListaCursos"]));
+            if ((initTable == true)) {
+                if ((this.tableListaCursos != null)) {
+                    this.tableListaCursos.InitVars();
+                }
+            }
+            this.tableListaObservaciones = ((ListaObservacionesDataTable)(base.Tables["ListaObservaciones"]));
+            if ((initTable == true)) {
+                if ((this.tableListaObservaciones != null)) {
+                    this.tableListaObservaciones.InitVars();
+                }
+            }
+            this.tableListaReincorporaciones = ((ListaReincorporacionesDataTable)(base.Tables["ListaReincorporaciones"]));
+            if ((initTable == true)) {
+                if ((this.tableListaReincorporaciones != null)) {
+                    this.tableListaReincorporaciones.InitVars();
+                }
+            }
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -217,6 +309,14 @@ namespace Bomberos.Presentacion {
             base.Tables.Add(this.tableListaCargos);
             this.tableListaAsistencia = new ListaAsistenciaDataTable();
             base.Tables.Add(this.tableListaAsistencia);
+            this.tableListaPremios = new ListaPremiosDataTable();
+            base.Tables.Add(this.tableListaPremios);
+            this.tableListaCursos = new ListaCursosDataTable();
+            base.Tables.Add(this.tableListaCursos);
+            this.tableListaObservaciones = new ListaObservacionesDataTable();
+            base.Tables.Add(this.tableListaObservaciones);
+            this.tableListaReincorporaciones = new ListaReincorporacionesDataTable();
+            base.Tables.Add(this.tableListaReincorporaciones);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -226,6 +326,26 @@ namespace Bomberos.Presentacion {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         private bool ShouldSerializeListaAsistencia() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        private bool ShouldSerializeListaPremios() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        private bool ShouldSerializeListaCursos() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        private bool ShouldSerializeListaObservaciones() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        private bool ShouldSerializeListaReincorporaciones() {
             return false;
         }
         
@@ -285,6 +405,14 @@ namespace Bomberos.Presentacion {
         public delegate void ListaCargosRowChangeEventHandler(object sender, ListaCargosRowChangeEvent e);
         
         public delegate void ListaAsistenciaRowChangeEventHandler(object sender, ListaAsistenciaRowChangeEvent e);
+        
+        public delegate void ListaPremiosRowChangeEventHandler(object sender, ListaPremiosRowChangeEvent e);
+        
+        public delegate void ListaCursosRowChangeEventHandler(object sender, ListaCursosRowChangeEvent e);
+        
+        public delegate void ListaObservacionesRowChangeEventHandler(object sender, ListaObservacionesRowChangeEvent e);
+        
+        public delegate void ListaReincorporacionesRowChangeEventHandler(object sender, ListaReincorporacionesRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
@@ -915,6 +1043,976 @@ namespace Bomberos.Presentacion {
         }
         
         /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "2.0.0.0")]
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class ListaPremiosDataTable : global::System.Data.TypedTableBase<ListaPremiosRow> {
+            
+            private global::System.Data.DataColumn columnp_FechaCalifica;
+            
+            private global::System.Data.DataColumn columnp_Nombre;
+            
+            private global::System.Data.DataColumn columnp_FechaEntrega;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public ListaPremiosDataTable() {
+                this.TableName = "ListaPremios";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            internal ListaPremiosDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            protected ListaPremiosDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public global::System.Data.DataColumn p_FechaCalificaColumn {
+                get {
+                    return this.columnp_FechaCalifica;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public global::System.Data.DataColumn p_NombreColumn {
+                get {
+                    return this.columnp_Nombre;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public global::System.Data.DataColumn p_FechaEntregaColumn {
+                get {
+                    return this.columnp_FechaEntrega;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public ListaPremiosRow this[int index] {
+                get {
+                    return ((ListaPremiosRow)(this.Rows[index]));
+                }
+            }
+            
+            public event ListaPremiosRowChangeEventHandler ListaPremiosRowChanging;
+            
+            public event ListaPremiosRowChangeEventHandler ListaPremiosRowChanged;
+            
+            public event ListaPremiosRowChangeEventHandler ListaPremiosRowDeleting;
+            
+            public event ListaPremiosRowChangeEventHandler ListaPremiosRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public void AddListaPremiosRow(ListaPremiosRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public ListaPremiosRow AddListaPremiosRow(string p_FechaCalifica, string p_Nombre, string p_FechaEntrega) {
+                ListaPremiosRow rowListaPremiosRow = ((ListaPremiosRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        p_FechaCalifica,
+                        p_Nombre,
+                        p_FechaEntrega};
+                rowListaPremiosRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowListaPremiosRow);
+                return rowListaPremiosRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public override global::System.Data.DataTable Clone() {
+                ListaPremiosDataTable cln = ((ListaPremiosDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new ListaPremiosDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            internal void InitVars() {
+                this.columnp_FechaCalifica = base.Columns["p_FechaCalifica"];
+                this.columnp_Nombre = base.Columns["p_Nombre"];
+                this.columnp_FechaEntrega = base.Columns["p_FechaEntrega"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            private void InitClass() {
+                this.columnp_FechaCalifica = new global::System.Data.DataColumn("p_FechaCalifica", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnp_FechaCalifica);
+                this.columnp_Nombre = new global::System.Data.DataColumn("p_Nombre", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnp_Nombre);
+                this.columnp_FechaEntrega = new global::System.Data.DataColumn("p_FechaEntrega", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnp_FechaEntrega);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public ListaPremiosRow NewListaPremiosRow() {
+                return ((ListaPremiosRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new ListaPremiosRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            protected override global::System.Type GetRowType() {
+                return typeof(ListaPremiosRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.ListaPremiosRowChanged != null)) {
+                    this.ListaPremiosRowChanged(this, new ListaPremiosRowChangeEvent(((ListaPremiosRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.ListaPremiosRowChanging != null)) {
+                    this.ListaPremiosRowChanging(this, new ListaPremiosRowChangeEvent(((ListaPremiosRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.ListaPremiosRowDeleted != null)) {
+                    this.ListaPremiosRowDeleted(this, new ListaPremiosRowChangeEvent(((ListaPremiosRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.ListaPremiosRowDeleting != null)) {
+                    this.ListaPremiosRowDeleting(this, new ListaPremiosRowChangeEvent(((ListaPremiosRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public void RemoveListaPremiosRow(ListaPremiosRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                dsReportes ds = new dsReportes();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "ListaPremiosDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "2.0.0.0")]
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class ListaCursosDataTable : global::System.Data.TypedTableBase<ListaCursosRow> {
+            
+            private global::System.Data.DataColumn columnp_FechaInicio;
+            
+            private global::System.Data.DataColumn columnp_FechaTermino;
+            
+            private global::System.Data.DataColumn columnp_Nombre;
+            
+            private global::System.Data.DataColumn columnp_FechaEntrega;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public ListaCursosDataTable() {
+                this.TableName = "ListaCursos";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            internal ListaCursosDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            protected ListaCursosDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public global::System.Data.DataColumn p_FechaInicioColumn {
+                get {
+                    return this.columnp_FechaInicio;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public global::System.Data.DataColumn p_FechaTerminoColumn {
+                get {
+                    return this.columnp_FechaTermino;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public global::System.Data.DataColumn p_NombreColumn {
+                get {
+                    return this.columnp_Nombre;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public global::System.Data.DataColumn p_FechaEntregaColumn {
+                get {
+                    return this.columnp_FechaEntrega;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public ListaCursosRow this[int index] {
+                get {
+                    return ((ListaCursosRow)(this.Rows[index]));
+                }
+            }
+            
+            public event ListaCursosRowChangeEventHandler ListaCursosRowChanging;
+            
+            public event ListaCursosRowChangeEventHandler ListaCursosRowChanged;
+            
+            public event ListaCursosRowChangeEventHandler ListaCursosRowDeleting;
+            
+            public event ListaCursosRowChangeEventHandler ListaCursosRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public void AddListaCursosRow(ListaCursosRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public ListaCursosRow AddListaCursosRow(string p_FechaInicio, string p_FechaTermino, string p_Nombre, string p_FechaEntrega) {
+                ListaCursosRow rowListaCursosRow = ((ListaCursosRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        p_FechaInicio,
+                        p_FechaTermino,
+                        p_Nombre,
+                        p_FechaEntrega};
+                rowListaCursosRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowListaCursosRow);
+                return rowListaCursosRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public override global::System.Data.DataTable Clone() {
+                ListaCursosDataTable cln = ((ListaCursosDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new ListaCursosDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            internal void InitVars() {
+                this.columnp_FechaInicio = base.Columns["p_FechaInicio"];
+                this.columnp_FechaTermino = base.Columns["p_FechaTermino"];
+                this.columnp_Nombre = base.Columns["p_Nombre"];
+                this.columnp_FechaEntrega = base.Columns["p_FechaEntrega"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            private void InitClass() {
+                this.columnp_FechaInicio = new global::System.Data.DataColumn("p_FechaInicio", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnp_FechaInicio);
+                this.columnp_FechaTermino = new global::System.Data.DataColumn("p_FechaTermino", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnp_FechaTermino);
+                this.columnp_Nombre = new global::System.Data.DataColumn("p_Nombre", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnp_Nombre);
+                this.columnp_FechaEntrega = new global::System.Data.DataColumn("p_FechaEntrega", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnp_FechaEntrega);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public ListaCursosRow NewListaCursosRow() {
+                return ((ListaCursosRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new ListaCursosRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            protected override global::System.Type GetRowType() {
+                return typeof(ListaCursosRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.ListaCursosRowChanged != null)) {
+                    this.ListaCursosRowChanged(this, new ListaCursosRowChangeEvent(((ListaCursosRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.ListaCursosRowChanging != null)) {
+                    this.ListaCursosRowChanging(this, new ListaCursosRowChangeEvent(((ListaCursosRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.ListaCursosRowDeleted != null)) {
+                    this.ListaCursosRowDeleted(this, new ListaCursosRowChangeEvent(((ListaCursosRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.ListaCursosRowDeleting != null)) {
+                    this.ListaCursosRowDeleting(this, new ListaCursosRowChangeEvent(((ListaCursosRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public void RemoveListaCursosRow(ListaCursosRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                dsReportes ds = new dsReportes();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "ListaCursosDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "2.0.0.0")]
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class ListaObservacionesDataTable : global::System.Data.TypedTableBase<ListaObservacionesRow> {
+            
+            private global::System.Data.DataColumn columnp_Fecha;
+            
+            private global::System.Data.DataColumn columnp_Observacion;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public ListaObservacionesDataTable() {
+                this.TableName = "ListaObservaciones";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            internal ListaObservacionesDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            protected ListaObservacionesDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public global::System.Data.DataColumn p_FechaColumn {
+                get {
+                    return this.columnp_Fecha;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public global::System.Data.DataColumn p_ObservacionColumn {
+                get {
+                    return this.columnp_Observacion;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public ListaObservacionesRow this[int index] {
+                get {
+                    return ((ListaObservacionesRow)(this.Rows[index]));
+                }
+            }
+            
+            public event ListaObservacionesRowChangeEventHandler ListaObservacionesRowChanging;
+            
+            public event ListaObservacionesRowChangeEventHandler ListaObservacionesRowChanged;
+            
+            public event ListaObservacionesRowChangeEventHandler ListaObservacionesRowDeleting;
+            
+            public event ListaObservacionesRowChangeEventHandler ListaObservacionesRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public void AddListaObservacionesRow(ListaObservacionesRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public ListaObservacionesRow AddListaObservacionesRow(string p_Fecha, string p_Observacion) {
+                ListaObservacionesRow rowListaObservacionesRow = ((ListaObservacionesRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        p_Fecha,
+                        p_Observacion};
+                rowListaObservacionesRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowListaObservacionesRow);
+                return rowListaObservacionesRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public override global::System.Data.DataTable Clone() {
+                ListaObservacionesDataTable cln = ((ListaObservacionesDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new ListaObservacionesDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            internal void InitVars() {
+                this.columnp_Fecha = base.Columns["p_Fecha"];
+                this.columnp_Observacion = base.Columns["p_Observacion"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            private void InitClass() {
+                this.columnp_Fecha = new global::System.Data.DataColumn("p_Fecha", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnp_Fecha);
+                this.columnp_Observacion = new global::System.Data.DataColumn("p_Observacion", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnp_Observacion);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public ListaObservacionesRow NewListaObservacionesRow() {
+                return ((ListaObservacionesRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new ListaObservacionesRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            protected override global::System.Type GetRowType() {
+                return typeof(ListaObservacionesRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.ListaObservacionesRowChanged != null)) {
+                    this.ListaObservacionesRowChanged(this, new ListaObservacionesRowChangeEvent(((ListaObservacionesRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.ListaObservacionesRowChanging != null)) {
+                    this.ListaObservacionesRowChanging(this, new ListaObservacionesRowChangeEvent(((ListaObservacionesRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.ListaObservacionesRowDeleted != null)) {
+                    this.ListaObservacionesRowDeleted(this, new ListaObservacionesRowChangeEvent(((ListaObservacionesRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.ListaObservacionesRowDeleting != null)) {
+                    this.ListaObservacionesRowDeleting(this, new ListaObservacionesRowChangeEvent(((ListaObservacionesRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public void RemoveListaObservacionesRow(ListaObservacionesRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                dsReportes ds = new dsReportes();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "ListaObservacionesDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "2.0.0.0")]
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class ListaReincorporacionesDataTable : global::System.Data.TypedTableBase<ListaReincorporacionesRow> {
+            
+            private global::System.Data.DataColumn columnp_Fecha;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public ListaReincorporacionesDataTable() {
+                this.TableName = "ListaReincorporaciones";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            internal ListaReincorporacionesDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            protected ListaReincorporacionesDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public global::System.Data.DataColumn p_FechaColumn {
+                get {
+                    return this.columnp_Fecha;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public ListaReincorporacionesRow this[int index] {
+                get {
+                    return ((ListaReincorporacionesRow)(this.Rows[index]));
+                }
+            }
+            
+            public event ListaReincorporacionesRowChangeEventHandler ListaReincorporacionesRowChanging;
+            
+            public event ListaReincorporacionesRowChangeEventHandler ListaReincorporacionesRowChanged;
+            
+            public event ListaReincorporacionesRowChangeEventHandler ListaReincorporacionesRowDeleting;
+            
+            public event ListaReincorporacionesRowChangeEventHandler ListaReincorporacionesRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public void AddListaReincorporacionesRow(ListaReincorporacionesRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public ListaReincorporacionesRow AddListaReincorporacionesRow(string p_Fecha) {
+                ListaReincorporacionesRow rowListaReincorporacionesRow = ((ListaReincorporacionesRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        p_Fecha};
+                rowListaReincorporacionesRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowListaReincorporacionesRow);
+                return rowListaReincorporacionesRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public override global::System.Data.DataTable Clone() {
+                ListaReincorporacionesDataTable cln = ((ListaReincorporacionesDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new ListaReincorporacionesDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            internal void InitVars() {
+                this.columnp_Fecha = base.Columns["p_Fecha"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            private void InitClass() {
+                this.columnp_Fecha = new global::System.Data.DataColumn("p_Fecha", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnp_Fecha);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public ListaReincorporacionesRow NewListaReincorporacionesRow() {
+                return ((ListaReincorporacionesRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new ListaReincorporacionesRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            protected override global::System.Type GetRowType() {
+                return typeof(ListaReincorporacionesRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.ListaReincorporacionesRowChanged != null)) {
+                    this.ListaReincorporacionesRowChanged(this, new ListaReincorporacionesRowChangeEvent(((ListaReincorporacionesRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.ListaReincorporacionesRowChanging != null)) {
+                    this.ListaReincorporacionesRowChanging(this, new ListaReincorporacionesRowChangeEvent(((ListaReincorporacionesRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.ListaReincorporacionesRowDeleted != null)) {
+                    this.ListaReincorporacionesRowDeleted(this, new ListaReincorporacionesRowChangeEvent(((ListaReincorporacionesRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.ListaReincorporacionesRowDeleting != null)) {
+                    this.ListaReincorporacionesRowDeleting(this, new ListaReincorporacionesRowChangeEvent(((ListaReincorporacionesRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public void RemoveListaReincorporacionesRow(ListaReincorporacionesRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                dsReportes ds = new dsReportes();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "ListaReincorporacionesDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "2.0.0.0")]
@@ -1350,6 +2448,317 @@ namespace Bomberos.Presentacion {
         }
         
         /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "2.0.0.0")]
+        public partial class ListaPremiosRow : global::System.Data.DataRow {
+            
+            private ListaPremiosDataTable tableListaPremios;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            internal ListaPremiosRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tableListaPremios = ((ListaPremiosDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public string p_FechaCalifica {
+                get {
+                    try {
+                        return ((string)(this[this.tableListaPremios.p_FechaCalificaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'p_FechaCalifica\' de la tabla \'ListaPremios\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableListaPremios.p_FechaCalificaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public string p_Nombre {
+                get {
+                    try {
+                        return ((string)(this[this.tableListaPremios.p_NombreColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'p_Nombre\' de la tabla \'ListaPremios\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableListaPremios.p_NombreColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public string p_FechaEntrega {
+                get {
+                    try {
+                        return ((string)(this[this.tableListaPremios.p_FechaEntregaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'p_FechaEntrega\' de la tabla \'ListaPremios\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableListaPremios.p_FechaEntregaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public bool Isp_FechaCalificaNull() {
+                return this.IsNull(this.tableListaPremios.p_FechaCalificaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public void Setp_FechaCalificaNull() {
+                this[this.tableListaPremios.p_FechaCalificaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public bool Isp_NombreNull() {
+                return this.IsNull(this.tableListaPremios.p_NombreColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public void Setp_NombreNull() {
+                this[this.tableListaPremios.p_NombreColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public bool Isp_FechaEntregaNull() {
+                return this.IsNull(this.tableListaPremios.p_FechaEntregaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public void Setp_FechaEntregaNull() {
+                this[this.tableListaPremios.p_FechaEntregaColumn] = global::System.Convert.DBNull;
+            }
+        }
+        
+        /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "2.0.0.0")]
+        public partial class ListaCursosRow : global::System.Data.DataRow {
+            
+            private ListaCursosDataTable tableListaCursos;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            internal ListaCursosRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tableListaCursos = ((ListaCursosDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public string p_FechaInicio {
+                get {
+                    try {
+                        return ((string)(this[this.tableListaCursos.p_FechaInicioColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'p_FechaInicio\' de la tabla \'ListaCursos\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableListaCursos.p_FechaInicioColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public string p_FechaTermino {
+                get {
+                    try {
+                        return ((string)(this[this.tableListaCursos.p_FechaTerminoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'p_FechaTermino\' de la tabla \'ListaCursos\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableListaCursos.p_FechaTerminoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public string p_Nombre {
+                get {
+                    try {
+                        return ((string)(this[this.tableListaCursos.p_NombreColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'p_Nombre\' de la tabla \'ListaCursos\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableListaCursos.p_NombreColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public string p_FechaEntrega {
+                get {
+                    try {
+                        return ((string)(this[this.tableListaCursos.p_FechaEntregaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'p_FechaEntrega\' de la tabla \'ListaCursos\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableListaCursos.p_FechaEntregaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public bool Isp_FechaInicioNull() {
+                return this.IsNull(this.tableListaCursos.p_FechaInicioColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public void Setp_FechaInicioNull() {
+                this[this.tableListaCursos.p_FechaInicioColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public bool Isp_FechaTerminoNull() {
+                return this.IsNull(this.tableListaCursos.p_FechaTerminoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public void Setp_FechaTerminoNull() {
+                this[this.tableListaCursos.p_FechaTerminoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public bool Isp_NombreNull() {
+                return this.IsNull(this.tableListaCursos.p_NombreColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public void Setp_NombreNull() {
+                this[this.tableListaCursos.p_NombreColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public bool Isp_FechaEntregaNull() {
+                return this.IsNull(this.tableListaCursos.p_FechaEntregaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public void Setp_FechaEntregaNull() {
+                this[this.tableListaCursos.p_FechaEntregaColumn] = global::System.Convert.DBNull;
+            }
+        }
+        
+        /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "2.0.0.0")]
+        public partial class ListaObservacionesRow : global::System.Data.DataRow {
+            
+            private ListaObservacionesDataTable tableListaObservaciones;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            internal ListaObservacionesRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tableListaObservaciones = ((ListaObservacionesDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public string p_Fecha {
+                get {
+                    try {
+                        return ((string)(this[this.tableListaObservaciones.p_FechaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'p_Fecha\' de la tabla \'ListaObservaciones\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableListaObservaciones.p_FechaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public string p_Observacion {
+                get {
+                    try {
+                        return ((string)(this[this.tableListaObservaciones.p_ObservacionColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'p_Observacion\' de la tabla \'ListaObservaciones\' es DBNull" +
+                                ".", e);
+                    }
+                }
+                set {
+                    this[this.tableListaObservaciones.p_ObservacionColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public bool Isp_FechaNull() {
+                return this.IsNull(this.tableListaObservaciones.p_FechaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public void Setp_FechaNull() {
+                this[this.tableListaObservaciones.p_FechaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public bool Isp_ObservacionNull() {
+                return this.IsNull(this.tableListaObservaciones.p_ObservacionColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public void Setp_ObservacionNull() {
+                this[this.tableListaObservaciones.p_ObservacionColumn] = global::System.Convert.DBNull;
+            }
+        }
+        
+        /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "2.0.0.0")]
+        public partial class ListaReincorporacionesRow : global::System.Data.DataRow {
+            
+            private ListaReincorporacionesDataTable tableListaReincorporaciones;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            internal ListaReincorporacionesRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tableListaReincorporaciones = ((ListaReincorporacionesDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public string p_Fecha {
+                get {
+                    try {
+                        return ((string)(this[this.tableListaReincorporaciones.p_FechaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'p_Fecha\' de la tabla \'ListaReincorporaciones\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableListaReincorporaciones.p_FechaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public bool Isp_FechaNull() {
+                return this.IsNull(this.tableListaReincorporaciones.p_FechaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public void Setp_FechaNull() {
+                this[this.tableListaReincorporaciones.p_FechaColumn] = global::System.Convert.DBNull;
+            }
+        }
+        
+        /// <summary>
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "2.0.0.0")]
@@ -1398,6 +2807,130 @@ namespace Bomberos.Presentacion {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             public ListaAsistenciaRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "2.0.0.0")]
+        public class ListaPremiosRowChangeEvent : global::System.EventArgs {
+            
+            private ListaPremiosRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public ListaPremiosRowChangeEvent(ListaPremiosRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public ListaPremiosRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "2.0.0.0")]
+        public class ListaCursosRowChangeEvent : global::System.EventArgs {
+            
+            private ListaCursosRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public ListaCursosRowChangeEvent(ListaCursosRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public ListaCursosRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "2.0.0.0")]
+        public class ListaObservacionesRowChangeEvent : global::System.EventArgs {
+            
+            private ListaObservacionesRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public ListaObservacionesRowChangeEvent(ListaObservacionesRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public ListaObservacionesRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "2.0.0.0")]
+        public class ListaReincorporacionesRowChangeEvent : global::System.EventArgs {
+            
+            private ListaReincorporacionesRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public ListaReincorporacionesRowChangeEvent(ListaReincorporacionesRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public ListaReincorporacionesRow Row {
                 get {
                     return this.eventRow;
                 }

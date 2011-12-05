@@ -871,6 +871,7 @@
             this.btn_imprimir_premios.TabIndex = 11;
             this.btn_imprimir_premios.Text = "Imprimir";
             this.btn_imprimir_premios.UseVisualStyleBackColor = true;
+            this.btn_imprimir_premios.Click += new System.EventHandler(this.btn_imprimir_premios_Click);
             // 
             // btn_borrar_premio
             // 
@@ -1029,6 +1030,7 @@
             this.btn_imprimir_cursos.TabIndex = 11;
             this.btn_imprimir_cursos.Text = "Imprimir";
             this.btn_imprimir_cursos.UseVisualStyleBackColor = true;
+            this.btn_imprimir_cursos.Click += new System.EventHandler(this.btn_imprimir_cursos_Click);
             // 
             // btn_borrar_curso
             // 
@@ -2090,6 +2092,7 @@
             this.btn_imprimir_observaciones.TabIndex = 6;
             this.btn_imprimir_observaciones.Text = "Imprimir";
             this.btn_imprimir_observaciones.UseVisualStyleBackColor = true;
+            this.btn_imprimir_observaciones.Click += new System.EventHandler(this.btn_imprimir_observaciones_Click);
             // 
             // btn_observacion
             // 

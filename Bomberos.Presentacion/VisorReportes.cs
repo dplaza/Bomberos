@@ -31,7 +31,7 @@ namespace Bomberos.Presentacion
         {
             var ListaParametrosReporte = new List<ReportParameter>();
 
-            /// Para impresion de Ficha Personal
+            #region Reporte Ficha Personal
             if (p_TipoReporte == EnumReportes.FichaPersonal)
             {
                 rptViewer.LocalReport.ReportPath = Application.StartupPath + @"\Reportes\ReporteFichaPersonal.rdlc";
@@ -48,12 +48,13 @@ namespace Bomberos.Presentacion
 
                 ReportDataSource ds = new ReportDataSource();
                 ds.Name = "ListaReincorporaciones";
-                ds.Value = Utilidades.ConvertirListADataTable(bombero.p_Reincorporaciones);
+                ds.Value = Utilidades.ConvertirListADataTable(bombero.ListaReincorporaciones);
 
                 rptViewer.LocalReport.DataSources.Add(ds);
             }
+            #endregion
 
-            /// Para impresion de Ficha Medica
+            #region Reporte Ficha Medica
             if (p_TipoReporte == EnumReportes.FichaMedica)
             {
                 rptViewer.LocalReport.ReportPath = Application.StartupPath + @"\Reportes\ReporteFichaMedica.rdlc";
@@ -75,7 +76,9 @@ namespace Bomberos.Presentacion
                     ListaParametrosReporte.Add(rp);
                 }
             }
+            #endregion
 
+            #region Reporte Historial Cargos
             if (p_TipoReporte == EnumReportes.HistorialCargos)
             {
                 rptViewer.LocalReport.ReportPath = Application.StartupPath + @"\Reportes\ReporteCargos.rdlc";
@@ -95,9 +98,53 @@ namespace Bomberos.Presentacion
 
                 rptViewer.LocalReport.DataSources.Add(ds);
             }
-            if (p_TipoReporte == EnumReportes.HistorialCursos) { }
-            if (p_TipoReporte == EnumReportes.HistorialPremios) { }
+            #endregion
 
+            #region Reporte Historial Cursos
+            if (p_TipoReporte == EnumReportes.HistorialCursos)
+            {
+                rptViewer.LocalReport.ReportPath = Application.StartupPath + @"\Reportes\ReporteCursos.rdlc";
+
+                CursoReportDTO curso = (CursoReportDTO)p_ListaParametros;
+
+                foreach (var pi in curso.GetType().GetProperties())
+                {
+                    var valor = pi.GetValue(curso, null) == null ? "" : pi.GetValue(curso, null).ToString();
+                    ReportParameter rp = new ReportParameter(pi.Name, valor);
+                    ListaParametrosReporte.Add(rp);
+                }
+
+                ReportDataSource ds = new ReportDataSource();
+                ds.Name = "ListaCursos";
+                ds.Value = Utilidades.ConvertirListADataTable(curso.ListaCursos);
+
+                rptViewer.LocalReport.DataSources.Add(ds);
+            }
+            #endregion
+
+            #region Reporte Historial Premios
+            if (p_TipoReporte == EnumReportes.HistorialPremios)
+            {
+                rptViewer.LocalReport.ReportPath = Application.StartupPath + @"\Reportes\ReportePremios.rdlc";
+
+                PremioReportDTO premio = (PremioReportDTO)p_ListaParametros;
+
+                foreach (var pi in premio.GetType().GetProperties())
+                {
+                    var valor = pi.GetValue(premio, null) == null ? "" : pi.GetValue(premio, null).ToString();
+                    ReportParameter rp = new ReportParameter(pi.Name, valor);
+                    ListaParametrosReporte.Add(rp);
+                }
+
+                ReportDataSource ds = new ReportDataSource();
+                ds.Name = "ListaPremios";
+                ds.Value = Utilidades.ConvertirListADataTable(premio.ListaPremios);
+
+                rptViewer.LocalReport.DataSources.Add(ds);
+            }
+            #endregion
+
+            #region Reporte Lista
             if (p_TipoReporte == EnumReportes.Asistencia)
             {
                 rptViewer.LocalReport.ReportPath = Application.StartupPath + @"\Reportes\ReporteAsistencia.rdlc";
@@ -118,11 +165,36 @@ namespace Bomberos.Presentacion
                 rptViewer.LocalReport.DataSources.Add(ds);
 
             }
+            #endregion
 
+            #region Reporte Servicio
             if (p_TipoReporte == EnumReportes.Servicio)
             {
                 rptViewer.LocalReport.ReportPath = Application.StartupPath + @"\Reportes\ReporteServicio.rdlc";
             }
+            #endregion
+
+            #region Reporte Observaciones
+            if (p_TipoReporte == EnumReportes.Observaciones)
+            {
+                rptViewer.LocalReport.ReportPath = Application.StartupPath + @"\Reportes\ReporteObservaciones.rdlc";
+
+                ObservacionReportDTO obs = (ObservacionReportDTO)p_ListaParametros;
+
+                foreach (var pi in obs.GetType().GetProperties())
+                {
+                    var valor = pi.GetValue(obs, null) == null ? "" : pi.GetValue(obs, null).ToString();
+                    ReportParameter rp = new ReportParameter(pi.Name, valor);
+                    ListaParametrosReporte.Add(rp);
+                }
+
+                ReportDataSource ds = new ReportDataSource();
+                ds.Name = "ListaObservaciones";
+                ds.Value = Utilidades.ConvertirListADataTable(obs.ListaObservaciones);
+
+                rptViewer.LocalReport.DataSources.Add(ds);
+            }
+            #endregion
 
             rptViewer.LocalReport.SetParameters(ListaParametrosReporte);
             rptViewer.RefreshReport();
