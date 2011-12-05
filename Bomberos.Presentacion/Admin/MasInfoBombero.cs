@@ -36,8 +36,10 @@ namespace Bomberos.Presentacion
 
         private void MasInfoBombero_Load(object sender, EventArgs e)
         {
-            this.Text = "Perfil de " + ContextoDTO.Instancia().BomberoSelected.Nombres + " " + ContextoDTO.Instancia().BomberoSelected.Apellidos;
+            IBomberoMgr _Bombero = new BomberoMgr();
+            ContextoDTO.Instancia().BomberoSelected = _Bombero.CargarBombero(ContextoDTO.Instancia().BomberoSelected);
 
+            #region Poblamiento de Comboboxs
             ICursoMgr _Curso = new CursoMgr();
             select_cursos.DataSource = _Curso.ListarCursos().OrderBy(p => p.Nombre).ToList();
             select_cursos.DisplayMember = "Nombre";
@@ -52,7 +54,17 @@ namespace Bomberos.Presentacion
             select_cargo.DataSource = _Cargo.ListarCargos().OrderBy(p => p.Nombre).ToList();
             select_cargo.DisplayMember = "Nombre";
             select_cargo.ValueMember = "Id";
+            select_cargo2.DataSource = select_cargo.DataSource;
+            select_cargo2.DisplayMember = "Nombre";
+            select_cargo2.ValueMember = "Id";
 
+            ICompañiaMgr _Compañia = new CompañiaMgr();
+            select_compania.DataSource = _Compañia.ListarCompañias().OrderBy(p => p.Nombre).ToList();
+            select_compania.DisplayMember = "Nombre";
+            select_compania.ValueMember = "Id";
+            #endregion
+
+            #region Carga de DataGrids
             //Carga de los distinto DataGrid existentes en la ventana.
             ICargoBomberoMgr _CargoBombero = new CargoBomberoMgr();
             ICursoBomberoMgr _CursoBombero = new CursoBomberoMgr();
@@ -88,7 +100,9 @@ namespace Bomberos.Presentacion
             dataGridPremios.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridObservacion.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridReincorporacion.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            #endregion
 
+            #region Ficha Medica
             FichaMedica = _FichaMedica.CargarFichaMedica(FichaMedica);
             FichaMedicaBomberoActual = FichaMedica;
 
@@ -124,6 +138,10 @@ namespace Bomberos.Presentacion
                 select_hipert.SelectedItem = "Sí";
             if (FichaMedica.Tifus)
                 select_tifus.SelectedItem = "Sí";
+            #endregion
+
+            #region Pantalla Principal
+            this.Text = "Perfil de " + ContextoDTO.Instancia().BomberoSelected.Nombres + " " + ContextoDTO.Instancia().BomberoSelected.Apellidos;
 
             labelnombre.Text = ContextoDTO.Instancia().BomberoSelected.Nombres + " " + ContextoDTO.Instancia().BomberoSelected.Apellidos;
             labelRut.Text = ContextoDTO.Instancia().BomberoSelected.Rut;
@@ -133,10 +151,47 @@ namespace Bomberos.Presentacion
             try
             {
                 box_picture.Image = new Bitmap("C:\\Bomberos\\" + ContextoDTO.Instancia().BomberoSelected.Rut + ".jpg");
+                box_ficha_pict.Image = box_picture.Image;
             }
             catch (Exception er)
             {
             }
+            #endregion
+
+            #region Ficha Personal
+            if (!ContextoDTO.Instancia().BomberoActual.isAdmin)
+            {
+                btn_imagen.Visible = false;
+                btn_enviar_fichapersonal.Visible = false;
+            }
+
+            txt_nombres.Text = ContextoDTO.Instancia().BomberoSelected.Nombres;
+            txt_apellidos.Text = ContextoDTO.Instancia().BomberoSelected.Apellidos;
+            txt_celular.Text = ContextoDTO.Instancia().BomberoSelected.Celular;
+            txt_dir_lab.Text = ContextoDTO.Instancia().BomberoSelected.DireccionLaboral;
+            txt_dir_part.Text = ContextoDTO.Instancia().BomberoSelected.DireccionParticular;
+            txt_email.Text = ContextoDTO.Instancia().BomberoSelected.Email;
+            txt_gruposang.Text = ContextoDTO.Instancia().BomberoSelected.GrupoSanguineo;
+            txt_pass.Text = ContextoDTO.Instancia().BomberoSelected.Password;
+            txt_profesion.Text = ContextoDTO.Instancia().BomberoSelected.Profesion;
+            txt_rut.Text = ContextoDTO.Instancia().BomberoSelected.Rut;
+            date_fecha_nac.Text = ContextoDTO.Instancia().BomberoSelected.FechaNacimiento.ToString();
+            date_fecha_inscrip.Text = ContextoDTO.Instancia().BomberoSelected.FechaInscripcion.ToString();
+            select_estadocivil.SelectedItem = ContextoDTO.Instancia().BomberoSelected.EstadoCivil;
+            select_compania.SelectedValue = ContextoDTO.Instancia().BomberoSelected.Compañia.Id;
+            select_cargo2.SelectedValue = ContextoDTO.Instancia().BomberoSelected.Cargo.Id;
+            select_estado.SelectedItem = ContextoDTO.Instancia().BomberoSelected.Estado;
+            txt_tel_lab.Text = ContextoDTO.Instancia().BomberoSelected.TelefonoLaboral;
+            txt_tel_part.Text = ContextoDTO.Instancia().BomberoSelected.TelefonoParticular;
+            txt_tib.Text = ContextoDTO.Instancia().BomberoSelected.TIB;
+            txt_socio.Text = ContextoDTO.Instancia().BomberoSelected.NumeroRegistro.ToString();
+
+            if (ContextoDTO.Instancia().BomberoSelected.isAdmin)
+                select_tipocuenta.SelectedItem = "Administrador";
+            else
+                select_tipocuenta.SelectedItem = "Usuario";
+
+            #endregion
         }
 
         private void HistorialCargos_Click(object sender, EventArgs e)
@@ -848,6 +903,110 @@ namespace Bomberos.Presentacion
                 EnumReportes.Observaciones,
                 oParametro
                 );
+        }
+
+        private void select_tipocuenta_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_enviar_fichapersonal_Click(object sender, EventArgs e)
+        {
+            IBomberoMgr _Bombero = new BomberoMgr();
+            BomberoDTO Bombero = new BomberoDTO();
+
+            Bombero.Nombres = txt_nombres.Text;
+            Bombero.Apellidos = txt_apellidos.Text;
+            Bombero.Celular = txt_celular.Text;
+            Bombero.DireccionLaboral = txt_dir_lab.Text;
+            Bombero.DireccionParticular = txt_dir_part.Text;
+            Bombero.EstadoCivil = select_estadocivil.Text;
+            Bombero.FechaInscripcion = date_fecha_inscrip.Value;
+            Bombero.FechaNacimiento = date_fecha_nac.Value;
+            Bombero.GrupoSanguineo = txt_gruposang.Text;
+            Bombero.Profesion = txt_profesion.Text;
+            Bombero.Email = txt_email.Text;
+            Bombero.Rut = txt_rut.Text;
+            Bombero.Compañia = (CompañiaDTO)select_compania.SelectedItem;
+            Bombero.TelefonoLaboral = txt_tel_lab.Text;
+            Bombero.TelefonoParticular = txt_tel_part.Text;
+            Bombero.TIB = txt_tib.Text;
+            Bombero.Password = txt_pass.Text;
+            Bombero.Cargo = (CargoDTO)select_cargo.SelectedItem;
+            Bombero.Estado = select_estado.Text;
+            Bombero.NumeroRegistro = int.Parse(txt_socio.Text);
+
+            if (select_tipocuenta.Text.Equals("Administrador"))
+                Bombero.isAdmin = true;
+            else
+                Bombero.isAdmin = false;
+
+            //Salvar imagen al disco
+            if (box_picture.Image != null)
+            {
+                try
+                {
+                    /* if (!System.IO.Directory.Exists(@"C:\Bomberos\"))
+                         System.IO.Directory.CreateDirectory(@"C:\Bomberos\");
+
+                     System.IO.File.Delete("C:\\Bomberos\\" + Bombero.Rut + ".jpg");
+                    box_picture.Image.Save("C:\\Bomberos\\" + Bombero.Rut + ".jpg");*/
+                }
+                finally
+                {
+                    box_picture.Dispose();
+                }
+            }
+
+            if (_Bombero.EditarBombero(Bombero))
+            {
+                MessageBox.Show("Bombero actualizado");
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Error al actualizar bombero");
+            }
+        }
+
+        private void btn_imprimir_Click(object sender, EventArgs e)
+        {
+            BomberoReportDTO oParametro = new BomberoReportDTO();
+
+            IReincorporacionBomberoMgr _Reincorporacion = new ReincorporacionBomberoMgr();
+            ReincorporacionBomberoDTO ReincorporacionBombero = new ReincorporacionBomberoDTO();
+            List<ReincorporacionBomberoDTO> ListaR = new List<ReincorporacionBomberoDTO>();
+            ReincorporacionBombero.Bombero = ContextoDTO.Instancia().BomberoSelected;
+
+            Utilidades.ReflectarPropiedadesSimilares(ContextoDTO.Instancia().BomberoSelected, oParametro);
+            oParametro.p_Compañia = ContextoDTO.Instancia().BomberoSelected.Compañia.Nombre;
+            oParametro.p_Cargo = ContextoDTO.Instancia().BomberoSelected.Cargo.Nombre;
+            oParametro.p_Estado = ContextoDTO.Instancia().BomberoSelected.Estado;
+            oParametro.p_EstadoCivil = ContextoDTO.Instancia().BomberoSelected.EstadoCivil;
+
+            foreach (var elem in _Reincorporacion.CargarReincorporacionBombero(ReincorporacionBombero))
+            {
+                Bomberos.Comun.BomberoReportDTO.ReincorporacionReport ReinElem = new BomberoReportDTO.ReincorporacionReport();
+                ReinElem.p_Fecha = elem.FechaReincorporacion.Date.ToString();
+                oParametro.ListaReincorporaciones.Add(ReinElem);
+            }
+
+            var form = new VisorReportes();
+
+            form.MostrarReporte(
+                EnumReportes.FichaPersonal,
+                oParametro
+                );
+        }
+
+        private void btn_imagen_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog file = new OpenFileDialog();
+            file.Title = "Seleccione imagen";
+            if (file.ShowDialog() == DialogResult.OK)
+            {
+                box_picture.Image = new Bitmap(file.OpenFile());
+            }
         }
     }
 }

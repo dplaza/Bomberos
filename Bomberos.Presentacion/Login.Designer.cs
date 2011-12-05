@@ -41,7 +41,7 @@
             // 
             // btn_ingresar_login
             // 
-            this.btn_ingresar_login.Location = new System.Drawing.Point(141, 167);
+            this.btn_ingresar_login.Location = new System.Drawing.Point(109, 148);
             this.btn_ingresar_login.Name = "btn_ingresar_login";
             this.btn_ingresar_login.Size = new System.Drawing.Size(75, 23);
             this.btn_ingresar_login.TabIndex = 4;
@@ -52,7 +52,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(54, 91);
+            this.label1.Location = new System.Drawing.Point(37, 85);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(46, 13);
             this.label1.TabIndex = 1;
@@ -61,7 +61,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(54, 128);
+            this.label2.Location = new System.Drawing.Point(37, 113);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(64, 13);
             this.label2.TabIndex = 2;
@@ -69,14 +69,14 @@
             // 
             // txt_user_login
             // 
-            this.txt_user_login.Location = new System.Drawing.Point(128, 88);
+            this.txt_user_login.Location = new System.Drawing.Point(107, 82);
             this.txt_user_login.Name = "txt_user_login";
             this.txt_user_login.Size = new System.Drawing.Size(141, 20);
             this.txt_user_login.TabIndex = 2;
             // 
             // txt_pass_login
             // 
-            this.txt_pass_login.Location = new System.Drawing.Point(128, 125);
+            this.txt_pass_login.Location = new System.Drawing.Point(107, 110);
             this.txt_pass_login.Name = "txt_pass_login";
             this.txt_pass_login.PasswordChar = '*';
             this.txt_pass_login.Size = new System.Drawing.Size(141, 20);
@@ -85,7 +85,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(54, 55);
+            this.label3.Location = new System.Drawing.Point(37, 56);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(31, 13);
             this.label3.TabIndex = 5;
@@ -98,7 +98,7 @@
             this.combobox_tipo_login.Items.AddRange(new object[] {
             "Usuario",
             "Administrador"});
-            this.combobox_tipo_login.Location = new System.Drawing.Point(128, 52);
+            this.combobox_tipo_login.Location = new System.Drawing.Point(107, 53);
             this.combobox_tipo_login.Name = "combobox_tipo_login";
             this.combobox_tipo_login.Size = new System.Drawing.Size(141, 21);
             this.combobox_tipo_login.TabIndex = 1;
@@ -106,7 +106,7 @@
             // btn_salir_login
             // 
             this.btn_salir_login.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btn_salir_login.Location = new System.Drawing.Point(222, 167);
+            this.btn_salir_login.Location = new System.Drawing.Point(190, 148);
             this.btn_salir_login.Name = "btn_salir_login";
             this.btn_salir_login.Size = new System.Drawing.Size(75, 23);
             this.btn_salir_login.TabIndex = 5;
@@ -117,7 +117,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(80, 19);
+            this.label4.Location = new System.Drawing.Point(61, 19);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(163, 13);
             this.label4.TabIndex = 8;
@@ -129,7 +129,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btn_salir_login;
-            this.ClientSize = new System.Drawing.Size(322, 215);
+            this.ClientSize = new System.Drawing.Size(285, 192);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.btn_salir_login);
             this.Controls.Add(this.combobox_tipo_login);

@@ -129,12 +129,6 @@
     <Compile Include="Usuario\MenuUsuario.Designer.cs">
       <DependentUpon>MenuUsuario.cs</DependentUpon>
     </Compile>
-    <Compile Include="Admin\MiFichaBombero.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Admin\MiFichaBombero.Designer.cs">
-      <DependentUpon>MiFichaBombero.cs</DependentUpon>
-    </Compile>
     <Compile Include="BuscarBombero.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -213,10 +207,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Usuario\MenuUsuario.resx">
       <DependentUpon>MenuUsuario.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Admin\MiFichaBombero.resx">
-      <DependentUpon>MiFichaBombero.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">

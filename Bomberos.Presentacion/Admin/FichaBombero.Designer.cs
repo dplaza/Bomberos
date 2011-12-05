@@ -55,7 +55,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.txt_nombres = new System.Windows.Forms.TextBox();
             this.txt_apellidos = new System.Windows.Forms.TextBox();
             this.txt_rut = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -84,6 +83,7 @@
             this.select_compania = new System.Windows.Forms.ComboBox();
             this.button1 = new System.Windows.Forms.Button();
             this.btn_imprimir = new System.Windows.Forms.Button();
+            this.txt_nombres = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.box_picture)).BeginInit();
             this.groupBox3.SuspendLayout();
@@ -336,14 +336,6 @@
             this.groupBox1.TabIndex = 108;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos Personales";
-            // 
-            // txt_nombres
-            // 
-            this.txt_nombres.Enabled = false;
-            this.txt_nombres.Location = new System.Drawing.Point(140, 26);
-            this.txt_nombres.Name = "txt_nombres";
-            this.txt_nombres.Size = new System.Drawing.Size(198, 20);
-            this.txt_nombres.TabIndex = 2;
             // 
             // txt_apellidos
             // 
@@ -626,12 +618,24 @@
             this.btn_imprimir.UseVisualStyleBackColor = true;
             this.btn_imprimir.Click += new System.EventHandler(this.btn_imprimir_Click);
             // 
+            // txt_nombres
+            // 
+            this.txt_nombres.Enabled = false;
+            this.txt_nombres.Location = new System.Drawing.Point(140, 26);
+            this.txt_nombres.Name = "txt_nombres";
+            this.txt_nombres.Size = new System.Drawing.Size(198, 20);
+            this.txt_nombres.TabIndex = 2;
+            // 
             // FichaBombero
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btn_cancelar;
             this.ClientSize = new System.Drawing.Size(668, 707);
+            this.Controls.Add(this.txt_profesion);
+            this.Controls.Add(this.txt_gruposang);
+            this.Controls.Add(this.date_fecha_nac);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.btn_imprimir);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.groupBox3);
@@ -652,9 +656,6 @@
             this.Controls.Add(this.txt_dir_part);
             this.Controls.Add(this.select_estadocivil);
             this.Controls.Add(this.txt_email);
-            this.Controls.Add(this.txt_profesion);
-            this.Controls.Add(this.txt_gruposang);
-            this.Controls.Add(this.date_fecha_nac);
             this.Controls.Add(this.label19);
             this.Controls.Add(this.label18);
             this.Controls.Add(this.label17);
@@ -667,7 +668,6 @@
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.groupBox1);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
@@ -714,7 +714,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox txt_nombres;
         private System.Windows.Forms.TextBox txt_apellidos;
         private System.Windows.Forms.TextBox txt_rut;
         private System.Windows.Forms.Label label1;
@@ -743,5 +742,6 @@
         private System.Windows.Forms.TextBox txt_socio;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button btn_imprimir;
+        private System.Windows.Forms.TextBox txt_nombres;
     }
 }

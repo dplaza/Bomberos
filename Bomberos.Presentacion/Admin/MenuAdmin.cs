@@ -40,13 +40,6 @@ namespace Bomberos.Presentacion
             form.Show();
         }
 
-        private void editarPerfilToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            var form = new MiFichaBombero();
-            form.MdiParent = this;
-            form.Show();
-        }
-
         private void registrarBomberoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var form = new RegistroBombero();

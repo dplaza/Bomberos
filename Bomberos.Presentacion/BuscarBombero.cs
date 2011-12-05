@@ -76,10 +76,10 @@ namespace Bomberos.Presentacion
             {
                 ContextoDTO.Instancia().BomberoSelected.Rut = dataGridResult.SelectedRows[0].Cells["Rut"].Value.ToString();
 
-                var form = new FichaBombero();
+                var form = new MasInfoBombero();
                 form.MdiParent = this.MdiParent;
+                this.Close();
                 form.Show();
-
             }
         }
 

@@ -227,7 +227,7 @@
             this.txtobservacion = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.dateTimeObservacionFecha = new System.Windows.Forms.DateTimePicker();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.Reincorporaciones = new System.Windows.Forms.TabPage();
             this.dataGridReincorporacion = new System.Windows.Forms.DataGridView();
             this.BomberoReincorporacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.FechaReincorporacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -240,6 +240,55 @@
             this.labelTIB = new System.Windows.Forms.Label();
             this.labelRut = new System.Windows.Forms.Label();
             this.labelnombre = new System.Windows.Forms.Label();
+            this.FichaPersonal = new System.Windows.Forms.TabPage();
+            this.groupBox8 = new System.Windows.Forms.GroupBox();
+            this.txt_nombres = new System.Windows.Forms.TextBox();
+            this.txt_apellidos = new System.Windows.Forms.TextBox();
+            this.txt_rut = new System.Windows.Forms.TextBox();
+            this.groupBox9 = new System.Windows.Forms.GroupBox();
+            this.txt_socio = new System.Windows.Forms.TextBox();
+            this.label50 = new System.Windows.Forms.Label();
+            this.label51 = new System.Windows.Forms.Label();
+            this.label52 = new System.Windows.Forms.Label();
+            this.select_tipocuenta = new System.Windows.Forms.ComboBox();
+            this.label53 = new System.Windows.Forms.Label();
+            this.label54 = new System.Windows.Forms.Label();
+            this.select_estado = new System.Windows.Forms.ComboBox();
+            this.label55 = new System.Windows.Forms.Label();
+            this.txt_tib = new System.Windows.Forms.TextBox();
+            this.select_cargo2 = new System.Windows.Forms.ComboBox();
+            this.label56 = new System.Windows.Forms.Label();
+            this.date_fecha_inscrip = new System.Windows.Forms.DateTimePicker();
+            this.label57 = new System.Windows.Forms.Label();
+            this.txt_pass = new System.Windows.Forms.TextBox();
+            this.select_compania = new System.Windows.Forms.ComboBox();
+            this.txt_profesion = new System.Windows.Forms.TextBox();
+            this.txt_gruposang = new System.Windows.Forms.TextBox();
+            this.date_fecha_nac = new System.Windows.Forms.DateTimePicker();
+            this.txt_celular = new System.Windows.Forms.TextBox();
+            this.txt_tel_lab = new System.Windows.Forms.TextBox();
+            this.txt_tel_part = new System.Windows.Forms.TextBox();
+            this.txt_dir_lab = new System.Windows.Forms.TextBox();
+            this.txt_dir_part = new System.Windows.Forms.TextBox();
+            this.select_estadocivil = new System.Windows.Forms.ComboBox();
+            this.txt_email = new System.Windows.Forms.TextBox();
+            this.label58 = new System.Windows.Forms.Label();
+            this.label59 = new System.Windows.Forms.Label();
+            this.label60 = new System.Windows.Forms.Label();
+            this.label61 = new System.Windows.Forms.Label();
+            this.label62 = new System.Windows.Forms.Label();
+            this.label63 = new System.Windows.Forms.Label();
+            this.label64 = new System.Windows.Forms.Label();
+            this.label65 = new System.Windows.Forms.Label();
+            this.label66 = new System.Windows.Forms.Label();
+            this.label67 = new System.Windows.Forms.Label();
+            this.label68 = new System.Windows.Forms.Label();
+            this.label69 = new System.Windows.Forms.Label();
+            this.label70 = new System.Windows.Forms.Label();
+            this.box_ficha_pict = new System.Windows.Forms.PictureBox();
+            this.btn_imagen = new System.Windows.Forms.Button();
+            this.btn_enviar_fichapersonal = new System.Windows.Forms.Button();
+            this.btn_imprimir = new System.Windows.Forms.Button();
             this.tabBox.SuspendLayout();
             this.FichaMedica.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -261,25 +310,30 @@
             this.groupBox6.SuspendLayout();
             this.Observaciones.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridObservacion)).BeginInit();
-            this.tabPage1.SuspendLayout();
+            this.Reincorporaciones.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridReincorporacion)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.box_picture)).BeginInit();
+            this.FichaPersonal.SuspendLayout();
+            this.groupBox8.SuspendLayout();
+            this.groupBox9.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.box_ficha_pict)).BeginInit();
             this.SuspendLayout();
             // 
             // tabBox
             // 
+            this.tabBox.Controls.Add(this.FichaPersonal);
             this.tabBox.Controls.Add(this.FichaMedica);
             this.tabBox.Controls.Add(this.HistorialCargos);
             this.tabBox.Controls.Add(this.HistorialPremios);
             this.tabBox.Controls.Add(this.HistorialCursos);
+            this.tabBox.Controls.Add(this.Reincorporaciones);
             this.tabBox.Controls.Add(this.ResumenListas);
             this.tabBox.Controls.Add(this.Servicio);
             this.tabBox.Controls.Add(this.Observaciones);
-            this.tabBox.Controls.Add(this.tabPage1);
             this.tabBox.Location = new System.Drawing.Point(12, 122);
             this.tabBox.Name = "tabBox";
             this.tabBox.SelectedIndex = 0;
-            this.tabBox.Size = new System.Drawing.Size(733, 579);
+            this.tabBox.Size = new System.Drawing.Size(782, 579);
             this.tabBox.TabIndex = 0;
             // 
             // FichaMedica
@@ -299,7 +353,7 @@
             this.FichaMedica.Controls.Add(this.groupBox1);
             this.FichaMedica.Location = new System.Drawing.Point(4, 22);
             this.FichaMedica.Name = "FichaMedica";
-            this.FichaMedica.Size = new System.Drawing.Size(725, 553);
+            this.FichaMedica.Size = new System.Drawing.Size(774, 553);
             this.FichaMedica.TabIndex = 0;
             this.FichaMedica.Text = "Ficha Médica";
             this.FichaMedica.UseVisualStyleBackColor = true;
@@ -698,7 +752,7 @@
             this.HistorialCargos.Controls.Add(this.dataGridCargos);
             this.HistorialCargos.Location = new System.Drawing.Point(4, 22);
             this.HistorialCargos.Name = "HistorialCargos";
-            this.HistorialCargos.Size = new System.Drawing.Size(725, 553);
+            this.HistorialCargos.Size = new System.Drawing.Size(774, 553);
             this.HistorialCargos.TabIndex = 0;
             this.HistorialCargos.Text = "Historial Cargos";
             this.HistorialCargos.UseVisualStyleBackColor = true;
@@ -2176,19 +2230,19 @@
             this.dateTimeObservacionFecha.Size = new System.Drawing.Size(226, 20);
             this.dateTimeObservacionFecha.TabIndex = 0;
             // 
-            // tabPage1
+            // Reincorporaciones
             // 
-            this.tabPage1.Controls.Add(this.dataGridReincorporacion);
-            this.tabPage1.Controls.Add(this.btn_agregar_reincorporacion);
-            this.tabPage1.Controls.Add(this.label40);
-            this.tabPage1.Controls.Add(this.dateTimeReincorporacion);
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(725, 553);
-            this.tabPage1.TabIndex = 6;
-            this.tabPage1.Text = "Reincorporaciones";
-            this.tabPage1.UseVisualStyleBackColor = true;
+            this.Reincorporaciones.Controls.Add(this.dataGridReincorporacion);
+            this.Reincorporaciones.Controls.Add(this.btn_agregar_reincorporacion);
+            this.Reincorporaciones.Controls.Add(this.label40);
+            this.Reincorporaciones.Controls.Add(this.dateTimeReincorporacion);
+            this.Reincorporaciones.Location = new System.Drawing.Point(4, 22);
+            this.Reincorporaciones.Name = "Reincorporaciones";
+            this.Reincorporaciones.Padding = new System.Windows.Forms.Padding(3);
+            this.Reincorporaciones.Size = new System.Drawing.Size(725, 553);
+            this.Reincorporaciones.TabIndex = 6;
+            this.Reincorporaciones.Text = "Reincorporaciones";
+            this.Reincorporaciones.UseVisualStyleBackColor = true;
             // 
             // dataGridReincorporacion
             // 
@@ -2248,7 +2302,7 @@
             // 
             // btnCerrar
             // 
-            this.btnCerrar.Location = new System.Drawing.Point(647, 715);
+            this.btnCerrar.Location = new System.Drawing.Point(690, 714);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(75, 23);
             this.btnCerrar.TabIndex = 1;
@@ -2302,11 +2356,489 @@
             this.labelnombre.TabIndex = 172;
             this.labelnombre.Text = "Nombre completo";
             // 
+            // FichaPersonal
+            // 
+            this.FichaPersonal.Controls.Add(this.btn_imprimir);
+            this.FichaPersonal.Controls.Add(this.btn_enviar_fichapersonal);
+            this.FichaPersonal.Controls.Add(this.btn_imagen);
+            this.FichaPersonal.Controls.Add(this.box_ficha_pict);
+            this.FichaPersonal.Controls.Add(this.groupBox9);
+            this.FichaPersonal.Controls.Add(this.groupBox8);
+            this.FichaPersonal.Location = new System.Drawing.Point(4, 22);
+            this.FichaPersonal.Name = "FichaPersonal";
+            this.FichaPersonal.Padding = new System.Windows.Forms.Padding(3);
+            this.FichaPersonal.Size = new System.Drawing.Size(774, 553);
+            this.FichaPersonal.TabIndex = 7;
+            this.FichaPersonal.Text = "Ficha Personal";
+            this.FichaPersonal.UseVisualStyleBackColor = true;
+            // 
+            // groupBox8
+            // 
+            this.groupBox8.Controls.Add(this.label69);
+            this.groupBox8.Controls.Add(this.label70);
+            this.groupBox8.Controls.Add(this.txt_profesion);
+            this.groupBox8.Controls.Add(this.txt_gruposang);
+            this.groupBox8.Controls.Add(this.date_fecha_nac);
+            this.groupBox8.Controls.Add(this.txt_celular);
+            this.groupBox8.Controls.Add(this.txt_tel_lab);
+            this.groupBox8.Controls.Add(this.txt_tel_part);
+            this.groupBox8.Controls.Add(this.txt_dir_lab);
+            this.groupBox8.Controls.Add(this.txt_dir_part);
+            this.groupBox8.Controls.Add(this.select_estadocivil);
+            this.groupBox8.Controls.Add(this.txt_email);
+            this.groupBox8.Controls.Add(this.label58);
+            this.groupBox8.Controls.Add(this.label59);
+            this.groupBox8.Controls.Add(this.label60);
+            this.groupBox8.Controls.Add(this.label61);
+            this.groupBox8.Controls.Add(this.label62);
+            this.groupBox8.Controls.Add(this.label63);
+            this.groupBox8.Controls.Add(this.label64);
+            this.groupBox8.Controls.Add(this.label65);
+            this.groupBox8.Controls.Add(this.label66);
+            this.groupBox8.Controls.Add(this.label67);
+            this.groupBox8.Controls.Add(this.label68);
+            this.groupBox8.Controls.Add(this.txt_nombres);
+            this.groupBox8.Controls.Add(this.txt_apellidos);
+            this.groupBox8.Controls.Add(this.txt_rut);
+            this.groupBox8.Location = new System.Drawing.Point(8, 17);
+            this.groupBox8.Name = "groupBox8";
+            this.groupBox8.Size = new System.Drawing.Size(390, 411);
+            this.groupBox8.TabIndex = 109;
+            this.groupBox8.TabStop = false;
+            this.groupBox8.Text = "Datos Personales";
+            // 
+            // txt_nombres
+            // 
+            this.txt_nombres.Location = new System.Drawing.Point(129, 25);
+            this.txt_nombres.Name = "txt_nombres";
+            this.txt_nombres.Size = new System.Drawing.Size(198, 20);
+            this.txt_nombres.TabIndex = 0;
+            // 
+            // txt_apellidos
+            // 
+            this.txt_apellidos.Location = new System.Drawing.Point(129, 54);
+            this.txt_apellidos.Name = "txt_apellidos";
+            this.txt_apellidos.Size = new System.Drawing.Size(198, 20);
+            this.txt_apellidos.TabIndex = 4;
+            // 
+            // txt_rut
+            // 
+            this.txt_rut.Location = new System.Drawing.Point(129, 83);
+            this.txt_rut.Name = "txt_rut";
+            this.txt_rut.Size = new System.Drawing.Size(120, 20);
+            this.txt_rut.TabIndex = 21;
+            // 
+            // groupBox9
+            // 
+            this.groupBox9.Controls.Add(this.txt_socio);
+            this.groupBox9.Controls.Add(this.label50);
+            this.groupBox9.Controls.Add(this.label51);
+            this.groupBox9.Controls.Add(this.label52);
+            this.groupBox9.Controls.Add(this.select_tipocuenta);
+            this.groupBox9.Controls.Add(this.label53);
+            this.groupBox9.Controls.Add(this.label54);
+            this.groupBox9.Controls.Add(this.select_estado);
+            this.groupBox9.Controls.Add(this.label55);
+            this.groupBox9.Controls.Add(this.txt_tib);
+            this.groupBox9.Controls.Add(this.select_cargo2);
+            this.groupBox9.Controls.Add(this.label56);
+            this.groupBox9.Controls.Add(this.date_fecha_inscrip);
+            this.groupBox9.Controls.Add(this.label57);
+            this.groupBox9.Controls.Add(this.txt_pass);
+            this.groupBox9.Controls.Add(this.select_compania);
+            this.groupBox9.Location = new System.Drawing.Point(406, 270);
+            this.groupBox9.Name = "groupBox9";
+            this.groupBox9.Size = new System.Drawing.Size(353, 265);
+            this.groupBox9.TabIndex = 179;
+            this.groupBox9.TabStop = false;
+            this.groupBox9.Text = "Datos Bombero";
+            // 
+            // txt_socio
+            // 
+            this.txt_socio.Location = new System.Drawing.Point(132, 24);
+            this.txt_socio.Name = "txt_socio";
+            this.txt_socio.Size = new System.Drawing.Size(139, 20);
+            this.txt_socio.TabIndex = 179;
+            // 
+            // label50
+            // 
+            this.label50.AutoSize = true;
+            this.label50.Location = new System.Drawing.Point(26, 27);
+            this.label50.Name = "label50";
+            this.label50.Size = new System.Drawing.Size(49, 13);
+            this.label50.TabIndex = 178;
+            this.label50.Text = "Socio N°";
+            // 
+            // label51
+            // 
+            this.label51.AutoSize = true;
+            this.label51.Location = new System.Drawing.Point(26, 143);
+            this.label51.Name = "label51";
+            this.label51.Size = new System.Drawing.Size(35, 13);
+            this.label51.TabIndex = 162;
+            this.label51.Text = "Cargo";
+            // 
+            // label52
+            // 
+            this.label52.AutoSize = true;
+            this.label52.Location = new System.Drawing.Point(26, 56);
+            this.label52.Name = "label52";
+            this.label52.Size = new System.Drawing.Size(24, 13);
+            this.label52.TabIndex = 172;
+            this.label52.Text = "TIB";
+            // 
+            // select_tipocuenta
+            // 
+            this.select_tipocuenta.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.select_tipocuenta.FormattingEnabled = true;
+            this.select_tipocuenta.Items.AddRange(new object[] {
+            "Usuario",
+            "Administrador"});
+            this.select_tipocuenta.Location = new System.Drawing.Point(132, 82);
+            this.select_tipocuenta.Name = "select_tipocuenta";
+            this.select_tipocuenta.Size = new System.Drawing.Size(121, 21);
+            this.select_tipocuenta.TabIndex = 177;
+            this.select_tipocuenta.SelectedIndexChanged += new System.EventHandler(this.select_tipocuenta_SelectedIndexChanged);
+            // 
+            // label53
+            // 
+            this.label53.AutoSize = true;
+            this.label53.Location = new System.Drawing.Point(26, 85);
+            this.label53.Name = "label53";
+            this.label53.Size = new System.Drawing.Size(79, 13);
+            this.label53.TabIndex = 174;
+            this.label53.Text = "Tipo de cuenta";
+            // 
+            // label54
+            // 
+            this.label54.AutoSize = true;
+            this.label54.Location = new System.Drawing.Point(26, 114);
+            this.label54.Name = "label54";
+            this.label54.Size = new System.Drawing.Size(91, 13);
+            this.label54.TabIndex = 173;
+            this.label54.Text = "Fecha Inscripción";
+            // 
+            // select_estado
+            // 
+            this.select_estado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.select_estado.FormattingEnabled = true;
+            this.select_estado.Items.AddRange(new object[] {
+            "Activo",
+            "Renunciado",
+            "Separado",
+            "Fallecido"});
+            this.select_estado.Location = new System.Drawing.Point(132, 169);
+            this.select_estado.Name = "select_estado";
+            this.select_estado.Size = new System.Drawing.Size(121, 21);
+            this.select_estado.TabIndex = 161;
+            // 
+            // label55
+            // 
+            this.label55.AutoSize = true;
+            this.label55.Location = new System.Drawing.Point(26, 172);
+            this.label55.Name = "label55";
+            this.label55.Size = new System.Drawing.Size(40, 13);
+            this.label55.TabIndex = 160;
+            this.label55.Text = "Estado";
+            // 
+            // txt_tib
+            // 
+            this.txt_tib.Location = new System.Drawing.Point(132, 53);
+            this.txt_tib.Name = "txt_tib";
+            this.txt_tib.Size = new System.Drawing.Size(100, 20);
+            this.txt_tib.TabIndex = 175;
+            // 
+            // select_cargo2
+            // 
+            this.select_cargo2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.select_cargo2.FormattingEnabled = true;
+            this.select_cargo2.Location = new System.Drawing.Point(132, 140);
+            this.select_cargo2.Name = "select_cargo2";
+            this.select_cargo2.Size = new System.Drawing.Size(160, 21);
+            this.select_cargo2.TabIndex = 0;
+            // 
+            // label56
+            // 
+            this.label56.AutoSize = true;
+            this.label56.Location = new System.Drawing.Point(26, 201);
+            this.label56.Name = "label56";
+            this.label56.Size = new System.Drawing.Size(54, 13);
+            this.label56.TabIndex = 128;
+            this.label56.Text = "Compañia";
+            // 
+            // date_fecha_inscrip
+            // 
+            this.date_fecha_inscrip.Location = new System.Drawing.Point(132, 109);
+            this.date_fecha_inscrip.Name = "date_fecha_inscrip";
+            this.date_fecha_inscrip.Size = new System.Drawing.Size(200, 20);
+            this.date_fecha_inscrip.TabIndex = 176;
+            // 
+            // label57
+            // 
+            this.label57.AutoSize = true;
+            this.label57.Location = new System.Drawing.Point(26, 230);
+            this.label57.Name = "label57";
+            this.label57.Size = new System.Drawing.Size(53, 13);
+            this.label57.TabIndex = 131;
+            this.label57.Text = "Password";
+            // 
+            // txt_pass
+            // 
+            this.txt_pass.Location = new System.Drawing.Point(132, 227);
+            this.txt_pass.Name = "txt_pass";
+            this.txt_pass.PasswordChar = '*';
+            this.txt_pass.Size = new System.Drawing.Size(139, 20);
+            this.txt_pass.TabIndex = 148;
+            // 
+            // select_compania
+            // 
+            this.select_compania.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.select_compania.FormattingEnabled = true;
+            this.select_compania.Location = new System.Drawing.Point(132, 198);
+            this.select_compania.Name = "select_compania";
+            this.select_compania.Size = new System.Drawing.Size(121, 21);
+            this.select_compania.TabIndex = 151;
+            // 
+            // txt_profesion
+            // 
+            this.txt_profesion.Location = new System.Drawing.Point(129, 170);
+            this.txt_profesion.Name = "txt_profesion";
+            this.txt_profesion.Size = new System.Drawing.Size(246, 20);
+            this.txt_profesion.TabIndex = 121;
+            // 
+            // txt_gruposang
+            // 
+            this.txt_gruposang.Location = new System.Drawing.Point(129, 141);
+            this.txt_gruposang.Name = "txt_gruposang";
+            this.txt_gruposang.Size = new System.Drawing.Size(139, 20);
+            this.txt_gruposang.TabIndex = 120;
+            // 
+            // date_fecha_nac
+            // 
+            this.date_fecha_nac.Location = new System.Drawing.Point(129, 109);
+            this.date_fecha_nac.Name = "date_fecha_nac";
+            this.date_fecha_nac.Size = new System.Drawing.Size(200, 20);
+            this.date_fecha_nac.TabIndex = 119;
+            // 
+            // txt_celular
+            // 
+            this.txt_celular.Location = new System.Drawing.Point(129, 373);
+            this.txt_celular.Name = "txt_celular";
+            this.txt_celular.Size = new System.Drawing.Size(114, 20);
+            this.txt_celular.TabIndex = 128;
+            // 
+            // txt_tel_lab
+            // 
+            this.txt_tel_lab.Location = new System.Drawing.Point(129, 344);
+            this.txt_tel_lab.Name = "txt_tel_lab";
+            this.txt_tel_lab.Size = new System.Drawing.Size(156, 20);
+            this.txt_tel_lab.TabIndex = 127;
+            // 
+            // txt_tel_part
+            // 
+            this.txt_tel_part.Location = new System.Drawing.Point(129, 315);
+            this.txt_tel_part.Name = "txt_tel_part";
+            this.txt_tel_part.Size = new System.Drawing.Size(156, 20);
+            this.txt_tel_part.TabIndex = 126;
+            // 
+            // txt_dir_lab
+            // 
+            this.txt_dir_lab.Location = new System.Drawing.Point(129, 286);
+            this.txt_dir_lab.Name = "txt_dir_lab";
+            this.txt_dir_lab.Size = new System.Drawing.Size(246, 20);
+            this.txt_dir_lab.TabIndex = 125;
+            // 
+            // txt_dir_part
+            // 
+            this.txt_dir_part.Location = new System.Drawing.Point(129, 257);
+            this.txt_dir_part.Name = "txt_dir_part";
+            this.txt_dir_part.Size = new System.Drawing.Size(246, 20);
+            this.txt_dir_part.TabIndex = 124;
+            // 
+            // select_estadocivil
+            // 
+            this.select_estadocivil.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.select_estadocivil.FormattingEnabled = true;
+            this.select_estadocivil.Items.AddRange(new object[] {
+            "Soltero",
+            "Casado",
+            "Divorciado",
+            "Viudo",
+            "Separado"});
+            this.select_estadocivil.Location = new System.Drawing.Point(129, 228);
+            this.select_estadocivil.Name = "select_estadocivil";
+            this.select_estadocivil.Size = new System.Drawing.Size(139, 21);
+            this.select_estadocivil.TabIndex = 123;
+            // 
+            // txt_email
+            // 
+            this.txt_email.Location = new System.Drawing.Point(129, 199);
+            this.txt_email.Name = "txt_email";
+            this.txt_email.Size = new System.Drawing.Size(139, 20);
+            this.txt_email.TabIndex = 122;
+            // 
+            // label58
+            // 
+            this.label58.AutoSize = true;
+            this.label58.Location = new System.Drawing.Point(20, 231);
+            this.label58.Name = "label58";
+            this.label58.Size = new System.Drawing.Size(62, 13);
+            this.label58.TabIndex = 118;
+            this.label58.Text = "Estado Civil";
+            // 
+            // label59
+            // 
+            this.label59.AutoSize = true;
+            this.label59.Location = new System.Drawing.Point(20, 173);
+            this.label59.Name = "label59";
+            this.label59.Size = new System.Drawing.Size(51, 13);
+            this.label59.TabIndex = 117;
+            this.label59.Text = "Profesión";
+            // 
+            // label60
+            // 
+            this.label60.AutoSize = true;
+            this.label60.Location = new System.Drawing.Point(20, 202);
+            this.label60.Name = "label60";
+            this.label60.Size = new System.Drawing.Size(32, 13);
+            this.label60.TabIndex = 116;
+            this.label60.Text = "Email";
+            // 
+            // label61
+            // 
+            this.label61.AutoSize = true;
+            this.label61.Location = new System.Drawing.Point(20, 376);
+            this.label61.Name = "label61";
+            this.label61.Size = new System.Drawing.Size(39, 13);
+            this.label61.TabIndex = 115;
+            this.label61.Text = "Celular";
+            // 
+            // label62
+            // 
+            this.label62.AutoSize = true;
+            this.label62.Location = new System.Drawing.Point(20, 144);
+            this.label62.Name = "label62";
+            this.label62.Size = new System.Drawing.Size(92, 13);
+            this.label62.TabIndex = 114;
+            this.label62.Text = "Grupo Sanguíneo";
+            // 
+            // label63
+            // 
+            this.label63.AutoSize = true;
+            this.label63.Location = new System.Drawing.Point(20, 289);
+            this.label63.Name = "label63";
+            this.label63.Size = new System.Drawing.Size(90, 13);
+            this.label63.TabIndex = 113;
+            this.label63.Text = "Dirección Laboral";
+            // 
+            // label64
+            // 
+            this.label64.AutoSize = true;
+            this.label64.Location = new System.Drawing.Point(20, 260);
+            this.label64.Name = "label64";
+            this.label64.Size = new System.Drawing.Size(99, 13);
+            this.label64.TabIndex = 112;
+            this.label64.Text = "Dirección Particular";
+            // 
+            // label65
+            // 
+            this.label65.AutoSize = true;
+            this.label65.Location = new System.Drawing.Point(20, 347);
+            this.label65.Name = "label65";
+            this.label65.Size = new System.Drawing.Size(87, 13);
+            this.label65.TabIndex = 111;
+            this.label65.Text = "Teléfono Laboral";
+            // 
+            // label66
+            // 
+            this.label66.AutoSize = true;
+            this.label66.Location = new System.Drawing.Point(20, 318);
+            this.label66.Name = "label66";
+            this.label66.Size = new System.Drawing.Size(96, 13);
+            this.label66.TabIndex = 110;
+            this.label66.Text = "Teléfono Particular";
+            // 
+            // label67
+            // 
+            this.label67.AutoSize = true;
+            this.label67.Location = new System.Drawing.Point(20, 115);
+            this.label67.Name = "label67";
+            this.label67.Size = new System.Drawing.Size(93, 13);
+            this.label67.TabIndex = 109;
+            this.label67.Text = "Fecha Nacimiento";
+            // 
+            // label68
+            // 
+            this.label68.AutoSize = true;
+            this.label68.Location = new System.Drawing.Point(20, 86);
+            this.label68.Name = "label68";
+            this.label68.Size = new System.Drawing.Size(30, 13);
+            this.label68.TabIndex = 108;
+            this.label68.Text = "RUT";
+            // 
+            // label69
+            // 
+            this.label69.AutoSize = true;
+            this.label69.Location = new System.Drawing.Point(20, 28);
+            this.label69.Name = "label69";
+            this.label69.Size = new System.Drawing.Size(49, 13);
+            this.label69.TabIndex = 129;
+            this.label69.Text = "Nombres";
+            // 
+            // label70
+            // 
+            this.label70.AutoSize = true;
+            this.label70.Location = new System.Drawing.Point(20, 57);
+            this.label70.Name = "label70";
+            this.label70.Size = new System.Drawing.Size(49, 13);
+            this.label70.TabIndex = 130;
+            this.label70.Text = "Apellidos";
+            // 
+            // box_ficha_pict
+            // 
+            this.box_ficha_pict.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.box_ficha_pict.Location = new System.Drawing.Point(506, 20);
+            this.box_ficha_pict.Name = "box_ficha_pict";
+            this.box_ficha_pict.Size = new System.Drawing.Size(171, 200);
+            this.box_ficha_pict.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.box_ficha_pict.TabIndex = 181;
+            this.box_ficha_pict.TabStop = false;
+            // 
+            // btn_imagen
+            // 
+            this.btn_imagen.Location = new System.Drawing.Point(534, 234);
+            this.btn_imagen.Name = "btn_imagen";
+            this.btn_imagen.Size = new System.Drawing.Size(114, 23);
+            this.btn_imagen.TabIndex = 182;
+            this.btn_imagen.Text = "Seleccionar Imagen";
+            this.btn_imagen.UseVisualStyleBackColor = true;
+            this.btn_imagen.Click += new System.EventHandler(this.btn_imagen_Click);
+            // 
+            // btn_enviar_fichapersonal
+            // 
+            this.btn_enviar_fichapersonal.Location = new System.Drawing.Point(137, 494);
+            this.btn_enviar_fichapersonal.Name = "btn_enviar_fichapersonal";
+            this.btn_enviar_fichapersonal.Size = new System.Drawing.Size(120, 23);
+            this.btn_enviar_fichapersonal.TabIndex = 183;
+            this.btn_enviar_fichapersonal.Text = "Enviar Cambios";
+            this.btn_enviar_fichapersonal.UseVisualStyleBackColor = true;
+            this.btn_enviar_fichapersonal.Click += new System.EventHandler(this.btn_enviar_fichapersonal_Click);
+            // 
+            // btn_imprimir
+            // 
+            this.btn_imprimir.Location = new System.Drawing.Point(137, 461);
+            this.btn_imprimir.Name = "btn_imprimir";
+            this.btn_imprimir.Size = new System.Drawing.Size(121, 23);
+            this.btn_imprimir.TabIndex = 184;
+            this.btn_imprimir.Text = "Imprimir";
+            this.btn_imprimir.UseVisualStyleBackColor = true;
+            this.btn_imprimir.Click += new System.EventHandler(this.btn_imprimir_Click);
+            // 
             // MasInfoBombero
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(757, 756);
+            this.ClientSize = new System.Drawing.Size(806, 756);
             this.Controls.Add(this.labelCargo);
             this.Controls.Add(this.labelTIB);
             this.Controls.Add(this.labelRut);
@@ -2354,10 +2886,16 @@
             this.Observaciones.ResumeLayout(false);
             this.Observaciones.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridObservacion)).EndInit();
-            this.tabPage1.ResumeLayout(false);
-            this.tabPage1.PerformLayout();
+            this.Reincorporaciones.ResumeLayout(false);
+            this.Reincorporaciones.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridReincorporacion)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.box_picture)).EndInit();
+            this.FichaPersonal.ResumeLayout(false);
+            this.groupBox8.ResumeLayout(false);
+            this.groupBox8.PerformLayout();
+            this.groupBox9.ResumeLayout(false);
+            this.groupBox9.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.box_ficha_pict)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2501,7 +3039,7 @@
         private System.Windows.Forms.TextBox txt_otras_comp;
         private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.Label label41;
-        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.TabPage Reincorporaciones;
         private System.Windows.Forms.DataGridView dataGridReincorporacion;
         private System.Windows.Forms.Button btn_agregar_reincorporacion;
         private System.Windows.Forms.Label label40;
@@ -2577,6 +3115,55 @@
         private System.Windows.Forms.Button btn_imprimir_asistencia;
         private System.Windows.Forms.Button btn_imprimir_servicio;
         private System.Windows.Forms.Button btn_imprimir_observaciones;
+        private System.Windows.Forms.TabPage FichaPersonal;
+        private System.Windows.Forms.GroupBox groupBox8;
+        private System.Windows.Forms.TextBox txt_nombres;
+        private System.Windows.Forms.TextBox txt_apellidos;
+        private System.Windows.Forms.TextBox txt_rut;
+        private System.Windows.Forms.GroupBox groupBox9;
+        private System.Windows.Forms.TextBox txt_socio;
+        private System.Windows.Forms.Label label50;
+        private System.Windows.Forms.Label label51;
+        private System.Windows.Forms.Label label52;
+        private System.Windows.Forms.ComboBox select_tipocuenta;
+        private System.Windows.Forms.Label label53;
+        private System.Windows.Forms.Label label54;
+        private System.Windows.Forms.ComboBox select_estado;
+        private System.Windows.Forms.Label label55;
+        private System.Windows.Forms.TextBox txt_tib;
+        private System.Windows.Forms.ComboBox select_cargo2;
+        private System.Windows.Forms.Label label56;
+        private System.Windows.Forms.DateTimePicker date_fecha_inscrip;
+        private System.Windows.Forms.Label label57;
+        private System.Windows.Forms.TextBox txt_pass;
+        private System.Windows.Forms.ComboBox select_compania;
+        private System.Windows.Forms.TextBox txt_profesion;
+        private System.Windows.Forms.TextBox txt_gruposang;
+        private System.Windows.Forms.DateTimePicker date_fecha_nac;
+        private System.Windows.Forms.TextBox txt_celular;
+        private System.Windows.Forms.TextBox txt_tel_lab;
+        private System.Windows.Forms.TextBox txt_tel_part;
+        private System.Windows.Forms.TextBox txt_dir_lab;
+        private System.Windows.Forms.TextBox txt_dir_part;
+        private System.Windows.Forms.ComboBox select_estadocivil;
+        private System.Windows.Forms.TextBox txt_email;
+        private System.Windows.Forms.Label label58;
+        private System.Windows.Forms.Label label59;
+        private System.Windows.Forms.Label label60;
+        private System.Windows.Forms.Label label61;
+        private System.Windows.Forms.Label label62;
+        private System.Windows.Forms.Label label63;
+        private System.Windows.Forms.Label label64;
+        private System.Windows.Forms.Label label65;
+        private System.Windows.Forms.Label label66;
+        private System.Windows.Forms.Label label67;
+        private System.Windows.Forms.Label label68;
+        private System.Windows.Forms.Label label69;
+        private System.Windows.Forms.Label label70;
+        private System.Windows.Forms.PictureBox box_ficha_pict;
+        private System.Windows.Forms.Button btn_imagen;
+        private System.Windows.Forms.Button btn_enviar_fichapersonal;
+        private System.Windows.Forms.Button btn_imprimir;
 
     }
 }
