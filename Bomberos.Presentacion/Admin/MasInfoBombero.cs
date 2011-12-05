@@ -681,5 +681,32 @@ namespace Bomberos.Presentacion
                 oParametro
             );
         }
+
+        private void btn_imprimir_cargos_Click(object sender, EventArgs e)
+        {
+            ICargoBomberoMgr _CargoBombero = new CargoBomberoMgr();
+            CargoBomberoDTO CargoBombero = new CargoBomberoDTO();
+            CargoBombero.Bombero = ContextoDTO.Instancia().BomberoSelected;
+
+            CargoReportDTO oParametro = new CargoReportDTO();
+            oParametro.p_Nombres = ContextoDTO.Instancia().BomberoSelected.Nombres;
+            oParametro.p_Apellidos = ContextoDTO.Instancia().BomberoSelected.Apellidos;
+
+            foreach (var elem in _CargoBombero.CargarCargoBombero(CargoBombero))
+            {
+                Bomberos.ComunFuncional.CargoReportDTO.CargosReport CargoElem = new CargoReportDTO.CargosReport();
+                CargoElem.p_Nombre = elem.NombreCargo;
+                CargoElem.p_FechaDesde = elem.FechaDesde.ToString();
+                CargoElem.p_FechaHasta = elem.FechaHasta.ToString();
+                oParametro.ListaCargos.Add(CargoElem);
+            }
+
+            var form = new VisorReportes();
+
+            form.MostrarReporte(
+                EnumReportes.HistorialCargos,
+                oParametro
+                );
+        }
     }
 }

@@ -26,6 +26,11 @@ namespace Bomberos.Comun
         public string p_Estado { get; set; }
         public string p_Cargo { get; set; }
         public string p_NumeroRegistro { get; set; }
+        public List<string> p_Reincorporaciones { get; set; }
 
+        public BomberoReportDTO()
+        {
+            p_Reincorporaciones = new List<string>();
+        }
     }
 }

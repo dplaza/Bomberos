@@ -208,11 +208,23 @@ namespace Bomberos.Presentacion.Admin
         {
             BomberoReportDTO oParametro = new BomberoReportDTO();
 
+            IReincorporacionBomberoMgr _Reincorporacion = new ReincorporacionBomberoMgr();
+            ReincorporacionBomberoDTO ReincorporacionBombero = new ReincorporacionBomberoDTO();
+            List<ReincorporacionBomberoDTO> ListaR = new List<ReincorporacionBomberoDTO>();
+            ReincorporacionBombero.Bombero = ContextoDTO.Instancia().BomberoSelected;
+
             Utilidades.ReflectarPropiedadesSimilares(ContextoDTO.Instancia().BomberoSelected, oParametro);
             oParametro.p_Compañia = ContextoDTO.Instancia().BomberoSelected.Compañia.Nombre;
             oParametro.p_Cargo = ContextoDTO.Instancia().BomberoSelected.Cargo.Nombre;
             oParametro.p_Estado = ContextoDTO.Instancia().BomberoSelected.Estado;
             oParametro.p_EstadoCivil = ContextoDTO.Instancia().BomberoSelected.EstadoCivil;
+
+            ListaR = _Reincorporacion.CargarReincorporacionBombero(ReincorporacionBombero);
+
+            foreach (var elem in ListaR)
+            {
+                oParametro.p_Reincorporaciones.Add(elem.FechaReincorporacion.ToString());
+            }
 
             var form = new VisorReportes();
 

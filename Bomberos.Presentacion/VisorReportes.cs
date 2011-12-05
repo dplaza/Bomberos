@@ -9,6 +9,8 @@ using System.Windows.Forms;
 using Bomberos.ComunFuncional.Enumeraciones;
 using Bomberos.Comun;
 using Microsoft.Reporting.WinForms;
+using Bomberos.ComunFuncional.Util;
+using Bomberos.ComunFuncional;
 
 namespace Bomberos.Presentacion
 {
@@ -29,6 +31,7 @@ namespace Bomberos.Presentacion
         {
             var ListaParametrosReporte = new List<ReportParameter>();
 
+            /// Para impresion de Ficha Personal
             if (p_TipoReporte == EnumReportes.FichaPersonal)
             {
                 rptViewer.LocalReport.ReportPath = Application.StartupPath + @"\Reportes\ReporteFichaPersonal.rdlc";
@@ -42,13 +45,21 @@ namespace Bomberos.Presentacion
                     ReportParameter rp = new ReportParameter(pi.Name, valor);
                     ListaParametrosReporte.Add(rp);
                 }
+
+                ReportDataSource ds = new ReportDataSource();
+                ds.Name = "ListaReincorporaciones";
+                ds.Value = Utilidades.ConvertirListADataTable(bombero.p_Reincorporaciones);
+
+                rptViewer.LocalReport.DataSources.Add(ds);
             }
 
+            /// Para impresion de Ficha Medica
             if (p_TipoReporte == EnumReportes.FichaMedica)
             {
                 rptViewer.LocalReport.ReportPath = Application.StartupPath + @"\Reportes\ReporteFichaMedica.rdlc";
 
                 FichaMedicaReportDTO ficha = (FichaMedicaReportDTO)p_ListaParametros;
+
 
                 foreach (var pi in ficha.GetType().GetProperties())
                 {
@@ -65,12 +76,37 @@ namespace Bomberos.Presentacion
                 }
             }
 
-            if (p_TipoReporte == EnumReportes.HistorialCargos) { }
+            if (p_TipoReporte == EnumReportes.HistorialCargos)
+            {
+                rptViewer.LocalReport.ReportPath = Application.StartupPath + @"\Reportes\ReporteCargos.rdlc";
+
+                CargoReportDTO CargoReport = (CargoReportDTO)p_ListaParametros;
+
+                foreach (var pi in CargoReport.GetType().GetProperties())
+                {
+                    var valor = pi.GetValue(CargoReport, null) == null ? "" : pi.GetValue(CargoReport, null).ToString();
+                    ReportParameter rp = new ReportParameter(pi.Name, valor);
+                    ListaParametrosReporte.Add(rp);
+                }
+
+                ReportDataSource ds = new ReportDataSource();
+                ds.Name = "ListaCargos";
+                ds.Value = Utilidades.ConvertirListADataTable(CargoReport.ListaCargos);
+
+                rptViewer.LocalReport.DataSources.Add(ds);
+            }
             if (p_TipoReporte == EnumReportes.HistorialCursos) { }
             if (p_TipoReporte == EnumReportes.HistorialPremios) { }
-            if (p_TipoReporte == EnumReportes.Asistencia) { }
-            if (p_TipoReporte == EnumReportes.Reincorporaciones) { }
-            if (p_TipoReporte == EnumReportes.Servicio) { }
+
+            if (p_TipoReporte == EnumReportes.Asistencia)
+            {
+                rptViewer.LocalReport.ReportPath = Application.StartupPath + @"\Reportes\ReporteAsistencia.rdlc";
+            }
+
+            if (p_TipoReporte == EnumReportes.Servicio)
+            {
+                rptViewer.LocalReport.ReportPath = Application.StartupPath + @"\Reportes\ReporteServicio.rdlc";
+            }
 
             rptViewer.LocalReport.SetParameters(ListaParametrosReporte);
             rptViewer.RefreshReport();

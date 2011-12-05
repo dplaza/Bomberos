@@ -30,6 +30,7 @@
         {
             this.tabBox = new System.Windows.Forms.TabControl();
             this.FichaMedica = new System.Windows.Forms.TabPage();
+            this.btn_imprimir_ficha_medica = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.txt_celular_pariente_2 = new System.Windows.Forms.TextBox();
             this.txt_telefono_pariente_2 = new System.Windows.Forms.TextBox();
@@ -69,6 +70,7 @@
             this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.HistorialCargos = new System.Windows.Forms.TabPage();
+            this.btn_imprimir_cargos = new System.Windows.Forms.Button();
             this.btn_borrar_cargo = new System.Windows.Forms.Button();
             this.btn_cargo = new System.Windows.Forms.Button();
             this.select_cargo = new System.Windows.Forms.ComboBox();
@@ -84,6 +86,7 @@
             this.id_cargos = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.BomberoCargo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.HistorialPremios = new System.Windows.Forms.TabPage();
+            this.btn_imprimir_premios = new System.Windows.Forms.Button();
             this.btn_borrar_premio = new System.Windows.Forms.Button();
             this.select_premios = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -99,6 +102,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.HistorialCursos = new System.Windows.Forms.TabPage();
+            this.btn_imprimir_cursos = new System.Windows.Forms.Button();
             this.btn_borrar_curso = new System.Windows.Forms.Button();
             this.dataGridCursos = new System.Windows.Forms.DataGridView();
             this.NombreCurso = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -117,6 +121,7 @@
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.ResumenListas = new System.Windows.Forms.TabPage();
+            this.btn_imprimir_asistencia = new System.Windows.Forms.Button();
             this.lbl_totalAbonos = new System.Windows.Forms.Label();
             this.lbl_totalLlam = new System.Windows.Forms.Label();
             this.lbl_otrosCuerp = new System.Windows.Forms.Label();
@@ -173,6 +178,7 @@
             this.AñoLista = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.BomberoLista = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Servicio = new System.Windows.Forms.TabPage();
+            this.btn_imprimir_servicio = new System.Windows.Forms.Button();
             this.btn_cambios_servicio = new System.Windows.Forms.Button();
             this.dataGridServicio = new System.Windows.Forms.DataGridView();
             this.AñoActServicio = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -211,6 +217,7 @@
             this.label47 = new System.Windows.Forms.Label();
             this.label41 = new System.Windows.Forms.Label();
             this.Observaciones = new System.Windows.Forms.TabPage();
+            this.btn_imprimir_observaciones = new System.Windows.Forms.Button();
             this.btn_observacion = new System.Windows.Forms.Button();
             this.dataGridObservacion = new System.Windows.Forms.DataGridView();
             this.FechaObservacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -233,7 +240,6 @@
             this.labelTIB = new System.Windows.Forms.Label();
             this.labelRut = new System.Windows.Forms.Label();
             this.labelnombre = new System.Windows.Forms.Label();
-            this.btn_imprimir_ficha_medica = new System.Windows.Forms.Button();
             this.tabBox.SuspendLayout();
             this.FichaMedica.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -297,6 +303,16 @@
             this.FichaMedica.TabIndex = 0;
             this.FichaMedica.Text = "Ficha Médica";
             this.FichaMedica.UseVisualStyleBackColor = true;
+            // 
+            // btn_imprimir_ficha_medica
+            // 
+            this.btn_imprimir_ficha_medica.Location = new System.Drawing.Point(521, 252);
+            this.btn_imprimir_ficha_medica.Name = "btn_imprimir_ficha_medica";
+            this.btn_imprimir_ficha_medica.Size = new System.Drawing.Size(113, 23);
+            this.btn_imprimir_ficha_medica.TabIndex = 13;
+            this.btn_imprimir_ficha_medica.Text = "Imprimir";
+            this.btn_imprimir_ficha_medica.UseVisualStyleBackColor = true;
+            this.btn_imprimir_ficha_medica.Click += new System.EventHandler(this.btn_imprimir_ficha_medica_Click);
             // 
             // groupBox3
             // 
@@ -670,6 +686,7 @@
             // 
             // HistorialCargos
             // 
+            this.HistorialCargos.Controls.Add(this.btn_imprimir_cargos);
             this.HistorialCargos.Controls.Add(this.btn_borrar_cargo);
             this.HistorialCargos.Controls.Add(this.btn_cargo);
             this.HistorialCargos.Controls.Add(this.select_cargo);
@@ -687,9 +704,19 @@
             this.HistorialCargos.UseVisualStyleBackColor = true;
             this.HistorialCargos.Click += new System.EventHandler(this.HistorialCargos_Click);
             // 
+            // btn_imprimir_cargos
+            // 
+            this.btn_imprimir_cargos.Location = new System.Drawing.Point(484, 74);
+            this.btn_imprimir_cargos.Name = "btn_imprimir_cargos";
+            this.btn_imprimir_cargos.Size = new System.Drawing.Size(97, 23);
+            this.btn_imprimir_cargos.TabIndex = 177;
+            this.btn_imprimir_cargos.Text = "Imprimir";
+            this.btn_imprimir_cargos.UseVisualStyleBackColor = true;
+            this.btn_imprimir_cargos.Click += new System.EventHandler(this.btn_imprimir_cargos_Click);
+            // 
             // btn_borrar_cargo
             // 
-            this.btn_borrar_cargo.Location = new System.Drawing.Point(553, 46);
+            this.btn_borrar_cargo.Location = new System.Drawing.Point(553, 32);
             this.btn_borrar_cargo.Name = "btn_borrar_cargo";
             this.btn_borrar_cargo.Size = new System.Drawing.Size(106, 23);
             this.btn_borrar_cargo.TabIndex = 176;
@@ -699,7 +726,7 @@
             // 
             // btn_cargo
             // 
-            this.btn_cargo.Location = new System.Drawing.Point(409, 46);
+            this.btn_cargo.Location = new System.Drawing.Point(409, 32);
             this.btn_cargo.Name = "btn_cargo";
             this.btn_cargo.Size = new System.Drawing.Size(106, 23);
             this.btn_cargo.TabIndex = 7;
@@ -818,6 +845,7 @@
             // 
             // HistorialPremios
             // 
+            this.HistorialPremios.Controls.Add(this.btn_imprimir_premios);
             this.HistorialPremios.Controls.Add(this.btn_borrar_premio);
             this.HistorialPremios.Controls.Add(this.select_premios);
             this.HistorialPremios.Controls.Add(this.label6);
@@ -835,9 +863,18 @@
             this.HistorialPremios.Text = "Historial Premios";
             this.HistorialPremios.UseVisualStyleBackColor = true;
             // 
+            // btn_imprimir_premios
+            // 
+            this.btn_imprimir_premios.Location = new System.Drawing.Point(482, 67);
+            this.btn_imprimir_premios.Name = "btn_imprimir_premios";
+            this.btn_imprimir_premios.Size = new System.Drawing.Size(112, 23);
+            this.btn_imprimir_premios.TabIndex = 11;
+            this.btn_imprimir_premios.Text = "Imprimir";
+            this.btn_imprimir_premios.UseVisualStyleBackColor = true;
+            // 
             // btn_borrar_premio
             // 
-            this.btn_borrar_premio.Location = new System.Drawing.Point(561, 44);
+            this.btn_borrar_premio.Location = new System.Drawing.Point(561, 29);
             this.btn_borrar_premio.Name = "btn_borrar_premio";
             this.btn_borrar_premio.Size = new System.Drawing.Size(101, 23);
             this.btn_borrar_premio.TabIndex = 10;
@@ -921,7 +958,7 @@
             // 
             // btn_premio
             // 
-            this.btn_premio.Location = new System.Drawing.Point(426, 44);
+            this.btn_premio.Location = new System.Drawing.Point(426, 29);
             this.btn_premio.Name = "btn_premio";
             this.btn_premio.Size = new System.Drawing.Size(101, 23);
             this.btn_premio.TabIndex = 6;
@@ -964,6 +1001,7 @@
             // 
             // HistorialCursos
             // 
+            this.HistorialCursos.Controls.Add(this.btn_imprimir_cursos);
             this.HistorialCursos.Controls.Add(this.btn_borrar_curso);
             this.HistorialCursos.Controls.Add(this.dataGridCursos);
             this.HistorialCursos.Controls.Add(this.btn_curso);
@@ -983,9 +1021,18 @@
             this.HistorialCursos.Text = "Historial Cursos";
             this.HistorialCursos.UseVisualStyleBackColor = true;
             // 
+            // btn_imprimir_cursos
+            // 
+            this.btn_imprimir_cursos.Location = new System.Drawing.Point(479, 80);
+            this.btn_imprimir_cursos.Name = "btn_imprimir_cursos";
+            this.btn_imprimir_cursos.Size = new System.Drawing.Size(106, 23);
+            this.btn_imprimir_cursos.TabIndex = 11;
+            this.btn_imprimir_cursos.Text = "Imprimir";
+            this.btn_imprimir_cursos.UseVisualStyleBackColor = true;
+            // 
             // btn_borrar_curso
             // 
-            this.btn_borrar_curso.Location = new System.Drawing.Point(550, 49);
+            this.btn_borrar_curso.Location = new System.Drawing.Point(550, 35);
             this.btn_borrar_curso.Name = "btn_borrar_curso";
             this.btn_borrar_curso.Size = new System.Drawing.Size(98, 23);
             this.btn_borrar_curso.TabIndex = 10;
@@ -1061,7 +1108,7 @@
             // 
             // btn_curso
             // 
-            this.btn_curso.Location = new System.Drawing.Point(410, 49);
+            this.btn_curso.Location = new System.Drawing.Point(410, 35);
             this.btn_curso.Name = "btn_curso";
             this.btn_curso.Size = new System.Drawing.Size(98, 23);
             this.btn_curso.TabIndex = 8;
@@ -1138,6 +1185,7 @@
             // 
             // ResumenListas
             // 
+            this.ResumenListas.Controls.Add(this.btn_imprimir_asistencia);
             this.ResumenListas.Controls.Add(this.lbl_totalAbonos);
             this.ResumenListas.Controls.Add(this.lbl_totalLlam);
             this.ResumenListas.Controls.Add(this.lbl_otrosCuerp);
@@ -1163,6 +1211,15 @@
             this.ResumenListas.Text = "Resumen Listas";
             this.ResumenListas.UseVisualStyleBackColor = true;
             this.ResumenListas.Click += new System.EventHandler(this.ResumenListas_Click);
+            // 
+            // btn_imprimir_asistencia
+            // 
+            this.btn_imprimir_asistencia.Location = new System.Drawing.Point(393, 178);
+            this.btn_imprimir_asistencia.Name = "btn_imprimir_asistencia";
+            this.btn_imprimir_asistencia.Size = new System.Drawing.Size(114, 23);
+            this.btn_imprimir_asistencia.TabIndex = 18;
+            this.btn_imprimir_asistencia.Text = "Imprimir";
+            this.btn_imprimir_asistencia.UseVisualStyleBackColor = true;
             // 
             // lbl_totalAbonos
             // 
@@ -1659,6 +1716,7 @@
             // 
             // Servicio
             // 
+            this.Servicio.Controls.Add(this.btn_imprimir_servicio);
             this.Servicio.Controls.Add(this.btn_cambios_servicio);
             this.Servicio.Controls.Add(this.dataGridServicio);
             this.Servicio.Controls.Add(this.groupBox5);
@@ -1670,6 +1728,15 @@
             this.Servicio.Text = "Servicio";
             this.Servicio.UseVisualStyleBackColor = true;
             this.Servicio.Click += new System.EventHandler(this.Servicio_Click);
+            // 
+            // btn_imprimir_servicio
+            // 
+            this.btn_imprimir_servicio.Location = new System.Drawing.Point(429, 520);
+            this.btn_imprimir_servicio.Name = "btn_imprimir_servicio";
+            this.btn_imprimir_servicio.Size = new System.Drawing.Size(109, 23);
+            this.btn_imprimir_servicio.TabIndex = 3;
+            this.btn_imprimir_servicio.Text = "Imprimir";
+            this.btn_imprimir_servicio.UseVisualStyleBackColor = true;
             // 
             // btn_cambios_servicio
             // 
@@ -1825,7 +1892,7 @@
             // 
             // btn_agregar_serv
             // 
-            this.btn_agregar_serv.Location = new System.Drawing.Point(507, 40);
+            this.btn_agregar_serv.Location = new System.Drawing.Point(506, 35);
             this.btn_agregar_serv.Name = "btn_agregar_serv";
             this.btn_agregar_serv.Size = new System.Drawing.Size(160, 23);
             this.btn_agregar_serv.TabIndex = 14;
@@ -1999,6 +2066,7 @@
             // 
             // Observaciones
             // 
+            this.Observaciones.Controls.Add(this.btn_imprimir_observaciones);
             this.Observaciones.Controls.Add(this.btn_observacion);
             this.Observaciones.Controls.Add(this.dataGridObservacion);
             this.Observaciones.Controls.Add(this.txt_observacion);
@@ -2013,9 +2081,18 @@
             this.Observaciones.Text = "Observaciones";
             this.Observaciones.UseVisualStyleBackColor = true;
             // 
+            // btn_imprimir_observaciones
+            // 
+            this.btn_imprimir_observaciones.Location = new System.Drawing.Point(474, 94);
+            this.btn_imprimir_observaciones.Name = "btn_imprimir_observaciones";
+            this.btn_imprimir_observaciones.Size = new System.Drawing.Size(109, 23);
+            this.btn_imprimir_observaciones.TabIndex = 6;
+            this.btn_imprimir_observaciones.Text = "Imprimir";
+            this.btn_imprimir_observaciones.UseVisualStyleBackColor = true;
+            // 
             // btn_observacion
             // 
-            this.btn_observacion.Location = new System.Drawing.Point(444, 61);
+            this.btn_observacion.Location = new System.Drawing.Point(449, 47);
             this.btn_observacion.Name = "btn_observacion";
             this.btn_observacion.Size = new System.Drawing.Size(159, 23);
             this.btn_observacion.TabIndex = 5;
@@ -2220,16 +2297,6 @@
             this.labelnombre.Size = new System.Drawing.Size(90, 13);
             this.labelnombre.TabIndex = 172;
             this.labelnombre.Text = "Nombre completo";
-            // 
-            // btn_imprimir_ficha_medica
-            // 
-            this.btn_imprimir_ficha_medica.Location = new System.Drawing.Point(521, 252);
-            this.btn_imprimir_ficha_medica.Name = "btn_imprimir_ficha_medica";
-            this.btn_imprimir_ficha_medica.Size = new System.Drawing.Size(113, 23);
-            this.btn_imprimir_ficha_medica.TabIndex = 13;
-            this.btn_imprimir_ficha_medica.Text = "Imprimir";
-            this.btn_imprimir_ficha_medica.UseVisualStyleBackColor = true;
-            this.btn_imprimir_ficha_medica.Click += new System.EventHandler(this.btn_imprimir_ficha_medica_Click);
             // 
             // MasInfoBombero
             // 
@@ -2500,6 +2567,12 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn FechaReincorporacion;
         private System.Windows.Forms.GroupBox groupBox7;
         private System.Windows.Forms.Button btn_imprimir_ficha_medica;
+        private System.Windows.Forms.Button btn_imprimir_cargos;
+        private System.Windows.Forms.Button btn_imprimir_premios;
+        private System.Windows.Forms.Button btn_imprimir_cursos;
+        private System.Windows.Forms.Button btn_imprimir_asistencia;
+        private System.Windows.Forms.Button btn_imprimir_servicio;
+        private System.Windows.Forms.Button btn_imprimir_observaciones;
 
     }
 }
