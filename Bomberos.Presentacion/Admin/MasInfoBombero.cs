@@ -708,5 +708,85 @@ namespace Bomberos.Presentacion
                 oParametro
                 );
         }
+
+        private void btn_imprimir_premios_Click(object sender, EventArgs e)
+        {
+            IPremioBomberoMgr _PremioBombero = new PremioBomberoMgr();
+            PremioBomberoDTO PremioBombero = new PremioBomberoDTO();
+            PremioBombero.Bombero = ContextoDTO.Instancia().BomberoSelected;
+
+            PremioReportDTO oParametro = new PremioReportDTO();
+            oParametro.p_Nombres = ContextoDTO.Instancia().BomberoSelected.Nombres;
+            oParametro.p_Apellidos = ContextoDTO.Instancia().BomberoSelected.Apellidos;
+
+            foreach (var elem in _PremioBombero.CargarPremioBombero(PremioBombero))
+            {
+                Bomberos.ComunFuncional.PremioReportDTO.PremiosReport PremioElem = new PremioReportDTO.PremiosReport();
+                PremioElem.p_Nombre = elem.NombrePremio;
+                PremioElem.p_FechaCalifica = elem.FechaCalifica.ToString();
+                PremioElem.p_FechaEntrega = elem.FechaEntrega.ToString();
+                oParametro.ListaPremios.Add(PremioElem);
+            }
+
+            var form = new VisorReportes();
+
+            form.MostrarReporte(
+                EnumReportes.HistorialPremios,
+                oParametro
+                );
+        }
+
+        private void btn_imprimir_cursos_Click(object sender, EventArgs e)
+        {
+            ICursoBomberoMgr _CursoBombero = new CursoBomberoMgr();
+            CursoBomberoDTO CursoBombero = new CursoBomberoDTO();
+            CursoBombero.Bombero = ContextoDTO.Instancia().BomberoSelected;
+
+            CursoReportDTO oParametro = new CursoReportDTO();
+            oParametro.p_Nombres = ContextoDTO.Instancia().BomberoSelected.Nombres;
+            oParametro.p_Apellidos = ContextoDTO.Instancia().BomberoSelected.Apellidos;
+
+            foreach (var elem in _CursoBombero.CargarCursoBombero(CursoBombero))
+            {
+                Bomberos.ComunFuncional.CursoReportDTO.CursosReport CursoElem = new CursoReportDTO.CursosReport();
+                CursoElem.p_Nombre = elem.NombreCurso;
+                CursoElem.p_FechaInicio = elem.FechaInicio.ToString();
+                CursoElem.p_FechaFin = elem.FechaFin.ToString();
+                CursoElem.p_FechaEntrega = elem.FechaEntrega.ToString();
+                oParametro.ListaCursos.Add(CursoElem);
+            }
+
+            var form = new VisorReportes();
+
+            form.MostrarReporte(
+                EnumReportes.HistorialCursos,
+                oParametro
+                );
+        }
+
+        private void btn_imprimir_observaciones_Click(object sender, EventArgs e)
+        {
+            IObservacionBomberoMgr _ObservacionBombero = new ObservacionBomberoMgr();
+            ObservacionBomberoDTO ObservacionBombero = new ObservacionBomberoDTO();
+            ObservacionBombero.Bombero = ContextoDTO.Instancia().BomberoSelected;
+
+            ObservacionReportDTO oParametro = new ObservacionReportDTO();
+            oParametro.p_Nombres = ContextoDTO.Instancia().BomberoSelected.Nombres;
+            oParametro.p_Apellidos = ContextoDTO.Instancia().BomberoSelected.Apellidos;
+
+            foreach (var elem in _ObservacionBombero.CargarObservacionesBombero(ObservacionBombero))
+            {
+                Bomberos.ComunFuncional.ObservacionReportDTO.ObservacionesReport CargoElem = new ObservacionReportDTO.ObservacionesReport();
+                CargoElem.p_Fecha = elem.Fecha;
+                CargoElem.p_Observacion = elem.Observacion.ToString();
+            }
+
+            var form = new VisorReportes();
+
+            form.MostrarReporte(
+                EnumReportes.HistorialObservaciones,
+                oParametro
+                );
+        }
     }
 }
