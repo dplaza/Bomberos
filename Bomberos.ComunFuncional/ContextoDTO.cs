@@ -11,7 +11,6 @@ namespace Bomberos.ComunFuncional
         private static ContextoDTO _instancia = null;
 
         public BomberoDTO BomberoActual { get; set; }
-        public BomberoDTO BomberoSelected { get; set; }
 
         public static ContextoDTO Instancia()
         {
@@ -24,7 +23,6 @@ namespace Bomberos.ComunFuncional
         private ContextoDTO()
         {
             BomberoActual = new BomberoDTO();
-            BomberoSelected = new BomberoDTO();
         }
 
     }

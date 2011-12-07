@@ -9,7 +9,6 @@ using System.Windows.Forms;
 using Bomberos.Negocio.Mgr;
 using Bomberos.Comun;
 using Bomberos.ComunFuncional;
-using Bomberos.Presentacion.Admin;
 
 namespace Bomberos.Presentacion
 {
@@ -74,12 +73,23 @@ namespace Bomberos.Presentacion
         {
             if (dataGridResult.SelectedRows.Count != 0)
             {
-                ContextoDTO.Instancia().BomberoSelected.Rut = dataGridResult.SelectedRows[0].Cells["Rut"].Value.ToString();
+                IBomberoMgr _Bombero = new BomberoMgr();
+                BomberoDTO BomberoSeleccionado = new BomberoDTO();
+                BomberoSeleccionado.Rut = dataGridResult.SelectedRows[0].Cells["Rut"].Value.ToString();
+                BomberoSeleccionado = _Bombero.CargarBombero(BomberoSeleccionado);
 
-                var form = new MasInfoBombero();
-                form.MdiParent = this.MdiParent;
-                this.Close();
-                form.Show();
+                if (ContextoDTO.Instancia().BomberoActual.isAdmin)
+                {
+                    var form = new MasInfoBombero();
+                    form.MdiParent = this.MdiParent;
+                    form.InicializaInfoBombero(BomberoSeleccionado);
+                }
+                else
+                {
+                    var form = new MasInfoBomberoUsuario();
+                    form.MdiParent = this.MdiParent;
+                    form.InicializaInfoBombero(BomberoSeleccionado);
+                }
             }
         }
 

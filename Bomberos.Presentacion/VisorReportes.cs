@@ -65,6 +65,12 @@ namespace Bomberos.Presentacion
                 foreach (var pi in ficha.GetType().GetProperties())
                 {
                     var valor = pi.GetValue(ficha, null) == null ? "" : pi.GetValue(ficha, null).ToString();
+
+                    if (valor.Equals("False"))
+                        valor = "No";
+                    if (valor.Equals("True"))
+                        valor = "Sí";
+                     
                     ReportParameter rp = new ReportParameter(pi.Name, valor);
                     ListaParametrosReporte.Add(rp);
                 }
@@ -163,7 +169,6 @@ namespace Bomberos.Presentacion
                 ds.Value = Utilidades.ConvertirListADataTable(lista.ListaAsistencias);
 
                 rptViewer.LocalReport.DataSources.Add(ds);
-
             }
             #endregion
 
@@ -171,6 +176,21 @@ namespace Bomberos.Presentacion
             if (p_TipoReporte == EnumReportes.Servicio)
             {
                 rptViewer.LocalReport.ReportPath = Application.StartupPath + @"\Reportes\ReporteServicio.rdlc";
+
+                ServicioReportDTO servicio = (ServicioReportDTO)p_ListaParametros;
+
+                foreach (var pi in servicio.GetType().GetProperties())
+                {
+                    var valor = pi.GetValue(servicio, null) == null ? "" : pi.GetValue(servicio, null).ToString();
+                    ReportParameter rp = new ReportParameter(pi.Name, valor);
+                    ListaParametrosReporte.Add(rp);
+                }
+
+                ReportDataSource ds = new ReportDataSource();
+                ds.Name = "ListaServicio";
+                ds.Value = Utilidades.ConvertirListADataTable(servicio.ListaServicios);
+
+                rptViewer.LocalReport.DataSources.Add(ds);
             }
             #endregion
 

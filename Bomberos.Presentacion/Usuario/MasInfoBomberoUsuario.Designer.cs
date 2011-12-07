@@ -29,7 +29,55 @@
         private void InitializeComponent()
         {
             this.tabBox = new System.Windows.Forms.TabControl();
+            this.FichaPersonal = new System.Windows.Forms.TabPage();
+            this.btn_imprimir = new System.Windows.Forms.Button();
+            this.box_ficha_pict = new System.Windows.Forms.PictureBox();
+            this.groupBox9 = new System.Windows.Forms.GroupBox();
+            this.txt_socio = new System.Windows.Forms.TextBox();
+            this.label50 = new System.Windows.Forms.Label();
+            this.label51 = new System.Windows.Forms.Label();
+            this.label52 = new System.Windows.Forms.Label();
+            this.select_tipocuenta = new System.Windows.Forms.ComboBox();
+            this.label53 = new System.Windows.Forms.Label();
+            this.label54 = new System.Windows.Forms.Label();
+            this.select_estado = new System.Windows.Forms.ComboBox();
+            this.label55 = new System.Windows.Forms.Label();
+            this.txt_tib = new System.Windows.Forms.TextBox();
+            this.select_cargo2 = new System.Windows.Forms.ComboBox();
+            this.label56 = new System.Windows.Forms.Label();
+            this.date_fecha_inscrip = new System.Windows.Forms.DateTimePicker();
+            this.label57 = new System.Windows.Forms.Label();
+            this.txt_pass = new System.Windows.Forms.TextBox();
+            this.select_compania = new System.Windows.Forms.ComboBox();
+            this.groupBox8 = new System.Windows.Forms.GroupBox();
+            this.label69 = new System.Windows.Forms.Label();
+            this.label70 = new System.Windows.Forms.Label();
+            this.txt_profesion = new System.Windows.Forms.TextBox();
+            this.txt_gruposang = new System.Windows.Forms.TextBox();
+            this.date_fecha_nac = new System.Windows.Forms.DateTimePicker();
+            this.txt_celular = new System.Windows.Forms.TextBox();
+            this.txt_tel_lab = new System.Windows.Forms.TextBox();
+            this.txt_tel_part = new System.Windows.Forms.TextBox();
+            this.txt_dir_lab = new System.Windows.Forms.TextBox();
+            this.txt_dir_part = new System.Windows.Forms.TextBox();
+            this.select_estadocivil = new System.Windows.Forms.ComboBox();
+            this.txt_email = new System.Windows.Forms.TextBox();
+            this.label58 = new System.Windows.Forms.Label();
+            this.label59 = new System.Windows.Forms.Label();
+            this.label60 = new System.Windows.Forms.Label();
+            this.label61 = new System.Windows.Forms.Label();
+            this.label62 = new System.Windows.Forms.Label();
+            this.label63 = new System.Windows.Forms.Label();
+            this.label64 = new System.Windows.Forms.Label();
+            this.label65 = new System.Windows.Forms.Label();
+            this.label66 = new System.Windows.Forms.Label();
+            this.label67 = new System.Windows.Forms.Label();
+            this.label68 = new System.Windows.Forms.Label();
+            this.txt_nombres = new System.Windows.Forms.TextBox();
+            this.txt_apellidos = new System.Windows.Forms.TextBox();
+            this.txt_rut = new System.Windows.Forms.TextBox();
             this.FichaMedica = new System.Windows.Forms.TabPage();
+            this.btn_imprimir_ficha_medica = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.txt_celular_pariente_2 = new System.Windows.Forms.TextBox();
             this.txt_telefono_pariente_2 = new System.Windows.Forms.TextBox();
@@ -68,6 +116,7 @@
             this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.HistorialCargos = new System.Windows.Forms.TabPage();
+            this.btn_imprimir_cargos = new System.Windows.Forms.Button();
             this.dataGridCargos = new System.Windows.Forms.DataGridView();
             this.Cargo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fecha_desde = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -75,6 +124,7 @@
             this.id_cargos = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.BomberoCargo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.HistorialPremios = new System.Windows.Forms.TabPage();
+            this.btn_imprimir_premios = new System.Windows.Forms.Button();
             this.dataGridPremios = new System.Windows.Forms.DataGridView();
             this.NombrePremio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fecha_califica = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -82,6 +132,7 @@
             this.Premio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Bombero = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.HistorialCursos = new System.Windows.Forms.TabPage();
+            this.btn_imprimir_cursos = new System.Windows.Forms.Button();
             this.dataGridCursos = new System.Windows.Forms.DataGridView();
             this.NombreCurso = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fecha_inicio = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -89,7 +140,12 @@
             this.fecha_entrega_curso = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.id_curso = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.BomberoCurso = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Reincorporaciones = new System.Windows.Forms.TabPage();
+            this.dataGridReincorporacion = new System.Windows.Forms.DataGridView();
+            this.BomberoReincorporacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FechaReincorporacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ResumenListas = new System.Windows.Forms.TabPage();
+            this.btn_imprimir_asistencia = new System.Windows.Forms.Button();
             this.lbl_totalAbonos = new System.Windows.Forms.Label();
             this.lbl_totalLlam = new System.Windows.Forms.Label();
             this.lbl_otrosCuerp = new System.Windows.Forms.Label();
@@ -120,6 +176,7 @@
             this.AñoLista = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.BomberoLista = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Servicio = new System.Windows.Forms.TabPage();
+            this.btn_imprimir_servicio = new System.Windows.Forms.Button();
             this.dataGridServicio = new System.Windows.Forms.DataGridView();
             this.AñoActServicio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.AñoServicio = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -134,14 +191,11 @@
             this.TotalAsistenciaServicio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.BomberoServicio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Observaciones = new System.Windows.Forms.TabPage();
+            this.btn_imprimir_observaciones = new System.Windows.Forms.Button();
             this.dataGridObservacion = new System.Windows.Forms.DataGridView();
             this.FechaObservacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Observacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.BomberoObservacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.dataGridReincorporacion = new System.Windows.Forms.DataGridView();
-            this.BomberoReincorporacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FechaReincorporacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnCerrar = new System.Windows.Forms.Button();
             this.box_picture = new System.Windows.Forms.PictureBox();
             this.labelCargo = new System.Windows.Forms.Label();
@@ -149,6 +203,10 @@
             this.labelRut = new System.Windows.Forms.Label();
             this.labelnombre = new System.Windows.Forms.Label();
             this.tabBox.SuspendLayout();
+            this.FichaPersonal.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.box_ficha_pict)).BeginInit();
+            this.groupBox9.SuspendLayout();
+            this.groupBox8.SuspendLayout();
             this.FichaMedica.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -159,35 +217,515 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridPremios)).BeginInit();
             this.HistorialCursos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridCursos)).BeginInit();
+            this.Reincorporaciones.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridReincorporacion)).BeginInit();
             this.ResumenListas.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridListas)).BeginInit();
             this.Servicio.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridServicio)).BeginInit();
             this.Observaciones.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridObservacion)).BeginInit();
-            this.tabPage1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridReincorporacion)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.box_picture)).BeginInit();
             this.SuspendLayout();
             // 
             // tabBox
             // 
+            this.tabBox.Controls.Add(this.FichaPersonal);
             this.tabBox.Controls.Add(this.FichaMedica);
             this.tabBox.Controls.Add(this.HistorialCargos);
             this.tabBox.Controls.Add(this.HistorialPremios);
             this.tabBox.Controls.Add(this.HistorialCursos);
+            this.tabBox.Controls.Add(this.Reincorporaciones);
             this.tabBox.Controls.Add(this.ResumenListas);
             this.tabBox.Controls.Add(this.Servicio);
             this.tabBox.Controls.Add(this.Observaciones);
-            this.tabBox.Controls.Add(this.tabPage1);
             this.tabBox.Location = new System.Drawing.Point(12, 122);
             this.tabBox.Name = "tabBox";
             this.tabBox.SelectedIndex = 0;
-            this.tabBox.Size = new System.Drawing.Size(733, 579);
+            this.tabBox.Size = new System.Drawing.Size(782, 579);
             this.tabBox.TabIndex = 0;
+            // 
+            // FichaPersonal
+            // 
+            this.FichaPersonal.Controls.Add(this.btn_imprimir);
+            this.FichaPersonal.Controls.Add(this.box_ficha_pict);
+            this.FichaPersonal.Controls.Add(this.groupBox9);
+            this.FichaPersonal.Controls.Add(this.groupBox8);
+            this.FichaPersonal.Location = new System.Drawing.Point(4, 22);
+            this.FichaPersonal.Name = "FichaPersonal";
+            this.FichaPersonal.Padding = new System.Windows.Forms.Padding(3);
+            this.FichaPersonal.Size = new System.Drawing.Size(774, 553);
+            this.FichaPersonal.TabIndex = 7;
+            this.FichaPersonal.Text = "Ficha Personal";
+            this.FichaPersonal.UseVisualStyleBackColor = true;
+            // 
+            // btn_imprimir
+            // 
+            this.btn_imprimir.Location = new System.Drawing.Point(137, 461);
+            this.btn_imprimir.Name = "btn_imprimir";
+            this.btn_imprimir.Size = new System.Drawing.Size(121, 23);
+            this.btn_imprimir.TabIndex = 184;
+            this.btn_imprimir.Text = "Imprimir";
+            this.btn_imprimir.UseVisualStyleBackColor = true;
+            this.btn_imprimir.Click += new System.EventHandler(this.btn_imprimir_Click);
+            // 
+            // box_ficha_pict
+            // 
+            this.box_ficha_pict.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.box_ficha_pict.Enabled = false;
+            this.box_ficha_pict.Location = new System.Drawing.Point(506, 20);
+            this.box_ficha_pict.Name = "box_ficha_pict";
+            this.box_ficha_pict.Size = new System.Drawing.Size(171, 200);
+            this.box_ficha_pict.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.box_ficha_pict.TabIndex = 181;
+            this.box_ficha_pict.TabStop = false;
+            // 
+            // groupBox9
+            // 
+            this.groupBox9.Controls.Add(this.txt_socio);
+            this.groupBox9.Controls.Add(this.label50);
+            this.groupBox9.Controls.Add(this.label51);
+            this.groupBox9.Controls.Add(this.label52);
+            this.groupBox9.Controls.Add(this.select_tipocuenta);
+            this.groupBox9.Controls.Add(this.label53);
+            this.groupBox9.Controls.Add(this.label54);
+            this.groupBox9.Controls.Add(this.select_estado);
+            this.groupBox9.Controls.Add(this.label55);
+            this.groupBox9.Controls.Add(this.txt_tib);
+            this.groupBox9.Controls.Add(this.select_cargo2);
+            this.groupBox9.Controls.Add(this.label56);
+            this.groupBox9.Controls.Add(this.date_fecha_inscrip);
+            this.groupBox9.Controls.Add(this.label57);
+            this.groupBox9.Controls.Add(this.txt_pass);
+            this.groupBox9.Controls.Add(this.select_compania);
+            this.groupBox9.Location = new System.Drawing.Point(406, 270);
+            this.groupBox9.Name = "groupBox9";
+            this.groupBox9.Size = new System.Drawing.Size(353, 265);
+            this.groupBox9.TabIndex = 179;
+            this.groupBox9.TabStop = false;
+            this.groupBox9.Text = "Datos Bombero";
+            // 
+            // txt_socio
+            // 
+            this.txt_socio.Enabled = false;
+            this.txt_socio.Location = new System.Drawing.Point(132, 24);
+            this.txt_socio.Name = "txt_socio";
+            this.txt_socio.Size = new System.Drawing.Size(139, 20);
+            this.txt_socio.TabIndex = 179;
+            // 
+            // label50
+            // 
+            this.label50.AutoSize = true;
+            this.label50.Location = new System.Drawing.Point(26, 27);
+            this.label50.Name = "label50";
+            this.label50.Size = new System.Drawing.Size(49, 13);
+            this.label50.TabIndex = 178;
+            this.label50.Text = "Socio N°";
+            // 
+            // label51
+            // 
+            this.label51.AutoSize = true;
+            this.label51.Location = new System.Drawing.Point(26, 143);
+            this.label51.Name = "label51";
+            this.label51.Size = new System.Drawing.Size(35, 13);
+            this.label51.TabIndex = 162;
+            this.label51.Text = "Cargo";
+            // 
+            // label52
+            // 
+            this.label52.AutoSize = true;
+            this.label52.Location = new System.Drawing.Point(26, 56);
+            this.label52.Name = "label52";
+            this.label52.Size = new System.Drawing.Size(24, 13);
+            this.label52.TabIndex = 172;
+            this.label52.Text = "TIB";
+            // 
+            // select_tipocuenta
+            // 
+            this.select_tipocuenta.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.select_tipocuenta.Enabled = false;
+            this.select_tipocuenta.FormattingEnabled = true;
+            this.select_tipocuenta.Items.AddRange(new object[] {
+            "Usuario",
+            "Administrador"});
+            this.select_tipocuenta.Location = new System.Drawing.Point(132, 82);
+            this.select_tipocuenta.Name = "select_tipocuenta";
+            this.select_tipocuenta.Size = new System.Drawing.Size(121, 21);
+            this.select_tipocuenta.TabIndex = 177;
+            this.select_tipocuenta.SelectedIndexChanged += new System.EventHandler(this.select_tipocuenta_SelectedIndexChanged);
+            // 
+            // label53
+            // 
+            this.label53.AutoSize = true;
+            this.label53.Location = new System.Drawing.Point(26, 85);
+            this.label53.Name = "label53";
+            this.label53.Size = new System.Drawing.Size(79, 13);
+            this.label53.TabIndex = 174;
+            this.label53.Text = "Tipo de cuenta";
+            // 
+            // label54
+            // 
+            this.label54.AutoSize = true;
+            this.label54.Location = new System.Drawing.Point(26, 114);
+            this.label54.Name = "label54";
+            this.label54.Size = new System.Drawing.Size(91, 13);
+            this.label54.TabIndex = 173;
+            this.label54.Text = "Fecha Inscripción";
+            // 
+            // select_estado
+            // 
+            this.select_estado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.select_estado.Enabled = false;
+            this.select_estado.FormattingEnabled = true;
+            this.select_estado.Items.AddRange(new object[] {
+            "Activo",
+            "Renunciado",
+            "Separado",
+            "Fallecido"});
+            this.select_estado.Location = new System.Drawing.Point(132, 169);
+            this.select_estado.Name = "select_estado";
+            this.select_estado.Size = new System.Drawing.Size(121, 21);
+            this.select_estado.TabIndex = 161;
+            // 
+            // label55
+            // 
+            this.label55.AutoSize = true;
+            this.label55.Location = new System.Drawing.Point(26, 172);
+            this.label55.Name = "label55";
+            this.label55.Size = new System.Drawing.Size(40, 13);
+            this.label55.TabIndex = 160;
+            this.label55.Text = "Estado";
+            // 
+            // txt_tib
+            // 
+            this.txt_tib.Enabled = false;
+            this.txt_tib.Location = new System.Drawing.Point(132, 53);
+            this.txt_tib.Name = "txt_tib";
+            this.txt_tib.Size = new System.Drawing.Size(100, 20);
+            this.txt_tib.TabIndex = 175;
+            // 
+            // select_cargo2
+            // 
+            this.select_cargo2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.select_cargo2.Enabled = false;
+            this.select_cargo2.FormattingEnabled = true;
+            this.select_cargo2.Location = new System.Drawing.Point(132, 140);
+            this.select_cargo2.Name = "select_cargo2";
+            this.select_cargo2.Size = new System.Drawing.Size(160, 21);
+            this.select_cargo2.TabIndex = 0;
+            // 
+            // label56
+            // 
+            this.label56.AutoSize = true;
+            this.label56.Location = new System.Drawing.Point(26, 201);
+            this.label56.Name = "label56";
+            this.label56.Size = new System.Drawing.Size(54, 13);
+            this.label56.TabIndex = 128;
+            this.label56.Text = "Compañia";
+            // 
+            // date_fecha_inscrip
+            // 
+            this.date_fecha_inscrip.Enabled = false;
+            this.date_fecha_inscrip.Location = new System.Drawing.Point(132, 109);
+            this.date_fecha_inscrip.Name = "date_fecha_inscrip";
+            this.date_fecha_inscrip.Size = new System.Drawing.Size(200, 20);
+            this.date_fecha_inscrip.TabIndex = 176;
+            // 
+            // label57
+            // 
+            this.label57.AutoSize = true;
+            this.label57.Location = new System.Drawing.Point(26, 230);
+            this.label57.Name = "label57";
+            this.label57.Size = new System.Drawing.Size(53, 13);
+            this.label57.TabIndex = 131;
+            this.label57.Text = "Password";
+            // 
+            // txt_pass
+            // 
+            this.txt_pass.Enabled = false;
+            this.txt_pass.Location = new System.Drawing.Point(132, 227);
+            this.txt_pass.Name = "txt_pass";
+            this.txt_pass.PasswordChar = '*';
+            this.txt_pass.Size = new System.Drawing.Size(139, 20);
+            this.txt_pass.TabIndex = 148;
+            // 
+            // select_compania
+            // 
+            this.select_compania.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.select_compania.Enabled = false;
+            this.select_compania.FormattingEnabled = true;
+            this.select_compania.Location = new System.Drawing.Point(132, 198);
+            this.select_compania.Name = "select_compania";
+            this.select_compania.Size = new System.Drawing.Size(121, 21);
+            this.select_compania.TabIndex = 151;
+            // 
+            // groupBox8
+            // 
+            this.groupBox8.Controls.Add(this.label69);
+            this.groupBox8.Controls.Add(this.label70);
+            this.groupBox8.Controls.Add(this.txt_profesion);
+            this.groupBox8.Controls.Add(this.txt_gruposang);
+            this.groupBox8.Controls.Add(this.date_fecha_nac);
+            this.groupBox8.Controls.Add(this.txt_celular);
+            this.groupBox8.Controls.Add(this.txt_tel_lab);
+            this.groupBox8.Controls.Add(this.txt_tel_part);
+            this.groupBox8.Controls.Add(this.txt_dir_lab);
+            this.groupBox8.Controls.Add(this.txt_dir_part);
+            this.groupBox8.Controls.Add(this.select_estadocivil);
+            this.groupBox8.Controls.Add(this.txt_email);
+            this.groupBox8.Controls.Add(this.label58);
+            this.groupBox8.Controls.Add(this.label59);
+            this.groupBox8.Controls.Add(this.label60);
+            this.groupBox8.Controls.Add(this.label61);
+            this.groupBox8.Controls.Add(this.label62);
+            this.groupBox8.Controls.Add(this.label63);
+            this.groupBox8.Controls.Add(this.label64);
+            this.groupBox8.Controls.Add(this.label65);
+            this.groupBox8.Controls.Add(this.label66);
+            this.groupBox8.Controls.Add(this.label67);
+            this.groupBox8.Controls.Add(this.label68);
+            this.groupBox8.Controls.Add(this.txt_nombres);
+            this.groupBox8.Controls.Add(this.txt_apellidos);
+            this.groupBox8.Controls.Add(this.txt_rut);
+            this.groupBox8.Location = new System.Drawing.Point(8, 17);
+            this.groupBox8.Name = "groupBox8";
+            this.groupBox8.Size = new System.Drawing.Size(390, 411);
+            this.groupBox8.TabIndex = 109;
+            this.groupBox8.TabStop = false;
+            this.groupBox8.Text = "Datos Personales";
+            // 
+            // label69
+            // 
+            this.label69.AutoSize = true;
+            this.label69.Location = new System.Drawing.Point(20, 28);
+            this.label69.Name = "label69";
+            this.label69.Size = new System.Drawing.Size(49, 13);
+            this.label69.TabIndex = 129;
+            this.label69.Text = "Nombres";
+            // 
+            // label70
+            // 
+            this.label70.AutoSize = true;
+            this.label70.Location = new System.Drawing.Point(20, 57);
+            this.label70.Name = "label70";
+            this.label70.Size = new System.Drawing.Size(49, 13);
+            this.label70.TabIndex = 130;
+            this.label70.Text = "Apellidos";
+            // 
+            // txt_profesion
+            // 
+            this.txt_profesion.Enabled = false;
+            this.txt_profesion.Location = new System.Drawing.Point(129, 170);
+            this.txt_profesion.Name = "txt_profesion";
+            this.txt_profesion.Size = new System.Drawing.Size(246, 20);
+            this.txt_profesion.TabIndex = 121;
+            // 
+            // txt_gruposang
+            // 
+            this.txt_gruposang.Enabled = false;
+            this.txt_gruposang.Location = new System.Drawing.Point(129, 141);
+            this.txt_gruposang.Name = "txt_gruposang";
+            this.txt_gruposang.Size = new System.Drawing.Size(139, 20);
+            this.txt_gruposang.TabIndex = 120;
+            // 
+            // date_fecha_nac
+            // 
+            this.date_fecha_nac.Enabled = false;
+            this.date_fecha_nac.Location = new System.Drawing.Point(129, 109);
+            this.date_fecha_nac.Name = "date_fecha_nac";
+            this.date_fecha_nac.Size = new System.Drawing.Size(200, 20);
+            this.date_fecha_nac.TabIndex = 119;
+            // 
+            // txt_celular
+            // 
+            this.txt_celular.Enabled = false;
+            this.txt_celular.Location = new System.Drawing.Point(129, 373);
+            this.txt_celular.Name = "txt_celular";
+            this.txt_celular.Size = new System.Drawing.Size(114, 20);
+            this.txt_celular.TabIndex = 128;
+            // 
+            // txt_tel_lab
+            // 
+            this.txt_tel_lab.Enabled = false;
+            this.txt_tel_lab.Location = new System.Drawing.Point(129, 344);
+            this.txt_tel_lab.Name = "txt_tel_lab";
+            this.txt_tel_lab.Size = new System.Drawing.Size(156, 20);
+            this.txt_tel_lab.TabIndex = 127;
+            // 
+            // txt_tel_part
+            // 
+            this.txt_tel_part.Enabled = false;
+            this.txt_tel_part.Location = new System.Drawing.Point(129, 315);
+            this.txt_tel_part.Name = "txt_tel_part";
+            this.txt_tel_part.Size = new System.Drawing.Size(156, 20);
+            this.txt_tel_part.TabIndex = 126;
+            // 
+            // txt_dir_lab
+            // 
+            this.txt_dir_lab.Enabled = false;
+            this.txt_dir_lab.Location = new System.Drawing.Point(129, 286);
+            this.txt_dir_lab.Name = "txt_dir_lab";
+            this.txt_dir_lab.Size = new System.Drawing.Size(246, 20);
+            this.txt_dir_lab.TabIndex = 125;
+            // 
+            // txt_dir_part
+            // 
+            this.txt_dir_part.Enabled = false;
+            this.txt_dir_part.Location = new System.Drawing.Point(129, 257);
+            this.txt_dir_part.Name = "txt_dir_part";
+            this.txt_dir_part.Size = new System.Drawing.Size(246, 20);
+            this.txt_dir_part.TabIndex = 124;
+            // 
+            // select_estadocivil
+            // 
+            this.select_estadocivil.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.select_estadocivil.Enabled = false;
+            this.select_estadocivil.FormattingEnabled = true;
+            this.select_estadocivil.Items.AddRange(new object[] {
+            "Soltero",
+            "Casado",
+            "Divorciado",
+            "Viudo",
+            "Separado"});
+            this.select_estadocivil.Location = new System.Drawing.Point(129, 228);
+            this.select_estadocivil.Name = "select_estadocivil";
+            this.select_estadocivil.Size = new System.Drawing.Size(139, 21);
+            this.select_estadocivil.TabIndex = 123;
+            // 
+            // txt_email
+            // 
+            this.txt_email.Enabled = false;
+            this.txt_email.Location = new System.Drawing.Point(129, 199);
+            this.txt_email.Name = "txt_email";
+            this.txt_email.Size = new System.Drawing.Size(139, 20);
+            this.txt_email.TabIndex = 122;
+            // 
+            // label58
+            // 
+            this.label58.AutoSize = true;
+            this.label58.Location = new System.Drawing.Point(20, 231);
+            this.label58.Name = "label58";
+            this.label58.Size = new System.Drawing.Size(62, 13);
+            this.label58.TabIndex = 118;
+            this.label58.Text = "Estado Civil";
+            // 
+            // label59
+            // 
+            this.label59.AutoSize = true;
+            this.label59.Location = new System.Drawing.Point(20, 173);
+            this.label59.Name = "label59";
+            this.label59.Size = new System.Drawing.Size(51, 13);
+            this.label59.TabIndex = 117;
+            this.label59.Text = "Profesión";
+            // 
+            // label60
+            // 
+            this.label60.AutoSize = true;
+            this.label60.Location = new System.Drawing.Point(20, 202);
+            this.label60.Name = "label60";
+            this.label60.Size = new System.Drawing.Size(32, 13);
+            this.label60.TabIndex = 116;
+            this.label60.Text = "Email";
+            // 
+            // label61
+            // 
+            this.label61.AutoSize = true;
+            this.label61.Location = new System.Drawing.Point(20, 376);
+            this.label61.Name = "label61";
+            this.label61.Size = new System.Drawing.Size(39, 13);
+            this.label61.TabIndex = 115;
+            this.label61.Text = "Celular";
+            // 
+            // label62
+            // 
+            this.label62.AutoSize = true;
+            this.label62.Location = new System.Drawing.Point(20, 144);
+            this.label62.Name = "label62";
+            this.label62.Size = new System.Drawing.Size(92, 13);
+            this.label62.TabIndex = 114;
+            this.label62.Text = "Grupo Sanguíneo";
+            // 
+            // label63
+            // 
+            this.label63.AutoSize = true;
+            this.label63.Location = new System.Drawing.Point(20, 289);
+            this.label63.Name = "label63";
+            this.label63.Size = new System.Drawing.Size(90, 13);
+            this.label63.TabIndex = 113;
+            this.label63.Text = "Dirección Laboral";
+            // 
+            // label64
+            // 
+            this.label64.AutoSize = true;
+            this.label64.Location = new System.Drawing.Point(20, 260);
+            this.label64.Name = "label64";
+            this.label64.Size = new System.Drawing.Size(99, 13);
+            this.label64.TabIndex = 112;
+            this.label64.Text = "Dirección Particular";
+            // 
+            // label65
+            // 
+            this.label65.AutoSize = true;
+            this.label65.Location = new System.Drawing.Point(20, 347);
+            this.label65.Name = "label65";
+            this.label65.Size = new System.Drawing.Size(87, 13);
+            this.label65.TabIndex = 111;
+            this.label65.Text = "Teléfono Laboral";
+            // 
+            // label66
+            // 
+            this.label66.AutoSize = true;
+            this.label66.Location = new System.Drawing.Point(20, 318);
+            this.label66.Name = "label66";
+            this.label66.Size = new System.Drawing.Size(96, 13);
+            this.label66.TabIndex = 110;
+            this.label66.Text = "Teléfono Particular";
+            // 
+            // label67
+            // 
+            this.label67.AutoSize = true;
+            this.label67.Location = new System.Drawing.Point(20, 115);
+            this.label67.Name = "label67";
+            this.label67.Size = new System.Drawing.Size(93, 13);
+            this.label67.TabIndex = 109;
+            this.label67.Text = "Fecha Nacimiento";
+            // 
+            // label68
+            // 
+            this.label68.AutoSize = true;
+            this.label68.Location = new System.Drawing.Point(20, 86);
+            this.label68.Name = "label68";
+            this.label68.Size = new System.Drawing.Size(30, 13);
+            this.label68.TabIndex = 108;
+            this.label68.Text = "RUT";
+            // 
+            // txt_nombres
+            // 
+            this.txt_nombres.Enabled = false;
+            this.txt_nombres.Location = new System.Drawing.Point(129, 25);
+            this.txt_nombres.Name = "txt_nombres";
+            this.txt_nombres.Size = new System.Drawing.Size(198, 20);
+            this.txt_nombres.TabIndex = 0;
+            // 
+            // txt_apellidos
+            // 
+            this.txt_apellidos.Enabled = false;
+            this.txt_apellidos.Location = new System.Drawing.Point(129, 54);
+            this.txt_apellidos.Name = "txt_apellidos";
+            this.txt_apellidos.Size = new System.Drawing.Size(198, 20);
+            this.txt_apellidos.TabIndex = 4;
+            // 
+            // txt_rut
+            // 
+            this.txt_rut.Enabled = false;
+            this.txt_rut.Location = new System.Drawing.Point(129, 83);
+            this.txt_rut.Name = "txt_rut";
+            this.txt_rut.Size = new System.Drawing.Size(120, 20);
+            this.txt_rut.TabIndex = 21;
             // 
             // FichaMedica
             // 
+            this.FichaMedica.Controls.Add(this.btn_imprimir_ficha_medica);
             this.FichaMedica.Controls.Add(this.groupBox3);
             this.FichaMedica.Controls.Add(this.txt_med_medContra);
             this.FichaMedica.Controls.Add(this.label22);
@@ -201,10 +739,20 @@
             this.FichaMedica.Controls.Add(this.groupBox1);
             this.FichaMedica.Location = new System.Drawing.Point(4, 22);
             this.FichaMedica.Name = "FichaMedica";
-            this.FichaMedica.Size = new System.Drawing.Size(725, 553);
+            this.FichaMedica.Size = new System.Drawing.Size(774, 553);
             this.FichaMedica.TabIndex = 0;
             this.FichaMedica.Text = "Ficha Médica";
             this.FichaMedica.UseVisualStyleBackColor = true;
+            // 
+            // btn_imprimir_ficha_medica
+            // 
+            this.btn_imprimir_ficha_medica.Location = new System.Drawing.Point(521, 252);
+            this.btn_imprimir_ficha_medica.Name = "btn_imprimir_ficha_medica";
+            this.btn_imprimir_ficha_medica.Size = new System.Drawing.Size(113, 23);
+            this.btn_imprimir_ficha_medica.TabIndex = 13;
+            this.btn_imprimir_ficha_medica.Text = "Imprimir";
+            this.btn_imprimir_ficha_medica.UseVisualStyleBackColor = true;
+            this.btn_imprimir_ficha_medica.Click += new System.EventHandler(this.btn_imprimir_ficha_medica_Click);
             // 
             // groupBox3
             // 
@@ -587,14 +1135,25 @@
             // 
             // HistorialCargos
             // 
+            this.HistorialCargos.Controls.Add(this.btn_imprimir_cargos);
             this.HistorialCargos.Controls.Add(this.dataGridCargos);
             this.HistorialCargos.Location = new System.Drawing.Point(4, 22);
             this.HistorialCargos.Name = "HistorialCargos";
-            this.HistorialCargos.Size = new System.Drawing.Size(725, 553);
+            this.HistorialCargos.Size = new System.Drawing.Size(774, 553);
             this.HistorialCargos.TabIndex = 0;
             this.HistorialCargos.Text = "Historial Cargos";
             this.HistorialCargos.UseVisualStyleBackColor = true;
             this.HistorialCargos.Click += new System.EventHandler(this.HistorialCargos_Click);
+            // 
+            // btn_imprimir_cargos
+            // 
+            this.btn_imprimir_cargos.Location = new System.Drawing.Point(313, 22);
+            this.btn_imprimir_cargos.Name = "btn_imprimir_cargos";
+            this.btn_imprimir_cargos.Size = new System.Drawing.Size(149, 23);
+            this.btn_imprimir_cargos.TabIndex = 177;
+            this.btn_imprimir_cargos.Text = "Imprimir";
+            this.btn_imprimir_cargos.UseVisualStyleBackColor = true;
+            this.btn_imprimir_cargos.Click += new System.EventHandler(this.btn_imprimir_cargos_Click);
             // 
             // dataGridCargos
             // 
@@ -607,10 +1166,10 @@
             this.fecha_hasta,
             this.id_cargos,
             this.BomberoCargo});
-            this.dataGridCargos.Location = new System.Drawing.Point(26, 34);
+            this.dataGridCargos.Location = new System.Drawing.Point(51, 65);
             this.dataGridCargos.Name = "dataGridCargos";
             this.dataGridCargos.ReadOnly = true;
-            this.dataGridCargos.Size = new System.Drawing.Size(673, 489);
+            this.dataGridCargos.Size = new System.Drawing.Size(673, 458);
             this.dataGridCargos.TabIndex = 0;
             // 
             // Cargo
@@ -655,14 +1214,25 @@
             // 
             // HistorialPremios
             // 
+            this.HistorialPremios.Controls.Add(this.btn_imprimir_premios);
             this.HistorialPremios.Controls.Add(this.dataGridPremios);
             this.HistorialPremios.Location = new System.Drawing.Point(4, 22);
             this.HistorialPremios.Name = "HistorialPremios";
             this.HistorialPremios.Padding = new System.Windows.Forms.Padding(3);
-            this.HistorialPremios.Size = new System.Drawing.Size(725, 553);
+            this.HistorialPremios.Size = new System.Drawing.Size(774, 553);
             this.HistorialPremios.TabIndex = 1;
             this.HistorialPremios.Text = "Historial Premios";
             this.HistorialPremios.UseVisualStyleBackColor = true;
+            // 
+            // btn_imprimir_premios
+            // 
+            this.btn_imprimir_premios.Location = new System.Drawing.Point(308, 27);
+            this.btn_imprimir_premios.Name = "btn_imprimir_premios";
+            this.btn_imprimir_premios.Size = new System.Drawing.Size(158, 23);
+            this.btn_imprimir_premios.TabIndex = 11;
+            this.btn_imprimir_premios.Text = "Imprimir";
+            this.btn_imprimir_premios.UseVisualStyleBackColor = true;
+            this.btn_imprimir_premios.Click += new System.EventHandler(this.btn_imprimir_premios_Click);
             // 
             // dataGridPremios
             // 
@@ -675,10 +1245,10 @@
             this.fecha_entrega,
             this.Premio,
             this.Bombero});
-            this.dataGridPremios.Location = new System.Drawing.Point(28, 31);
+            this.dataGridPremios.Location = new System.Drawing.Point(53, 75);
             this.dataGridPremios.Name = "dataGridPremios";
             this.dataGridPremios.ReadOnly = true;
-            this.dataGridPremios.Size = new System.Drawing.Size(669, 490);
+            this.dataGridPremios.Size = new System.Drawing.Size(669, 446);
             this.dataGridPremios.TabIndex = 7;
             // 
             // NombrePremio
@@ -722,14 +1292,25 @@
             // 
             // HistorialCursos
             // 
+            this.HistorialCursos.Controls.Add(this.btn_imprimir_cursos);
             this.HistorialCursos.Controls.Add(this.dataGridCursos);
             this.HistorialCursos.Location = new System.Drawing.Point(4, 22);
             this.HistorialCursos.Name = "HistorialCursos";
             this.HistorialCursos.Padding = new System.Windows.Forms.Padding(3);
-            this.HistorialCursos.Size = new System.Drawing.Size(725, 553);
+            this.HistorialCursos.Size = new System.Drawing.Size(774, 553);
             this.HistorialCursos.TabIndex = 2;
             this.HistorialCursos.Text = "Historial Cursos";
             this.HistorialCursos.UseVisualStyleBackColor = true;
+            // 
+            // btn_imprimir_cursos
+            // 
+            this.btn_imprimir_cursos.Location = new System.Drawing.Point(316, 20);
+            this.btn_imprimir_cursos.Name = "btn_imprimir_cursos";
+            this.btn_imprimir_cursos.Size = new System.Drawing.Size(143, 23);
+            this.btn_imprimir_cursos.TabIndex = 11;
+            this.btn_imprimir_cursos.Text = "Imprimir";
+            this.btn_imprimir_cursos.UseVisualStyleBackColor = true;
+            this.btn_imprimir_cursos.Click += new System.EventHandler(this.btn_imprimir_cursos_Click);
             // 
             // dataGridCursos
             // 
@@ -743,10 +1324,10 @@
             this.fecha_entrega_curso,
             this.id_curso,
             this.BomberoCurso});
-            this.dataGridCursos.Location = new System.Drawing.Point(35, 36);
+            this.dataGridCursos.Location = new System.Drawing.Point(60, 69);
             this.dataGridCursos.Name = "dataGridCursos";
             this.dataGridCursos.ReadOnly = true;
-            this.dataGridCursos.Size = new System.Drawing.Size(654, 486);
+            this.dataGridCursos.Size = new System.Drawing.Size(654, 453);
             this.dataGridCursos.TabIndex = 9;
             // 
             // NombreCurso
@@ -797,8 +1378,50 @@
             this.BomberoCurso.ReadOnly = true;
             this.BomberoCurso.Visible = false;
             // 
+            // Reincorporaciones
+            // 
+            this.Reincorporaciones.Controls.Add(this.dataGridReincorporacion);
+            this.Reincorporaciones.Location = new System.Drawing.Point(4, 22);
+            this.Reincorporaciones.Name = "Reincorporaciones";
+            this.Reincorporaciones.Padding = new System.Windows.Forms.Padding(3);
+            this.Reincorporaciones.Size = new System.Drawing.Size(774, 553);
+            this.Reincorporaciones.TabIndex = 6;
+            this.Reincorporaciones.Text = "Reincorporaciones";
+            this.Reincorporaciones.UseVisualStyleBackColor = true;
+            // 
+            // dataGridReincorporacion
+            // 
+            this.dataGridReincorporacion.AllowUserToAddRows = false;
+            this.dataGridReincorporacion.AllowUserToDeleteRows = false;
+            this.dataGridReincorporacion.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridReincorporacion.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.BomberoReincorporacion,
+            this.FechaReincorporacion});
+            this.dataGridReincorporacion.Location = new System.Drawing.Point(48, 38);
+            this.dataGridReincorporacion.Name = "dataGridReincorporacion";
+            this.dataGridReincorporacion.ReadOnly = true;
+            this.dataGridReincorporacion.Size = new System.Drawing.Size(679, 470);
+            this.dataGridReincorporacion.TabIndex = 7;
+            // 
+            // BomberoReincorporacion
+            // 
+            this.BomberoReincorporacion.DataPropertyName = "Bombero";
+            this.BomberoReincorporacion.HeaderText = "Bombero";
+            this.BomberoReincorporacion.Name = "BomberoReincorporacion";
+            this.BomberoReincorporacion.ReadOnly = true;
+            this.BomberoReincorporacion.Visible = false;
+            // 
+            // FechaReincorporacion
+            // 
+            this.FechaReincorporacion.DataPropertyName = "FechaReincorporacion";
+            this.FechaReincorporacion.HeaderText = "Fecha de Reincorporación";
+            this.FechaReincorporacion.Name = "FechaReincorporacion";
+            this.FechaReincorporacion.ReadOnly = true;
+            this.FechaReincorporacion.Width = 400;
+            // 
             // ResumenListas
             // 
+            this.ResumenListas.Controls.Add(this.btn_imprimir_asistencia);
             this.ResumenListas.Controls.Add(this.lbl_totalAbonos);
             this.ResumenListas.Controls.Add(this.lbl_totalLlam);
             this.ResumenListas.Controls.Add(this.lbl_otrosCuerp);
@@ -817,16 +1440,26 @@
             this.ResumenListas.Location = new System.Drawing.Point(4, 22);
             this.ResumenListas.Name = "ResumenListas";
             this.ResumenListas.Padding = new System.Windows.Forms.Padding(3);
-            this.ResumenListas.Size = new System.Drawing.Size(725, 553);
+            this.ResumenListas.Size = new System.Drawing.Size(774, 553);
             this.ResumenListas.TabIndex = 3;
             this.ResumenListas.Text = "Resumen Listas";
             this.ResumenListas.UseVisualStyleBackColor = true;
             this.ResumenListas.Click += new System.EventHandler(this.ResumenListas_Click);
             // 
+            // btn_imprimir_asistencia
+            // 
+            this.btn_imprimir_asistencia.Location = new System.Drawing.Point(391, 16);
+            this.btn_imprimir_asistencia.Name = "btn_imprimir_asistencia";
+            this.btn_imprimir_asistencia.Size = new System.Drawing.Size(114, 23);
+            this.btn_imprimir_asistencia.TabIndex = 18;
+            this.btn_imprimir_asistencia.Text = "Imprimir";
+            this.btn_imprimir_asistencia.UseVisualStyleBackColor = true;
+            this.btn_imprimir_asistencia.Click += new System.EventHandler(this.btn_imprimir_asistencia_Click);
+            // 
             // lbl_totalAbonos
             // 
             this.lbl_totalAbonos.AutoSize = true;
-            this.lbl_totalAbonos.Location = new System.Drawing.Point(601, 475);
+            this.lbl_totalAbonos.Location = new System.Drawing.Point(618, 487);
             this.lbl_totalAbonos.Name = "lbl_totalAbonos";
             this.lbl_totalAbonos.Size = new System.Drawing.Size(70, 13);
             this.lbl_totalAbonos.TabIndex = 17;
@@ -835,7 +1468,7 @@
             // lbl_totalLlam
             // 
             this.lbl_totalLlam.AutoSize = true;
-            this.lbl_totalLlam.Location = new System.Drawing.Point(26, 454);
+            this.lbl_totalLlam.Location = new System.Drawing.Point(43, 466);
             this.lbl_totalLlam.Name = "lbl_totalLlam";
             this.lbl_totalLlam.Size = new System.Drawing.Size(79, 13);
             this.lbl_totalLlam.TabIndex = 16;
@@ -845,7 +1478,7 @@
             // lbl_otrosCuerp
             // 
             this.lbl_otrosCuerp.AutoSize = true;
-            this.lbl_otrosCuerp.Location = new System.Drawing.Point(601, 454);
+            this.lbl_otrosCuerp.Location = new System.Drawing.Point(618, 466);
             this.lbl_otrosCuerp.Name = "lbl_otrosCuerp";
             this.lbl_otrosCuerp.Size = new System.Drawing.Size(74, 13);
             this.lbl_otrosCuerp.TabIndex = 15;
@@ -854,7 +1487,7 @@
             // lbl_otrasComp
             // 
             this.lbl_otrasComp.AutoSize = true;
-            this.lbl_otrasComp.Location = new System.Drawing.Point(455, 475);
+            this.lbl_otrasComp.Location = new System.Drawing.Point(472, 487);
             this.lbl_otrasComp.Name = "lbl_otrasComp";
             this.lbl_otrasComp.Size = new System.Drawing.Size(87, 13);
             this.lbl_otrasComp.TabIndex = 14;
@@ -863,7 +1496,7 @@
             // lbl_canje
             // 
             this.lbl_canje.AutoSize = true;
-            this.lbl_canje.Location = new System.Drawing.Point(455, 454);
+            this.lbl_canje.Location = new System.Drawing.Point(472, 466);
             this.lbl_canje.Name = "lbl_canje";
             this.lbl_canje.Size = new System.Drawing.Size(104, 13);
             this.lbl_canje.TabIndex = 13;
@@ -872,7 +1505,7 @@
             // lbl_guardias
             // 
             this.lbl_guardias.AutoSize = true;
-            this.lbl_guardias.Location = new System.Drawing.Point(274, 475);
+            this.lbl_guardias.Location = new System.Drawing.Point(291, 487);
             this.lbl_guardias.Name = "lbl_guardias";
             this.lbl_guardias.Size = new System.Drawing.Size(101, 13);
             this.lbl_guardias.TabIndex = 12;
@@ -881,7 +1514,7 @@
             // lbl_llamadas
             // 
             this.lbl_llamadas.AutoSize = true;
-            this.lbl_llamadas.Location = new System.Drawing.Point(274, 454);
+            this.lbl_llamadas.Location = new System.Drawing.Point(291, 466);
             this.lbl_llamadas.Name = "lbl_llamadas";
             this.lbl_llamadas.Size = new System.Drawing.Size(135, 13);
             this.lbl_llamadas.TabIndex = 11;
@@ -890,7 +1523,7 @@
             // lbl_asistencias
             // 
             this.lbl_asistencias.AutoSize = true;
-            this.lbl_asistencias.Location = new System.Drawing.Point(162, 475);
+            this.lbl_asistencias.Location = new System.Drawing.Point(179, 487);
             this.lbl_asistencias.Name = "lbl_asistencias";
             this.lbl_asistencias.Size = new System.Drawing.Size(60, 13);
             this.lbl_asistencias.TabIndex = 10;
@@ -900,7 +1533,7 @@
             // lbl_licencias
             // 
             this.lbl_licencias.AutoSize = true;
-            this.lbl_licencias.Location = new System.Drawing.Point(162, 454);
+            this.lbl_licencias.Location = new System.Drawing.Point(179, 466);
             this.lbl_licencias.Name = "lbl_licencias";
             this.lbl_licencias.Size = new System.Drawing.Size(52, 13);
             this.lbl_licencias.TabIndex = 9;
@@ -910,7 +1543,7 @@
             // lbl_suspens
             // 
             this.lbl_suspens.AutoSize = true;
-            this.lbl_suspens.Location = new System.Drawing.Point(26, 496);
+            this.lbl_suspens.Location = new System.Drawing.Point(43, 508);
             this.lbl_suspens.Name = "lbl_suspens";
             this.lbl_suspens.Size = new System.Drawing.Size(73, 13);
             this.lbl_suspens.TabIndex = 8;
@@ -920,7 +1553,7 @@
             // lbl_faltas
             // 
             this.lbl_faltas.AutoSize = true;
-            this.lbl_faltas.Location = new System.Drawing.Point(26, 475);
+            this.lbl_faltas.Location = new System.Drawing.Point(43, 487);
             this.lbl_faltas.Name = "lbl_faltas";
             this.lbl_faltas.Size = new System.Drawing.Size(35, 13);
             this.lbl_faltas.TabIndex = 7;
@@ -928,7 +1561,7 @@
             // 
             // btn_buscar
             // 
-            this.btn_buscar.Location = new System.Drawing.Point(249, 25);
+            this.btn_buscar.Location = new System.Drawing.Point(248, 15);
             this.btn_buscar.Name = "btn_buscar";
             this.btn_buscar.Size = new System.Drawing.Size(75, 23);
             this.btn_buscar.TabIndex = 6;
@@ -940,7 +1573,7 @@
             // 
             this.dateTimeListas.CustomFormat = "yyyy";
             this.dateTimeListas.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimeListas.Location = new System.Drawing.Point(132, 25);
+            this.dateTimeListas.Location = new System.Drawing.Point(131, 15);
             this.dateTimeListas.Name = "dateTimeListas";
             this.dateTimeListas.Size = new System.Drawing.Size(71, 20);
             this.dateTimeListas.TabIndex = 2;
@@ -949,7 +1582,7 @@
             // label23
             // 
             this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(33, 31);
+            this.label23.Location = new System.Drawing.Point(32, 21);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(81, 13);
             this.label23.TabIndex = 1;
@@ -975,10 +1608,9 @@
             this.TotalAbonosLista,
             this.AñoLista,
             this.BomberoLista});
-            this.dataGridListas.Location = new System.Drawing.Point(21, 74);
+            this.dataGridListas.Location = new System.Drawing.Point(23, 57);
             this.dataGridListas.Name = "dataGridListas";
-            this.dataGridListas.ReadOnly = true;
-            this.dataGridListas.Size = new System.Drawing.Size(682, 354);
+            this.dataGridListas.Size = new System.Drawing.Size(728, 393);
             this.dataGridListas.TabIndex = 0;
             this.dataGridListas.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick);
             // 
@@ -1071,15 +1703,26 @@
             // 
             // Servicio
             // 
+            this.Servicio.Controls.Add(this.btn_imprimir_servicio);
             this.Servicio.Controls.Add(this.dataGridServicio);
             this.Servicio.Location = new System.Drawing.Point(4, 22);
             this.Servicio.Name = "Servicio";
             this.Servicio.Padding = new System.Windows.Forms.Padding(3);
-            this.Servicio.Size = new System.Drawing.Size(725, 553);
+            this.Servicio.Size = new System.Drawing.Size(774, 553);
             this.Servicio.TabIndex = 4;
             this.Servicio.Text = "Servicio";
             this.Servicio.UseVisualStyleBackColor = true;
             this.Servicio.Click += new System.EventHandler(this.Servicio_Click);
+            // 
+            // btn_imprimir_servicio
+            // 
+            this.btn_imprimir_servicio.Location = new System.Drawing.Point(313, 22);
+            this.btn_imprimir_servicio.Name = "btn_imprimir_servicio";
+            this.btn_imprimir_servicio.Size = new System.Drawing.Size(149, 23);
+            this.btn_imprimir_servicio.TabIndex = 3;
+            this.btn_imprimir_servicio.Text = "Imprimir";
+            this.btn_imprimir_servicio.UseVisualStyleBackColor = true;
+            this.btn_imprimir_servicio.Click += new System.EventHandler(this.btn_imprimir_servicio_Click);
             // 
             // dataGridServicio
             // 
@@ -1099,10 +1742,9 @@
             this.AbonosServicio,
             this.TotalAsistenciaServicio,
             this.BomberoServicio});
-            this.dataGridServicio.Location = new System.Drawing.Point(26, 33);
+            this.dataGridServicio.Location = new System.Drawing.Point(25, 62);
             this.dataGridServicio.Name = "dataGridServicio";
-            this.dataGridServicio.ReadOnly = true;
-            this.dataGridServicio.Size = new System.Drawing.Size(673, 486);
+            this.dataGridServicio.Size = new System.Drawing.Size(724, 465);
             this.dataGridServicio.TabIndex = 1;
             this.dataGridServicio.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick_1);
             // 
@@ -1184,14 +1826,25 @@
             // 
             // Observaciones
             // 
+            this.Observaciones.Controls.Add(this.btn_imprimir_observaciones);
             this.Observaciones.Controls.Add(this.dataGridObservacion);
             this.Observaciones.Location = new System.Drawing.Point(4, 22);
             this.Observaciones.Name = "Observaciones";
             this.Observaciones.Padding = new System.Windows.Forms.Padding(3);
-            this.Observaciones.Size = new System.Drawing.Size(725, 553);
+            this.Observaciones.Size = new System.Drawing.Size(774, 553);
             this.Observaciones.TabIndex = 5;
             this.Observaciones.Text = "Observaciones";
             this.Observaciones.UseVisualStyleBackColor = true;
+            // 
+            // btn_imprimir_observaciones
+            // 
+            this.btn_imprimir_observaciones.Location = new System.Drawing.Point(309, 20);
+            this.btn_imprimir_observaciones.Name = "btn_imprimir_observaciones";
+            this.btn_imprimir_observaciones.Size = new System.Drawing.Size(157, 23);
+            this.btn_imprimir_observaciones.TabIndex = 6;
+            this.btn_imprimir_observaciones.Text = "Imprimir";
+            this.btn_imprimir_observaciones.UseVisualStyleBackColor = true;
+            this.btn_imprimir_observaciones.Click += new System.EventHandler(this.btn_imprimir_observaciones_Click);
             // 
             // dataGridObservacion
             // 
@@ -1202,10 +1855,10 @@
             this.FechaObservacion,
             this.Observacion,
             this.BomberoObservacion});
-            this.dataGridObservacion.Location = new System.Drawing.Point(20, 33);
+            this.dataGridObservacion.Location = new System.Drawing.Point(45, 65);
             this.dataGridObservacion.Name = "dataGridObservacion";
             this.dataGridObservacion.ReadOnly = true;
-            this.dataGridObservacion.Size = new System.Drawing.Size(685, 484);
+            this.dataGridObservacion.Size = new System.Drawing.Size(685, 452);
             this.dataGridObservacion.TabIndex = 4;
             this.dataGridObservacion.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick);
             // 
@@ -1232,50 +1885,9 @@
             this.BomberoObservacion.ReadOnly = true;
             this.BomberoObservacion.Visible = false;
             // 
-            // tabPage1
-            // 
-            this.tabPage1.Controls.Add(this.dataGridReincorporacion);
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(725, 553);
-            this.tabPage1.TabIndex = 6;
-            this.tabPage1.Text = "Reincorporaciones";
-            this.tabPage1.UseVisualStyleBackColor = true;
-            // 
-            // dataGridReincorporacion
-            // 
-            this.dataGridReincorporacion.AllowUserToAddRows = false;
-            this.dataGridReincorporacion.AllowUserToDeleteRows = false;
-            this.dataGridReincorporacion.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridReincorporacion.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.BomberoReincorporacion,
-            this.FechaReincorporacion});
-            this.dataGridReincorporacion.Location = new System.Drawing.Point(23, 34);
-            this.dataGridReincorporacion.Name = "dataGridReincorporacion";
-            this.dataGridReincorporacion.ReadOnly = true;
-            this.dataGridReincorporacion.Size = new System.Drawing.Size(679, 474);
-            this.dataGridReincorporacion.TabIndex = 7;
-            // 
-            // BomberoReincorporacion
-            // 
-            this.BomberoReincorporacion.DataPropertyName = "Bombero";
-            this.BomberoReincorporacion.HeaderText = "Bombero";
-            this.BomberoReincorporacion.Name = "BomberoReincorporacion";
-            this.BomberoReincorporacion.ReadOnly = true;
-            this.BomberoReincorporacion.Visible = false;
-            // 
-            // FechaReincorporacion
-            // 
-            this.FechaReincorporacion.DataPropertyName = "FechaReincorporacion";
-            this.FechaReincorporacion.HeaderText = "Fecha de Reincorporación";
-            this.FechaReincorporacion.Name = "FechaReincorporacion";
-            this.FechaReincorporacion.ReadOnly = true;
-            this.FechaReincorporacion.Width = 400;
-            // 
             // btnCerrar
             // 
-            this.btnCerrar.Location = new System.Drawing.Point(647, 715);
+            this.btnCerrar.Location = new System.Drawing.Point(690, 714);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(75, 23);
             this.btnCerrar.TabIndex = 1;
@@ -1333,7 +1945,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(757, 756);
+            this.ClientSize = new System.Drawing.Size(806, 756);
             this.Controls.Add(this.labelCargo);
             this.Controls.Add(this.labelTIB);
             this.Controls.Add(this.labelRut);
@@ -1348,6 +1960,12 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.MasInfoBombero_Load);
             this.tabBox.ResumeLayout(false);
+            this.FichaPersonal.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.box_ficha_pict)).EndInit();
+            this.groupBox9.ResumeLayout(false);
+            this.groupBox9.PerformLayout();
+            this.groupBox8.ResumeLayout(false);
+            this.groupBox8.PerformLayout();
             this.FichaMedica.ResumeLayout(false);
             this.FichaMedica.PerformLayout();
             this.groupBox3.ResumeLayout(false);
@@ -1362,6 +1980,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridPremios)).EndInit();
             this.HistorialCursos.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridCursos)).EndInit();
+            this.Reincorporaciones.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridReincorporacion)).EndInit();
             this.ResumenListas.ResumeLayout(false);
             this.ResumenListas.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridListas)).EndInit();
@@ -1369,8 +1989,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridServicio)).EndInit();
             this.Observaciones.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridObservacion)).EndInit();
-            this.tabPage1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridReincorporacion)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.box_picture)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -1456,7 +2074,7 @@
         private System.Windows.Forms.TextBox txt_nombre_pariente_1;
         private System.Windows.Forms.Label label27;
         private System.Windows.Forms.Label label26;
-        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.TabPage Reincorporaciones;
         private System.Windows.Forms.DataGridView dataGridReincorporacion;
         private System.Windows.Forms.DataGridView dataGridServicio;
         private System.Windows.Forms.Button btn_buscar;
@@ -1499,6 +2117,60 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn BomberoServicio;
         private System.Windows.Forms.DataGridViewTextBoxColumn BomberoReincorporacion;
         private System.Windows.Forms.DataGridViewTextBoxColumn FechaReincorporacion;
+        private System.Windows.Forms.Button btn_imprimir_ficha_medica;
+        private System.Windows.Forms.Button btn_imprimir_cargos;
+        private System.Windows.Forms.Button btn_imprimir_premios;
+        private System.Windows.Forms.Button btn_imprimir_cursos;
+        private System.Windows.Forms.Button btn_imprimir_asistencia;
+        private System.Windows.Forms.Button btn_imprimir_servicio;
+        private System.Windows.Forms.Button btn_imprimir_observaciones;
+        private System.Windows.Forms.TabPage FichaPersonal;
+        private System.Windows.Forms.GroupBox groupBox8;
+        private System.Windows.Forms.TextBox txt_nombres;
+        private System.Windows.Forms.TextBox txt_apellidos;
+        private System.Windows.Forms.TextBox txt_rut;
+        private System.Windows.Forms.GroupBox groupBox9;
+        private System.Windows.Forms.TextBox txt_socio;
+        private System.Windows.Forms.Label label50;
+        private System.Windows.Forms.Label label51;
+        private System.Windows.Forms.Label label52;
+        private System.Windows.Forms.ComboBox select_tipocuenta;
+        private System.Windows.Forms.Label label53;
+        private System.Windows.Forms.Label label54;
+        private System.Windows.Forms.ComboBox select_estado;
+        private System.Windows.Forms.Label label55;
+        private System.Windows.Forms.TextBox txt_tib;
+        private System.Windows.Forms.ComboBox select_cargo2;
+        private System.Windows.Forms.Label label56;
+        private System.Windows.Forms.DateTimePicker date_fecha_inscrip;
+        private System.Windows.Forms.Label label57;
+        private System.Windows.Forms.TextBox txt_pass;
+        private System.Windows.Forms.ComboBox select_compania;
+        private System.Windows.Forms.TextBox txt_profesion;
+        private System.Windows.Forms.TextBox txt_gruposang;
+        private System.Windows.Forms.DateTimePicker date_fecha_nac;
+        private System.Windows.Forms.TextBox txt_celular;
+        private System.Windows.Forms.TextBox txt_tel_lab;
+        private System.Windows.Forms.TextBox txt_tel_part;
+        private System.Windows.Forms.TextBox txt_dir_lab;
+        private System.Windows.Forms.TextBox txt_dir_part;
+        private System.Windows.Forms.ComboBox select_estadocivil;
+        private System.Windows.Forms.TextBox txt_email;
+        private System.Windows.Forms.Label label58;
+        private System.Windows.Forms.Label label59;
+        private System.Windows.Forms.Label label60;
+        private System.Windows.Forms.Label label61;
+        private System.Windows.Forms.Label label62;
+        private System.Windows.Forms.Label label63;
+        private System.Windows.Forms.Label label64;
+        private System.Windows.Forms.Label label65;
+        private System.Windows.Forms.Label label66;
+        private System.Windows.Forms.Label label67;
+        private System.Windows.Forms.Label label68;
+        private System.Windows.Forms.Label label69;
+        private System.Windows.Forms.Label label70;
+        private System.Windows.Forms.PictureBox box_ficha_pict;
+        private System.Windows.Forms.Button btn_imprimir;
 
     }
 }

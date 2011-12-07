@@ -9,13 +9,20 @@ using System.Windows.Forms;
 using Bomberos.Negocio.Mgr;
 using Bomberos.ComunFuncional;
 using Bomberos.Comun;
+using Bomberos.ComunFuncional.Enumeraciones;
+using Bomberos.ComunFuncional.Util;
 
 namespace Bomberos.Presentacion
 {
     public partial class MasInfoBomberoUsuario : Form
     {
+        private FichaMedicaDTO FichaMedicaBomberoActual { get; set; }
+        private BomberoDTO BomberoActual { get; set; }
+
         public MasInfoBomberoUsuario()
         {
+            FichaMedicaBomberoActual = new FichaMedicaDTO();
+            BomberoActual = new BomberoDTO();
             InitializeComponent();
         }
 
@@ -29,14 +36,27 @@ namespace Bomberos.Presentacion
 
         }
 
+        public void InicializaInfoBombero(BomberoDTO p_Bombero)
+        {
+            this.BomberoActual = p_Bombero;
+            this.Show();
+        }
+
         private void MasInfoBombero_Load(object sender, EventArgs e)
         {
-            this.Text = "Perfil de " + ContextoDTO.Instancia().BomberoSelected.Nombres + " " + ContextoDTO.Instancia().BomberoSelected.Apellidos;
-
-            ICursoMgr _Curso = new CursoMgr();
-            IPremioMgr _Premio = new PremioMgr();
+            #region Poblamiento de Comboboxs
             ICargoMgr _Cargo = new CargoMgr();
+            select_cargo2.DataSource = _Cargo.ListarCargos().OrderBy(p => p.Nombre).ToList();
+            select_cargo2.DisplayMember = "Nombre";
+            select_cargo2.ValueMember = "Id";
 
+            ICompañiaMgr _Compañia = new CompañiaMgr();
+            select_compania.DataSource = _Compañia.ListarCompañias().OrderBy(p => p.Nombre).ToList();
+            select_compania.DisplayMember = "Nombre";
+            select_compania.ValueMember = "Id";
+            #endregion
+
+            #region Carga de DataGrids
             //Carga de los distinto DataGrid existentes en la ventana.
             ICargoBomberoMgr _CargoBombero = new CargoBomberoMgr();
             ICursoBomberoMgr _CursoBombero = new CursoBomberoMgr();
@@ -52,13 +72,13 @@ namespace Bomberos.Presentacion
             FichaMedicaDTO FichaMedica = new FichaMedicaDTO();
             ServicioBomberoDTO ServicioBombero = new ServicioBomberoDTO();
             ReincorporacionBomberoDTO ReincorporacionBombero = new ReincorporacionBomberoDTO();
-            ReincorporacionBombero.Bombero = ContextoDTO.Instancia().BomberoSelected;
-            PremioBombero.Bombero = ContextoDTO.Instancia().BomberoSelected;
-            CargoBombero.Bombero = ContextoDTO.Instancia().BomberoSelected;
-            CursoBombero.Bombero = ContextoDTO.Instancia().BomberoSelected;
-            ObservacionBombero.Bombero = ContextoDTO.Instancia().BomberoSelected;
-            FichaMedica.Bombero = ContextoDTO.Instancia().BomberoSelected;
-            ServicioBombero.Bombero = ContextoDTO.Instancia().BomberoSelected;
+            ReincorporacionBombero.Bombero = BomberoActual;
+            PremioBombero.Bombero = BomberoActual;
+            CargoBombero.Bombero = BomberoActual;
+            CursoBombero.Bombero = BomberoActual;
+            ObservacionBombero.Bombero = BomberoActual;
+            FichaMedica.Bombero = BomberoActual;
+            ServicioBombero.Bombero = BomberoActual;
 
             dataGridPremios.DataSource = _PremioBombero.CargarPremioBombero(PremioBombero).OrderBy(p => p.FechaCalifica).ToList();
             dataGridCursos.DataSource = _CursoBombero.CargarCursoBombero(CursoBombero).OrderBy(p => p.FechaInicio).ToList();
@@ -72,8 +92,11 @@ namespace Bomberos.Presentacion
             dataGridPremios.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridObservacion.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridReincorporacion.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            #endregion
 
+            #region Ficha Medica
             FichaMedica = _FichaMedica.CargarFichaMedica(FichaMedica);
+            FichaMedicaBomberoActual = FichaMedica;
 
             txt_med_antec.Text = FichaMedica.AntecedentesCronicos;
             txt_med_medContra.Text = FichaMedica.MedicamentosNoToma;
@@ -107,19 +130,54 @@ namespace Bomberos.Presentacion
                 select_hipert.SelectedItem = "Sí";
             if (FichaMedica.Tifus)
                 select_tifus.SelectedItem = "Sí";
+            #endregion
 
-            labelnombre.Text = ContextoDTO.Instancia().BomberoSelected.Nombres + " " + ContextoDTO.Instancia().BomberoSelected.Apellidos;
-            labelRut.Text = ContextoDTO.Instancia().BomberoSelected.Rut;
-            labelTIB.Text = ContextoDTO.Instancia().BomberoSelected.TIB;
-            labelCargo.Text = ContextoDTO.Instancia().BomberoSelected.Cargo.Nombre;
+            #region Pantalla Principal
+            this.Text = "Perfil de " + BomberoActual.Nombres + " " + BomberoActual.Apellidos;
+
+            labelnombre.Text = BomberoActual.Nombres + " " + BomberoActual.Apellidos;
+            labelRut.Text = BomberoActual.Rut;
+            labelTIB.Text = BomberoActual.TIB;
+            labelCargo.Text = BomberoActual.Cargo.Nombre;
 
             try
             {
-                box_picture.Image = new Bitmap("C:\\Bomberos\\" + ContextoDTO.Instancia().BomberoSelected.Rut + ".jpg");
+                box_picture.Image = new Bitmap("C:\\Bomberos\\" + BomberoActual.Rut + ".jpg");
+                box_ficha_pict.Image = box_picture.Image;
             }
             catch (Exception er)
             {
             }
+            #endregion
+
+            #region Ficha Personal
+            txt_nombres.Text = BomberoActual.Nombres;
+            txt_apellidos.Text = BomberoActual.Apellidos;
+            txt_celular.Text = BomberoActual.Celular;
+            txt_dir_lab.Text = BomberoActual.DireccionLaboral;
+            txt_dir_part.Text = BomberoActual.DireccionParticular;
+            txt_email.Text = BomberoActual.Email;
+            txt_gruposang.Text = BomberoActual.GrupoSanguineo;
+            txt_pass.Text = BomberoActual.Password;
+            txt_profesion.Text = BomberoActual.Profesion;
+            txt_rut.Text = BomberoActual.Rut;
+            date_fecha_nac.Text = BomberoActual.FechaNacimiento.ToString();
+            date_fecha_inscrip.Text = BomberoActual.FechaInscripcion.ToString();
+            select_estadocivil.SelectedItem = BomberoActual.EstadoCivil;
+            select_compania.SelectedValue = BomberoActual.Compañia.Id;
+            select_cargo2.SelectedValue = BomberoActual.Cargo.Id;
+            select_estado.SelectedItem = BomberoActual.Estado;
+            txt_tel_lab.Text = BomberoActual.TelefonoLaboral;
+            txt_tel_part.Text = BomberoActual.TelefonoParticular;
+            txt_tib.Text = BomberoActual.TIB;
+            txt_socio.Text = BomberoActual.NumeroRegistro.ToString();
+
+            if (BomberoActual.isAdmin)
+                select_tipocuenta.SelectedItem = "Administrador";
+            else
+                select_tipocuenta.SelectedItem = "Usuario";
+
+            #endregion
         }
 
         private void HistorialCargos_Click(object sender, EventArgs e)
@@ -136,7 +194,6 @@ namespace Bomberos.Presentacion
         {
 
         }
-
 
         private void dateTimeTermino_ValueChanged(object sender, EventArgs e)
         {
@@ -158,26 +215,6 @@ namespace Bomberos.Presentacion
 
         }
 
-        private void btn_borrar_cargo_Click(object sender, EventArgs e)
-        {
-            ICargoBomberoMgr _CargoBombero = new CargoBomberoMgr();
-            CargoBomberoDTO CargoBombero = new CargoBomberoDTO();
-
-            if (dataGridCargos.SelectedRows.Count > 0)
-            {
-                CargoBombero = (CargoBomberoDTO)dataGridCargos.SelectedRows[0].DataBoundItem;
-
-                if (!_CargoBombero.BorrarCargoBombero(CargoBombero))
-                {
-                    MessageBox.Show("Falla al borrar cargo");
-                }
-                else
-                {
-                    dataGridCargos.DataSource = _CargoBombero.CargarCargoBombero(CargoBombero).OrderBy(p => p.FechaDesde).ToList();
-                }
-            }
-        }
-
         private void groupBox2_Enter(object sender, EventArgs e)
         {
 
@@ -191,80 +228,6 @@ namespace Bomberos.Presentacion
         private void richTextBox5_TextChanged(object sender, EventArgs e)
         {
 
-        }
-
-        private void btn_enviar_cambios_Click(object sender, EventArgs e)
-        {
-            IFichaMedicaMgr _FichaMedica = new FichaMedicaMgr();
-            FichaMedicaDTO FichaMedica = new FichaMedicaDTO();
-
-            FichaMedica.Bombero = ContextoDTO.Instancia().BomberoSelected;
-            FichaMedica.AntecedentesCronicos = txt_med_antec.Text;
-            FichaMedica.MedicamentosNoToma = txt_med_medContra.Text;
-            FichaMedica.MedicamentosToma = txt_med_medToma.Text;
-            FichaMedica.Operaciones = txt_med_operac.Text;
-            FichaMedica.OtrasEnfermedades = txt_med_otras.Text;
-            FichaMedica.Asma = false;
-            FichaMedica.Diabetes = false;
-            FichaMedica.Epilepsia = false;
-            FichaMedica.Hepatitis = false;
-            FichaMedica.HipertensionArterial = false;
-            FichaMedica.Tifus = false;
-            FichaMedica.CelularPariente1 = txt_celular_pariente_1.Text;
-            FichaMedica.CelularPariente2 = txt_celular_pariente_2.Text;
-            FichaMedica.NombrePariente1 = txt_nombre_pariente_1.Text;
-            FichaMedica.NombrePariente2 = txt_nomnbre_pariente_2.Text;
-            FichaMedica.ParentescoPariente1 = txt_parentesco_pariente_1.Text;
-            FichaMedica.ParentescoPariente2 = txt_parentesco_pariente_2.Text;
-            FichaMedica.TelefonoPariente1 = txt_telefono_pariente_1.Text;
-            FichaMedica.TelefonoPariente2 = txt_telefono_pariente_2.Text;
-
-            if (select_asma.Text.Equals("Sí"))
-                FichaMedica.Asma = true;
-            if (select_diab.Text.Equals("Sí"))
-                FichaMedica.Diabetes = true;
-            if (select_epilep.Text.Equals("Sí"))
-                FichaMedica.Epilepsia = true;
-            if (select_hepat.Text.Equals("Sí"))
-                FichaMedica.Hepatitis = true;
-            if (select_hipert.Text.Equals("Sí"))
-                FichaMedica.HipertensionArterial = true;
-            if (select_tifus.Text.Equals("Sí"))
-                FichaMedica.Tifus = true;
-
-            if (_FichaMedica.EditarFichaMedica(FichaMedica))
-            {
-                MessageBox.Show("Ficha medica actualizada exitosamente");
-
-                txt_med_antec.Text = FichaMedica.AntecedentesCronicos;
-                txt_med_medContra.Text = FichaMedica.MedicamentosNoToma;
-                txt_med_medToma.Text = FichaMedica.MedicamentosToma;
-                txt_med_operac.Text = FichaMedica.Operaciones;
-                txt_med_otras.Text = FichaMedica.OtrasEnfermedades;
-                select_asma.SelectedItem = "No";
-                select_diab.SelectedItem = "No";
-                select_epilep.SelectedItem = "No";
-                select_hipert.SelectedItem = "No";
-                select_tifus.SelectedItem = "No";
-                select_hepat.SelectedItem = "No";
-
-                if (FichaMedica.Asma)
-                    select_asma.SelectedItem = "Sí";
-                if (FichaMedica.Diabetes)
-                    select_diab.SelectedItem = "Sí";
-                if (FichaMedica.Epilepsia)
-                    select_epilep.SelectedItem = "Sí";
-                if (FichaMedica.Hepatitis)
-                    select_hepat.SelectedItem = "Sí";
-                if (FichaMedica.HipertensionArterial)
-                    select_hipert.SelectedItem = "Sí";
-                if (FichaMedica.Tifus)
-                    select_tifus.SelectedItem = "Sí";
-            }
-            else
-            {
-                MessageBox.Show("Error al actualizar ficha medica");
-            }
         }
 
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
@@ -337,7 +300,7 @@ namespace Bomberos.Presentacion
             IListaMgr _Lista = new ListaMgr();
             ListaDTO Lista = new ListaDTO();
 
-            Lista.Bombero = ContextoDTO.Instancia().BomberoSelected;
+            Lista.Bombero = BomberoActual;
             Lista.Año = dateTimeListas.Value.Year;
             dataGridListas.DataSource = _Lista.CargarLista(Lista);
 
@@ -442,6 +405,260 @@ namespace Bomberos.Presentacion
                     catch (Exception er) { }
                 }
             }
+        }
+
+        private void btn_imprimir_ficha_medica_Click(object sender, EventArgs e)
+        {
+            FichaMedicaReportDTO oParametro = new FichaMedicaReportDTO();
+            oParametro.p_Bombero = new BomberoReportDTO();
+            Utilidades.ReflectarPropiedadesSimilares(FichaMedicaBomberoActual, oParametro);
+            Utilidades.ReflectarPropiedadesSimilares(BomberoActual, oParametro.p_Bombero);
+            oParametro.p_Bombero.p_Compañia = BomberoActual.Compañia.Nombre;
+
+            var form = new VisorReportes();
+
+            form.MostrarReporte(
+                EnumReportes.FichaMedica,
+                oParametro
+            );
+        }
+
+        private void btn_imprimir_cargos_Click(object sender, EventArgs e)
+        {
+            ICargoBomberoMgr _CargoBombero = new CargoBomberoMgr();
+            CargoBomberoDTO CargoBombero = new CargoBomberoDTO();
+            CargoBombero.Bombero = BomberoActual;
+
+            CargoReportDTO oParametro = new CargoReportDTO();
+            oParametro.p_Nombres = BomberoActual.Nombres;
+            oParametro.p_Apellidos = BomberoActual.Apellidos;
+
+            foreach (var elem in _CargoBombero.CargarCargoBombero(CargoBombero))
+            {
+                Bomberos.ComunFuncional.CargoReportDTO.CargosReport CargoElem = new CargoReportDTO.CargosReport();
+                CargoElem.p_Nombre = elem.NombreCargo;
+                CargoElem.p_FechaDesde = elem.FechaDesde.Date.ToString();
+                CargoElem.p_FechaHasta = elem.FechaHasta.Date.ToString();
+                oParametro.ListaCargos.Add(CargoElem);
+            }
+
+            var form = new VisorReportes();
+
+            form.MostrarReporte(
+                EnumReportes.HistorialCargos,
+                oParametro
+                );
+        }
+
+        private void btn_imprimir_asistencia_Click(object sender, EventArgs e)
+        {
+            ListaReportDTO oParametro = new ListaReportDTO();
+            oParametro.p_Nombres = BomberoActual.Nombres;
+            oParametro.p_Apellidos = BomberoActual.Apellidos;
+
+            IListaMgr _Lista = new ListaMgr();
+            ListaDTO Lista = new ListaDTO();
+            Lista.Bombero = BomberoActual;
+            Lista.Año = dateTimeListas.Value.Year;
+
+            int sumatotalLlam = 0;
+            int sumatotalAbonos = 0;
+            int sumaAsistencias = 0;
+            int sumaFaltas = 0;
+            int sumaLlamadas = 0;
+            int sumaGuardiasNoct = 0;
+            int sumaOtrosCuerp = 0;
+            int sumaOtrasComp = 0;
+            int sumaSuspensiones = 0;
+            int sumaLicencias = 0;
+            int sumaCompCanje = 0;
+
+            foreach (var elem in _Lista.CargarLista(Lista))
+            {
+                Bomberos.ComunFuncional.ListaReportDTO.ListaReport ListaElem = new ListaReportDTO.ListaReport();
+                Utilidades.ReflectarPropiedadesSimilares(elem, ListaElem);
+                oParametro.ListaAsistencias.Add(ListaElem);
+
+                sumatotalLlam += elem.TotalLlamadas;
+                sumatotalAbonos += elem.TotalAbonos;
+                sumaSuspensiones += elem.Suspensiones;
+                sumaOtrosCuerp += elem.OtrosCuerpos;
+                sumaOtrasComp += elem.OtrasCompañias;
+                sumaLlamadas += elem.LlamadasComandancia;
+                sumaLicencias += elem.Licencias;
+                sumaGuardiasNoct += elem.GuardiasNocturnas;
+                sumaFaltas += elem.Faltas;
+                sumaCompCanje += elem.CompañiasCanje;
+                sumaAsistencias += elem.Asistencia;
+            }
+
+            oParametro.p_TotalAsistencia = sumaAsistencias.ToString();
+            oParametro.p_TotalCompañiasCanje = sumaCompCanje.ToString();
+            oParametro.p_TotalFaltas = sumaFaltas.ToString();
+            oParametro.p_TotalGuardiasNocturnas = sumaGuardiasNoct.ToString();
+            oParametro.p_TotalLicencias = sumaLicencias.ToString();
+            oParametro.p_TotalLlamadasComandancia = sumaLlamadas.ToString();
+            oParametro.p_TotalOtrasCompañias = sumaOtrasComp.ToString();
+            oParametro.p_TotalOtrosCuerpos = sumaOtrosCuerp.ToString();
+            oParametro.p_TotalSuspensiones = sumaSuspensiones.ToString();
+            oParametro.p_TotalTotalAbonos = sumatotalAbonos.ToString();
+            oParametro.p_TotalTotalLlamadas = sumatotalLlam.ToString();
+
+
+            var form = new VisorReportes();
+
+            form.MostrarReporte(
+                EnumReportes.Asistencia,
+                oParametro
+                );
+        }
+
+        private void btn_imprimir_cursos_Click(object sender, EventArgs e)
+        {
+            CursoReportDTO oParametro = new CursoReportDTO();
+            oParametro.p_Nombres = BomberoActual.Nombres;
+            oParametro.p_Apellidos = BomberoActual.Apellidos;
+
+            ICursoBomberoMgr _Curso = new CursoBomberoMgr();
+            CursoBomberoDTO Curso = new CursoBomberoDTO();
+            Curso.Bombero = BomberoActual;
+
+            foreach (var elem in _Curso.CargarCursoBombero(Curso))
+            {
+                Bomberos.ComunFuncional.CursoReportDTO.CursosReport CursoElem = new CursoReportDTO.CursosReport();
+                Utilidades.ReflectarPropiedadesSimilares(elem, CursoElem);
+                CursoElem.p_Nombre = elem.NombreCurso;
+                CursoElem.p_FechaTermino = elem.FechaFin.ToString();
+                oParametro.ListaCursos.Add(CursoElem);
+            }
+
+            var form = new VisorReportes();
+
+            form.MostrarReporte(
+                EnumReportes.HistorialCursos,
+                oParametro
+                );
+        }
+
+        private void btn_imprimir_premios_Click(object sender, EventArgs e)
+        {
+            PremioReportDTO oParametro = new PremioReportDTO();
+            oParametro.p_Nombres = BomberoActual.Nombres;
+            oParametro.p_Apellidos = BomberoActual.Apellidos;
+
+            IPremioBomberoMgr _Premio = new PremioBomberoMgr();
+            PremioBomberoDTO Premio = new PremioBomberoDTO();
+            Premio.Bombero = BomberoActual;
+
+            foreach (var elem in _Premio.CargarPremioBombero(Premio))
+            {
+                Bomberos.ComunFuncional.PremioReportDTO.PremiosReport PremioElem = new PremioReportDTO.PremiosReport();
+                Utilidades.ReflectarPropiedadesSimilares(elem, PremioElem);
+                PremioElem.p_Nombre = elem.NombrePremio;
+                oParametro.ListaPremios.Add(PremioElem);
+            }
+
+            var form = new VisorReportes();
+
+            form.MostrarReporte(
+                EnumReportes.HistorialPremios,
+                oParametro
+                );
+        }
+
+        private void btn_imprimir_observaciones_Click(object sender, EventArgs e)
+        {
+            ObservacionReportDTO oParametro = new ObservacionReportDTO();
+            oParametro.p_Nombres = BomberoActual.Nombres;
+            oParametro.p_Apellidos = BomberoActual.Apellidos;
+
+            IObservacionBomberoMgr _Obs = new ObservacionBomberoMgr();
+            ObservacionBomberoDTO Obs = new ObservacionBomberoDTO();
+            Obs.Bombero = BomberoActual;
+
+            foreach (var elem in _Obs.CargarObservacionesBombero(Obs))
+            {
+                Bomberos.ComunFuncional.ObservacionReportDTO.ObservacionesReport ObsElem = new ObservacionReportDTO.ObservacionesReport();
+                Utilidades.ReflectarPropiedadesSimilares(elem, ObsElem);
+                oParametro.ListaObservaciones.Add(ObsElem);
+            }
+
+            var form = new VisorReportes();
+
+            form.MostrarReporte(
+                EnumReportes.Observaciones,
+                oParametro
+                );
+        }
+
+        private void select_tipocuenta_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_imprimir_Click(object sender, EventArgs e)
+        {
+            BomberoReportDTO oParametro = new BomberoReportDTO();
+
+            IReincorporacionBomberoMgr _Reincorporacion = new ReincorporacionBomberoMgr();
+            ReincorporacionBomberoDTO ReincorporacionBombero = new ReincorporacionBomberoDTO();
+            List<ReincorporacionBomberoDTO> ListaR = new List<ReincorporacionBomberoDTO>();
+            ReincorporacionBombero.Bombero = BomberoActual;
+
+            Utilidades.ReflectarPropiedadesSimilares(BomberoActual, oParametro);
+            oParametro.p_Compañia = BomberoActual.Compañia.Nombre;
+            oParametro.p_Cargo = BomberoActual.Cargo.Nombre;
+            oParametro.p_Estado = BomberoActual.Estado;
+            oParametro.p_EstadoCivil = BomberoActual.EstadoCivil;
+
+            foreach (var elem in _Reincorporacion.CargarReincorporacionBombero(ReincorporacionBombero))
+            {
+                Bomberos.Comun.BomberoReportDTO.ReincorporacionReport ReinElem = new BomberoReportDTO.ReincorporacionReport();
+                ReinElem.p_Fecha = elem.FechaReincorporacion.Date.ToString();
+                oParametro.ListaReincorporaciones.Add(ReinElem);
+            }
+
+            var form = new VisorReportes();
+
+            form.MostrarReporte(
+                EnumReportes.FichaPersonal,
+                oParametro
+                );
+        }
+
+        private void btn_imagen_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog file = new OpenFileDialog();
+            file.Title = "Seleccione imagen";
+            if (file.ShowDialog() == DialogResult.OK)
+            {
+                box_picture.Image = new Bitmap(file.OpenFile());
+            }
+        }
+
+        private void btn_imprimir_servicio_Click(object sender, EventArgs e)
+        {
+            ServicioReportDTO oParametro = new ServicioReportDTO();
+            oParametro.p_Nombres = BomberoActual.Nombres;
+            oParametro.p_Apellidos = BomberoActual.Apellidos;
+
+            IServicioBomberoMgr _Servicio = new ServicioBomberoMgr();
+            ServicioBomberoDTO Servicio = new ServicioBomberoDTO();
+            Servicio.Bombero = BomberoActual;
+
+            foreach (var elem in _Servicio.CargarServicioBombero(Servicio))
+            {
+                Bomberos.ComunFuncional.ServicioReportDTO.ServiciosReport ServicioElem = new ServicioReportDTO.ServiciosReport();
+                Utilidades.ReflectarPropiedadesSimilares(elem, ServicioElem);
+                oParametro.ListaServicios.Add(ServicioElem);
+            }
+
+            var form = new VisorReportes();
+
+            form.MostrarReporte(
+                EnumReportes.Servicio,
+                oParametro
+                );
         }
     }
 }

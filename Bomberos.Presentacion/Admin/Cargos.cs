@@ -8,7 +8,6 @@ using System.Text;
 using System.Windows.Forms;
 using Bomberos.Negocio.Mgr;
 using Bomberos.Comun;
-using Bomberos.Presentacion.Admin;
 
 namespace Bomberos.Presentacion
 {
@@ -34,11 +33,19 @@ namespace Bomberos.Presentacion
                 ICargoMgr _Cargo = new CargoMgr();
                 CargoDTO Cargo = new CargoDTO();
 
+                List<CargoDTO> Lista = new List<CargoDTO>();
+                Lista = _Cargo.ListarCargos();
+
                 Cargo.Nombre = txt_nombre.Text;
-                if (_Cargo.RegistroCargo(Cargo))
+
+                if (!Lista.Exists(p => p.Nombre.Equals(Cargo.Nombre)) && _Cargo.RegistroCargo(Cargo))
                 {
                     dataGridResult.DataSource = _Cargo.ListarCargos().OrderBy(p => p.Nombre).ToList();
                     txt_nombre.Clear();
+                }
+                else
+                {
+                    MessageBox.Show("Error al guardar nuevo cargo");
                 }
             }
             else

@@ -37,12 +37,20 @@ namespace Bomberos.Presentacion
             {
                 IPremioMgr _Premio = new PremioMgr();
                 PremioDTO Premio = new PremioDTO();
+               
+                List<PremioDTO> Lista  = new List<PremioDTO>();
+                Lista = _Premio.ListarPremios();
+
 
                 Premio.Nombre = txt_nombres.Text;
-                if (_Premio.RegistroPremio(Premio))
+                if (!Lista.Exists(p => p.Nombre.Equals(Premio.Nombre)) && _Premio.RegistroPremio(Premio))
                 {
                     txt_nombres.Clear();
                     dataGridResult.DataSource = _Premio.ListarPremios().OrderBy(p => p.Nombre).ToList();
+                }
+                else
+                {
+                    MessageBox.Show("Error al agregar el premio nuevo");
                 }
             }
             else

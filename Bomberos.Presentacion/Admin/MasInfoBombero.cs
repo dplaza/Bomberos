@@ -16,11 +16,13 @@ namespace Bomberos.Presentacion
 {
     public partial class MasInfoBombero : Form
     {
-        public FichaMedicaDTO FichaMedicaBomberoActual { get; set; }
+        private FichaMedicaDTO FichaMedicaBomberoActual { get; set; }
+        private BomberoDTO BomberoActual { get; set; }
 
         public MasInfoBombero()
         {
             FichaMedicaBomberoActual = new FichaMedicaDTO();
+            BomberoActual = new BomberoDTO();
             InitializeComponent();
         }
 
@@ -34,11 +36,14 @@ namespace Bomberos.Presentacion
 
         }
 
+        public void InicializaInfoBombero(BomberoDTO p_Bombero)
+        {
+            this.BomberoActual = p_Bombero;
+            this.Show();
+        }
+
         private void MasInfoBombero_Load(object sender, EventArgs e)
         {
-            IBomberoMgr _Bombero = new BomberoMgr();
-            ContextoDTO.Instancia().BomberoSelected = _Bombero.CargarBombero(ContextoDTO.Instancia().BomberoSelected);
-
             #region Poblamiento de Comboboxs
             ICursoMgr _Curso = new CursoMgr();
             select_cursos.DataSource = _Curso.ListarCursos().OrderBy(p => p.Nombre).ToList();
@@ -80,13 +85,13 @@ namespace Bomberos.Presentacion
             FichaMedicaDTO FichaMedica = new FichaMedicaDTO();
             ServicioBomberoDTO ServicioBombero = new ServicioBomberoDTO();
             ReincorporacionBomberoDTO ReincorporacionBombero = new ReincorporacionBomberoDTO();
-            ReincorporacionBombero.Bombero = ContextoDTO.Instancia().BomberoSelected;
-            PremioBombero.Bombero = ContextoDTO.Instancia().BomberoSelected;
-            CargoBombero.Bombero = ContextoDTO.Instancia().BomberoSelected;
-            CursoBombero.Bombero = ContextoDTO.Instancia().BomberoSelected;
-            ObservacionBombero.Bombero = ContextoDTO.Instancia().BomberoSelected;
-            FichaMedica.Bombero = ContextoDTO.Instancia().BomberoSelected;
-            ServicioBombero.Bombero = ContextoDTO.Instancia().BomberoSelected;
+            ReincorporacionBombero.Bombero = BomberoActual;
+            PremioBombero.Bombero = BomberoActual;
+            CargoBombero.Bombero = BomberoActual;
+            CursoBombero.Bombero = BomberoActual;
+            ObservacionBombero.Bombero = BomberoActual;
+            FichaMedica.Bombero = BomberoActual;
+            ServicioBombero.Bombero = BomberoActual;
 
             dataGridPremios.DataSource = _PremioBombero.CargarPremioBombero(PremioBombero).OrderBy(p => p.FechaCalifica).ToList();
             dataGridCursos.DataSource = _CursoBombero.CargarCursoBombero(CursoBombero).OrderBy(p => p.FechaInicio).ToList();
@@ -141,16 +146,16 @@ namespace Bomberos.Presentacion
             #endregion
 
             #region Pantalla Principal
-            this.Text = "Perfil de " + ContextoDTO.Instancia().BomberoSelected.Nombres + " " + ContextoDTO.Instancia().BomberoSelected.Apellidos;
+            this.Text = "Perfil de " + BomberoActual.Nombres + " " + BomberoActual.Apellidos;
 
-            labelnombre.Text = ContextoDTO.Instancia().BomberoSelected.Nombres + " " + ContextoDTO.Instancia().BomberoSelected.Apellidos;
-            labelRut.Text = ContextoDTO.Instancia().BomberoSelected.Rut;
-            labelTIB.Text = ContextoDTO.Instancia().BomberoSelected.TIB;
-            labelCargo.Text = ContextoDTO.Instancia().BomberoSelected.Cargo.Nombre;
+            labelnombre.Text = BomberoActual.Nombres + " " + BomberoActual.Apellidos;
+            labelRut.Text = BomberoActual.Rut;
+            labelTIB.Text = BomberoActual.TIB;
+            labelCargo.Text = BomberoActual.Cargo.Nombre;
 
             try
             {
-                box_picture.Image = new Bitmap("C:\\Bomberos\\" + ContextoDTO.Instancia().BomberoSelected.Rut + ".jpg");
+                box_picture.Image = new Bitmap("C:\\Bomberos\\" + BomberoActual.Rut + ".jpg");
                 box_ficha_pict.Image = box_picture.Image;
             }
             catch (Exception er)
@@ -159,34 +164,28 @@ namespace Bomberos.Presentacion
             #endregion
 
             #region Ficha Personal
-            if (!ContextoDTO.Instancia().BomberoActual.isAdmin)
-            {
-                btn_imagen.Visible = false;
-                btn_enviar_fichapersonal.Visible = false;
-            }
+            txt_nombres.Text = BomberoActual.Nombres;
+            txt_apellidos.Text = BomberoActual.Apellidos;
+            txt_celular.Text = BomberoActual.Celular;
+            txt_dir_lab.Text = BomberoActual.DireccionLaboral;
+            txt_dir_part.Text = BomberoActual.DireccionParticular;
+            txt_email.Text = BomberoActual.Email;
+            txt_gruposang.Text = BomberoActual.GrupoSanguineo;
+            txt_pass.Text = BomberoActual.Password;
+            txt_profesion.Text = BomberoActual.Profesion;
+            txt_rut.Text = BomberoActual.Rut;
+            date_fecha_nac.Text = BomberoActual.FechaNacimiento.ToString();
+            date_fecha_inscrip.Text = BomberoActual.FechaInscripcion.ToString();
+            select_estadocivil.SelectedItem = BomberoActual.EstadoCivil;
+            select_compania.SelectedValue = BomberoActual.Compañia.Id;
+            select_cargo2.SelectedValue = BomberoActual.Cargo.Id;
+            select_estado.SelectedItem = BomberoActual.Estado;
+            txt_tel_lab.Text = BomberoActual.TelefonoLaboral;
+            txt_tel_part.Text = BomberoActual.TelefonoParticular;
+            txt_tib.Text = BomberoActual.TIB;
+            txt_socio.Text = BomberoActual.NumeroRegistro.ToString();
 
-            txt_nombres.Text = ContextoDTO.Instancia().BomberoSelected.Nombres;
-            txt_apellidos.Text = ContextoDTO.Instancia().BomberoSelected.Apellidos;
-            txt_celular.Text = ContextoDTO.Instancia().BomberoSelected.Celular;
-            txt_dir_lab.Text = ContextoDTO.Instancia().BomberoSelected.DireccionLaboral;
-            txt_dir_part.Text = ContextoDTO.Instancia().BomberoSelected.DireccionParticular;
-            txt_email.Text = ContextoDTO.Instancia().BomberoSelected.Email;
-            txt_gruposang.Text = ContextoDTO.Instancia().BomberoSelected.GrupoSanguineo;
-            txt_pass.Text = ContextoDTO.Instancia().BomberoSelected.Password;
-            txt_profesion.Text = ContextoDTO.Instancia().BomberoSelected.Profesion;
-            txt_rut.Text = ContextoDTO.Instancia().BomberoSelected.Rut;
-            date_fecha_nac.Text = ContextoDTO.Instancia().BomberoSelected.FechaNacimiento.ToString();
-            date_fecha_inscrip.Text = ContextoDTO.Instancia().BomberoSelected.FechaInscripcion.ToString();
-            select_estadocivil.SelectedItem = ContextoDTO.Instancia().BomberoSelected.EstadoCivil;
-            select_compania.SelectedValue = ContextoDTO.Instancia().BomberoSelected.Compañia.Id;
-            select_cargo2.SelectedValue = ContextoDTO.Instancia().BomberoSelected.Cargo.Id;
-            select_estado.SelectedItem = ContextoDTO.Instancia().BomberoSelected.Estado;
-            txt_tel_lab.Text = ContextoDTO.Instancia().BomberoSelected.TelefonoLaboral;
-            txt_tel_part.Text = ContextoDTO.Instancia().BomberoSelected.TelefonoParticular;
-            txt_tib.Text = ContextoDTO.Instancia().BomberoSelected.TIB;
-            txt_socio.Text = ContextoDTO.Instancia().BomberoSelected.NumeroRegistro.ToString();
-
-            if (ContextoDTO.Instancia().BomberoSelected.isAdmin)
+            if (BomberoActual.isAdmin)
                 select_tipocuenta.SelectedItem = "Administrador";
             else
                 select_tipocuenta.SelectedItem = "Usuario";
@@ -210,7 +209,7 @@ namespace Bomberos.Presentacion
             PremioBomberoDTO PremioBombero = new PremioBomberoDTO();
 
             PremioBombero.Premio = (PremioDTO)select_premios.SelectedItem;
-            PremioBombero.Bombero = ContextoDTO.Instancia().BomberoSelected;
+            PremioBombero.Bombero = BomberoActual;
             PremioBombero.FechaCalifica = dateTimePremioCalifica.Value;
             PremioBombero.FechaEntrega = dateTimePremioEntrega.Value;
 
@@ -239,7 +238,7 @@ namespace Bomberos.Presentacion
             CursoBombero.FechaFin = dateTimeCursoTermino.Value;
             CursoBombero.FechaInicio = dateTimeCursoInicio.Value;
             CursoBombero.Curso = (CursoDTO)select_cursos.SelectedItem;
-            CursoBombero.Bombero = ContextoDTO.Instancia().BomberoSelected;
+            CursoBombero.Bombero = BomberoActual;
 
             if (_CursoBombero.RegistroCursoBombero(CursoBombero))
             {
@@ -274,7 +273,7 @@ namespace Bomberos.Presentacion
 
             CargoBombero.FechaDesde = dateTimeCargoDesde.Value;
             CargoBombero.FechaHasta = dateTimeCargoHasta.Value;
-            CargoBombero.Bombero = ContextoDTO.Instancia().BomberoSelected;
+            CargoBombero.Bombero = BomberoActual;
             CargoBombero.Cargo = (CargoDTO)select_cargo.SelectedItem;
 
             if (_CargoBombero.RegistroCargoBombero(CargoBombero))
@@ -298,7 +297,7 @@ namespace Bomberos.Presentacion
             IObservacionBomberoMgr _ObservacionBombero = new ObservacionBomberoMgr();
             ObservacionBomberoDTO ObservacionBombero = new ObservacionBomberoDTO();
 
-            ObservacionBombero.Bombero = ContextoDTO.Instancia().BomberoSelected;
+            ObservacionBombero.Bombero = BomberoActual;
             ObservacionBombero.Fecha = dateTimeObservacionFecha.Value;
             ObservacionBombero.Observacion = txtobservacion.Text;
 
@@ -398,7 +397,7 @@ namespace Bomberos.Presentacion
             IFichaMedicaMgr _FichaMedica = new FichaMedicaMgr();
             FichaMedicaDTO FichaMedica = new FichaMedicaDTO();
 
-            FichaMedica.Bombero = ContextoDTO.Instancia().BomberoSelected;
+            FichaMedica.Bombero = BomberoActual;
             FichaMedica.AntecedentesCronicos = txt_med_antec.Text;
             FichaMedica.MedicamentosNoToma = txt_med_medContra.Text;
             FichaMedica.MedicamentosToma = txt_med_medToma.Text;
@@ -540,7 +539,7 @@ namespace Bomberos.Presentacion
             Lista.Año = ListaAño.Value.Year;
             Lista.Mes = ListaMes.Value.Month;
             Lista.Asistencia = int.Parse(txt_asistencias.Text);
-            Lista.Bombero = ContextoDTO.Instancia().BomberoSelected;
+            Lista.Bombero = BomberoActual;
             Lista.CompañiasCanje = int.Parse(txt_canje.Text);
             Lista.Faltas = int.Parse(txt_faltas.Text);
             Lista.GuardiasNocturnas = int.Parse(txt_guardias.Text);
@@ -566,7 +565,7 @@ namespace Bomberos.Presentacion
             IListaMgr _Lista = new ListaMgr();
             ListaDTO Lista = new ListaDTO();
 
-            Lista.Bombero = ContextoDTO.Instancia().BomberoSelected;
+            Lista.Bombero = BomberoActual;
             Lista.Año = dateTimeListas.Value.Year;
             dataGridListas.DataSource = _Lista.CargarLista(Lista);
 
@@ -657,7 +656,7 @@ namespace Bomberos.Presentacion
             Servicio.Abonos = int.Parse(txt_abonos_serv.Text);
             Servicio.Año = ServicioAño.Value.Year;
             Servicio.AñoServicio = int.Parse(txt_año_serv.Text);
-            Servicio.Bombero = ContextoDTO.Instancia().BomberoSelected;
+            Servicio.Bombero = BomberoActual;
             Servicio.DiaServicio = int.Parse(txt_dia_serv.Text);
             Servicio.Faltas = int.Parse(txt_faltas_serv.Text);
             Servicio.Licencias = int.Parse(txt_licencias_serv.Text);
@@ -707,7 +706,7 @@ namespace Bomberos.Presentacion
             IReincorporacionBomberoMgr _Reincorporacion = new ReincorporacionBomberoMgr();
             ReincorporacionBomberoDTO Reincorporacion = new ReincorporacionBomberoDTO();
 
-            Reincorporacion.Bombero = ContextoDTO.Instancia().BomberoSelected;
+            Reincorporacion.Bombero = BomberoActual;
             Reincorporacion.FechaReincorporacion = dateTimeReincorporacion.Value;
 
             if (_Reincorporacion.RegistroReincorporacionBombero(Reincorporacion))
@@ -726,8 +725,8 @@ namespace Bomberos.Presentacion
             FichaMedicaReportDTO oParametro = new FichaMedicaReportDTO();
             oParametro.p_Bombero = new BomberoReportDTO();
             Utilidades.ReflectarPropiedadesSimilares(FichaMedicaBomberoActual, oParametro);
-            Utilidades.ReflectarPropiedadesSimilares(ContextoDTO.Instancia().BomberoSelected, oParametro.p_Bombero);
-            oParametro.p_Bombero.p_Compañia = ContextoDTO.Instancia().BomberoSelected.Compañia.Nombre;
+            Utilidades.ReflectarPropiedadesSimilares(BomberoActual, oParametro.p_Bombero);
+            oParametro.p_Bombero.p_Compañia = BomberoActual.Compañia.Nombre;
 
             var form = new VisorReportes();
 
@@ -741,11 +740,11 @@ namespace Bomberos.Presentacion
         {
             ICargoBomberoMgr _CargoBombero = new CargoBomberoMgr();
             CargoBomberoDTO CargoBombero = new CargoBomberoDTO();
-            CargoBombero.Bombero = ContextoDTO.Instancia().BomberoSelected;
+            CargoBombero.Bombero = BomberoActual;
 
             CargoReportDTO oParametro = new CargoReportDTO();
-            oParametro.p_Nombres = ContextoDTO.Instancia().BomberoSelected.Nombres;
-            oParametro.p_Apellidos = ContextoDTO.Instancia().BomberoSelected.Apellidos;
+            oParametro.p_Nombres = BomberoActual.Nombres;
+            oParametro.p_Apellidos = BomberoActual.Apellidos;
 
             foreach (var elem in _CargoBombero.CargarCargoBombero(CargoBombero))
             {
@@ -767,12 +766,12 @@ namespace Bomberos.Presentacion
         private void btn_imprimir_asistencia_Click(object sender, EventArgs e)
         {
             ListaReportDTO oParametro = new ListaReportDTO();
-            oParametro.p_Nombres = ContextoDTO.Instancia().BomberoSelected.Nombres;
-            oParametro.p_Apellidos = ContextoDTO.Instancia().BomberoSelected.Apellidos;
+            oParametro.p_Nombres = BomberoActual.Nombres;
+            oParametro.p_Apellidos = BomberoActual.Apellidos;
 
             IListaMgr _Lista = new ListaMgr();
             ListaDTO Lista = new ListaDTO();
-            Lista.Bombero = ContextoDTO.Instancia().BomberoSelected;
+            Lista.Bombero = BomberoActual;
             Lista.Año = dateTimeListas.Value.Year;
 
             int sumatotalLlam = 0;
@@ -830,12 +829,12 @@ namespace Bomberos.Presentacion
         private void btn_imprimir_cursos_Click(object sender, EventArgs e)
         {
             CursoReportDTO oParametro = new CursoReportDTO();
-            oParametro.p_Nombres = ContextoDTO.Instancia().BomberoSelected.Nombres;
-            oParametro.p_Apellidos = ContextoDTO.Instancia().BomberoSelected.Apellidos;
+            oParametro.p_Nombres = BomberoActual.Nombres;
+            oParametro.p_Apellidos = BomberoActual.Apellidos;
 
             ICursoBomberoMgr _Curso = new CursoBomberoMgr();
             CursoBomberoDTO Curso = new CursoBomberoDTO();
-            Curso.Bombero = ContextoDTO.Instancia().BomberoSelected;
+            Curso.Bombero = BomberoActual;
 
             foreach (var elem in _Curso.CargarCursoBombero(Curso))
             {
@@ -857,12 +856,12 @@ namespace Bomberos.Presentacion
         private void btn_imprimir_premios_Click(object sender, EventArgs e)
         {
             PremioReportDTO oParametro = new PremioReportDTO();
-            oParametro.p_Nombres = ContextoDTO.Instancia().BomberoSelected.Nombres;
-            oParametro.p_Apellidos = ContextoDTO.Instancia().BomberoSelected.Apellidos;
+            oParametro.p_Nombres = BomberoActual.Nombres;
+            oParametro.p_Apellidos = BomberoActual.Apellidos;
 
             IPremioBomberoMgr _Premio = new PremioBomberoMgr();
             PremioBomberoDTO Premio = new PremioBomberoDTO();
-            Premio.Bombero = ContextoDTO.Instancia().BomberoSelected;
+            Premio.Bombero = BomberoActual;
 
             foreach (var elem in _Premio.CargarPremioBombero(Premio))
             {
@@ -883,12 +882,12 @@ namespace Bomberos.Presentacion
         private void btn_imprimir_observaciones_Click(object sender, EventArgs e)
         {
             ObservacionReportDTO oParametro = new ObservacionReportDTO();
-            oParametro.p_Nombres = ContextoDTO.Instancia().BomberoSelected.Nombres;
-            oParametro.p_Apellidos = ContextoDTO.Instancia().BomberoSelected.Apellidos;
+            oParametro.p_Nombres = BomberoActual.Nombres;
+            oParametro.p_Apellidos = BomberoActual.Apellidos;
 
             IObservacionBomberoMgr _Obs = new ObservacionBomberoMgr();
             ObservacionBomberoDTO Obs = new ObservacionBomberoDTO();
-            Obs.Bombero = ContextoDTO.Instancia().BomberoSelected;
+            Obs.Bombero = BomberoActual;
 
             foreach (var elem in _Obs.CargarObservacionesBombero(Obs))
             {
@@ -976,13 +975,13 @@ namespace Bomberos.Presentacion
             IReincorporacionBomberoMgr _Reincorporacion = new ReincorporacionBomberoMgr();
             ReincorporacionBomberoDTO ReincorporacionBombero = new ReincorporacionBomberoDTO();
             List<ReincorporacionBomberoDTO> ListaR = new List<ReincorporacionBomberoDTO>();
-            ReincorporacionBombero.Bombero = ContextoDTO.Instancia().BomberoSelected;
+            ReincorporacionBombero.Bombero = BomberoActual;
 
-            Utilidades.ReflectarPropiedadesSimilares(ContextoDTO.Instancia().BomberoSelected, oParametro);
-            oParametro.p_Compañia = ContextoDTO.Instancia().BomberoSelected.Compañia.Nombre;
-            oParametro.p_Cargo = ContextoDTO.Instancia().BomberoSelected.Cargo.Nombre;
-            oParametro.p_Estado = ContextoDTO.Instancia().BomberoSelected.Estado;
-            oParametro.p_EstadoCivil = ContextoDTO.Instancia().BomberoSelected.EstadoCivil;
+            Utilidades.ReflectarPropiedadesSimilares(BomberoActual, oParametro);
+            oParametro.p_Compañia = BomberoActual.Compañia.Nombre;
+            oParametro.p_Cargo = BomberoActual.Cargo.Nombre;
+            oParametro.p_Estado = BomberoActual.Estado;
+            oParametro.p_EstadoCivil = BomberoActual.EstadoCivil;
 
             foreach (var elem in _Reincorporacion.CargarReincorporacionBombero(ReincorporacionBombero))
             {
@@ -1007,6 +1006,31 @@ namespace Bomberos.Presentacion
             {
                 box_picture.Image = new Bitmap(file.OpenFile());
             }
+        }
+
+        private void btn_imprimir_servicio_Click(object sender, EventArgs e)
+        {
+            ServicioReportDTO oParametro = new ServicioReportDTO();
+            oParametro.p_Nombres = BomberoActual.Nombres;
+            oParametro.p_Apellidos = BomberoActual.Apellidos;
+
+            IServicioBomberoMgr _Servicio = new ServicioBomberoMgr();
+            ServicioBomberoDTO Servicio = new ServicioBomberoDTO();
+            Servicio.Bombero = BomberoActual;
+
+            foreach (var elem in _Servicio.CargarServicioBombero(Servicio))
+            {
+                Bomberos.ComunFuncional.ServicioReportDTO.ServiciosReport ServicioElem = new ServicioReportDTO.ServiciosReport();
+                Utilidades.ReflectarPropiedadesSimilares(elem, ServicioElem);
+                oParametro.ListaServicios.Add(ServicioElem);
+            }
+
+            var form = new VisorReportes();
+
+            form.MostrarReporte(
+                EnumReportes.Servicio,
+                oParametro
+                );
         }
     }
 }

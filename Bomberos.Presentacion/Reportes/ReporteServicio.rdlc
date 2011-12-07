@@ -1,5 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2005/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <DataSources>
+    <DataSource Name="DummyDataSource">
+      <rd:DataSourceID>6ad6965b-6e28-4647-9061-a4dff81cb456</rd:DataSourceID>
+      <ConnectionProperties>
+        <DataProvider>SQL</DataProvider>
+        <ConnectString />
+      </ConnectionProperties>
+    </DataSource>
+  </DataSources>
   <InteractiveHeight>29.7cm</InteractiveHeight>
   <ReportParameters>
     <ReportParameter Name="p_Nombres">
@@ -12,6 +21,11 @@
       <AllowBlank>true</AllowBlank>
       <Prompt>Report_Parameter_1</Prompt>
     </ReportParameter>
+    <ReportParameter Name="ListaServicios">
+      <DataType>String</DataType>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>Report_Parameter_2</Prompt>
+    </ReportParameter>
   </ReportParameters>
   <rd:DrawGrid>true</rd:DrawGrid>
   <InteractiveWidth>21cm</InteractiveWidth>
@@ -22,13 +36,72 @@
   <BottomMargin>2.5cm</BottomMargin>
   <rd:ReportID>6ae63a38-f966-47ee-bfb6-4e2cf0fffe76</rd:ReportID>
   <PageWidth>21cm</PageWidth>
+  <DataSets>
+    <DataSet Name="ListaServicio">
+      <Fields>
+        <Field Name="p_Año">
+          <DataField>p_Año</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="p_AñoServicio">
+          <DataField>p_AñoServicio</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="p_MesServicio">
+          <DataField>p_MesServicio</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="p_DiaServicio">
+          <DataField>p_DiaServicio</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="p_Llamadas">
+          <DataField>p_Llamadas</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="p_Faltas">
+          <DataField>p_Faltas</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="p_Suspensiones">
+          <DataField>p_Suspensiones</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="p_Licencias">
+          <DataField>p_Licencias</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="p_Asistencia">
+          <DataField>p_Asistencia</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="p_Abonos">
+          <DataField>p_Abonos</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="p_TotalAsistencia">
+          <DataField>p_TotalAsistencia</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>DummyDataSource</DataSourceName>
+        <CommandText />
+        <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
+      </Query>
+      <rd:DataSetInfo>
+        <rd:DataSetName>dsReportes</rd:DataSetName>
+        <rd:TableName>ListaServicio</rd:TableName>
+      </rd:DataSetInfo>
+    </DataSet>
+  </DataSets>
   <Width>26.75004cm</Width>
   <Body>
     <ColumnSpacing>1cm</ColumnSpacing>
     <ReportItems>
       <Table Name="table1">
         <ZIndex>3</ZIndex>
-        <DataSetName>ListaAsistencia</DataSetName>
+        <DataSetName>ListaServicio</DataSetName>
         <Top>2.75cm</Top>
         <Width>24.49508cm</Width>
         <Details>

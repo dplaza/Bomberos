@@ -37,6 +37,8 @@ namespace Bomberos.Presentacion {
         
         private ListaReincorporacionesDataTable tableListaReincorporaciones;
         
+        private ListaServicioDataTable tableListaServicio;
+        
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -80,6 +82,9 @@ namespace Bomberos.Presentacion {
                 }
                 if ((ds.Tables["ListaReincorporaciones"] != null)) {
                     base.Tables.Add(new ListaReincorporacionesDataTable(ds.Tables["ListaReincorporaciones"]));
+                }
+                if ((ds.Tables["ListaServicio"] != null)) {
+                    base.Tables.Add(new ListaServicioDataTable(ds.Tables["ListaServicio"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -150,6 +155,15 @@ namespace Bomberos.Presentacion {
         public ListaReincorporacionesDataTable ListaReincorporaciones {
             get {
                 return this.tableListaReincorporaciones;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public ListaServicioDataTable ListaServicio {
+            get {
+                return this.tableListaServicio;
             }
         }
         
@@ -230,6 +244,9 @@ namespace Bomberos.Presentacion {
                 if ((ds.Tables["ListaReincorporaciones"] != null)) {
                     base.Tables.Add(new ListaReincorporacionesDataTable(ds.Tables["ListaReincorporaciones"]));
                 }
+                if ((ds.Tables["ListaServicio"] != null)) {
+                    base.Tables.Add(new ListaServicioDataTable(ds.Tables["ListaServicio"]));
+                }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
                 this.Namespace = ds.Namespace;
@@ -296,6 +313,12 @@ namespace Bomberos.Presentacion {
                     this.tableListaReincorporaciones.InitVars();
                 }
             }
+            this.tableListaServicio = ((ListaServicioDataTable)(base.Tables["ListaServicio"]));
+            if ((initTable == true)) {
+                if ((this.tableListaServicio != null)) {
+                    this.tableListaServicio.InitVars();
+                }
+            }
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -317,6 +340,8 @@ namespace Bomberos.Presentacion {
             base.Tables.Add(this.tableListaObservaciones);
             this.tableListaReincorporaciones = new ListaReincorporacionesDataTable();
             base.Tables.Add(this.tableListaReincorporaciones);
+            this.tableListaServicio = new ListaServicioDataTable();
+            base.Tables.Add(this.tableListaServicio);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -346,6 +371,11 @@ namespace Bomberos.Presentacion {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         private bool ShouldSerializeListaReincorporaciones() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        private bool ShouldSerializeListaServicio() {
             return false;
         }
         
@@ -413,6 +443,8 @@ namespace Bomberos.Presentacion {
         public delegate void ListaObservacionesRowChangeEventHandler(object sender, ListaObservacionesRowChangeEvent e);
         
         public delegate void ListaReincorporacionesRowChangeEventHandler(object sender, ListaReincorporacionesRowChangeEvent e);
+        
+        public delegate void ListaServicioRowChangeEventHandler(object sender, ListaServicioRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
@@ -2013,6 +2045,359 @@ namespace Bomberos.Presentacion {
         }
         
         /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "2.0.0.0")]
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class ListaServicioDataTable : global::System.Data.TypedTableBase<ListaServicioRow> {
+            
+            private global::System.Data.DataColumn columnp_Año;
+            
+            private global::System.Data.DataColumn columnp_AñoServicio;
+            
+            private global::System.Data.DataColumn columnp_MesServicio;
+            
+            private global::System.Data.DataColumn columnp_DiaServicio;
+            
+            private global::System.Data.DataColumn columnp_Llamadas;
+            
+            private global::System.Data.DataColumn columnp_Faltas;
+            
+            private global::System.Data.DataColumn columnp_Suspensiones;
+            
+            private global::System.Data.DataColumn columnp_Licencias;
+            
+            private global::System.Data.DataColumn columnp_Asistencia;
+            
+            private global::System.Data.DataColumn columnp_Abonos;
+            
+            private global::System.Data.DataColumn columnp_TotalAsistencia;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public ListaServicioDataTable() {
+                this.TableName = "ListaServicio";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            internal ListaServicioDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            protected ListaServicioDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public global::System.Data.DataColumn p_AñoColumn {
+                get {
+                    return this.columnp_Año;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public global::System.Data.DataColumn p_AñoServicioColumn {
+                get {
+                    return this.columnp_AñoServicio;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public global::System.Data.DataColumn p_MesServicioColumn {
+                get {
+                    return this.columnp_MesServicio;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public global::System.Data.DataColumn p_DiaServicioColumn {
+                get {
+                    return this.columnp_DiaServicio;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public global::System.Data.DataColumn p_LlamadasColumn {
+                get {
+                    return this.columnp_Llamadas;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public global::System.Data.DataColumn p_FaltasColumn {
+                get {
+                    return this.columnp_Faltas;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public global::System.Data.DataColumn p_SuspensionesColumn {
+                get {
+                    return this.columnp_Suspensiones;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public global::System.Data.DataColumn p_LicenciasColumn {
+                get {
+                    return this.columnp_Licencias;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public global::System.Data.DataColumn p_AsistenciaColumn {
+                get {
+                    return this.columnp_Asistencia;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public global::System.Data.DataColumn p_AbonosColumn {
+                get {
+                    return this.columnp_Abonos;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public global::System.Data.DataColumn p_TotalAsistenciaColumn {
+                get {
+                    return this.columnp_TotalAsistencia;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public ListaServicioRow this[int index] {
+                get {
+                    return ((ListaServicioRow)(this.Rows[index]));
+                }
+            }
+            
+            public event ListaServicioRowChangeEventHandler ListaServicioRowChanging;
+            
+            public event ListaServicioRowChangeEventHandler ListaServicioRowChanged;
+            
+            public event ListaServicioRowChangeEventHandler ListaServicioRowDeleting;
+            
+            public event ListaServicioRowChangeEventHandler ListaServicioRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public void AddListaServicioRow(ListaServicioRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public ListaServicioRow AddListaServicioRow(string p_Año, string p_AñoServicio, string p_MesServicio, string p_DiaServicio, string p_Llamadas, string p_Faltas, string p_Suspensiones, string p_Licencias, string p_Asistencia, string p_Abonos, string p_TotalAsistencia) {
+                ListaServicioRow rowListaServicioRow = ((ListaServicioRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        p_Año,
+                        p_AñoServicio,
+                        p_MesServicio,
+                        p_DiaServicio,
+                        p_Llamadas,
+                        p_Faltas,
+                        p_Suspensiones,
+                        p_Licencias,
+                        p_Asistencia,
+                        p_Abonos,
+                        p_TotalAsistencia};
+                rowListaServicioRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowListaServicioRow);
+                return rowListaServicioRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public override global::System.Data.DataTable Clone() {
+                ListaServicioDataTable cln = ((ListaServicioDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new ListaServicioDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            internal void InitVars() {
+                this.columnp_Año = base.Columns["p_Año"];
+                this.columnp_AñoServicio = base.Columns["p_AñoServicio"];
+                this.columnp_MesServicio = base.Columns["p_MesServicio"];
+                this.columnp_DiaServicio = base.Columns["p_DiaServicio"];
+                this.columnp_Llamadas = base.Columns["p_Llamadas"];
+                this.columnp_Faltas = base.Columns["p_Faltas"];
+                this.columnp_Suspensiones = base.Columns["p_Suspensiones"];
+                this.columnp_Licencias = base.Columns["p_Licencias"];
+                this.columnp_Asistencia = base.Columns["p_Asistencia"];
+                this.columnp_Abonos = base.Columns["p_Abonos"];
+                this.columnp_TotalAsistencia = base.Columns["p_TotalAsistencia"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            private void InitClass() {
+                this.columnp_Año = new global::System.Data.DataColumn("p_Año", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnp_Año);
+                this.columnp_AñoServicio = new global::System.Data.DataColumn("p_AñoServicio", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnp_AñoServicio);
+                this.columnp_MesServicio = new global::System.Data.DataColumn("p_MesServicio", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnp_MesServicio);
+                this.columnp_DiaServicio = new global::System.Data.DataColumn("p_DiaServicio", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnp_DiaServicio);
+                this.columnp_Llamadas = new global::System.Data.DataColumn("p_Llamadas", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnp_Llamadas);
+                this.columnp_Faltas = new global::System.Data.DataColumn("p_Faltas", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnp_Faltas);
+                this.columnp_Suspensiones = new global::System.Data.DataColumn("p_Suspensiones", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnp_Suspensiones);
+                this.columnp_Licencias = new global::System.Data.DataColumn("p_Licencias", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnp_Licencias);
+                this.columnp_Asistencia = new global::System.Data.DataColumn("p_Asistencia", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnp_Asistencia);
+                this.columnp_Abonos = new global::System.Data.DataColumn("p_Abonos", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnp_Abonos);
+                this.columnp_TotalAsistencia = new global::System.Data.DataColumn("p_TotalAsistencia", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnp_TotalAsistencia);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public ListaServicioRow NewListaServicioRow() {
+                return ((ListaServicioRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new ListaServicioRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            protected override global::System.Type GetRowType() {
+                return typeof(ListaServicioRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.ListaServicioRowChanged != null)) {
+                    this.ListaServicioRowChanged(this, new ListaServicioRowChangeEvent(((ListaServicioRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.ListaServicioRowChanging != null)) {
+                    this.ListaServicioRowChanging(this, new ListaServicioRowChangeEvent(((ListaServicioRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.ListaServicioRowDeleted != null)) {
+                    this.ListaServicioRowDeleted(this, new ListaServicioRowChangeEvent(((ListaServicioRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.ListaServicioRowDeleting != null)) {
+                    this.ListaServicioRowDeleting(this, new ListaServicioRowChangeEvent(((ListaServicioRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public void RemoveListaServicioRow(ListaServicioRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                dsReportes ds = new dsReportes();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "ListaServicioDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "2.0.0.0")]
@@ -2759,6 +3144,297 @@ namespace Bomberos.Presentacion {
         }
         
         /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "2.0.0.0")]
+        public partial class ListaServicioRow : global::System.Data.DataRow {
+            
+            private ListaServicioDataTable tableListaServicio;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            internal ListaServicioRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tableListaServicio = ((ListaServicioDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public string p_Año {
+                get {
+                    try {
+                        return ((string)(this[this.tableListaServicio.p_AñoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'p_Año\' de la tabla \'ListaServicio\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableListaServicio.p_AñoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public string p_AñoServicio {
+                get {
+                    try {
+                        return ((string)(this[this.tableListaServicio.p_AñoServicioColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'p_AñoServicio\' de la tabla \'ListaServicio\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableListaServicio.p_AñoServicioColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public string p_MesServicio {
+                get {
+                    try {
+                        return ((string)(this[this.tableListaServicio.p_MesServicioColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'p_MesServicio\' de la tabla \'ListaServicio\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableListaServicio.p_MesServicioColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public string p_DiaServicio {
+                get {
+                    try {
+                        return ((string)(this[this.tableListaServicio.p_DiaServicioColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'p_DiaServicio\' de la tabla \'ListaServicio\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableListaServicio.p_DiaServicioColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public string p_Llamadas {
+                get {
+                    try {
+                        return ((string)(this[this.tableListaServicio.p_LlamadasColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'p_Llamadas\' de la tabla \'ListaServicio\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableListaServicio.p_LlamadasColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public string p_Faltas {
+                get {
+                    try {
+                        return ((string)(this[this.tableListaServicio.p_FaltasColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'p_Faltas\' de la tabla \'ListaServicio\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableListaServicio.p_FaltasColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public string p_Suspensiones {
+                get {
+                    try {
+                        return ((string)(this[this.tableListaServicio.p_SuspensionesColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'p_Suspensiones\' de la tabla \'ListaServicio\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableListaServicio.p_SuspensionesColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public string p_Licencias {
+                get {
+                    try {
+                        return ((string)(this[this.tableListaServicio.p_LicenciasColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'p_Licencias\' de la tabla \'ListaServicio\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableListaServicio.p_LicenciasColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public string p_Asistencia {
+                get {
+                    try {
+                        return ((string)(this[this.tableListaServicio.p_AsistenciaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'p_Asistencia\' de la tabla \'ListaServicio\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableListaServicio.p_AsistenciaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public string p_Abonos {
+                get {
+                    try {
+                        return ((string)(this[this.tableListaServicio.p_AbonosColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'p_Abonos\' de la tabla \'ListaServicio\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableListaServicio.p_AbonosColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public string p_TotalAsistencia {
+                get {
+                    try {
+                        return ((string)(this[this.tableListaServicio.p_TotalAsistenciaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'p_TotalAsistencia\' de la tabla \'ListaServicio\' es DBNull." +
+                                "", e);
+                    }
+                }
+                set {
+                    this[this.tableListaServicio.p_TotalAsistenciaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public bool Isp_AñoNull() {
+                return this.IsNull(this.tableListaServicio.p_AñoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public void Setp_AñoNull() {
+                this[this.tableListaServicio.p_AñoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public bool Isp_AñoServicioNull() {
+                return this.IsNull(this.tableListaServicio.p_AñoServicioColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public void Setp_AñoServicioNull() {
+                this[this.tableListaServicio.p_AñoServicioColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public bool Isp_MesServicioNull() {
+                return this.IsNull(this.tableListaServicio.p_MesServicioColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public void Setp_MesServicioNull() {
+                this[this.tableListaServicio.p_MesServicioColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public bool Isp_DiaServicioNull() {
+                return this.IsNull(this.tableListaServicio.p_DiaServicioColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public void Setp_DiaServicioNull() {
+                this[this.tableListaServicio.p_DiaServicioColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public bool Isp_LlamadasNull() {
+                return this.IsNull(this.tableListaServicio.p_LlamadasColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public void Setp_LlamadasNull() {
+                this[this.tableListaServicio.p_LlamadasColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public bool Isp_FaltasNull() {
+                return this.IsNull(this.tableListaServicio.p_FaltasColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public void Setp_FaltasNull() {
+                this[this.tableListaServicio.p_FaltasColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public bool Isp_SuspensionesNull() {
+                return this.IsNull(this.tableListaServicio.p_SuspensionesColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public void Setp_SuspensionesNull() {
+                this[this.tableListaServicio.p_SuspensionesColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public bool Isp_LicenciasNull() {
+                return this.IsNull(this.tableListaServicio.p_LicenciasColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public void Setp_LicenciasNull() {
+                this[this.tableListaServicio.p_LicenciasColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public bool Isp_AsistenciaNull() {
+                return this.IsNull(this.tableListaServicio.p_AsistenciaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public void Setp_AsistenciaNull() {
+                this[this.tableListaServicio.p_AsistenciaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public bool Isp_AbonosNull() {
+                return this.IsNull(this.tableListaServicio.p_AbonosColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public void Setp_AbonosNull() {
+                this[this.tableListaServicio.p_AbonosColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public bool Isp_TotalAsistenciaNull() {
+                return this.IsNull(this.tableListaServicio.p_TotalAsistenciaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public void Setp_TotalAsistenciaNull() {
+                this[this.tableListaServicio.p_TotalAsistenciaColumn] = global::System.Convert.DBNull;
+            }
+        }
+        
+        /// <summary>
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "2.0.0.0")]
@@ -2931,6 +3607,37 @@ namespace Bomberos.Presentacion {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             public ListaReincorporacionesRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "2.0.0.0")]
+        public class ListaServicioRowChangeEvent : global::System.EventArgs {
+            
+            private ListaServicioRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public ListaServicioRowChangeEvent(ListaServicioRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public ListaServicioRow Row {
                 get {
                     return this.eventRow;
                 }

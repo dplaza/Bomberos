@@ -32,6 +32,8 @@ namespace Bomberos.Presentacion
         {
             ICompañiaMgr _Compañia = new CompañiaMgr();
             dataGridResult.DataSource = _Compañia.ListarCompañias().OrderBy(p => p.Nombre).ToList();
+            dataGridResult.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dataGridResult.MultiSelect = false;
         }
 
         private void btn_cancelar_Click(object sender, EventArgs e)
@@ -46,11 +48,18 @@ namespace Bomberos.Presentacion
                 ICompañiaMgr _Compañia = new CompañiaMgr();
                 CompañiaDTO Compañia = new CompañiaDTO();
 
+                List<CompañiaDTO> Lista = new List<CompañiaDTO>();
+                Lista = _Compañia.ListarCompañias();
+
                 Compañia.Nombre = txt_nombres.Text;
-                if (_Compañia.RegistroCompañia(Compañia))
+                if (!Lista.Exists(p => p.Nombre.Equals(Compañia.Nombre)) && _Compañia.RegistroCompañia(Compañia))
                 {
                     dataGridResult.DataSource = _Compañia.ListarCompañias().OrderBy(p => p.Nombre).ToList();
                     txt_nombres.Clear();
+                }
+                else
+                {
+                    MessageBox.Show("Error al agregar la nueva compañia");
                 }
             }
             else

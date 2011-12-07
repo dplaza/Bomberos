@@ -229,13 +229,13 @@
         <ZIndex>54</ZIndex>
         <CanGrow>true</CanGrow>
         <Left>1cm</Left>
-        <Height>1cm</Height>
+        <Height>1.25cm</Height>
         <Value>=Parameters!p_MedicamentosNoToma.Value</Value>
       </Textbox>
       <Textbox Name="textbox54">
         <rd:DefaultName>textbox54</rd:DefaultName>
         <Top>21.25cm</Top>
-        <Width>7.5cm</Width>
+        <Width>8.25cm</Width>
         <Style>
           <FontWeight>700</FontWeight>
           <PaddingLeft>2pt</PaddingLeft>
@@ -284,7 +284,7 @@
       <Textbox Name="textbox51">
         <rd:DefaultName>textbox51</rd:DefaultName>
         <Top>19.25cm</Top>
-        <Width>7.5cm</Width>
+        <Width>8.25cm</Width>
         <Style>
           <FontWeight>700</FontWeight>
           <PaddingLeft>2pt</PaddingLeft>
@@ -511,7 +511,7 @@
       <Textbox Name="textbox36">
         <rd:DefaultName>textbox36</rd:DefaultName>
         <Top>13.25cm</Top>
-        <Width>4.75cm</Width>
+        <Width>6cm</Width>
         <Style>
           <FontWeight>700</FontWeight>
           <PaddingLeft>2pt</PaddingLeft>
@@ -1118,7 +1118,7 @@
         <Value>FICHA MÉDICA PERSONAL</Value>
       </Textbox>
     </ReportItems>
-    <Height>23.25cm</Height>
+    <Height>23.5cm</Height>
   </Body>
   <Language>es-ES</Language>
   <TopMargin>2.5cm</TopMargin>

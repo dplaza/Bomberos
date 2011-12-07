@@ -72,12 +72,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Admin\FichaBombero.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Admin\FichaBombero.Designer.cs">
-      <DependentUpon>FichaBombero.cs</DependentUpon>
-    </Compile>
     <Compile Include="Admin\Cargos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -149,10 +143,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Admin\FichaBombero.resx">
-      <DependentUpon>FichaBombero.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
     <EmbeddedResource Include="BuscarBombero.resx">
       <DependentUpon>BuscarBombero.cs</DependentUpon>
       <SubType>Designer</SubType>

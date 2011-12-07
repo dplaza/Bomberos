@@ -22,6 +22,8 @@ namespace Bomberos.Presentacion
         {
             ICursoMgr _Curso = new CursoMgr();
             dataGridResult.DataSource = _Curso.ListarCursos().OrderBy(p => p.Nombre).ToList();
+            dataGridResult.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dataGridResult.MultiSelect = false;
         }
 
         private void btn_cancelar_Click(object sender, EventArgs e)
@@ -36,11 +38,18 @@ namespace Bomberos.Presentacion
                 ICursoMgr _Curso = new CursoMgr();
                 CursoDTO Curso = new CursoDTO();
 
+                List<CursoDTO> Lista = new List<CursoDTO>();
+                Lista = _Curso.ListarCursos();
+
                 Curso.Nombre = txt_nombres.Text;
-                if (_Curso.RegistroCurso(Curso))
+                if (!Lista.Exists(p => p.Nombre.Equals(Curso.Nombre)) && _Curso.RegistroCurso(Curso))
                 {
                     txt_nombres.Clear();
                     dataGridResult.DataSource = _Curso.ListarCursos().OrderBy(p => p.Nombre).ToList();
+                }
+                else
+                {
+                    MessageBox.Show("Error al guardar el nuevo curso");
                 }
             }
             else
@@ -54,8 +63,7 @@ namespace Bomberos.Presentacion
             ICursoMgr _Curso = new CursoMgr();
             CursoDTO Curso = new CursoDTO();
 
-            Curso.Nombre = dataGridResult.SelectedRows[0].Cells["NombreCurso"].Value.ToString();
-            Curso.Id = int.Parse(dataGridResult.SelectedRows[0].Cells["idCurso"].Value.ToString());
+            Curso = (CursoDTO)dataGridResult.SelectedRows[0].DataBoundItem;
 
             if (!_Curso.BorrarCurso(Curso))
             {
