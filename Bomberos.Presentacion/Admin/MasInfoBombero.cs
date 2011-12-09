@@ -299,21 +299,28 @@ namespace Bomberos.Presentacion
 
         private void btn_observacion_Click(object sender, EventArgs e)
         {
-            IObservacionBomberoMgr _ObservacionBombero = new ObservacionBomberoMgr();
-            ObservacionBomberoDTO ObservacionBombero = new ObservacionBomberoDTO();
-
-            ObservacionBombero.Bombero = BomberoActual;
-            ObservacionBombero.Fecha = dateTimeObservacionFecha.Value;
-            ObservacionBombero.Observacion = txtobservacion.Text;
-
-            if (_ObservacionBombero.RegistroObservacionBombero(ObservacionBombero))
+            if (txtobservacion.Text != "")
             {
-                MessageBox.Show("Observacion agregada");
-                dataGridObservacion.DataSource = _ObservacionBombero.CargarObservacionesBombero(ObservacionBombero).OrderBy(p => p.Fecha).ToList();
+                IObservacionBomberoMgr _ObservacionBombero = new ObservacionBomberoMgr();
+                ObservacionBomberoDTO ObservacionBombero = new ObservacionBomberoDTO();
+
+                ObservacionBombero.Bombero = BomberoActual;
+                ObservacionBombero.Fecha = dateTimeObservacionFecha.Value;
+                ObservacionBombero.Observacion = txtobservacion.Text;
+
+                if (_ObservacionBombero.RegistroObservacionBombero(ObservacionBombero))
+                {
+                    MessageBox.Show("Observacion agregada");
+                    dataGridObservacion.DataSource = _ObservacionBombero.CargarObservacionesBombero(ObservacionBombero).OrderBy(p => p.Fecha).ToList();
+                }
+                else
+                {
+                    MessageBox.Show("Error al agregar observacion de bombero");
+                }
             }
             else
             {
-                MessageBox.Show("Error al agregar observacion de bombero");
+                MessageBox.Show("Falta rellenar datos");
             }
         }
 
@@ -541,19 +548,25 @@ namespace Bomberos.Presentacion
             IListaMgr _Lista = new ListaMgr();
             ListaDTO Lista = new ListaDTO();
 
-            Lista.Año = ListaAño.Value.Year;
-            Lista.Mes = ListaMes.Value.Month;
-            Lista.Asistencia = int.Parse(txt_asistencias.Text);
-            Lista.Bombero = BomberoActual;
-            Lista.CompañiasCanje = int.Parse(txt_canje.Text);
-            Lista.Faltas = int.Parse(txt_faltas.Text);
-            Lista.GuardiasNocturnas = int.Parse(txt_guardias.Text);
-            Lista.Licencias = int.Parse(txt_licencias.Text);
-            Lista.LlamadasComandancia = int.Parse(txt_llamadas.Text);
-            Lista.OtrasCompañias = int.Parse(txt_otras_comp.Text);
-            Lista.OtrosCuerpos = int.Parse(txt_otros_cuerp.Text);
-            Lista.Suspensiones = int.Parse(txt_suspens.Text);
-
+            try
+            {
+                Lista.Año = ListaAño.Value.Year;
+                Lista.Mes = ListaMes.Value.Month;
+                Lista.Asistencia = int.Parse(txt_asistencias.Text);
+                Lista.Bombero = BomberoActual;
+                Lista.CompañiasCanje = int.Parse(txt_canje.Text);
+                Lista.Faltas = int.Parse(txt_faltas.Text);
+                Lista.GuardiasNocturnas = int.Parse(txt_guardias.Text);
+                Lista.Licencias = int.Parse(txt_licencias.Text);
+                Lista.LlamadasComandancia = int.Parse(txt_llamadas.Text);
+                Lista.OtrasCompañias = int.Parse(txt_otras_comp.Text);
+                Lista.OtrosCuerpos = int.Parse(txt_otros_cuerp.Text);
+                Lista.Suspensiones = int.Parse(txt_suspens.Text);
+            }
+            catch (Exception er)
+            {
+                MessageBox.Show("Datos ingresados no válidos");
+            }
             if (_Lista.RegistroLista(Lista))
             {
                 MessageBox.Show("Asistencia agregada con exito");
@@ -658,17 +671,24 @@ namespace Bomberos.Presentacion
             IServicioBomberoMgr _Servicio = new ServicioBomberoMgr();
             ServicioBomberoDTO Servicio = new ServicioBomberoDTO();
 
-            Servicio.Abonos = int.Parse(txt_abonos_serv.Text);
-            Servicio.Año = ServicioAño.Value.Year;
-            Servicio.AñoServicio = int.Parse(txt_año_serv.Text);
-            Servicio.Bombero = BomberoActual;
-            Servicio.DiaServicio = int.Parse(txt_dia_serv.Text);
-            Servicio.Faltas = int.Parse(txt_faltas_serv.Text);
-            Servicio.Licencias = int.Parse(txt_licencias_serv.Text);
-            Servicio.Llamadas = int.Parse(txt_llamadas_serv.Text);
-            Servicio.MesServicio = int.Parse(txt_mes_serv.Text);
-            Servicio.Suspensiones = int.Parse(txt_suspensiones_serv.Text);
-            Servicio.Asistencia = int.Parse(txt_asistencias_serv.Text);
+            try
+            {
+                Servicio.Abonos = int.Parse(txt_abonos_serv.Text);
+                Servicio.Año = ServicioAño.Value.Year;
+                Servicio.AñoServicio = int.Parse(txt_año_serv.Text);
+                Servicio.Bombero = BomberoActual;
+                Servicio.DiaServicio = int.Parse(txt_dia_serv.Text);
+                Servicio.Faltas = int.Parse(txt_faltas_serv.Text);
+                Servicio.Licencias = int.Parse(txt_licencias_serv.Text);
+                Servicio.Llamadas = int.Parse(txt_llamadas_serv.Text);
+                Servicio.MesServicio = int.Parse(txt_mes_serv.Text);
+                Servicio.Suspensiones = int.Parse(txt_suspensiones_serv.Text);
+                Servicio.Asistencia = int.Parse(txt_asistencias_serv.Text);
+            }
+            catch (Exception er)
+            {
+                MessageBox.Show("Datos ingresados no válidos");
+            }
 
             if (_Servicio.RegistroServicioBombero(Servicio))
             {
@@ -916,54 +936,63 @@ namespace Bomberos.Presentacion
 
         private void btn_enviar_fichapersonal_Click(object sender, EventArgs e)
         {
-            IBomberoMgr _Bombero = new BomberoMgr();
-            BomberoDTO Bombero = new BomberoDTO();
-
-            Bombero.Nombres = txt_nombres.Text;
-            Bombero.Apellidos = txt_apellidos.Text;
-            Bombero.Celular = txt_celular.Text;
-            Bombero.DireccionLaboral = txt_dir_lab.Text;
-            Bombero.DireccionParticular = txt_dir_part.Text;
-            Bombero.EstadoCivil = select_estadocivil.Text;
-            Bombero.FechaInscripcion = date_fecha_inscrip.Value;
-            Bombero.FechaNacimiento = date_fecha_nac.Value;
-            Bombero.GrupoSanguineo = txt_gruposang.Text;
-            Bombero.Profesion = txt_profesion.Text;
-            Bombero.Email = txt_email.Text;
-            Bombero.Rut = txt_rut.Text;
-            Bombero.Compañia = (CompañiaDTO)select_compania.SelectedItem;
-            Bombero.TelefonoLaboral = txt_tel_lab.Text;
-            Bombero.TelefonoParticular = txt_tel_part.Text;
-            Bombero.TIB = txt_tib.Text;
-            Bombero.Password = txt_pass.Text;
-            Bombero.Cargo = (CargoDTO)select_cargo.SelectedItem;
-            Bombero.Estado = select_estado.Text;
-            Bombero.NumeroRegistro = int.Parse(txt_socio.Text);
-
-            #region Fotografia Bombero
-            FileStream fs = new FileStream(location, FileMode.Open, FileAccess.Read);
-
-            Bombero.PictureSize = (int)fs.Length;
-            Bombero.PictureFile = new byte[Bombero.PictureSize];
-            fs.Read(Bombero.PictureFile, 0, (int)Bombero.PictureSize);
-            Bombero.PictureName = fileName;
-            #endregion
-
-            if (select_tipocuenta.Text.Equals("Administrador"))
-                Bombero.isAdmin = true;
-            else
-                Bombero.isAdmin = false;
-
-            if (_Bombero.EditarBombero(Bombero))
+            if (txt_nombres.Text != "" && txt_apellidos.Text != "" && txt_celular.Text != ""
+            && txt_dir_part.Text != "" && select_estadocivil.Text != "" && txt_gruposang.Text != ""
+            && txt_rut.Text != "" && txt_tib.Text != "" && txt_pass.Text != "" && select_estado.Text != "")            
             {
-                MessageBox.Show("Bombero actualizado");
+                IBomberoMgr _Bombero = new BomberoMgr();
+                BomberoDTO Bombero = new BomberoDTO();
 
-                fs.Close();
-                this.Close();
+                Bombero.Nombres = txt_nombres.Text;
+                Bombero.Apellidos = txt_apellidos.Text;
+                Bombero.Celular = txt_celular.Text;
+                Bombero.DireccionLaboral = txt_dir_lab.Text;
+                Bombero.DireccionParticular = txt_dir_part.Text;
+                Bombero.EstadoCivil = select_estadocivil.Text;
+                Bombero.FechaInscripcion = date_fecha_inscrip.Value;
+                Bombero.FechaNacimiento = date_fecha_nac.Value;
+                Bombero.GrupoSanguineo = txt_gruposang.Text;
+                Bombero.Profesion = txt_profesion.Text;
+                Bombero.Email = txt_email.Text;
+                Bombero.Rut = txt_rut.Text;
+                Bombero.Compañia = (CompañiaDTO)select_compania.SelectedItem;
+                Bombero.TelefonoLaboral = txt_tel_lab.Text;
+                Bombero.TelefonoParticular = txt_tel_part.Text;
+                Bombero.TIB = txt_tib.Text;
+                Bombero.Password = txt_pass.Text;
+                Bombero.Cargo = (CargoDTO)select_cargo.SelectedItem;
+                Bombero.Estado = select_estado.Text;
+                Bombero.NumeroRegistro = int.Parse(txt_socio.Text);
+
+                #region Fotografia Bombero
+                FileStream fs = new FileStream(location, FileMode.Open, FileAccess.Read);
+
+                Bombero.PictureSize = (int)fs.Length;
+                Bombero.PictureFile = new byte[Bombero.PictureSize];
+                fs.Read(Bombero.PictureFile, 0, (int)Bombero.PictureSize);
+                Bombero.PictureName = fileName;
+                #endregion
+
+                if (select_tipocuenta.Text.Equals("Administrador"))
+                    Bombero.isAdmin = true;
+                else
+                    Bombero.isAdmin = false;
+
+                if (_Bombero.EditarBombero(Bombero))
+                {
+                    MessageBox.Show("Bombero actualizado");
+
+                    fs.Close();
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Error al actualizar bombero");
+                }
             }
             else
             {
-                MessageBox.Show("Error al actualizar bombero");
+                MessageBox.Show("Falta rellenar datos");
             }
         }
 

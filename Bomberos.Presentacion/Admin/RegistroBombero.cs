@@ -75,72 +75,79 @@ namespace Bomberos.Presentacion
 
         private void btn_registrar_Click(object sender, EventArgs e)
         {
-            IBomberoMgr _Bombero = new BomberoMgr();
-            BomberoDTO Bombero = new BomberoDTO();
-
-            Bombero.Nombres = txt_nombres.Text;
-            Bombero.Apellidos = txt_apellidos.Text;
-            Bombero.Celular = txt_celular.Text;
-            Bombero.DireccionLaboral = txt_dir_lab.Text;
-            Bombero.DireccionParticular = txt_dir_part.Text;
-            Bombero.EstadoCivil = select_estadocivil.Text;
-            Bombero.FechaInscripcion = date_fecha_inscrip.Value;
-            Bombero.FechaNacimiento = date_fecha_nac.Value;
-            Bombero.GrupoSanguineo = txt_gruposang.Text;
-            Bombero.Profesion = txt_profesion.Text;
-            Bombero.Rut = txt_rut.Text;
-            Bombero.Compañia = (CompañiaDTO)select_compania.SelectedItem;
-            Bombero.TelefonoLaboral = txt_tel_lab.Text;
-            Bombero.TelefonoParticular = txt_tel_part.Text;
-            Bombero.TIB = txt_tib.Text;
-            Bombero.Password = txt_pass.Text;
-            Bombero.Cargo = (CargoDTO)select_cargo.SelectedItem;
-            Bombero.Estado = select_estado.Text;
-
-            #region Fotografia Bombero 
-            try
+            if (txt_nombres.Text != "" && txt_apellidos.Text != "" && txt_celular.Text != "" && select_tipocuenta.Text != "" 
+            && txt_dir_part.Text != "" && select_estadocivil.Text != "" && txt_gruposang.Text != ""
+            && txt_rut.Text != "" && txt_tib.Text != "" && txt_pass.Text != "" && select_estado.Text != "")
             {
-                FileStream fs = new FileStream(location, FileMode.Open, FileAccess.Read);
+                IBomberoMgr _Bombero = new BomberoMgr();
+                BomberoDTO Bombero = new BomberoDTO();
 
-                Bombero.PictureSize = (int)fs.Length;
-                Bombero.PictureFile = new byte[Bombero.PictureSize];
-                fs.Read(Bombero.PictureFile, 0, (int)Bombero.PictureSize);
-                Bombero.PictureName = fileName;
-                fs.Close();
+                Bombero.Nombres = txt_nombres.Text;
+                Bombero.Apellidos = txt_apellidos.Text;
+                Bombero.Celular = txt_celular.Text;
+                Bombero.DireccionLaboral = txt_dir_lab.Text;
+                Bombero.DireccionParticular = txt_dir_part.Text;
+                Bombero.EstadoCivil = select_estadocivil.Text;
+                Bombero.FechaInscripcion = date_fecha_inscrip.Value;
+                Bombero.FechaNacimiento = date_fecha_nac.Value;
+                Bombero.GrupoSanguineo = txt_gruposang.Text;
+                Bombero.Profesion = txt_profesion.Text;
+                Bombero.Rut = txt_rut.Text;
+                Bombero.Compañia = (CompañiaDTO)select_compania.SelectedItem;
+                Bombero.TelefonoLaboral = txt_tel_lab.Text;
+                Bombero.TelefonoParticular = txt_tel_part.Text;
+                Bombero.TIB = txt_tib.Text;
+                Bombero.Password = txt_pass.Text;
+                Bombero.Cargo = (CargoDTO)select_cargo.SelectedItem;
+                Bombero.Estado = select_estado.Text;
+
+                #region Fotografia Bombero
+                try
+                {
+                    FileStream fs = new FileStream(location, FileMode.Open, FileAccess.Read);
+
+                    Bombero.PictureSize = (int)fs.Length;
+                    Bombero.PictureFile = new byte[Bombero.PictureSize];
+                    fs.Read(Bombero.PictureFile, 0, (int)Bombero.PictureSize);
+                    Bombero.PictureName = fileName;
+                    fs.Close();
+                }
+                catch (Exception er)
+                {
+                    MessageBox.Show("Debe elegir una fotografía.");
+                    return;
+                }
+                #endregion
+
+                if (txt_socio.Text != "")
+                    Bombero.NumeroRegistro = int.Parse(txt_socio.Text);
+
+                if (select_tipocuenta.Text.Equals("Administrador"))
+                    Bombero.isAdmin = true;
+                else
+                    Bombero.isAdmin = false;
+
+                if (_Bombero.RegistroBombero(Bombero))
+                {
+                    MessageBox.Show("Registro exitoso");
+
+                    IFichaMedicaMgr _FichaMedica = new FichaMedicaMgr();
+                    FichaMedicaDTO FichaMedica = new FichaMedicaDTO();
+                    FichaMedica.Bombero = Bombero;
+                    _FichaMedica.RegistroFichaMedica(FichaMedica);
+
+                    //fs.Close();
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Error al registrar nuevo bombero");
+                }
             }
-            catch (Exception er)
-            {
-                MessageBox.Show("Debe elegir una fotografía.");
-                return;
-            }
-            #endregion
-
-            if (txt_socio.Text != "")
-                Bombero.NumeroRegistro = int.Parse(txt_socio.Text);
-
-            if (select_tipocuenta.Text.Equals("Administrador"))
-                Bombero.isAdmin = true;
             else
-                Bombero.isAdmin = false;
-
-            if (_Bombero.RegistroBombero(Bombero))
             {
-                MessageBox.Show("Registro exitoso");
-
-                IFichaMedicaMgr _FichaMedica = new FichaMedicaMgr();
-                FichaMedicaDTO FichaMedica = new FichaMedicaDTO();
-                FichaMedica.Bombero = Bombero;
-                _FichaMedica.RegistroFichaMedica(FichaMedica);
-
-                //fs.Close();
-                this.Close();
+                MessageBox.Show("Falta rellenar datos");
             }
-            else
-            {
-                MessageBox.Show("Error al registrar nuevo bombero");
-            }
-
-
         }
 
         private void btn_imagen_Click(object sender, EventArgs e)
