@@ -346,10 +346,11 @@
             // 
             // box_picture
             // 
+            this.box_picture.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.box_picture.Location = new System.Drawing.Point(460, 60);
             this.box_picture.Name = "box_picture";
             this.box_picture.Size = new System.Drawing.Size(150, 180);
-            this.box_picture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.box_picture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.box_picture.TabIndex = 43;
             this.box_picture.TabStop = false;
             // 

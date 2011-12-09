@@ -11,6 +11,7 @@ using Bomberos.ComunFuncional;
 using Bomberos.Comun;
 using Bomberos.ComunFuncional.Enumeraciones;
 using Bomberos.ComunFuncional.Util;
+using System.IO;
 
 namespace Bomberos.Presentacion
 {
@@ -140,14 +141,12 @@ namespace Bomberos.Presentacion
             labelTIB.Text = BomberoActual.TIB;
             labelCargo.Text = BomberoActual.Cargo.Nombre;
 
-            try
-            {
-                box_picture.Image = new Bitmap("C:\\Bomberos\\" + BomberoActual.Rut + ".jpg");
-                box_ficha_pict.Image = box_picture.Image;
-            }
-            catch (Exception er)
-            {
-            }
+            FileStream fs = new FileStream(BomberoActual.PictureName, FileMode.Create, FileAccess.Write);
+            fs.Write(BomberoActual.PictureFile, 0, BomberoActual.PictureSize);
+            fs.Close();
+
+            box_picture.BackgroundImage = new Bitmap(BomberoActual.PictureName);
+            box_ficha_pict.BackgroundImage = box_picture.BackgroundImage;
             #endregion
 
             #region Ficha Personal

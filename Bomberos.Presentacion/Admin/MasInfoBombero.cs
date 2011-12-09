@@ -11,6 +11,7 @@ using Bomberos.ComunFuncional;
 using Bomberos.Comun;
 using Bomberos.ComunFuncional.Enumeraciones;
 using Bomberos.ComunFuncional.Util;
+using System.IO;
 
 namespace Bomberos.Presentacion
 {
@@ -18,6 +19,8 @@ namespace Bomberos.Presentacion
     {
         private FichaMedicaDTO FichaMedicaBomberoActual { get; set; }
         private BomberoDTO BomberoActual { get; set; }
+        private string location { get; set; }
+        private string fileName { get; set; }
 
         public MasInfoBombero()
         {
@@ -153,14 +156,16 @@ namespace Bomberos.Presentacion
             labelTIB.Text = BomberoActual.TIB;
             labelCargo.Text = BomberoActual.Cargo.Nombre;
 
-            try
-            {
-                box_picture.Image = new Bitmap("C:\\Bomberos\\" + BomberoActual.Rut + ".jpg");
-                box_ficha_pict.Image = box_picture.Image;
-            }
-            catch (Exception er)
-            {
-            }
+            FileStream fs = new FileStream(BomberoActual.PictureName, FileMode.Create, FileAccess.Write);
+            fs.Write(BomberoActual.PictureFile, 0, BomberoActual.PictureSize);
+            fs.Close();
+
+            //Crea la imagen desde la BD
+            location = BomberoActual.PictureName;
+            fileName = BomberoActual.PictureName;
+            box_picture.BackgroundImage = new Bitmap(BomberoActual.PictureName);
+            box_ficha_pict.BackgroundImage = box_picture.BackgroundImage;
+ 
             #endregion
 
             #region Ficha Personal
@@ -935,31 +940,25 @@ namespace Bomberos.Presentacion
             Bombero.Estado = select_estado.Text;
             Bombero.NumeroRegistro = int.Parse(txt_socio.Text);
 
+            #region Fotografia Bombero
+            FileStream fs = new FileStream(location, FileMode.Open, FileAccess.Read);
+
+            Bombero.PictureSize = (int)fs.Length;
+            Bombero.PictureFile = new byte[Bombero.PictureSize];
+            fs.Read(Bombero.PictureFile, 0, (int)Bombero.PictureSize);
+            Bombero.PictureName = fileName;
+            #endregion
+
             if (select_tipocuenta.Text.Equals("Administrador"))
                 Bombero.isAdmin = true;
             else
                 Bombero.isAdmin = false;
 
-            //Salvar imagen al disco
-            if (box_picture.Image != null)
-            {
-                try
-                {
-                    /* if (!System.IO.Directory.Exists(@"C:\Bomberos\"))
-                         System.IO.Directory.CreateDirectory(@"C:\Bomberos\");
-
-                     System.IO.File.Delete("C:\\Bomberos\\" + Bombero.Rut + ".jpg");
-                    box_picture.Image.Save("C:\\Bomberos\\" + Bombero.Rut + ".jpg");*/
-                }
-                finally
-                {
-                    box_picture.Dispose();
-                }
-            }
-
             if (_Bombero.EditarBombero(Bombero))
             {
                 MessageBox.Show("Bombero actualizado");
+
+                fs.Close();
                 this.Close();
             }
             else
@@ -1000,11 +999,14 @@ namespace Bomberos.Presentacion
 
         private void btn_imagen_Click(object sender, EventArgs e)
         {
-            OpenFileDialog file = new OpenFileDialog();
-            file.Title = "Seleccione imagen";
-            if (file.ShowDialog() == DialogResult.OK)
+            OpenFileDialog openPic = new OpenFileDialog();
+            openPic.Title = "Seleccione imagen";
+            if (openPic.ShowDialog() == DialogResult.OK)
             {
-                box_picture.Image = new Bitmap(file.OpenFile());
+                box_picture.BackgroundImage = new Bitmap(openPic.FileName);
+                box_ficha_pict.BackgroundImage = box_picture.BackgroundImage;
+                location = openPic.FileName;
+                fileName = openPic.SafeFileName;
             }
         }
 

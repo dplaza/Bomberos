@@ -23,17 +23,17 @@ namespace Bomberos.Datos
             MySql.Data.MySqlClient.MySqlConnection conexionBD = ConnectBD();
 
             StringBuilder strBuilder = new StringBuilder();
-            
+
             strBuilder.Append("INSERT INTO ");
-            strBuilder.Append(" bomberos (nombres, apellidos, rut, tib, fecha_inscripcion, fecha_nacimiento, grupo_sanguineo,");
-            strBuilder.Append("dir_particular, dir_laboral, tel_particular, tel_laboral, celular, email, profesion, compania,");
+            strBuilder.Append("bomberos (nombres, apellidos, rut, tib, fecha_inscripcion, fecha_nacimiento, grupo_sanguineo, ");
+            strBuilder.Append("dir_particular, dir_laboral, tel_particular, tel_laboral, celular, email, profesion, compania, ");
+            strBuilder.Append("est_civil, is_admin, password, estado, cargo, id_socio, picture_name, picture_size, picture_file) ");
+            strBuilder.Append("VALUES (?p_nombres, ?p_apellidos, ?p_rut, ?p_tib, ?p_fechainsc, ?p_fechanac, ?p_gruposang, ?p_dirpart, ");
+            strBuilder.Append("?p_dirlab, ?p_telpart, ?p_tellab, ?p_celular, ?p_email, ?p_profesion, ?p_compania, ?p_estcivil, ?p_isadmin, ");
+            strBuilder.Append("?p_password, ?p_estado, ?p_cargo, ?p_socio, ?p_picname, ?p_picsize, ?p_picfile)");
+            string query = strBuilder.ToString();
 
-
-            string query = "INSERT INTO bomberos (nombres, apellidos, rut, tib, fecha_inscripcion, fecha_nacimiento, grupo_sanguineo, ";
-            query = string.Concat(query, "dir_particular, dir_laboral, tel_particular, tel_laboral, celular, email, profesion, compania, ");
-            query = string.Concat(query, "est_civil, is_admin, password, estado, cargo, id_socio) VALUES (?p_nombres, ?p_apellidos, ?p_rut, ?p_tib, ?p_fechainsc, ");
-            query = string.Concat(query, "?p_fechanac, ?p_gruposang, ?p_dirpart, ?p_dirlab, ?p_telpart, ?p_tellab, ?p_celular, ?p_email, ");
-            query = string.Concat(query, "?p_profesion, ?p_compania, ?p_estcivil, ?p_isadmin, ?p_password, ?p_estado, ?p_cargo, ?p_socio) ");
+            #region Parametros Query
             MySql.Data.MySqlClient.MySqlCommand msqlCommand = new MySql.Data.MySqlClient.MySqlCommand(query, conexionBD);
             msqlCommand.Parameters.AddWithValue("?p_nombres", p_Bombero.Nombres);
             msqlCommand.Parameters.AddWithValue("?p_apellidos", p_Bombero.Apellidos);
@@ -56,6 +56,10 @@ namespace Bomberos.Datos
             msqlCommand.Parameters.AddWithValue("?p_estado", p_Bombero.Estado);
             msqlCommand.Parameters.AddWithValue("?p_cargo", p_Bombero.Cargo.Id);
             msqlCommand.Parameters.AddWithValue("?p_socio", p_Bombero.NumeroRegistro);
+            msqlCommand.Parameters.AddWithValue("?p_picname", p_Bombero.PictureName);
+            msqlCommand.Parameters.AddWithValue("?p_picsize", p_Bombero.PictureSize);
+            msqlCommand.Parameters.AddWithValue("?p_picfile", p_Bombero.PictureFile);
+            #endregion
 
             try
             {
@@ -101,6 +105,7 @@ namespace Bomberos.Datos
                     cargo_elem.Id = int.Parse(msqlReader["cargo"].ToString());
                     cargo_elem = _Cargo.Load(cargo_elem);
 
+                    #region Asignacion Campos
                     retorno.Nombres = msqlReader["nombres"].ToString();
                     retorno.Apellidos = msqlReader["apellidos"].ToString();
                     retorno.TIB = msqlReader["tib"].ToString();
@@ -122,6 +127,11 @@ namespace Bomberos.Datos
                     retorno.Cargo = cargo_elem;
                     retorno.Estado = msqlReader["estado"].ToString();
                     retorno.NumeroRegistro = int.Parse(msqlReader["id_socio"].ToString());
+                    retorno.PictureName = msqlReader.GetString(msqlReader.GetOrdinal("picture_name"));
+                    retorno.PictureSize = msqlReader.GetInt32(msqlReader.GetOrdinal("picture_size"));
+                    retorno.PictureFile = new byte[retorno.PictureSize];
+                    msqlReader.GetBytes(msqlReader.GetOrdinal("picture_file"), 0, retorno.PictureFile, 0, retorno.PictureSize);
+                    #endregion
                 }
             }
             catch (Exception er)
@@ -135,8 +145,6 @@ namespace Bomberos.Datos
 
             return retorno;
         }
-
-
 
         public bool Delete(BomberoDTO p_Bombero)
         {
@@ -166,13 +174,21 @@ namespace Bomberos.Datos
         {
             //MySQL
             MySql.Data.MySqlClient.MySqlConnection conexionBD = ConnectBD();
-            string query = "UPDATE bomberos SET nombres = ?p_nombres, apellidos = ?p_apellidos, tib = ?p_tib, ";
-            query = string.Concat(query, "fecha_inscripcion = ?p_fechainsc, fecha_nacimiento = ?p_fechanac, grupo_sanguineo = ?p_gruposang, ");
-            query = string.Concat(query, "dir_particular = ?p_dirpart, dir_laboral = ?p_dirlab, tel_particular = ?p_telpart, tel_laboral = ?p_tellab, ");
-            query = string.Concat(query, "celular = ?p_celular, email = ?p_email, profesion = ?p_profesion, compania = ?p_compania, id_socio = ?p_socio, ");
-            query = string.Concat(query, "est_civil = ?p_estcivil, is_admin = ?p_isadmin, password = ?p_password, cargo = ?p_cargo, estado = ?p_estado ");
-            query = string.Concat(query, "WHERE rut = ?p_rut");
+
+            StringBuilder strBuilder = new StringBuilder();
+
+            strBuilder.Append("UPDATE bomberos SET nombres = ?p_nombres, apellidos = ?p_apellidos, tib = ?p_tib, fecha_inscripcion = ?p_fechainsc, ");
+            strBuilder.Append("fecha_nacimiento = ?p_fechanac, grupo_sanguineo = ?p_gruposang, dir_particular = ?p_dirpart, dir_laboral = ?p_dirlab, ");
+            strBuilder.Append("tel_particular = ?p_telpart, tel_laboral = ?p_tellab, celular = ?p_celular, email = ?p_email, profesion = ?p_profesion, ");
+            strBuilder.Append("compania = ?p_compania, id_socio = ?p_socio, est_civil = ?p_estcivil, is_admin = ?p_isadmin, password = ?p_password, ");
+            strBuilder.Append("cargo = ?p_cargo, estado = ?p_estado, picture_name = ?p_picname, picture_size = ?p_picsize, picture_file = ?p_picfile ");
+            strBuilder.Append("WHERE rut = ?p_rut");
+
+            string query = strBuilder.ToString();
+
             MySql.Data.MySqlClient.MySqlCommand msqlCommand = new MySql.Data.MySqlClient.MySqlCommand(query, conexionBD);
+
+            #region Parametros Query
             msqlCommand.Parameters.AddWithValue("?p_rut", p_Bombero.Rut);
             msqlCommand.Parameters.AddWithValue("?p_nombres", p_Bombero.Nombres);
             msqlCommand.Parameters.AddWithValue("?p_apellidos", p_Bombero.Apellidos);
@@ -194,7 +210,10 @@ namespace Bomberos.Datos
             msqlCommand.Parameters.AddWithValue("?p_estado", p_Bombero.Estado);
             msqlCommand.Parameters.AddWithValue("?p_cargo", p_Bombero.Cargo.Id);
             msqlCommand.Parameters.AddWithValue("?p_socio", p_Bombero.NumeroRegistro);
-
+            msqlCommand.Parameters.AddWithValue("?p_picname", p_Bombero.PictureName);
+            msqlCommand.Parameters.AddWithValue("?p_picsize", p_Bombero.PictureSize);
+            msqlCommand.Parameters.AddWithValue("?p_picfile", p_Bombero.PictureFile);
+            #endregion
 
             try
             {
@@ -241,6 +260,7 @@ namespace Bomberos.Datos
                     cargo_elem.Id = int.Parse(msqlReader["cargo"].ToString());
                     cargo_elem = _Cargo.Load(cargo_elem);
 
+                    #region Asignacion campos
                     Bombero.Nombres = msqlReader["nombres"].ToString();
                     Bombero.Apellidos = msqlReader["apellidos"].ToString();
                     Bombero.TIB = msqlReader["tib"].ToString();
@@ -262,7 +282,16 @@ namespace Bomberos.Datos
                     Bombero.Cargo = cargo_elem;
                     Bombero.Estado = msqlReader["estado"].ToString();
                     Bombero.NumeroRegistro = int.Parse(msqlReader["id_socio"].ToString());
+                    Bombero.PictureName = msqlReader.GetString(msqlReader.GetOrdinal("picture_name"));
+                    Bombero.PictureSize = msqlReader.GetInt32(msqlReader.GetOrdinal("picture_size"));
+                    Bombero.PictureFile = new byte[Bombero.PictureSize];
+                    #endregion
 
+                    try
+                    {
+                        msqlReader.GetBytes(msqlReader.GetOrdinal("picture_file"), 0, Bombero.PictureFile, 0, Bombero.PictureSize);
+                    }
+                    catch (Exception er) { }
                     ListaBomberos.Add(Bombero);
                 }
             }

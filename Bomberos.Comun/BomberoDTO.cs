@@ -28,6 +28,9 @@ namespace Bomberos.Comun
         public string Estado { get; set; }
         public CargoDTO Cargo { get; set; }
         public int NumeroRegistro { get; set; }
-
+        public int PictureSize { get; set; }
+        public string PictureName { get; set; }
+        public byte[] PictureFile { get; set; }
     }
 }
+

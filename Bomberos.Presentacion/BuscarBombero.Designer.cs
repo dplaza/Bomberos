@@ -66,6 +66,9 @@
             this.FechaNacimiento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.FechaInscripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Password = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PictureFile = new System.Windows.Forms.DataGridViewImageColumn();
+            this.PictureName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PictureSize = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridResult)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -192,7 +195,10 @@
             this.GrupoSanguineo,
             this.FechaNacimiento,
             this.FechaInscripcion,
-            this.Password});
+            this.Password,
+            this.PictureFile,
+            this.PictureName,
+            this.PictureSize});
             this.dataGridResult.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridResult.Location = new System.Drawing.Point(3, 16);
             this.dataGridResult.Name = "dataGridResult";
@@ -426,6 +432,30 @@
             this.Password.ReadOnly = true;
             this.Password.Visible = false;
             // 
+            // PictureFile
+            // 
+            this.PictureFile.DataPropertyName = "PictureFile";
+            this.PictureFile.HeaderText = "PictureFile";
+            this.PictureFile.Name = "PictureFile";
+            this.PictureFile.ReadOnly = true;
+            this.PictureFile.Visible = false;
+            // 
+            // PictureName
+            // 
+            this.PictureName.DataPropertyName = "PictureName";
+            this.PictureName.HeaderText = "PictureName";
+            this.PictureName.Name = "PictureName";
+            this.PictureName.ReadOnly = true;
+            this.PictureName.Visible = false;
+            // 
+            // PictureSize
+            // 
+            this.PictureSize.DataPropertyName = "PictureSize";
+            this.PictureSize.HeaderText = "PictureSize";
+            this.PictureSize.Name = "PictureSize";
+            this.PictureSize.ReadOnly = true;
+            this.PictureSize.Visible = false;
+            // 
             // BuscarBombero
             // 
             this.AcceptButton = this.btn_buscar;
@@ -494,5 +524,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn FechaNacimiento;
         private System.Windows.Forms.DataGridViewTextBoxColumn FechaInscripcion;
         private System.Windows.Forms.DataGridViewTextBoxColumn Password;
+        private System.Windows.Forms.DataGridViewImageColumn PictureFile;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PictureName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PictureSize;
     }
 }

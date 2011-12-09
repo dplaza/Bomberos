@@ -9,11 +9,15 @@ using System.Windows.Forms;
 using Bomberos.ComunFuncional;
 using Bomberos.Comun;
 using Bomberos.Negocio.Mgr;
+using System.IO;
 
 namespace Bomberos.Presentacion
 {
     public partial class RegistroBombero : Form
     {
+        private string location { get; set; }
+        private string fileName { get; set; }
+
         public RegistroBombero()
         {
             InitializeComponent();
@@ -92,6 +96,25 @@ namespace Bomberos.Presentacion
             Bombero.Password = txt_pass.Text;
             Bombero.Cargo = (CargoDTO)select_cargo.SelectedItem;
             Bombero.Estado = select_estado.Text;
+
+            #region Fotografia Bombero 
+            try
+            {
+                FileStream fs = new FileStream(location, FileMode.Open, FileAccess.Read);
+
+                Bombero.PictureSize = (int)fs.Length;
+                Bombero.PictureFile = new byte[Bombero.PictureSize];
+                fs.Read(Bombero.PictureFile, 0, (int)Bombero.PictureSize);
+                Bombero.PictureName = fileName;
+                fs.Close();
+            }
+            catch (Exception er)
+            {
+                MessageBox.Show("Debe elegir una fotografía.");
+                return;
+            }
+            #endregion
+
             if (txt_socio.Text != "")
                 Bombero.NumeroRegistro = int.Parse(txt_socio.Text);
 
@@ -99,25 +122,6 @@ namespace Bomberos.Presentacion
                 Bombero.isAdmin = true;
             else
                 Bombero.isAdmin = false;
-
-
-            if (box_picture.Image != null)
-            {
-                try
-                {
-                    if (!System.IO.Directory.Exists(@"C:\Bomberos\"))
-                        System.IO.Directory.CreateDirectory(@"C:\Bomberos\");
-
-                    box_picture.Image.Save("C:\\Bomberos\\" + Bombero.Rut + ".jpg");
-                }
-                finally
-                {
-                    box_picture.Dispose();
-                }
-            }
-
-           
-
 
             if (_Bombero.RegistroBombero(Bombero))
             {
@@ -128,6 +132,7 @@ namespace Bomberos.Presentacion
                 FichaMedica.Bombero = Bombero;
                 _FichaMedica.RegistroFichaMedica(FichaMedica);
 
+                //fs.Close();
                 this.Close();
             }
             else
@@ -135,16 +140,18 @@ namespace Bomberos.Presentacion
                 MessageBox.Show("Error al registrar nuevo bombero");
             }
 
-           
+
         }
 
         private void btn_imagen_Click(object sender, EventArgs e)
         {
-            OpenFileDialog file = new OpenFileDialog();
-            file.Title = "Seleccione imagen";
-            if (file.ShowDialog() == DialogResult.OK)
+            OpenFileDialog openPic = new OpenFileDialog();
+            openPic.Title = "Seleccione imagen";
+            if (openPic.ShowDialog() == DialogResult.OK)
             {
-                box_picture.Image = new Bitmap(file.OpenFile());
+                box_picture.BackgroundImage = new Bitmap(openPic.FileName);
+                location = openPic.FileName;
+                fileName = openPic.SafeFileName;
             }
         }
 
