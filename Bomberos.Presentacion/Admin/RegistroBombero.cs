@@ -100,6 +100,7 @@ namespace Bomberos.Presentacion
                 Bombero.Password = txt_pass.Text;
                 Bombero.Cargo = (CargoDTO)select_cargo.SelectedItem;
                 Bombero.Estado = select_estado.Text;
+                Bombero.Email = txt_email.Text;
 
                 #region Fotografia Bombero
                 try
