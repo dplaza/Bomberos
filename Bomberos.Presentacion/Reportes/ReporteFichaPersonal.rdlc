@@ -111,6 +111,11 @@
       <AllowBlank>true</AllowBlank>
       <Prompt>Report_Parameter_19</Prompt>
     </ReportParameter>
+    <ReportParameter Name="p_Foto">
+      <DataType>String</DataType>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>Report_Parameter_20</Prompt>
+    </ReportParameter>
   </ReportParameters>
   <rd:DrawGrid>true</rd:DrawGrid>
   <InteractiveWidth>21cm</InteractiveWidth>
@@ -144,6 +149,18 @@
   <Body>
     <ColumnSpacing>1cm</ColumnSpacing>
     <ReportItems>
+      <Image Name="image1">
+        <Sizing>FitProportional</Sizing>
+        <Top>3cm</Top>
+        <Width>3.5cm</Width>
+        <MIMEType />
+        <Source>External</Source>
+        <Style />
+        <ZIndex>33</ZIndex>
+        <Left>11.5cm</Left>
+        <Height>4.25cm</Height>
+        <Value>="file:///" &amp; Parameters!p_Foto.Value</Value>
+      </Image>
       <Table Name="TablaReincorporaciones">
         <ZIndex>32</ZIndex>
         <DataSetName>ListaReincorporaciones</DataSetName>
@@ -390,7 +407,7 @@
         </Style>
         <ZIndex>21</ZIndex>
         <CanGrow>true</CanGrow>
-        <Left>6.5cm</Left>
+        <Left>5cm</Left>
         <Height>0.63492cm</Height>
         <Value>=Parameters!p_GrupoSanguineo.Value</Value>
       </Textbox>
@@ -407,7 +424,7 @@
         </Style>
         <ZIndex>20</ZIndex>
         <CanGrow>true</CanGrow>
-        <Left>6.5cm</Left>
+        <Left>5cm</Left>
         <Height>0.63492cm</Height>
         <Value>=Parameters!p_FechaNacimiento.Value</Value>
       </Textbox>
@@ -424,7 +441,7 @@
         </Style>
         <ZIndex>19</ZIndex>
         <CanGrow>true</CanGrow>
-        <Left>6.5cm</Left>
+        <Left>5cm</Left>
         <Height>0.63492cm</Height>
         <Value>=Parameters!p_Rut.Value</Value>
       </Textbox>
@@ -441,7 +458,7 @@
         </Style>
         <ZIndex>18</ZIndex>
         <CanGrow>true</CanGrow>
-        <Left>6.5cm</Left>
+        <Left>5cm</Left>
         <Height>0.63492cm</Height>
         <Value>=Parameters!p_Nombres.Value</Value>
       </Textbox>
@@ -458,7 +475,7 @@
         </Style>
         <ZIndex>17</ZIndex>
         <CanGrow>true</CanGrow>
-        <Left>6.5cm</Left>
+        <Left>5cm</Left>
         <Height>0.63492cm</Height>
         <Value>=Parameters!p_Apellidos.Value</Value>
       </Textbox>

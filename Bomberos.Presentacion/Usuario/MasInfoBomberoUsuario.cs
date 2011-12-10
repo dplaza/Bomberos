@@ -609,6 +609,7 @@ namespace Bomberos.Presentacion
             oParametro.p_Cargo = BomberoActual.Cargo.Nombre;
             oParametro.p_Estado = BomberoActual.Estado;
             oParametro.p_EstadoCivil = BomberoActual.EstadoCivil;
+            oParametro.p_Foto = Application.StartupPath + @"\" + BomberoActual.PictureName;
 
             foreach (var elem in _Reincorporacion.CargarReincorporacionBombero(ReincorporacionBombero))
             {

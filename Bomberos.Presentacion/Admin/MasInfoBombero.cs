@@ -24,6 +24,7 @@ namespace Bomberos.Presentacion
 
         public MasInfoBombero()
         {
+            //MessageBox.Show("a");
             FichaMedicaBomberoActual = new FichaMedicaDTO();
             BomberoActual = new BomberoDTO();
             InitializeComponent();
@@ -566,6 +567,7 @@ namespace Bomberos.Presentacion
             catch (Exception er)
             {
                 MessageBox.Show("Datos ingresados no válidos");
+                return;
             }
             if (_Lista.RegistroLista(Lista))
             {
@@ -688,6 +690,7 @@ namespace Bomberos.Presentacion
             catch (Exception er)
             {
                 MessageBox.Show("Datos ingresados no válidos");
+                return;
             }
 
             if (_Servicio.RegistroServicioBombero(Servicio))
@@ -1010,6 +1013,7 @@ namespace Bomberos.Presentacion
             oParametro.p_Cargo = BomberoActual.Cargo.Nombre;
             oParametro.p_Estado = BomberoActual.Estado;
             oParametro.p_EstadoCivil = BomberoActual.EstadoCivil;
+            oParametro.p_Foto = Application.StartupPath + @"\" + BomberoActual.PictureName;
 
             foreach (var elem in _Reincorporacion.CargarReincorporacionBombero(ReincorporacionBombero))
             {

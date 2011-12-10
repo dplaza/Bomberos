@@ -271,12 +271,12 @@
             // 
             // box_ficha_pict
             // 
-            this.box_ficha_pict.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.box_ficha_pict.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.box_ficha_pict.Enabled = false;
             this.box_ficha_pict.Location = new System.Drawing.Point(506, 20);
             this.box_ficha_pict.Name = "box_ficha_pict";
             this.box_ficha_pict.Size = new System.Drawing.Size(171, 200);
-            this.box_ficha_pict.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.box_ficha_pict.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.box_ficha_pict.TabIndex = 181;
             this.box_ficha_pict.TabStop = false;
             // 
@@ -1897,11 +1897,11 @@
             // 
             // box_picture
             // 
-            this.box_picture.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.box_picture.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.box_picture.Location = new System.Drawing.Point(83, 14);
             this.box_picture.Name = "box_picture";
             this.box_picture.Size = new System.Drawing.Size(78, 88);
-            this.box_picture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.box_picture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.box_picture.TabIndex = 2;
             this.box_picture.TabStop = false;
             // 
@@ -1961,6 +1961,7 @@
             this.Load += new System.EventHandler(this.MasInfoBombero_Load);
             this.tabBox.ResumeLayout(false);
             this.FichaPersonal.ResumeLayout(false);
+            this.FichaPersonal.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.box_ficha_pict)).EndInit();
             this.groupBox9.ResumeLayout(false);
             this.groupBox9.PerformLayout();
