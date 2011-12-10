@@ -75,9 +75,7 @@ namespace Bomberos.Presentacion
 
         private void btn_registrar_Click(object sender, EventArgs e)
         {
-            if (txt_nombres.Text != "" && txt_apellidos.Text != "" && txt_celular.Text != "" && select_tipocuenta.Text != "" 
-            && txt_dir_part.Text != "" && select_estadocivil.Text != "" && txt_gruposang.Text != ""
-            && txt_rut.Text != "" && txt_tib.Text != "" && txt_pass.Text != "" && select_estado.Text != "")
+            if (txt_nombres.Text != "" && txt_apellidos.Text != "" && select_tipocuenta.Text != "" && select_estadocivil.Text != "" && txt_rut.Text != "" && txt_pass.Text != "" && select_estado.Text != "")
             {
                 IBomberoMgr _Bombero = new BomberoMgr();
                 BomberoDTO Bombero = new BomberoDTO();
@@ -137,7 +135,6 @@ namespace Bomberos.Presentacion
                     FichaMedica.Bombero = Bombero;
                     _FichaMedica.RegistroFichaMedica(FichaMedica);
 
-                    //fs.Close();
                     this.Close();
                 }
                 else
