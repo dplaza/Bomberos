@@ -141,9 +141,12 @@ namespace Bomberos.Presentacion
             labelTIB.Text = BomberoActual.TIB;
             labelCargo.Text = BomberoActual.Cargo.Nombre;
 
-            FileStream fs = new FileStream(BomberoActual.PictureName, FileMode.Create, FileAccess.Write);
-            fs.Write(BomberoActual.PictureFile, 0, BomberoActual.PictureSize);
-            fs.Close();
+            if (!System.IO.File.Exists(BomberoActual.PictureName))
+            {
+                FileStream fs = new FileStream(BomberoActual.PictureName, FileMode.Create, FileAccess.Write);
+                fs.Write(BomberoActual.PictureFile, 0, BomberoActual.PictureSize);
+                fs.Close();
+            }
 
             box_picture.BackgroundImage = new Bitmap(BomberoActual.PictureName);
             box_ficha_pict.BackgroundImage = box_picture.BackgroundImage;

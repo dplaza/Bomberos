@@ -82,6 +82,11 @@ namespace Bomberos.Presentacion
             form.Show();
         }
 
+        private void form_close(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
+
 
     }
 }

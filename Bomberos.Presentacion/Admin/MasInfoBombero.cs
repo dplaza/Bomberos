@@ -33,6 +33,7 @@ namespace Bomberos.Presentacion
         private void btnCerrar_Click(object sender, EventArgs e)
         {
             this.Close();
+            // System.IO.File.Delete(location);
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -157,16 +158,19 @@ namespace Bomberos.Presentacion
             labelTIB.Text = BomberoActual.TIB;
             labelCargo.Text = BomberoActual.Cargo.Nombre;
 
-            FileStream fs = new FileStream(BomberoActual.PictureName, FileMode.Create, FileAccess.Write);
-            fs.Write(BomberoActual.PictureFile, 0, BomberoActual.PictureSize);
-            fs.Close();
+            if (!System.IO.File.Exists(BomberoActual.PictureName))
+            {
+                FileStream fs = new FileStream(BomberoActual.PictureName, FileMode.Create, FileAccess.Write);
+                fs.Write(BomberoActual.PictureFile, 0, BomberoActual.PictureSize);
+                fs.Close();
+            }
 
             //Crea la imagen desde la BD
             location = BomberoActual.PictureName;
             fileName = BomberoActual.PictureName;
             box_picture.BackgroundImage = new Bitmap(BomberoActual.PictureName);
             box_ficha_pict.BackgroundImage = box_picture.BackgroundImage;
- 
+
             #endregion
 
             #region Ficha Personal
@@ -941,7 +945,7 @@ namespace Bomberos.Presentacion
         {
             if (txt_nombres.Text != "" && txt_apellidos.Text != "" && txt_celular.Text != ""
             && txt_dir_part.Text != "" && select_estadocivil.Text != "" && txt_gruposang.Text != ""
-            && txt_rut.Text != "" && txt_tib.Text != "" && txt_pass.Text != "" && select_estado.Text != "")            
+            && txt_rut.Text != "" && txt_tib.Text != "" && txt_pass.Text != "" && select_estado.Text != "")
             {
                 IBomberoMgr _Bombero = new BomberoMgr();
                 BomberoDTO Bombero = new BomberoDTO();

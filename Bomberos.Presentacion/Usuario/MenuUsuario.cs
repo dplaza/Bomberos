@@ -41,5 +41,10 @@ namespace Bomberos.Presentacion
             form.MdiParent = this;
             form.Show();
         }
+
+        private void form_closed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

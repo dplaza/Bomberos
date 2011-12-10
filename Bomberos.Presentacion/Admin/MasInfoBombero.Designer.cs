@@ -2781,6 +2781,7 @@
             // 
             // btnCerrar
             // 
+            this.btnCerrar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnCerrar.Location = new System.Drawing.Point(690, 714);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(75, 23);
