@@ -254,9 +254,40 @@
   <Body>
     <ColumnSpacing>1cm</ColumnSpacing>
     <ReportItems>
+      <Textbox Name="textbox58">
+        <Top>19.75cm</Top>
+        <Width>5.5cm</Width>
+        <Style>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <ZIndex>56</ZIndex>
+        <CanGrow>true</CanGrow>
+        <Left>1cm</Left>
+        <Height>1cm</Height>
+        <Value>=Parameters!p_Alergia.Value</Value>
+      </Textbox>
+      <Textbox Name="textbox59">
+        <Top>19cm</Top>
+        <Width>2.75cm</Width>
+        <Style>
+          <FontWeight>700</FontWeight>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <ZIndex>55</ZIndex>
+        <CanGrow>true</CanGrow>
+        <Left>0.75cm</Left>
+        <Height>0.63492cm</Height>
+        <Value>e) Alergias</Value>
+      </Textbox>
       <Textbox Name="textbox55">
         <rd:DefaultName>textbox55</rd:DefaultName>
-        <Top>21.5cm</Top>
+        <Top>24cm</Top>
         <Width>10cm</Width>
         <Style>
           <PaddingLeft>2pt</PaddingLeft>
@@ -272,7 +303,7 @@
       </Textbox>
       <Textbox Name="textbox54">
         <rd:DefaultName>textbox54</rd:DefaultName>
-        <Top>20.75cm</Top>
+        <Top>23.25cm</Top>
         <Width>8.25cm</Width>
         <Style>
           <FontWeight>700</FontWeight>
@@ -289,7 +320,7 @@
       </Textbox>
       <Textbox Name="textbox53">
         <rd:DefaultName>textbox53</rd:DefaultName>
-        <Top>19.5cm</Top>
+        <Top>22cm</Top>
         <Width>10cm</Width>
         <Style>
           <PaddingLeft>2pt</PaddingLeft>
@@ -321,7 +352,7 @@
       </Textbox>
       <Textbox Name="textbox51">
         <rd:DefaultName>textbox51</rd:DefaultName>
-        <Top>18.75cm</Top>
+        <Top>21.25cm</Top>
         <Width>8.25cm</Width>
         <Style>
           <FontWeight>700</FontWeight>
@@ -1139,7 +1170,6 @@
       </Textbox>
       <Textbox Name="textbox1">
         <rd:DefaultName>textbox1</rd:DefaultName>
-        <Top>0cm</Top>
         <Width>7.75cm</Width>
         <Style>
           <FontSize>14pt</FontSize>
@@ -1156,7 +1186,7 @@
         <Value>FICHA MÉDICA PERSONAL</Value>
       </Textbox>
     </ReportItems>
-    <Height>23cm</Height>
+    <Height>25.5cm</Height>
   </Body>
   <Language>es-ES</Language>
   <TopMargin>2.5cm</TopMargin>

@@ -12,6 +12,7 @@ namespace Bomberos.Comun
         public string p_Tifus { get; set; }
         public string p_OtrasEnfermedades { get; set; }
         public string p_Operaciones { get; set; }
+        public string p_Alergia { get; set; }
         public string p_HipertensionArterial { get; set; }
         public string p_Diabetes { get; set; }
         public string p_Epilepsia { get; set; }
