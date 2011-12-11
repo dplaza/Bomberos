@@ -16,8 +16,10 @@ namespace Bomberos.Presentacion
 {
     public partial class VisorReportes : Form
     {
+        private DateTime FechaActual;
         public VisorReportes()
         {
+            FechaActual = DateTime.Today;
             InitializeComponent();
         }
 
@@ -172,28 +174,6 @@ namespace Bomberos.Presentacion
             }
             #endregion
 
-            #region Reporte Servicio
-            if (p_TipoReporte == EnumReportes.Servicio)
-            {
-                rptViewer.LocalReport.ReportPath = Application.StartupPath + @"\Reportes\ReporteServicio.rdlc";
-
-                ServicioReportDTO servicio = (ServicioReportDTO)p_ListaParametros;
-
-                foreach (var pi in servicio.GetType().GetProperties())
-                {
-                    var valor = pi.GetValue(servicio, null) == null ? "" : pi.GetValue(servicio, null).ToString();
-                    ReportParameter rp = new ReportParameter(pi.Name, valor);
-                    ListaParametrosReporte.Add(rp);
-                }
-
-                ReportDataSource ds = new ReportDataSource();
-                ds.Name = "ListaServicio";
-                ds.Value = Utilidades.ConvertirListADataTable(servicio.ListaServicios);
-
-                rptViewer.LocalReport.DataSources.Add(ds);
-            }
-            #endregion
-
             #region Reporte Observaciones
             if (p_TipoReporte == EnumReportes.Observaciones)
             {
@@ -216,6 +196,8 @@ namespace Bomberos.Presentacion
             }
             #endregion
 
+            ReportParameter rpFecha = new ReportParameter("p_FechaActual", FechaActual.ToShortDateString());
+            ListaParametrosReporte.Add(rpFecha);
             rptViewer.LocalReport.SetParameters(ListaParametrosReporte);
             rptViewer.RefreshReport();
             rptViewer.Refresh();

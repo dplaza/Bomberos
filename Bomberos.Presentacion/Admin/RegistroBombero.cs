@@ -99,6 +99,7 @@ namespace Bomberos.Presentacion
                 Bombero.Cargo = (CargoDTO)select_cargo.SelectedItem;
                 Bombero.Estado = select_estado.Text;
                 Bombero.Email = txt_email.Text;
+                Bombero.NivelAcademico = select_nivel_acad.Text;
 
                 #region Fotografia Bombero
                 try

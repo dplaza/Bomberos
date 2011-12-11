@@ -13,7 +13,6 @@ namespace Bomberos.ComunFuncional.Enumeraciones
         HistorialPremios,
         HistorialCursos,
         Asistencia,
-        Servicio,
         Observaciones
     }
 }

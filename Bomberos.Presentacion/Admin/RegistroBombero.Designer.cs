@@ -56,6 +56,8 @@
             this.txt_tel_lab = new System.Windows.Forms.TextBox();
             this.txt_celular = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.select_nivel_acad = new System.Windows.Forms.ComboBox();
+            this.label71 = new System.Windows.Forms.Label();
             this.btn_registrar = new System.Windows.Forms.Button();
             this.btn_cancelar = new System.Windows.Forms.Button();
             this.box_picture = new System.Windows.Forms.PictureBox();
@@ -146,7 +148,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(38, 345);
+            this.label8.Location = new System.Drawing.Point(26, 318);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(96, 13);
             this.label8.TabIndex = 9;
@@ -155,7 +157,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(38, 372);
+            this.label9.Location = new System.Drawing.Point(26, 345);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(87, 13);
             this.label9.TabIndex = 10;
@@ -164,7 +166,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(38, 293);
+            this.label10.Location = new System.Drawing.Point(26, 266);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(99, 13);
             this.label10.TabIndex = 11;
@@ -173,7 +175,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(38, 319);
+            this.label11.Location = new System.Drawing.Point(26, 292);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(90, 13);
             this.label11.TabIndex = 12;
@@ -191,7 +193,7 @@
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(38, 399);
+            this.label16.Location = new System.Drawing.Point(26, 372);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(39, 13);
             this.label16.TabIndex = 17;
@@ -200,7 +202,7 @@
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(38, 242);
+            this.label17.Location = new System.Drawing.Point(26, 215);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(32, 13);
             this.label17.TabIndex = 18;
@@ -218,7 +220,7 @@
             // label19
             // 
             this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(38, 266);
+            this.label19.Location = new System.Drawing.Point(26, 239);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(62, 13);
             this.label19.TabIndex = 20;
@@ -254,7 +256,7 @@
             // 
             // txt_email
             // 
-            this.txt_email.Location = new System.Drawing.Point(152, 237);
+            this.txt_email.Location = new System.Drawing.Point(140, 210);
             this.txt_email.Name = "txt_email";
             this.txt_email.Size = new System.Drawing.Size(139, 20);
             this.txt_email.TabIndex = 26;
@@ -270,7 +272,7 @@
             "Divorciado",
             "Viudo",
             "Separado"});
-            this.select_estadocivil.Location = new System.Drawing.Point(152, 263);
+            this.select_estadocivil.Location = new System.Drawing.Point(140, 236);
             this.select_estadocivil.Name = "select_estadocivil";
             this.select_estadocivil.Size = new System.Drawing.Size(139, 21);
             this.select_estadocivil.TabIndex = 27;
@@ -278,56 +280,90 @@
             // 
             // txt_dir_part
             // 
-            this.txt_dir_part.Location = new System.Drawing.Point(152, 290);
+            this.txt_dir_part.Location = new System.Drawing.Point(140, 263);
             this.txt_dir_part.Name = "txt_dir_part";
             this.txt_dir_part.Size = new System.Drawing.Size(246, 20);
             this.txt_dir_part.TabIndex = 28;
             // 
             // txt_dir_lab
             // 
-            this.txt_dir_lab.Location = new System.Drawing.Point(152, 316);
+            this.txt_dir_lab.Location = new System.Drawing.Point(140, 289);
             this.txt_dir_lab.Name = "txt_dir_lab";
             this.txt_dir_lab.Size = new System.Drawing.Size(246, 20);
             this.txt_dir_lab.TabIndex = 29;
             // 
             // txt_tel_part
             // 
-            this.txt_tel_part.Location = new System.Drawing.Point(152, 342);
+            this.txt_tel_part.Location = new System.Drawing.Point(140, 315);
             this.txt_tel_part.Name = "txt_tel_part";
             this.txt_tel_part.Size = new System.Drawing.Size(156, 20);
             this.txt_tel_part.TabIndex = 30;
             // 
             // txt_tel_lab
             // 
-            this.txt_tel_lab.Location = new System.Drawing.Point(152, 369);
+            this.txt_tel_lab.Location = new System.Drawing.Point(140, 342);
             this.txt_tel_lab.Name = "txt_tel_lab";
             this.txt_tel_lab.Size = new System.Drawing.Size(156, 20);
             this.txt_tel_lab.TabIndex = 31;
             // 
             // txt_celular
             // 
-            this.txt_celular.Location = new System.Drawing.Point(152, 396);
+            this.txt_celular.Location = new System.Drawing.Point(140, 369);
             this.txt_celular.Name = "txt_celular";
             this.txt_celular.Size = new System.Drawing.Size(114, 20);
             this.txt_celular.TabIndex = 32;
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.select_nivel_acad);
+            this.groupBox1.Controls.Add(this.label71);
             this.groupBox1.Controls.Add(this.txt_nombres);
             this.groupBox1.Controls.Add(this.txt_apellidos);
             this.groupBox1.Controls.Add(this.txt_rut);
+            this.groupBox1.Controls.Add(this.txt_celular);
+            this.groupBox1.Controls.Add(this.txt_email);
+            this.groupBox1.Controls.Add(this.txt_tel_lab);
+            this.groupBox1.Controls.Add(this.label8);
+            this.groupBox1.Controls.Add(this.txt_tel_part);
+            this.groupBox1.Controls.Add(this.label9);
+            this.groupBox1.Controls.Add(this.txt_dir_lab);
+            this.groupBox1.Controls.Add(this.label10);
+            this.groupBox1.Controls.Add(this.txt_dir_part);
+            this.groupBox1.Controls.Add(this.label11);
+            this.groupBox1.Controls.Add(this.select_estadocivil);
+            this.groupBox1.Controls.Add(this.label16);
+            this.groupBox1.Controls.Add(this.label17);
+            this.groupBox1.Controls.Add(this.label19);
             this.groupBox1.Location = new System.Drawing.Point(12, 53);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(403, 378);
+            this.groupBox1.Size = new System.Drawing.Size(403, 411);
             this.groupBox1.TabIndex = 33;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos Personales";
             // 
+            // select_nivel_acad
+            // 
+            this.select_nivel_acad.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.select_nivel_acad.FormattingEnabled = true;
+            this.select_nivel_acad.Location = new System.Drawing.Point(140, 183);
+            this.select_nivel_acad.Name = "select_nivel_acad";
+            this.select_nivel_acad.Size = new System.Drawing.Size(246, 21);
+            this.select_nivel_acad.TabIndex = 134;
+            // 
+            // label71
+            // 
+            this.label71.AutoSize = true;
+            this.label71.Location = new System.Drawing.Point(26, 186);
+            this.label71.Name = "label71";
+            this.label71.Size = new System.Drawing.Size(87, 13);
+            this.label71.TabIndex = 133;
+            this.label71.Text = "Nivel Académico";
+            // 
             // btn_registrar
             // 
-            this.btn_registrar.Location = new System.Drawing.Point(498, 539);
+            this.btn_registrar.Location = new System.Drawing.Point(481, 541);
             this.btn_registrar.Name = "btn_registrar";
-            this.btn_registrar.Size = new System.Drawing.Size(75, 23);
+            this.btn_registrar.Size = new System.Drawing.Size(113, 23);
             this.btn_registrar.TabIndex = 41;
             this.btn_registrar.Text = "Registrar";
             this.btn_registrar.UseVisualStyleBackColor = true;
@@ -336,9 +372,9 @@
             // btn_cancelar
             // 
             this.btn_cancelar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btn_cancelar.Location = new System.Drawing.Point(498, 568);
+            this.btn_cancelar.Location = new System.Drawing.Point(481, 571);
             this.btn_cancelar.Name = "btn_cancelar";
-            this.btn_cancelar.Size = new System.Drawing.Size(75, 23);
+            this.btn_cancelar.Size = new System.Drawing.Size(113, 23);
             this.btn_cancelar.TabIndex = 42;
             this.btn_cancelar.Text = "Cancelar";
             this.btn_cancelar.UseVisualStyleBackColor = true;
@@ -503,7 +539,7 @@
             this.groupBox3.Controls.Add(this.label26);
             this.groupBox3.Controls.Add(this.txt_pass);
             this.groupBox3.Controls.Add(this.select_compania);
-            this.groupBox3.Location = new System.Drawing.Point(13, 437);
+            this.groupBox3.Location = new System.Drawing.Point(13, 470);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(402, 240);
             this.groupBox3.TabIndex = 159;
@@ -570,31 +606,17 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btn_cancelar;
-            this.ClientSize = new System.Drawing.Size(644, 689);
+            this.ClientSize = new System.Drawing.Size(644, 722);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.btn_imagen);
             this.Controls.Add(this.box_picture);
             this.Controls.Add(this.btn_cancelar);
             this.Controls.Add(this.btn_registrar);
-            this.Controls.Add(this.txt_celular);
-            this.Controls.Add(this.txt_tel_lab);
-            this.Controls.Add(this.txt_tel_part);
-            this.Controls.Add(this.txt_dir_lab);
-            this.Controls.Add(this.txt_dir_part);
-            this.Controls.Add(this.select_estadocivil);
-            this.Controls.Add(this.txt_email);
             this.Controls.Add(this.txt_profesion);
             this.Controls.Add(this.txt_gruposang);
             this.Controls.Add(this.date_fecha_nac);
-            this.Controls.Add(this.label19);
             this.Controls.Add(this.label18);
-            this.Controls.Add(this.label17);
-            this.Controls.Add(this.label16);
             this.Controls.Add(this.label13);
-            this.Controls.Add(this.label11);
-            this.Controls.Add(this.label10);
-            this.Controls.Add(this.label9);
-            this.Controls.Add(this.label8);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -669,5 +691,7 @@
         private System.Windows.Forms.ComboBox select_compania;
         private System.Windows.Forms.TextBox txt_socio;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.ComboBox select_nivel_acad;
+        private System.Windows.Forms.Label label71;
     }
 }

@@ -27,10 +27,10 @@ namespace Bomberos.Datos
             strBuilder.Append("INSERT INTO ");
             strBuilder.Append("bomberos (nombres, apellidos, rut, tib, fecha_inscripcion, fecha_nacimiento, grupo_sanguineo, ");
             strBuilder.Append("dir_particular, dir_laboral, tel_particular, tel_laboral, celular, email, profesion, compania, ");
-            strBuilder.Append("est_civil, is_admin, password, estado, cargo, id_socio, picture_name, picture_size, picture_file) ");
+            strBuilder.Append("est_civil, is_admin, password, estado, cargo, id_socio, picture_name, picture_size, picture_file, nivel_acad) ");
             strBuilder.Append("VALUES (?p_nombres, ?p_apellidos, ?p_rut, ?p_tib, ?p_fechainsc, ?p_fechanac, ?p_gruposang, ?p_dirpart, ");
             strBuilder.Append("?p_dirlab, ?p_telpart, ?p_tellab, ?p_celular, ?p_email, ?p_profesion, ?p_compania, ?p_estcivil, ?p_isadmin, ");
-            strBuilder.Append("?p_password, ?p_estado, ?p_cargo, ?p_socio, ?p_picname, ?p_picsize, ?p_picfile)");
+            strBuilder.Append("?p_password, ?p_estado, ?p_cargo, ?p_socio, ?p_picname, ?p_picsize, ?p_picfile, ?p_nivacad)");
             string query = strBuilder.ToString();
 
             #region Parametros Query
@@ -59,6 +59,7 @@ namespace Bomberos.Datos
             msqlCommand.Parameters.AddWithValue("?p_picname", p_Bombero.PictureName);
             msqlCommand.Parameters.AddWithValue("?p_picsize", p_Bombero.PictureSize);
             msqlCommand.Parameters.AddWithValue("?p_picfile", p_Bombero.PictureFile);
+            msqlCommand.Parameters.AddWithValue("?p_nivacad", p_Bombero.NivelAcademico);
             #endregion
 
             try
@@ -131,6 +132,7 @@ namespace Bomberos.Datos
                     retorno.PictureSize = msqlReader.GetInt32(msqlReader.GetOrdinal("picture_size"));
                     retorno.PictureFile = new byte[retorno.PictureSize];
                     msqlReader.GetBytes(msqlReader.GetOrdinal("picture_file"), 0, retorno.PictureFile, 0, retorno.PictureSize);
+                    retorno.NivelAcademico = msqlReader["nivel_acad"].ToString();
                     #endregion
                 }
             }
@@ -181,7 +183,7 @@ namespace Bomberos.Datos
             strBuilder.Append("fecha_nacimiento = ?p_fechanac, grupo_sanguineo = ?p_gruposang, dir_particular = ?p_dirpart, dir_laboral = ?p_dirlab, ");
             strBuilder.Append("tel_particular = ?p_telpart, tel_laboral = ?p_tellab, celular = ?p_celular, email = ?p_email, profesion = ?p_profesion, ");
             strBuilder.Append("compania = ?p_compania, id_socio = ?p_socio, est_civil = ?p_estcivil, is_admin = ?p_isadmin, password = ?p_password, ");
-            strBuilder.Append("cargo = ?p_cargo, estado = ?p_estado, picture_name = ?p_picname, picture_size = ?p_picsize, picture_file = ?p_picfile ");
+            strBuilder.Append("cargo = ?p_cargo, estado = ?p_estado, picture_name = ?p_picname, picture_size = ?p_picsize, picture_file = ?p_picfile, nivel_acad = ?p_nivacad ");
             strBuilder.Append("WHERE rut = ?p_rut");
 
             string query = strBuilder.ToString();
@@ -213,6 +215,7 @@ namespace Bomberos.Datos
             msqlCommand.Parameters.AddWithValue("?p_picname", p_Bombero.PictureName);
             msqlCommand.Parameters.AddWithValue("?p_picsize", p_Bombero.PictureSize);
             msqlCommand.Parameters.AddWithValue("?p_picfile", p_Bombero.PictureFile);
+            msqlCommand.Parameters.AddWithValue("?p_nivacad", p_Bombero.NivelAcademico);
             #endregion
 
             try
@@ -285,6 +288,7 @@ namespace Bomberos.Datos
                     Bombero.PictureName = msqlReader.GetString(msqlReader.GetOrdinal("picture_name"));
                     Bombero.PictureSize = msqlReader.GetInt32(msqlReader.GetOrdinal("picture_size"));
                     Bombero.PictureFile = new byte[Bombero.PictureSize];
+                    Bombero.NivelAcademico = msqlReader["nivel_acad"].ToString();
                     #endregion
 
                     try

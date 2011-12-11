@@ -55,7 +55,6 @@
     <Compile Include="PremioReportDTO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="CargoReportDTO.cs" />
-    <Compile Include="ServicioReportDTO.cs" />
     <Compile Include="Util\Utilidades.cs" />
   </ItemGroup>
   <ItemGroup>

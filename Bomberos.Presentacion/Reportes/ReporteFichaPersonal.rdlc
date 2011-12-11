@@ -116,6 +116,16 @@
       <AllowBlank>true</AllowBlank>
       <Prompt>Report_Parameter_20</Prompt>
     </ReportParameter>
+    <ReportParameter Name="p_NivelAcademico">
+      <DataType>String</DataType>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>Report_Parameter_21</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="p_FechaActual">
+      <DataType>String</DataType>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>Report_Parameter_22</Prompt>
+    </ReportParameter>
   </ReportParameters>
   <rd:DrawGrid>true</rd:DrawGrid>
   <InteractiveWidth>21cm</InteractiveWidth>
@@ -123,6 +133,45 @@
   <rd:SnapToGrid>true</rd:SnapToGrid>
   <RightMargin>2.5cm</RightMargin>
   <LeftMargin>2.5cm</LeftMargin>
+  <PageHeader>
+    <PrintOnFirstPage>true</PrintOnFirstPage>
+    <ReportItems>
+      <Textbox Name="textbox17">
+        <rd:DefaultName>textbox17</rd:DefaultName>
+        <Top>0.25cm</Top>
+        <Width>3cm</Width>
+        <Style>
+          <FontWeight>700</FontWeight>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <ZIndex>1</ZIndex>
+        <CanGrow>true</CanGrow>
+        <Left>1cm</Left>
+        <Height>0.63492cm</Height>
+        <Value>Fecha Informe:</Value>
+      </Textbox>
+      <Textbox Name="textbox14">
+        <rd:DefaultName>textbox14</rd:DefaultName>
+        <Top>0.25cm</Top>
+        <Width>5.5cm</Width>
+        <Style>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <CanGrow>true</CanGrow>
+        <Left>4cm</Left>
+        <Height>0.63492cm</Height>
+        <Value>=Parameters!p_FechaActual.Value</Value>
+      </Textbox>
+    </ReportItems>
+    <Height>1.13492cm</Height>
+    <PrintOnLastPage>true</PrintOnLastPage>
+  </PageHeader>
   <BottomMargin>2.5cm</BottomMargin>
   <rd:ReportID>70b197a4-0b42-46ff-aed7-0ced789edbe7</rd:ReportID>
   <PageWidth>21cm</PageWidth>
@@ -164,7 +213,7 @@
       <Table Name="TablaReincorporaciones">
         <ZIndex>32</ZIndex>
         <DataSetName>ListaReincorporaciones</DataSetName>
-        <Top>18cm</Top>
+        <Top>18.5cm</Top>
         <Width>5.16667cm</Width>
         <Details>
           <TableRows>
@@ -226,7 +275,7 @@
       </Table>
       <Textbox Name="textbox42">
         <rd:DefaultName>textbox42</rd:DefaultName>
-        <Top>17.25cm</Top>
+        <Top>17.75cm</Top>
         <Width>6cm</Width>
         <Style>
           <FontWeight>700</FontWeight>
@@ -243,7 +292,7 @@
       </Textbox>
       <Textbox Name="textbox41">
         <rd:DefaultName>textbox41</rd:DefaultName>
-        <Top>15.25cm</Top>
+        <Top>15.5cm</Top>
         <Width>7.25cm</Width>
         <Style>
           <FontWeight>700</FontWeight>
@@ -729,7 +778,7 @@
       </Textbox>
       <Textbox Name="textbox16">
         <rd:DefaultName>textbox16</rd:DefaultName>
-        <Top>16.25cm</Top>
+        <Top>16.5cm</Top>
         <Width>4cm</Width>
         <Style>
           <PaddingLeft>2pt</PaddingLeft>
@@ -745,7 +794,7 @@
       </Textbox>
       <Textbox Name="textbox34">
         <rd:DefaultName>textbox34</rd:DefaultName>
-        <Top>16.25cm</Top>
+        <Top>16.5cm</Top>
         <Width>5.75cm</Width>
         <Style>
           <FontWeight>700</FontWeight>

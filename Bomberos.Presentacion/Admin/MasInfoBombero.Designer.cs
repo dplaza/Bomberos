@@ -35,6 +35,8 @@
             this.btn_imagen = new System.Windows.Forms.Button();
             this.box_ficha_pict = new System.Windows.Forms.PictureBox();
             this.groupBox9 = new System.Windows.Forms.GroupBox();
+            this.label_tiempo_servicio = new System.Windows.Forms.Label();
+            this.label72 = new System.Windows.Forms.Label();
             this.txt_socio = new System.Windows.Forms.TextBox();
             this.label50 = new System.Windows.Forms.Label();
             this.label51 = new System.Windows.Forms.Label();
@@ -52,6 +54,8 @@
             this.txt_pass = new System.Windows.Forms.TextBox();
             this.select_compania = new System.Windows.Forms.ComboBox();
             this.groupBox8 = new System.Windows.Forms.GroupBox();
+            this.select_nivel_acad = new System.Windows.Forms.ComboBox();
+            this.label71 = new System.Windows.Forms.Label();
             this.label69 = new System.Windows.Forms.Label();
             this.label70 = new System.Windows.Forms.Label();
             this.txt_profesion = new System.Windows.Forms.TextBox();
@@ -233,45 +237,6 @@
             this.TotalAbonosLista = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.AñoLista = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.BomberoLista = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Servicio = new System.Windows.Forms.TabPage();
-            this.btn_imprimir_servicio = new System.Windows.Forms.Button();
-            this.btn_cambios_servicio = new System.Windows.Forms.Button();
-            this.dataGridServicio = new System.Windows.Forms.DataGridView();
-            this.AñoActServicio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.AñoServicio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MesServicio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DiaServicio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.LlamadasServicio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FaltasServicio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SuspensionesServicio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.LicenciasServicio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.AsistenciaServicio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.AbonosServicio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TotalAsistenciaServicio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.BomberoServicio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.txt_asistencias_serv = new System.Windows.Forms.TextBox();
-            this.label39 = new System.Windows.Forms.Label();
-            this.btn_agregar_serv = new System.Windows.Forms.Button();
-            this.ServicioAño = new System.Windows.Forms.DateTimePicker();
-            this.txt_abonos_serv = new System.Windows.Forms.TextBox();
-            this.txt_licencias_serv = new System.Windows.Forms.TextBox();
-            this.txt_suspensiones_serv = new System.Windows.Forms.TextBox();
-            this.txt_faltas_serv = new System.Windows.Forms.TextBox();
-            this.txt_llamadas_serv = new System.Windows.Forms.TextBox();
-            this.label46 = new System.Windows.Forms.Label();
-            this.label45 = new System.Windows.Forms.Label();
-            this.label44 = new System.Windows.Forms.Label();
-            this.label43 = new System.Windows.Forms.Label();
-            this.label42 = new System.Windows.Forms.Label();
-            this.groupBox6 = new System.Windows.Forms.GroupBox();
-            this.txt_dia_serv = new System.Windows.Forms.TextBox();
-            this.txt_mes_serv = new System.Windows.Forms.TextBox();
-            this.txt_año_serv = new System.Windows.Forms.TextBox();
-            this.label49 = new System.Windows.Forms.Label();
-            this.label48 = new System.Windows.Forms.Label();
-            this.label47 = new System.Windows.Forms.Label();
-            this.label41 = new System.Windows.Forms.Label();
             this.Observaciones = new System.Windows.Forms.TabPage();
             this.btn_imprimir_observaciones = new System.Windows.Forms.Button();
             this.btn_observacion = new System.Windows.Forms.Button();
@@ -286,7 +251,7 @@
             this.btnCerrar = new System.Windows.Forms.Button();
             this.box_picture = new System.Windows.Forms.PictureBox();
             this.labelCargo = new System.Windows.Forms.Label();
-            this.labelTIB = new System.Windows.Forms.Label();
+            this.labelNumRegistro = new System.Windows.Forms.Label();
             this.labelRut = new System.Windows.Forms.Label();
             this.labelnombre = new System.Windows.Forms.Label();
             this.tabBox.SuspendLayout();
@@ -310,10 +275,6 @@
             this.groupBox4.SuspendLayout();
             this.groupBox7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridListas)).BeginInit();
-            this.Servicio.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridServicio)).BeginInit();
-            this.groupBox5.SuspendLayout();
-            this.groupBox6.SuspendLayout();
             this.Observaciones.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridObservacion)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.box_picture)).BeginInit();
@@ -328,12 +289,11 @@
             this.tabBox.Controls.Add(this.HistorialCursos);
             this.tabBox.Controls.Add(this.Reincorporaciones);
             this.tabBox.Controls.Add(this.ResumenListas);
-            this.tabBox.Controls.Add(this.Servicio);
             this.tabBox.Controls.Add(this.Observaciones);
             this.tabBox.Location = new System.Drawing.Point(12, 122);
             this.tabBox.Name = "tabBox";
             this.tabBox.SelectedIndex = 0;
-            this.tabBox.Size = new System.Drawing.Size(782, 579);
+            this.tabBox.Size = new System.Drawing.Size(782, 587);
             this.tabBox.TabIndex = 0;
             // 
             // FichaPersonal
@@ -347,14 +307,15 @@
             this.FichaPersonal.Location = new System.Drawing.Point(4, 22);
             this.FichaPersonal.Name = "FichaPersonal";
             this.FichaPersonal.Padding = new System.Windows.Forms.Padding(3);
-            this.FichaPersonal.Size = new System.Drawing.Size(774, 553);
+            this.FichaPersonal.Size = new System.Drawing.Size(774, 561);
             this.FichaPersonal.TabIndex = 7;
             this.FichaPersonal.Text = "Ficha Personal";
             this.FichaPersonal.UseVisualStyleBackColor = true;
+            this.FichaPersonal.Click += new System.EventHandler(this.FichaPersonal_Click);
             // 
             // btn_imprimir
             // 
-            this.btn_imprimir.Location = new System.Drawing.Point(137, 461);
+            this.btn_imprimir.Location = new System.Drawing.Point(137, 474);
             this.btn_imprimir.Name = "btn_imprimir";
             this.btn_imprimir.Size = new System.Drawing.Size(121, 23);
             this.btn_imprimir.TabIndex = 184;
@@ -364,7 +325,7 @@
             // 
             // btn_enviar_fichapersonal
             // 
-            this.btn_enviar_fichapersonal.Location = new System.Drawing.Point(137, 494);
+            this.btn_enviar_fichapersonal.Location = new System.Drawing.Point(137, 507);
             this.btn_enviar_fichapersonal.Name = "btn_enviar_fichapersonal";
             this.btn_enviar_fichapersonal.Size = new System.Drawing.Size(120, 23);
             this.btn_enviar_fichapersonal.TabIndex = 183;
@@ -394,6 +355,8 @@
             // 
             // groupBox9
             // 
+            this.groupBox9.Controls.Add(this.label_tiempo_servicio);
+            this.groupBox9.Controls.Add(this.label72);
             this.groupBox9.Controls.Add(this.txt_socio);
             this.groupBox9.Controls.Add(this.label50);
             this.groupBox9.Controls.Add(this.label51);
@@ -412,14 +375,32 @@
             this.groupBox9.Controls.Add(this.select_compania);
             this.groupBox9.Location = new System.Drawing.Point(406, 270);
             this.groupBox9.Name = "groupBox9";
-            this.groupBox9.Size = new System.Drawing.Size(353, 265);
+            this.groupBox9.Size = new System.Drawing.Size(353, 285);
             this.groupBox9.TabIndex = 179;
             this.groupBox9.TabStop = false;
             this.groupBox9.Text = "Datos Bombero";
             // 
+            // label_tiempo_servicio
+            // 
+            this.label_tiempo_servicio.AutoSize = true;
+            this.label_tiempo_servicio.Location = new System.Drawing.Point(129, 26);
+            this.label_tiempo_servicio.Name = "label_tiempo_servicio";
+            this.label_tiempo_servicio.Size = new System.Drawing.Size(98, 13);
+            this.label_tiempo_servicio.TabIndex = 181;
+            this.label_tiempo_servicio.Text = "tiempo_de_servicio";
+            // 
+            // label72
+            // 
+            this.label72.AutoSize = true;
+            this.label72.Location = new System.Drawing.Point(26, 26);
+            this.label72.Name = "label72";
+            this.label72.Size = new System.Drawing.Size(98, 13);
+            this.label72.TabIndex = 180;
+            this.label72.Text = "Tiempo de Servicio";
+            // 
             // txt_socio
             // 
-            this.txt_socio.Location = new System.Drawing.Point(132, 24);
+            this.txt_socio.Location = new System.Drawing.Point(132, 50);
             this.txt_socio.Name = "txt_socio";
             this.txt_socio.Size = new System.Drawing.Size(139, 20);
             this.txt_socio.TabIndex = 179;
@@ -427,16 +408,16 @@
             // label50
             // 
             this.label50.AutoSize = true;
-            this.label50.Location = new System.Drawing.Point(26, 27);
+            this.label50.Location = new System.Drawing.Point(26, 53);
             this.label50.Name = "label50";
-            this.label50.Size = new System.Drawing.Size(49, 13);
+            this.label50.Size = new System.Drawing.Size(61, 13);
             this.label50.TabIndex = 178;
-            this.label50.Text = "Socio N°";
+            this.label50.Text = "N° Registro";
             // 
             // label51
             // 
             this.label51.AutoSize = true;
-            this.label51.Location = new System.Drawing.Point(26, 143);
+            this.label51.Location = new System.Drawing.Point(26, 169);
             this.label51.Name = "label51";
             this.label51.Size = new System.Drawing.Size(35, 13);
             this.label51.TabIndex = 162;
@@ -445,7 +426,7 @@
             // label52
             // 
             this.label52.AutoSize = true;
-            this.label52.Location = new System.Drawing.Point(26, 56);
+            this.label52.Location = new System.Drawing.Point(26, 82);
             this.label52.Name = "label52";
             this.label52.Size = new System.Drawing.Size(24, 13);
             this.label52.TabIndex = 172;
@@ -458,7 +439,7 @@
             this.select_tipocuenta.Items.AddRange(new object[] {
             "Usuario",
             "Administrador"});
-            this.select_tipocuenta.Location = new System.Drawing.Point(132, 82);
+            this.select_tipocuenta.Location = new System.Drawing.Point(132, 108);
             this.select_tipocuenta.Name = "select_tipocuenta";
             this.select_tipocuenta.Size = new System.Drawing.Size(121, 21);
             this.select_tipocuenta.TabIndex = 177;
@@ -467,7 +448,7 @@
             // label53
             // 
             this.label53.AutoSize = true;
-            this.label53.Location = new System.Drawing.Point(26, 85);
+            this.label53.Location = new System.Drawing.Point(26, 111);
             this.label53.Name = "label53";
             this.label53.Size = new System.Drawing.Size(79, 13);
             this.label53.TabIndex = 174;
@@ -476,7 +457,7 @@
             // label54
             // 
             this.label54.AutoSize = true;
-            this.label54.Location = new System.Drawing.Point(26, 114);
+            this.label54.Location = new System.Drawing.Point(26, 140);
             this.label54.Name = "label54";
             this.label54.Size = new System.Drawing.Size(91, 13);
             this.label54.TabIndex = 173;
@@ -491,7 +472,7 @@
             "Renunciado",
             "Separado",
             "Fallecido"});
-            this.select_estado.Location = new System.Drawing.Point(132, 169);
+            this.select_estado.Location = new System.Drawing.Point(132, 195);
             this.select_estado.Name = "select_estado";
             this.select_estado.Size = new System.Drawing.Size(121, 21);
             this.select_estado.TabIndex = 161;
@@ -499,7 +480,7 @@
             // label55
             // 
             this.label55.AutoSize = true;
-            this.label55.Location = new System.Drawing.Point(26, 172);
+            this.label55.Location = new System.Drawing.Point(26, 198);
             this.label55.Name = "label55";
             this.label55.Size = new System.Drawing.Size(40, 13);
             this.label55.TabIndex = 160;
@@ -507,7 +488,7 @@
             // 
             // txt_tib
             // 
-            this.txt_tib.Location = new System.Drawing.Point(132, 53);
+            this.txt_tib.Location = new System.Drawing.Point(132, 79);
             this.txt_tib.Name = "txt_tib";
             this.txt_tib.Size = new System.Drawing.Size(100, 20);
             this.txt_tib.TabIndex = 175;
@@ -516,7 +497,7 @@
             // 
             this.select_cargo2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.select_cargo2.FormattingEnabled = true;
-            this.select_cargo2.Location = new System.Drawing.Point(132, 140);
+            this.select_cargo2.Location = new System.Drawing.Point(132, 166);
             this.select_cargo2.Name = "select_cargo2";
             this.select_cargo2.Size = new System.Drawing.Size(160, 21);
             this.select_cargo2.TabIndex = 0;
@@ -524,7 +505,7 @@
             // label56
             // 
             this.label56.AutoSize = true;
-            this.label56.Location = new System.Drawing.Point(26, 201);
+            this.label56.Location = new System.Drawing.Point(26, 227);
             this.label56.Name = "label56";
             this.label56.Size = new System.Drawing.Size(54, 13);
             this.label56.TabIndex = 128;
@@ -532,7 +513,7 @@
             // 
             // date_fecha_inscrip
             // 
-            this.date_fecha_inscrip.Location = new System.Drawing.Point(132, 109);
+            this.date_fecha_inscrip.Location = new System.Drawing.Point(132, 135);
             this.date_fecha_inscrip.Name = "date_fecha_inscrip";
             this.date_fecha_inscrip.Size = new System.Drawing.Size(200, 20);
             this.date_fecha_inscrip.TabIndex = 176;
@@ -540,7 +521,7 @@
             // label57
             // 
             this.label57.AutoSize = true;
-            this.label57.Location = new System.Drawing.Point(26, 230);
+            this.label57.Location = new System.Drawing.Point(26, 256);
             this.label57.Name = "label57";
             this.label57.Size = new System.Drawing.Size(53, 13);
             this.label57.TabIndex = 131;
@@ -548,7 +529,7 @@
             // 
             // txt_pass
             // 
-            this.txt_pass.Location = new System.Drawing.Point(132, 227);
+            this.txt_pass.Location = new System.Drawing.Point(132, 253);
             this.txt_pass.Name = "txt_pass";
             this.txt_pass.PasswordChar = '*';
             this.txt_pass.Size = new System.Drawing.Size(139, 20);
@@ -558,13 +539,15 @@
             // 
             this.select_compania.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.select_compania.FormattingEnabled = true;
-            this.select_compania.Location = new System.Drawing.Point(132, 198);
+            this.select_compania.Location = new System.Drawing.Point(132, 224);
             this.select_compania.Name = "select_compania";
             this.select_compania.Size = new System.Drawing.Size(121, 21);
             this.select_compania.TabIndex = 151;
             // 
             // groupBox8
             // 
+            this.groupBox8.Controls.Add(this.select_nivel_acad);
+            this.groupBox8.Controls.Add(this.label71);
             this.groupBox8.Controls.Add(this.label69);
             this.groupBox8.Controls.Add(this.label70);
             this.groupBox8.Controls.Add(this.txt_profesion);
@@ -593,10 +576,37 @@
             this.groupBox8.Controls.Add(this.txt_rut);
             this.groupBox8.Location = new System.Drawing.Point(8, 17);
             this.groupBox8.Name = "groupBox8";
-            this.groupBox8.Size = new System.Drawing.Size(390, 411);
+            this.groupBox8.Size = new System.Drawing.Size(390, 438);
             this.groupBox8.TabIndex = 109;
             this.groupBox8.TabStop = false;
             this.groupBox8.Text = "Datos Personales";
+            // 
+            // select_nivel_acad
+            // 
+            this.select_nivel_acad.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.select_nivel_acad.FormattingEnabled = true;
+            this.select_nivel_acad.Items.AddRange(new object[] {
+            "Educación Básica Completa",
+            "Educación Básica Incompleta",
+            "Educación Media Completa",
+            "Educación Media Incompleta",
+            "Educación Superior Técnica Completa",
+            "Educación Superior Técnica Incompleta",
+            "Educación Superior Universitaria Completa",
+            "Educación Superior Universitaria Incompleta"});
+            this.select_nivel_acad.Location = new System.Drawing.Point(129, 196);
+            this.select_nivel_acad.Name = "select_nivel_acad";
+            this.select_nivel_acad.Size = new System.Drawing.Size(246, 21);
+            this.select_nivel_acad.TabIndex = 132;
+            // 
+            // label71
+            // 
+            this.label71.AutoSize = true;
+            this.label71.Location = new System.Drawing.Point(20, 199);
+            this.label71.Name = "label71";
+            this.label71.Size = new System.Drawing.Size(87, 13);
+            this.label71.TabIndex = 131;
+            this.label71.Text = "Nivel Académico";
             // 
             // label69
             // 
@@ -639,35 +649,35 @@
             // 
             // txt_celular
             // 
-            this.txt_celular.Location = new System.Drawing.Point(129, 373);
+            this.txt_celular.Location = new System.Drawing.Point(129, 397);
             this.txt_celular.Name = "txt_celular";
             this.txt_celular.Size = new System.Drawing.Size(114, 20);
             this.txt_celular.TabIndex = 128;
             // 
             // txt_tel_lab
             // 
-            this.txt_tel_lab.Location = new System.Drawing.Point(129, 344);
+            this.txt_tel_lab.Location = new System.Drawing.Point(129, 368);
             this.txt_tel_lab.Name = "txt_tel_lab";
             this.txt_tel_lab.Size = new System.Drawing.Size(156, 20);
             this.txt_tel_lab.TabIndex = 127;
             // 
             // txt_tel_part
             // 
-            this.txt_tel_part.Location = new System.Drawing.Point(129, 315);
+            this.txt_tel_part.Location = new System.Drawing.Point(129, 339);
             this.txt_tel_part.Name = "txt_tel_part";
             this.txt_tel_part.Size = new System.Drawing.Size(156, 20);
             this.txt_tel_part.TabIndex = 126;
             // 
             // txt_dir_lab
             // 
-            this.txt_dir_lab.Location = new System.Drawing.Point(129, 286);
+            this.txt_dir_lab.Location = new System.Drawing.Point(129, 310);
             this.txt_dir_lab.Name = "txt_dir_lab";
             this.txt_dir_lab.Size = new System.Drawing.Size(246, 20);
             this.txt_dir_lab.TabIndex = 125;
             // 
             // txt_dir_part
             // 
-            this.txt_dir_part.Location = new System.Drawing.Point(129, 257);
+            this.txt_dir_part.Location = new System.Drawing.Point(129, 281);
             this.txt_dir_part.Name = "txt_dir_part";
             this.txt_dir_part.Size = new System.Drawing.Size(246, 20);
             this.txt_dir_part.TabIndex = 124;
@@ -682,14 +692,14 @@
             "Divorciado",
             "Viudo",
             "Separado"});
-            this.select_estadocivil.Location = new System.Drawing.Point(129, 228);
+            this.select_estadocivil.Location = new System.Drawing.Point(129, 252);
             this.select_estadocivil.Name = "select_estadocivil";
             this.select_estadocivil.Size = new System.Drawing.Size(139, 21);
             this.select_estadocivil.TabIndex = 123;
             // 
             // txt_email
             // 
-            this.txt_email.Location = new System.Drawing.Point(129, 199);
+            this.txt_email.Location = new System.Drawing.Point(129, 223);
             this.txt_email.Name = "txt_email";
             this.txt_email.Size = new System.Drawing.Size(139, 20);
             this.txt_email.TabIndex = 122;
@@ -697,7 +707,7 @@
             // label58
             // 
             this.label58.AutoSize = true;
-            this.label58.Location = new System.Drawing.Point(20, 231);
+            this.label58.Location = new System.Drawing.Point(20, 255);
             this.label58.Name = "label58";
             this.label58.Size = new System.Drawing.Size(62, 13);
             this.label58.TabIndex = 118;
@@ -708,14 +718,14 @@
             this.label59.AutoSize = true;
             this.label59.Location = new System.Drawing.Point(20, 173);
             this.label59.Name = "label59";
-            this.label59.Size = new System.Drawing.Size(51, 13);
+            this.label59.Size = new System.Drawing.Size(90, 13);
             this.label59.TabIndex = 117;
-            this.label59.Text = "Profesión";
+            this.label59.Text = "Profesión u Oficio";
             // 
             // label60
             // 
             this.label60.AutoSize = true;
-            this.label60.Location = new System.Drawing.Point(20, 202);
+            this.label60.Location = new System.Drawing.Point(20, 226);
             this.label60.Name = "label60";
             this.label60.Size = new System.Drawing.Size(32, 13);
             this.label60.TabIndex = 116;
@@ -724,7 +734,7 @@
             // label61
             // 
             this.label61.AutoSize = true;
-            this.label61.Location = new System.Drawing.Point(20, 376);
+            this.label61.Location = new System.Drawing.Point(20, 400);
             this.label61.Name = "label61";
             this.label61.Size = new System.Drawing.Size(39, 13);
             this.label61.TabIndex = 115;
@@ -742,7 +752,7 @@
             // label63
             // 
             this.label63.AutoSize = true;
-            this.label63.Location = new System.Drawing.Point(20, 289);
+            this.label63.Location = new System.Drawing.Point(20, 313);
             this.label63.Name = "label63";
             this.label63.Size = new System.Drawing.Size(90, 13);
             this.label63.TabIndex = 113;
@@ -751,7 +761,7 @@
             // label64
             // 
             this.label64.AutoSize = true;
-            this.label64.Location = new System.Drawing.Point(20, 260);
+            this.label64.Location = new System.Drawing.Point(20, 284);
             this.label64.Name = "label64";
             this.label64.Size = new System.Drawing.Size(99, 13);
             this.label64.TabIndex = 112;
@@ -760,7 +770,7 @@
             // label65
             // 
             this.label65.AutoSize = true;
-            this.label65.Location = new System.Drawing.Point(20, 347);
+            this.label65.Location = new System.Drawing.Point(20, 371);
             this.label65.Name = "label65";
             this.label65.Size = new System.Drawing.Size(87, 13);
             this.label65.TabIndex = 111;
@@ -769,7 +779,7 @@
             // label66
             // 
             this.label66.AutoSize = true;
-            this.label66.Location = new System.Drawing.Point(20, 318);
+            this.label66.Location = new System.Drawing.Point(20, 342);
             this.label66.Name = "label66";
             this.label66.Size = new System.Drawing.Size(96, 13);
             this.label66.TabIndex = 110;
@@ -831,7 +841,7 @@
             this.FichaMedica.Controls.Add(this.groupBox1);
             this.FichaMedica.Location = new System.Drawing.Point(4, 22);
             this.FichaMedica.Name = "FichaMedica";
-            this.FichaMedica.Size = new System.Drawing.Size(774, 553);
+            this.FichaMedica.Size = new System.Drawing.Size(774, 561);
             this.FichaMedica.TabIndex = 0;
             this.FichaMedica.Text = "Ficha Médica";
             this.FichaMedica.UseVisualStyleBackColor = true;
@@ -1230,7 +1240,7 @@
             this.HistorialCargos.Controls.Add(this.dataGridCargos);
             this.HistorialCargos.Location = new System.Drawing.Point(4, 22);
             this.HistorialCargos.Name = "HistorialCargos";
-            this.HistorialCargos.Size = new System.Drawing.Size(774, 553);
+            this.HistorialCargos.Size = new System.Drawing.Size(774, 561);
             this.HistorialCargos.TabIndex = 0;
             this.HistorialCargos.Text = "Historial Cargos";
             this.HistorialCargos.UseVisualStyleBackColor = true;
@@ -1390,7 +1400,7 @@
             this.HistorialPremios.Location = new System.Drawing.Point(4, 22);
             this.HistorialPremios.Name = "HistorialPremios";
             this.HistorialPremios.Padding = new System.Windows.Forms.Padding(3);
-            this.HistorialPremios.Size = new System.Drawing.Size(774, 553);
+            this.HistorialPremios.Size = new System.Drawing.Size(774, 561);
             this.HistorialPremios.TabIndex = 1;
             this.HistorialPremios.Text = "Historial Premios";
             this.HistorialPremios.UseVisualStyleBackColor = true;
@@ -1549,7 +1559,7 @@
             this.HistorialCursos.Location = new System.Drawing.Point(4, 22);
             this.HistorialCursos.Name = "HistorialCursos";
             this.HistorialCursos.Padding = new System.Windows.Forms.Padding(3);
-            this.HistorialCursos.Size = new System.Drawing.Size(774, 553);
+            this.HistorialCursos.Size = new System.Drawing.Size(774, 561);
             this.HistorialCursos.TabIndex = 2;
             this.HistorialCursos.Text = "Historial Cursos";
             this.HistorialCursos.UseVisualStyleBackColor = true;
@@ -1726,9 +1736,9 @@
             this.Reincorporaciones.Location = new System.Drawing.Point(4, 22);
             this.Reincorporaciones.Name = "Reincorporaciones";
             this.Reincorporaciones.Padding = new System.Windows.Forms.Padding(3);
-            this.Reincorporaciones.Size = new System.Drawing.Size(774, 553);
+            this.Reincorporaciones.Size = new System.Drawing.Size(774, 561);
             this.Reincorporaciones.TabIndex = 6;
-            this.Reincorporaciones.Text = "Reincorporaciones";
+            this.Reincorporaciones.Text = "Medidas Disciplinarias";
             this.Reincorporaciones.UseVisualStyleBackColor = true;
             // 
             // dataGridReincorporacion
@@ -1739,10 +1749,10 @@
             this.dataGridReincorporacion.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.BomberoReincorporacion,
             this.FechaReincorporacion});
-            this.dataGridReincorporacion.Location = new System.Drawing.Point(23, 87);
+            this.dataGridReincorporacion.Location = new System.Drawing.Point(23, 111);
             this.dataGridReincorporacion.Name = "dataGridReincorporacion";
             this.dataGridReincorporacion.ReadOnly = true;
-            this.dataGridReincorporacion.Size = new System.Drawing.Size(679, 421);
+            this.dataGridReincorporacion.Size = new System.Drawing.Size(679, 397);
             this.dataGridReincorporacion.TabIndex = 7;
             // 
             // BomberoReincorporacion
@@ -1810,7 +1820,7 @@
             this.ResumenListas.Location = new System.Drawing.Point(4, 22);
             this.ResumenListas.Name = "ResumenListas";
             this.ResumenListas.Padding = new System.Windows.Forms.Padding(3);
-            this.ResumenListas.Size = new System.Drawing.Size(774, 553);
+            this.ResumenListas.Size = new System.Drawing.Size(774, 561);
             this.ResumenListas.TabIndex = 3;
             this.ResumenListas.Text = "Resumen Listas";
             this.ResumenListas.UseVisualStyleBackColor = true;
@@ -2319,357 +2329,6 @@
             this.BomberoLista.Name = "BomberoLista";
             this.BomberoLista.Visible = false;
             // 
-            // Servicio
-            // 
-            this.Servicio.Controls.Add(this.btn_imprimir_servicio);
-            this.Servicio.Controls.Add(this.btn_cambios_servicio);
-            this.Servicio.Controls.Add(this.dataGridServicio);
-            this.Servicio.Controls.Add(this.groupBox5);
-            this.Servicio.Location = new System.Drawing.Point(4, 22);
-            this.Servicio.Name = "Servicio";
-            this.Servicio.Padding = new System.Windows.Forms.Padding(3);
-            this.Servicio.Size = new System.Drawing.Size(774, 553);
-            this.Servicio.TabIndex = 4;
-            this.Servicio.Text = "Servicio";
-            this.Servicio.UseVisualStyleBackColor = true;
-            this.Servicio.Click += new System.EventHandler(this.Servicio_Click);
-            // 
-            // btn_imprimir_servicio
-            // 
-            this.btn_imprimir_servicio.Location = new System.Drawing.Point(429, 520);
-            this.btn_imprimir_servicio.Name = "btn_imprimir_servicio";
-            this.btn_imprimir_servicio.Size = new System.Drawing.Size(109, 23);
-            this.btn_imprimir_servicio.TabIndex = 3;
-            this.btn_imprimir_servicio.Text = "Imprimir";
-            this.btn_imprimir_servicio.UseVisualStyleBackColor = true;
-            this.btn_imprimir_servicio.Click += new System.EventHandler(this.btn_imprimir_servicio_Click);
-            // 
-            // btn_cambios_servicio
-            // 
-            this.btn_cambios_servicio.Location = new System.Drawing.Point(575, 520);
-            this.btn_cambios_servicio.Name = "btn_cambios_servicio";
-            this.btn_cambios_servicio.Size = new System.Drawing.Size(102, 23);
-            this.btn_cambios_servicio.TabIndex = 2;
-            this.btn_cambios_servicio.Text = "Enviar cambios";
-            this.btn_cambios_servicio.UseVisualStyleBackColor = true;
-            this.btn_cambios_servicio.Click += new System.EventHandler(this.button2_Click_1);
-            // 
-            // dataGridServicio
-            // 
-            this.dataGridServicio.AllowUserToAddRows = false;
-            this.dataGridServicio.AllowUserToDeleteRows = false;
-            this.dataGridServicio.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridServicio.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.AñoActServicio,
-            this.AñoServicio,
-            this.MesServicio,
-            this.DiaServicio,
-            this.LlamadasServicio,
-            this.FaltasServicio,
-            this.SuspensionesServicio,
-            this.LicenciasServicio,
-            this.AsistenciaServicio,
-            this.AbonosServicio,
-            this.TotalAsistenciaServicio,
-            this.BomberoServicio});
-            this.dataGridServicio.Location = new System.Drawing.Point(26, 197);
-            this.dataGridServicio.Name = "dataGridServicio";
-            this.dataGridServicio.Size = new System.Drawing.Size(673, 313);
-            this.dataGridServicio.TabIndex = 1;
-            this.dataGridServicio.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick_1);
-            // 
-            // AñoActServicio
-            // 
-            this.AñoActServicio.DataPropertyName = "Año";
-            this.AñoActServicio.HeaderText = "Año";
-            this.AñoActServicio.Name = "AñoActServicio";
-            this.AñoActServicio.ReadOnly = true;
-            this.AñoActServicio.Width = 50;
-            // 
-            // AñoServicio
-            // 
-            this.AñoServicio.DataPropertyName = "AñoServicio";
-            this.AñoServicio.HeaderText = "Año Servicio";
-            this.AñoServicio.Name = "AñoServicio";
-            // 
-            // MesServicio
-            // 
-            this.MesServicio.DataPropertyName = "MesServicio";
-            this.MesServicio.HeaderText = "Mes Servicio";
-            this.MesServicio.Name = "MesServicio";
-            // 
-            // DiaServicio
-            // 
-            this.DiaServicio.DataPropertyName = "DiaServicio";
-            this.DiaServicio.HeaderText = "Día Servicio";
-            this.DiaServicio.Name = "DiaServicio";
-            // 
-            // LlamadasServicio
-            // 
-            this.LlamadasServicio.DataPropertyName = "Llamadas";
-            this.LlamadasServicio.HeaderText = "Llamadas";
-            this.LlamadasServicio.Name = "LlamadasServicio";
-            // 
-            // FaltasServicio
-            // 
-            this.FaltasServicio.DataPropertyName = "Faltas";
-            this.FaltasServicio.HeaderText = "Faltas";
-            this.FaltasServicio.Name = "FaltasServicio";
-            // 
-            // SuspensionesServicio
-            // 
-            this.SuspensionesServicio.DataPropertyName = "Suspensiones";
-            this.SuspensionesServicio.HeaderText = "Suspensiones";
-            this.SuspensionesServicio.Name = "SuspensionesServicio";
-            this.SuspensionesServicio.Visible = false;
-            // 
-            // LicenciasServicio
-            // 
-            this.LicenciasServicio.DataPropertyName = "Licencias";
-            this.LicenciasServicio.HeaderText = "Licencias";
-            this.LicenciasServicio.Name = "LicenciasServicio";
-            // 
-            // AsistenciaServicio
-            // 
-            this.AsistenciaServicio.DataPropertyName = "Asistencia";
-            this.AsistenciaServicio.HeaderText = "Asistencia";
-            this.AsistenciaServicio.Name = "AsistenciaServicio";
-            // 
-            // AbonosServicio
-            // 
-            this.AbonosServicio.DataPropertyName = "Abonos";
-            this.AbonosServicio.HeaderText = "Abonos";
-            this.AbonosServicio.Name = "AbonosServicio";
-            // 
-            // TotalAsistenciaServicio
-            // 
-            this.TotalAsistenciaServicio.DataPropertyName = "TotalAsistencia";
-            this.TotalAsistenciaServicio.HeaderText = "Total Asistencia";
-            this.TotalAsistenciaServicio.Name = "TotalAsistenciaServicio";
-            // 
-            // BomberoServicio
-            // 
-            this.BomberoServicio.DataPropertyName = "Bombero";
-            this.BomberoServicio.HeaderText = "Bombero";
-            this.BomberoServicio.Name = "BomberoServicio";
-            this.BomberoServicio.Visible = false;
-            // 
-            // groupBox5
-            // 
-            this.groupBox5.Controls.Add(this.txt_asistencias_serv);
-            this.groupBox5.Controls.Add(this.label39);
-            this.groupBox5.Controls.Add(this.btn_agregar_serv);
-            this.groupBox5.Controls.Add(this.ServicioAño);
-            this.groupBox5.Controls.Add(this.txt_abonos_serv);
-            this.groupBox5.Controls.Add(this.txt_licencias_serv);
-            this.groupBox5.Controls.Add(this.txt_suspensiones_serv);
-            this.groupBox5.Controls.Add(this.txt_faltas_serv);
-            this.groupBox5.Controls.Add(this.txt_llamadas_serv);
-            this.groupBox5.Controls.Add(this.label46);
-            this.groupBox5.Controls.Add(this.label45);
-            this.groupBox5.Controls.Add(this.label44);
-            this.groupBox5.Controls.Add(this.label43);
-            this.groupBox5.Controls.Add(this.label42);
-            this.groupBox5.Controls.Add(this.groupBox6);
-            this.groupBox5.Controls.Add(this.label41);
-            this.groupBox5.Location = new System.Drawing.Point(6, 6);
-            this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(713, 170);
-            this.groupBox5.TabIndex = 0;
-            this.groupBox5.TabStop = false;
-            this.groupBox5.Text = "Agregar Servicio";
-            this.groupBox5.Enter += new System.EventHandler(this.groupBox5_Enter);
-            // 
-            // txt_asistencias_serv
-            // 
-            this.txt_asistencias_serv.Location = new System.Drawing.Point(564, 125);
-            this.txt_asistencias_serv.Name = "txt_asistencias_serv";
-            this.txt_asistencias_serv.Size = new System.Drawing.Size(64, 20);
-            this.txt_asistencias_serv.TabIndex = 16;
-            // 
-            // label39
-            // 
-            this.label39.AutoSize = true;
-            this.label39.Location = new System.Drawing.Point(565, 106);
-            this.label39.Name = "label39";
-            this.label39.Size = new System.Drawing.Size(60, 13);
-            this.label39.TabIndex = 15;
-            this.label39.Text = "Asistencias";
-            // 
-            // btn_agregar_serv
-            // 
-            this.btn_agregar_serv.Location = new System.Drawing.Point(506, 35);
-            this.btn_agregar_serv.Name = "btn_agregar_serv";
-            this.btn_agregar_serv.Size = new System.Drawing.Size(160, 23);
-            this.btn_agregar_serv.TabIndex = 14;
-            this.btn_agregar_serv.Text = "Agregar";
-            this.btn_agregar_serv.UseVisualStyleBackColor = true;
-            this.btn_agregar_serv.Click += new System.EventHandler(this.btn_agregar_serv_Click);
-            // 
-            // ServicioAño
-            // 
-            this.ServicioAño.CustomFormat = "yyyy";
-            this.ServicioAño.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.ServicioAño.Location = new System.Drawing.Point(29, 63);
-            this.ServicioAño.Name = "ServicioAño";
-            this.ServicioAño.Size = new System.Drawing.Size(65, 20);
-            this.ServicioAño.TabIndex = 13;
-            // 
-            // txt_abonos_serv
-            // 
-            this.txt_abonos_serv.Location = new System.Drawing.Point(468, 126);
-            this.txt_abonos_serv.Name = "txt_abonos_serv";
-            this.txt_abonos_serv.Size = new System.Drawing.Size(64, 20);
-            this.txt_abonos_serv.TabIndex = 12;
-            this.txt_abonos_serv.TextChanged += new System.EventHandler(this.AbonosServ_TextChanged);
-            // 
-            // txt_licencias_serv
-            // 
-            this.txt_licencias_serv.Location = new System.Drawing.Point(372, 126);
-            this.txt_licencias_serv.Name = "txt_licencias_serv";
-            this.txt_licencias_serv.Size = new System.Drawing.Size(64, 20);
-            this.txt_licencias_serv.TabIndex = 11;
-            this.txt_licencias_serv.TextChanged += new System.EventHandler(this.textBox8_TextChanged);
-            // 
-            // txt_suspensiones_serv
-            // 
-            this.txt_suspensiones_serv.Location = new System.Drawing.Point(276, 126);
-            this.txt_suspensiones_serv.Name = "txt_suspensiones_serv";
-            this.txt_suspensiones_serv.Size = new System.Drawing.Size(64, 20);
-            this.txt_suspensiones_serv.TabIndex = 10;
-            // 
-            // txt_faltas_serv
-            // 
-            this.txt_faltas_serv.Location = new System.Drawing.Point(180, 126);
-            this.txt_faltas_serv.Name = "txt_faltas_serv";
-            this.txt_faltas_serv.Size = new System.Drawing.Size(64, 20);
-            this.txt_faltas_serv.TabIndex = 9;
-            // 
-            // txt_llamadas_serv
-            // 
-            this.txt_llamadas_serv.Location = new System.Drawing.Point(84, 126);
-            this.txt_llamadas_serv.Name = "txt_llamadas_serv";
-            this.txt_llamadas_serv.Size = new System.Drawing.Size(64, 20);
-            this.txt_llamadas_serv.TabIndex = 8;
-            // 
-            // label46
-            // 
-            this.label46.AutoSize = true;
-            this.label46.Location = new System.Drawing.Point(477, 107);
-            this.label46.Name = "label46";
-            this.label46.Size = new System.Drawing.Size(43, 13);
-            this.label46.TabIndex = 6;
-            this.label46.Text = "Abonos";
-            // 
-            // label45
-            // 
-            this.label45.AutoSize = true;
-            this.label45.Location = new System.Drawing.Point(379, 107);
-            this.label45.Name = "label45";
-            this.label45.Size = new System.Drawing.Size(52, 13);
-            this.label45.TabIndex = 5;
-            this.label45.Text = "Licencias";
-            // 
-            // label44
-            // 
-            this.label44.AutoSize = true;
-            this.label44.Location = new System.Drawing.Point(272, 107);
-            this.label44.Name = "label44";
-            this.label44.Size = new System.Drawing.Size(73, 13);
-            this.label44.TabIndex = 4;
-            this.label44.Text = "Suspensiones";
-            // 
-            // label43
-            // 
-            this.label43.AutoSize = true;
-            this.label43.Location = new System.Drawing.Point(194, 107);
-            this.label43.Name = "label43";
-            this.label43.Size = new System.Drawing.Size(35, 13);
-            this.label43.TabIndex = 3;
-            this.label43.Text = "Faltas";
-            // 
-            // label42
-            // 
-            this.label42.AutoSize = true;
-            this.label42.Location = new System.Drawing.Point(91, 107);
-            this.label42.Name = "label42";
-            this.label42.Size = new System.Drawing.Size(52, 13);
-            this.label42.TabIndex = 2;
-            this.label42.Text = "Llamadas";
-            // 
-            // groupBox6
-            // 
-            this.groupBox6.Controls.Add(this.txt_dia_serv);
-            this.groupBox6.Controls.Add(this.txt_mes_serv);
-            this.groupBox6.Controls.Add(this.txt_año_serv);
-            this.groupBox6.Controls.Add(this.label49);
-            this.groupBox6.Controls.Add(this.label48);
-            this.groupBox6.Controls.Add(this.label47);
-            this.groupBox6.Location = new System.Drawing.Point(118, 19);
-            this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(319, 74);
-            this.groupBox6.TabIndex = 1;
-            this.groupBox6.TabStop = false;
-            this.groupBox6.Text = "Tiempo de Servicio";
-            // 
-            // txt_dia_serv
-            // 
-            this.txt_dia_serv.Location = new System.Drawing.Point(233, 44);
-            this.txt_dia_serv.Name = "txt_dia_serv";
-            this.txt_dia_serv.Size = new System.Drawing.Size(70, 20);
-            this.txt_dia_serv.TabIndex = 5;
-            this.txt_dia_serv.TextChanged += new System.EventHandler(this.DiaTpoServ_TextChanged);
-            // 
-            // txt_mes_serv
-            // 
-            this.txt_mes_serv.Location = new System.Drawing.Point(120, 44);
-            this.txt_mes_serv.Name = "txt_mes_serv";
-            this.txt_mes_serv.Size = new System.Drawing.Size(72, 20);
-            this.txt_mes_serv.TabIndex = 4;
-            // 
-            // txt_año_serv
-            // 
-            this.txt_año_serv.Location = new System.Drawing.Point(16, 44);
-            this.txt_año_serv.Name = "txt_año_serv";
-            this.txt_año_serv.Size = new System.Drawing.Size(63, 20);
-            this.txt_año_serv.TabIndex = 3;
-            // 
-            // label49
-            // 
-            this.label49.AutoSize = true;
-            this.label49.Location = new System.Drawing.Point(256, 26);
-            this.label49.Name = "label49";
-            this.label49.Size = new System.Drawing.Size(25, 13);
-            this.label49.TabIndex = 2;
-            this.label49.Text = "Día";
-            // 
-            // label48
-            // 
-            this.label48.AutoSize = true;
-            this.label48.Location = new System.Drawing.Point(142, 26);
-            this.label48.Name = "label48";
-            this.label48.Size = new System.Drawing.Size(27, 13);
-            this.label48.TabIndex = 1;
-            this.label48.Text = "Mes";
-            // 
-            // label47
-            // 
-            this.label47.AutoSize = true;
-            this.label47.Location = new System.Drawing.Point(36, 26);
-            this.label47.Name = "label47";
-            this.label47.Size = new System.Drawing.Size(26, 13);
-            this.label47.TabIndex = 0;
-            this.label47.Text = "Año";
-            // 
-            // label41
-            // 
-            this.label41.AutoSize = true;
-            this.label41.Location = new System.Drawing.Point(45, 45);
-            this.label41.Name = "label41";
-            this.label41.Size = new System.Drawing.Size(26, 13);
-            this.label41.TabIndex = 0;
-            this.label41.Text = "Año";
-            // 
             // Observaciones
             // 
             this.Observaciones.Controls.Add(this.btn_imprimir_observaciones);
@@ -2682,7 +2341,7 @@
             this.Observaciones.Location = new System.Drawing.Point(4, 22);
             this.Observaciones.Name = "Observaciones";
             this.Observaciones.Padding = new System.Windows.Forms.Padding(3);
-            this.Observaciones.Size = new System.Drawing.Size(774, 553);
+            this.Observaciones.Size = new System.Drawing.Size(774, 561);
             this.Observaciones.TabIndex = 5;
             this.Observaciones.Text = "Observaciones";
             this.Observaciones.UseVisualStyleBackColor = true;
@@ -2782,7 +2441,7 @@
             // btnCerrar
             // 
             this.btnCerrar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnCerrar.Location = new System.Drawing.Point(690, 714);
+            this.btnCerrar.Location = new System.Drawing.Point(690, 726);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(75, 23);
             this.btnCerrar.TabIndex = 1;
@@ -2803,20 +2462,20 @@
             // labelCargo
             // 
             this.labelCargo.AutoSize = true;
-            this.labelCargo.Location = new System.Drawing.Point(184, 81);
+            this.labelCargo.Location = new System.Drawing.Point(184, 60);
             this.labelCargo.Name = "labelCargo";
             this.labelCargo.Size = new System.Drawing.Size(35, 13);
             this.labelCargo.TabIndex = 175;
             this.labelCargo.Text = "Cargo";
             // 
-            // labelTIB
+            // labelNumRegistro
             // 
-            this.labelTIB.AutoSize = true;
-            this.labelTIB.Location = new System.Drawing.Point(184, 60);
-            this.labelTIB.Name = "labelTIB";
-            this.labelTIB.Size = new System.Drawing.Size(24, 13);
-            this.labelTIB.TabIndex = 174;
-            this.labelTIB.Text = "TIB";
+            this.labelNumRegistro.AutoSize = true;
+            this.labelNumRegistro.Location = new System.Drawing.Point(184, 81);
+            this.labelNumRegistro.Name = "labelNumRegistro";
+            this.labelNumRegistro.Size = new System.Drawing.Size(61, 13);
+            this.labelNumRegistro.TabIndex = 174;
+            this.labelNumRegistro.Text = "N° Registro";
             // 
             // labelRut
             // 
@@ -2840,9 +2499,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(806, 756);
+            this.ClientSize = new System.Drawing.Size(806, 770);
             this.Controls.Add(this.labelCargo);
-            this.Controls.Add(this.labelTIB);
+            this.Controls.Add(this.labelNumRegistro);
             this.Controls.Add(this.labelRut);
             this.Controls.Add(this.labelnombre);
             this.Controls.Add(this.box_picture);
@@ -2889,12 +2548,6 @@
             this.groupBox7.ResumeLayout(false);
             this.groupBox7.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridListas)).EndInit();
-            this.Servicio.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridServicio)).EndInit();
-            this.groupBox5.ResumeLayout(false);
-            this.groupBox5.PerformLayout();
-            this.groupBox6.ResumeLayout(false);
-            this.groupBox6.PerformLayout();
             this.Observaciones.ResumeLayout(false);
             this.Observaciones.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridObservacion)).EndInit();
@@ -2921,11 +2574,10 @@
         private System.Windows.Forms.DateTimePicker dateTimeCargoDesde;
         private System.Windows.Forms.Button btn_cargo;
         private System.Windows.Forms.TabPage ResumenListas;
-        private System.Windows.Forms.TabPage Servicio;
         private System.Windows.Forms.TabPage Observaciones;
         private System.Windows.Forms.PictureBox box_picture;
         private System.Windows.Forms.Label labelCargo;
-        private System.Windows.Forms.Label labelTIB;
+        private System.Windows.Forms.Label labelNumRegistro;
         private System.Windows.Forms.Label labelRut;
         private System.Windows.Forms.Label labelnombre;
         private System.Windows.Forms.Label label5;
@@ -3040,33 +2692,11 @@
         private System.Windows.Forms.Button btn_agregar;
         private System.Windows.Forms.TextBox txt_otros_cuerp;
         private System.Windows.Forms.TextBox txt_otras_comp;
-        private System.Windows.Forms.GroupBox groupBox5;
-        private System.Windows.Forms.Label label41;
         private System.Windows.Forms.TabPage Reincorporaciones;
         private System.Windows.Forms.DataGridView dataGridReincorporacion;
         private System.Windows.Forms.Button btn_agregar_reincorporacion;
         private System.Windows.Forms.Label label40;
         private System.Windows.Forms.DateTimePicker dateTimeReincorporacion;
-        private System.Windows.Forms.GroupBox groupBox6;
-        private System.Windows.Forms.Label label42;
-        private System.Windows.Forms.Label label46;
-        private System.Windows.Forms.Label label45;
-        private System.Windows.Forms.Label label44;
-        private System.Windows.Forms.Label label43;
-        private System.Windows.Forms.Label label49;
-        private System.Windows.Forms.Label label48;
-        private System.Windows.Forms.Label label47;
-        private System.Windows.Forms.TextBox txt_dia_serv;
-        private System.Windows.Forms.TextBox txt_mes_serv;
-        private System.Windows.Forms.TextBox txt_año_serv;
-        private System.Windows.Forms.DateTimePicker ServicioAño;
-        private System.Windows.Forms.TextBox txt_abonos_serv;
-        private System.Windows.Forms.TextBox txt_licencias_serv;
-        private System.Windows.Forms.TextBox txt_suspensiones_serv;
-        private System.Windows.Forms.TextBox txt_faltas_serv;
-        private System.Windows.Forms.TextBox txt_llamadas_serv;
-        private System.Windows.Forms.Button btn_agregar_serv;
-        private System.Windows.Forms.DataGridView dataGridServicio;
         private System.Windows.Forms.Button btn_buscar;
         private System.Windows.Forms.Label lbl_faltas;
         private System.Windows.Forms.Label lbl_totalAbonos;
@@ -3093,21 +2723,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn TotalAbonosLista;
         private System.Windows.Forms.DataGridViewTextBoxColumn AñoLista;
         private System.Windows.Forms.DataGridViewTextBoxColumn BomberoLista;
-        private System.Windows.Forms.TextBox txt_asistencias_serv;
-        private System.Windows.Forms.Label label39;
-        private System.Windows.Forms.Button btn_cambios_servicio;
-        private System.Windows.Forms.DataGridViewTextBoxColumn AñoActServicio;
-        private System.Windows.Forms.DataGridViewTextBoxColumn AñoServicio;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MesServicio;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DiaServicio;
-        private System.Windows.Forms.DataGridViewTextBoxColumn LlamadasServicio;
-        private System.Windows.Forms.DataGridViewTextBoxColumn FaltasServicio;
-        private System.Windows.Forms.DataGridViewTextBoxColumn SuspensionesServicio;
-        private System.Windows.Forms.DataGridViewTextBoxColumn LicenciasServicio;
-        private System.Windows.Forms.DataGridViewTextBoxColumn AsistenciaServicio;
-        private System.Windows.Forms.DataGridViewTextBoxColumn AbonosServicio;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TotalAsistenciaServicio;
-        private System.Windows.Forms.DataGridViewTextBoxColumn BomberoServicio;
         private System.Windows.Forms.DataGridViewTextBoxColumn BomberoReincorporacion;
         private System.Windows.Forms.DataGridViewTextBoxColumn FechaReincorporacion;
         private System.Windows.Forms.GroupBox groupBox7;
@@ -3116,7 +2731,6 @@
         private System.Windows.Forms.Button btn_imprimir_premios;
         private System.Windows.Forms.Button btn_imprimir_cursos;
         private System.Windows.Forms.Button btn_imprimir_asistencia;
-        private System.Windows.Forms.Button btn_imprimir_servicio;
         private System.Windows.Forms.Button btn_imprimir_observaciones;
         private System.Windows.Forms.TabPage FichaPersonal;
         private System.Windows.Forms.GroupBox groupBox8;
@@ -3167,6 +2781,10 @@
         private System.Windows.Forms.Button btn_imagen;
         private System.Windows.Forms.Button btn_enviar_fichapersonal;
         private System.Windows.Forms.Button btn_imprimir;
+        private System.Windows.Forms.ComboBox select_nivel_acad;
+        private System.Windows.Forms.Label label71;
+        private System.Windows.Forms.Label label_tiempo_servicio;
+        private System.Windows.Forms.Label label72;
 
     }
 }

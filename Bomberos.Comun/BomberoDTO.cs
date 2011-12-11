@@ -31,6 +31,7 @@ namespace Bomberos.Comun
         public int PictureSize { get; set; }
         public string PictureName { get; set; }
         public byte[] PictureFile { get; set; }
+        public string NivelAcademico { get; set; }
     }
 }
 

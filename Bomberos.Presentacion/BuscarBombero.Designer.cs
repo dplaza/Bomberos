@@ -69,6 +69,7 @@
             this.PictureFile = new System.Windows.Forms.DataGridViewImageColumn();
             this.PictureName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PictureSize = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NivelAcademico = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridResult)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -198,7 +199,8 @@
             this.Password,
             this.PictureFile,
             this.PictureName,
-            this.PictureSize});
+            this.PictureSize,
+            this.NivelAcademico});
             this.dataGridResult.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridResult.Location = new System.Drawing.Point(3, 16);
             this.dataGridResult.Name = "dataGridResult";
@@ -456,6 +458,14 @@
             this.PictureSize.ReadOnly = true;
             this.PictureSize.Visible = false;
             // 
+            // NivelAcademico
+            // 
+            this.NivelAcademico.DataPropertyName = "NivelAcademico";
+            this.NivelAcademico.HeaderText = "NivelAcademico";
+            this.NivelAcademico.Name = "NivelAcademico";
+            this.NivelAcademico.ReadOnly = true;
+            this.NivelAcademico.Visible = false;
+            // 
             // BuscarBombero
             // 
             this.AcceptButton = this.btn_buscar;
@@ -527,5 +537,6 @@
         private System.Windows.Forms.DataGridViewImageColumn PictureFile;
         private System.Windows.Forms.DataGridViewTextBoxColumn PictureName;
         private System.Windows.Forms.DataGridViewTextBoxColumn PictureSize;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NivelAcademico;
     }
 }

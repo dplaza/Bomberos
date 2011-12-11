@@ -126,7 +126,7 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "MenuUsuario";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Compañia Bomberos - Usuario";
+            this.Text = "Sistema Administrador de Hojas de Vida - Usuario";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.MenuUsuario_Load);
             this.menuStrip1.ResumeLayout(false);

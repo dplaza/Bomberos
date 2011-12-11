@@ -24,7 +24,6 @@ namespace Bomberos.Presentacion
 
         public MasInfoBombero()
         {
-            //MessageBox.Show("a");
             FichaMedicaBomberoActual = new FichaMedicaDTO();
             BomberoActual = new BomberoDTO();
             InitializeComponent();
@@ -33,7 +32,6 @@ namespace Bomberos.Presentacion
         private void btnCerrar_Click(object sender, EventArgs e)
         {
             this.Close();
-            // System.IO.File.Delete(location);
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -80,7 +78,6 @@ namespace Bomberos.Presentacion
             ICursoBomberoMgr _CursoBombero = new CursoBomberoMgr();
             IPremioBomberoMgr _PremioBombero = new PremioBomberoMgr();
             IObservacionBomberoMgr _ObservacionBombero = new ObservacionBomberoMgr();
-            IServicioBomberoMgr _Servicio = new ServicioBomberoMgr();
             IFichaMedicaMgr _FichaMedica = new FichaMedicaMgr();
             IReincorporacionBomberoMgr _Reincorporacion = new ReincorporacionBomberoMgr();
             CargoBomberoDTO CargoBombero = new CargoBomberoDTO();
@@ -88,7 +85,6 @@ namespace Bomberos.Presentacion
             PremioBomberoDTO PremioBombero = new PremioBomberoDTO();
             ObservacionBomberoDTO ObservacionBombero = new ObservacionBomberoDTO();
             FichaMedicaDTO FichaMedica = new FichaMedicaDTO();
-            ServicioBomberoDTO ServicioBombero = new ServicioBomberoDTO();
             ReincorporacionBomberoDTO ReincorporacionBombero = new ReincorporacionBomberoDTO();
             ReincorporacionBombero.Bombero = BomberoActual;
             PremioBombero.Bombero = BomberoActual;
@@ -96,13 +92,11 @@ namespace Bomberos.Presentacion
             CursoBombero.Bombero = BomberoActual;
             ObservacionBombero.Bombero = BomberoActual;
             FichaMedica.Bombero = BomberoActual;
-            ServicioBombero.Bombero = BomberoActual;
 
             dataGridPremios.DataSource = _PremioBombero.CargarPremioBombero(PremioBombero).OrderBy(p => p.FechaCalifica).ToList();
             dataGridCursos.DataSource = _CursoBombero.CargarCursoBombero(CursoBombero).OrderBy(p => p.FechaInicio).ToList();
             dataGridCargos.DataSource = _CargoBombero.CargarCargoBombero(CargoBombero).OrderBy(p => p.FechaDesde).ToList();
             dataGridObservacion.DataSource = _ObservacionBombero.CargarObservacionesBombero(ObservacionBombero).OrderBy(p => p.Fecha).ToList();
-            dataGridServicio.DataSource = _Servicio.CargarServicioBombero(ServicioBombero).OrderBy(p => p.Año).ToList();
             dataGridReincorporacion.DataSource = _Reincorporacion.CargarReincorporacionBombero(ReincorporacionBombero).OrderBy(p => p.FechaReincorporacion).ToList();
 
             dataGridCargos.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
@@ -155,7 +149,7 @@ namespace Bomberos.Presentacion
 
             labelnombre.Text = BomberoActual.Nombres + " " + BomberoActual.Apellidos;
             labelRut.Text = BomberoActual.Rut;
-            labelTIB.Text = BomberoActual.TIB;
+            labelNumRegistro.Text = BomberoActual.NumeroRegistro.ToString();
             labelCargo.Text = BomberoActual.Cargo.Nombre;
 
             if (!System.IO.File.Exists(BomberoActual.PictureName))
@@ -194,6 +188,11 @@ namespace Bomberos.Presentacion
             txt_tel_part.Text = BomberoActual.TelefonoParticular;
             txt_tib.Text = BomberoActual.TIB;
             txt_socio.Text = BomberoActual.NumeroRegistro.ToString();
+            select_nivel_acad.SelectedItem = BomberoActual.NivelAcademico;
+
+            double dif = (DateTime.Today - BomberoActual.FechaInscripcion).TotalDays;
+
+            label_tiempo_servicio.Text = dif.ToString() + " día(s)";
 
             if (BomberoActual.isAdmin)
                 select_tipocuenta.SelectedItem = "Administrador";
@@ -672,65 +671,9 @@ namespace Bomberos.Presentacion
             }
         }
 
-        private void btn_agregar_serv_Click(object sender, EventArgs e)
-        {
-            IServicioBomberoMgr _Servicio = new ServicioBomberoMgr();
-            ServicioBomberoDTO Servicio = new ServicioBomberoDTO();
-
-            try
-            {
-                Servicio.Abonos = int.Parse(txt_abonos_serv.Text);
-                Servicio.Año = ServicioAño.Value.Year;
-                Servicio.AñoServicio = int.Parse(txt_año_serv.Text);
-                Servicio.Bombero = BomberoActual;
-                Servicio.DiaServicio = int.Parse(txt_dia_serv.Text);
-                Servicio.Faltas = int.Parse(txt_faltas_serv.Text);
-                Servicio.Licencias = int.Parse(txt_licencias_serv.Text);
-                Servicio.Llamadas = int.Parse(txt_llamadas_serv.Text);
-                Servicio.MesServicio = int.Parse(txt_mes_serv.Text);
-                Servicio.Suspensiones = int.Parse(txt_suspensiones_serv.Text);
-                Servicio.Asistencia = int.Parse(txt_asistencias_serv.Text);
-            }
-            catch (Exception er)
-            {
-                MessageBox.Show("Datos ingresados no válidos");
-                return;
-            }
-
-            if (_Servicio.RegistroServicioBombero(Servicio))
-            {
-                MessageBox.Show("Servicio agregado con exito");
-                dataGridServicio.DataSource = _Servicio.CargarServicioBombero(Servicio);
-            }
-            else
-            {
-                MessageBox.Show("Error al guardar exito");
-            }
-
-        }
-
         private void dataGridView2_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
         {
 
-        }
-
-        private void button2_Click_1(object sender, EventArgs e)
-        {
-            if (dataGridServicio.Rows.Count > 0)
-            {
-                foreach (DataGridViewRow row in dataGridServicio.Rows)
-                {
-                    IServicioBomberoMgr _Servicio = new ServicioBomberoMgr();
-                    ServicioBomberoDTO ServicioTemp = new ServicioBomberoDTO();
-                    ServicioTemp = (ServicioBomberoDTO)row.DataBoundItem;
-
-                    try
-                    {
-                        _Servicio.EditarServicioBombero(ServicioTemp);
-                    }
-                    catch (Exception er) { }
-                }
-            }
         }
 
         private void btn_agregar_reincorporacion_Click(object sender, EventArgs e)
@@ -968,6 +911,7 @@ namespace Bomberos.Presentacion
                 Bombero.Cargo = (CargoDTO)select_cargo.SelectedItem;
                 Bombero.Estado = select_estado.Text;
                 Bombero.NumeroRegistro = int.Parse(txt_socio.Text);
+                Bombero.NivelAcademico = select_nivel_acad.Text;
 
                 #region Fotografia Bombero
                 FileStream fs = new FileStream(location, FileMode.Open, FileAccess.Read);
@@ -1045,29 +989,9 @@ namespace Bomberos.Presentacion
             }
         }
 
-        private void btn_imprimir_servicio_Click(object sender, EventArgs e)
+        private void FichaPersonal_Click(object sender, EventArgs e)
         {
-            ServicioReportDTO oParametro = new ServicioReportDTO();
-            oParametro.p_Nombres = BomberoActual.Nombres;
-            oParametro.p_Apellidos = BomberoActual.Apellidos;
 
-            IServicioBomberoMgr _Servicio = new ServicioBomberoMgr();
-            ServicioBomberoDTO Servicio = new ServicioBomberoDTO();
-            Servicio.Bombero = BomberoActual;
-
-            foreach (var elem in _Servicio.CargarServicioBombero(Servicio))
-            {
-                Bomberos.ComunFuncional.ServicioReportDTO.ServiciosReport ServicioElem = new ServicioReportDTO.ServiciosReport();
-                Utilidades.ReflectarPropiedadesSimilares(elem, ServicioElem);
-                oParametro.ListaServicios.Add(ServicioElem);
-            }
-
-            var form = new VisorReportes();
-
-            form.MostrarReporte(
-                EnumReportes.Servicio,
-                oParametro
-                );
         }
     }
 }
