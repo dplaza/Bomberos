@@ -175,8 +175,6 @@
             this.label8 = new System.Windows.Forms.Label();
             this.Reincorporaciones = new System.Windows.Forms.TabPage();
             this.dataGridReincorporacion = new System.Windows.Forms.DataGridView();
-            this.BomberoReincorporacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FechaReincorporacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btn_agregar_reincorporacion = new System.Windows.Forms.Button();
             this.label40 = new System.Windows.Forms.Label();
             this.dateTimeReincorporacion = new System.Windows.Forms.DateTimePicker();
@@ -257,6 +255,17 @@
             this.label39 = new System.Windows.Forms.Label();
             this.txt_alergias = new System.Windows.Forms.RichTextBox();
             this.label41 = new System.Windows.Forms.Label();
+            this.label42 = new System.Windows.Forms.Label();
+            this.dateTimeSuspension = new System.Windows.Forms.DateTimePicker();
+            this.txt_sancion = new System.Windows.Forms.RichTextBox();
+            this.label43 = new System.Windows.Forms.Label();
+            this.txt_med_observacion = new System.Windows.Forms.RichTextBox();
+            this.label44 = new System.Windows.Forms.Label();
+            this.BomberoReincorporacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FechaReincorporacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FechaSuspension = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Sancion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Observacion_Med = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabBox.SuspendLayout();
             this.FichaPersonal.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.box_ficha_pict)).BeginInit();
@@ -1736,6 +1745,12 @@
             // 
             // Reincorporaciones
             // 
+            this.Reincorporaciones.Controls.Add(this.txt_med_observacion);
+            this.Reincorporaciones.Controls.Add(this.label44);
+            this.Reincorporaciones.Controls.Add(this.txt_sancion);
+            this.Reincorporaciones.Controls.Add(this.label43);
+            this.Reincorporaciones.Controls.Add(this.dateTimeSuspension);
+            this.Reincorporaciones.Controls.Add(this.label42);
             this.Reincorporaciones.Controls.Add(this.dataGridReincorporacion);
             this.Reincorporaciones.Controls.Add(this.btn_agregar_reincorporacion);
             this.Reincorporaciones.Controls.Add(this.label40);
@@ -1755,32 +1770,19 @@
             this.dataGridReincorporacion.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridReincorporacion.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.BomberoReincorporacion,
-            this.FechaReincorporacion});
-            this.dataGridReincorporacion.Location = new System.Drawing.Point(23, 111);
+            this.FechaReincorporacion,
+            this.FechaSuspension,
+            this.Sancion,
+            this.Observacion_Med});
+            this.dataGridReincorporacion.Location = new System.Drawing.Point(35, 161);
             this.dataGridReincorporacion.Name = "dataGridReincorporacion";
             this.dataGridReincorporacion.ReadOnly = true;
-            this.dataGridReincorporacion.Size = new System.Drawing.Size(679, 397);
+            this.dataGridReincorporacion.Size = new System.Drawing.Size(654, 361);
             this.dataGridReincorporacion.TabIndex = 7;
-            // 
-            // BomberoReincorporacion
-            // 
-            this.BomberoReincorporacion.DataPropertyName = "Bombero";
-            this.BomberoReincorporacion.HeaderText = "Bombero";
-            this.BomberoReincorporacion.Name = "BomberoReincorporacion";
-            this.BomberoReincorporacion.ReadOnly = true;
-            this.BomberoReincorporacion.Visible = false;
-            // 
-            // FechaReincorporacion
-            // 
-            this.FechaReincorporacion.DataPropertyName = "FechaReincorporacion";
-            this.FechaReincorporacion.HeaderText = "Fecha de Reincorporación";
-            this.FechaReincorporacion.Name = "FechaReincorporacion";
-            this.FechaReincorporacion.ReadOnly = true;
-            this.FechaReincorporacion.Width = 400;
             // 
             // btn_agregar_reincorporacion
             // 
-            this.btn_agregar_reincorporacion.Location = new System.Drawing.Point(448, 26);
+            this.btn_agregar_reincorporacion.Location = new System.Drawing.Point(497, 21);
             this.btn_agregar_reincorporacion.Name = "btn_agregar_reincorporacion";
             this.btn_agregar_reincorporacion.Size = new System.Drawing.Size(161, 23);
             this.btn_agregar_reincorporacion.TabIndex = 6;
@@ -1791,7 +1793,7 @@
             // label40
             // 
             this.label40.AutoSize = true;
-            this.label40.Location = new System.Drawing.Point(38, 35);
+            this.label40.Location = new System.Drawing.Point(32, 59);
             this.label40.Name = "label40";
             this.label40.Size = new System.Drawing.Size(133, 13);
             this.label40.TabIndex = 5;
@@ -1799,7 +1801,7 @@
             // 
             // dateTimeReincorporacion
             // 
-            this.dateTimeReincorporacion.Location = new System.Drawing.Point(177, 29);
+            this.dateTimeReincorporacion.Location = new System.Drawing.Point(171, 53);
             this.dateTimeReincorporacion.Name = "dateTimeReincorporacion";
             this.dateTimeReincorporacion.Size = new System.Drawing.Size(217, 20);
             this.dateTimeReincorporacion.TabIndex = 4;
@@ -2527,6 +2529,98 @@
             this.label41.TabIndex = 15;
             this.label41.Text = "Alergias";
             // 
+            // label42
+            // 
+            this.label42.AutoSize = true;
+            this.label42.Location = new System.Drawing.Point(32, 26);
+            this.label42.Name = "label42";
+            this.label42.Size = new System.Drawing.Size(110, 13);
+            this.label42.TabIndex = 8;
+            this.label42.Text = "Fecha de Suspension";
+            // 
+            // dateTimeSuspension
+            // 
+            this.dateTimeSuspension.Location = new System.Drawing.Point(171, 20);
+            this.dateTimeSuspension.Name = "dateTimeSuspension";
+            this.dateTimeSuspension.Size = new System.Drawing.Size(217, 20);
+            this.dateTimeSuspension.TabIndex = 9;
+            // 
+            // txt_sancion
+            // 
+            this.txt_sancion.Location = new System.Drawing.Point(171, 84);
+            this.txt_sancion.Name = "txt_sancion";
+            this.txt_sancion.Size = new System.Drawing.Size(217, 51);
+            this.txt_sancion.TabIndex = 11;
+            this.txt_sancion.Text = "";
+            this.txt_sancion.TextChanged += new System.EventHandler(this.richTextBox1_TextChanged);
+            // 
+            // label43
+            // 
+            this.label43.AutoSize = true;
+            this.label43.Location = new System.Drawing.Point(32, 87);
+            this.label43.Name = "label43";
+            this.label43.Size = new System.Drawing.Size(46, 13);
+            this.label43.TabIndex = 10;
+            this.label43.Text = "Sanción";
+            this.label43.Click += new System.EventHandler(this.label43_Click);
+            // 
+            // txt_med_observacion
+            // 
+            this.txt_med_observacion.Location = new System.Drawing.Point(497, 84);
+            this.txt_med_observacion.Name = "txt_med_observacion";
+            this.txt_med_observacion.Size = new System.Drawing.Size(192, 51);
+            this.txt_med_observacion.TabIndex = 13;
+            this.txt_med_observacion.Text = "";
+            // 
+            // label44
+            // 
+            this.label44.AutoSize = true;
+            this.label44.Location = new System.Drawing.Point(412, 87);
+            this.label44.Name = "label44";
+            this.label44.Size = new System.Drawing.Size(67, 13);
+            this.label44.TabIndex = 12;
+            this.label44.Text = "Observación";
+            // 
+            // BomberoReincorporacion
+            // 
+            this.BomberoReincorporacion.DataPropertyName = "Bombero";
+            this.BomberoReincorporacion.HeaderText = "Bombero";
+            this.BomberoReincorporacion.Name = "BomberoReincorporacion";
+            this.BomberoReincorporacion.ReadOnly = true;
+            this.BomberoReincorporacion.Visible = false;
+            // 
+            // FechaReincorporacion
+            // 
+            this.FechaReincorporacion.DataPropertyName = "FechaReincorporacion";
+            this.FechaReincorporacion.HeaderText = "Fecha de Reincorporación";
+            this.FechaReincorporacion.Name = "FechaReincorporacion";
+            this.FechaReincorporacion.ReadOnly = true;
+            this.FechaReincorporacion.Width = 110;
+            // 
+            // FechaSuspension
+            // 
+            this.FechaSuspension.DataPropertyName = "FechaSuspension";
+            this.FechaSuspension.HeaderText = "Fecha de Suspension";
+            this.FechaSuspension.Name = "FechaSuspension";
+            this.FechaSuspension.ReadOnly = true;
+            this.FechaSuspension.Width = 110;
+            // 
+            // Sancion
+            // 
+            this.Sancion.DataPropertyName = "Sancion";
+            this.Sancion.HeaderText = "Sanciones";
+            this.Sancion.Name = "Sancion";
+            this.Sancion.ReadOnly = true;
+            this.Sancion.Width = 200;
+            // 
+            // Observacion_Med
+            // 
+            this.Observacion_Med.DataPropertyName = "Observacion_Med";
+            this.Observacion_Med.HeaderText = "Observaciones";
+            this.Observacion_Med.Name = "Observacion_Med";
+            this.Observacion_Med.ReadOnly = true;
+            this.Observacion_Med.Width = 200;
+            // 
             // MasInfoBombero
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2755,8 +2849,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn TotalAbonosLista;
         private System.Windows.Forms.DataGridViewTextBoxColumn AñoLista;
         private System.Windows.Forms.DataGridViewTextBoxColumn BomberoLista;
-        private System.Windows.Forms.DataGridViewTextBoxColumn BomberoReincorporacion;
-        private System.Windows.Forms.DataGridViewTextBoxColumn FechaReincorporacion;
         private System.Windows.Forms.GroupBox groupBox7;
         private System.Windows.Forms.Button btn_imprimir_ficha_medica;
         private System.Windows.Forms.Button btn_imprimir_cargos;
@@ -2820,6 +2912,17 @@
         private System.Windows.Forms.RichTextBox txt_alergias;
         private System.Windows.Forms.Label label41;
         private System.Windows.Forms.Label label39;
+        private System.Windows.Forms.DateTimePicker dateTimeSuspension;
+        private System.Windows.Forms.Label label42;
+        private System.Windows.Forms.RichTextBox txt_sancion;
+        private System.Windows.Forms.Label label43;
+        private System.Windows.Forms.RichTextBox txt_med_observacion;
+        private System.Windows.Forms.Label label44;
+        private System.Windows.Forms.DataGridViewTextBoxColumn BomberoReincorporacion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn FechaReincorporacion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn FechaSuspension;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Sancion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Observacion_Med;
 
     }
 }

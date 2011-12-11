@@ -684,7 +684,10 @@ namespace Bomberos.Presentacion
             ReincorporacionBomberoDTO Reincorporacion = new ReincorporacionBomberoDTO();
 
             Reincorporacion.Bombero = BomberoActual;
+            Reincorporacion.FechaSuspension = dateTimeSuspension.Value;
             Reincorporacion.FechaReincorporacion = dateTimeReincorporacion.Value;
+            Reincorporacion.Sancion = txt_sancion.Text;
+            Reincorporacion.Observacion_Med = txt_med_observacion;
 
             if (_Reincorporacion.RegistroReincorporacionBombero(Reincorporacion))
             {
@@ -997,6 +1000,16 @@ namespace Bomberos.Presentacion
         }
 
         private void txt_med_antec_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label43_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void richTextBox1_TextChanged(object sender, EventArgs e)
         {
 
         }
