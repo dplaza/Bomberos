@@ -20,16 +20,23 @@ namespace Bomberos.Datos
         {
             //MySQL
             MySql.Data.MySqlClient.MySqlConnection conexionBD = ConnectBD();
-            string query = "INSERT INTO fichas_medicas (rut, hepatitis, tifus, otras_enfermedades, operaciones, alergias ";
-            query = string.Concat(query, "hipertension_arterial, diabetes, epilepsia, asma, antecedentes_cronicos, ");
-            query = string.Concat(query, "medicamentos_toma, medicamentos_no_toma, nombre_pariente_1, parentesco_pariente_1,");
-            query = string.Concat(query, "telefono_pariente_1, celular_pariente_1, nombre_pariente_2, parentesco_pariente_2,"); 
-            query = string.Concat(query, "telefono_pariente_2, celular_pariente_2) VALUES (?p_rut,?p_hepatitis,?p_tifus, ");
-            query = string.Concat(query, "?p_otras_enfermedades,?p_operaciones,?p_alergias,?p_hipertension_arterial,?p_diabetes, ");
-            query = string.Concat(query, "?p_epilepsia,?p_asma,?p_antecedentes_cronicos,?p_medicamentos_toma, ?p_medicamentos_no_toma,");
-            query = string.Concat(query, "?p_nombre_pariente_1, ?p_parentesco_pariente_1, ?p_telefono_pariente_1, ?p_celular_pariente_1,");
-            query = string.Concat(query, "?p_nombre_pariente_2, ?p_parentesco_pariente_2, ?p_telefono_pariente_2, ?p_celular_pariente_2)");
+
+            StringBuilder strBuilder = new StringBuilder();
+            strBuilder.Append("INSERT INTO fichas_medicas (rut, hepatitis, tifus, otras_enfermedades, operaciones, alergias ");
+            strBuilder.Append("hipertension_arterial, diabetes, epilepsia, asma, antecedentes_cronicos, ");
+            strBuilder.Append("medicamentos_toma, medicamentos_no_toma, nombre_pariente_1, parentesco_pariente_1, ");
+            strBuilder.Append("telefono_pariente_1, celular_pariente_1, nombre_pariente_2, parentesco_pariente_2, ");
+            strBuilder.Append("telefono_pariente_2, celular_pariente_2) ");
+            strBuilder.Append("VALUES (?p_rut,?p_hepatitis,?p_tifus, ");
+            strBuilder.Append("?p_otras_enfermedades,?p_operaciones,?p_alergias,?p_hipertension_arterial,?p_diabetes, ");
+            strBuilder.Append("?p_epilepsia,?p_asma,?p_antecedentes_cronicos,?p_medicamentos_toma, ?p_medicamentos_no_toma, ");
+            strBuilder.Append("?p_nombre_pariente_1, ?p_parentesco_pariente_1, ?p_telefono_pariente_1, ?p_celular_pariente_1, ");
+            strBuilder.Append("?p_nombre_pariente_2, ?p_parentesco_pariente_2, ?p_telefono_pariente_2, ?p_celular_pariente_2)");
+
+            string query = strBuilder.ToString();
             MySql.Data.MySqlClient.MySqlCommand msqlCommand = new MySql.Data.MySqlClient.MySqlCommand(query, conexionBD);
+
+            #region Parametros SQL
             msqlCommand.Parameters.AddWithValue("?p_rut", p_FichaMedica.Bombero.Rut);
             msqlCommand.Parameters.AddWithValue("?p_hepatitis", p_FichaMedica.Hepatitis);
             msqlCommand.Parameters.AddWithValue("?p_tifus", p_FichaMedica.Tifus);
@@ -51,6 +58,7 @@ namespace Bomberos.Datos
             msqlCommand.Parameters.AddWithValue("?p_parentesco_pariente_2", p_FichaMedica.ParentescoPariente2);
             msqlCommand.Parameters.AddWithValue("?p_telefono_pariente_2", p_FichaMedica.TelefonoPariente2);
             msqlCommand.Parameters.AddWithValue("?p_celular_pariente_2", p_FichaMedica.CelularPariente2);
+            #endregion
 
             try
             {
@@ -91,6 +99,7 @@ namespace Bomberos.Datos
                     bombero_rut.Rut = msqlReader["rut"].ToString();
                     bombero_rut = _Bombero.Load(bombero_rut);
 
+                    #region Asignacion Parametros
                     retorno.Bombero = bombero_rut;
                     retorno.Hepatitis = bool.Parse(msqlReader["hepatitis"].ToString());
                     retorno.Tifus = bool.Parse(msqlReader["tifus"].ToString());
@@ -112,6 +121,7 @@ namespace Bomberos.Datos
                     retorno.ParentescoPariente2 = msqlReader["parentesco_pariente_2"].ToString();
                     retorno.TelefonoPariente2 = msqlReader["telefono_pariente_2"].ToString();
                     retorno.CelularPariente2 = msqlReader["celular_pariente_2"].ToString();
+                    #endregion
                 }
             }
 
@@ -131,17 +141,24 @@ namespace Bomberos.Datos
         {
             //MySQL
             MySql.Data.MySqlClient.MySqlConnection conexionBD = ConnectBD();
-            string query = "UPDATE fichas_medicas SET rut = ?p_rut, hepatitis = ?p_hepatitis, tifus = ?p_tifus, ";
-            query = string.Concat(query, "otras_enfermedades = ?p_otras_enfermedades, operaciones = ?p_operaciones, alergias = ?p_alergias ");
-            query = string.Concat(query, "hipertension_arterial = ?p_hipertension_arterial, diabetes = ?p_diabetes, epilepsia = ?p_epilepsia, ");
-            query = string.Concat(query, "asma = ?p_asma, antecedentes_cronicos = ?p_antecedentes_cronicos, ");
-            query = string.Concat(query, "medicamentos_toma = ?p_medicamentos_toma, medicamentos_no_toma = ?p_medicamentos_no_toma, ");
-            query = string.Concat(query, "nombre_pariente_1 = ?p_nombre_pariente_1, parentesco_pariente_1 = ?p_parentesco_pariente_1, ");
-            query = string.Concat(query, "telefono_pariente_1 = ?p_telefono_pariente_1, celular_pariente_1 = ?p_celular_pariente_1, ");
-            query = string.Concat(query, "nombre_pariente_2 = ?p_nombre_pariente_2, parentesco_pariente_2 = ?p_parentesco_pariente_2, ");
-            query = string.Concat(query, "telefono_pariente_2 = ?p_telefono_pariente_2, celular_pariente_2 = ?p_celular_pariente_2 ");
-            query = string.Concat(query, "WHERE rut = ?p_rut");
+
+            StringBuilder strBuilder = new StringBuilder();
+
+            strBuilder.Append("UPDATE fichas_medicas SET rut = ?p_rut, hepatitis = ?p_hepatitis, tifus = ?p_tifus, ");
+            strBuilder.Append("otras_enfermedades = ?p_otras_enfermedades, operaciones = ?p_operaciones, alergias = ?p_alergias, ");
+            strBuilder.Append("hipertension_arterial = ?p_hipertension_arterial, diabetes = ?p_diabetes, epilepsia = ?p_epilepsia, ");
+            strBuilder.Append("asma = ?p_asma, antecedentes_cronicos = ?p_antecedentes_cronicos, ");
+            strBuilder.Append("medicamentos_toma = ?p_medicamentos_toma, medicamentos_no_toma = ?p_medicamentos_no_toma, ");
+            strBuilder.Append("nombre_pariente_1 = ?p_nombre_pariente_1, parentesco_pariente_1 = ?p_parentesco_pariente_1, ");
+            strBuilder.Append("telefono_pariente_1 = ?p_telefono_pariente_1, celular_pariente_1 = ?p_celular_pariente_1, ");
+            strBuilder.Append("nombre_pariente_2 = ?p_nombre_pariente_2, parentesco_pariente_2 = ?p_parentesco_pariente_2, ");
+            strBuilder.Append("telefono_pariente_2 = ?p_telefono_pariente_2, celular_pariente_2 = ?p_celular_pariente_2 ");
+            strBuilder.Append("WHERE rut = ?p_rut");
+
+            string query = strBuilder.ToString();
             MySql.Data.MySqlClient.MySqlCommand msqlCommand = new MySql.Data.MySqlClient.MySqlCommand(query, conexionBD);
+
+            #region Parametros SQL
             msqlCommand.Parameters.AddWithValue("?p_rut", p_FichaMedica.Bombero.Rut);
             msqlCommand.Parameters.AddWithValue("?p_hepatitis", p_FichaMedica.Hepatitis);
             msqlCommand.Parameters.AddWithValue("?p_tifus", p_FichaMedica.Tifus);
@@ -163,7 +180,7 @@ namespace Bomberos.Datos
             msqlCommand.Parameters.AddWithValue("?p_parentesco_pariente_2", p_FichaMedica.ParentescoPariente2);
             msqlCommand.Parameters.AddWithValue("?p_telefono_pariente_2", p_FichaMedica.TelefonoPariente2);
             msqlCommand.Parameters.AddWithValue("?p_celular_pariente_2", p_FichaMedica.CelularPariente2);
-
+            #endregion
 
             try
             {
