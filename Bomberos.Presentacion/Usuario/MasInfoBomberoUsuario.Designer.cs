@@ -81,6 +81,8 @@
             this.txt_apellidos = new System.Windows.Forms.TextBox();
             this.txt_rut = new System.Windows.Forms.TextBox();
             this.FichaMedica = new System.Windows.Forms.TabPage();
+            this.txt_alergias = new System.Windows.Forms.RichTextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.btn_imprimir_ficha_medica = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.txt_celular_pariente_2 = new System.Windows.Forms.TextBox();
@@ -191,8 +193,6 @@
             this.labelRut = new System.Windows.Forms.Label();
             this.labelnombre = new System.Windows.Forms.Label();
             this.labelNumRegistro = new System.Windows.Forms.Label();
-            this.txt_alergias = new System.Windows.Forms.RichTextBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.tabBox.SuspendLayout();
             this.FichaPersonal.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.box_ficha_pict)).BeginInit();
@@ -508,6 +508,7 @@
             // select_nivel_acad
             // 
             this.select_nivel_acad.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.select_nivel_acad.Enabled = false;
             this.select_nivel_acad.FormattingEnabled = true;
             this.select_nivel_acad.Location = new System.Drawing.Point(129, 196);
             this.select_nivel_acad.Name = "select_nivel_acad";
@@ -774,6 +775,25 @@
             this.FichaMedica.TabIndex = 0;
             this.FichaMedica.Text = "Ficha Médica";
             this.FichaMedica.UseVisualStyleBackColor = true;
+            // 
+            // txt_alergias
+            // 
+            this.txt_alergias.Enabled = false;
+            this.txt_alergias.Location = new System.Drawing.Point(519, 260);
+            this.txt_alergias.Name = "txt_alergias";
+            this.txt_alergias.Size = new System.Drawing.Size(169, 57);
+            this.txt_alergias.TabIndex = 15;
+            this.txt_alergias.Text = "";
+            this.txt_alergias.TextChanged += new System.EventHandler(this.txt_alergias_TextChanged);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(516, 235);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(44, 13);
+            this.label1.TabIndex = 14;
+            this.label1.Text = "Alergias";
             // 
             // btn_imprimir_ficha_medica
             // 
@@ -1848,25 +1868,6 @@
             this.labelNumRegistro.Size = new System.Drawing.Size(61, 13);
             this.labelNumRegistro.TabIndex = 176;
             this.labelNumRegistro.Text = "N° Registro";
-            // 
-            // txt_alergias
-            // 
-            this.txt_alergias.Enabled = false;
-            this.txt_alergias.Location = new System.Drawing.Point(519, 260);
-            this.txt_alergias.Name = "txt_alergias";
-            this.txt_alergias.Size = new System.Drawing.Size(169, 57);
-            this.txt_alergias.TabIndex = 15;
-            this.txt_alergias.Text = "";
-            this.txt_alergias.TextChanged += new System.EventHandler(this.txt_alergias_TextChanged);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(516, 235);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(44, 13);
-            this.label1.TabIndex = 14;
-            this.label1.Text = "Alergias";
             // 
             // MasInfoBomberoUsuario
             // 

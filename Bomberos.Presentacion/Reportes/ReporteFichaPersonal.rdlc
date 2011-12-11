@@ -138,7 +138,6 @@
     <ReportItems>
       <Textbox Name="textbox17">
         <rd:DefaultName>textbox17</rd:DefaultName>
-        <Top>0.25cm</Top>
         <Width>3cm</Width>
         <Style>
           <FontWeight>700</FontWeight>
@@ -150,12 +149,10 @@
         <ZIndex>1</ZIndex>
         <CanGrow>true</CanGrow>
         <Left>1cm</Left>
-        <Height>0.63492cm</Height>
         <Value>Fecha Informe:</Value>
       </Textbox>
       <Textbox Name="textbox14">
         <rd:DefaultName>textbox14</rd:DefaultName>
-        <Top>0.25cm</Top>
         <Width>5.5cm</Width>
         <Style>
           <PaddingLeft>2pt</PaddingLeft>
@@ -165,11 +162,10 @@
         </Style>
         <CanGrow>true</CanGrow>
         <Left>4cm</Left>
-        <Height>0.63492cm</Height>
         <Value>=Parameters!p_FechaActual.Value</Value>
       </Textbox>
     </ReportItems>
-    <Height>1.13492cm</Height>
+    <Height>0.63492cm</Height>
     <PrintOnLastPage>true</PrintOnLastPage>
   </PageHeader>
   <BottomMargin>2.5cm</BottomMargin>
