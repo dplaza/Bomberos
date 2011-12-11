@@ -1339,6 +1339,8 @@ namespace Bomberos.Presentacion {
             
             private global::System.Data.DataColumn columnp_FechaEntrega;
             
+            private global::System.Data.DataColumn columnp_LugarCurso;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             public ListaCursosDataTable() {
                 this.TableName = "ListaCursos";
@@ -1398,6 +1400,13 @@ namespace Bomberos.Presentacion {
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public global::System.Data.DataColumn p_LugarCursoColumn {
+                get {
+                    return this.columnp_LugarCurso;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -1426,13 +1435,14 @@ namespace Bomberos.Presentacion {
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public ListaCursosRow AddListaCursosRow(string p_FechaInicio, string p_FechaTermino, string p_Nombre, string p_FechaEntrega) {
+            public ListaCursosRow AddListaCursosRow(string p_FechaInicio, string p_FechaTermino, string p_Nombre, string p_FechaEntrega, string p_LugarCurso) {
                 ListaCursosRow rowListaCursosRow = ((ListaCursosRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         p_FechaInicio,
                         p_FechaTermino,
                         p_Nombre,
-                        p_FechaEntrega};
+                        p_FechaEntrega,
+                        p_LugarCurso};
                 rowListaCursosRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowListaCursosRow);
                 return rowListaCursosRow;
@@ -1456,6 +1466,7 @@ namespace Bomberos.Presentacion {
                 this.columnp_FechaTermino = base.Columns["p_FechaTermino"];
                 this.columnp_Nombre = base.Columns["p_Nombre"];
                 this.columnp_FechaEntrega = base.Columns["p_FechaEntrega"];
+                this.columnp_LugarCurso = base.Columns["p_LugarCurso"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1468,6 +1479,8 @@ namespace Bomberos.Presentacion {
                 base.Columns.Add(this.columnp_Nombre);
                 this.columnp_FechaEntrega = new global::System.Data.DataColumn("p_FechaEntrega", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnp_FechaEntrega);
+                this.columnp_LugarCurso = new global::System.Data.DataColumn("p_LugarCurso", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnp_LugarCurso);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2997,6 +3010,21 @@ namespace Bomberos.Presentacion {
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public string p_LugarCurso {
+                get {
+                    try {
+                        return ((string)(this[this.tableListaCursos.p_LugarCursoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'p_LugarCurso\' de la tabla \'ListaCursos\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableListaCursos.p_LugarCursoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             public bool Isp_FechaInicioNull() {
                 return this.IsNull(this.tableListaCursos.p_FechaInicioColumn);
             }
@@ -3034,6 +3062,16 @@ namespace Bomberos.Presentacion {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             public void Setp_FechaEntregaNull() {
                 this[this.tableListaCursos.p_FechaEntregaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public bool Isp_LugarCursoNull() {
+                return this.IsNull(this.tableListaCursos.p_LugarCursoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public void Setp_LugarCursoNull() {
+                this[this.tableListaCursos.p_LugarCursoColumn] = global::System.Convert.DBNull;
             }
         }
         

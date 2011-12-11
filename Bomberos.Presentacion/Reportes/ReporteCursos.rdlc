@@ -31,11 +31,6 @@
       <AllowBlank>true</AllowBlank>
       <Prompt>Report_Parameter_3</Prompt>
     </ReportParameter>
-    <ReportParameter Name="p_LugarCurso">
-      <DataType>String</DataType>
-      <AllowBlank>true</AllowBlank>
-      <Prompt>Report_Parameter_4</Prompt>
-    </ReportParameter>
   </ReportParameters>
   <rd:DrawGrid>true</rd:DrawGrid>
   <InteractiveWidth>21cm</InteractiveWidth>
@@ -63,7 +58,7 @@
       </Textbox>
       <Textbox Name="textbox14">
         <rd:DefaultName>textbox14</rd:DefaultName>
-        <Width>5.5cm</Width>
+        <Width>7.75cm</Width>
         <Style>
           <PaddingLeft>2pt</PaddingLeft>
           <PaddingRight>2pt</PaddingRight>
@@ -102,6 +97,10 @@
         </Field>
         <Field Name="p_Nombre">
           <DataField>p_Nombre</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="p_LugarCurso">
+          <DataField>p_LugarCurso</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
       </Fields>
@@ -198,8 +197,8 @@
                 </TableCell>
                 <TableCell>
                   <ReportItems>
-                    <Textbox Name="textbox13">
-                      <rd:DefaultName>textbox13</rd:DefaultName>
+                    <Textbox Name="p_LugarCurso">
+                      <rd:DefaultName>p_LugarCurso</rd:DefaultName>
                       <Style>
                         <TextAlign>Center</TextAlign>
                         <PaddingLeft>2pt</PaddingLeft>
@@ -321,16 +320,16 @@
             <Width>3.5cm</Width>
           </TableColumn>
           <TableColumn>
-            <Width>3.25cm</Width>
+            <Width>2.75cm</Width>
           </TableColumn>
           <TableColumn>
-            <Width>3.25cm</Width>
+            <Width>2.75cm</Width>
           </TableColumn>
           <TableColumn>
-            <Width>3.25cm</Width>
+            <Width>2.75cm</Width>
           </TableColumn>
           <TableColumn>
-            <Width>3.25cm</Width>
+            <Width>4.75cm</Width>
           </TableColumn>
         </TableColumns>
         <Height>1.26984cm</Height>
@@ -349,7 +348,7 @@
         </Style>
         <ZIndex>2</ZIndex>
         <CanGrow>true</CanGrow>
-        <Left>6cm</Left>
+        <Left>6.25cm</Left>
         <Height>0.63492cm</Height>
         <Value>=Parameters!p_Nombres.Value &amp; " " &amp; Parameters!p_Apellidos.Value </Value>
       </Textbox>
@@ -365,7 +364,7 @@
         </Style>
         <ZIndex>1</ZIndex>
         <CanGrow>true</CanGrow>
-        <Left>4cm</Left>
+        <Left>4.25cm</Left>
         <Height>0.63492cm</Height>
         <Value>Bombero</Value>
       </Textbox>
@@ -383,7 +382,7 @@
           <PaddingBottom>2pt</PaddingBottom>
         </Style>
         <CanGrow>true</CanGrow>
-        <Left>3.125cm</Left>
+        <Left>3.375cm</Left>
         <Height>0.63492cm</Height>
         <Value>CURSOS REALIZADOS Y APROBADOS</Value>
       </Textbox>

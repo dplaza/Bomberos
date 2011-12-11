@@ -72,7 +72,7 @@ namespace Bomberos.Presentacion
                         valor = "No";
                     if (valor.Equals("True"))
                         valor = "Sí";
-                     
+
                     ReportParameter rp = new ReportParameter(pi.Name, valor);
                     ListaParametrosReporte.Add(rp);
                 }
@@ -196,7 +196,7 @@ namespace Bomberos.Presentacion
             }
             #endregion
 
-            ReportParameter rpFecha = new ReportParameter("p_FechaActual", FechaActual.ToShortDateString());
+            ReportParameter rpFecha = new ReportParameter("p_FechaActual", FechaActual.ToLongDateString());
             ListaParametrosReporte.Add(rpFecha);
             rptViewer.LocalReport.SetParameters(ListaParametrosReporte);
             rptViewer.RefreshReport();

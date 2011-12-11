@@ -123,6 +123,7 @@ namespace Bomberos.Presentacion
             txt_telefono_pariente_2.Text = FichaMedica.TelefonoPariente2;
             txt_celular_pariente_1.Text = FichaMedica.CelularPariente1;
             txt_celular_pariente_2.Text = FichaMedica.CelularPariente2;
+            txt_alergias.Text = FichaMedica.Alergia;
             select_asma.SelectedItem = "No";
             select_diab.SelectedItem = "No";
             select_epilep.SelectedItem = "No";
@@ -262,7 +263,7 @@ namespace Bomberos.Presentacion
                     MessageBox.Show("Error al actualizar bombero");
                 }
             }
-            else 
+            else
             {
                 MessageBox.Show("Falta rellenar datos");
             }
@@ -715,6 +716,7 @@ namespace Bomberos.Presentacion
             Utilidades.ReflectarPropiedadesSimilares(FichaMedicaBomberoActual, oParametro);
             Utilidades.ReflectarPropiedadesSimilares(BomberoActual, oParametro.p_Bombero);
             oParametro.p_Bombero.p_Compañia = BomberoActual.Compañia.Nombre;
+            oParametro.p_Bombero.p_FechaNacimiento = BomberoActual.FechaNacimiento.ToLongDateString();
 
             var form = new VisorReportes();
 
@@ -738,8 +740,8 @@ namespace Bomberos.Presentacion
             {
                 Bomberos.ComunFuncional.CargoReportDTO.CargosReport CargoElem = new CargoReportDTO.CargosReport();
                 CargoElem.p_Nombre = elem.NombreCargo;
-                CargoElem.p_FechaDesde = elem.FechaDesde.Date.ToString();
-                CargoElem.p_FechaHasta = elem.FechaHasta.Date.ToString();
+                CargoElem.p_FechaDesde = elem.FechaDesde.Date.ToShortDateString();
+                CargoElem.p_FechaHasta = elem.FechaHasta.Date.ToShortDateString();
                 oParametro.ListaCargos.Add(CargoElem);
             }
 
@@ -829,7 +831,9 @@ namespace Bomberos.Presentacion
                 Bomberos.ComunFuncional.CursoReportDTO.CursosReport CursoElem = new CursoReportDTO.CursosReport();
                 Utilidades.ReflectarPropiedadesSimilares(elem, CursoElem);
                 CursoElem.p_Nombre = elem.NombreCurso;
-                CursoElem.p_FechaTermino = elem.FechaFin.ToString();
+                CursoElem.p_FechaTermino = elem.FechaFin.ToShortDateString();
+                CursoElem.p_FechaEntrega = elem.FechaEntrega.ToShortDateString();
+                CursoElem.p_FechaInicio = elem.FechaInicio.ToShortDateString();
                 oParametro.ListaCursos.Add(CursoElem);
             }
 
@@ -856,6 +860,8 @@ namespace Bomberos.Presentacion
                 Bomberos.ComunFuncional.PremioReportDTO.PremiosReport PremioElem = new PremioReportDTO.PremiosReport();
                 Utilidades.ReflectarPropiedadesSimilares(elem, PremioElem);
                 PremioElem.p_Nombre = elem.NombrePremio;
+                PremioElem.p_FechaCalifica = elem.FechaCalifica.ToShortDateString();
+                PremioElem.p_FechaEntrega = elem.FechaEntrega.ToShortDateString();
                 oParametro.ListaPremios.Add(PremioElem);
             }
 
@@ -881,6 +887,7 @@ namespace Bomberos.Presentacion
             {
                 Bomberos.ComunFuncional.ObservacionReportDTO.ObservacionesReport ObsElem = new ObservacionReportDTO.ObservacionesReport();
                 Utilidades.ReflectarPropiedadesSimilares(elem, ObsElem);
+                ObsElem.p_Fecha = elem.Fecha.ToShortDateString();
                 oParametro.ListaObservaciones.Add(ObsElem);
             }
 
@@ -973,11 +980,14 @@ namespace Bomberos.Presentacion
             oParametro.p_Estado = BomberoActual.Estado;
             oParametro.p_EstadoCivil = BomberoActual.EstadoCivil;
             oParametro.p_Foto = Application.StartupPath + @"\" + BomberoActual.PictureName;
+            oParametro.p_TiempoServicio = (DateTime.Today - BomberoActual.FechaInscripcion).TotalDays.ToString() + " días(s)";
+            oParametro.p_FechaInscripcion = BomberoActual.FechaInscripcion.ToLongDateString();
+            oParametro.p_FechaNacimiento = BomberoActual.FechaNacimiento.ToLongDateString();
 
             foreach (var elem in _Reincorporacion.CargarReincorporacionBombero(ReincorporacionBombero))
             {
                 Bomberos.Comun.BomberoReportDTO.ReincorporacionReport ReinElem = new BomberoReportDTO.ReincorporacionReport();
-                ReinElem.p_Fecha = elem.FechaReincorporacion.Date.ToString();
+                ReinElem.p_Fecha = elem.FechaReincorporacion.Date.ToLongDateString();
                 oParametro.ListaReincorporaciones.Add(ReinElem);
             }
 

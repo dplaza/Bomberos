@@ -111,7 +111,7 @@
         <Value>Fecha Informe:</Value>
       </Textbox>
       <Textbox Name="textbox43">
-        <Width>5.5cm</Width>
+        <Width>8.75cm</Width>
         <Style>
           <PaddingLeft>2pt</PaddingLeft>
           <PaddingRight>2pt</PaddingRight>
@@ -197,7 +197,7 @@
     </DataSet>
   </DataSets>
   <Code />
-  <Width>24.25cm</Width>
+  <Width>24.53764cm</Width>
   <Body>
     <ColumnSpacing>1cm</ColumnSpacing>
     <ReportItems>
@@ -214,7 +214,7 @@
         </Style>
         <ZIndex>5</ZIndex>
         <CanGrow>true</CanGrow>
-        <Left>15.36508cm</Left>
+        <Left>15.5089cm</Left>
         <Height>0.63492cm</Height>
         <Value>=Fields!p_Año.Value</Value>
       </Textbox>
@@ -230,7 +230,7 @@
         </Style>
         <ZIndex>4</ZIndex>
         <CanGrow>true</CanGrow>
-        <Left>14.36508cm</Left>
+        <Left>14.5089cm</Left>
         <Height>0.63492cm</Height>
         <Value>Año</Value>
       </Textbox>
@@ -238,7 +238,6 @@
         <ZIndex>3</ZIndex>
         <DataSetName>ListaAsistencia</DataSetName>
         <Top>2cm</Top>
-        <Width>24.22472cm</Width>
         <Details>
           <TableRows>
             <TableRow>
@@ -795,13 +794,13 @@
             <Width>1.75cm</Width>
           </TableColumn>
           <TableColumn>
-            <Width>2.09354cm</Width>
+            <Width>2.5cm</Width>
           </TableColumn>
           <TableColumn>
             <Width>2.09354cm</Width>
           </TableColumn>
           <TableColumn>
-            <Width>2.09354cm</Width>
+            <Width>2cm</Width>
           </TableColumn>
           <TableColumn>
             <Width>2.5cm</Width>
@@ -1100,7 +1099,7 @@
         </Style>
         <ZIndex>2</ZIndex>
         <CanGrow>true</CanGrow>
-        <Left>8.09524cm</Left>
+        <Left>8.23906cm</Left>
         <Height>0.63492cm</Height>
         <Value>=Parameters!p_Nombres.Value &amp; " " &amp; Parameters!p_Apellidos.Value </Value>
       </Textbox>
@@ -1116,7 +1115,7 @@
         </Style>
         <ZIndex>1</ZIndex>
         <CanGrow>true</CanGrow>
-        <Left>6.34524cm</Left>
+        <Left>6.48906cm</Left>
         <Height>0.63492cm</Height>
         <Value>Bombero</Value>
       </Textbox>
@@ -1134,7 +1133,7 @@
           <PaddingBottom>2pt</PaddingBottom>
         </Style>
         <CanGrow>true</CanGrow>
-        <Left>7.375cm</Left>
+        <Left>7.51882cm</Left>
         <Height>0.63492cm</Height>
         <Value>RESUMEN MENSUAL LISTAS</Value>
       </Textbox>

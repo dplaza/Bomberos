@@ -222,6 +222,11 @@
       <AllowBlank>true</AllowBlank>
       <Prompt>Report_Parameter_43</Prompt>
     </ReportParameter>
+    <ReportParameter Name="p_TiempoServicio">
+      <DataType>String</DataType>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>Report_Parameter_44</Prompt>
+    </ReportParameter>
   </ReportParameters>
   <rd:DrawGrid>true</rd:DrawGrid>
   <InteractiveWidth>21cm</InteractiveWidth>
@@ -247,7 +252,7 @@
         <Value>Fecha Informe:</Value>
       </Textbox>
       <Textbox Name="textbox57">
-        <Width>5.5cm</Width>
+        <Width>8.25cm</Width>
         <Style>
           <PaddingLeft>2pt</PaddingLeft>
           <PaddingRight>2pt</PaddingRight>

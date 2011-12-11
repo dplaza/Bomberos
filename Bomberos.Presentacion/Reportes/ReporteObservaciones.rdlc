@@ -58,7 +58,7 @@
       </Textbox>
       <Textbox Name="textbox14">
         <rd:DefaultName>textbox14</rd:DefaultName>
-        <Width>5.5cm</Width>
+        <Width>8cm</Width>
         <Style>
           <PaddingLeft>2pt</PaddingLeft>
           <PaddingRight>2pt</PaddingRight>
