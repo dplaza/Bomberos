@@ -22,6 +22,7 @@ namespace Bomberos.ComunFuncional
             public string p_FechaInicio { get; set; }
             public string p_FechaTermino { get; set; }
             public string p_FechaEntrega { get; set; }
+            public string p_LugarCurso { get; set; }
         }
     }
 }

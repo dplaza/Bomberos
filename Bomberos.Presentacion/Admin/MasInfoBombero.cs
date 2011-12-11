@@ -240,23 +240,31 @@ namespace Bomberos.Presentacion
 
         private void btn_curso_Click(object sender, EventArgs e)
         {
-            ICursoBomberoMgr _CursoBombero = new CursoBomberoMgr();
-            CursoBomberoDTO CursoBombero = new CursoBomberoDTO();
-
-            CursoBombero.FechaEntrega = dateTimeCursoEntrega.Value;
-            CursoBombero.FechaFin = dateTimeCursoTermino.Value;
-            CursoBombero.FechaInicio = dateTimeCursoInicio.Value;
-            CursoBombero.Curso = (CursoDTO)select_cursos.SelectedItem;
-            CursoBombero.Bombero = BomberoActual;
-
-            if (_CursoBombero.RegistroCursoBombero(CursoBombero))
+            if (txt_lugar.Text != "")
             {
-                MessageBox.Show("Bombero actualizado");
-                dataGridCursos.DataSource = _CursoBombero.CargarCursoBombero(CursoBombero).OrderBy(p => p.FechaInicio).ToList();
+                ICursoBomberoMgr _CursoBombero = new CursoBomberoMgr();
+                CursoBomberoDTO CursoBombero = new CursoBomberoDTO();
+
+                CursoBombero.FechaEntrega = dateTimeCursoEntrega.Value;
+                CursoBombero.FechaFin = dateTimeCursoTermino.Value;
+                CursoBombero.FechaInicio = dateTimeCursoInicio.Value;
+                CursoBombero.Curso = (CursoDTO)select_cursos.SelectedItem;
+                CursoBombero.Bombero = BomberoActual;
+                CursoBombero.LugarCurso = txt_lugar.Text;
+
+                if (_CursoBombero.RegistroCursoBombero(CursoBombero))
+                {
+                    MessageBox.Show("Bombero actualizado");
+                    dataGridCursos.DataSource = _CursoBombero.CargarCursoBombero(CursoBombero).OrderBy(p => p.FechaInicio).ToList();
+                }
+                else
+                {
+                    MessageBox.Show("Error al actualizar bombero");
+                }
             }
-            else
+            else 
             {
-                MessageBox.Show("Error al actualizar bombero");
+                MessageBox.Show("Falta rellenar datos");
             }
         }
 

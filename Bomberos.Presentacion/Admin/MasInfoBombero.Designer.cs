@@ -266,6 +266,8 @@
             this.labelNumRegistro = new System.Windows.Forms.Label();
             this.labelRut = new System.Windows.Forms.Label();
             this.labelnombre = new System.Windows.Forms.Label();
+            this.label45 = new System.Windows.Forms.Label();
+            this.txt_lugar = new System.Windows.Forms.TextBox();
             this.tabBox.SuspendLayout();
             this.FichaPersonal.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.box_ficha_pict)).BeginInit();
@@ -1585,6 +1587,8 @@
             // 
             // HistorialCursos
             // 
+            this.HistorialCursos.Controls.Add(this.txt_lugar);
+            this.HistorialCursos.Controls.Add(this.label45);
             this.HistorialCursos.Controls.Add(this.btn_imprimir_cursos);
             this.HistorialCursos.Controls.Add(this.btn_borrar_curso);
             this.HistorialCursos.Controls.Add(this.dataGridCursos);
@@ -1637,10 +1641,10 @@
             this.fecha_entrega_curso,
             this.id_curso,
             this.BomberoCurso});
-            this.dataGridCursos.Location = new System.Drawing.Point(35, 147);
+            this.dataGridCursos.Location = new System.Drawing.Point(35, 169);
             this.dataGridCursos.Name = "dataGridCursos";
             this.dataGridCursos.ReadOnly = true;
-            this.dataGridCursos.Size = new System.Drawing.Size(654, 375);
+            this.dataGridCursos.Size = new System.Drawing.Size(654, 353);
             this.dataGridCursos.TabIndex = 9;
             // 
             // NombreCurso
@@ -2621,6 +2625,22 @@
             this.labelnombre.TabIndex = 172;
             this.labelnombre.Text = "Nombre completo";
             // 
+            // label45
+            // 
+            this.label45.AutoSize = true;
+            this.label45.Location = new System.Drawing.Point(72, 135);
+            this.label45.Name = "label45";
+            this.label45.Size = new System.Drawing.Size(34, 13);
+            this.label45.TabIndex = 12;
+            this.label45.Text = "Lugar";
+            // 
+            // txt_lugar
+            // 
+            this.txt_lugar.Location = new System.Drawing.Point(123, 132);
+            this.txt_lugar.Name = "txt_lugar";
+            this.txt_lugar.Size = new System.Drawing.Size(231, 20);
+            this.txt_lugar.TabIndex = 13;
+            // 
             // MasInfoBombero
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2923,6 +2943,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn FechaReincorporacion;
         private System.Windows.Forms.DataGridViewTextBoxColumn Sancion;
         private System.Windows.Forms.DataGridViewTextBoxColumn Observacion_Med;
+        private System.Windows.Forms.TextBox txt_lugar;
+        private System.Windows.Forms.Label label45;
 
     }
 }

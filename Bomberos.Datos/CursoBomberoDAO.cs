@@ -20,14 +20,15 @@ namespace Bomberos.Datos
         {
             //MySQL
             MySql.Data.MySqlClient.MySqlConnection conexionBD = ConnectBD();
-            string query = "INSERT INTO cursos_bomberos (fecha_inicio, rut, id_curso, fecha_fin, fecha_entrega) values (?p_fecha_inicio, ";
-            query = string.Concat(query, "?p_rut, ?p_id_curso, ?p_fecha_fin, ?p_fecha_entrega) ");
+            string query = "INSERT INTO cursos_bomberos (fecha_inicio, rut, id_curso, fecha_fin, fecha_entrega, lugar_curso) values (?p_fecha_inicio, ";
+            query = string.Concat(query, "?p_rut, ?p_id_curso, ?p_fecha_fin, ?p_fecha_entrega, ?p_lugar_curso) ");
             MySql.Data.MySqlClient.MySqlCommand msqlCommand = new MySql.Data.MySqlClient.MySqlCommand(query, conexionBD);
             msqlCommand.Parameters.AddWithValue("?p_fecha_inicio", p_CursoBombero.FechaInicio);
             msqlCommand.Parameters.AddWithValue("?p_rut", p_CursoBombero.Bombero.Rut);
             msqlCommand.Parameters.AddWithValue("?p_id_curso", p_CursoBombero.Curso.Id);
             msqlCommand.Parameters.AddWithValue("?p_fecha_fin", p_CursoBombero.FechaFin);
             msqlCommand.Parameters.AddWithValue("?p_fecha_entrega", p_CursoBombero.FechaEntrega);
+            msqlCommand.Parameters.AddWithValue("?p_lugar_curso", p_CursoBombero.LugarCurso);
 
 
             try
@@ -82,6 +83,7 @@ namespace Bomberos.Datos
                     CursoBombero.Bombero = bombero_rut;
                     CursoBombero.Curso = curso_elem;
                     CursoBombero.NombreCurso = curso_elem.Nombre;
+                    CursoBombero.LugarCurso = msqlReader["lugar_curso"].ToString();
 
                     ListaCursoBombero.Add(CursoBombero);
                 }
@@ -128,13 +130,14 @@ namespace Bomberos.Datos
             //MySQL
             MySql.Data.MySqlClient.MySqlConnection conexionBD = ConnectBD();
             string query = "UPDATE cursos_bomberos SET fecha_inicio = ?p_fecha_inicio, rut = ?p_rut, ";
-            query = string.Concat(query, " id_curso = ?p_id_curso, fecha_fin = ?p_id_fecha_fin, fecha_entrega = ?p_fecha_entrega");
+            query = string.Concat(query, " id_curso = ?p_id_curso, fecha_fin = ?p_id_fecha_fin, fecha_entrega = ?p_fecha_entrega, lugar_curso = ?p_lugar_curso");
             MySql.Data.MySqlClient.MySqlCommand msqlCommand = new MySql.Data.MySqlClient.MySqlCommand(query, conexionBD);
             msqlCommand.Parameters.AddWithValue("?p_fecha_inicio", p_CursoBombero.FechaInicio);
             msqlCommand.Parameters.AddWithValue("?p_rut", p_CursoBombero.Bombero.Rut);
             msqlCommand.Parameters.AddWithValue("?p_id_curso", p_CursoBombero.Curso.Id);
             msqlCommand.Parameters.AddWithValue("?p_fecha_fin", p_CursoBombero.FechaFin);
             msqlCommand.Parameters.AddWithValue("?p_fecha_entrega", p_CursoBombero.FechaEntrega);
+            msqlCommand.Parameters.AddWithValue("?p_lugar_curso", p_CursoBombero.LugarCurso);
 
             try
             {
@@ -186,6 +189,7 @@ namespace Bomberos.Datos
                     CursoBombero.FechaEntrega = DateTime.ParseExact(msqlReader["fecha_entrega"].ToString(), "dd-MM-yyyy h:mm:ss", null);
                     CursoBombero.Bombero = bombero_rut;
                     CursoBombero.Curso = curso_elem;
+                    CursoBombero.LugarCurso = msqlReader["lugar_curso"].ToString();
 
                     ListaCursoBombero.Add(CursoBombero);
                 }

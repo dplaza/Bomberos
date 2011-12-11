@@ -13,6 +13,7 @@ namespace Bomberos.Comun
         public string NombreCurso { get; set; }
         public DateTime FechaFin { get; set; }
         public DateTime FechaEntrega { get; set; }
+        public string LugarCurso { get; set; }
     }
 
 }
