@@ -207,6 +207,11 @@
       <AllowBlank>true</AllowBlank>
       <Prompt>Report_Parameter_40</Prompt>
     </ReportParameter>
+    <ReportParameter Name="p_Alergia">
+      <DataType>String</DataType>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>Report_Parameter_41</Prompt>
+    </ReportParameter>
   </ReportParameters>
   <rd:DrawGrid>true</rd:DrawGrid>
   <InteractiveWidth>21cm</InteractiveWidth>
