@@ -622,5 +622,10 @@ namespace Bomberos.Presentacion
         {
 
         }
+
+        private void txt_alergias_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

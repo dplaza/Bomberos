@@ -191,6 +191,8 @@
             this.labelRut = new System.Windows.Forms.Label();
             this.labelnombre = new System.Windows.Forms.Label();
             this.labelNumRegistro = new System.Windows.Forms.Label();
+            this.txt_alergias = new System.Windows.Forms.RichTextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.tabBox.SuspendLayout();
             this.FichaPersonal.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.box_ficha_pict)).BeginInit();
@@ -752,6 +754,8 @@
             // 
             // FichaMedica
             // 
+            this.FichaMedica.Controls.Add(this.txt_alergias);
+            this.FichaMedica.Controls.Add(this.label1);
             this.FichaMedica.Controls.Add(this.btn_imprimir_ficha_medica);
             this.FichaMedica.Controls.Add(this.groupBox3);
             this.FichaMedica.Controls.Add(this.txt_med_medContra);
@@ -773,7 +777,7 @@
             // 
             // btn_imprimir_ficha_medica
             // 
-            this.btn_imprimir_ficha_medica.Location = new System.Drawing.Point(521, 252);
+            this.btn_imprimir_ficha_medica.Location = new System.Drawing.Point(519, 353);
             this.btn_imprimir_ficha_medica.Name = "btn_imprimir_ficha_medica";
             this.btn_imprimir_ficha_medica.Size = new System.Drawing.Size(113, 23);
             this.btn_imprimir_ficha_medica.TabIndex = 13;
@@ -1845,11 +1849,30 @@
             this.labelNumRegistro.TabIndex = 176;
             this.labelNumRegistro.Text = "N° Registro";
             // 
+            // txt_alergias
+            // 
+            this.txt_alergias.Enabled = false;
+            this.txt_alergias.Location = new System.Drawing.Point(519, 260);
+            this.txt_alergias.Name = "txt_alergias";
+            this.txt_alergias.Size = new System.Drawing.Size(169, 57);
+            this.txt_alergias.TabIndex = 15;
+            this.txt_alergias.Text = "";
+            this.txt_alergias.TextChanged += new System.EventHandler(this.txt_alergias_TextChanged);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(516, 235);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(44, 13);
+            this.label1.TabIndex = 14;
+            this.label1.Text = "Alergias";
+            // 
             // MasInfoBomberoUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(806, 781);
+            this.ClientSize = new System.Drawing.Size(806, 756);
             this.Controls.Add(this.labelNumRegistro);
             this.Controls.Add(this.labelCargo);
             this.Controls.Add(this.labelRut);
@@ -2063,6 +2086,8 @@
         private System.Windows.Forms.Label label71;
         private System.Windows.Forms.Label label_tiempo_servicio;
         private System.Windows.Forms.Label label72;
+        private System.Windows.Forms.RichTextBox txt_alergias;
+        private System.Windows.Forms.Label label1;
 
     }
 }

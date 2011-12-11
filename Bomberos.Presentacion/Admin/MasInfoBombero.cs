@@ -418,6 +418,7 @@ namespace Bomberos.Presentacion
             FichaMedica.MedicamentosNoToma = txt_med_medContra.Text;
             FichaMedica.MedicamentosToma = txt_med_medToma.Text;
             FichaMedica.Operaciones = txt_med_operac.Text;
+            FichaMedica.Alergia = txt_alergias.Text;
             FichaMedica.OtrasEnfermedades = txt_med_otras.Text;
             FichaMedica.Asma = false;
             FichaMedica.Diabetes = false;
@@ -455,6 +456,7 @@ namespace Bomberos.Presentacion
                 txt_med_medContra.Text = FichaMedica.MedicamentosNoToma;
                 txt_med_medToma.Text = FichaMedica.MedicamentosToma;
                 txt_med_operac.Text = FichaMedica.Operaciones;
+                txt_alergias.Text = FichaMedica.Alergia;
                 txt_med_otras.Text = FichaMedica.OtrasEnfermedades;
                 select_asma.SelectedItem = "No";
                 select_diab.SelectedItem = "No";
@@ -990,6 +992,11 @@ namespace Bomberos.Presentacion
         }
 
         private void FichaPersonal_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txt_med_antec_TextChanged(object sender, EventArgs e)
         {
 
         }

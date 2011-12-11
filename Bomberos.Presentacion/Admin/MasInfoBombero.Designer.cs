@@ -254,6 +254,9 @@
             this.labelNumRegistro = new System.Windows.Forms.Label();
             this.labelRut = new System.Windows.Forms.Label();
             this.labelnombre = new System.Windows.Forms.Label();
+            this.label39 = new System.Windows.Forms.Label();
+            this.txt_alergias = new System.Windows.Forms.RichTextBox();
+            this.label41 = new System.Windows.Forms.Label();
             this.tabBox.SuspendLayout();
             this.FichaPersonal.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.box_ficha_pict)).BeginInit();
@@ -826,6 +829,9 @@
             // 
             // FichaMedica
             // 
+            this.FichaMedica.Controls.Add(this.txt_alergias);
+            this.FichaMedica.Controls.Add(this.label41);
+            this.FichaMedica.Controls.Add(this.label39);
             this.FichaMedica.Controls.Add(this.btn_imprimir_ficha_medica);
             this.FichaMedica.Controls.Add(this.groupBox3);
             this.FichaMedica.Controls.Add(this.btn_enviar_cambios);
@@ -848,7 +854,7 @@
             // 
             // btn_imprimir_ficha_medica
             // 
-            this.btn_imprimir_ficha_medica.Location = new System.Drawing.Point(521, 252);
+            this.btn_imprimir_ficha_medica.Location = new System.Drawing.Point(498, 353);
             this.btn_imprimir_ficha_medica.Name = "btn_imprimir_ficha_medica";
             this.btn_imprimir_ficha_medica.Size = new System.Drawing.Size(113, 23);
             this.btn_imprimir_ficha_medica.TabIndex = 13;
@@ -971,7 +977,7 @@
             // 
             // btn_enviar_cambios
             // 
-            this.btn_enviar_cambios.Location = new System.Drawing.Point(521, 293);
+            this.btn_enviar_cambios.Location = new System.Drawing.Point(649, 351);
             this.btn_enviar_cambios.Name = "btn_enviar_cambios";
             this.btn_enviar_cambios.Size = new System.Drawing.Size(113, 23);
             this.btn_enviar_cambios.TabIndex = 10;
@@ -1021,6 +1027,7 @@
             this.txt_med_antec.Size = new System.Drawing.Size(169, 57);
             this.txt_med_antec.TabIndex = 5;
             this.txt_med_antec.Text = "";
+            this.txt_med_antec.TextChanged += new System.EventHandler(this.txt_med_antec_TextChanged);
             // 
             // label20
             // 
@@ -2495,11 +2502,36 @@
             this.labelnombre.TabIndex = 172;
             this.labelnombre.Text = "Nombre completo";
             // 
+            // label39
+            // 
+            this.label39.AutoSize = true;
+            this.label39.Location = new System.Drawing.Point(516, 235);
+            this.label39.Name = "label39";
+            this.label39.Size = new System.Drawing.Size(0, 13);
+            this.label39.TabIndex = 14;
+            // 
+            // txt_alergias
+            // 
+            this.txt_alergias.Location = new System.Drawing.Point(519, 260);
+            this.txt_alergias.Name = "txt_alergias";
+            this.txt_alergias.Size = new System.Drawing.Size(169, 57);
+            this.txt_alergias.TabIndex = 16;
+            this.txt_alergias.Text = "";
+            // 
+            // label41
+            // 
+            this.label41.AutoSize = true;
+            this.label41.Location = new System.Drawing.Point(516, 235);
+            this.label41.Name = "label41";
+            this.label41.Size = new System.Drawing.Size(44, 13);
+            this.label41.TabIndex = 15;
+            this.label41.Text = "Alergias";
+            // 
             // MasInfoBombero
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(806, 770);
+            this.ClientSize = new System.Drawing.Size(806, 756);
             this.Controls.Add(this.labelCargo);
             this.Controls.Add(this.labelNumRegistro);
             this.Controls.Add(this.labelRut);
@@ -2785,6 +2817,9 @@
         private System.Windows.Forms.Label label71;
         private System.Windows.Forms.Label label_tiempo_servicio;
         private System.Windows.Forms.Label label72;
+        private System.Windows.Forms.RichTextBox txt_alergias;
+        private System.Windows.Forms.Label label41;
+        private System.Windows.Forms.Label label39;
 
     }
 }

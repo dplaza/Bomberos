@@ -20,12 +20,12 @@ namespace Bomberos.Datos
         {
             //MySQL
             MySql.Data.MySqlClient.MySqlConnection conexionBD = ConnectBD();
-            string query = "INSERT INTO fichas_medicas (rut, hepatitis, tifus, otras_enfermedades, operaciones, ";
+            string query = "INSERT INTO fichas_medicas (rut, hepatitis, tifus, otras_enfermedades, operaciones, alergias ";
             query = string.Concat(query, "hipertension_arterial, diabetes, epilepsia, asma, antecedentes_cronicos, ");
             query = string.Concat(query, "medicamentos_toma, medicamentos_no_toma, nombre_pariente_1, parentesco_pariente_1,");
             query = string.Concat(query, "telefono_pariente_1, celular_pariente_1, nombre_pariente_2, parentesco_pariente_2,"); 
             query = string.Concat(query, "telefono_pariente_2, celular_pariente_2) VALUES (?p_rut,?p_hepatitis,?p_tifus, ");
-            query = string.Concat(query, "?p_otras_enfermedades,?p_operaciones,?p_hipertension_arterial,?p_diabetes, ");
+            query = string.Concat(query, "?p_otras_enfermedades,?p_operaciones,?p_alergias,?p_hipertension_arterial,?p_diabetes, ");
             query = string.Concat(query, "?p_epilepsia,?p_asma,?p_antecedentes_cronicos,?p_medicamentos_toma, ?p_medicamentos_no_toma,");
             query = string.Concat(query, "?p_nombre_pariente_1, ?p_parentesco_pariente_1, ?p_telefono_pariente_1, ?p_celular_pariente_1,");
             query = string.Concat(query, "?p_nombre_pariente_2, ?p_parentesco_pariente_2, ?p_telefono_pariente_2, ?p_celular_pariente_2)");
@@ -35,6 +35,7 @@ namespace Bomberos.Datos
             msqlCommand.Parameters.AddWithValue("?p_tifus", p_FichaMedica.Tifus);
             msqlCommand.Parameters.AddWithValue("?p_otras_enfermedades", p_FichaMedica.OtrasEnfermedades);
             msqlCommand.Parameters.AddWithValue("?p_operaciones", p_FichaMedica.Operaciones);
+            msqlCommand.Parameters.AddWithValue("?p_alergias", p_FichaMedica.Alergia);
             msqlCommand.Parameters.AddWithValue("?p_hipertension_arterial", p_FichaMedica.HipertensionArterial);
             msqlCommand.Parameters.AddWithValue("?p_diabetes", p_FichaMedica.Diabetes);
             msqlCommand.Parameters.AddWithValue("?p_epilepsia", p_FichaMedica.Epilepsia);
@@ -95,6 +96,7 @@ namespace Bomberos.Datos
                     retorno.Tifus = bool.Parse(msqlReader["tifus"].ToString());
                     retorno.OtrasEnfermedades = msqlReader["otras_enfermedades"].ToString();
                     retorno.Operaciones = msqlReader["operaciones"].ToString();
+                    retorno.Alergia = msqlReader["alergias"].ToString();
                     retorno.HipertensionArterial = bool.Parse(msqlReader["hipertension_arterial"].ToString());
                     retorno.Diabetes = bool.Parse(msqlReader["diabetes"].ToString());
                     retorno.Epilepsia = bool.Parse(msqlReader["epilepsia"].ToString());
@@ -130,7 +132,7 @@ namespace Bomberos.Datos
             //MySQL
             MySql.Data.MySqlClient.MySqlConnection conexionBD = ConnectBD();
             string query = "UPDATE fichas_medicas SET rut = ?p_rut, hepatitis = ?p_hepatitis, tifus = ?p_tifus, ";
-            query = string.Concat(query, "otras_enfermedades = ?p_otras_enfermedades, operaciones = ?p_operaciones,  ");
+            query = string.Concat(query, "otras_enfermedades = ?p_otras_enfermedades, operaciones = ?p_operaciones, alergias = ?p_alergias ");
             query = string.Concat(query, "hipertension_arterial = ?p_hipertension_arterial, diabetes = ?p_diabetes, epilepsia = ?p_epilepsia, ");
             query = string.Concat(query, "asma = ?p_asma, antecedentes_cronicos = ?p_antecedentes_cronicos, ");
             query = string.Concat(query, "medicamentos_toma = ?p_medicamentos_toma, medicamentos_no_toma = ?p_medicamentos_no_toma, ");
@@ -145,6 +147,7 @@ namespace Bomberos.Datos
             msqlCommand.Parameters.AddWithValue("?p_tifus", p_FichaMedica.Tifus);
             msqlCommand.Parameters.AddWithValue("?p_otras_enfermedades", p_FichaMedica.OtrasEnfermedades);
             msqlCommand.Parameters.AddWithValue("?p_operaciones", p_FichaMedica.Operaciones);
+            msqlCommand.Parameters.AddWithValue("?p_alergias", p_FichaMedica.Alergia);
             msqlCommand.Parameters.AddWithValue("?p_hipertension_arterial", p_FichaMedica.HipertensionArterial);
             msqlCommand.Parameters.AddWithValue("?p_diabetes", p_FichaMedica.Diabetes);
             msqlCommand.Parameters.AddWithValue("?p_epilepsia", p_FichaMedica.Epilepsia);
