@@ -687,7 +687,7 @@ namespace Bomberos.Presentacion
             Reincorporacion.FechaSuspension = dateTimeSuspension.Value;
             Reincorporacion.FechaReincorporacion = dateTimeReincorporacion.Value;
             Reincorporacion.Sancion = txt_sancion.Text;
-            Reincorporacion.Observacion_Med = txt_med_observacion;
+            Reincorporacion.Observacion_Med = txt_med_observacion.Text;
 
             if (_Reincorporacion.RegistroReincorporacionBombero(Reincorporacion))
             {

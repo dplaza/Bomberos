@@ -16,11 +16,11 @@ namespace Bomberos.Datos
             return msqlConnection;
         }
 
-         public bool Insert(ReincorporacionBomberoDTO p_ReincorporacionBombero)
+        public bool Insert(ReincorporacionBomberoDTO p_ReincorporacionBombero)
         {
             //MySQL
             MySql.Data.MySqlClient.MySqlConnection conexionBD = ConnectBD();
-            string query = "INSERT INTO reincorporaciones_bomberos (rut, fecha_suspencion, fecha_reincorporacion, sanciones,";
+            string query = "INSERT INTO reincorporaciones_bomberos (rut, fecha_suspension, fecha_reincorporacion, sanciones,";
             query = string.Concat(query, "observaciones) VALUES (?p_rut, ?p_fecha_suspension, ?p_fecha_reincorporacion, ?p_sanciones, ?p_observaciones)");
             MySql.Data.MySqlClient.MySqlCommand msqlCommand = new MySql.Data.MySqlClient.MySqlCommand(query, conexionBD);
             msqlCommand.Parameters.AddWithValue("?p_rut", p_ReincorporacionBombero.Bombero.Rut);
@@ -28,25 +28,25 @@ namespace Bomberos.Datos
             msqlCommand.Parameters.AddWithValue("?p_fecha_reincorporacion", p_ReincorporacionBombero.FechaReincorporacion);
             msqlCommand.Parameters.AddWithValue("?p_sanciones", p_ReincorporacionBombero.Sancion);
             msqlCommand.Parameters.AddWithValue("?p_observaciones", p_ReincorporacionBombero.Observacion_Med);
-         
-             
-             try
-             {
-                 conexionBD.Open();
-                 msqlCommand.ExecuteNonQuery();
-                 return true;
-             }
-             catch (Exception er)
-             {
-                 return false;
-             }
-             finally
-             {
-                 conexionBD.Close();
-             }
+
+
+            try
+            {
+                conexionBD.Open();
+                msqlCommand.ExecuteNonQuery();
+                return true;
+            }
+            catch (Exception er)
+            {
+                return false;
+            }
+            finally
+            {
+                conexionBD.Close();
+            }
         }
 
-         public List<ReincorporacionBomberoDTO> Load(ReincorporacionBomberoDTO p_ReincorporacionBombero)
+        public List<ReincorporacionBomberoDTO> Load(ReincorporacionBomberoDTO p_ReincorporacionBombero)
         {
             List<ReincorporacionBomberoDTO> ListaReincorporacionBombero = new List<ReincorporacionBomberoDTO>();
 
@@ -90,35 +90,35 @@ namespace Bomberos.Datos
             return ListaReincorporacionBombero;
         }
 
-         public bool Update(ReincorporacionBomberoDTO p_ReincorporacionBombero)
-         {
-             //MySQL
-             MySql.Data.MySqlClient.MySqlConnection conexionBD = ConnectBD();
-             string query = "UPDATE reincorporaciones_bomberos SET rut = ?p_rut, fecha_suspension = ?p_fecha_suspension, " ;
-             query = string.Concat(query, "fecha_reincorporacion = ?p_fecha_reincorporacion, sanciones = ?p_sanciones, observaciones = ?p_observaciones");
-             MySql.Data.MySqlClient.MySqlCommand msqlCommand = new MySql.Data.MySqlClient.MySqlCommand(query, conexionBD);
-             msqlCommand.Parameters.AddWithValue("?p_rut", p_ReincorporacionBombero.Bombero.Rut);
-             msqlCommand.Parameters.AddWithValue("?p_fecha_suspension", p_ReincorporacionBombero.FechaSuspension);
-             msqlCommand.Parameters.AddWithValue("?p_fecha_reincorporacion", p_ReincorporacionBombero.FechaReincorporacion);
-             msqlCommand.Parameters.AddWithValue("?p_sanciones", p_ReincorporacionBombero.Sancion);
-             msqlCommand.Parameters.AddWithValue("?p_observaciones", p_ReincorporacionBombero.Observacion_Med);
+        public bool Update(ReincorporacionBomberoDTO p_ReincorporacionBombero)
+        {
+            //MySQL
+            MySql.Data.MySqlClient.MySqlConnection conexionBD = ConnectBD();
+            string query = "UPDATE reincorporaciones_bomberos SET rut = ?p_rut, fecha_suspension = ?p_fecha_suspension, ";
+            query = string.Concat(query, "fecha_reincorporacion = ?p_fecha_reincorporacion, sanciones = ?p_sanciones, observaciones = ?p_observaciones");
+            MySql.Data.MySqlClient.MySqlCommand msqlCommand = new MySql.Data.MySqlClient.MySqlCommand(query, conexionBD);
+            msqlCommand.Parameters.AddWithValue("?p_rut", p_ReincorporacionBombero.Bombero.Rut);
+            msqlCommand.Parameters.AddWithValue("?p_fecha_suspension", p_ReincorporacionBombero.FechaSuspension);
+            msqlCommand.Parameters.AddWithValue("?p_fecha_reincorporacion", p_ReincorporacionBombero.FechaReincorporacion);
+            msqlCommand.Parameters.AddWithValue("?p_sanciones", p_ReincorporacionBombero.Sancion);
+            msqlCommand.Parameters.AddWithValue("?p_observaciones", p_ReincorporacionBombero.Observacion_Med);
 
 
-             try
-             {
-                 conexionBD.Open();
-                 msqlCommand.ExecuteNonQuery();
-                 return true;
-             }
-             catch (Exception er)
-             {
-                 return false;
-             }
-             finally
-             {
-                 conexionBD.Close();
-             }
-         }
+            try
+            {
+                conexionBD.Open();
+                msqlCommand.ExecuteNonQuery();
+                return true;
+            }
+            catch (Exception er)
+            {
+                return false;
+            }
+            finally
+            {
+                conexionBD.Close();
+            }
+        }
 
     }
 }

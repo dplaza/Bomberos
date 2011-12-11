@@ -184,6 +184,11 @@
             this.dateTimeSuspension = new System.Windows.Forms.DateTimePicker();
             this.label42 = new System.Windows.Forms.Label();
             this.dataGridReincorporacion = new System.Windows.Forms.DataGridView();
+            this.BomberoReincorporacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FechaSuspension = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FechaReincorporacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Sancion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Observacion_Med = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btn_agregar_reincorporacion = new System.Windows.Forms.Button();
             this.label40 = new System.Windows.Forms.Label();
             this.dateTimeReincorporacion = new System.Windows.Forms.DateTimePicker();
@@ -261,11 +266,6 @@
             this.labelNumRegistro = new System.Windows.Forms.Label();
             this.labelRut = new System.Windows.Forms.Label();
             this.labelnombre = new System.Windows.Forms.Label();
-            this.BomberoReincorporacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FechaSuspension = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FechaReincorporacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Sancion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Observacion_Med = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabBox.SuspendLayout();
             this.FichaPersonal.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.box_ficha_pict)).BeginInit();
@@ -888,7 +888,7 @@
             // 
             // btn_imprimir_ficha_medica
             // 
-            this.btn_imprimir_ficha_medica.Location = new System.Drawing.Point(498, 353);
+            this.btn_imprimir_ficha_medica.Location = new System.Drawing.Point(478, 338);
             this.btn_imprimir_ficha_medica.Name = "btn_imprimir_ficha_medica";
             this.btn_imprimir_ficha_medica.Size = new System.Drawing.Size(113, 23);
             this.btn_imprimir_ficha_medica.TabIndex = 13;
@@ -1011,7 +1011,7 @@
             // 
             // btn_enviar_cambios
             // 
-            this.btn_enviar_cambios.Location = new System.Drawing.Point(649, 351);
+            this.btn_enviar_cambios.Location = new System.Drawing.Point(597, 338);
             this.btn_enviar_cambios.Name = "btn_enviar_cambios";
             this.btn_enviar_cambios.Size = new System.Drawing.Size(113, 23);
             this.btn_enviar_cambios.TabIndex = 10;
@@ -1857,6 +1857,46 @@
             this.dataGridReincorporacion.Size = new System.Drawing.Size(654, 361);
             this.dataGridReincorporacion.TabIndex = 7;
             // 
+            // BomberoReincorporacion
+            // 
+            this.BomberoReincorporacion.DataPropertyName = "Bombero";
+            this.BomberoReincorporacion.HeaderText = "Bombero";
+            this.BomberoReincorporacion.Name = "BomberoReincorporacion";
+            this.BomberoReincorporacion.ReadOnly = true;
+            this.BomberoReincorporacion.Visible = false;
+            // 
+            // FechaSuspension
+            // 
+            this.FechaSuspension.DataPropertyName = "FechaSuspension";
+            this.FechaSuspension.HeaderText = "Fecha de Suspension";
+            this.FechaSuspension.Name = "FechaSuspension";
+            this.FechaSuspension.ReadOnly = true;
+            this.FechaSuspension.Width = 110;
+            // 
+            // FechaReincorporacion
+            // 
+            this.FechaReincorporacion.DataPropertyName = "FechaReincorporacion";
+            this.FechaReincorporacion.HeaderText = "Fecha de Reincorporación";
+            this.FechaReincorporacion.Name = "FechaReincorporacion";
+            this.FechaReincorporacion.ReadOnly = true;
+            this.FechaReincorporacion.Width = 110;
+            // 
+            // Sancion
+            // 
+            this.Sancion.DataPropertyName = "Sancion";
+            this.Sancion.HeaderText = "Sanciones";
+            this.Sancion.Name = "Sancion";
+            this.Sancion.ReadOnly = true;
+            this.Sancion.Width = 200;
+            // 
+            // Observacion_Med
+            // 
+            this.Observacion_Med.DataPropertyName = "Observacion_Med";
+            this.Observacion_Med.HeaderText = "Observaciones";
+            this.Observacion_Med.Name = "Observacion_Med";
+            this.Observacion_Med.ReadOnly = true;
+            this.Observacion_Med.Width = 200;
+            // 
             // btn_agregar_reincorporacion
             // 
             this.btn_agregar_reincorporacion.Location = new System.Drawing.Point(497, 21);
@@ -2580,46 +2620,6 @@
             this.labelnombre.Size = new System.Drawing.Size(90, 13);
             this.labelnombre.TabIndex = 172;
             this.labelnombre.Text = "Nombre completo";
-            // 
-            // BomberoReincorporacion
-            // 
-            this.BomberoReincorporacion.DataPropertyName = "Bombero";
-            this.BomberoReincorporacion.HeaderText = "Bombero";
-            this.BomberoReincorporacion.Name = "BomberoReincorporacion";
-            this.BomberoReincorporacion.ReadOnly = true;
-            this.BomberoReincorporacion.Visible = false;
-            // 
-            // FechaSuspension
-            // 
-            this.FechaSuspension.DataPropertyName = "FechaSuspension";
-            this.FechaSuspension.HeaderText = "Fecha de Suspension";
-            this.FechaSuspension.Name = "FechaSuspension";
-            this.FechaSuspension.ReadOnly = true;
-            this.FechaSuspension.Width = 110;
-            // 
-            // FechaReincorporacion
-            // 
-            this.FechaReincorporacion.DataPropertyName = "FechaReincorporacion";
-            this.FechaReincorporacion.HeaderText = "Fecha de Reincorporación";
-            this.FechaReincorporacion.Name = "FechaReincorporacion";
-            this.FechaReincorporacion.ReadOnly = true;
-            this.FechaReincorporacion.Width = 110;
-            // 
-            // Sancion
-            // 
-            this.Sancion.DataPropertyName = "Sancion";
-            this.Sancion.HeaderText = "Sanciones";
-            this.Sancion.Name = "Sancion";
-            this.Sancion.ReadOnly = true;
-            this.Sancion.Width = 200;
-            // 
-            // Observacion_Med
-            // 
-            this.Observacion_Med.DataPropertyName = "Observacion_Med";
-            this.Observacion_Med.HeaderText = "Observaciones";
-            this.Observacion_Med.Name = "Observacion_Med";
-            this.Observacion_Med.ReadOnly = true;
-            this.Observacion_Med.Width = 200;
             // 
             // MasInfoBombero
             // 
