@@ -148,8 +148,6 @@
             this.BomberoCurso = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Reincorporaciones = new System.Windows.Forms.TabPage();
             this.dataGridReincorporacion = new System.Windows.Forms.DataGridView();
-            this.BomberoReincorporacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FechaReincorporacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ResumenListas = new System.Windows.Forms.TabPage();
             this.btn_imprimir_asistencia = new System.Windows.Forms.Button();
             this.lbl_totalAbonos = new System.Windows.Forms.Label();
@@ -193,6 +191,11 @@
             this.labelRut = new System.Windows.Forms.Label();
             this.labelnombre = new System.Windows.Forms.Label();
             this.labelNumRegistro = new System.Windows.Forms.Label();
+            this.BomberoReincorporacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FechaSuspension = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FechaReincorporacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Sancion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Observacion_Med = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabBox.SuspendLayout();
             this.FichaPersonal.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.box_ficha_pict)).BeginInit();
@@ -1437,7 +1440,7 @@
             this.Reincorporaciones.Padding = new System.Windows.Forms.Padding(3);
             this.Reincorporaciones.Size = new System.Drawing.Size(774, 561);
             this.Reincorporaciones.TabIndex = 6;
-            this.Reincorporaciones.Text = "Reincorporaciones";
+            this.Reincorporaciones.Text = "Medidas Disciplinarias";
             this.Reincorporaciones.UseVisualStyleBackColor = true;
             // 
             // dataGridReincorporacion
@@ -1447,28 +1450,15 @@
             this.dataGridReincorporacion.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridReincorporacion.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.BomberoReincorporacion,
-            this.FechaReincorporacion});
+            this.FechaSuspension,
+            this.FechaReincorporacion,
+            this.Sancion,
+            this.Observacion_Med});
             this.dataGridReincorporacion.Location = new System.Drawing.Point(48, 38);
             this.dataGridReincorporacion.Name = "dataGridReincorporacion";
             this.dataGridReincorporacion.ReadOnly = true;
             this.dataGridReincorporacion.Size = new System.Drawing.Size(679, 470);
             this.dataGridReincorporacion.TabIndex = 7;
-            // 
-            // BomberoReincorporacion
-            // 
-            this.BomberoReincorporacion.DataPropertyName = "Bombero";
-            this.BomberoReincorporacion.HeaderText = "Bombero";
-            this.BomberoReincorporacion.Name = "BomberoReincorporacion";
-            this.BomberoReincorporacion.ReadOnly = true;
-            this.BomberoReincorporacion.Visible = false;
-            // 
-            // FechaReincorporacion
-            // 
-            this.FechaReincorporacion.DataPropertyName = "FechaReincorporacion";
-            this.FechaReincorporacion.HeaderText = "Fecha de Reincorporación";
-            this.FechaReincorporacion.Name = "FechaReincorporacion";
-            this.FechaReincorporacion.ReadOnly = true;
-            this.FechaReincorporacion.Width = 400;
             // 
             // ResumenListas
             // 
@@ -1869,6 +1859,46 @@
             this.labelNumRegistro.TabIndex = 176;
             this.labelNumRegistro.Text = "N° Registro";
             // 
+            // BomberoReincorporacion
+            // 
+            this.BomberoReincorporacion.DataPropertyName = "Bombero";
+            this.BomberoReincorporacion.HeaderText = "Bombero";
+            this.BomberoReincorporacion.Name = "BomberoReincorporacion";
+            this.BomberoReincorporacion.ReadOnly = true;
+            this.BomberoReincorporacion.Visible = false;
+            // 
+            // FechaSuspension
+            // 
+            this.FechaSuspension.DataPropertyName = "FechaSuspension";
+            this.FechaSuspension.HeaderText = "Fecha de Suspension";
+            this.FechaSuspension.Name = "FechaSuspension";
+            this.FechaSuspension.ReadOnly = true;
+            this.FechaSuspension.Width = 110;
+            // 
+            // FechaReincorporacion
+            // 
+            this.FechaReincorporacion.DataPropertyName = "FechaReincorporacion";
+            this.FechaReincorporacion.HeaderText = "Fecha de Reincorporación";
+            this.FechaReincorporacion.Name = "FechaReincorporacion";
+            this.FechaReincorporacion.ReadOnly = true;
+            this.FechaReincorporacion.Width = 110;
+            // 
+            // Sancion
+            // 
+            this.Sancion.DataPropertyName = "Sancion";
+            this.Sancion.HeaderText = "Sanciones";
+            this.Sancion.Name = "Sancion";
+            this.Sancion.ReadOnly = true;
+            this.Sancion.Width = 200;
+            // 
+            // Observacion_Med
+            // 
+            this.Observacion_Med.DataPropertyName = "Observacion_Med";
+            this.Observacion_Med.HeaderText = "Observaciones";
+            this.Observacion_Med.Name = "Observacion_Med";
+            this.Observacion_Med.ReadOnly = true;
+            this.Observacion_Med.Width = 200;
+            // 
             // MasInfoBomberoUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2027,8 +2057,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn TotalAbonosLista;
         private System.Windows.Forms.DataGridViewTextBoxColumn AñoLista;
         private System.Windows.Forms.DataGridViewTextBoxColumn BomberoLista;
-        private System.Windows.Forms.DataGridViewTextBoxColumn BomberoReincorporacion;
-        private System.Windows.Forms.DataGridViewTextBoxColumn FechaReincorporacion;
         private System.Windows.Forms.Button btn_imprimir_ficha_medica;
         private System.Windows.Forms.Button btn_imprimir_cargos;
         private System.Windows.Forms.Button btn_imprimir_premios;
@@ -2089,6 +2117,11 @@
         private System.Windows.Forms.Label label72;
         private System.Windows.Forms.RichTextBox txt_alergias;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn BomberoReincorporacion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn FechaSuspension;
+        private System.Windows.Forms.DataGridViewTextBoxColumn FechaReincorporacion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Sancion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Observacion_Med;
 
     }
 }
