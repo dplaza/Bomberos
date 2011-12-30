@@ -188,6 +188,9 @@
     <Content Include="Reportes\ReportePremios.rdlc">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <None Include="Resources\Usuario.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <EmbeddedResource Include="Usuario\MasInfoBomberoUsuario.resx">
       <DependentUpon>MasInfoBomberoUsuario.cs</DependentUpon>
       <SubType>Designer</SubType>

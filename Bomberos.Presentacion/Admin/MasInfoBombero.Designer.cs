@@ -163,6 +163,13 @@
             this.btn_imprimir_cursos = new System.Windows.Forms.Button();
             this.btn_borrar_curso = new System.Windows.Forms.Button();
             this.dataGridCursos = new System.Windows.Forms.DataGridView();
+            this.NombreCurso = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.LugarCurso = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fecha_inicio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fecha_termino = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fecha_entrega_curso = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.id_curso = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.BomberoCurso = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btn_curso = new System.Windows.Forms.Button();
             this.select_cursos = new System.Windows.Forms.ComboBox();
             this.label11 = new System.Windows.Forms.Label();
@@ -262,13 +269,6 @@
             this.labelNumRegistro = new System.Windows.Forms.Label();
             this.labelRut = new System.Windows.Forms.Label();
             this.labelnombre = new System.Windows.Forms.Label();
-            this.NombreCurso = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.LugarCurso = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fecha_inicio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fecha_termino = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fecha_entrega_curso = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.id_curso = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.BomberoCurso = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabBox.SuspendLayout();
             this.FichaPersonal.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.box_ficha_pict)).BeginInit();
@@ -364,7 +364,7 @@
             this.box_ficha_pict.Location = new System.Drawing.Point(506, 20);
             this.box_ficha_pict.Name = "box_ficha_pict";
             this.box_ficha_pict.Size = new System.Drawing.Size(171, 200);
-            this.box_ficha_pict.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.box_ficha_pict.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.box_ficha_pict.TabIndex = 181;
             this.box_ficha_pict.TabStop = false;
             // 
@@ -1665,6 +1665,61 @@
             this.dataGridCursos.Size = new System.Drawing.Size(654, 353);
             this.dataGridCursos.TabIndex = 9;
             // 
+            // NombreCurso
+            // 
+            this.NombreCurso.DataPropertyName = "NombreCurso";
+            this.NombreCurso.HeaderText = "Curso";
+            this.NombreCurso.Name = "NombreCurso";
+            this.NombreCurso.ReadOnly = true;
+            // 
+            // LugarCurso
+            // 
+            this.LugarCurso.DataPropertyName = "LugarCurso";
+            this.LugarCurso.HeaderText = "Lugar";
+            this.LugarCurso.Name = "LugarCurso";
+            this.LugarCurso.ReadOnly = true;
+            // 
+            // fecha_inicio
+            // 
+            this.fecha_inicio.DataPropertyName = "FechaInicio";
+            this.fecha_inicio.HeaderText = "Inicio";
+            this.fecha_inicio.Name = "fecha_inicio";
+            this.fecha_inicio.ReadOnly = true;
+            this.fecha_inicio.Width = 120;
+            // 
+            // fecha_termino
+            // 
+            this.fecha_termino.DataPropertyName = "FechaFin";
+            this.fecha_termino.HeaderText = "Termino";
+            this.fecha_termino.Name = "fecha_termino";
+            this.fecha_termino.ReadOnly = true;
+            this.fecha_termino.Width = 120;
+            // 
+            // fecha_entrega_curso
+            // 
+            this.fecha_entrega_curso.DataPropertyName = "FechaEntrega";
+            this.fecha_entrega_curso.HeaderText = "Entrega";
+            this.fecha_entrega_curso.Name = "fecha_entrega_curso";
+            this.fecha_entrega_curso.ReadOnly = true;
+            this.fecha_entrega_curso.Width = 120;
+            // 
+            // id_curso
+            // 
+            this.id_curso.DataPropertyName = "Curso";
+            this.id_curso.HeaderText = "Curso";
+            this.id_curso.Name = "id_curso";
+            this.id_curso.ReadOnly = true;
+            this.id_curso.Visible = false;
+            this.id_curso.Width = 180;
+            // 
+            // BomberoCurso
+            // 
+            this.BomberoCurso.DataPropertyName = "Bombero";
+            this.BomberoCurso.HeaderText = "Bombero";
+            this.BomberoCurso.Name = "BomberoCurso";
+            this.BomberoCurso.ReadOnly = true;
+            this.BomberoCurso.Visible = false;
+            // 
             // btn_curso
             // 
             this.btn_curso.Location = new System.Drawing.Point(410, 35);
@@ -2595,61 +2650,6 @@
             this.labelnombre.TabIndex = 172;
             this.labelnombre.Text = "Nombre completo";
             // 
-            // NombreCurso
-            // 
-            this.NombreCurso.DataPropertyName = "NombreCurso";
-            this.NombreCurso.HeaderText = "Curso";
-            this.NombreCurso.Name = "NombreCurso";
-            this.NombreCurso.ReadOnly = true;
-            // 
-            // LugarCurso
-            // 
-            this.LugarCurso.DataPropertyName = "LugarCurso";
-            this.LugarCurso.HeaderText = "Lugar";
-            this.LugarCurso.Name = "LugarCurso";
-            this.LugarCurso.ReadOnly = true;
-            // 
-            // fecha_inicio
-            // 
-            this.fecha_inicio.DataPropertyName = "FechaInicio";
-            this.fecha_inicio.HeaderText = "Inicio";
-            this.fecha_inicio.Name = "fecha_inicio";
-            this.fecha_inicio.ReadOnly = true;
-            this.fecha_inicio.Width = 120;
-            // 
-            // fecha_termino
-            // 
-            this.fecha_termino.DataPropertyName = "FechaFin";
-            this.fecha_termino.HeaderText = "Termino";
-            this.fecha_termino.Name = "fecha_termino";
-            this.fecha_termino.ReadOnly = true;
-            this.fecha_termino.Width = 120;
-            // 
-            // fecha_entrega_curso
-            // 
-            this.fecha_entrega_curso.DataPropertyName = "FechaEntrega";
-            this.fecha_entrega_curso.HeaderText = "Entrega";
-            this.fecha_entrega_curso.Name = "fecha_entrega_curso";
-            this.fecha_entrega_curso.ReadOnly = true;
-            this.fecha_entrega_curso.Width = 120;
-            // 
-            // id_curso
-            // 
-            this.id_curso.DataPropertyName = "Curso";
-            this.id_curso.HeaderText = "Curso";
-            this.id_curso.Name = "id_curso";
-            this.id_curso.ReadOnly = true;
-            this.id_curso.Visible = false;
-            this.id_curso.Width = 180;
-            // 
-            // BomberoCurso
-            // 
-            this.BomberoCurso.DataPropertyName = "Bombero";
-            this.BomberoCurso.HeaderText = "Bombero";
-            this.BomberoCurso.Name = "BomberoCurso";
-            this.BomberoCurso.ReadOnly = true;
-            this.BomberoCurso.Visible = false;
-            // 
             // MasInfoBombero
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2670,7 +2670,6 @@
             this.Load += new System.EventHandler(this.MasInfoBombero_Load);
             this.tabBox.ResumeLayout(false);
             this.FichaPersonal.ResumeLayout(false);
-            this.FichaPersonal.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.box_ficha_pict)).EndInit();
             this.groupBox9.ResumeLayout(false);
             this.groupBox9.PerformLayout();

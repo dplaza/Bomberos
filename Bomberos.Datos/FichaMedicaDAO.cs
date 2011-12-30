@@ -10,7 +10,7 @@ namespace Bomberos.Datos
     {
         MySql.Data.MySqlClient.MySqlConnection ConnectBD()
         {
-            string parameters = "server=localhost; user id=root; Password=nomeweis; database=bomberos; persist security info=False";
+            string parameters = "server=192.168.20.5; uid=sistema_bomberos; pwd=9qpbVRl; database=bomberos; persist security info=False";
             MySql.Data.MySqlClient.MySqlConnection msqlConnection = new MySql.Data.MySqlClient.MySqlConnection(parameters);
 
             return msqlConnection;
@@ -22,7 +22,7 @@ namespace Bomberos.Datos
             MySql.Data.MySqlClient.MySqlConnection conexionBD = ConnectBD();
 
             StringBuilder strBuilder = new StringBuilder();
-            strBuilder.Append("INSERT INTO fichas_medicas (rut, hepatitis, tifus, otras_enfermedades, operaciones, alergias ");
+            strBuilder.Append("INSERT INTO fichas_medicas (rut, hepatitis, tifus, otras_enfermedades, operaciones, alergias, ");
             strBuilder.Append("hipertension_arterial, diabetes, epilepsia, asma, antecedentes_cronicos, ");
             strBuilder.Append("medicamentos_toma, medicamentos_no_toma, nombre_pariente_1, parentesco_pariente_1, ");
             strBuilder.Append("telefono_pariente_1, celular_pariente_1, nombre_pariente_2, parentesco_pariente_2, ");

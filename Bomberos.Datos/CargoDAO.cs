@@ -10,7 +10,7 @@ namespace Bomberos.Datos
     {
          MySql.Data.MySqlClient.MySqlConnection ConnectBD()
         {
-            string parameters = "server=localhost; user id=root; Password=nomeweis; database=bomberos; persist security info=False";
+            string parameters = "server=192.168.20.5; uid=sistema_bomberos; pwd=9qpbVRl; database=bomberos; persist security info=False";
             MySql.Data.MySqlClient.MySqlConnection msqlConnection = new MySql.Data.MySqlClient.MySqlConnection(parameters);
 
             return msqlConnection;

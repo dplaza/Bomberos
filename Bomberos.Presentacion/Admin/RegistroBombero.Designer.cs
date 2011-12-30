@@ -345,6 +345,15 @@
             // 
             this.select_nivel_acad.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.select_nivel_acad.FormattingEnabled = true;
+            this.select_nivel_acad.Items.AddRange(new object[] {
+            "Educación Básica Completa",
+            "Educación Básica Incompleta",
+            "Educación Media Completa",
+            "Educación Media Incompleta",
+            "Educación Superior Técnica Completa",
+            "Educación Superior Técnica Incompleta",
+            "Educación Superior Universitaria Completa",
+            "Educación Superior Universitaria Incompleta"});
             this.select_nivel_acad.Location = new System.Drawing.Point(140, 183);
             this.select_nivel_acad.Name = "select_nivel_acad";
             this.select_nivel_acad.Size = new System.Drawing.Size(246, 21);
@@ -383,10 +392,12 @@
             // box_picture
             // 
             this.box_picture.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.box_picture.Image = global::Bomberos.Presentacion.Properties.Resources.Usuario;
+            this.box_picture.InitialImage = null;
             this.box_picture.Location = new System.Drawing.Point(460, 60);
             this.box_picture.Name = "box_picture";
             this.box_picture.Size = new System.Drawing.Size(150, 180);
-            this.box_picture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.box_picture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.box_picture.TabIndex = 43;
             this.box_picture.TabStop = false;
             // 

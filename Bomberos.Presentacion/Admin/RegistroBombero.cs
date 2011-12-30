@@ -51,6 +51,11 @@ namespace Bomberos.Presentacion
             select_compania.DisplayMember = "Nombre";
             select_compania.ValueMember = "Id";
 
+            System.Reflection.Assembly.GetExecutingAssembly().GetManifestResourceNames();
+
+            location = Application.StartupPath + @"\Resources\Usuario.jpg";
+            fileName = "Usuario.jpg";
+
         }
 
         private void textBox2_TextChanged(object sender, EventArgs e)
@@ -155,7 +160,7 @@ namespace Bomberos.Presentacion
             openPic.Title = "Seleccione imagen";
             if (openPic.ShowDialog() == DialogResult.OK)
             {
-                box_picture.BackgroundImage = new Bitmap(openPic.FileName);
+                box_picture.Image = new Bitmap(openPic.FileName);
                 location = openPic.FileName;
                 fileName = openPic.SafeFileName;
             }

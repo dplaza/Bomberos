@@ -138,7 +138,6 @@ namespace Bomberos.Datos
             }
             catch (Exception er)
             {
-                throw er;
                 return retorno;
             }
             finally
