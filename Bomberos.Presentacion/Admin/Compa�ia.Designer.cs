@@ -39,19 +39,24 @@
             this.btn_borrar = new System.Windows.Forms.Button();
             this.btn_cancelar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.box_picture = new System.Windows.Forms.PictureBox();
+            this.btn_imagen = new System.Windows.Forms.Button();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridResult)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.box_picture)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.btn_imagen);
+            this.groupBox2.Controls.Add(this.box_picture);
             this.groupBox2.Controls.Add(this.btn_agregar);
             this.groupBox2.Controls.Add(this.txt_nombres);
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Location = new System.Drawing.Point(13, 30);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(675, 81);
+            this.groupBox2.Size = new System.Drawing.Size(675, 140);
             this.groupBox2.TabIndex = 19;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Agregar Compañia";
@@ -59,7 +64,7 @@
             // 
             // btn_agregar
             // 
-            this.btn_agregar.Location = new System.Drawing.Point(486, 36);
+            this.btn_agregar.Location = new System.Drawing.Point(177, 81);
             this.btn_agregar.Name = "btn_agregar";
             this.btn_agregar.Size = new System.Drawing.Size(75, 23);
             this.btn_agregar.TabIndex = 14;
@@ -69,7 +74,7 @@
             // 
             // txt_nombres
             // 
-            this.txt_nombres.Location = new System.Drawing.Point(123, 38);
+            this.txt_nombres.Location = new System.Drawing.Point(126, 36);
             this.txt_nombres.Name = "txt_nombres";
             this.txt_nombres.Size = new System.Drawing.Size(272, 20);
             this.txt_nombres.TabIndex = 2;
@@ -77,7 +82,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(6, 41);
+            this.label2.Location = new System.Drawing.Point(9, 39);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(94, 13);
             this.label2.TabIndex = 1;
@@ -86,9 +91,9 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.dataGridResult);
-            this.groupBox1.Location = new System.Drawing.Point(11, 133);
+            this.groupBox1.Location = new System.Drawing.Point(11, 185);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(678, 287);
+            this.groupBox1.Size = new System.Drawing.Size(678, 235);
             this.groupBox1.TabIndex = 21;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Compañias";
@@ -105,7 +110,7 @@
             this.dataGridResult.Location = new System.Drawing.Point(3, 16);
             this.dataGridResult.Name = "dataGridResult";
             this.dataGridResult.ReadOnly = true;
-            this.dataGridResult.Size = new System.Drawing.Size(672, 268);
+            this.dataGridResult.Size = new System.Drawing.Size(672, 216);
             this.dataGridResult.TabIndex = 0;
             this.dataGridResult.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridResult_CellContentClick);
             // 
@@ -158,6 +163,28 @@
             this.label1.TabIndex = 25;
             this.label1.Text = "COMPAÑIAS";
             // 
+            // box_picture
+            // 
+            this.box_picture.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.box_picture.Image = global::Bomberos.Presentacion.Properties.Resources.Usuario;
+            this.box_picture.InitialImage = null;
+            this.box_picture.Location = new System.Drawing.Point(439, 10);
+            this.box_picture.Name = "box_picture";
+            this.box_picture.Size = new System.Drawing.Size(204, 94);
+            this.box_picture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.box_picture.TabIndex = 44;
+            this.box_picture.TabStop = false;
+            // 
+            // btn_imagen
+            // 
+            this.btn_imagen.Location = new System.Drawing.Point(489, 111);
+            this.btn_imagen.Name = "btn_imagen";
+            this.btn_imagen.Size = new System.Drawing.Size(114, 23);
+            this.btn_imagen.TabIndex = 45;
+            this.btn_imagen.Text = "Seleccionar Imagen";
+            this.btn_imagen.UseVisualStyleBackColor = true;
+            this.btn_imagen.Click += new System.EventHandler(this.btn_imagen_Click);
+            // 
             // Compañia
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -177,6 +204,7 @@
             this.groupBox2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridResult)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.box_picture)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -195,5 +223,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridViewTextBoxColumn idCompañia;
         private System.Windows.Forms.DataGridViewTextBoxColumn NombreCompañia;
+        private System.Windows.Forms.PictureBox box_picture;
+        private System.Windows.Forms.Button btn_imagen;
     }
 }

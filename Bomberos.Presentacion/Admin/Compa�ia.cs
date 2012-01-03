@@ -85,5 +85,17 @@ namespace Bomberos.Presentacion
                 dataGridResult.DataSource = _Compañia.ListarCompañias().OrderBy(p => p.Nombre).ToList();
             }
         }
+
+        private void btn_imagen_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openPic = new OpenFileDialog();
+            openPic.Title = "Seleccione imagen";
+            if (openPic.ShowDialog() == DialogResult.OK)
+            {
+                box_picture.Image = new Bitmap(openPic.FileName);
+                location = openPic.FileName;
+                fileName = openPic.SafeFileName;
+            }
+        }
     }
 }

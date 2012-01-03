@@ -170,5 +170,10 @@ namespace Bomberos.Presentacion
         {
 
         }
+
+        private void box_picture_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

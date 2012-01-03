@@ -400,6 +400,7 @@
             this.box_picture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.box_picture.TabIndex = 43;
             this.box_picture.TabStop = false;
+            this.box_picture.Click += new System.EventHandler(this.box_picture_Click);
             // 
             // btn_imagen
             // 
