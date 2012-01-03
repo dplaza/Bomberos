@@ -9,5 +9,8 @@ namespace Bomberos.Comun
     {
         public int Id { get; set; }
         public string Nombre { get; set; }
+        public int PictureSizeComp { get; set; }
+        public string PictureNameComp { get; set; }
+        public byte[] PictureFileComp { get; set; }
     }
 }

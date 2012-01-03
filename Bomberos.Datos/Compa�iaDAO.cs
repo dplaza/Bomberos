@@ -20,9 +20,12 @@ namespace Bomberos.Datos
         {
             //MySQL
             MySql.Data.MySqlClient.MySqlConnection conexionBD = ConnectBD();
-            string query = "INSERT INTO companias (nombre) Values (?p_nombre) ";
+            string query = "INSERT INTO companias (nombre, picture_name, picture_size, picture_file) Values (?p_nombre, ?p_picture_name, ?p_picture_size, ?p_picture_file) ";
             MySql.Data.MySqlClient.MySqlCommand msqlCommand = new MySql.Data.MySqlClient.MySqlCommand(query, conexionBD);
             msqlCommand.Parameters.AddWithValue("?p_nombre", p_Compañia.Nombre);
+            msqlCommand.Parameters.AddWithValue("?p_picture_name", p_Compañia.PictureNameComp);
+            msqlCommand.Parameters.AddWithValue("p_picture_size", p_Compañia.PictureSizeComp);
+            msqlCommand.Parameters.AddWithValue("p_picture_file", p_Compañia.PictureFileComp);
 
            
             
@@ -61,6 +64,10 @@ namespace Bomberos.Datos
 
                     retorno.Id = int.Parse(msqlReader["id_compania"].ToString());
                     retorno.Nombre = msqlReader["nombre"].ToString();
+                    retorno.PictureNameComp = msqlReader.GetString(msqlReader.GetOrdinal("picture_name"));
+                    retorno.PictureFileComp = msqlReader.GetInt32(msqlReader.GetOrdinal("picture_size"));
+                    retorno.PictureFileComp = new byte[retorno.PictureSizeComp];
+                    msqlReader.GetBytes(msqlReader.GetOrdinal("picture_file"), 0, retorno.PictureFileComp, 0, retorno.PictureSizeComp);
                 }
             }
             catch (Exception er)
@@ -103,10 +110,13 @@ namespace Bomberos.Datos
         {
              //MySQL
             MySql.Data.MySqlClient.MySqlConnection conexionBD = ConnectBD();
-            string query = "UPDATE compania SET id_compania = ?p_id_compania, nombre = ?p_nombre";
+            string query = "UPDATE compania SET id_compania = ?p_id_compania, nombre = ?p_nombre, picture_name = ?p_picname, picture_file = ?p_picfile, picture_size = ?p_picsize";
             MySql.Data.MySqlClient.MySqlCommand msqlCommand = new MySql.Data.MySqlClient.MySqlCommand(query, conexionBD);
             msqlCommand.Parameters.AddWithValue("?p_id_compania", p_Compañia.Id);
             msqlCommand.Parameters.AddWithValue("?p_nombre", p_Compañia.Nombre);
+            msqlCommand.Parameters.AddWithValue("?p_picname", p_Compañia.PictureNameComp);
+            msqlCommand.Parameters.AddWithValue("?p_picsize", p_Compañia.PictureSizeComp);
+            msqlCommand.Parameters.AddWithValue("?p_picfile", p_Compañia.PictureFileComp);
             
             try
             {
@@ -144,6 +154,9 @@ namespace Bomberos.Datos
 
                     Compañia.Id = int.Parse(msqlReader["id_compania"].ToString());
                     Compañia.Nombre= msqlReader["nombre"].ToString();
+                    Compañia.PictureNameComp = msqlReader.GetString(msqlReader.GetOrdinal("picture_name"));
+                    Compañia.PictureSizeComp = msqlReader.GetInt32(msqlReader.GetOrdinal("picture_size"));
+                    Compañia.PictureFileComp = new byte[Compañia.PictureFileComp];
 
                     ListaCompañia.Add(Compañia);
                 }
