@@ -131,6 +131,11 @@
       <AllowBlank>true</AllowBlank>
       <Prompt>Report_Parameter_23</Prompt>
     </ReportParameter>
+    <ReportParameter Name="p_LogoCompañia">
+      <DataType>String</DataType>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>Report_Parameter_24</Prompt>
+    </ReportParameter>
   </ReportParameters>
   <rd:DrawGrid>true</rd:DrawGrid>
   <InteractiveWidth>21cm</InteractiveWidth>
@@ -199,6 +204,16 @@
   <Body>
     <ColumnSpacing>1cm</ColumnSpacing>
     <ReportItems>
+      <Image Name="image2">
+        <Sizing>FitProportional</Sizing>
+        <Width>2cm</Width>
+        <Source>External</Source>
+        <Style />
+        <ZIndex>40</ZIndex>
+        <Left>0.5cm</Left>
+        <Height>2cm</Height>
+        <Value>="file:///" &amp; Parameters!p_LogoCompañia.Value</Value>
+      </Image>
       <Textbox Name="textbox36">
         <rd:DefaultName>textbox36</rd:DefaultName>
         <Top>10.25cm</Top>

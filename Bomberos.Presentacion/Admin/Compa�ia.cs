@@ -8,11 +8,15 @@ using System.Text;
 using System.Windows.Forms;
 using Bomberos.Negocio.Mgr;
 using Bomberos.Comun;
+using System.IO;
 
 namespace Bomberos.Presentacion
 {
     public partial class Compañia : Form
     {
+        private string location { get; set; }
+        private string fileName { get; set; }
+
         public Compañia()
         {
             InitializeComponent();
@@ -52,10 +56,30 @@ namespace Bomberos.Presentacion
                 Lista = _Compañia.ListarCompañias();
 
                 Compañia.Nombre = txt_nombres.Text;
+
+                #region Logo Insignia
+                    try
+                    {
+                        FileStream fs = new FileStream(location, FileMode.Open, FileAccess.Read);
+
+                        Compañia.PictureSizeComp = (int)fs.Length;
+                        Compañia.PictureFileComp = new byte[Compañia.PictureSizeComp];
+                        fs.Read(Compañia.PictureFileComp, 0, (int)Compañia.PictureSizeComp);
+                        Compañia.PictureNameComp = fileName;
+                        fs.Close();
+                    }
+                    catch (Exception er)
+                    {
+                        MessageBox.Show("Debe elegir una insignia.");
+                        return;
+                    }
+                    #endregion
+
                 if (!Lista.Exists(p => p.Nombre.Equals(Compañia.Nombre)) && _Compañia.RegistroCompañia(Compañia))
                 {
                     dataGridResult.DataSource = _Compañia.ListarCompañias().OrderBy(p => p.Nombre).ToList();
                     txt_nombres.Clear();
+
                 }
                 else
                 {

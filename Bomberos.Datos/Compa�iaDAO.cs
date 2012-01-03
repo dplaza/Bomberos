@@ -65,7 +65,7 @@ namespace Bomberos.Datos
                     retorno.Id = int.Parse(msqlReader["id_compania"].ToString());
                     retorno.Nombre = msqlReader["nombre"].ToString();
                     retorno.PictureNameComp = msqlReader.GetString(msqlReader.GetOrdinal("picture_name"));
-                    retorno.PictureFileComp = msqlReader.GetInt32(msqlReader.GetOrdinal("picture_size"));
+                    retorno.PictureSizeComp = msqlReader.GetInt32(msqlReader.GetOrdinal("picture_size"));
                     retorno.PictureFileComp = new byte[retorno.PictureSizeComp];
                     msqlReader.GetBytes(msqlReader.GetOrdinal("picture_file"), 0, retorno.PictureFileComp, 0, retorno.PictureSizeComp);
                 }
@@ -156,7 +156,7 @@ namespace Bomberos.Datos
                     Compañia.Nombre= msqlReader["nombre"].ToString();
                     Compañia.PictureNameComp = msqlReader.GetString(msqlReader.GetOrdinal("picture_name"));
                     Compañia.PictureSizeComp = msqlReader.GetInt32(msqlReader.GetOrdinal("picture_size"));
-                    Compañia.PictureFileComp = new byte[Compañia.PictureFileComp];
+                    Compañia.PictureFileComp = new byte[Compañia.PictureSizeComp];
 
                     ListaCompañia.Add(Compañia);
                 }
