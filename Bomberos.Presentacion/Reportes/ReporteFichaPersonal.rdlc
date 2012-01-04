@@ -206,17 +206,18 @@
     <ReportItems>
       <Image Name="image2">
         <Sizing>FitProportional</Sizing>
+        <Top>0.25cm</Top>
         <Width>2cm</Width>
         <Source>External</Source>
         <Style />
         <ZIndex>40</ZIndex>
         <Left>0.5cm</Left>
-        <Height>2cm</Height>
+        <Height>2.25cm</Height>
         <Value>="file:///" &amp; Parameters!p_LogoCompañia.Value</Value>
       </Image>
       <Textbox Name="textbox36">
         <rd:DefaultName>textbox36</rd:DefaultName>
-        <Top>10.25cm</Top>
+        <Top>10.75cm</Top>
         <Width>5.75cm</Width>
         <Style>
           <FontWeight>700</FontWeight>
@@ -233,7 +234,7 @@
       </Textbox>
       <Textbox Name="textbox35">
         <rd:DefaultName>textbox35</rd:DefaultName>
-        <Top>10.25cm</Top>
+        <Top>10.75cm</Top>
         <Width>2.53968cm</Width>
         <Style>
           <PaddingLeft>2pt</PaddingLeft>
@@ -249,7 +250,7 @@
       </Textbox>
       <Textbox Name="textbox32">
         <rd:DefaultName>textbox32</rd:DefaultName>
-        <Top>7.5cm</Top>
+        <Top>8cm</Top>
         <Width>5.75cm</Width>
         <Style>
           <FontWeight>700</FontWeight>
@@ -266,7 +267,7 @@
       </Textbox>
       <Textbox Name="textbox27">
         <rd:DefaultName>textbox27</rd:DefaultName>
-        <Top>18.75cm</Top>
+        <Top>19.25cm</Top>
         <Width>5.75cm</Width>
         <Style>
           <FontWeight>700</FontWeight>
@@ -283,7 +284,7 @@
       </Textbox>
       <Textbox Name="textbox26">
         <rd:DefaultName>textbox26</rd:DefaultName>
-        <Top>7.5cm</Top>
+        <Top>8cm</Top>
         <Width>3.5cm</Width>
         <Style>
           <PaddingLeft>2pt</PaddingLeft>
@@ -299,7 +300,7 @@
       </Textbox>
       <Textbox Name="textbox18">
         <rd:DefaultName>textbox18</rd:DefaultName>
-        <Top>18.75cm</Top>
+        <Top>19.25cm</Top>
         <Width>4cm</Width>
         <Style>
           <PaddingLeft>2pt</PaddingLeft>
@@ -315,20 +316,20 @@
       </Textbox>
       <Image Name="image1">
         <Sizing>FitProportional</Sizing>
-        <Top>3cm</Top>
+        <Top>3.25cm</Top>
         <Width>3.5cm</Width>
         <MIMEType />
         <Source>External</Source>
         <Style />
         <ZIndex>33</ZIndex>
-        <Left>11.5cm</Left>
+        <Left>11.75cm</Left>
         <Height>4.25cm</Height>
         <Value>="file:///" &amp; Parameters!p_Foto.Value</Value>
       </Image>
       <Table Name="TablaReincorporaciones">
         <ZIndex>32</ZIndex>
         <DataSetName>ListaReincorporaciones</DataSetName>
-        <Top>20.5cm</Top>
+        <Top>21cm</Top>
         <Width>12.52646cm</Width>
         <Details>
           <TableRows>
@@ -390,7 +391,7 @@
       </Table>
       <Textbox Name="textbox42">
         <rd:DefaultName>textbox42</rd:DefaultName>
-        <Top>19.75cm</Top>
+        <Top>20.25cm</Top>
         <Width>6cm</Width>
         <Style>
           <FontWeight>700</FontWeight>
@@ -407,7 +408,7 @@
       </Textbox>
       <Textbox Name="textbox41">
         <rd:DefaultName>textbox41</rd:DefaultName>
-        <Top>17cm</Top>
+        <Top>17.5cm</Top>
         <Width>7.25cm</Width>
         <Style>
           <FontWeight>700</FontWeight>
@@ -424,7 +425,7 @@
       </Textbox>
       <Textbox Name="textbox40">
         <rd:DefaultName>textbox40</rd:DefaultName>
-        <Top>11.25cm</Top>
+        <Top>11.75cm</Top>
         <Width>4.25cm</Width>
         <Style>
           <FontWeight>700</FontWeight>
@@ -441,7 +442,7 @@
       </Textbox>
       <Textbox Name="textbox39">
         <rd:DefaultName>textbox39</rd:DefaultName>
-        <Top>8.5cm</Top>
+        <Top>9cm</Top>
         <Width>5.75cm</Width>
         <Style>
           <FontWeight>700</FontWeight>
@@ -458,7 +459,7 @@
       </Textbox>
       <Textbox Name="textbox38">
         <rd:DefaultName>textbox38</rd:DefaultName>
-        <Top>2.25cm</Top>
+        <Top>2.75cm</Top>
         <Width>5.25cm</Width>
         <Style>
           <FontWeight>700</FontWeight>
@@ -475,7 +476,7 @@
       </Textbox>
       <Textbox Name="textbox31">
         <rd:DefaultName>textbox31</rd:DefaultName>
-        <Top>15.78968cm</Top>
+        <Top>16.28968cm</Top>
         <Width>5.75cm</Width>
         <Style>
           <FontWeight>700</FontWeight>
@@ -492,7 +493,7 @@
       </Textbox>
       <Textbox Name="textbox30">
         <rd:DefaultName>textbox30</rd:DefaultName>
-        <Top>14.01984cm</Top>
+        <Top>14.51984cm</Top>
         <Width>5.75cm</Width>
         <Style>
           <FontWeight>700</FontWeight>
@@ -509,7 +510,7 @@
       </Textbox>
       <Textbox Name="textbox29">
         <rd:DefaultName>textbox29</rd:DefaultName>
-        <Top>14.90476cm</Top>
+        <Top>15.40476cm</Top>
         <Width>5.75cm</Width>
         <Style>
           <FontWeight>700</FontWeight>
@@ -526,7 +527,7 @@
       </Textbox>
       <Textbox Name="textbox28">
         <rd:DefaultName>textbox28</rd:DefaultName>
-        <Top>13.13492cm</Top>
+        <Top>13.63492cm</Top>
         <Width>5.75cm</Width>
         <Style>
           <FontWeight>700</FontWeight>
@@ -543,7 +544,7 @@
       </Textbox>
       <Textbox Name="textbox25">
         <rd:DefaultName>textbox25</rd:DefaultName>
-        <Top>12.25cm</Top>
+        <Top>12.75cm</Top>
         <Width>5.75cm</Width>
         <Style>
           <FontWeight>700</FontWeight>
@@ -560,7 +561,7 @@
       </Textbox>
       <Textbox Name="textbox24">
         <rd:DefaultName>textbox24</rd:DefaultName>
-        <Top>6.78968cm</Top>
+        <Top>7.28968cm</Top>
         <Width>5.75cm</Width>
         <Style>
           <FontWeight>700</FontWeight>
@@ -577,7 +578,7 @@
       </Textbox>
       <Textbox Name="textbox23">
         <rd:DefaultName>textbox23</rd:DefaultName>
-        <Top>5.90476cm</Top>
+        <Top>6.40476cm</Top>
         <Width>6.25cm</Width>
         <Style>
           <FontWeight>700</FontWeight>
@@ -594,7 +595,7 @@
       </Textbox>
       <Textbox Name="textbox22">
         <rd:DefaultName>textbox22</rd:DefaultName>
-        <Top>5.01984cm</Top>
+        <Top>5.51984cm</Top>
         <Width>5.75cm</Width>
         <Style>
           <FontWeight>700</FontWeight>
@@ -611,7 +612,7 @@
       </Textbox>
       <Textbox Name="textbox21">
         <rd:DefaultName>textbox21</rd:DefaultName>
-        <Top>3.25cm</Top>
+        <Top>3.75cm</Top>
         <Width>5.75cm</Width>
         <Style>
           <FontWeight>700</FontWeight>
@@ -628,7 +629,7 @@
       </Textbox>
       <Textbox Name="textbox20">
         <rd:DefaultName>textbox20</rd:DefaultName>
-        <Top>4.13492cm</Top>
+        <Top>4.63492cm</Top>
         <Width>5.75cm</Width>
         <Style>
           <FontWeight>700</FontWeight>
@@ -645,7 +646,7 @@
       </Textbox>
       <Textbox Name="textbox13">
         <rd:DefaultName>textbox13</rd:DefaultName>
-        <Top>15.75cm</Top>
+        <Top>16.25cm</Top>
         <Width>4cm</Width>
         <Style>
           <PaddingLeft>2pt</PaddingLeft>
@@ -661,7 +662,7 @@
       </Textbox>
       <Textbox Name="textbox12">
         <rd:DefaultName>textbox12</rd:DefaultName>
-        <Top>13.98016cm</Top>
+        <Top>14.48016cm</Top>
         <Width>4cm</Width>
         <Style>
           <PaddingLeft>2pt</PaddingLeft>
@@ -677,7 +678,7 @@
       </Textbox>
       <Textbox Name="textbox11">
         <rd:DefaultName>textbox11</rd:DefaultName>
-        <Top>13.09524cm</Top>
+        <Top>13.59524cm</Top>
         <Width>3.5cm</Width>
         <Style>
           <PaddingLeft>2pt</PaddingLeft>
@@ -693,7 +694,7 @@
       </Textbox>
       <Textbox Name="textbox10">
         <rd:DefaultName>textbox10</rd:DefaultName>
-        <Top>14.86508cm</Top>
+        <Top>15.36508cm</Top>
         <Width>3.75cm</Width>
         <Style>
           <PaddingLeft>2pt</PaddingLeft>
@@ -709,7 +710,7 @@
       </Textbox>
       <Textbox Name="textbox7">
         <rd:DefaultName>textbox7</rd:DefaultName>
-        <Top>12.21032cm</Top>
+        <Top>12.71032cm</Top>
         <Width>4.75cm</Width>
         <Style>
           <PaddingLeft>2pt</PaddingLeft>
@@ -725,7 +726,7 @@
       </Textbox>
       <Textbox Name="textbox6">
         <rd:DefaultName>textbox6</rd:DefaultName>
-        <Top>6.75cm</Top>
+        <Top>7.25cm</Top>
         <Width>3.5cm</Width>
         <Style>
           <PaddingLeft>2pt</PaddingLeft>
@@ -741,7 +742,7 @@
       </Textbox>
       <Textbox Name="textbox5">
         <rd:DefaultName>textbox5</rd:DefaultName>
-        <Top>5.86508cm</Top>
+        <Top>6.36508cm</Top>
         <Width>3.25cm</Width>
         <Style>
           <PaddingLeft>2pt</PaddingLeft>
@@ -757,7 +758,7 @@
       </Textbox>
       <Textbox Name="textbox4">
         <rd:DefaultName>textbox4</rd:DefaultName>
-        <Top>4.98016cm</Top>
+        <Top>5.48016cm</Top>
         <Width>2.53968cm</Width>
         <Style>
           <PaddingLeft>2pt</PaddingLeft>
@@ -773,7 +774,7 @@
       </Textbox>
       <Textbox Name="textbox3">
         <rd:DefaultName>textbox3</rd:DefaultName>
-        <Top>4.09524cm</Top>
+        <Top>4.59524cm</Top>
         <Width>2.53968cm</Width>
         <Style>
           <PaddingLeft>2pt</PaddingLeft>
@@ -789,7 +790,7 @@
       </Textbox>
       <Textbox Name="textbox2">
         <rd:DefaultName>textbox2</rd:DefaultName>
-        <Top>3.21032cm</Top>
+        <Top>3.71032cm</Top>
         <Width>2.53968cm</Width>
         <Style>
           <PaddingLeft>2pt</PaddingLeft>
@@ -860,7 +861,7 @@
       </Textbox>
       <Textbox Name="textbox15">
         <rd:DefaultName>textbox15</rd:DefaultName>
-        <Top>9.5cm</Top>
+        <Top>10cm</Top>
         <Width>2.53968cm</Width>
         <Style>
           <PaddingLeft>2pt</PaddingLeft>
@@ -876,7 +877,7 @@
       </Textbox>
       <Textbox Name="textbox33">
         <rd:DefaultName>textbox33</rd:DefaultName>
-        <Top>9.5cm</Top>
+        <Top>10cm</Top>
         <Width>5.75cm</Width>
         <Style>
           <FontWeight>700</FontWeight>
@@ -893,7 +894,7 @@
       </Textbox>
       <Textbox Name="textbox16">
         <rd:DefaultName>textbox16</rd:DefaultName>
-        <Top>18cm</Top>
+        <Top>18.5cm</Top>
         <Width>4cm</Width>
         <Style>
           <PaddingLeft>2pt</PaddingLeft>
@@ -909,7 +910,7 @@
       </Textbox>
       <Textbox Name="textbox34">
         <rd:DefaultName>textbox34</rd:DefaultName>
-        <Top>18cm</Top>
+        <Top>18.5cm</Top>
         <Width>8.5cm</Width>
         <Style>
           <FontWeight>700</FontWeight>

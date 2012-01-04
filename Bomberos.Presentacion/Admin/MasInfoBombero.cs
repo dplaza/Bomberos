@@ -984,6 +984,22 @@ namespace Bomberos.Presentacion
             oParametro.p_FechaInscripcion = BomberoActual.FechaInscripcion.ToLongDateString();
             oParametro.p_FechaNacimiento = BomberoActual.FechaNacimiento.ToLongDateString();
 
+            CompañiaMgr _Compañia = new CompañiaMgr();
+
+            foreach (var elem in _Compañia.ListarCompañias())
+            {
+                if (BomberoActual.Compañia.Id.Equals(elem.Id))
+                {
+                    if (!System.IO.File.Exists(elem.PictureNameComp))
+                    {
+                        FileStream fs = new FileStream(elem.PictureNameComp, FileMode.Create, FileAccess.Write);
+                        fs.Write(elem.PictureFileComp, 0, elem.PictureSizeComp);
+                        fs.Close();
+                    }
+                    oParametro.p_LogoCompañia = Application.StartupPath + @"\" + elem.PictureNameComp;
+                }
+            }
+
             foreach (var elem in _Reincorporacion.CargarReincorporacionBombero(ReincorporacionBombero))
             {
                 Bomberos.Comun.BomberoReportDTO.ReincorporacionReport ReinElem = new BomberoReportDTO.ReincorporacionReport();

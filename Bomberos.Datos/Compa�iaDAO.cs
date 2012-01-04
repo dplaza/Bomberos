@@ -157,6 +157,7 @@ namespace Bomberos.Datos
                     Compañia.PictureNameComp = msqlReader.GetString(msqlReader.GetOrdinal("picture_name"));
                     Compañia.PictureSizeComp = msqlReader.GetInt32(msqlReader.GetOrdinal("picture_size"));
                     Compañia.PictureFileComp = new byte[Compañia.PictureSizeComp];
+                    msqlReader.GetBytes(msqlReader.GetOrdinal("picture_file"), 0, Compañia.PictureFileComp, 0, Compañia.PictureSizeComp);
 
                     ListaCompañia.Add(Compañia);
                 }
