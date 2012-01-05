@@ -153,19 +153,27 @@ namespace Bomberos.Presentacion
             labelNumRegistro.Text = BomberoActual.NumeroRegistro.ToString();
             labelCargo.Text = BomberoActual.Cargo.Nombre;
 
-            if (!System.IO.File.Exists(BomberoActual.PictureName))
+            if (BomberoActual.PictureName != "")
             {
-                FileStream fs = new FileStream(BomberoActual.PictureName, FileMode.Create, FileAccess.Write);
-                fs.Write(BomberoActual.PictureFile, 0, BomberoActual.PictureSize);
-                fs.Close();
+                if (!System.IO.File.Exists(BomberoActual.PictureName))
+                {
+                    FileStream fs = new FileStream(BomberoActual.PictureName, FileMode.Create, FileAccess.Write);
+                    fs.Write(BomberoActual.PictureFile, 0, BomberoActual.PictureSize);
+                    fs.Close();
+                }
+                location = BomberoActual.PictureName;
+                fileName = BomberoActual.PictureName;
+                box_picture.BackgroundImage = new Bitmap(BomberoActual.PictureName);
+                box_ficha_pict.BackgroundImage = box_picture.BackgroundImage;
             }
-
-            //Crea la imagen desde la BD
-            location = BomberoActual.PictureName;
-            fileName = BomberoActual.PictureName;
-            box_picture.BackgroundImage = new Bitmap(BomberoActual.PictureName);
-            box_ficha_pict.BackgroundImage = box_picture.BackgroundImage;
-
+            else
+            {
+                location = Application.StartupPath + @"\Resources\Usuario.jpg";
+                fileName = "Usuario.jpg";
+                box_picture.BackgroundImage = new Bitmap(fileName);
+                box_ficha_pict.BackgroundImage = box_picture.BackgroundImage;
+            }
+          
             #endregion
 
             #region Ficha Personal
