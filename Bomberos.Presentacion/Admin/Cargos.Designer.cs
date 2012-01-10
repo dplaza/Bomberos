@@ -39,6 +39,7 @@
             this.btn_cancelar = new System.Windows.Forms.Button();
             this.btn_borrar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.btn_editar = new System.Windows.Forms.Button();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridResult)).BeginInit();
@@ -137,12 +138,13 @@
             // 
             // btn_borrar
             // 
-            this.btn_borrar.Location = new System.Drawing.Point(527, 426);
+            this.btn_borrar.Location = new System.Drawing.Point(446, 426);
             this.btn_borrar.Name = "btn_borrar";
             this.btn_borrar.Size = new System.Drawing.Size(75, 23);
             this.btn_borrar.TabIndex = 25;
             this.btn_borrar.Text = "Borrar";
             this.btn_borrar.UseVisualStyleBackColor = true;
+            this.btn_borrar.Visible = false;
             this.btn_borrar.Click += new System.EventHandler(this.btn_borrar_Click);
             // 
             // label1
@@ -154,12 +156,23 @@
             this.label1.TabIndex = 28;
             this.label1.Text = "CARGOS";
             // 
+            // btn_editar
+            // 
+            this.btn_editar.Location = new System.Drawing.Point(527, 426);
+            this.btn_editar.Name = "btn_editar";
+            this.btn_editar.Size = new System.Drawing.Size(75, 23);
+            this.btn_editar.TabIndex = 29;
+            this.btn_editar.Text = "Editar";
+            this.btn_editar.UseVisualStyleBackColor = true;
+            this.btn_editar.Click += new System.EventHandler(this.btn_editar_Click_1);
+            // 
             // Cargos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btn_cancelar;
             this.ClientSize = new System.Drawing.Size(708, 465);
+            this.Controls.Add(this.btn_editar);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btn_cancelar);
             this.Controls.Add(this.btn_borrar);
@@ -192,5 +205,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridViewTextBoxColumn idCargo;
         private System.Windows.Forms.DataGridViewTextBoxColumn NombreCargo;
+        private System.Windows.Forms.Button btn_editar;
     }
 }

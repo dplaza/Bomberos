@@ -12,6 +12,7 @@ using Bomberos.Comun;
 using Bomberos.ComunFuncional.Enumeraciones;
 using Bomberos.ComunFuncional.Util;
 using System.IO;
+using DurationCalculatorApp;
 
 namespace Bomberos.Presentacion
 {
@@ -171,7 +172,10 @@ namespace Bomberos.Presentacion
             txt_tib.Text = BomberoActual.TIB;
             txt_socio.Text = BomberoActual.NumeroRegistro.ToString();
             select_nivel_acad.SelectedItem = BomberoActual.NivelAcademico;
-            label_tiempo_servicio.Text = (DateTime.Today - BomberoActual.FechaInscripcion).TotalDays.ToString() + " día(s)";
+
+            DateDifference dateDifference = new DateDifference(DateTime.Today, BomberoActual.FechaInscripcion);
+
+            label_tiempo_servicio.Text = dateDifference.ToString();
 
             if (BomberoActual.isAdmin)
                 select_tipocuenta.SelectedItem = "Administrador";
@@ -599,9 +603,11 @@ namespace Bomberos.Presentacion
             oParametro.p_Estado = BomberoActual.Estado;
             oParametro.p_EstadoCivil = BomberoActual.EstadoCivil;
             oParametro.p_Foto = Application.StartupPath + @"\" + BomberoActual.PictureName;
-            oParametro.p_TiempoServicio = (DateTime.Today - BomberoActual.FechaInscripcion).TotalDays.ToString() + " días(s)";
             oParametro.p_FechaInscripcion = BomberoActual.FechaInscripcion.ToLongDateString();
             oParametro.p_FechaNacimiento = BomberoActual.FechaNacimiento.ToLongDateString();
+
+            DateDifference dateDifference = new DateDifference(DateTime.Today, BomberoActual.FechaInscripcion);
+            oParametro.p_TiempoServicio = dateDifference.ToString();
 
             CompañiaMgr _Compañia = new CompañiaMgr();
 

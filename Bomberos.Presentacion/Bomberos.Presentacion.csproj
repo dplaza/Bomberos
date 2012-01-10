@@ -90,6 +90,12 @@
     <Compile Include="Admin\Cursos.Designer.cs">
       <DependentUpon>Cursos.cs</DependentUpon>
     </Compile>
+    <Compile Include="Admin\EditarCargo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\EditarCargo.Designer.cs">
+      <DependentUpon>EditarCargo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Admin\Premios.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -143,6 +149,10 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Admin\EditarCargo.resx">
+      <DependentUpon>EditarCargo.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="BuscarBombero.resx">
       <DependentUpon>BuscarBombero.cs</DependentUpon>
       <SubType>Designer</SubType>

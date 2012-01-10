@@ -8,6 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using Bomberos.Negocio.Mgr;
 using Bomberos.Comun;
+using Bomberos.Presentacion.Admin;
 
 namespace Bomberos.Presentacion
 {
@@ -89,6 +90,20 @@ namespace Bomberos.Presentacion
         private void dataGridResult_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void btn_editar_Click_1(object sender, EventArgs e)
+        {
+            if (dataGridResult.SelectedRows.Count != 0)
+            {
+                CargoDTO CargoEditar = new CargoDTO();
+                CargoEditar = (CargoDTO)dataGridResult.SelectedRows[0].DataBoundItem;
+
+                var form = new EditarCargo();
+                form.MdiParent = this.MdiParent;
+                form.InicializaInfoCargo(CargoEditar);
+
+            }
         }
     }
 }

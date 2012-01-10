@@ -10,7 +10,7 @@ namespace Bomberos.Datos
     {
          MySql.Data.MySqlClient.MySqlConnection ConnectBD()
         {
-            string parameters = "server=192.168.20.5; uid=sistema_bomberos; pwd=9qpbVRl; database=bomberos; persist security info=False";
+            string parameters = "server=sistemabomberos.dyndns.org; uid=sistema_bomberos; pwd=9qpbVRl; database=bomberos; persist security info=False";
             MySql.Data.MySqlClient.MySqlConnection msqlConnection = new MySql.Data.MySqlClient.MySqlConnection(parameters);
 
             return msqlConnection;
@@ -103,7 +103,7 @@ namespace Bomberos.Datos
         {
              //MySQL
             MySql.Data.MySqlClient.MySqlConnection conexionBD = ConnectBD();
-            string query = "UPDATE cargos SET id_cargo = ?p_id_cargo, nombre = ?p_nombre";
+            string query = "UPDATE cargos SET nombre = ?p_nombre WHERE id_cargo = ?p_id_cargo";
             MySql.Data.MySqlClient.MySqlCommand msqlCommand = new MySql.Data.MySqlClient.MySqlCommand(query, conexionBD);
             msqlCommand.Parameters.AddWithValue("?p_id_cargo", p_Cargo.Id);
             msqlCommand.Parameters.AddWithValue("?p_nombre", p_Cargo.Nombre);
