@@ -21,6 +21,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_1EE3543BA803E34A511330C6F11DEB6B"
+        "OwnerKey" = "8:_F429EB1103FC4905AE0FD4F168399BD4"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_376D4EF9412D4A3DAD3731E645C2E92D"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -35,6 +41,30 @@
         {
         "MsmKey" = "8:_3C1CF92AD471A4A45884EEABEDE314FD"
         "OwnerKey" = "8:_6CFC0DA8299CDD142D71E54224AE87A8"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_465D97CB2FCA58F1AE9C8CF7CFC8C285"
+        "OwnerKey" = "8:_86DDBA5AD0DE32D8DEBB0A5B9964D2F2"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_465D97CB2FCA58F1AE9C8CF7CFC8C285"
+        "OwnerKey" = "8:_1EE3543BA803E34A511330C6F11DEB6B"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_465D97CB2FCA58F1AE9C8CF7CFC8C285"
+        "OwnerKey" = "8:_BDABB1F28252EDCB65FBD3DC1ADCD551"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_465D97CB2FCA58F1AE9C8CF7CFC8C285"
+        "OwnerKey" = "8:_F429EB1103FC4905AE0FD4F168399BD4"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -63,8 +93,32 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_74E161A0ACAEE11F1E5C56FCE525F83E"
+        "OwnerKey" = "8:_BDABB1F28252EDCB65FBD3DC1ADCD551"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_7855D2F39B29461CA17582B1AA75C76A"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_866C8B6C8E11459FB9CC534960E0BEBF"
         "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_86DDBA5AD0DE32D8DEBB0A5B9964D2F2"
+        "OwnerKey" = "8:_F429EB1103FC4905AE0FD4F168399BD4"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_86DDBA5AD0DE32D8DEBB0A5B9964D2F2"
+        "OwnerKey" = "8:_1EE3543BA803E34A511330C6F11DEB6B"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -77,6 +131,18 @@
         {
         "MsmKey" = "8:_BA7CE4FB19EB413A8C9D503610538BD5"
         "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_BDABB1F28252EDCB65FBD3DC1ADCD551"
+        "OwnerKey" = "8:_F429EB1103FC4905AE0FD4F168399BD4"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_BDABB1F28252EDCB65FBD3DC1ADCD551"
+        "OwnerKey" = "8:_1EE3543BA803E34A511330C6F11DEB6B"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -130,6 +196,30 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_1EE3543BA803E34A511330C6F11DEB6B"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_BDABB1F28252EDCB65FBD3DC1ADCD551"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_86DDBA5AD0DE32D8DEBB0A5B9964D2F2"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_465D97CB2FCA58F1AE9C8CF7CFC8C285"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
         "OwnerKey" = "8:_6CFC0DA8299CDD142D71E54224AE87A8"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -176,6 +266,19 @@
             "PrerequisitesLocation" = "2:1"
             "Url" = "8:"
             "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:Microsoft.Net.Framework.3.5"
+                    {
+                    "Name" = "8:.NET Framework 3.5"
+                    "ProductCode" = "8:Microsoft.Net.Framework.3.5"
+                    }
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:Microsoft.Windows.Installer.3.1"
+                    {
+                    "Name" = "8:Windows Installer 3.1"
+                    "ProductCode" = "8:Microsoft.Windows.Installer.3.1"
+                    }
+                }
             }
         }
         "Release"
@@ -200,6 +303,19 @@
             "PrerequisitesLocation" = "2:1"
             "Url" = "8:"
             "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:Microsoft.Net.Framework.3.5"
+                    {
+                    "Name" = "8:.NET Framework 3.5"
+                    "ProductCode" = "8:Microsoft.Net.Framework.3.5"
+                    }
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:Microsoft.Windows.Installer.3.1"
+                    {
+                    "Name" = "8:Windows Installer 3.1"
+                    "ProductCode" = "8:Microsoft.Windows.Installer.3.1"
+                    }
+                }
             }
         }
     }
@@ -306,6 +422,37 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_1EE3543BA803E34A511330C6F11DEB6B"
+            {
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:Bomberos.Negocio, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
+                "ScatterAssemblies"
+                {
+                    "_1EE3543BA803E34A511330C6F11DEB6B"
+                    {
+                    "Name" = "8:Bomberos.Negocio.dll"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:Bomberos.Negocio.dll"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_307CDD0C1AD44F958C940F27B6C8B42E"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_376D4EF9412D4A3DAD3731E645C2E92D"
             {
             "SourcePath" = "8:..\\Bomberos.Presentacion\\Reportes\\ReporteCargos.rdlc"
@@ -340,6 +487,37 @@
                     }
                 }
             "SourcePath" = "8:Microsoft.ReportViewer.Common.dll"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_307CDD0C1AD44F958C940F27B6C8B42E"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_465D97CB2FCA58F1AE9C8CF7CFC8C285"
+            {
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:Bomberos.Comun, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
+                "ScatterAssemblies"
+                {
+                    "_465D97CB2FCA58F1AE9C8CF7CFC8C285"
+                    {
+                    "Name" = "8:Bomberos.Comun.dll"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:Bomberos.Comun.dll"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_307CDD0C1AD44F958C940F27B6C8B42E"
@@ -450,6 +628,26 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_7855D2F39B29461CA17582B1AA75C76A"
+            {
+            "SourcePath" = "8:..\\Bomberos.Presentacion\\Resources\\11112011 Logo Cuerpo de Bomberos Llay-Llay.png"
+            "TargetName" = "8:11112011 Logo Cuerpo de Bomberos Llay-Llay.png"
+            "Tag" = "8:"
+            "Folder" = "8:_DF6EAF74D70E47C39E7DF238A93919A5"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_866C8B6C8E11459FB9CC534960E0BEBF"
             {
             "SourcePath" = "8:..\\Bomberos.Presentacion\\Reportes\\ReportePremios.rdlc"
@@ -468,6 +666,37 @@
             "Register" = "3:1"
             "Exclude" = "11:FALSE"
             "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_86DDBA5AD0DE32D8DEBB0A5B9964D2F2"
+            {
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:Bomberos.ComunFuncional, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
+                "ScatterAssemblies"
+                {
+                    "_86DDBA5AD0DE32D8DEBB0A5B9964D2F2"
+                    {
+                    "Name" = "8:Bomberos.ComunFuncional.dll"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:Bomberos.ComunFuncional.dll"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_307CDD0C1AD44F958C940F27B6C8B42E"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_A448BAA95B9C47149F7CBC3A140D5760"
@@ -508,6 +737,37 @@
             "Register" = "3:1"
             "Exclude" = "11:TRUE"
             "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_BDABB1F28252EDCB65FBD3DC1ADCD551"
+            {
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:Bomberos.Datos, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
+                "ScatterAssemblies"
+                {
+                    "_BDABB1F28252EDCB65FBD3DC1ADCD551"
+                    {
+                    "Name" = "8:Bomberos.Datos.dll"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:Bomberos.Datos.dll"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_307CDD0C1AD44F958C940F27B6C8B42E"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_DB68DDD5388B4C9CB95A2A12E6DFBB3B"
@@ -711,7 +971,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:Sistema Administrador de Hojas de Vida"
         "ProductCode" = "8:{63C5C6AF-2232-4FD9-9D6E-0E75C85F86EF}"
-        "PackageCode" = "8:{305A31D7-206A-4FCC-A293-DAA9D027D832}"
+        "PackageCode" = "8:{F4D1F7A3-84AF-419B-B915-2E16598A399D}"
         "UpgradeCode" = "8:{5FCE2386-0631-4DE3-9482-84A0F1A83BE9}"
         "RestartWWWService" = "11:FALSE"
         "RemovePreviousVersions" = "11:FALSE"

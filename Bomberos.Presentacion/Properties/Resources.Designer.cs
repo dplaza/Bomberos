@@ -60,6 +60,13 @@ namespace Bomberos.Presentacion.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap _11112011_Logo_Cuerpo_de_Bomberos_Llay_Llay {
+            get {
+                object obj = ResourceManager.GetObject("11112011 Logo Cuerpo de Bomberos Llay-Llay", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap Usuario {
             get {
                 object obj = ResourceManager.GetObject("Usuario", resourceCulture);

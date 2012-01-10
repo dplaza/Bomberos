@@ -119,6 +119,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::Bomberos.Presentacion.Properties.Resources._11112011_Logo_Cuerpo_de_Bomberos_Llay_Llay;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.ClientSize = new System.Drawing.Size(1008, 730);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.menuStrip1);

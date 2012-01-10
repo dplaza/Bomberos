@@ -198,6 +198,9 @@
     <Content Include="Reportes\ReportePremios.rdlc">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <None Include="Resources\11112011 Logo Cuerpo de Bomberos Llay-Llay.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="Resources\Usuario.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
